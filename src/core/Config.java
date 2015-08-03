@@ -32,6 +32,16 @@ public class Config {
 	public static final String FORUMS = "your forums here";
 	
 	/**
+	 * Toggles the use of sound effects
+	 */
+	public static boolean enableSound = true;
+	
+	/**
+	 * Toggles the use of regional music
+	 */
+	public static boolean enableMusic = false;
+	
+	/**
 	 * Toggles the ability for admins to trade
 	 */
 	public static final boolean ADMIN_CAN_TRADE = false;
