@@ -419,11 +419,11 @@ public class MusicTab {
 	 * @param c
 	 */
 	public static void loadMusicTab(Player c) {
-		for (int i = 0; i < Music.songs.length; i++) {
-			if (Music.unlocked[Music.songs[i].array] == true) {
-				Music.updateList(c, Music.songs[i].tabId);
+		for (int i = 0; i < RegionalMusic.songs.length; i++) {
+			if (RegionalMusic.unlocked[RegionalMusic.songs[i].array] == true) {
+				RegionalMusic.updateList(c, RegionalMusic.songs[i].tabId);
 			} else {
-				c.getPA().sendColor(Music.songs[i].tabId,
+				c.getPA().sendColor(RegionalMusic.songs[i].tabId,
 						255 << 10 | 0 << 5 | 0);
 			}
 		}
@@ -437,11 +437,11 @@ public class MusicTab {
 	 */
 	// Sets the boolean for each music id for the first time.
 	public static void initializeMusicBooleanFirstTime(Player c) {
-		for (int i = 0; i < Music.unlocked.length; i++) {
-			Music.unlocked[i] = false;
+		for (int i = 0; i < RegionalMusic.unlocked.length; i++) {
+			RegionalMusic.unlocked[i] = false;
 			if (i > 350) // above 350, no region music anymore but clickable.
 							// (quests music etc)
-				Music.unlocked[i] = true;
+				RegionalMusic.unlocked[i] = true;
 		}
 	}
 
@@ -612,7 +612,7 @@ public class MusicTab {
 		
 		case 24125: // AUTO
 			c.auto = 1;
-			Music.playMusic(c);
+			RegionalMusic.playMusic(c);
 			break;
 		case 24126: // MANUAL
 			c.auto = 0;
@@ -625,8 +625,8 @@ public class MusicTab {
 		}
 		for (int i = 0; i < music.length; i++) {
 			if (Id == music[i].buttonId) {
-				for (int j = 0; j < Music.songs.length; j++) {
-					if (Music.unlocked[music[i].array] == false) {
+				for (int j = 0; j < RegionalMusic.songs.length; j++) {
+					if (RegionalMusic.unlocked[music[i].array] == false) {
 						c.sendMessage("You need to unlock this song first!");
 						return;
 					}
