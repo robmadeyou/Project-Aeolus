@@ -1,6 +1,8 @@
 package core.net.packets;
 
+import core.Config;
 import core.game.model.entity.player.Player;
+import core.game.model.entity.player.Rights;
 import core.game.model.item.WearItem;
 import core.net.packets.incoming.AttackPlayer;
 import core.net.packets.incoming.Bank10;
@@ -35,6 +37,7 @@ import core.net.packets.incoming.MoveItems;
 import core.net.packets.incoming.PickupItem;
 import core.net.packets.incoming.PrivateMessaging;
 import core.net.packets.incoming.RemoveItem;
+import core.net.packets.incoming.Report;
 import core.net.packets.incoming.SilentPacket;
 import core.net.packets.incoming.Trade;
 import core.net.packets.incoming.Walking;
@@ -66,6 +69,7 @@ public class PacketHandler{
 		packetId[165] = u;
 		packetId[238] = u;
 		packetId[150] = u;
+		packetId[218] = new Report();
 		packetId[40] = new DialoguePacket();
 		ClickObject co = new ClickObject();
 		packetId[132] = co;
@@ -127,22 +131,22 @@ public class PacketHandler{
 	}
 
 
-	public static void processPacket(Player c, int packetType, int packetSize) {	
-		if(packetType == -1) {
-			return;
-		}
-		PacketType p = packetId[packetType];
-		if(p != null) {
-			try {
-				//System.out.println("packet: " + packetType);
-				p.processPacket(c, packetType, packetSize);
-			} catch(Exception e) {
-					e.printStackTrace();
-			}
-		} else {
-			System.out.println("Unhandled packet type: "+packetType+ " - size: "+packetSize);
-		}
-	}
+	public static void processPacket(Player c, int packetType, int packetSize) {
+        PacketType p = packetId[packetType];
+        if(p != null && packetType > 0 && packetType < 257 && packetType == c.packetType && packetSize == c.packetSize) {
+            if (Config.SERVER_DEBUG && c.getRights().equals(Rights.DEVELOPER)) {
+                c.sendMessage("PacketType: " + packetType + ". PacketSize: " + packetSize + ".");
+            }
+            try {
+                p.processPacket(c, packetType, packetSize);
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            c.disconnected = true;
+            System.out.println(c.playerName + "is sending invalid PacketType: " + packetType + ". PacketSize: " + packetSize);
+        }
+    }
 	
 
 }

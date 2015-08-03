@@ -13,6 +13,12 @@ public class Stream {
 		buffer = abyte0;
 		currentOffset = 0;
 	}
+	
+	public long readQWord2() {
+		final long l = readDWord() & 0xffffffffL;
+		final long l1 = readDWord() & 0xffffffffL;
+		return (l << 32) + l1;
+	}
 
 	public byte readSignedByteA() {
 		return (byte) (buffer[currentOffset++] - 128);

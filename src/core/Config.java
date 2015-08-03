@@ -14,7 +14,7 @@ public class Config {
 	 * True enables all the debug messages, which is very helpful in a 
 	 * debug case scenario.
 	 */
-	public static final boolean SERVER_DEBUG = false;
+	public static boolean SERVER_DEBUG = false;
 
 	/**
 	 * The name of the server
@@ -30,6 +30,11 @@ public class Config {
 	 * Forums link, if any
 	 */
 	public static final String FORUMS = "your forums here";
+	
+	/**
+	 * 
+	 */
+	public static final boolean enableCensor = true;
 	
 	/**
 	 * Toggles the use of sound effects

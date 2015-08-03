@@ -23,9 +23,12 @@ import core.game.model.item.ItemAssistant;
 import core.game.model.shop.ShopAssistant;
 import core.game.tick.Scheduler;
 import core.game.tick.Tick;
+import core.game.util.Censor;
 import core.game.util.ISAACCipher;
 import core.game.util.Misc;
 import core.game.util.Stream;
+import core.game.util.log.impl.ChatLogger;
+import core.game.util.log.impl.TradeLogger;
 import core.net.Packet;
 import core.net.Packet.Type;
 import core.net.packets.PacketHandler;
@@ -49,12 +52,26 @@ public class Player extends Entity {
 	private Queue<Packet> queuedPackets = new LinkedList<Packet>();
 	private ContentManager contentManager = new ContentManager(this);
 	private Equipment equipment = new Equipment(this);
+	private TradeLogger tradeLog = new TradeLogger(this);
+	private ChatLogger chatLog = new ChatLogger(this);
+	private Censor censor = new Censor(this);
 
 	public int lowMemoryVersion = 0;
 	public int timeOutCounter = 0;
 	public int returnCode = 2;
 	private Future<?> currentTask;
 	public int currentRegion = 0;
+	
+	/**
+	 * Time in milliseconds used for censoring
+	 */
+	public long muteEnd;
+	
+	/**
+	 * Reporting a player
+	 */
+	public String lastReported = "";
+	public long lastReport = 0;
 
 	private Rights rights;
 
@@ -2395,6 +2412,14 @@ public class Player extends Entity {
 
 	public void setChatText(byte chatText[]) {
 		this.chatText = chatText;
+	}
+	
+	public ChatLogger getChatLog() {
+		return chatLog;
+	}
+	
+	public Censor getCensor() {
+		return censor;
 	}
 
 	public byte[] getChatText() {

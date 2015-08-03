@@ -26,7 +26,7 @@ public class Misc {
 		str = ucFirst(str);
 		str.replace("_", " ");
 		return str;
-	}
+	}	
 	
     public static String getDate() {
     	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
@@ -36,6 +36,26 @@ public class Misc {
         dateFormat = null;
         return currentDate;
     }
+    
+    public static String getDate2() {
+    	DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy hh:mm:ss");
+        Date date = new Date();
+        String currentDate = dateFormat.format(date);
+        date = null;
+        dateFormat = null;
+        return currentDate;
+    }
+    
+	public static String longToReportPlayerName(long l) {
+		int i = 0;
+		final char ac[] = new char[12];
+		while (l != 0L) {
+			final long l1 = l;
+			l /= 37L;
+			ac[11 - i++] = Misc.playerNameXlateTable[(int) (l1 - l * 37L)];
+		}
+		return new String(ac, 12 - i, i);
+	}
     
 	/**
 	 * A simple logging utility that prefixes all messages with a timestamp.
