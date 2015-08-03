@@ -180,6 +180,10 @@ public final class NPCDefinitions {
         this.rangedDefence = rangedDefence;
         this.magicDefence = magicDefence;
     }
+    
+    public static NPCDefinitions[] getDefinitions() {
+    	return DEFINITIONS;
+    }
 
     /**
      * Gets the identification for this NPC.
