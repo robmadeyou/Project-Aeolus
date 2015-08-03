@@ -691,6 +691,20 @@ public class Player extends Entity {
 	public int getY() {
 		return absY;
 	}
+	
+	/**
+	 * Used for clipping
+	 */
+	public int getLocalX() {
+		return getX() - 8 * getMapRegionX();
+	}
+
+	/**
+	 * Used for clipping
+	 */
+	public int getLocalY() {
+		return getY() - 8 * getMapRegionY();
+	}
 
 	public int getId() {
 		return playerId;

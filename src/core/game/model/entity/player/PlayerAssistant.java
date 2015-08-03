@@ -6,6 +6,7 @@ import core.game.GameConstants;
 import core.game.model.entity.npc.NPCHandler;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.util.Misc;
+import core.game.world.clipping.PathFinder;
 
 @SuppressWarnings("all")
 public class PlayerAssistant{
@@ -26,9 +27,12 @@ public class PlayerAssistant{
 			c.outStream.createFrame(61);
 			c.outStream.writeByte(i1);
 			c.updateRequired = true;
-			c.setAppearanceUpdateRequired(true);
-		
+			c.setAppearanceUpdateRequired(true);		
 	}
+	
+    public void playerWalk(int x, int y) {
+        PathFinder.getPathFinder().findRoute(c, x, y, true, 1, 1);
+    }
 	
 	/**
 	 * Updates the music tabs song colors
@@ -1358,266 +1362,223 @@ public class PlayerAssistant{
 	}
 	
 	/**
-	* Following
-	**/
-	
-	/*public void Player() {
-		if(Server.playerHandler.players[c.followId] == null || Server.playerHandler.players[c.followId].isDead) {
-			c.getPA().resetFollow();
-			return;
-		}		
-		if(c.freezeTimer > 0) {
-			return;
-		}
-		int otherX = Server.playerHandler.players[c.followId].getX();
-		int otherY = Server.playerHandler.players[c.followId].getY();
-		boolean withinDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
-		boolean hallyDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
-		boolean bowDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 6);
-		boolean rangeWeaponDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
-		boolean sameSpot = (c.absX == otherX && c.absY == otherY);
-		if(!c.goodDistance(otherX, otherY, c.getX(), c.getY(), 25)) {
-			c.followId = 0;
-			c.getPA().resetFollow();
-			return;
-		}
-		c.faceUpdate(c.followId+32768);
-		if ((c.usingBow || c.mageFollow || c.autocastId > 0 && (c.npcIndex > 0 || c.playerIndex > 0)) && bowDistance && !sameSpot) {
-			c.stopMovement();
-			return;
-		}	
-		if (c.usingRangeWeapon && rangeWeaponDistance && !sameSpot && (c.npcIndex > 0 || c.playerIndex > 0)) {
-			c.stopMovement();
-			return;
-		}	
-		if(c.goodDistance(otherX, otherY, c.getX(), c.getY(), 1) && !sameSpot) {
-			return;
-		}
-		c.outStream.createFrame(174);
-		boolean followPlayer = c.followId > 0;
-		if (c.freezeTimer <= 0)
-			if (followPlayer)
-				c.outStream.writeWord(c.followId);
-			else 
-				c.outStream.writeWord(c.followId2);
-		else
-			c.outStream.writeWord(0);
-		
-		if (followPlayer)
-			c.outStream.writeByte(1);
-		else
-			c.outStream.writeByte(0);
-		if (c.usingBow && c.playerIndex > 0)
-			c.followDistance = 5;
-		else if (c.usingRangeWeapon && c.playerIndex > 0)
-			c.followDistance = 3;
-		else if (c.spellId > 0 && c.playerIndex > 0)
-			c.followDistance = 5;
-		else
-			c.followDistance = 1;
-		c.outStream.writeWord(c.followDistance);
-	}*/
-	
+	 * Following
+	 **/
 	public void followPlayer() {
-		if(PlayerHandler.players[c.followId] == null || PlayerHandler.players[c.followId].isDead) {
-			c.followId = 0;
+		if (PlayerHandler.players[c.followId] == null
+				|| PlayerHandler.players[c.followId].isDead) {
+			resetFollow();
 			return;
-		}		
-		if(c.freezeTimer > 0) {
+		}
+		if (c.freezeTimer > 0) {
 			return;
 		}
 		if (c.isDead || c.playerLevel[3] <= 0)
 			return;
-		
+
 		int otherX = PlayerHandler.players[c.followId].getX();
 		int otherY = PlayerHandler.players[c.followId].getY();
-		boolean withinDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
-		boolean goodDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 1);
-		boolean hallyDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
-		boolean bowDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 8);
-		boolean rangeWeaponDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 4);
-		boolean sameSpot = c.absX == otherX && c.absY == otherY;
-		if(!c.goodDistance(otherX, otherY, c.getX(), c.getY(), 25)) {
+
+		boolean sameSpot = (c.absX == otherX && c.absY == otherY);
+
+		boolean hallyDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 2);
+
+		boolean rangeWeaponDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 4);
+		boolean bowDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 6);
+		boolean mageDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 7);
+
+		boolean castingMagic = (c.usingMagic || c.mageFollow || c.autocasting || c.spellId > 0)
+				&& mageDistance;
+		boolean playerRanging = (c.usingRangeWeapon) && rangeWeaponDistance;
+		boolean playerBowOrCross = (c.usingBow) && bowDistance;
+
+		if (!c.goodDistance(otherX, otherY, c.getX(), c.getY(), 25)) {
 			c.followId = 0;
+			resetFollow();
 			return;
 		}
-		if(c.goodDistance(otherX, otherY, c.getX(), c.getY(), 1)) {
-			if (otherX != c.getX() && otherY != c.getY()) {
-				stopDiagonal(otherX, otherY);
-				return;
+		c.faceUpdate(c.followId + 32768);
+		if (!sameSpot) {
+			if (c.playerIndex > 0 && !c.usingSpecial && c.inWild()) {
+				if (c.usingSpecial && (playerRanging || playerBowOrCross)) {
+					c.stopMovement();
+					return;
+				}
+				if (castingMagic || playerRanging || playerBowOrCross) {
+					c.stopMovement();
+					return;
+				}
+				if (c.getCombat().usingHally() && hallyDistance) {
+					c.stopMovement();
+					return;
+				}
 			}
 		}
-		
-		if((c.usingBow || c.mageFollow || (c.playerIndex > 0 && c.autocastId > 0)) && bowDistance && !sameSpot) {
-			return;
-		}
-
-		if(c.getCombat().usingHally() && hallyDistance && !sameSpot) {
-			return;
-		}
-
-		if(c.usingRangeWeapon && rangeWeaponDistance && !sameSpot) {
-			return;
-		}
-		
-		c.faceUpdate(c.followId+32768);
 		if (otherX == c.absX && otherY == c.absY) {
 			int r = Misc.random(3);
 			switch (r) {
-				case 0:
-					walkTo(0,-1);
+			case 0:
+				walkTo(0, -1);
 				break;
-				case 1:
-					walkTo(0,1);
+			case 1:
+				walkTo(0, 1);
 				break;
-				case 2:
-					walkTo(1,0);
+			case 2:
+				walkTo(1, 0);
 				break;
-				case 3:
-					walkTo(-1,0);
-				break;			
-			}		
-		} else if(c.isRunning2 && !withinDistance) {
-			if(otherY > c.getY() && otherX == c.getX()) {
-				walkTo(0, getMove(c.getY(), otherY - 1) + getMove(c.getY(), otherY - 1));
-			} else if(otherY < c.getY() && otherX == c.getX()) {
-				walkTo(0, getMove(c.getY(), otherY + 1) + getMove(c.getY(), otherY + 1));
-			} else if(otherX > c.getX() && otherY == c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1) + getMove(c.getX(), otherX - 1), 0);
-			} else if(otherX < c.getX() && otherY == c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1) + getMove(c.getX(), otherX + 1), 0);
-			} else if(otherX < c.getX() && otherY < c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1) + getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY + 1) + getMove(c.getY(), otherY + 1));
-			} else if(otherX > c.getX() && otherY > c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1) + getMove(c.getX(), otherX - 1), getMove(c.getY(), otherY - 1) + getMove(c.getY(), otherY - 1));
-			} else if(otherX < c.getX() && otherY > c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1) + getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY - 1) + getMove(c.getY(), otherY - 1));
-			} else if(otherX > c.getX() && otherY < c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1) + getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY - 1) + getMove(c.getY(), otherY - 1));
-			} 
+			case 3:
+				walkTo(-1, 0);
+				break;
+			}
+		} else if (c.isRunning2) {
+			if (otherY > c.getY() && otherX == c.getX()) {
+				playerWalk(otherX, otherY - 1);
+			} else if (otherY < c.getY() && otherX == c.getX()) {
+				playerWalk(otherX, otherY + 1);
+			} else if (otherX > c.getX() && otherY == c.getY()) {
+				playerWalk(otherX - 1, otherY);
+			} else if (otherX < c.getX() && otherY == c.getY()) {
+				playerWalk(otherX + 1, otherY);
+			} else if (otherX < c.getX() && otherY < c.getY()) {
+				playerWalk(otherX + 1, otherY + 1);
+			} else if (otherX > c.getX() && otherY > c.getY()) {
+				playerWalk(otherX - 1, otherY - 1);
+			} else if (otherX < c.getX() && otherY > c.getY()) {
+				playerWalk(otherX + 1, otherY - 1);
+			} else if (otherX > c.getX() && otherY < c.getY()) {
+				playerWalk(otherX + 1, otherY - 1);
+			}
 		} else {
-			if(otherY > c.getY() && otherX == c.getX()) {
-				walkTo(0, getMove(c.getY(), otherY - 1));
-			} else if(otherY < c.getY() && otherX == c.getX()) {
-				walkTo(0, getMove(c.getY(), otherY + 1));
-			} else if(otherX > c.getX() && otherY == c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1), 0);
-			} else if(otherX < c.getX() && otherY == c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1), 0);
-			} else if(otherX < c.getX() && otherY < c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY + 1));
-			} else if(otherX > c.getX() && otherY > c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1), getMove(c.getY(), otherY - 1));
-			} else if(otherX < c.getX() && otherY > c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY - 1));
-			} else if(otherX > c.getX() && otherY < c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1), getMove(c.getY(), otherY + 1));
-			} 
+			if (otherY > c.getY() && otherX == c.getX()) {
+				playerWalk(otherX, otherY - 1);
+			} else if (otherY < c.getY() && otherX == c.getX()) {
+				playerWalk(otherX, otherY + 1);
+			} else if (otherX > c.getX() && otherY == c.getY()) {
+				playerWalk(otherX - 1, otherY);
+			} else if (otherX < c.getX() && otherY == c.getY()) {
+				playerWalk(otherX + 1, otherY);
+			} else if (otherX < c.getX() && otherY < c.getY()) {
+				playerWalk(otherX + 1, otherY + 1);
+			} else if (otherX > c.getX() && otherY > c.getY()) {
+				playerWalk(otherX - 1, otherY - 1);
+			} else if (otherX < c.getX() && otherY > c.getY()) {
+				playerWalk(otherX + 1, otherY - 1);
+			} else if (otherX > c.getX() && otherY < c.getY()) {
+				playerWalk(otherX - 1, otherY + 1);
+			}
 		}
-		c.faceUpdate(c.followId+32768);
+		c.faceUpdate(c.followId + 32768);
 	}
 	
 	public void followNpc() {
-		if(NPCHandler.npcs[c.followId2] == null || NPCHandler.npcs[c.followId2].isDead) {
-			c.followId2 = 0;
+		if (NPCHandler.npcs[c.followId] == null
+				|| NPCHandler.npcs[c.followId].isDead) {
+			c.followId = 0;
 			return;
-		}		
-		if(c.freezeTimer > 0) {
+		}
+		if (c.freezeTimer > 0) {
 			return;
 		}
 		if (c.isDead || c.playerLevel[3] <= 0)
 			return;
-		
+
 		int otherX = NPCHandler.npcs[c.followId2].getX();
 		int otherY = NPCHandler.npcs[c.followId2].getY();
-		boolean withinDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
-		boolean goodDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 1);
-		boolean hallyDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
-		boolean bowDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 8);
-		boolean rangeWeaponDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 4);
+		boolean withinDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 2);
+		boolean goodDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 1);
+		boolean hallyDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 2);
+		boolean bowDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 8);
+		boolean rangeWeaponDistance = c.goodDistance(otherX, otherY, c.getX(),
+				c.getY(), 4);
 		boolean sameSpot = c.absX == otherX && c.absY == otherY;
-		if(!c.goodDistance(otherX, otherY, c.getX(), c.getY(), 25)) {
+		if (!c.goodDistance(otherX, otherY, c.getX(), c.getY(), 25)) {
 			c.followId2 = 0;
 			return;
 		}
-		if(c.goodDistance(otherX, otherY, c.getX(), c.getY(), 1)) {
+		if (c.goodDistance(otherX, otherY, c.getX(), c.getY(), 1)) {
 			if (otherX != c.getX() && otherY != c.getY()) {
 				stopDiagonal(otherX, otherY);
 				return;
 			}
 		}
-		
-		if((c.usingBow || c.mageFollow || (c.npcIndex > 0 && c.autocastId > 0)) && bowDistance && !sameSpot) {
+
+		if ((c.usingBow || c.mageFollow || (c.npcIndex > 0 && c.autocastId > 0))
+				&& bowDistance && !sameSpot) {
 			return;
 		}
 
-		if(c.getCombat().usingHally() && hallyDistance && !sameSpot) {
+		if (c.getCombat().usingHally() && hallyDistance && !sameSpot) {
 			return;
 		}
 
-		if(c.usingRangeWeapon && rangeWeaponDistance && !sameSpot) {
+		if (c.usingRangeWeapon && rangeWeaponDistance && !sameSpot) {
 			return;
 		}
-		
-		c.faceUpdate(c.followId2);
+
+		c.faceUpdate(c.followId);
 		if (otherX == c.absX && otherY == c.absY) {
 			int r = Misc.random(3);
 			switch (r) {
-				case 0:
-					walkTo(0,-1);
+			case 0:
+				walkTo(0, -1);
 				break;
-				case 1:
-					walkTo(0,1);
+			case 1:
+				walkTo(0, 1);
 				break;
-				case 2:
-					walkTo(1,0);
+			case 2:
+				walkTo(1, 0);
 				break;
-				case 3:
-					walkTo(-1,0);
-				break;			
-			}		
-		} else if(c.isRunning2 && !withinDistance) {
-			if(otherY > c.getY() && otherX == c.getX()) {
-				walkTo(0, getMove(c.getY(), otherY - 1) + getMove(c.getY(), otherY - 1));
-			} else if(otherY < c.getY() && otherX == c.getX()) {
-				walkTo(0, getMove(c.getY(), otherY + 1) + getMove(c.getY(), otherY + 1));
-			} else if(otherX > c.getX() && otherY == c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1) + getMove(c.getX(), otherX - 1), 0);
-			} else if(otherX < c.getX() && otherY == c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1) + getMove(c.getX(), otherX + 1), 0);
-			} else if(otherX < c.getX() && otherY < c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1) + getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY + 1) + getMove(c.getY(), otherY + 1));
-			} else if(otherX > c.getX() && otherY > c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1) + getMove(c.getX(), otherX - 1), getMove(c.getY(), otherY - 1) + getMove(c.getY(), otherY - 1));
-			} else if(otherX < c.getX() && otherY > c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1) + getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY - 1) + getMove(c.getY(), otherY - 1));
-			} else if(otherX > c.getX() && otherY < c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1) + getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY - 1) + getMove(c.getY(), otherY - 1));
-			} 
+			case 3:
+				walkTo(-1, 0);
+				break;
+			}
+		} else if (c.isRunning2 && !withinDistance) {
+			if (otherY > c.getY() && otherX == c.getX()) {
+				playerWalk(otherX, otherY - 1);
+			} else if (otherY < c.getY() && otherX == c.getX()) {
+				playerWalk(otherX, otherY + 1);
+			} else if (otherX > c.getX() && otherY == c.getY()) {
+				playerWalk(otherX - 1, otherY);
+			} else if (otherX < c.getX() && otherY == c.getY()) {
+				playerWalk(otherX + 1, otherY);
+			} else if (otherX < c.getX() && otherY < c.getY()) {
+				playerWalk(otherX + 1, otherY + 1);
+			} else if (otherX > c.getX() && otherY > c.getY()) {
+				playerWalk(otherX - 1, otherY - 1);
+			} else if (otherX < c.getX() && otherY > c.getY()) {
+				playerWalk(otherX + 1, otherY - 1);
+			} else if (otherX > c.getX() && otherY < c.getY()) {
+				playerWalk(otherX + 1, otherY - 1);
+			}
 		} else {
-			if(otherY > c.getY() && otherX == c.getX()) {
-				walkTo(0, getMove(c.getY(), otherY - 1));
-			} else if(otherY < c.getY() && otherX == c.getX()) {
-				walkTo(0, getMove(c.getY(), otherY + 1));
-			} else if(otherX > c.getX() && otherY == c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1), 0);
-			} else if(otherX < c.getX() && otherY == c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1), 0);
-			} else if(otherX < c.getX() && otherY < c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY + 1));
-			} else if(otherX > c.getX() && otherY > c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1), getMove(c.getY(), otherY - 1));
-			} else if(otherX < c.getX() && otherY > c.getY()) {
-				walkTo(getMove(c.getX(), otherX + 1), getMove(c.getY(), otherY - 1));
-			} else if(otherX > c.getX() && otherY < c.getY()) {
-				walkTo(getMove(c.getX(), otherX - 1), getMove(c.getY(), otherY + 1));
-			} 
+			if (otherY > c.getY() && otherX == c.getX()) {
+				playerWalk(otherX, otherY - 1);
+			} else if (otherY < c.getY() && otherX == c.getX()) {
+								playerWalk(otherX, otherY + 1);
+			} else if (otherX > c.getX() && otherY == c.getY()) {
+				playerWalk(otherX - 1, otherY);
+			} else if (otherX < c.getX() && otherY == c.getY()) {
+				playerWalk(otherX + 1, otherY);
+			} else if (otherX < c.getX() && otherY < c.getY()) {
+				playerWalk(otherX + 1, otherY + 1);
+			} else if (otherX > c.getX() && otherY > c.getY()) {
+				playerWalk(otherX - 1, otherY - 1);
+			} else if (otherX < c.getX() && otherY > c.getY()) {
+				playerWalk(otherX + 1, otherY - 1);
+			} else if (otherX > c.getX() && otherY < c.getY()) {
+				playerWalk(otherX - 1, otherY + 1);
+			}
 		}
-		c.faceUpdate(c.followId2);
+		c.faceUpdate(c.followId);
 	}
-	
-
-	
 	
 	public int getRunningMove(int i, int j) {
 		if (j - i > 2)

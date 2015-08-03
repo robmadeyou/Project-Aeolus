@@ -25,6 +25,9 @@ import core.game.task.TaskScheduler;
 import core.game.util.Misc;
 import core.game.util.json.NpcDefinitionLoader;
 import core.game.world.StillGraphicsManager;
+import core.game.world.World;
+import core.game.world.clipping.region.ObjectDef;
+import core.game.world.clipping.region.Region;
 import core.net.PipelineFactory;
 import core.net.packets.incoming.PlayerManager;
 
@@ -111,6 +114,8 @@ public class Server {
 	 */
 	public static ObjectHandler objectHandler = new ObjectHandler();
 	public static ObjectManager objectManager = new ObjectManager();
+	
+	public static World playerWorld = null;
 
 	/**
 	 * Handles the task scheduler.
@@ -144,7 +149,10 @@ public class Server {
 		if(Config.SERVER_DEBUG)
 		System.setOut(new Misc.TimestampLogger(System.out, Config.DATA_DIR + "/logs/out.log"));
 		System.setErr(new Misc.TimestampLogger(System.err, Config.DATA_DIR + "/logs/error/error.log"));
-
+		ObjectDef.loadConfig();
+		Region.load();
+		playerWorld = World.getSingleton();
+		playerWorld.setupPlayerRegions();
 		ItemTableManager.load();
 		new NpcDefinitionLoader().load();
 		npcHandler.build();
