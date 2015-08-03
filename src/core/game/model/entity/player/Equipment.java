@@ -125,7 +125,7 @@ public class Equipment {
 	/**
 	 * Gets the item name from the item json
 	 */
-	public String getItemName(int ItemID) {
+	public static String getItemName(int ItemID) {
 		return ItemTableManager.forID(ItemID).getName();
 	}
 
@@ -269,6 +269,7 @@ public class Equipment {
 	/**
 	 * Wielding items.
 	 **/
+	@SuppressWarnings("static-access")
 	public boolean wearItem(int wearID, int slot) {
 		int targetSlot = 0;
 		boolean canWearItem = true;
@@ -900,6 +901,7 @@ public class Equipment {
 	/**
 	 * Removes a wielded item.
 	 **/
+	@SuppressWarnings("static-access")
 	public void removeItem(int wearID, int slot) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {

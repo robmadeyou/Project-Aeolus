@@ -30,6 +30,65 @@ public class PlayerAssistant{
 		
 	}
 	
+	/**
+	 * Updates the music tabs song colors
+	 * @param id
+	 * @param color
+	 */
+	public void sendColor(int id, int color) {
+		if (c.getOutStream() != null && c != null) {
+			c.outStream.createFrame(122);
+			c.outStream.writeWordBigEndianA(id);
+			c.outStream.writeWordBigEndianA(color);
+		}
+	}
+	
+	/**
+	 * Sends a player a sound
+	 */
+	public void sendSound(int soundId) {
+		if (soundId > 0 & c != null && c.outStream != null) {
+			c.outStream.createFrame(174);
+			c.outStream.writeWord(soundId);
+			c.outStream.writeByte(100);
+			c.outStream.writeWord(5);
+		}
+	}
+
+	/**
+	 * Sends a player a sound
+	 */
+	public void sound(int soundId) {
+		if (soundId > 0 && c.outStream != null) {
+			c.outStream.createFrame(174);
+			c.outStream.writeWord(soundId);
+			c.outStream.writeByte(100);
+			c.outStream.writeWord(5);
+		}
+	}
+
+	/**
+	 * Send a player a sound
+	 */
+	public void sendSound2(int i1, int i2, int i3) {
+		c.outStream.createFrame(174);
+		c.outStream.writeWord(i1); // id
+		c.outStream.writeByte(i2); // volume, just set it to 100 unless you play
+									// around with your client after this
+		c.outStream.writeWord(i3); // delay
+		c.updateRequired = true;
+		c.appearanceUpdateRequired = true;
+		c.flushOutStream();
+	}
+
+	/**
+	 * Sends regional music
+	 */
+	public void sendMusic(Player client, int soundId) {
+		client.outStream.createFrame(74);
+		client.outStream.writeWordBigEndian(soundId);
+	}
+	
 	public void clearClanChat() {
 		c.clanId = -1;
 		c.getPA().sendFrame126("Talking in: ", 18139);

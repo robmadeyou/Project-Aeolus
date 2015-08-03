@@ -18,7 +18,7 @@ import core.net.packets.incoming.commands.Command;
 public class DeveloperCommands implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
-		switch (command[0]) {
+		switch (command[0]) {		
 		
 		case "interface":
 			try {

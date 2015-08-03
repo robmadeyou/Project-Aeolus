@@ -113,6 +113,12 @@ public class Player extends Entity {
 	public boolean isDead = false;
 	public boolean randomEvent = false;
 	public boolean FirstClickRunning = false;
+	
+	/**
+	 * Music
+	 */
+	public boolean isLoopingMusic = true;
+	public int auto = 1;
 	/*
 	 * Demon Slayer
 	 */
