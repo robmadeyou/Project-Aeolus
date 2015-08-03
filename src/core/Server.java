@@ -28,9 +28,15 @@ import core.game.world.StillGraphicsManager;
 import core.net.PipelineFactory;
 import core.net.packets.incoming.PlayerManager;
 
+/**
+ * The core of the game.
+ */
 @SuppressWarnings("all")
 public class Server {
 
+	/**
+	 * A logger used to print to the output stream
+	 */
 	private static final Logger logger = Logger.getLogger(Server.class
 			.getName());
 
@@ -120,12 +126,14 @@ public class Server {
 		return scheduler;
 	}
 
+	/**
+	 * Used to assign variables, will want to remove this eventually.
+	 */
 	static {
 		serverlistenerPort = 43594;
 		cycleRate = 600;
 		shutdownServer = false;
 		sleepTime = 0;
-		debugPercentFormat = new DecimalFormat("0.0#%");
 	}
 
 	/**
@@ -169,8 +177,11 @@ public class Server {
 			}
 		});
 	}
-
+	/**
+	 * Player instance
+	 */
 	private Player p;
+	
 	/**
 	 * Logging execution.
 	 */
