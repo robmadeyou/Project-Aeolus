@@ -1,6 +1,9 @@
 package core.game.content;
 
 import core.game.content.dialogue.DialogueEmotion;
+import core.game.model.entity.Entity;
+import core.game.model.entity.npc.NPC;
+import core.game.model.entity.npc.NPCHandler;
 import core.game.model.entity.player.Player;
 
 @SuppressWarnings("all")
@@ -18,11 +21,13 @@ public class DialogueHandler {
 	 * @param dialogue The dialogue you want to use
 	 * @param npcId The npc id that the chat will focus on during the chat
 	 */
-	public void sendDialogues(int dialogue, int npcId) {
+	public void sendDialogues(int dialogue, int npcId, int npcId2) {
+		NPC npc = NPCHandler.npcs[npcId2];
+		
 		c.talkingNpc = npcId;
 		switch(dialogue) {
 		case 1:			
-			this.sendNpcChat1("Welcome to RuneScape.", c.talkingNpc, "Test");
+			this.sendNpcChat1("Welcome to RuneScape.", c.talkingNpc, npc.getNpcName(npcId2));
 			c.nextChat = 0;
 			break;
 		}
