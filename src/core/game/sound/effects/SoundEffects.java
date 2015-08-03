@@ -5,6 +5,9 @@ import core.game.model.entity.player.Player;
 import core.game.model.item.ItemTableManager;
 import core.game.util.Misc;
 
+/**
+ * A class that represents ingame sound effects
+ */
 public class SoundEffects {
 
 	Player player;
