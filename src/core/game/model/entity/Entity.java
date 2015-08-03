@@ -7,12 +7,21 @@ import core.game.model.entity.UpdateFlags.UpdateFlag;
 import core.game.model.entity.npc.NPC;
 import core.game.model.entity.player.Player;
 
+/**
+ * An Entity class representing a Player and Npc
+ */
 public abstract class Entity {
 	
+	/**
+	 * The position of this entity
+	 */
 	private Position position;
 	
 	public int slot = -1;
 	
+	/**
+	 * Haven't implmeneted the new position system yet
+	 */
 	public int absX, absY, absZ;	
 
     public int moveX, moveY, direction;
@@ -159,7 +168,7 @@ public abstract class Entity {
 	/**
 	 * Returns the update flags for every entity
 	 * 
-	 * @return
+	 * @return updateFlags
 	 */
 	public UpdateFlags getUpdateFlags() {
 		return updateFlags;
@@ -171,7 +180,7 @@ public abstract class Entity {
 		graphicsUpdateRequired = true;
 		updateRequired = true;
 	}
-	
+
 	public void gfx0(int id) {
 		gfxVar2 = id;
 		gfxVar2 = 65536;
@@ -224,31 +233,55 @@ public abstract class Entity {
         }
     }
     
+    /**
+     * Gets an entities graphics
+     */
 	public Graphic getGraphic() {
 		return graphic;
 	}
 
+	/**
+	 * Sets an entities graphics
+	 * @param graphic
+	 */
 	public void setGraphic(Graphic graphic) {
 		this.graphic = graphic;
 		getUpdateFlags().flag(UpdateFlag.GRAPHICS);
 	}
 	
+	/**
+	 * Gets an entities position
+	 */
 	public Position getPosition() {
 		return position;
 	}
 	
+	/**
+	 * Sets an entities attributes
+	 * @param Map<String, Object>
+	 */
 	public void setAttributes(Map<String, Object> attributes) {
 		this.attributes = attributes;
 	}
 
+	/**
+	 * Gets an entities attributes
+	 */
 	public Map<String, Object> getAttributes() {
 		return attributes;
 	}
 	
+	/**
+	 * Sets a players position to a new coordinate
+	 * @param position
+	 */
 	public void setPosition(Position position) {
 		this.position = position;
 	}
 
+	/**
+	 * The tick method for both entities
+	 */
 	public abstract void process();
 
 }
