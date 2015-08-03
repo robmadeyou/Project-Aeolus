@@ -1,0 +1,39 @@
+{
+	"id": 807,
+	"name": "Iron dart",
+	"description": "A deadly throwing dart with an iron tip.",
+	"value": "2",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "3",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		6600,
+		6600,
+		582,
+		6600,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

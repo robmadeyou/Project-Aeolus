@@ -1,0 +1,30 @@
+{
+	"id": 8955,
+	"name": "Brown naval shirt",
+	"description": "Null",
+	"value": "100",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,16 @@
+{
+	"id": 623,
+	"name": "Sword pommel",
+	"description": "An ivory sword pommel.",
+	"value": "1",
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

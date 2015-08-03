@@ -1,0 +1,30 @@
+{
+	"id": 1193,
+	"name": "Steel kiteshield",
+	"description": "A large metal shield.",
+	"value": "850",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-8,
+		-2,
+		13,
+		15,
+		14,
+		-1,
+		14,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

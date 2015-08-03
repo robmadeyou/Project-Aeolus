@@ -1,0 +1,48 @@
+{
+	"id": 1317,
+	"name": "Adamant 2h sword",
+	"description": "A two handed sword.",
+	"value": "6400",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-4,
+		43,
+		30,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		44,
+		0
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		7047,
+		7044,
+		7046,
+		7044,
+		7044,
+		7044,
+		7039
+	],
+	"combatAnimations" : [
+		7042,
+		7049,
+		7041,
+		7048,
+		7050
+	],
+	"twoHanded": true,
+	"special": false,
+	"stackable": false
+}

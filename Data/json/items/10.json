@@ -1,0 +1,7 @@
+{
+	"id": 10,
+	"name": "Cannon barrels",
+	"description": "The barrels of the multicannon.",
+	"value": "187500",
+	"stackable": false
+}

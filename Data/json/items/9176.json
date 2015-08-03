@@ -1,0 +1,25 @@
+{
+	"id": 9176,
+	"name": "Blurite c'bow",
+	"description": "A blurite crossbow.",
+	"value": "93",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		4230,
+		4230,
+		4230,
+		4230,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

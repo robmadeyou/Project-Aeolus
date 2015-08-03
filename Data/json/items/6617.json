@@ -1,0 +1,30 @@
+{
+	"id": 6617,
+	"name": "Dragon platebody",
+	"description": "Provides excellent protection.",
+	"value": "3840",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-30,
+		0,
+		109,
+		107,
+		97,
+		-6,
+		106,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

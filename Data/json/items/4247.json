@@ -1,0 +1,30 @@
+{
+	"id": 4247,
+	"name": "Mystical robes",
+	"description": "The Robes of Necrovarus.",
+	"value": "1",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,48 @@
+{
+	"id": 11412,
+	"name": "Addy hasta(p++)",
+	"description": "A poison-tipped, one-handed adamantite hasta.",
+	"value": "2080",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		24,
+		24,
+		24,
+		0,
+		0,
+		-6,
+		-7,
+		-5,
+		0,
+		-6,
+		28,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		4198,
+		4198,
+		4198,
+		4198,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

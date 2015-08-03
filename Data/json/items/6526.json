@@ -1,0 +1,30 @@
+{
+	"id": 6526,
+	"name": "Toktz-mej-tal",
+	"description": "A staff of obsidian.",
+	"value": "35000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		15,
+		-1,
+		55,
+		15,
+		0,
+		10,
+		15,
+		5,
+		15,
+		0,
+		55,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 189,
+	"name": "Zamorak brew(3)",
+	"description": "A Zamorak Brew.",
+	"value": "175",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

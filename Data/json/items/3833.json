@@ -1,0 +1,30 @@
+{
+	"id": 3833,
+	"name": "Zamorak page 3",
+	"description": "This seems to have been torn from a book...",
+	"value": "200",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

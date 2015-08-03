@@ -1,0 +1,30 @@
+{
+	"id": 5024,
+	"name": "Woven top",
+	"description": "Far too small to wear.",
+	"value": "500",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

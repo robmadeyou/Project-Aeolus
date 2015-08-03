@@ -1,0 +1,25 @@
+{
+	"id": 54,
+	"name": "Oak shortbow (u)",
+	"description": "An unstrung oak shortbow, I need a bowstring for this.",
+	"value": "50",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": true,
+	"special": false,
+	"stackable": false
+}

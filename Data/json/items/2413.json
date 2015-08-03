@@ -1,0 +1,30 @@
+{
+	"id": 2413,
+	"name": "Guthix cape",
+	"description": "A cape from the almighty god Guthix.",
+	"value": "100",
+	"equipSlot": "cape",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		10,
+		0,
+		1,
+		1,
+		2,
+		10,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

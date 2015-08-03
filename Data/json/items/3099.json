@@ -1,0 +1,30 @@
+{
+	"id": 3099,
+	"name": "Mithril claws",
+	"description": "A set of fighting claws.",
+	"value": "475",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		11,
+		16,
+		-4,
+		0,
+		0,
+		4,
+		8,
+		2,
+		0,
+		0,
+		17,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

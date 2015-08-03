@@ -1,0 +1,30 @@
+{
+	"id": 7640,
+	"name": "Rod of ivandis(9)",
+	"description": "A partially charged rod.",
+	"value": "1000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		-1,
+		7,
+		4,
+		0,
+		2,
+		3,
+		1,
+		4,
+		0,
+		3,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

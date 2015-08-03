@@ -1,0 +1,7 @@
+{
+	"id": 6519,
+	"name": "Agility balance",
+	"description": "Ability to balance using the agility skill.",
+	"value": "1",
+	"stackable": false
+}

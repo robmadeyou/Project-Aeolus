@@ -1,0 +1,30 @@
+{
+	"id": 11065,
+	"name": "Bracelet mould",
+	"description": "Used to make gold bracelets.",
+	"value": "5",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

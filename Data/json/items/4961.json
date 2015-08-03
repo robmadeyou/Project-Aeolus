@@ -1,0 +1,30 @@
+{
+	"id": 4961,
+	"name": "Torag's hammers 25",
+	"description": "Torag the Corrupted's twin hammers.",
+	"value": "160000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-4,
+		-4,
+		85,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		72,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

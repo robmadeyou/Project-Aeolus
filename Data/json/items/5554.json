@@ -1,0 +1,30 @@
+{
+	"id": 5554,
+	"name": "Rogue mask",
+	"description": "Black banded leather armour, a rogue's dream!",
+	"value": "375",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		5,
+		5,
+		5,
+		5,
+		5,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,39 @@
+{
+	"id": 1213,
+	"name": "Rune dagger",
+	"description": "A powerful dagger.",
+	"value": "8000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		25,
+		12,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		24,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		412,
+		412,
+		412,
+		412,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

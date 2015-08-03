@@ -1,0 +1,25 @@
+{
+	"id": 70,
+	"name": "Magic longbow (u)",
+	"description": "An unstrung magic longbow, I need a bowstring for this.",
+	"value": "1280",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": true,
+	"special": false,
+	"stackable": false
+}

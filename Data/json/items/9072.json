@@ -1,0 +1,30 @@
+{
+	"id": 9072,
+	"name": "Moonclan gloves",
+	"description": "These should keep my hands safe.",
+	"value": "900",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		2,
+		-5,
+		2,
+		2,
+		2,
+		2,
+		-5,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

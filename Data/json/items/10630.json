@@ -1,0 +1,30 @@
+{
+	"id": 10630,
+	"name": "Princess blouse",
+	"description": "Null",
+	"value": "0",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

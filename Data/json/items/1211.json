@@ -1,0 +1,39 @@
+{
+	"id": 1211,
+	"name": "Adamant dagger",
+	"description": "Short and deadly.",
+	"value": "800",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		15,
+		8,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		14,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		412,
+		412,
+		412,
+		412,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

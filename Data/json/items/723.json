@@ -1,0 +1,25 @@
+{
+	"id": 723,
+	"name": "Golden bowl",
+	"description": "A specially made golden bowl with water.",
+	"value": "700",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

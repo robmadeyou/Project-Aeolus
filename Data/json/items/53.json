@@ -1,0 +1,30 @@
+{
+	"id": 53,
+	"name": "Headless arrow",
+	"description": "A wooden arrow shaft with flights attached.",
+	"value": "1",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

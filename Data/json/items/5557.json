@@ -1,0 +1,30 @@
+{
+	"id": 5557,
+	"name": "Rogue boots",
+	"description": "Black banded leather boots, a rogue's dream!",
+	"value": "250",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		2,
+		2,
+		2,
+		2,
+		2,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

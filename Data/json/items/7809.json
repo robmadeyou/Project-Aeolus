@@ -1,0 +1,30 @@
+{
+	"id": 7809,
+	"name": "Anger spear",
+	"description": "A heavy duty spear.",
+	"value": "26",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		20,
+		20,
+		20,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		6,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

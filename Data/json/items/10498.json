@@ -1,0 +1,30 @@
+{
+	"id": 10498,
+	"name": "Ava's attractor",
+	"description": "A bagged chicken ready to serve you, magnet in claw.",
+	"value": "769",
+	"equipSlot": "cape",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

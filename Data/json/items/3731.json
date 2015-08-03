@@ -1,0 +1,30 @@
+{
+	"id": 3731,
+	"name": "1/3rds full jug",
+	"description": "This jug is one thirds full. It has a 3 painted on its side.",
+	"value": "1",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

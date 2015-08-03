@@ -1,0 +1,30 @@
+{
+	"id": 10549,
+	"name": "Runner hat",
+	"description": "A Penance Runner hat.",
+	"value": "5000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		30,
+		32,
+		27,
+		1,
+		30,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

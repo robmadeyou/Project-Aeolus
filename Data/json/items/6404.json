@@ -1,0 +1,30 @@
+{
+	"id": 6404,
+	"name": "Menaphite robe",
+	"description": "A cool light Menaphite robe.",
+	"value": "40",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

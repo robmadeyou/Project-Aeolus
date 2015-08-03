@@ -1,0 +1,30 @@
+{
+	"id": 6109,
+	"name": "Ghostly hood",
+	"description": "A ghostly hood, fit for a ghostly head.",
+	"value": "300",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		3,
+		0,
+		0,
+		0,
+		0,
+		3,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

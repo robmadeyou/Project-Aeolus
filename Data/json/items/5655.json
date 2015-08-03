@@ -1,0 +1,16 @@
+{
+	"id": 5655,
+	"name": "Iron knife(p+)",
+	"description": "A finely balanced throwing knife.",
+	"value": "3",
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

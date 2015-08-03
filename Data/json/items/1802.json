@@ -1,0 +1,30 @@
+{
+	"id": 1802,
+	"name": "Silver book",
+	"description": "David's shiny silver coated book.",
+	"value": "1",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

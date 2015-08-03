@@ -1,0 +1,30 @@
+{
+	"id": 4551,
+	"name": "Spiny helmet",
+	"description": "You don't want to wear it inside-out.",
+	"value": "650",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		9,
+		10,
+		7,
+		-1,
+		9,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

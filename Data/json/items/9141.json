@@ -1,0 +1,30 @@
+{
+	"id": 9141,
+	"name": "Steel bolts",
+	"description": "Steel crossbow bolts.",
+	"value": "8",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

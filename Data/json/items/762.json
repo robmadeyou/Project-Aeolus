@@ -1,0 +1,7 @@
+{
+	"id": 762,
+	"name": "Scroll",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "1",
+	"stackable": false
+}

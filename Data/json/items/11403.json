@@ -1,0 +1,48 @@
+{
+	"id": 11403,
+	"name": "Mithril hasta(p+)",
+	"description": "A poison-tipped, one-handed mithril hasta.",
+	"value": "845",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		17,
+		17,
+		17,
+		0,
+		0,
+		-5,
+		-5,
+		-4,
+		0,
+		-5,
+		18,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		4198,
+		4198,
+		4198,
+		4198,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

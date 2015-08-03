@@ -1,0 +1,30 @@
+{
+	"id": 4228,
+	"name": "Crystal shield 7/10",
+	"description": "A nice sturdy crystal shield.",
+	"value": "510000",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		45,
+		48,
+		47,
+		0,
+		74,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

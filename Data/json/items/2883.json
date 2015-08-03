@@ -1,0 +1,25 @@
+{
+	"id": 2883,
+	"name": "Ogre bow",
+	"description": "More powerful than a normal bow, useful against large game birds.",
+	"value": "500",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

@@ -1,0 +1,7 @@
+{
+	"id": 2396,
+	"name": "Spell scroll",
+	"description": "A spell is written on this parchment.",
+	"value": "5",
+	"stackable": false
+}

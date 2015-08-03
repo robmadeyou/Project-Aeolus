@@ -1,0 +1,30 @@
+{
+	"id": 6636,
+	"name": "Solus's hat",
+	"description": "Proof that I have defeated the evil mage Solus.",
+	"value": "1",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

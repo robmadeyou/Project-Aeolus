@@ -1,0 +1,30 @@
+{
+	"id": 2489,
+	"name": "Red d'hide vamb",
+	"description": "Vambraces made from 100% real dragonhide.",
+	"value": "3600",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		10,
+		5,
+		4,
+		6,
+		6,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		60,
+		0
+	],
+	"stackable": false
+}

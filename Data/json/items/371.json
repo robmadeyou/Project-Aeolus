@@ -1,0 +1,16 @@
+{
+	"id": 371,
+	"name": "Raw swordfish",
+	"description": "I should try cooking this.",
+	"value": "450",
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

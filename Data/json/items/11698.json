@@ -1,0 +1,48 @@
+{
+	"id": 11698,
+	"name": "Saradomin godsword",
+	"description": "A graceful, heavy sword.",
+	"value": "1250000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		132,
+		80,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		132,
+		8
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		75,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		7047,
+		7044,
+		7046,
+		7044,
+		7044,
+		7044,
+		7039
+	],
+	"combatAnimations" : [
+		7042,
+		7049,
+		7041,
+		7048,
+		7050
+	],
+	"twoHanded": true,
+	"special": true,
+	"stackable": false
+}

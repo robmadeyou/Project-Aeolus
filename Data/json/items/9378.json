@@ -1,0 +1,30 @@
+{
+	"id": 9378,
+	"name": "Steel bolts (unf)",
+	"description": "Unfeathered steel crossbow bolts.",
+	"value": "1",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

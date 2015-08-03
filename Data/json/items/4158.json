@@ -1,0 +1,30 @@
+{
+	"id": 4158,
+	"name": "Leaf-bladed spear",
+	"description": "A spear with a leaf-shaped point.",
+	"value": "31000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		47,
+		42,
+		36,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		50,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

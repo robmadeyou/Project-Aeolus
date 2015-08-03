@@ -1,0 +1,39 @@
+{
+	"id": 5631,
+	"name": "Black dart(p+)",
+	"description": "A deadly poisoned dart with a black tip.",
+	"value": "18",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		7,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "3",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		6600,
+		6600,
+		582,
+		6600,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

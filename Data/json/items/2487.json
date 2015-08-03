@@ -1,0 +1,30 @@
+{
+	"id": 2487,
+	"name": "Blue d'hide vamb",
+	"description": "Vambraces made from 100% real dragonhide.",
+	"value": "3000",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		9,
+		4,
+		3,
+		5,
+		4,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		50,
+		0
+	],
+	"stackable": false
+}

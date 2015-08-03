@@ -1,0 +1,30 @@
+{
+	"id": 10041,
+	"name": "Larupia legs",
+	"description": "Null",
+	"value": "100",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

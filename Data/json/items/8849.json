@@ -1,0 +1,30 @@
+{
+	"id": 8849,
+	"name": "Adamant defender",
+	"description": "A defensive weapon.",
+	"value": "1",
+	"equipSlot": "shield",
+	"bonuses" : [
+		13,
+		12,
+		11,
+		-3,
+		-2,
+		13,
+		12,
+		11,
+		-3,
+		-2,
+		4,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		30,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

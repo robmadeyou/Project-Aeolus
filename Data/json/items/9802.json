@@ -1,0 +1,30 @@
+{
+	"id": 9802,
+	"name": "Cooking cape(t)",
+	"description": "The cape worn by masters of Cooking.",
+	"value": "99000",
+	"equipSlot": "cape",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		9,
+		9,
+		9,
+		9,
+		9,
+		0,
+		4
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

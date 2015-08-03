@@ -1,0 +1,30 @@
+{
+	"id": 6733,
+	"name": "Archers ring",
+	"description": "A fabled ring that improves the wearer's skill with a bow...",
+	"value": "10000",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

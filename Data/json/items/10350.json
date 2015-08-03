@@ -1,0 +1,30 @@
+{
+	"id": 10350,
+	"name": "3rd age full helmet",
+	"description": "Fabulous rare armour beaten from magical silver.",
+	"value": "90000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-5,
+		-2,
+		47,
+		49,
+		43,
+		-3,
+		48,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

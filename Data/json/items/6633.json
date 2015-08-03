@@ -1,0 +1,30 @@
+{
+	"id": 6633,
+	"name": "White kiteshield",
+	"description": "A large metal shield.",
+	"value": "1632",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-8,
+		-2,
+		17,
+		19,
+		18,
+		-1,
+		18,
+		0,
+		1
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,48 @@
+{
+	"id": 4732,
+	"name": "Karil's coif",
+	"description": "Karil the Tainted's coif and facemask.",
+	"value": "13000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-3,
+		3,
+		6,
+		9,
+		12,
+		6,
+		10,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		2074,
+		0,
+		2076,
+		0,
+		0,
+		0,
+		2077
+	],
+	"combatAnimations" : [
+		2075,
+		2075,
+		2075,
+		2075,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

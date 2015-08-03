@@ -1,0 +1,48 @@
+{
+	"id": 4222,
+	"name": "Crystal bow 2/10",
+	"description": "A nice sturdy magical bow.",
+	"value": "100000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		68,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

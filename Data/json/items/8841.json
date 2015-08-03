@@ -1,0 +1,30 @@
+{
+	"id": 8841,
+	"name": "Void knight mace",
+	"description": "A mace used by the order of the Void knights.",
+	"value": "12000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		22,
+		0,
+		41,
+		8,
+		0,
+		2,
+		2,
+		2,
+		2,
+		2,
+		38,
+		6
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

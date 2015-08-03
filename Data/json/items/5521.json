@@ -1,0 +1,30 @@
+{
+	"id": 5521,
+	"name": "Binding necklace",
+	"description": "A necklace embedded with mystical power.",
+	"value": "1425",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

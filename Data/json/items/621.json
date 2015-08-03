@@ -1,0 +1,7 @@
+{
+	"id": 621,
+	"name": "Ship ticket",
+	"description": "Allows you passage on the 'Lady of the waves' ship.",
+	"value": "5",
+	"stackable": false
+}

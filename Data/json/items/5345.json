@@ -1,0 +1,30 @@
+{
+	"id": 5345,
+	"name": "Gardening boots",
+	"description": "A pair of gardening boots.",
+	"value": "25",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

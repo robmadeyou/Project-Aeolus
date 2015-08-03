@@ -1,0 +1,30 @@
+{
+	"id": 4702,
+	"name": "Sapphire lantern",
+	"description": "A lantern casting a bright blue beam.",
+	"value": "600",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

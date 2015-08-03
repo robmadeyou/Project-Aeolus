@@ -1,0 +1,30 @@
+{
+	"id": 11720,
+	"name": "Armadyl chestplate",
+	"description": "A chestplate of great craftsmanship.",
+	"value": "60000",
+	"equipSlot": "body",
+	"bonuses" : [
+		-7,
+		-7,
+		-7,
+		-15,
+		33,
+		56,
+		48,
+		61,
+		70,
+		57,
+		0,
+		1
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		70,
+		0,
+		70,
+		0
+	],
+	"stackable": false
+}

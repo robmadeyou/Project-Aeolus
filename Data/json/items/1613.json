@@ -1,0 +1,30 @@
+{
+	"id": 1613,
+	"name": "Red topaz",
+	"description": "A semi precious stone.",
+	"value": "5000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

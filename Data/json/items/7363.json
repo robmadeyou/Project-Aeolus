@@ -1,0 +1,23 @@
+{
+	"id": 7363,
+	"name": "Studded body (g)",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "850",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		-4,
+		8,
+		18,
+		25,
+		22,
+		8,
+		25
+	],
+	"attackDelay": "5",
+	"stackable": true
+}

@@ -1,0 +1,7 @@
+{
+	"id": 3882,
+	"name": "Board game piece",
+	"description": "A piece used in board games.",
+	"value": "1",
+	"stackable": false
+}

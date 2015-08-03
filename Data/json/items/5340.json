@@ -1,0 +1,30 @@
+{
+	"id": 5340,
+	"name": "Watering can(8)",
+	"description": "This watering can is completely full.",
+	"value": "1",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

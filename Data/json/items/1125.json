@@ -1,0 +1,30 @@
+{
+	"id": 1125,
+	"name": "Black platebody",
+	"description": "Provides excellent protection.",
+	"value": "3840",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-30,
+		-10,
+		41,
+		40,
+		30,
+		-6,
+		40,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		40,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

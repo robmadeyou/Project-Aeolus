@@ -1,0 +1,30 @@
+{
+	"id": 4587,
+	"name": "Dragon scimitar",
+	"description": "A vicious, curved sword.",
+	"value": "100000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		8,
+		67,
+		-2,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		66,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

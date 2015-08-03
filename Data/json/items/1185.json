@@ -1,0 +1,30 @@
+{
+	"id": 1185,
+	"name": "Rune sq shield",
+	"description": "A medium square shield.",
+	"value": "38400",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		38,
+		40,
+		36,
+		0,
+		38,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

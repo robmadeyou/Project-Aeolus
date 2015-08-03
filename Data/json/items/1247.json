@@ -1,0 +1,30 @@
+{
+	"id": 1247,
+	"name": "Rune spear",
+	"description": "A rune tipped spear.",
+	"value": "20800",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		36,
+		36,
+		36,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		42,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 7162,
+	"name": "Pie recipe book",
+	"description": "Lots of pie recipes for me to try.",
+	"value": "5",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,25 @@
+{
+	"id": 2183,
+	"name": "Unfinished bowl",
+	"description": "This dish is just missing those little finishing touches.",
+	"value": "1",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 5065,
+	"name": "Book on costumes",
+	"description": "An old library book. It bears the title 'Scholars Guide to Dwarven Costumes'.",
+	"value": "1",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

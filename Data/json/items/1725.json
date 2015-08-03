@@ -1,0 +1,30 @@
+{
+	"id": 1725,
+	"name": "Amulet of strength",
+	"description": "An enchanted ruby amulet.",
+	"value": "3000",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		10,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

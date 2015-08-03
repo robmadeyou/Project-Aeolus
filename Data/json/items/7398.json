@@ -1,0 +1,30 @@
+{
+	"id": 7398,
+	"name": "Enchanted bottoms",
+	"description": "Enchanted Wizards robes.",
+	"value": "80000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		15,
+		0,
+		0,
+		0,
+		0,
+		15,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		20,
+		0,
+		0,
+		20
+	],
+	"stackable": false
+}

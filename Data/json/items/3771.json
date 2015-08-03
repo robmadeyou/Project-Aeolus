@@ -1,0 +1,30 @@
+{
+	"id": 3771,
+	"name": "Fremennik shirt",
+	"description": "The latest in Fremennik fashion.",
+	"value": "250",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		2,
+		2,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

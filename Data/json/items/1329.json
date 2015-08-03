@@ -1,0 +1,30 @@
+{
+	"id": 1329,
+	"name": "Mithril scimitar",
+	"description": "A vicious, curved sword.",
+	"value": "1040",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		5,
+		21,
+		-2,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		20,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

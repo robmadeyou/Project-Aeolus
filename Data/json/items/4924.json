@@ -1,0 +1,39 @@
+{
+	"id": 4924,
+	"name": "Guthan's skirt 50",
+	"description": "Guthan the Infested's chainskirt.",
+	"value": "275000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-14,
+		-7,
+		75,
+		72,
+		73,
+		-4,
+		82,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

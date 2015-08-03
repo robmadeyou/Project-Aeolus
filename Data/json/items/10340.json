@@ -1,0 +1,30 @@
+{
+	"id": 10340,
+	"name": "3rd age robe",
+	"description": "Fabulously rare mage protection enchanted in the 3rd age.",
+	"value": "40000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		19,
+		0,
+		0,
+		0,
+		0,
+		19,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

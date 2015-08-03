@@ -1,0 +1,30 @@
+{
+	"id": 9376,
+	"name": "Blurite bolts (unf)",
+	"description": "Unfeathered blurite crossbow bolts.",
+	"value": "1",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

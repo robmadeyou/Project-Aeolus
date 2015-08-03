@@ -1,0 +1,30 @@
+{
+	"id": 10352,
+	"name": "3rd age kiteshield",
+	"description": "Fabulous rare armour beaten from magical silver.",
+	"value": "180000",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		-4,
+		63,
+		65,
+		61,
+		-3,
+		63,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

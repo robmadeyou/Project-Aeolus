@@ -1,0 +1,7 @@
+{
+	"id": 1524,
+	"name": "Lockpick",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "20",
+	"stackable": true
+}

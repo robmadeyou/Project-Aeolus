@@ -1,0 +1,39 @@
+{
+	"id": 1277,
+	"name": "Bronze sword",
+	"description": "A razor sharp sword.",
+	"value": "26",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		4,
+		3,
+		-2,
+		0,
+		0,
+		0,
+		2,
+		1,
+		0,
+		0,
+		5,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

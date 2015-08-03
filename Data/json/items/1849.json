@@ -1,0 +1,16 @@
+{
+	"id": 1849,
+	"name": "Prototype dart",
+	"description": "A prototype throwing dart.",
+	"value": "2",
+	"combatAnimations" : [
+		6600,
+		6600,
+		582,
+		6600,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

@@ -1,0 +1,30 @@
+{
+	"id": 5064,
+	"name": "Exquisite boots",
+	"description": "A lovely pair of boots.",
+	"value": "1",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

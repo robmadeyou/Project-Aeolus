@@ -1,0 +1,30 @@
+{
+	"id": 2495,
+	"name": "Red d'hide chaps",
+	"description": "Made from 100% real dragonhide.",
+	"value": "12000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		14,
+		28,
+		22,
+		30,
+		20,
+		28,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		60,
+		0
+	],
+	"stackable": false
+}

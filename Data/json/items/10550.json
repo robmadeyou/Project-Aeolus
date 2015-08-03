@@ -1,0 +1,30 @@
+{
+	"id": 10550,
+	"name": "Ranger hat",
+	"description": "A Penance Ranger hat.",
+	"value": "5000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		-5,
+		-5,
+		-5,
+		6,
+		7,
+		10,
+		11,
+		5,
+		8,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

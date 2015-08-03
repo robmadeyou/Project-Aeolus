@@ -1,0 +1,30 @@
+{
+	"id": 1341,
+	"name": "Black warhammer",
+	"description": "I don't think it's intended for joinery.",
+	"value": "980",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-4,
+		-4,
+		22,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		19,
+		0
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

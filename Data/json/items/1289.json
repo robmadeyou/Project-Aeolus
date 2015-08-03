@@ -1,0 +1,39 @@
+{
+	"id": 1289,
+	"name": "Rune sword",
+	"description": "A razor sharp sword.",
+	"value": "20800",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		38,
+		26,
+		-2,
+		0,
+		0,
+		0,
+		3,
+		2,
+		0,
+		0,
+		39,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

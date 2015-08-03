@@ -1,0 +1,30 @@
+{
+	"id": 654,
+	"name": "Robe bottoms",
+	"description": "Made by Tree Gnomes.",
+	"value": "180",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

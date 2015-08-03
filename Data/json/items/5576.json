@@ -1,0 +1,30 @@
+{
+	"id": 5576,
+	"name": "Initiate cuisse",
+	"description": "An initiate Temple Knight's leg armour.",
+	"value": "8000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		24,
+		22,
+		20,
+		-4,
+		22,
+		0,
+		5
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		20,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 3100,
+	"name": "Adamant claws",
+	"description": "A set of fighting claws.",
+	"value": "1200",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		18,
+		23,
+		-4,
+		0,
+		0,
+		6,
+		12,
+		3,
+		0,
+		0,
+		24,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

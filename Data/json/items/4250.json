@@ -1,0 +1,30 @@
+{
+	"id": 4250,
+	"name": "Ghostspeak amulet",
+	"description": "The amulet of ghostspeak glows green from the crone's enchantment.",
+	"value": "35",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

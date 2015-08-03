@@ -1,0 +1,30 @@
+{
+	"id": 6737,
+	"name": "Berserker ring",
+	"description": "A ring reputed to bring out a berserk fury in its wearer.",
+	"value": "10000",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		4,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

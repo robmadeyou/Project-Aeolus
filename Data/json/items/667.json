@@ -1,0 +1,39 @@
+{
+	"id": 667,
+	"name": "Blurite sword",
+	"description": "A Faladian Knight's sword.",
+	"value": "200",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		9,
+		14,
+		-2,
+		0,
+		0,
+		0,
+		3,
+		2,
+		0,
+		0,
+		10,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

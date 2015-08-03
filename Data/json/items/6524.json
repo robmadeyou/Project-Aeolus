@@ -1,0 +1,30 @@
+{
+	"id": 6524,
+	"name": "Toktz-ket-xil",
+	"description": "A spiked shield of obsidian.",
+	"value": "45000",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-12,
+		-8,
+		40,
+		42,
+		38,
+		0,
+		65,
+		5,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

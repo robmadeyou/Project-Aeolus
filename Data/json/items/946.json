@@ -1,0 +1,16 @@
+{
+	"id": 946,
+	"name": "Knife",
+	"description": "A dangerous looking knife.",
+	"value": "6",
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

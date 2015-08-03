@@ -1,0 +1,30 @@
+{
+	"id": 1141,
+	"name": "Steel med helm",
+	"description": "A medium sized helmet.",
+	"value": "300",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-3,
+		-1,
+		7,
+		8,
+		6,
+		-1,
+		7,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 6587,
+	"name": "White claws",
+	"description": "A set of fighting claws.",
+	"value": "360",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

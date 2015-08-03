@@ -1,0 +1,30 @@
+{
+	"id": 44,
+	"name": "Rune arrowtips",
+	"description": "I can make an arrow with these.",
+	"value": "200",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

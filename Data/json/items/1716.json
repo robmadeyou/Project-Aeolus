@@ -1,0 +1,30 @@
+{
+	"id": 1716,
+	"name": "Unblessed symbol",
+	"description": "A symbol of Saradomin.",
+	"value": "200",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

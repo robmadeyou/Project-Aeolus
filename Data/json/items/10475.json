@@ -1,0 +1,23 @@
+{
+	"id": 10475,
+	"name": "Zamorak stole",
+	"description": "Swap this note at any bank for the equivelent item.",
+	"value": "2500",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		10
+	],
+	"attackDelay": "5",
+	"stackable": true
+}

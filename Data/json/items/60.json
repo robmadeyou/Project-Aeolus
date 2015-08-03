@@ -1,0 +1,25 @@
+{
+	"id": 60,
+	"name": "Willow shortbow (u)",
+	"description": "An unstrung willow shortbow, I need a bowstring for this.",
+	"value": "100",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": true,
+	"special": false,
+	"stackable": false
+}

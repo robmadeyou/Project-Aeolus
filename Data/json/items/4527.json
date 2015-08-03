@@ -1,0 +1,30 @@
+{
+	"id": 4527,
+	"name": "Candle lantern",
+	"description": "Put a candle in to complete it.",
+	"value": "10",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

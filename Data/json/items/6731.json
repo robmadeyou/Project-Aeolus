@@ -1,0 +1,30 @@
+{
+	"id": 6731,
+	"name": "Seer's ring",
+	"description": "A mysterious ring that can fill the wearer with magical power...",
+	"value": "10000",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

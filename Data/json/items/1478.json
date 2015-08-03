@@ -1,0 +1,30 @@
+{
+	"id": 1478,
+	"name": "Amulet of accuracy",
+	"description": "It increases my aim.",
+	"value": "100",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		4,
+		4,
+		4,
+		4,
+		4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

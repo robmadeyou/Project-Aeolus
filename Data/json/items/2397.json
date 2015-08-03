@@ -1,0 +1,30 @@
+{
+	"id": 2397,
+	"name": "Shaman robe",
+	"description": "A tattered old robe.",
+	"value": "40",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

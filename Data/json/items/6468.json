@@ -1,0 +1,7 @@
+{
+	"id": 6468,
+	"name": "Plant cure",
+	"description": "This plant cure emits potency.",
+	"value": "1",
+	"stackable": false
+}

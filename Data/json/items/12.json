@@ -1,0 +1,7 @@
+{
+	"id": 12,
+	"name": "Cannon furnace",
+	"description": "This powers the multicannon.",
+	"value": "187500",
+	"stackable": false
+}

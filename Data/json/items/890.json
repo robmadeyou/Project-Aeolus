@@ -1,0 +1,30 @@
+{
+	"id": 890,
+	"name": "Adamant arrow",
+	"description": "Arrows with adamantite heads.",
+	"value": "80",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

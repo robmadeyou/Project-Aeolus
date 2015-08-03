@@ -1,0 +1,30 @@
+{
+	"id": 7808,
+	"name": "Anger mace",
+	"description": "A heavy duty mace.",
+	"value": "18",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		20,
+		20,
+		20,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		5,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

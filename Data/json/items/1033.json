@@ -1,0 +1,30 @@
+{
+	"id": 1033,
+	"name": "Zamorak robe",
+	"description": "A robe worn by worshippers of Zamorak.",
+	"value": "30",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0,
+		3,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

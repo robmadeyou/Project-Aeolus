@@ -1,0 +1,30 @@
+{
+	"id": 10458,
+	"name": "Saradomin robe top",
+	"description": "Saradomin Vestments.",
+	"value": "7000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		4
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

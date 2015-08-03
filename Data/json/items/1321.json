@@ -1,0 +1,30 @@
+{
+	"id": 1321,
+	"name": "Bronze scimitar",
+	"description": "A vicious, curved sword.",
+	"value": "32",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		1,
+		7,
+		-2,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		6,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

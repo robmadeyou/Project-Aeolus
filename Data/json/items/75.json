@@ -1,0 +1,30 @@
+{
+	"id": 75,
+	"name": "Khazard armour",
+	"description": "Armour, as worn by the minions of General Khazard.",
+	"value": "12",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		4,
+		5,
+		3,
+		0,
+		0,
+		3,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

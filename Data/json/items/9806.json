@@ -1,0 +1,30 @@
+{
+	"id": 9806,
+	"name": "Firemaking hood",
+	"description": "Firemaking skillcape hood.",
+	"value": "0",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

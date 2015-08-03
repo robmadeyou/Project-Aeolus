@@ -1,0 +1,30 @@
+{
+	"id": 9241,
+	"name": "Emerald bolts (e)",
+	"description": "Enchanted emerald tipped mithril crossbow bolts.",
+	"value": "59",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

@@ -1,0 +1,25 @@
+{
+	"id": 11690,
+	"name": "Godsword blade",
+	"description": "The blade for the ultimate weapon.",
+	"value": "750000",
+	"animations" : [
+		7047,
+		7044,
+		7046,
+		7044,
+		7044,
+		7044,
+		7039
+	],
+	"combatAnimations" : [
+		7042,
+		7049,
+		7041,
+		7048,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

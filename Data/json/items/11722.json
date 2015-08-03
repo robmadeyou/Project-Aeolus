@@ -1,0 +1,30 @@
+{
+	"id": 11722,
+	"name": "Armadyl plateskirt",
+	"description": "A plateskirt of great craftsmanship.",
+	"value": "50000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		-6,
+		-6,
+		-6,
+		-10,
+		20,
+		32,
+		26,
+		34,
+		40,
+		33,
+		0,
+		1
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		70,
+		0,
+		70,
+		0
+	],
+	"stackable": false
+}

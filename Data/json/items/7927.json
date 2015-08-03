@@ -1,0 +1,30 @@
+{
+	"id": 7927,
+	"name": "Easter ring",
+	"description": "A ring given to you by the Easter Bunny.",
+	"value": "1",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

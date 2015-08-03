@@ -1,0 +1,30 @@
+{
+	"id": 1081,
+	"name": "Iron plateskirt",
+	"description": "Designer leg protection.",
+	"value": "280",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		11,
+		10,
+		10,
+		-4,
+		10,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

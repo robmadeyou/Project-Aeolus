@@ -1,0 +1,16 @@
+{
+	"id": 10033,
+	"name": "Chinchompa",
+	"description": "Null",
+	"value": "140",
+	"combatAnimations" : [
+		2779,
+		2779,
+		2779,
+		2779,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

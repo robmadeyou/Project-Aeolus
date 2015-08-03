@@ -1,0 +1,30 @@
+{
+	"id": 7455,
+	"name": "Gloves",
+	"description": "A pair of gloves.",
+	"value": "250",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		3,
+		3,
+		3,
+		2,
+		3,
+		3,
+		3,
+		3,
+		2,
+		3,
+		3,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

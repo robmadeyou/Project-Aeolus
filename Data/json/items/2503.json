@@ -1,0 +1,30 @@
+{
+	"id": 2503,
+	"name": "Black d'hide body",
+	"description": "Made from 100% real dragonhide.",
+	"value": "13480",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-15,
+		30,
+		55,
+		47,
+		60,
+		50,
+		55,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		40,
+		0,
+		70,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,39 @@
+{
+	"id": 4870,
+	"name": "Ahrim's top 50",
+	"description": "Ahrim the Blighted's armoured robe top.",
+	"value": "50000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		30,
+		-10,
+		52,
+		37,
+		63,
+		30,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

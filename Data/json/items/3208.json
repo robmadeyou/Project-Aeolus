@@ -1,0 +1,30 @@
+{
+	"id": 3208,
+	"name": "Crystal pendant",
+	"description": "Lord Iorwerth's crystal pendant.",
+	"value": "10",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

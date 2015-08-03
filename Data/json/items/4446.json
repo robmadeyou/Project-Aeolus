@@ -1,0 +1,30 @@
+{
+	"id": 4446,
+	"name": "Steel key ring",
+	"description": "I can store my keys here.",
+	"value": "1",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

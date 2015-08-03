@@ -1,0 +1,30 @@
+{
+	"id": 6143,
+	"name": "Spined boots",
+	"description": "Some finely crafted Fremennik boots, made from spined dagannoth hide.",
+	"value": "650",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

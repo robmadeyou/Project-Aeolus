@@ -1,0 +1,39 @@
+{
+	"id": 866,
+	"name": "Mithril knife",
+	"description": "A finely balanced throwing knife.",
+	"value": "27",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		11,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "3",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

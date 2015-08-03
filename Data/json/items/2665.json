@@ -1,0 +1,30 @@
+{
+	"id": 2665,
+	"name": "Saradomin full helm",
+	"description": "Rune full helm in the colours of Saradomin.",
+	"value": "35200",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		30,
+		32,
+		27,
+		-1,
+		30,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

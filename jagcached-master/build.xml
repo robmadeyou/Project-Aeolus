@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<project name="jagcached" default="build" basedir=".">
+	<property name="SRC_DIR" location="src" />
+	<property name="BIN_DIR" location="bin" />
+	<property name="LIB_DIR" location="lib" />
+	<property name="FS_DIR" location="data/fs" />
+	<property name="WWW_DIR" location="data/www" />
+	<target name="init">
+		<mkdir dir="${BIN_DIR}" />
+		<mkdir dir="${FS_DIR}" />
+		<mkdir dir="${WWW_DIR}" />
+	</target>
+	<target name="build" depends="init">
+		<javac srcdir="${SRC_DIR}" destdir="${BIN_DIR}">
+			<classpath>
+				<fileset dir="${LIB_DIR}">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+	<target name="clean">
+		<delete dir="${BIN_DIR}" />
+	</target>
+	<target name="rebuild" depends="clean, build" />
+</project>

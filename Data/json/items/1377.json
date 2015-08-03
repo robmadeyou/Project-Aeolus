@@ -1,0 +1,30 @@
+{
+	"id": 1377,
+	"name": "Dragon battleaxe",
+	"description": "A vicious looking axe.",
+	"value": "200000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-2,
+		70,
+		65,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		85,
+		0
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

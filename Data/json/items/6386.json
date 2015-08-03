@@ -1,0 +1,30 @@
+{
+	"id": 6386,
+	"name": "Desert robes",
+	"description": "Has a coarse hard wearing texture.",
+	"value": "25",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

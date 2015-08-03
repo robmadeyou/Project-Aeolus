@@ -1,0 +1,48 @@
+{
+	"id": 3204,
+	"name": "Dragon halberd",
+	"description": "A dragon halberd.",
+	"value": "250000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		70,
+		95,
+		0,
+		-4,
+		0,
+		-1,
+		4,
+		5,
+		0,
+		0,
+		89,
+		0
+	],
+	"attackDelay": "7",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		440,
+		440,
+		440,
+		440,
+		0
+	],
+	"twoHanded": false,
+	"special": true,
+	"stackable": false
+}

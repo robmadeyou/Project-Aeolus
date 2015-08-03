@@ -1,0 +1,30 @@
+{
+	"id": 600,
+	"name": "Astrology book",
+	"description": "A book on the history of Astrology in RuneScape.",
+	"value": "3",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

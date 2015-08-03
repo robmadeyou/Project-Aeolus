@@ -1,0 +1,30 @@
+{
+	"id": 35,
+	"name": "Excalibur",
+	"description": "This used to belong to King Arthur.",
+	"value": "200",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		20,
+		29,
+		-2,
+		0,
+		0,
+		0,
+		3,
+		2,
+		1,
+		0,
+		25,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

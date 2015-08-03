@@ -1,0 +1,30 @@
+{
+	"id": 5574,
+	"name": "Initiate sallet",
+	"description": "An initiate Temple Knight's helm.",
+	"value": "6000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		13,
+		14,
+		11,
+		-1,
+		13,
+		0,
+		3
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		20,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

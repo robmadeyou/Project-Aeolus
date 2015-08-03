@@ -1,0 +1,30 @@
+{
+	"id": 1159,
+	"name": "Mithril full helm",
+	"description": "A full face helmet.",
+	"value": "1430",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		13,
+		14,
+		11,
+		-1,
+		13,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

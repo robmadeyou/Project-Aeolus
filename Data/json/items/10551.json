@@ -1,0 +1,30 @@
+{
+	"id": 10551,
+	"name": "Fighter torso",
+	"description": "A Penance Fighter torso armour.",
+	"value": "20000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-40,
+		0,
+		62,
+		85,
+		62,
+		-10,
+		67,
+		4,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		40,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

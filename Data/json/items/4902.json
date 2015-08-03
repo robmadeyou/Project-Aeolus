@@ -1,0 +1,48 @@
+{
+	"id": 4902,
+	"name": "Dharok's legs 0",
+	"description": "Dharok the Wretched's plate leg armour.",
+	"value": "275000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		85,
+		82,
+		83,
+		-4,
+		92,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		2065,
+		0,
+		2064,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		2067,
+		2067,
+		2067,
+		2066,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

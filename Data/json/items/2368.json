@@ -1,0 +1,30 @@
+{
+	"id": 2368,
+	"name": "Shield right half",
+	"description": "The right half of a dragon square shield.",
+	"value": "500000",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

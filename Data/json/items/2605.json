@@ -1,0 +1,30 @@
+{
+	"id": 2605,
+	"name": "Adam full helm(t)",
+	"description": "Adamant full helm with trim.",
+	"value": "3520",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		19,
+		21,
+		16,
+		-1,
+		19,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

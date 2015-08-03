@@ -1,0 +1,30 @@
+{
+	"id": 1660,
+	"name": "Ruby necklace",
+	"description": "I wonder if this is valuable.",
+	"value": "2175",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 4302,
+	"name": "Ham hood",
+	"description": "Light-weight head protection and eye shield.",
+	"value": "75",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 1052,
+	"name": "Cape of legends",
+	"description": "The cape worn by members of the Legends Guild.",
+	"value": "450",
+	"equipSlot": "cape",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		7,
+		7,
+		7,
+		7,
+		7,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

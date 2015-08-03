@@ -1,0 +1,30 @@
+{
+	"id": 6139,
+	"name": "Skeletal top",
+	"description": "The bones in this armour seem to vibrate with a magical quality...",
+	"value": "45000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		8,
+		-10,
+		35,
+		25,
+		42,
+		15,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

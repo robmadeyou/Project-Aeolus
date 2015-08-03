@@ -1,0 +1,7 @@
+{
+	"id": 8,
+	"name": "Cannon stand",
+	"description": "The mounting for the multicannon.",
+	"value": "187500",
+	"stackable": false
+}

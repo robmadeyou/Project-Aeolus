@@ -1,0 +1,30 @@
+{
+	"id": 78,
+	"name": "Ice arrows",
+	"description": "Can only be fired with yew or magic bows.",
+	"value": "2",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

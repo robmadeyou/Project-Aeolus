@@ -1,0 +1,30 @@
+{
+	"id": 2599,
+	"name": "Adam platebody (t)",
+	"description": "Adamant platebody with trim.",
+	"value": "12800",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-30,
+		-10,
+		65,
+		63,
+		55,
+		-6,
+		63,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

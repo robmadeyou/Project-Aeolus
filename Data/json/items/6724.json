@@ -1,0 +1,30 @@
+{
+	"id": 6724,
+	"name": "Seercull",
+	"description": "An ancient Fremennik bow that was once used to battle the Moon Clan.",
+	"value": "8000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		69,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		60,
+		0
+	],
+	"stackable": false
+}

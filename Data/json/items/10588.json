@@ -1,0 +1,30 @@
+{
+	"id": 10588,
+	"name": "Salve amulet(e)",
+	"description": "Increases the wearer's Strength and accuracy by 20% when fighting the undead.",
+	"value": "300",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

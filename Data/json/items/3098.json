@@ -1,0 +1,30 @@
+{
+	"id": 3098,
+	"name": "Black claws",
+	"description": "A set of fighting claws.",
+	"value": "360",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		10,
+		14,
+		-4,
+		0,
+		0,
+		4,
+		7,
+		2,
+		0,
+		0,
+		14,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,39 @@
+{
+	"id": 5653,
+	"name": "Rune javelin(p++)",
+	"description": "A rune tipped javelin.",
+	"value": "400",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		38,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

@@ -1,0 +1,7 @@
+{
+	"id": 6476,
+	"name": "Compost potion(1)",
+	"description": "Pour this on compost to turn it into super-compost.",
+	"value": "30",
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 8850,
+	"name": "Rune defender",
+	"description": "A defensive weapon.",
+	"value": "1",
+	"equipSlot": "shield",
+	"bonuses" : [
+		20,
+		19,
+		18,
+		-3,
+		-2,
+		20,
+		19,
+		18,
+		-3,
+		-2,
+		5,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		40,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

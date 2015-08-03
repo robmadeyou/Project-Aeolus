@@ -1,0 +1,25 @@
+{
+	"id": 66,
+	"name": "Yew longbow (u)",
+	"description": "An unstrung yew longbow, I need a bowstring for this.",
+	"value": "640",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": true,
+	"special": false,
+	"stackable": false
+}

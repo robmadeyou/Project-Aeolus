@@ -1,0 +1,7 @@
+{
+	"id": 240,
+	"name": "White berries",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "10",
+	"stackable": true
+}

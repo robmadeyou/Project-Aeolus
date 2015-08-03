@@ -1,0 +1,7 @@
+{
+	"id": 732,
+	"name": "Holy water",
+	"description": "A vial of holy water, good against certain demons.",
+	"value": "1",
+	"stackable": true
+}

@@ -1,0 +1,23 @@
+{
+	"id": 7367,
+	"name": "Studded chaps (g)",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "750",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		-4,
+		8,
+		18,
+		25,
+		22,
+		8,
+		25
+	],
+	"attackDelay": "5",
+	"stackable": true
+}

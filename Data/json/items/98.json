@@ -1,0 +1,7 @@
+{
+	"id": 98,
+	"name": "Harralander potion(unf)",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "20",
+	"stackable": true
+}

@@ -1,0 +1,30 @@
+{
+	"id": 6390,
+	"name": "Desert legs",
+	"description": "Better than factor 50 sun cream.",
+	"value": "25",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

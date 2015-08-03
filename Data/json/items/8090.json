@@ -1,0 +1,16 @@
+{
+	"id": 8090,
+	"name": "Mounted sword",
+	"description": "Null",
+	"value": "1",
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

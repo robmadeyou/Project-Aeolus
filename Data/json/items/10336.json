@@ -1,0 +1,30 @@
+{
+	"id": 10336,
+	"name": "3rd age vambraces",
+	"description": "Fabulous rare range protection crafted from white dragonhide.",
+	"value": "15000",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		11,
+		6,
+		5,
+		7,
+		9,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

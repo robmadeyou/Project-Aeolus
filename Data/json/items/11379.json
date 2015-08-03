@@ -1,0 +1,48 @@
+{
+	"id": 11379,
+	"name": "Bronze hasta(p)",
+	"description": "A poison-tipped, one-handed bronze hasta.",
+	"value": "26",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		5,
+		5,
+		5,
+		0,
+		0,
+		-1,
+		-1,
+		-1,
+		0,
+		-1,
+		6,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		4198,
+		4198,
+		4198,
+		4198,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

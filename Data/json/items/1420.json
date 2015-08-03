@@ -1,0 +1,30 @@
+{
+	"id": 1420,
+	"name": "Iron mace",
+	"description": "A spiky mace.",
+	"value": "63",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		4,
+		-2,
+		9,
+		0,
+		0,
+		-2,
+		0,
+		0,
+		0,
+		0,
+		7,
+		1
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

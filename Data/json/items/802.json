@@ -1,0 +1,39 @@
+{
+	"id": 802,
+	"name": "Steel thrownaxe",
+	"description": "A finely balanced throwing axe.",
+	"value": "26",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		8,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

@@ -1,0 +1,25 @@
+{
+	"id": 9456,
+	"name": "Blurite c'bow (u)",
+	"description": "Null",
+	"value": "60",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		4230,
+		4230,
+		4230,
+		4230,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

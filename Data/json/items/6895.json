@@ -1,0 +1,30 @@
+{
+	"id": 6895,
+	"name": "Adamant med helm",
+	"description": "A medium sized helmet.",
+	"value": "0",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-3,
+		-1,
+		14,
+		15,
+		13,
+		-1,
+		14,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

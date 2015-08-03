@@ -1,0 +1,30 @@
+{
+	"id": 10334,
+	"name": "3rd age range coif",
+	"description": "Fabulously ancient range protection crafted from white dragonhide.",
+	"value": "10000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-2,
+		9,
+		4,
+		7,
+		10,
+		5,
+		8,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,16 @@
+{
+	"id": 6603,
+	"name": "Magic staff",
+	"description": "A Magical staff.",
+	"value": "200",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

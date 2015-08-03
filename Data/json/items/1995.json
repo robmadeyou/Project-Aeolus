@@ -1,0 +1,7 @@
+{
+	"id": 1995,
+	"name": "Unfermented wine",
+	"description": "This wine needs to ferment before it can be drunk.",
+	"value": "10",
+	"stackable": false
+}

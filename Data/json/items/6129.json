@@ -1,0 +1,30 @@
+{
+	"id": 6129,
+	"name": "Rock-shell plate",
+	"description": "A sturdy body armour made from rock crab pieces.",
+	"value": "65000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-30,
+		-10,
+		82,
+		80,
+		72,
+		-6,
+		80,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

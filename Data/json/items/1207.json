@@ -1,0 +1,39 @@
+{
+	"id": 1207,
+	"name": "Steel dagger",
+	"description": "Short but pointy.",
+	"value": "125",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		8,
+		4,
+		-4,
+		1,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		7,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		412,
+		412,
+		412,
+		412,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

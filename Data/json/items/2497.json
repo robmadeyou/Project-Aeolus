@@ -1,0 +1,30 @@
+{
+	"id": 2497,
+	"name": "Black d'hide chaps",
+	"description": "Made from 100% real dragonhide.",
+	"value": "12000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		17,
+		31,
+		25,
+		33,
+		28,
+		31,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		70,
+		0
+	],
+	"stackable": false
+}

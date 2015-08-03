@@ -1,0 +1,30 @@
+{
+	"id": 11665,
+	"name": "Void melee helm",
+	"description": "A melee helm from the order of the Void Knights.",
+	"value": "9851",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		6,
+		6,
+		6,
+		6,
+		6,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		42,
+		42,
+		42,
+		42,
+		42
+	],
+	"stackable": false
+}

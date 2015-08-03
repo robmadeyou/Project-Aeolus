@@ -1,0 +1,16 @@
+{
+	"id": 8163,
+	"name": "Dartboard",
+	"description": "Null",
+	"value": "1",
+	"combatAnimations" : [
+		6600,
+		6600,
+		582,
+		6600,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

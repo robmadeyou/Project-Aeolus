@@ -1,0 +1,16 @@
+{
+	"id": 9012,
+	"name": "Runed sceptre",
+	"description": "Null",
+	"value": "1",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

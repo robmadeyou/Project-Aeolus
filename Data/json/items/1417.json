@@ -1,0 +1,16 @@
+{
+	"id": 1417,
+	"name": "Javelin",
+	"description": "A javelin.",
+	"value": "1",
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

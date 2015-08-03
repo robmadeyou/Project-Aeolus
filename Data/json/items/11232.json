@@ -1,0 +1,16 @@
+{
+	"id": 11232,
+	"name": "Dragon dart tip",
+	"description": "Null",
+	"value": "250",
+	"combatAnimations" : [
+		6600,
+		6600,
+		582,
+		6600,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

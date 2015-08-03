@@ -1,0 +1,30 @@
+{
+	"id": 4506,
+	"name": "Decorative helm",
+	"description": "A very decorative helm.",
+	"value": "780",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-3,
+		-1,
+		14,
+		15,
+		13,
+		-1,
+		14,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

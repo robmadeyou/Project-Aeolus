@@ -1,0 +1,30 @@
+{
+	"id": 1065,
+	"name": "Green d'hide vamb",
+	"description": "Vambraces made from 100% real dragonhide.",
+	"value": "2500",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-15,
+		8,
+		3,
+		2,
+		4,
+		2,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		40,
+		0
+	],
+	"stackable": false
+}

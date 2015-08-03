@@ -1,0 +1,30 @@
+{
+	"id": 9239,
+	"name": "Topaz bolts (e)",
+	"description": "Enchanted red topaz tipped steel crossbow bolts.",
+	"value": "24",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

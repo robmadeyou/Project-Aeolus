@@ -1,0 +1,30 @@
+{
+	"id": 8839,
+	"name": "Void knight top",
+	"description": "Torso armour of the order of the Void Knights.",
+	"value": "48000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		45,
+		45,
+		45,
+		45,
+		45,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		42,
+		42,
+		42,
+		42,
+		42
+	],
+	"stackable": false
+}

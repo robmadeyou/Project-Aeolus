@@ -1,0 +1,30 @@
+{
+	"id": 538,
+	"name": "Druid's robe",
+	"description": "Keeps a druid's knees nice and warm.",
+	"value": "30",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		4
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

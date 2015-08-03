@@ -1,0 +1,30 @@
+{
+	"id": 6581,
+	"name": "Onyx amulet",
+	"description": "I wonder if I can get this enchanted.",
+	"value": "201000",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

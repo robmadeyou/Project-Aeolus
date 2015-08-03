@@ -1,0 +1,30 @@
+{
+	"id": 1183,
+	"name": "Adamant sq shield",
+	"description": "A medium square shield.",
+	"value": "3840",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		24,
+		26,
+		22,
+		0,
+		24,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

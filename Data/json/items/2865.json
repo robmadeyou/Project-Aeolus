@@ -1,0 +1,30 @@
+{
+	"id": 2865,
+	"name": "Flighted ogre arrow",
+	"description": "A wooden arrow shaft with four flights attached.",
+	"value": "1",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

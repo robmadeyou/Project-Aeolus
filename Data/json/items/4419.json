@@ -1,0 +1,30 @@
+{
+	"id": 4419,
+	"name": "Guthix rest(3)",
+	"description": "A cup of Guthix Rest.",
+	"value": "50",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

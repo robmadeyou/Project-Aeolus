@@ -1,0 +1,30 @@
+{
+	"id": 1093,
+	"name": "Rune plateskirt",
+	"description": "Designer leg protection.",
+	"value": "64000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		51,
+		49,
+		47,
+		-4,
+		49,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

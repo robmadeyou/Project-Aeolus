@@ -1,0 +1,30 @@
+{
+	"id": 4248,
+	"name": "Book of haricanto",
+	"description": "The Book of Haricanto.",
+	"value": "1",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 4117,
+	"name": "Mystic boots",
+	"description": "Bright magical boots.",
+	"value": "10000",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		3,
+		0,
+		0,
+		0,
+		0,
+		3,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

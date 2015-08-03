@@ -1,0 +1,30 @@
+{
+	"id": 5525,
+	"name": "Tiara",
+	"description": "Makes me feel like a Princess.",
+	"value": "100",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

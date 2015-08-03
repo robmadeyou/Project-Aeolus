@@ -1,0 +1,30 @@
+{
+	"id": 1229,
+	"name": "Rune dagger(p)",
+	"description": "The blade is covered with a nasty poison.",
+	"value": "8000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		25,
+		12,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		24,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

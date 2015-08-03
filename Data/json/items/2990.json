@@ -1,0 +1,30 @@
+{
+	"id": 2990,
+	"name": "Chompy bird hat",
+	"description": "A symbol of your chompy bird hunting prowess.",
+	"value": "1",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

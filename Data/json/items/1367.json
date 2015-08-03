@@ -1,0 +1,30 @@
+{
+	"id": 1367,
+	"name": "Black battleaxe",
+	"description": "A vicious looking axe.",
+	"value": "1248",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-2,
+		20,
+		15,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		24,
+		0
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

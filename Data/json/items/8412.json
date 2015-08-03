@@ -1,0 +1,16 @@
+{
+	"id": 8412,
+	"name": "Dungeon cross",
+	"description": "Null",
+	"value": "7500",
+	"combatAnimations" : [
+		4230,
+		4230,
+		4230,
+		4230,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

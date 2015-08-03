@@ -1,0 +1,16 @@
+{
+	"id": 9044,
+	"name": "Pharaoh's sceptre",
+	"description": "This sceptre has 3 remaining charges.",
+	"value": "100",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

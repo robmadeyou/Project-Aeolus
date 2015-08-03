@@ -1,0 +1,30 @@
+{
+	"id": 9099,
+	"name": "Lunar gloves",
+	"description": "These should keep my hands safe.",
+	"value": "100",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		4,
+		-1,
+		2,
+		1,
+		1,
+		2,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

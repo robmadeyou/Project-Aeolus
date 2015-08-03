@@ -1,0 +1,39 @@
+{
+	"id": 1217,
+	"name": "Black dagger",
+	"description": "A vicious black dagger.",
+	"value": "240",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		10,
+		5,
+		-4,
+		1,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		7,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		412,
+		412,
+		412,
+		412,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

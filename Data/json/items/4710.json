@@ -1,0 +1,48 @@
+{
+	"id": 4710,
+	"name": "Ahrim's staff",
+	"description": "Ahrim the Blighted's quarterstaff.",
+	"value": "85000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		12,
+		-1,
+		65,
+		15,
+		0,
+		3,
+		2,
+		5,
+		15,
+		0,
+		68,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"combatAnimations" : [
+		406,
+		406,
+		406,
+		406,
+		420
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

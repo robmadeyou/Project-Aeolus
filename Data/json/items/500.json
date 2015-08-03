@@ -1,0 +1,7 @@
+{
+	"id": 500,
+	"name": "Broken axe",
+	"description": "Bob can fix this for me.",
+	"value": "10",
+	"stackable": false
+}

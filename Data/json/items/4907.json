@@ -1,0 +1,39 @@
+{
+	"id": 4907,
+	"name": "Guthan's helm 25",
+	"description": "Guthan the Infested's helm.",
+	"value": "103000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		55,
+		58,
+		54,
+		-1,
+		62,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

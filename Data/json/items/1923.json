@@ -1,0 +1,25 @@
+{
+	"id": 1923,
+	"name": "Bowl",
+	"description": "Useful for mixing things.",
+	"value": "4",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

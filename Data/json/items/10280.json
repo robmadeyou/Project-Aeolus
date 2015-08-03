@@ -1,0 +1,25 @@
+{
+	"id": 10280,
+	"name": "Willow comp bow",
+	"description": "Null",
+	"value": "300",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

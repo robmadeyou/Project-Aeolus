@@ -1,0 +1,39 @@
+{
+	"id": 1285,
+	"name": "Mithril sword",
+	"description": "A razor sharp sword.",
+	"value": "845",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		16,
+		11,
+		-2,
+		0,
+		0,
+		2,
+		1,
+		0,
+		0,
+		0,
+		17,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

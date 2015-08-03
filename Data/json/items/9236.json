@@ -1,0 +1,30 @@
+{
+	"id": 9236,
+	"name": "Opal bolts (e)",
+	"description": "Enchanted opal tipped bronze crossbow bolts.",
+	"value": "7",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

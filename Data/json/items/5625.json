@@ -1,0 +1,30 @@
+{
+	"id": 5625,
+	"name": "Mithril arrow(p++)",
+	"description": "Venomous looking arrows.",
+	"value": "32",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

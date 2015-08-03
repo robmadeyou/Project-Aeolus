@@ -1,0 +1,30 @@
+{
+	"id": 295,
+	"name": "Glarial's amulet",
+	"description": "A bright green gem set in a necklace.",
+	"value": "1",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

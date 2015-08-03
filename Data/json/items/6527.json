@@ -1,0 +1,30 @@
+{
+	"id": 6527,
+	"name": "Tzhaar-ket-em",
+	"description": "A mace of obsidian.",
+	"value": "30000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-4,
+		-4,
+		62,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		56,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

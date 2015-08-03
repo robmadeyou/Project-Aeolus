@@ -1,0 +1,30 @@
+{
+	"id": 3757,
+	"name": "Fremennik blade",
+	"description": "A sword used only by Fremennik warriors.",
+	"value": "5000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		6,
+		29,
+		-2,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		28,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 6465,
+	"name": "Ring of charos(u)",
+	"description": "The power within this ring has been unlocked.",
+	"value": "1",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

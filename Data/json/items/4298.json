@@ -1,0 +1,30 @@
+{
+	"id": 4298,
+	"name": "Ham shirt",
+	"description": "A vivid crimson shirt.",
+	"value": "75",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

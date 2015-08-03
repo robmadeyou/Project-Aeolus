@@ -1,0 +1,30 @@
+{
+	"id": 1679,
+	"name": "Ruby amulet",
+	"description": "It needs a string so I can wear it.",
+	"value": "2025",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

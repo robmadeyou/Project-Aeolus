@@ -1,0 +1,30 @@
+{
+	"id": 1071,
+	"name": "Mithril platelegs",
+	"description": "These look pretty heavy.",
+	"value": "2600",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		24,
+		22,
+		20,
+		-4,
+		22,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

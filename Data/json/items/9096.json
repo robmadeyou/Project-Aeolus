@@ -1,0 +1,30 @@
+{
+	"id": 9096,
+	"name": "Lunar helm",
+	"description": "A mystical helmet.",
+	"value": "100",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		3,
+		-2,
+		8,
+		7,
+		10,
+		2,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

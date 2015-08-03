@@ -1,0 +1,30 @@
+{
+	"id": 589,
+	"name": "Gnome amulet",
+	"description": "It's an amulet of protection given to me by the gnomes.",
+	"value": "1",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		13,
+		13,
+		13,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

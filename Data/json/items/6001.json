@@ -1,0 +1,7 @@
+{
+	"id": 6001,
+	"name": "Krandorian hops",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "10",
+	"stackable": true
+}

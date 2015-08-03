@@ -1,0 +1,30 @@
+{
+	"id": 7633,
+	"name": "Ancient book",
+	"description": "A book about seven warrior priests, written about 200 years ago.",
+	"value": "1",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,7 @@
+{
+	"id": 16,
+	"name": "Magic whistle",
+	"description": "A small tin whistle.",
+	"value": "10",
+	"stackable": false
+}

@@ -1,0 +1,7 @@
+{
+	"id": 2430,
+	"name": "Restore potion(4)",
+	"description": "A stat restoration potion.",
+	"value": "110",
+	"stackable": false
+}

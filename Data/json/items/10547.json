@@ -1,0 +1,30 @@
+{
+	"id": 10547,
+	"name": "Healer hat",
+	"description": "A Penance Healer hat.",
+	"value": "5000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		-5,
+		-5,
+		-5,
+		6,
+		-5,
+		6,
+		8,
+		10,
+		7,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

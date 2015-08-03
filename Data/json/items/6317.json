@@ -1,0 +1,30 @@
+{
+	"id": 6317,
+	"name": "Red topaz machete",
+	"description": "A jungle specific slashing device.",
+	"value": "2000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

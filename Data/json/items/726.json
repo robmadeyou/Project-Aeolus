@@ -1,0 +1,25 @@
+{
+	"id": 726,
+	"name": "Golden bowl",
+	"description": "A blessed golden bowl. It has pure sacred water in it.",
+	"value": "700",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

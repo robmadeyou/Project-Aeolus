@@ -1,0 +1,30 @@
+{
+	"id": 1846,
+	"name": "Slave boots",
+	"description": "A set of filthy, smelly, flea infested desert slave boots.",
+	"value": "1",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,23 @@
+{
+	"id": 856,
+	"name": "Yew longbow",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "1280",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		47,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "6",
+	"stackable": true
+}

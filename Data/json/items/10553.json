@@ -1,0 +1,30 @@
+{
+	"id": 10553,
+	"name": "Penance gloves",
+	"description": "These gloves seem unbelieveably light!",
+	"value": "200",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		3,
+		4,
+		0,
+		2,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

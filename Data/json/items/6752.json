@@ -1,0 +1,30 @@
+{
+	"id": 6752,
+	"name": "Black desert robe",
+	"description": "A desert robe stained black with mushroom ink.",
+	"value": "30",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

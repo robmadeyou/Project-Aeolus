@@ -1,0 +1,30 @@
+{
+	"id": 7400,
+	"name": "Enchanted hat",
+	"description": "A three pointed hat of magic.",
+	"value": "15000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		20,
+		0,
+		0,
+		20
+	],
+	"stackable": false
+}

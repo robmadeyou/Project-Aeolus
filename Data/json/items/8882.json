@@ -1,0 +1,30 @@
+{
+	"id": 8882,
+	"name": "Bone bolts",
+	"description": "Good if you have a bone crossbow!",
+	"value": "3",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

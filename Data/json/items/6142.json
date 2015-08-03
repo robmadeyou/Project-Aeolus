@@ -1,0 +1,23 @@
+{
+	"id": 6142,
+	"name": "Skeletal bottoms",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "40000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		6,
+		-7,
+		22,
+		20,
+		24,
+		10,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"stackable": true
+}

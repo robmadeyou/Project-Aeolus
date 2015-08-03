@@ -1,0 +1,7 @@
+{
+	"id": 130,
+	"name": "Restore potion(2)",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "66",
+	"stackable": true
+}

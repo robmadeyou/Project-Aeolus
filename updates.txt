@@ -1,0 +1,52 @@
+~ July 10, 2015
+- NPCSpawns in json
+- Repackaged source
+- Organized packets, and clicking
+- Seperated trade from dueling
+
+~ July 11, 2015
+- Implemented Asteria's Rights system
+- Created an Entity class
+- Created base classes for our combat system
+- Better Command system
+
+~ July 12, 2015
+- Implemented new Item Definitions in json
+- Weapons have proper attack speeds
+- NPC Definitions in json
+
+~ July 20, 2015
+- Implemented a base for scripting system in python. Right now will handle 1-3 click npc and object clicks along with clicking buttons.
+- Better clan chat system
+- Better punishment system
+
+~ July 29, 2015
+- Removed the file server that was already in there replaced with Grahams (Http and jagcached both work properly) @link (https://github.com/apollo-rsps/jagcached/blob/master/src/org/apollo/jagcached/FileServer.java)
+
+~ July 30, 2015
+- Configured Majors 317 refactored client with the server.
+- New Task system
+- Added python scripts for 1-3 click npc, 2-3 click object. (Total of 7 scripts)
+- Removed Client class, working on creating an entity based system and using Hyperions combat system
+
+~ July 31, 2015
+- Been working around the update flags, implementing the flags into the entity
+- Hitmarks have been added into the entity, hitmarks are only showing block for some reason though.
+- Redid all the hitmasks, fixed the hitmarks problem. Hitmarks use entity, and are very easy to use. All 4 hitmarks work perfectly. (normal, block, poison, and disease)
+- Rewrote the entire commands, it was really crappy. The new command system has a very easy to use syntax.
+
+~ August 1, 2015
+- Completely organized dialogues. (2-5 options now have their own classes) Look a lot better than it was.
+- Fixed a few commands not working properly
+
+~ August 2, 2015
+- Fixed clicking npc (caused client crashes)
+- Fixed dialogue from crashing
+- Added a command that allows you to restart the server remotely. Make sure the server is running through the run batch file.
+- Also fixed getid command, now works perfectly.
+- Server debug mode toggles the ability to log the entire outputstream to a log file. (Can be very useful in debugging situations)
+- More logging done, now outputs all error messages done by the console.
+- Created player attributes, works a lot better than how PI originally handled all their attributes. Individual boolean values spread throughout the Player file. Many which were unused or many duplicates.
+- More attributes set
+- Created a new class for all GameConstants (GameConstants)
+- Config file only consists of toggles and main configs (I may seperate the toggles, not sure yet)

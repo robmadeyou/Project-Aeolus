@@ -1,0 +1,30 @@
+{
+	"id": 1129,
+	"name": "Leather body",
+	"description": "Better than no armour!",
+	"value": "21",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-2,
+		2,
+		8,
+		9,
+		10,
+		4,
+		9,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

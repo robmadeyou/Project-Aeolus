@@ -1,0 +1,30 @@
+{
+	"id": 11716,
+	"name": "Zamorakian spear",
+	"description": "An evil spear.",
+	"value": "100000",
+	"equipSlot": "body",
+	"bonuses" : [
+		85,
+		65,
+		65,
+		0,
+		0,
+		13,
+		13,
+		12,
+		0,
+		13,
+		75,
+		2
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

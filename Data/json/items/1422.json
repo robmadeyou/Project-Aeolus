@@ -1,0 +1,30 @@
+{
+	"id": 1422,
+	"name": "Bronze mace",
+	"description": "A spiky mace.",
+	"value": "18",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		2,
+		-2,
+		6,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		5,
+		1
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

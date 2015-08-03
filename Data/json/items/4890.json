@@ -1,0 +1,48 @@
+{
+	"id": 4890,
+	"name": "Dharok's axe 0",
+	"description": "Dharok the Wretched's greataxe.",
+	"value": "208000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		103,
+		95,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		-1,
+		105,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		2065,
+		0,
+		2064,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		2067,
+		2067,
+		2067,
+		2066,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

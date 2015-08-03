@@ -1,0 +1,30 @@
+{
+	"id": 544,
+	"name": "Monk's robetop",
+	"description": "I feel closer to the gods when I am wearing this.",
+	"value": "40",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		6
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

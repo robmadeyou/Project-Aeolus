@@ -1,0 +1,30 @@
+{
+	"id": 4517,
+	"name": "Giant frog legs",
+	"description": "This could feed a family of gnomes for a week!",
+	"value": "100",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

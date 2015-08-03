@@ -1,0 +1,16 @@
+{
+	"id": 11738,
+	"name": "Mystic steam staff",
+	"description": "It's a slightly magical stick.",
+	"value": "45000",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

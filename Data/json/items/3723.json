@@ -1,0 +1,30 @@
+{
+	"id": 3723,
+	"name": "4/5ths full bucket",
+	"description": "This bucket is eighty percent full. It has a 5 painted on its side.",
+	"value": "1",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

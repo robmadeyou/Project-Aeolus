@@ -1,0 +1,30 @@
+{
+	"id": 10444,
+	"name": "Zamorak crozier",
+	"description": "A Zamorak crozier.",
+	"value": "5000",
+	"equipSlot": "body",
+	"bonuses" : [
+		7,
+		-1,
+		25,
+		10,
+		0,
+		2,
+		3,
+		1,
+		10,
+		0,
+		32,
+		6
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

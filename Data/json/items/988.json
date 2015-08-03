@@ -1,0 +1,7 @@
+{
+	"id": 988,
+	"name": "Loop half of a key",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "1",
+	"stackable": true
+}

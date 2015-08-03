@@ -1,0 +1,16 @@
+{
+	"id": 4083,
+	"name": "Sled",
+	"description": "It needs waxing before I can use it.",
+	"value": "150",
+	"animations" : [
+		1461,
+		0,
+		1468,
+		0,
+		0,
+		0,
+		1467
+	],
+	"stackable": false
+}

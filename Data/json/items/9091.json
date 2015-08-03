@@ -1,0 +1,16 @@
+{
+	"id": 9091,
+	"name": "Lunar staff - pt1",
+	"description": "A staff enchanted by air.",
+	"value": "15",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

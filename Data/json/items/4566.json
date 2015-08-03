@@ -1,0 +1,30 @@
+{
+	"id": 4566,
+	"name": "Rubber chicken",
+	"description": "Perhaps not the most powerful weapon in RuneScape.",
+	"value": "0",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-100,
+		-100,
+		-50,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		-10,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 6322,
+	"name": "Snakeskin body",
+	"description": "Made from 100% real snakeskin.",
+	"value": "1250",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-5,
+		12,
+		25,
+		38,
+		32,
+		15,
+		35,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

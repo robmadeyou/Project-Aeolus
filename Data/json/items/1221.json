@@ -1,0 +1,30 @@
+{
+	"id": 1221,
+	"name": "Bronze dagger(p)",
+	"description": "This dagger is poisoned.",
+	"value": "10",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		4,
+		2,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		3,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

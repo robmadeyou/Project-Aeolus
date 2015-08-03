@@ -1,0 +1,7 @@
+{
+	"id": 4053,
+	"name": "Barricade",
+	"description": "Use these to block enemy team movement.",
+	"value": "1",
+	"stackable": false
+}

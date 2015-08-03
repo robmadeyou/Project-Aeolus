@@ -1,0 +1,16 @@
+{
+	"id": 5654,
+	"name": "Bronze knife(p+)",
+	"description": "A finely balanced throwing knife.",
+	"value": "1",
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

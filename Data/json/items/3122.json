@@ -1,0 +1,30 @@
+{
+	"id": 3122,
+	"name": "Granite shield",
+	"description": "A solid stone shield.",
+	"value": "2000",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-12,
+		-8,
+		40,
+		42,
+		38,
+		0,
+		65,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

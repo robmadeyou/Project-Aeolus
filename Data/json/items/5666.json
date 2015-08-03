@@ -1,0 +1,16 @@
+{
+	"id": 5666,
+	"name": "Adamant knife(p++)",
+	"description": "A finely balanced throwing knife.",
+	"value": "66",
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

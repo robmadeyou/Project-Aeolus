@@ -1,0 +1,7 @@
+{
+	"id": 5600,
+	"name": "Tin",
+	"description": "A tin layered with some stuff from a vial.",
+	"value": "20",
+	"stackable": false
+}

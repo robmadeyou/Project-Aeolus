@@ -1,0 +1,30 @@
+{
+	"id": 3751,
+	"name": "Berserker helm",
+	"description": "This helmet is worn by berserkers.",
+	"value": "60000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-5,
+		-5,
+		31,
+		29,
+		33,
+		0,
+		30,
+		3,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		40,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

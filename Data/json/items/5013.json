@@ -1,0 +1,30 @@
+{
+	"id": 5013,
+	"name": "Mining helmet",
+	"description": "A helmet with a lamp on it.",
+	"value": "600",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

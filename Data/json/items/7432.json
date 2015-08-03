@@ -1,0 +1,7 @@
+{
+	"id": 7432,
+	"name": "Fungicide",
+	"description": "Does exactly what it says on the tin. (Kills Fungi.)",
+	"value": "10",
+	"stackable": false
+}

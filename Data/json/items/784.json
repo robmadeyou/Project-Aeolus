@@ -1,0 +1,30 @@
+{
+	"id": 784,
+	"name": "Translation book",
+	"description": "A book to translate the ancient gnome language into English.",
+	"value": "2",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

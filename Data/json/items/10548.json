@@ -1,0 +1,30 @@
+{
+	"id": 10548,
+	"name": "Fighter hat",
+	"description": "A Penance Fighter hat.",
+	"value": "5000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		5,
+		5,
+		5,
+		-7,
+		-7,
+		27,
+		29,
+		26,
+		-3,
+		28,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

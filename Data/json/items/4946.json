@@ -1,0 +1,48 @@
+{
+	"id": 4946,
+	"name": "Karil's skirt 100",
+	"description": "Karil the Tainted's leather skirt.",
+	"value": "47000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		17,
+		26,
+		20,
+		28,
+		35,
+		33,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		2074,
+		0,
+		2076,
+		0,
+		0,
+		0,
+		2077
+	],
+	"combatAnimations" : [
+		2075,
+		2075,
+		2075,
+		2075,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

@@ -1,0 +1,16 @@
+{
+	"id": 7684,
+	"name": "Dart",
+	"description": "Not much good in combat, but perfect for the dart board!",
+	"value": "1",
+	"combatAnimations" : [
+		6600,
+		6600,
+		582,
+		6600,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

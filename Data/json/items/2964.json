@@ -1,0 +1,25 @@
+{
+	"id": 2964,
+	"name": "Washing bowl",
+	"description": "Used for washing your face, amongst other things.",
+	"value": "4",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

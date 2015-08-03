@@ -1,0 +1,30 @@
+{
+	"id": 2861,
+	"name": "Wolfbone arrowtips",
+	"description": "I can make an ogre arrow with these.",
+	"value": "3",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

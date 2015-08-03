@@ -1,0 +1,30 @@
+{
+	"id": 1069,
+	"name": "Steel platelegs",
+	"description": "These look pretty heavy.",
+	"value": "1000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		17,
+		16,
+		15,
+		-4,
+		16,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

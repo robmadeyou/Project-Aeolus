@@ -1,0 +1,30 @@
+{
+	"id": 2942,
+	"name": "Gloves",
+	"description": "These will keep my hands warm!",
+	"value": "500",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		2,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

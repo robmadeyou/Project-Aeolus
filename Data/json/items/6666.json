@@ -1,0 +1,30 @@
+{
+	"id": 6666,
+	"name": "Flippers",
+	"description": "Strangely uncomfortable flippers.",
+	"value": "1",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

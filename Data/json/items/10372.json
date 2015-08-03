@@ -1,0 +1,30 @@
+{
+	"id": 10372,
+	"name": "Zamorak chaps",
+	"description": "Zamorak blessed dragonhide chaps.",
+	"value": "6000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		17,
+		31,
+		25,
+		33,
+		28,
+		31,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

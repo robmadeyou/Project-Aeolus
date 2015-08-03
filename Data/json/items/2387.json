@@ -1,0 +1,16 @@
+{
+	"id": 2387,
+	"name": "Damaged dagger",
+	"description": "Pointy.",
+	"value": "1",
+	"combatAnimations" : [
+		412,
+		412,
+		412,
+		412,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

@@ -1,0 +1,16 @@
+{
+	"id": 1410,
+	"name": "Iban's staff",
+	"description": "I'll need to get this repaired before I can use it.",
+	"value": "20",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 7539,
+	"name": "Crab helmet",
+	"description": "If it's good enough for crabs, it's good enough for me!",
+	"value": "1",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-3,
+		-1,
+		4,
+		5,
+		3,
+		-1,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

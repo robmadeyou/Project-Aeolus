@@ -1,0 +1,7 @@
+{
+	"id": 404,
+	"name": "Edible seaweed",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "2",
+	"stackable": true
+}

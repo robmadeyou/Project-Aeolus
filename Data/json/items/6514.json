@@ -1,0 +1,7 @@
+{
+	"id": 6514,
+	"name": "Agility jump",
+	"description": "Ability to jump, swing or use monkey bars.",
+	"value": "1",
+	"stackable": false
+}

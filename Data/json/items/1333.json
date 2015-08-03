@@ -1,0 +1,30 @@
+{
+	"id": 1333,
+	"name": "Rune scimitar",
+	"description": "A vicious, curved sword.",
+	"value": "25600",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		7,
+		45,
+		-2,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		44,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

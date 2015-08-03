@@ -1,0 +1,30 @@
+{
+	"id": 581,
+	"name": "Black robe",
+	"description": "I can do magic better in this.",
+	"value": "13",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		3,
+		0,
+		0,
+		0,
+		0,
+		3,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

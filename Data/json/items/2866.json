@@ -1,0 +1,30 @@
+{
+	"id": 2866,
+	"name": "Ogre arrow",
+	"description": "A large ogre arrow with a bone tip.",
+	"value": "25",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

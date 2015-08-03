@@ -1,0 +1,30 @@
+{
+	"id": 1844,
+	"name": "Slave shirt",
+	"description": "A filthy, smelly, flea infested shirt.",
+	"value": "40",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

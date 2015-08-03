@@ -1,0 +1,30 @@
+{
+	"id": 880,
+	"name": "Pearl bolts",
+	"description": "Useful if you have a crossbow!",
+	"value": "13",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

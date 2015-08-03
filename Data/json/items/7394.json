@@ -1,0 +1,30 @@
+{
+	"id": 7394,
+	"name": "Wizard hat (g)",
+	"description": "A silly pointed hat, with colourful trim.",
+	"value": "2",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

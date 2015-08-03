@@ -1,0 +1,39 @@
+{
+	"id": 4982,
+	"name": "Verac's flail 100",
+	"description": "Verac the Defiled's flail.",
+	"value": "160000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		68,
+		-2,
+		82,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		72,
+		6
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		1832,
+		0,
+		1830,
+		0,
+		0,
+		0,
+		1831
+	],
+	"stackable": false
+}

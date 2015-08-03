@@ -1,0 +1,30 @@
+{
+	"id": 6789,
+	"name": "Torn robe",
+	"description": "This robe is too torn to wear.",
+	"value": "1",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,7 @@
+{
+	"id": 5295,
+	"name": "Ranarr seed",
+	"description": "A ranarr seed - plant in a herb patch.",
+	"value": "10000",
+	"stackable": true
+}

@@ -1,0 +1,30 @@
+{
+	"id": 3755,
+	"name": "Farseer helm",
+	"description": "This helmet is worn by farseers.",
+	"value": "60000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		-5,
+		-5,
+		-5,
+		6,
+		-5,
+		8,
+		10,
+		12,
+		6,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		40,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

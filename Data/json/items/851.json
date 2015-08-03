@@ -1,0 +1,48 @@
+{
+	"id": 851,
+	"name": "Maple longbow",
+	"description": "A nice sturdy bow made out of Maple.",
+	"value": "640",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		29,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		30,
+		0
+	],
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		426,
+		426,
+		426,
+		426,
+		0
+	],
+	"twoHanded": true,
+	"special": false,
+	"stackable": false
+}

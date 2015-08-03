@@ -1,0 +1,16 @@
+{
+	"id": 6908,
+	"name": "Beginner wand",
+	"description": "A beginner level wand.",
+	"value": "1200",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

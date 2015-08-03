@@ -1,0 +1,30 @@
+{
+	"id": 2552,
+	"name": "Ring of dueling(8)",
+	"description": "An enchanted ring.",
+	"value": "1275",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

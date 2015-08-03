@@ -1,0 +1,39 @@
+{
+	"id": 2417,
+	"name": "Zamorak staff",
+	"description": "A magical staff imbued with the power of Zamorak.",
+	"value": "80000",
+	"equipSlot": "body",
+	"bonuses" : [
+		-1,
+		-1,
+		6,
+		6,
+		0,
+		2,
+		3,
+		1,
+		6,
+		0,
+		0,
+		20
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

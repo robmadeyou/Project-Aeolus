@@ -1,0 +1,39 @@
+{
+	"id": 1385,
+	"name": "Staff of earth",
+	"description": "A Magical staff.",
+	"value": "1500",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		3,
+		-1,
+		9,
+		10,
+		0,
+		2,
+		3,
+		1,
+		10,
+		0,
+		6,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

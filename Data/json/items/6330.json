@@ -1,0 +1,30 @@
+{
+	"id": 6330,
+	"name": "Snakeskin v'brace",
+	"description": "Made from 100% real snake.",
+	"value": "434",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-5,
+		6,
+		2,
+		2,
+		2,
+		1,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

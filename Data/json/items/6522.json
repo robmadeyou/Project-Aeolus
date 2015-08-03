@@ -1,0 +1,39 @@
+{
+	"id": 6522,
+	"name": "Toktz-xil-ul",
+	"description": "A razor sharp ring of obsidian.",
+	"value": "250",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		69,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		60,
+		0
+	],
+	"combatAnimations" : [
+		2614,
+		2614,
+		2614,
+		2614,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

@@ -1,0 +1,30 @@
+{
+	"id": 6339,
+	"name": "Tribal mask",
+	"description": "A ceremonial wooden mask.",
+	"value": "500",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 4531,
+	"name": "Candle lantern",
+	"description": "A flickering candle in a glass cage.",
+	"value": "15",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 6324,
+	"name": "Snakeskin chaps",
+	"description": "Made from 100% real snake.",
+	"value": "1175",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-5,
+		6,
+		8,
+		8,
+		10,
+		4,
+		10,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

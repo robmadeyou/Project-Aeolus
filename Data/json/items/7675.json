@@ -1,0 +1,16 @@
+{
+	"id": 7675,
+	"name": "Wooden sword",
+	"description": "A less-than razor sharp sword.",
+	"value": "1",
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

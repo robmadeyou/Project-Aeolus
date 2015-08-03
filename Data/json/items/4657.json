@@ -1,0 +1,30 @@
+{
+	"id": 4657,
+	"name": "Ring of visibility",
+	"description": "A ring that allows you to see things that are normally invisible...",
+	"value": "350",
+	"equipSlot": "ring",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

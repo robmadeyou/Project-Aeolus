@@ -1,0 +1,30 @@
+{
+	"id": 1099,
+	"name": "Green d'hide chaps",
+	"description": "Made from 100% real dragonhide.",
+	"value": "3900",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		11,
+		25,
+		19,
+		27,
+		14,
+		25,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		40,
+		0
+	],
+	"stackable": false
+}

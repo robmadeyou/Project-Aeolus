@@ -1,0 +1,30 @@
+{
+	"id": 1123,
+	"name": "Adamant platebody",
+	"description": "Provides excellent protection.",
+	"value": "12800",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-30,
+		-10,
+		65,
+		63,
+		55,
+		-6,
+		63,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

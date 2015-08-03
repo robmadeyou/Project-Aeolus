@@ -1,0 +1,30 @@
+{
+	"id": 4967,
+	"name": "Torag's body 25",
+	"description": "Torag the Corrupted's plate body armour.",
+	"value": "280000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-30,
+		-10,
+		122,
+		120,
+		107,
+		-6,
+		132,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

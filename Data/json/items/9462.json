@@ -1,0 +1,25 @@
+{
+	"id": 9462,
+	"name": "Mithril c'bow (u)",
+	"description": "Null",
+	"value": "750",
+	"animations" : [
+		808,
+		0,
+		819,
+		0,
+		0,
+		0,
+		824
+	],
+	"combatAnimations" : [
+		4230,
+		4230,
+		4230,
+		4230,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

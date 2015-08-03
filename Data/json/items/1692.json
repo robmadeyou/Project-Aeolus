@@ -1,0 +1,30 @@
+{
+	"id": 1692,
+	"name": "Gold amulet",
+	"description": "A plain gold amulet.",
+	"value": "350",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

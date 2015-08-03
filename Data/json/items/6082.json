@@ -1,0 +1,7 @@
+{
+	"id": 6082,
+	"name": "Fixed device",
+	"description": "A device for firing dye.",
+	"value": "150",
+	"stackable": false
+}

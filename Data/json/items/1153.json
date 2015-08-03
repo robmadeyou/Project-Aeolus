@@ -1,0 +1,30 @@
+{
+	"id": 1153,
+	"name": "Iron full helm",
+	"description": "A full face helmet.",
+	"value": "154",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		6,
+		7,
+		5,
+		-1,
+		6,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

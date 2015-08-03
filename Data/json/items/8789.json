@@ -1,0 +1,7 @@
+{
+	"id": 8789,
+	"name": "Magic stone",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "750000",
+	"stackable": true
+}

@@ -1,0 +1,30 @@
+{
+	"id": 1373,
+	"name": "Rune battleaxe",
+	"description": "A vicious looking axe.",
+	"value": "41600",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-2,
+		48,
+		43,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		64,
+		0
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 7384,
+	"name": "D-hide chaps (t)",
+	"description": "Made from 100% real dragonhide. With colourful trim!",
+	"value": "4320",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		11,
+		25,
+		19,
+		27,
+		14,
+		25,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

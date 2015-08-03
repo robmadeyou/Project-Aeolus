@@ -1,0 +1,30 @@
+{
+	"id": 3901,
+	"name": "Ghrim's book",
+	"description": "''Managing Thine Kingdom for Noobes'' by A. Ghrim.",
+	"value": "1",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

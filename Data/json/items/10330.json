@@ -1,0 +1,30 @@
+{
+	"id": 10330,
+	"name": "3rd age range top",
+	"description": "Fabulous rare range protection crafted from white dragonhide.",
+	"value": "45000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-15,
+		30,
+		55,
+		47,
+		60,
+		60,
+		55,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 1187,
+	"name": "Dragon sq shield",
+	"description": "An ancient and powerful looking Dragon Square shield.",
+	"value": "500000",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		50,
+		52,
+		48,
+		0,
+		50,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

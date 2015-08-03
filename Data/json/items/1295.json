@@ -1,0 +1,39 @@
+{
+	"id": 1295,
+	"name": "Steel longsword",
+	"description": "A razor sharp longsword.",
+	"value": "500",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		9,
+		14,
+		0,
+		0,
+		0,
+		3,
+		2,
+		0,
+		0,
+		0,
+		15,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

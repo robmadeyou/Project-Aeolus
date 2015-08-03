@@ -1,0 +1,30 @@
+{
+	"id": 7368,
+	"name": "Studded chaps (t)",
+	"description": "Those studs should provide a bit more protection. Nice trim too!",
+	"value": "750",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-4,
+		8,
+		18,
+		25,
+		22,
+		8,
+		25,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

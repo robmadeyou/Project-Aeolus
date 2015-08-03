@@ -1,0 +1,30 @@
+{
+	"id": 10555,
+	"name": "Penance skirt",
+	"description": "A skirt made of the skin of a penance ranger.",
+	"value": "8000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		15,
+		26,
+		21,
+		28,
+		19,
+		26,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

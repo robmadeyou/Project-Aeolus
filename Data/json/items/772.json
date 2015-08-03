@@ -1,0 +1,39 @@
+{
+	"id": 772,
+	"name": "Dramen staff",
+	"description": "Crafted from a Dramen tree branch.",
+	"value": "15",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-1,
+		-1,
+		10,
+		10,
+		0,
+		2,
+		3,
+		1,
+		10,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

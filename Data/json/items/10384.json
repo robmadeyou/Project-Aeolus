@@ -1,0 +1,30 @@
+{
+	"id": 10384,
+	"name": "Saradomin bracers",
+	"description": "Saradomin blessed dragonhide vambraces.",
+	"value": "4000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		11,
+		6,
+		5,
+		7,
+		8,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

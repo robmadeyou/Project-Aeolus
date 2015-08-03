@@ -1,0 +1,30 @@
+{
+	"id": 1135,
+	"name": "Green d'hide body",
+	"description": "Made from 100% real dragonhide.",
+	"value": "20000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-18,
+		15,
+		40,
+		32,
+		45,
+		20,
+		40,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		40,
+		0,
+		40,
+		0
+	],
+	"stackable": false
+}

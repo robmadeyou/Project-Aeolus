@@ -1,0 +1,30 @@
+{
+	"id": 1446,
+	"name": "Body talisman",
+	"description": "A mysterious power emanates from the talisman...",
+	"value": "4",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

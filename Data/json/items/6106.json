@@ -1,0 +1,30 @@
+{
+	"id": 6106,
+	"name": "Ghostly boots",
+	"description": "They seem to be not quite of this world...",
+	"value": "300",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

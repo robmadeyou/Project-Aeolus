@@ -1,0 +1,30 @@
+{
+	"id": 5545,
+	"name": "Law tiara",
+	"description": "A tiara infused with the properties of law.",
+	"value": "100",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

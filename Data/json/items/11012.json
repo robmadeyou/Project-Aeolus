@@ -1,0 +1,16 @@
+{
+	"id": 11012,
+	"name": "Wand",
+	"description": "Null",
+	"value": "1",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

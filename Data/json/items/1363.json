@@ -1,0 +1,30 @@
+{
+	"id": 1363,
+	"name": "Iron battleaxe",
+	"description": "A vicious looking axe.",
+	"value": "182",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-2,
+		8,
+		5,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		13,
+		0
+	],
+	"attackDelay": "6",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 2402,
+	"name": "Silverlight",
+	"description": "The magical sword 'Silverlight'.",
+	"value": "50",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		9,
+		14,
+		-2,
+		0,
+		0,
+		0,
+		3,
+		2,
+		1,
+		0,
+		12,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

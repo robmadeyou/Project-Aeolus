@@ -1,0 +1,30 @@
+{
+	"id": 9336,
+	"name": "Topaz bolts",
+	"description": "Topaz tipped Steel crossbow bolts.",
+	"value": "22",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

@@ -1,0 +1,30 @@
+{
+	"id": 2595,
+	"name": "Black full helm(g)",
+	"description": "Black full helm with gold trim.",
+	"value": "1056",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		12,
+		13,
+		10,
+		-1,
+		12,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

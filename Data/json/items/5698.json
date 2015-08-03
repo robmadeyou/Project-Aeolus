@@ -1,0 +1,30 @@
+{
+	"id": 5698,
+	"name": "Drag dagger(p++)",
+	"description": "A powerful dagger.",
+	"value": "24000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		40,
+		25,
+		-4,
+		1,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		40,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		60,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

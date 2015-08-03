@@ -1,0 +1,30 @@
+{
+	"id": 8913,
+	"name": "Black mask (4)",
+	"description": "A magic cave horror mask.",
+	"value": "3000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

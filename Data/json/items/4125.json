@@ -1,0 +1,30 @@
+{
+	"id": 4125,
+	"name": "Black boots",
+	"description": "These will protect my feet.",
+	"value": "576",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-3,
+		-1,
+		7,
+		8,
+		9,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

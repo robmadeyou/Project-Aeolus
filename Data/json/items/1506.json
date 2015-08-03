@@ -1,0 +1,30 @@
+{
+	"id": 1506,
+	"name": "Gas mask",
+	"description": "Stops me from breathing nasty stuff!",
+	"value": "2",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 6328,
+	"name": "Snakeskin boots",
+	"description": "Made from snakes.",
+	"value": "250",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		3,
+		1,
+		1,
+		2,
+		1,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

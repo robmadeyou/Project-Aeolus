@@ -1,0 +1,16 @@
+{
+	"id": 4068,
+	"name": "Decorative sword",
+	"description": "A very decorative sword.",
+	"value": "500",
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

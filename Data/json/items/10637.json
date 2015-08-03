@@ -1,0 +1,30 @@
+{
+	"id": 10637,
+	"name": "Fire cape",
+	"description": "Null",
+	"value": "60000",
+	"equipSlot": "cape",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

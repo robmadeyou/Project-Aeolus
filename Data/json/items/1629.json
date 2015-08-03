@@ -1,0 +1,30 @@
+{
+	"id": 1629,
+	"name": "Uncut red topaz",
+	"description": "This would be worth more cut.",
+	"value": "40",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

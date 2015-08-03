@@ -1,0 +1,30 @@
+{
+	"id": 2601,
+	"name": "Adam platelegs (t)",
+	"description": "Adamant platelegs with trim.",
+	"value": "6400",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		33,
+		31,
+		29,
+		-4,
+		31,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

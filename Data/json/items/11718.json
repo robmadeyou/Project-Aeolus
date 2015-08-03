@@ -1,0 +1,30 @@
+{
+	"id": 11718,
+	"name": "Armadyl helmet",
+	"description": "A helmet of great craftsmanship.",
+	"value": "20000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		-5,
+		-5,
+		-5,
+		-5,
+		10,
+		6,
+		8,
+		10,
+		10,
+		8,
+		0,
+		1
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		70,
+		0,
+		70,
+		0
+	],
+	"stackable": false
+}

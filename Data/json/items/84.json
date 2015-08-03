@@ -1,0 +1,16 @@
+{
+	"id": 84,
+	"name": "Staff of armadyl",
+	"description": "The power in this staff causes it to vibrate gently.",
+	"value": "15",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

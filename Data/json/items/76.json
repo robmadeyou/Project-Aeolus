@@ -1,0 +1,30 @@
+{
+	"id": 76,
+	"name": "Khazard cell keys",
+	"description": "These keys open the cells at the Khazard fight arena.",
+	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		11,
+		10,
+		0,
+		0,
+		5,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

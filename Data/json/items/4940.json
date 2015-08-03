@@ -1,0 +1,48 @@
+{
+	"id": 4940,
+	"name": "Karil's top 100",
+	"description": "Karil the Tainted's leather body armour.",
+	"value": "50000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-15,
+		30,
+		47,
+		42,
+		50,
+		65,
+		57,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"animations" : [
+		2074,
+		0,
+		2076,
+		0,
+		0,
+		0,
+		2077
+	],
+	"combatAnimations" : [
+		2075,
+		2075,
+		2075,
+		2075,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

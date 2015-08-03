@@ -1,0 +1,30 @@
+{
+	"id": 7595,
+	"name": "Zombie gloves",
+	"description": "Smells pretty funky.",
+	"value": "1",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

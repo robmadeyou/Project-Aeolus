@@ -1,0 +1,16 @@
+{
+	"id": 7991,
+	"name": "Big swordfish",
+	"description": "I should get it stuffed!",
+	"value": "2500",
+	"combatAnimations" : [
+		451,
+		451,
+		451,
+		451,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

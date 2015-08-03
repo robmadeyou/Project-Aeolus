@@ -1,0 +1,16 @@
+{
+	"id": 1813,
+	"name": "Criminal's dagger",
+	"description": "A flimsy-looking dagger found at the crime scene.",
+	"value": "1",
+	"combatAnimations" : [
+		412,
+		412,
+		412,
+		412,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

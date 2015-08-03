@@ -1,0 +1,30 @@
+{
+	"id": 1109,
+	"name": "Mithril chainbody",
+	"description": "A series of connected metal rings.",
+	"value": "1950",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-15,
+		0,
+		25,
+		35,
+		42,
+		-3,
+		19,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

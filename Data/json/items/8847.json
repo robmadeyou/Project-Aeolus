@@ -1,0 +1,30 @@
+{
+	"id": 8847,
+	"name": "Black defender",
+	"description": "A defensive weapon.",
+	"value": "1",
+	"equipSlot": "shield",
+	"bonuses" : [
+		9,
+		8,
+		7,
+		-3,
+		-2,
+		9,
+		8,
+		7,
+		-3,
+		-2,
+		2,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		10,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

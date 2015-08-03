@@ -1,0 +1,16 @@
+{
+	"id": 10150,
+	"name": "Noose wand",
+	"description": "Null",
+	"value": "4",
+	"animations" : [
+		809,
+		0,
+		1146,
+		0,
+		0,
+		0,
+		1210
+	],
+	"stackable": false
+}

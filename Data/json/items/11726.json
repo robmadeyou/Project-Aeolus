@@ -1,0 +1,30 @@
+{
+	"id": 11726,
+	"name": "Bandos tassets",
+	"description": "A sturdy pair of tassets.",
+	"value": "272500",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		71,
+		63,
+		66,
+		-4,
+		93,
+		2,
+		1
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		65,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

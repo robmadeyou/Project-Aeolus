@@ -1,0 +1,16 @@
+{
+	"id": 7447,
+	"name": "Kitchen knife",
+	"description": "A sharp, dependable knife, for filleting meat.",
+	"value": "8000",
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": false
+}

@@ -1,0 +1,7 @@
+{
+	"id": 966,
+	"name": "Tile",
+	"description": "A fraction of a roof.",
+	"value": "1",
+	"stackable": false
+}

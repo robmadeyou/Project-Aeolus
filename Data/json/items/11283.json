@@ -1,0 +1,30 @@
+{
+	"id": 11283,
+	"name": "Dragonfire shield",
+	"description": "A heavy shield with a snarling, draconic visage.",
+	"value": "2000000",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		-5,
+		70,
+		75,
+		72,
+		10,
+		72,
+		7,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		75,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 7449,
+	"name": "Meat tenderiser",
+	"description": "Often used to soften tough meat up.",
+	"value": "41500",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		9999,
+		9999,
+		9999,
+		9999,
+		9999,
+		9999,
+		9999,
+		9999,
+		9999,
+		9999,
+		9999,
+		9999
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

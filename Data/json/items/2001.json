@@ -1,0 +1,7 @@
+{
+	"id": 2001,
+	"name": "Uncooked stew",
+	"description": "I need to cook this.",
+	"value": "10",
+	"stackable": false
+}

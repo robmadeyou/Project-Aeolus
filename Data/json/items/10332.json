@@ -1,0 +1,30 @@
+{
+	"id": 10332,
+	"name": "3rd age range legs",
+	"description": "Fabulous rare range protection crafted from white dragonhide.",
+	"value": "40000",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		17,
+		31,
+		25,
+		33,
+		30,
+		31,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

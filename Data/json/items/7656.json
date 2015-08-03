@@ -1,0 +1,30 @@
+{
+	"id": 7656,
+	"name": "Guthix balance(unf)",
+	"description": "An unfinished potion.",
+	"value": "110",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

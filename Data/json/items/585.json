@@ -1,0 +1,7 @@
+{
+	"id": 585,
+	"name": "Bailing bucket",
+	"description": "It's a bailing bucket full of salty water.",
+	"value": "10",
+	"stackable": false
+}

@@ -1,0 +1,30 @@
+{
+	"id": 1271,
+	"name": "Adamant pickaxe",
+	"description": "Used for mining.",
+	"value": "3200",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		17,
+		-2,
+		15,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		19,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

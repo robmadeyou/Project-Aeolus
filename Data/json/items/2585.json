@@ -1,0 +1,30 @@
+{
+	"id": 2585,
+	"name": "Black platelegs (t)",
+	"description": "Black platelegs with trim.",
+	"value": "1920",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		21,
+		20,
+		19,
+		-4,
+		20,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

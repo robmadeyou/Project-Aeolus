@@ -1,0 +1,30 @@
+{
+	"id": 10452,
+	"name": "Saradomin mitre",
+	"description": "A Saradomin mitre.",
+	"value": "5000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		5
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

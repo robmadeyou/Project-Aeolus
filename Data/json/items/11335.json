@@ -1,0 +1,30 @@
+{
+	"id": 11335,
+	"name": "Dragon full helm",
+	"description": "Looks impressive and protects your head too.",
+	"value": "150000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		45,
+		48,
+		41,
+		-1,
+		46,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

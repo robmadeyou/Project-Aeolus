@@ -1,0 +1,30 @@
+{
+	"id": 10454,
+	"name": "Guthix mitre",
+	"description": "A Guthix mitre.",
+	"value": "5000",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		0,
+		0,
+		4,
+		0,
+		0,
+		5
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

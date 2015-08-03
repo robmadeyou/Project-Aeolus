@@ -1,0 +1,30 @@
+{
+	"id": 1189,
+	"name": "Bronze kiteshield",
+	"description": "A large metal shield.",
+	"value": "68",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-6,
+		-2,
+		5,
+		7,
+		6,
+		-1,
+		6,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

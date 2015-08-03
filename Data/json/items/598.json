@@ -1,0 +1,30 @@
+{
+	"id": 598,
+	"name": "Bronze fire arrows",
+	"description": "Arrows with bronze heads and oil soaked cloth.",
+	"value": "10",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"stackable": true
+}

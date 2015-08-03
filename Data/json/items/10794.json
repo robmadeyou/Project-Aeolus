@@ -1,0 +1,30 @@
+{
+	"id": 10794,
+	"name": "Guthix dragonhide",
+	"description": "Null",
+	"value": "13000",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		60,
+		60,
+		0,
+		0,
+		0
+	],
+	"stackable": false
+}

@@ -1,0 +1,16 @@
+{
+	"id": 876,
+	"name": "Rune knife(p)",
+	"description": "A finely balanced throwing knife.",
+	"value": "166",
+	"combatAnimations" : [
+		806,
+		806,
+		806,
+		806,
+		0
+	],
+	"twoHanded": false,
+	"special": false,
+	"stackable": true
+}

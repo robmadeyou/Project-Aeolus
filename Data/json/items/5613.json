@@ -1,0 +1,7 @@
+{
+	"id": 5613,
+	"name": "Initiate platelegs",
+	"description": "Swap this note at any bank for the equivalent item.",
+	"value": "8000",
+	"stackable": true
+}
