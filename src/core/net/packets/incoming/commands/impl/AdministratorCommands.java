@@ -2,6 +2,7 @@ package core.net.packets.incoming.commands.impl;
 
 import core.Server;
 import core.game.GameConstants;
+import core.game.model.entity.player.Equipment;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Punishments;
@@ -139,9 +140,11 @@ public class AdministratorCommands implements Command {
 			player.sendMessage("Searching: " + nameOfItem);
 			for (int j = 0; j < ItemTableManager.ITEMS.size(); j++) {
 				if (!ItemTableManager.ITEMS.isEmpty()) {
-					if (player.getEquipment().getItemName(j).replace("_", " ").toLowerCase()
+					player.getEquipment();
+					if (Equipment.getItemName(j).replace("_", " ").toLowerCase()
 							.contains(nameOfItem.toLowerCase())) {
-						player.sendMessage("<col=255>" + player.getEquipment().getItemName(j).replace("_", " ") + " - "
+						player.getEquipment();
+						player.sendMessage("<col=255>" + Equipment.getItemName(j).replace("_", " ") + " - "
 								+ player.getItems().getItemId(j));
 						results++;
 					}

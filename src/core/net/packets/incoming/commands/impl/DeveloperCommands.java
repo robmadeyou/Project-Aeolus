@@ -20,26 +20,6 @@ public class DeveloperCommands implements Command {
 	public void execute(Player player, String[] command) {
 		switch (command[0]) {		
 		
-		case "interface":
-			try {
-				int interfaceID = Integer.parseInt(command[1]);			
-				player.getPA().showInterface(interfaceID);
-				System.out.println(interfaceID);
-			} catch (Exception ex) {
-				player.sendMessage("Wrong Syntax use ::interface ####");
-			}
-			break;
-		
-		case "attr":
-			String key = command[1];
-			
-			Object testkey = (Boolean) player.getAttributes().get(key);
-			
-			player.sendMessage("Attribute : " + key + " is set to: " + testkey);
-			
-			break;
-		
-		
 		case "test":
 			player.sendMessage("I have access to developer commands.");
 			break;
@@ -120,6 +100,25 @@ public class DeveloperCommands implements Command {
 				}
 			}
 			System.exit(0);
+			break;
+			
+		case "interface":
+			try {
+				int interfaceID = Integer.parseInt(command[1]);			
+				player.getPA().showInterface(interfaceID);
+				System.out.println(interfaceID);
+			} catch (Exception ex) {
+				player.sendMessage("Wrong Syntax use ::interface ####");
+			}
+			break;
+		
+		case "attr":
+			String key = command[1];
+			
+			Object testkey = (Boolean) player.getAttributes().get(key);
+			
+			player.sendMessage("Attribute : " + key + " is set to: " + testkey);
+			
 			break;
 
 		case "emote":
