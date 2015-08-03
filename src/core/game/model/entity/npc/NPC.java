@@ -310,7 +310,7 @@ public class NPC extends Entity {
 			return true;
 		}
 		return false;
-	}
+	}	
 
 	@Override
 	public void process() {
@@ -323,4 +323,15 @@ public class NPC extends Entity {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	/**
+	 * Npc names
+	 **/
+	public String getNpcName(int npcId) {
+		if (NPCDefinitions.getDefinitions()[npcId] == null || npcId <= -1) {
+			return "None";
+		}
+		return NPCDefinitions.getDefinitions()[npcId].getName();
+	}
+	
 }
