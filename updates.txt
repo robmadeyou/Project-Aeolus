@@ -50,3 +50,7 @@
 - More attributes set
 - Created a new class for all GameConstants (GameConstants)
 - Config file only consists of toggles and main configs (I may seperate the toggles, not sure yet)
+
+~ August 3, 2015
+- Chat logs, Trade logs, and Report logs made
+- Clipping system added, tested and works great.

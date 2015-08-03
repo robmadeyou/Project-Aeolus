@@ -1,6 +1,0 @@
-.*
-~*
-bin
-data/fs/*
-data/www/*
-!.gitignore
