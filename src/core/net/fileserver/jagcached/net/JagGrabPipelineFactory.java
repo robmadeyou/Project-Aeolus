@@ -12,6 +12,7 @@ import org.jboss.netty.handler.codec.string.StringDecoder;
 import org.jboss.netty.handler.timeout.IdleStateHandler;
 import org.jboss.netty.util.Timer;
 
+import core.net.NetworkConstants;
 import core.net.fileserver.jagcached.net.jaggrab.JagGrabRequestDecoder;
 import core.net.fileserver.jagcached.net.jaggrab.JagGrabResponseEncoder;
 

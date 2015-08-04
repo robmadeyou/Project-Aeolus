@@ -8,6 +8,8 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.util.zip.CRC32;
 
+import core.Config;
+
 /**
  * A file system based on top of the operating system's file system. It
  * consists of a data file and index files. Index files point to blocks in the
@@ -44,7 +46,7 @@ public final class IndexedFileSystem implements Closeable {
 	 */
 	public IndexedFileSystem(File base, boolean readOnly) throws Exception {
 		this.readOnly = readOnly;
-		detectLayout(base);
+		detectLayout();
 	}
 	
 	/**
@@ -60,10 +62,10 @@ public final class IndexedFileSystem implements Closeable {
 	 * @param base The base directory.
 	 * @throws Exception if the file system is invalid.
 	 */
-	private void detectLayout(File base) throws Exception {
+	private void detectLayout() throws Exception {
 		int indexCount = 0;
 		for (int index = 0; index < indices.length; index++) {
-			File f = new File(base.getAbsolutePath() + "/main_file_cache.idx" + index);
+			File f = new File(Config.DATA_DIR + "cache/main_file_cache.idx" + index);
 			if (f.exists() && !f.isDirectory()) {
 				indexCount++;
 				indices[index] = new RandomAccessFile(f, readOnly ? "r" : "rw");
@@ -73,8 +75,8 @@ public final class IndexedFileSystem implements Closeable {
 			throw new Exception("No index file(s) present");
 		}
 		
-		File oldEngineData = new File(base.getAbsolutePath() + "/main_file_cache.dat");
-		File newEngineData = new File(base.getAbsolutePath() + "/main_file_cache.dat2");
+		File oldEngineData = new File(Config.DATA_DIR + "cache/main_file_cache.dat");
+		File newEngineData = new File(Config.DATA_DIR + "cache/main_file_cache.dat2");
 		if (oldEngineData.exists() && !oldEngineData.isDirectory()) {
 			data = new RandomAccessFile(oldEngineData, readOnly ? "r" : "rw");
 		} else if (newEngineData.exists() && !oldEngineData.isDirectory()) {

@@ -24,7 +24,6 @@ import core.game.model.shop.ShopAssistant;
 import core.game.tick.Scheduler;
 import core.game.tick.Tick;
 import core.game.util.Censor;
-import core.game.util.ISAACCipher;
 import core.game.util.Misc;
 import core.game.util.Stream;
 import core.game.util.log.impl.ChatLogger;
@@ -32,6 +31,7 @@ import core.game.util.log.impl.TradeLogger;
 import core.net.Packet;
 import core.net.Packet.Type;
 import core.net.packets.PacketHandler;
+import core.net.security.ISAACCipher;
 
 @SuppressWarnings("all")
 public class Player extends Entity {

@@ -7,6 +7,7 @@ import org.jboss.netty.channel.Channels;
 import org.jboss.netty.handler.timeout.IdleStateHandler;
 import org.jboss.netty.util.Timer;
 
+import core.net.NetworkConstants;
 import core.net.fileserver.jagcached.net.ondemand.OnDemandRequestDecoder;
 import core.net.fileserver.jagcached.net.ondemand.OnDemandResponseEncoder;
 import core.net.fileserver.jagcached.net.service.ServiceRequestDecoder;

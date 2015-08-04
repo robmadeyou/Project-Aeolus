@@ -1,6 +1,7 @@
 package core.game.util;
 
 import core.game.GameConstants;
+import core.net.security.ISAACCipher;
 
 public class Stream {
 

@@ -16,9 +16,9 @@ import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
 import core.game.model.entity.player.save.PlayerSave;
-import core.game.util.ISAACCipher;
 import core.game.util.Misc;
 import core.net.PacketBuilder;
+import core.net.security.ISAACCipher;
 
 @SuppressWarnings("all")
 public class RS2LoginProtocol extends FrameDecoder {

@@ -11,7 +11,7 @@ import org.python.core.PyObject;
 import org.python.util.PythonInterpreter;
 
 import core.Config;
-import core.game.util.log.Logger;
+import core.game.util.log.CustomLogger;
 
 public class PluginManager {
 
@@ -23,7 +23,6 @@ public class PluginManager {
 		try {
 			loadScripts();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -77,7 +76,7 @@ public class PluginManager {
 	}
 
 	public static void loadScripts() throws IOException {
-		System.setOut(new Logger(System.out));
+		System.setOut(new CustomLogger(System.out));
 		System.out.println("Loading scripts...");
 		PluginManager.python.cleanup();
 		File scriptDir = new File(Config.DATA_DIR + "./plugin/scripts/");
@@ -119,7 +118,7 @@ public class PluginManager {
 	}
 
 	static {
-		PluginManager.python.setOut(new Logger(System.out));
-		PluginManager.python.setErr(new Logger(System.err));
+		PluginManager.python.setOut(new CustomLogger(System.out));
+		PluginManager.python.setErr(new CustomLogger(System.err));
 	}
 }

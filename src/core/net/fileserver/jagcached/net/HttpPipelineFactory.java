@@ -9,6 +9,8 @@ import org.jboss.netty.handler.codec.http.HttpResponseEncoder;
 import org.jboss.netty.handler.timeout.IdleStateHandler;
 import org.jboss.netty.util.Timer;
 
+import core.net.NetworkConstants;
+
 /**
  * A {@link ChannelPipelineFactory} for the HTTP protocol.
  * @author Graham
