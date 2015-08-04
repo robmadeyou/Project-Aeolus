@@ -4,13 +4,13 @@ character-password = test
 
 [CHARACTER]
 character-height = 0
-character-posx = 3087
-character-posy = 3499
+character-posx = 3093
+character-posy = 3498
 character-rights = 0
 crystal-bow-shots = 0
 skull-timer = 0
 magic-book = 0
-special-amount = 0.0
+special-amount = 10.0
 teleblock-length = 0
 autoRet = 0
 flagged = false

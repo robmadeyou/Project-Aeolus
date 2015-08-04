@@ -1,20 +1,16 @@
-package core.game.task;
+package core.game.event.tick;
+
 
 /**
- * Represents a periodic task that can be scheduled with a {@link TaskScheduler}.
+ * Represents a periodic task that can be scheduled with a {@link Scheduler}.
  * @author Graham
  */
-public abstract class Task2 {
+public abstract class Tick {
 
 	/**
 	 * The number of cycles between consecutive executions of this task.
 	 */
 	private final int delay;
-
-	/**
-	 * A flag which indicates if this task should be executed once immediately.
-	 */
-	private final boolean immediate;
 
 	/**
 	 * The current 'count down' value. When this reaches zero the task will be
@@ -28,52 +24,15 @@ public abstract class Task2 {
 	private boolean running = true;
 
 	/**
-	 * Creates a new task with a delay of 1 cycle.
-	 */
-	public Task2() {
-		this(1);
-	}
-
-	/**
-	 * Creates a new task with a delay of 1 cycle and immediate flag.
-	 * @param immediate A flag that indicates if for the first execution there
-	 * should be no delay.
-	 */
-	public Task2(boolean immediate) {
-		this(1, immediate);
-	}
-
-	/**
 	 * Creates a new task with the specified delay.
 	 * @param delay The number of cycles between consecutive executions of this
 	 * task.
 	 * @throws IllegalArgumentException if the {@code delay} is not positive.
 	 */
-	public Task2(int delay) {
-		this(delay, false);
-	}
-
-	/**
-	 * Creates a new task with the specified delay and immediate flag.
-	 * @param delay The number of cycles between consecutive executions of this
-	 * task.
-	 * @param immediate A flag which indicates if for the first execution there
-	 * should be no delay. 
-	 * @throws IllegalArgumentException if the {@code delay} is not positive.
-	 */
-	public Task2(int delay, boolean immediate) {
+	public Tick(int delay) {
 		checkDelay(delay);
 		this.delay = delay;
 		this.countdown = delay;
-		this.immediate = immediate;
-	}
-
-	/**
-	 * Checks if this task is an immediate task.
-	 * @return {@code true} if so, {@code false} if not.
-	 */
-	public boolean isImmediate() {
-		return immediate;
 	}
 
 	/**
@@ -106,6 +65,10 @@ public abstract class Task2 {
 		return running;
 	}
 
+	public int getCountdown() {
+		return countdown;
+	}
+	
 	/**
 	 * Performs this task's action.
 	 */
@@ -127,17 +90,35 @@ public abstract class Task2 {
 	 * @throws IllegalStateException if the task has already been stopped.
 	 */
 	public void stop() {
+		if(!checkStopped())
+			return;
+		running = false;
+		onStop();
+	}
+
+	/**
+	 * Stops this task. Does not run the onStop method.
+	 * @throws IllegalStateException if the task has already been stopped.
+	 */
+	public void forceStop() {
 		checkStopped();
 		running = false;
 	}
-
+	
+	/**
+	 * Override this method for code which should be run when the task stops.
+	 */
+	public void onStop() {
+		
+	}
+	
 	/**
 	 * Checks if the delay is negative and throws an exception if so.
 	 * @param delay The delay.
 	 * @throws IllegalArgumentException if the delay is not positive.
 	 */
 	private void checkDelay(int delay) {
-		if (delay <= 0)
+		if (delay < 0)
 			throw new IllegalArgumentException("Delay must be positive.");
 	}
 
@@ -145,9 +126,8 @@ public abstract class Task2 {
 	 * Checks if this task has been stopped and throws an exception if so.
 	 * @throws IllegalStateException if the task has been stopped.
 	 */
-	private void checkStopped() {
-		if (!running)
-			throw new IllegalStateException();
+	private boolean checkStopped() {
+		return running;
 	}
 
 }

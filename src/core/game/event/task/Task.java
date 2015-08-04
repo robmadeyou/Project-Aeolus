@@ -1,4 +1,4 @@
-package core.game.task;
+package core.game.event.task;
 
 import java.util.Objects;
 

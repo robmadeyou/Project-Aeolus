@@ -2,12 +2,12 @@ package core.net.packets.incoming.clicking;
 
 import core.game.GameConstants;
 import core.game.content.dialogue.DialogueType;
+import core.game.event.tick.Tick;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
 import core.game.model.item.GameItem;
 import core.game.plugin.PluginManager;
-import core.game.tick.Tick;
 import core.net.packets.incoming.clicking.dialogueoptions.DialogueOption;
 import core.net.packets.incoming.clicking.dialogueoptions.FiveOptionsDialogue;
 import core.net.packets.incoming.clicking.dialogueoptions.FourOptionsDialogue;

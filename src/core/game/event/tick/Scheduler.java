@@ -1,4 +1,4 @@
-package core.game.tick;
+package core.game.event.tick;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

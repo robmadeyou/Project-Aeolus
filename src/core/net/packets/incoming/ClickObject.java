@@ -1,8 +1,8 @@
 package core.net.packets.incoming;
 
+import core.game.event.task.Task;
+import core.game.event.task.TaskHandler;
 import core.game.model.entity.player.Player;
-import core.game.task.Task;
-import core.game.task.TaskHandler;
 import core.net.packets.PacketType;
 
 /**

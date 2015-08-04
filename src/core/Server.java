@@ -11,6 +11,8 @@ import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.util.HashedWheelTimer;
 
+import core.game.event.task.Task2;
+import core.game.event.task.TaskScheduler;
 import core.game.model.entity.npc.NPCHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
@@ -20,8 +22,6 @@ import core.game.model.object.ObjectHandler;
 import core.game.model.object.ObjectManager;
 import core.game.model.shop.ShopHandler;
 import core.game.plugin.PluginManager;
-import core.game.task.Task2;
-import core.game.task.TaskScheduler;
 import core.game.util.Misc;
 import core.game.util.json.NpcDefinitionLoader;
 import core.game.util.log.CustomLogger;

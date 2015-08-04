@@ -1,8 +1,8 @@
 package core.net.packets.incoming;
 
 import core.Server;
+import core.game.event.tick.Tick;
 import core.game.model.entity.player.Player;
-import core.game.tick.Tick;
 import core.net.packets.PacketType;
 
 /**
