@@ -1,7 +1,7 @@
 {
 	"id": 9813,
 	"name": "Quest point cape",
-	"description": "The cape worn by masters of Quests.",
+	"description": "It's a Quest point cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

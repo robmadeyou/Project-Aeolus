@@ -1,8 +1,8 @@
 {
 	"id": 68,
 	"name": "Yew shortbow (u)",
-	"description": "An unstrung yew shortbow, I need a bowstring for this.",
-	"value": "400",
+	"description": "It's a Yew shortbow (u).",
+	"value": "231",
 	"animations" : [
 		808,
 		0,

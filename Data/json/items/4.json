@@ -1,7 +1,7 @@
 {
 	"id": 4,
 	"name": "Ammo mould",
-	"description": "Used to make cannon ammunition.",
+	"description": "It's an Ammo mould.",
 	"value": "5",
 	"stackable": false
 }

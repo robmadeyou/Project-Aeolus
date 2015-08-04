@@ -1,7 +1,7 @@
 {
 	"id": 9098,
 	"name": "Lunar legs",
-	"description": "These should protect my legs.",
+	"description": "It's a Lunar legs.",
 	"value": "100",
 	"equipSlot": "legs",
 	"bonuses" : [
@@ -9,7 +9,7 @@
 		0,
 		0,
 		7,
-		7,
+		-7,
 		20,
 		19,
 		23,

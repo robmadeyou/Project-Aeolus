@@ -1,8 +1,8 @@
 {
 	"id": 9145,
 	"name": "Silver bolts",
-	"description": "Silver crossbow bolts.",
-	"value": "5",
+	"description": "It's a Silver bolts.",
+	"value": "10",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

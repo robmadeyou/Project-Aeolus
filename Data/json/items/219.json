@@ -1,7 +1,7 @@
 {
 	"id": 219,
-	"name": "Herb",
-	"description": "I need to clean this herb before I can use it.",
-	"value": "1",
+	"name": "Grimy torstol",
+	"description": "It's a Grimy torstol.",
+	"value": "54900",
 	"stackable": false
 }

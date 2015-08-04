@@ -1,7 +1,7 @@
 {
 	"id": 737,
 	"name": "Snakeweed mixture",
-	"description": "It's a mixture of Snakeweed and water. Needs another ingredient.",
+	"description": "It's a Snakeweed mixture.",
 	"value": "1",
 	"stackable": false
 }

@@ -1,7 +1,30 @@
 {
 	"id": 9646,
 	"name": "Castle sketch 1",
-	"description": "Null",
+	"description": "It's a Castle sketch 1.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		2,
+		2,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

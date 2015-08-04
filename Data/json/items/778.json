@@ -1,7 +1,7 @@
 {
 	"id": 778,
 	"name": "Steel gauntlets",
-	"description": "My reward for assisting the Fitzharmon family.",
+	"description": "It's a Steel gauntlets.",
 	"value": "1",
 	"equipSlot": "gloves",
 	"bonuses" : [
@@ -12,7 +12,7 @@
 		0,
 		8,
 		9,
-		0,
+		7,
 		0,
 		0,
 		2,

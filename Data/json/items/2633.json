@@ -1,8 +1,8 @@
 {
 	"id": 2633,
 	"name": "Blue beret",
-	"description": "Parlez-vous francais?",
-	"value": "80",
+	"description": "It's a Blue beret.",
+	"value": "59800",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

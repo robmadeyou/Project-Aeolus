@@ -1,30 +1,7 @@
 {
 	"id": 3724,
 	"name": "3/5ths full bucket",
-	"description": "This bucket is sixty percent full. It has a 5 painted on its side.",
+	"description": "It's a 3/5ths full bucket.",
 	"value": "1",
-	"equipSlot": "hat",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
 	"stackable": false
 }

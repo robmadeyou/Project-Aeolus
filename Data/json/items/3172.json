@@ -1,7 +1,7 @@
 {
 	"id": 3172,
 	"name": "Steel spear(kp)",
-	"description": "A Karambwan poisoned steel tipped spear.",
+	"description": "It's a Steel spear(kp).",
 	"value": "325",
 	"equipSlot": "weapon",
 	"bonuses" : [

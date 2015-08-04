@@ -1,8 +1,8 @@
 {
 	"id": 3096,
 	"name": "Iron claws",
-	"description": "A set of fighting claws.",
-	"value": "50",
+	"description": "It's an Iron claws.",
+	"value": "34",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		4,

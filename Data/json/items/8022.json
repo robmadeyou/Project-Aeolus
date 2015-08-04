@@ -1,7 +1,7 @@
 {
 	"id": 8022,
 	"name": "Telekinetic grab",
-	"description": "A tablet containing a magic spell.",
+	"description": "It's a Telekinetic grab.",
 	"value": "1",
 	"stackable": true
 }

@@ -1,7 +1,7 @@
 {
 	"id": 7539,
 	"name": "Crab helmet",
-	"description": "If it's good enough for crabs, it's good enough for me!",
+	"description": "It's a Crab helmet.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		-3,
 		-1,
-		4,
 		5,
+		4,
 		3,
 		-1,
-		0,
+		4,
 		0,
 		0
 	],

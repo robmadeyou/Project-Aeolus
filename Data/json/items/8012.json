@@ -1,7 +1,7 @@
 {
 	"id": 8012,
-	"name": "Watchtower t'port",
-	"description": "A tablet containing a magic spell.",
-	"value": "1",
+	"name": "Watchtower teleport",
+	"description": "It's a Watchtower teleport.",
+	"value": "1013",
 	"stackable": true
 }

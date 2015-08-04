@@ -1,8 +1,8 @@
 {
 	"id": 877,
-	"name": "Bolts",
-	"description": "Good if you have a crossbow!",
-	"value": "0",
+	"name": "Bronze bolts",
+	"description": "It's a Bronze bolts.",
+	"value": "10",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

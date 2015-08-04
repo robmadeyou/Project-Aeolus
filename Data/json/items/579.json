@@ -1,8 +1,8 @@
 {
 	"id": 579,
-	"name": "Wizard hat",
-	"description": "A silly pointed hat.",
-	"value": "2",
+	"name": "Blue wizard hat",
+	"description": "It's a Blue wizard hat.",
+	"value": "551",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

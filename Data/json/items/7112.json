@@ -1,7 +1,30 @@
 {
 	"id": 7112,
-	"name": "Pirate bandanna",
-	"description": "Essential pirate wear.",
-	"value": "100",
+	"name": "Pirate bandana",
+	"description": "It's a Pirate bandana.",
+	"value": "369",
+	"equipSlot": "hat",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

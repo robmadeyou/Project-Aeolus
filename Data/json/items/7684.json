@@ -1,7 +1,7 @@
 {
 	"id": 7684,
 	"name": "Dart",
-	"description": "Not much good in combat, but perfect for the dart board!",
+	"description": "It's a Dart.",
 	"value": "1",
 	"combatAnimations" : [
 		6600,

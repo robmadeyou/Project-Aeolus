@@ -1,15 +1,15 @@
 {
 	"id": 816,
 	"name": "Adamant dart(p)",
-	"description": "A deadly poisoned dart with an adamantite tip.",
-	"value": "65",
+	"description": "It's an Adamant dart(p).",
+	"value": "64",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
 		0,
 		0,
-		15,
+		11,
 		0,
 		0,
 		0,

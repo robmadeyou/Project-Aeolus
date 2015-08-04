@@ -1,7 +1,7 @@
 {
 	"id": 10933,
 	"name": "Lumberjack boots",
-	"description": "Null",
+	"description": "It's a Lumberjack boots.",
 	"value": "50",
 	"equipSlot": "boots",
 	"bonuses" : [

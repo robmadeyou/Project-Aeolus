@@ -1,8 +1,8 @@
 {
 	"id": 4099,
-	"name": "Mystic hat",
-	"description": "A dark magical hat.",
-	"value": "15000",
+	"name": "Mystic hat (dark)",
+	"description": "It's a Mystic hat (dark).",
+	"value": "16900",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

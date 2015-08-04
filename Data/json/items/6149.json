@@ -1,8 +1,8 @@
 {
 	"id": 6149,
 	"name": "Spined gloves",
-	"description": "Fremennik gloves stitched together from spined dagannoth hide.",
-	"value": "650",
+	"description": "It's a Spined gloves.",
+	"value": "1022",
 	"equipSlot": "gloves",
 	"bonuses" : [
 		0,
@@ -11,10 +11,10 @@
 		0,
 		0,
 		0,
-		0,
-		0,
 		1,
 		2,
+		0,
+		0,
 		0,
 		0
 	],

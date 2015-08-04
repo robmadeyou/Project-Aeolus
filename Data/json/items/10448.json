@@ -1,9 +1,9 @@
 {
 	"id": 10448,
 	"name": "Guthix cloak",
-	"description": "A Guthix cloak.",
-	"value": "2000",
-	"equipSlot": "cape",
+	"description": "It's a Guthix cloak.",
+	"value": "420500",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
@@ -16,7 +16,7 @@
 		3,
 		3,
 		0,
-		3
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

@@ -1,8 +1,8 @@
 {
 	"id": 1249,
 	"name": "Dragon spear",
-	"description": "A dragon tipped spear.",
-	"value": "62400",
+	"description": "It's a Dragon spear.",
+	"value": "38500",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		55,

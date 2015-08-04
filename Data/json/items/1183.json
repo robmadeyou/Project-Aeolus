@@ -1,8 +1,8 @@
 {
 	"id": 1183,
 	"name": "Adamant sq shield",
-	"description": "A medium square shield.",
-	"value": "3840",
+	"description": "It's an Adamant sq shield.",
+	"value": "2182",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 6430,
 	"name": "Chaos rune",
-	"description": "Used for low level missile spells.",
+	"description": "It's a Chaos rune.",
 	"value": "1",
 	"stackable": false
 }

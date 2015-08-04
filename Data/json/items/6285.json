@@ -1,8 +1,8 @@
 {
 	"id": 6285,
 	"name": "Thatch spar dense",
-	"description": "A wooden pole for use in primitive construction.",
-	"value": "20",
+	"description": "It's a Thatch spar dense.",
+	"value": "13",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

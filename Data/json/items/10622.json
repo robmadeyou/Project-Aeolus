@@ -1,7 +1,7 @@
 {
 	"id": 10622,
 	"name": "Kyatt top",
-	"description": "Null",
+	"description": "It's a Kyatt top.",
 	"value": "200",
 	"equipSlot": "body",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
+		10,
+		15,
+		19,
 		0,
-		0,
-		0,
-		0,
-		0,
+		12,
 		0,
 		0
 	],

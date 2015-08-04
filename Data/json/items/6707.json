@@ -1,7 +1,7 @@
 {
 	"id": 6707,
 	"name": "Camulet",
-	"description": "An amulet of Camel-speak. It makes vague braying noises.",
+	"description": "It's a Camulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

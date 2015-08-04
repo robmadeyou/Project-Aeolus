@@ -1,7 +1,7 @@
 {
 	"id": 566,
 	"name": "Soul rune",
-	"description": "Used for high level curse spells.",
-	"value": "300",
+	"description": "It's a Soul rune.",
+	"value": "317",
 	"stackable": true
 }

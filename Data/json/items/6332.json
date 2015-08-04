@@ -1,7 +1,30 @@
 {
 	"id": 6332,
 	"name": "Mahogany logs",
-	"description": "Some rare mahogany logs.",
-	"value": "1",
+	"description": "It's a Mahogany logs.",
+	"value": "878",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-5,
+		4,
+		2,
+		2,
+		2,
+		1,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

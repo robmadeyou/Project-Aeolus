@@ -1,7 +1,7 @@
 {
 	"id": 3700,
 	"name": "Sturdy boots",
-	"description": "A pair of sturdy custom made boots.",
+	"description": "It's a Sturdy boots.",
 	"value": "1",
 	"equipSlot": "boots",
 	"bonuses" : [

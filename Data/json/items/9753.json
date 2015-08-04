@@ -1,7 +1,7 @@
 {
 	"id": 9753,
 	"name": "Defence cape",
-	"description": "The cape worn by masters of Defence.",
+	"description": "It's a Defence cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

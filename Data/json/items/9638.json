@@ -1,9 +1,9 @@
 {
 	"id": 9638,
 	"name": "Vyrewatch shoes",
-	"description": "Null",
-	"value": "500",
-	"equipSlot": "boots",
+	"description": "It's a Vyrewatch shoes.",
+	"value": "1365",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		2,
+		2,
 		0,
 		0,
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 888,
 	"name": "Mithril arrow",
-	"description": "Arrows with mithril heads.",
-	"value": "32",
+	"description": "It's a Mithril arrow.",
+	"value": "45",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

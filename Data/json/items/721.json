@@ -1,7 +1,7 @@
 {
 	"id": 721,
 	"name": "Gold bowl",
-	"description": "A specially made bowl constructed out of pure gold.",
+	"description": "It's a Gold bowl.",
 	"value": "700",
 	"animations" : [
 		808,

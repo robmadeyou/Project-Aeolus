@@ -1,8 +1,8 @@
 {
 	"id": 5547,
 	"name": "Death tiara",
-	"description": "A tiara infused with the properties of death.",
-	"value": "100",
+	"description": "It's a Death tiara.",
+	"value": "904",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 3175,
 	"name": "Rune spear(kp)",
-	"description": "A Karambwan poisoned rune tipped spear.",
+	"description": "It's a Rune spear(kp).",
 	"value": "20800",
 	"equipSlot": "weapon",
 	"bonuses" : [

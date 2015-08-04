@@ -1,8 +1,8 @@
 {
 	"id": 10069,
 	"name": "Spotted cape",
-	"description": "Null",
-	"value": "400",
+	"description": "It's a Spotted cape.",
+	"value": "740",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,
@@ -11,10 +11,10 @@
 		0,
 		0,
 		0,
+		1,
+		1,
 		0,
-		0,
-		0,
-		0,
+		2,
 		0,
 		0
 	],

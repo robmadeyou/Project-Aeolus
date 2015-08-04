@@ -1,8 +1,8 @@
 {
 	"id": 820,
 	"name": "Iron dart tip",
-	"description": "A deadly looking dart tip made of iron - needs feathers for flight.",
-	"value": "3",
+	"description": "It's an Iron dart tip.",
+	"value": "27",
 	"combatAnimations" : [
 		6600,
 		6600,

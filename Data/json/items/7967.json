@@ -1,7 +1,7 @@
 {
 	"id": 7967,
 	"name": "Engine",
-	"description": "A dwarf-made coal engine. It looks very sturdy.",
+	"description": "It's an Engine.",
 	"value": "5",
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 1731,
 	"name": "Amulet of power",
-	"description": "An enchanted diamond amulet of power.",
-	"value": "4500",
+	"description": "It's an Amulet of power.",
+	"value": "2112",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		6,
@@ -15,8 +15,8 @@
 		6,
 		6,
 		6,
-		4,
-		1
+		6,
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

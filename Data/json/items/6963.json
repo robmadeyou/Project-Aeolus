@@ -1,7 +1,7 @@
 {
 	"id": 6963,
 	"name": "Roll",
-	"description": "A freshly made roll.",
+	"description": "It's a Roll.",
 	"value": "25",
 	"stackable": false
 }

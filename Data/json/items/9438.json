@@ -1,8 +1,8 @@
 {
 	"id": 9438,
 	"name": "Crossbow string",
-	"description": "Null",
-	"value": "1",
+	"description": "It's a Crossbow string.",
+	"value": "136",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

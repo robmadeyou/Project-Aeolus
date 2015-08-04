@@ -1,7 +1,7 @@
 {
 	"id": 8844,
 	"name": "Bronze defender",
-	"description": "A defensive weapon.",
+	"description": "It's a Bronze defender.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [

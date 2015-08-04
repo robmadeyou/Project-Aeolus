@@ -1,9 +1,9 @@
 {
 	"id": 10723,
 	"name": "Jack lantern mask",
-	"description": "Null",
+	"description": "It's a Jack lantern mask.",
 	"value": "1",
-	"equipSlot": "shield",
+	"equipSlot": "hat",
 	"bonuses" : [
 		0,
 		0,

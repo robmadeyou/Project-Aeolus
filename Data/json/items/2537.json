@@ -1,8 +1,8 @@
 {
 	"id": 2537,
 	"name": "Mithril fire arrows",
-	"description": "These mithril headed arrows are ablaze with fire.",
-	"value": "10",
+	"description": "It's a Mithril fire arrows.",
+	"value": "281",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 83,
 	"name": "Lever",
-	"description": "A lever to open something perhaps?",
+	"description": "It's a Lever.",
 	"value": "15",
 	"stackable": false
 }

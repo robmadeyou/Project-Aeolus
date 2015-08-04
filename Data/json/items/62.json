@@ -1,8 +1,8 @@
 {
 	"id": 62,
 	"name": "Maple longbow (u)",
-	"description": "An unstrung maple longbow, I need a bowstring for this.",
-	"value": "320",
+	"description": "It's a Maple longbow (u).",
+	"value": "116",
 	"animations" : [
 		808,
 		0,

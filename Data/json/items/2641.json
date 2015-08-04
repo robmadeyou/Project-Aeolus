@@ -1,8 +1,8 @@
 {
 	"id": 2641,
 	"name": "Dark cavalier",
-	"description": "All for one and one for all!",
-	"value": "200",
+	"description": "It's a Dark cavalier.",
+	"value": "27800",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

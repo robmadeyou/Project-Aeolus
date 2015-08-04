@@ -1,7 +1,7 @@
 {
 	"id": 9237,
 	"name": "Jade bolts (e)",
-	"description": "Enchanted jade tipped blurite crossbow bolts.",
+	"description": "It's a Jade bolts (e).",
 	"value": "13",
 	"equipSlot": "arrows",
 	"bonuses" : [

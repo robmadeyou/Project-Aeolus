@@ -1,8 +1,8 @@
 {
 	"id": 8882,
 	"name": "Bone bolts",
-	"description": "Good if you have a bone crossbow!",
-	"value": "3",
+	"description": "It's a Bone bolts.",
+	"value": "19",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

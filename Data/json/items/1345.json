@@ -1,8 +1,8 @@
 {
 	"id": 1345,
-	"name": "Addy warhammer",
-	"description": "I don't think it's intended for joinery.",
-	"value": "4120",
+	"name": "Adamant warhammer",
+	"description": "It's an Adamant warhammer.",
+	"value": "3089",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-4,

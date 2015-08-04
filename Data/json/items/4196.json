@@ -1,7 +1,7 @@
 {
 	"id": 4196,
 	"name": "Legs",
-	"description": "A pair of lifeless, rotting legs.",
+	"description": "It's a Legs.",
 	"value": "1",
 	"equipSlot": "legs",
 	"bonuses" : [

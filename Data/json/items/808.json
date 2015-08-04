@@ -1,8 +1,8 @@
 {
 	"id": 808,
 	"name": "Steel dart",
-	"description": "A deadly throwing dart with a steel tip.",
-	"value": "10",
+	"description": "It's a Steel dart.",
+	"value": "37",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,

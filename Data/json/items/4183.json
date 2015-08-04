@@ -1,7 +1,7 @@
 {
 	"id": 4183,
 	"name": "Star amulet",
-	"description": "A six-pointed marble and obsidian amulet",
+	"description": "It's a Star amulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

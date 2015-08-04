@@ -1,7 +1,30 @@
 {
 	"id": 46,
-	"name": "Pearl bolttips",
-	"description": "I can make bolts with these.",
-	"value": "12",
+	"name": "Pearl bolt tips",
+	"description": "It's a Pearl bolt tips.",
+	"value": "9",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

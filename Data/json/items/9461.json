@@ -1,8 +1,8 @@
 {
 	"id": 9461,
-	"name": "Mithril c'bow (u)",
-	"description": "Null",
-	"value": "750",
+	"name": "Mithril crossbow (u)",
+	"description": "It's a Mithril crossbow (u).",
+	"value": "337",
 	"animations" : [
 		808,
 		0,
@@ -13,10 +13,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

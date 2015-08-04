@@ -1,7 +1,7 @@
 {
 	"id": 6672,
 	"name": "Fishbowl",
-	"description": "A fishbowl with a Tiny Spinefish in it.",
+	"description": "It's a Fishbowl.",
 	"value": "0",
 	"animations" : [
 		808,

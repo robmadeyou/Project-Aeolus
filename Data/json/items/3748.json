@@ -1,7 +1,7 @@
 {
 	"id": 3748,
 	"name": "Fremennik helm",
-	"description": "A sturdy helm worn only by Fremennik clan members.",
+	"description": "It's a Fremennik helm.",
 	"value": "5000",
 	"equipSlot": "hat",
 	"bonuses" : [

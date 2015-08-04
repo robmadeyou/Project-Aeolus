@@ -1,7 +1,30 @@
 {
 	"id": 2892,
 	"name": "Elemental ore",
-	"description": "This needs refining.",
+	"description": "It's an Elemental ore.",
 	"value": "5",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		6,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

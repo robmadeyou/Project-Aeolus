@@ -1,7 +1,30 @@
 {
 	"id": 4180,
-	"name": "Coconut bunch",
-	"description": "Now you've got a lovely one too!",
+	"name": "Dragon platelegs",
+	"description": "It's a Dragon platelegs.",
 	"value": "6",
+	"equipSlot": "legs",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		68,
+		66,
+		63,
+		-4,
+		65,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

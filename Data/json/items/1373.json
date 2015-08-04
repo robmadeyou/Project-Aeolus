@@ -1,8 +1,8 @@
 {
 	"id": 1373,
 	"name": "Rune battleaxe",
-	"description": "A vicious looking axe.",
-	"value": "41600",
+	"description": "It's a Rune battleaxe.",
+	"value": "25000",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-2,
@@ -14,7 +14,7 @@
 		0,
 		0,
 		0,
-		0,
+		-1,
 		64,
 		0
 	],

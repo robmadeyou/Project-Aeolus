@@ -1,8 +1,8 @@
 {
 	"id": 1048,
 	"name": "White partyhat",
-	"description": "A nice hat from a cracker.",
-	"value": "1",
+	"description": "It's a White partyhat.",
+	"value": "1000000000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

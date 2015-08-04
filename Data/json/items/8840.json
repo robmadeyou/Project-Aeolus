@@ -1,9 +1,9 @@
 {
 	"id": 8840,
 	"name": "Void knight robe",
-	"description": "Leg armour of the order of the Void Knights.",
+	"description": "It's a Void knight robe.",
 	"value": "45000",
-	"equipSlot": "legs",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

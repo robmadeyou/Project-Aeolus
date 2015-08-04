@@ -1,7 +1,7 @@
 {
 	"id": 8393,
 	"name": "Shield easel",
-	"description": "Null",
+	"description": "It's a Shield easel.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [

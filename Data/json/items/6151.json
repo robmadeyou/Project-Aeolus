@@ -1,8 +1,8 @@
 {
 	"id": 6151,
 	"name": "Rock-shell gloves",
-	"description": "Fremennik gloves stitched together from rock crab shell shards.",
-	"value": "650",
+	"description": "It's a Rock-shell gloves.",
+	"value": "2967",
 	"equipSlot": "gloves",
 	"bonuses" : [
 		0,
@@ -11,11 +11,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
 		1,
 		2,
+		0,
+		0,
+		0,
 		0
 	],
 	"attackDelay": "5",

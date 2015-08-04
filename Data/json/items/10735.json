@@ -1,7 +1,30 @@
 {
 	"id": 10735,
 	"name": "Scythe",
-	"description": "Null",
+	"description": "It's a Scythe.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		3,
+		8,
+		3,
+		0,
+		0,
+		0,
+		3,
+		1,
+		0,
+		0,
+		10,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

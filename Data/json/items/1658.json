@@ -1,8 +1,8 @@
 {
 	"id": 1658,
 	"name": "Emerald necklace",
-	"description": "I wonder if this is valuable.",
-	"value": "1425",
+	"description": "It's an Emerald necklace.",
+	"value": "768",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

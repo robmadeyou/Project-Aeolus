@@ -1,7 +1,30 @@
 {
 	"id": 9192,
 	"name": "Diamond bolt tips",
-	"description": "Diamond bolt tips.",
-	"value": "133",
+	"description": "It's a Diamond bolt tips.",
+	"value": "787",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

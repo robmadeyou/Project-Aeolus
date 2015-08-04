@@ -1,8 +1,8 @@
 {
 	"id": 1059,
 	"name": "Leather gloves",
-	"description": "These will keep my hands warm!",
-	"value": "6",
+	"description": "It's a Leather gloves.",
+	"value": "7",
 	"equipSlot": "gloves",
 	"bonuses" : [
 		0,

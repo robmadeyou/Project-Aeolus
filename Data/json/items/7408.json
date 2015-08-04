@@ -1,7 +1,30 @@
 {
 	"id": 7408,
 	"name": "Draynor skull",
-	"description": "I shouldn't joke, this is a grave matter.",
+	"description": "It's a Draynor skull.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-4,
+		92,
+		80,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		-1,
+		93,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

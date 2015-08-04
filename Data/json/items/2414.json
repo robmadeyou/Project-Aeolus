@@ -1,7 +1,7 @@
 {
 	"id": 2414,
 	"name": "Zamorak cape",
-	"description": "A cape from the almighty god Zamorak.",
+	"description": "It's a Zamorak cape.",
 	"value": "100",
 	"equipSlot": "cape",
 	"bonuses" : [

@@ -1,8 +1,8 @@
 {
 	"id": 6527,
 	"name": "Tzhaar-ket-em",
-	"description": "A mace of obsidian.",
-	"value": "30000",
+	"description": "It's a Tzhaar-ket-em.",
+	"value": "18300",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-4,

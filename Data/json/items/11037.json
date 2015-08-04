@@ -1,7 +1,30 @@
 {
 	"id": 11037,
 	"name": "Brine sabre",
-	"description": "Null",
-	"value": "26000",
+	"description": "It's a Brine sabre.",
+	"value": "77100",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		7,
+		47,
+		-2,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		46,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

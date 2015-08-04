@@ -1,7 +1,7 @@
 {
 	"id": 619,
 	"name": "Paramaya ticket",
-	"description": "Allows you to rest in the luxurious Paramayer Inn.",
+	"description": "It's a Paramaya ticket.",
 	"value": "5",
 	"stackable": false
 }

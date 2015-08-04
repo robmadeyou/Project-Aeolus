@@ -1,8 +1,8 @@
 {
 	"id": 1151,
 	"name": "Black med helm",
-	"description": "A medium sized helmet.",
-	"value": "576",
+	"description": "It's a Black med helm.",
+	"value": "276",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

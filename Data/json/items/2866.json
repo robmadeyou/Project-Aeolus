@@ -1,8 +1,8 @@
 {
 	"id": 2866,
 	"name": "Ogre arrow",
-	"description": "A large ogre arrow with a bone tip.",
-	"value": "25",
+	"description": "It's an Ogre arrow.",
+	"value": "29",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

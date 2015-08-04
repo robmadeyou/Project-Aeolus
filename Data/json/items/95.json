@@ -1,7 +1,7 @@
 {
 	"id": 95,
-	"name": "Tarromin potion(unf)",
-	"description": "I need another ingredient to finish this Tarromin potion.",
-	"value": "11",
+	"name": "Tarromin potion (unf)",
+	"description": "It's a Tarromin potion (unf).",
+	"value": "775",
 	"stackable": false
 }

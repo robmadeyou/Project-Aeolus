@@ -1,7 +1,7 @@
 {
 	"id": 9765,
 	"name": "Runecraft cape",
-	"description": "The cape worn by masters of Runecraft.",
+	"description": "It's a Runecraft cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

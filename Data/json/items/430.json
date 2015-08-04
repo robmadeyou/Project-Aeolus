@@ -1,7 +1,7 @@
 {
 	"id": 430,
 	"name": "Doctors' gown",
-	"description": "Medical looking.",
+	"description": "It's a Doctors' gown.",
 	"value": "40",
 	"equipSlot": "body",
 	"bonuses" : [

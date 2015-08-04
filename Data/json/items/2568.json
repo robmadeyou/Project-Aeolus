@@ -1,8 +1,8 @@
 {
 	"id": 2568,
 	"name": "Ring of forging",
-	"description": "An enchanted ring.",
-	"value": "2025",
+	"description": "It's a Ring of forging.",
+	"value": "1123",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

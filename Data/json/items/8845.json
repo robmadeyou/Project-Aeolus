@@ -1,7 +1,7 @@
 {
 	"id": 8845,
 	"name": "Iron defender",
-	"description": "A defensive weapon.",
+	"description": "It's an Iron defender.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [

@@ -1,8 +1,8 @@
 {
 	"id": 1115,
 	"name": "Iron platebody",
-	"description": "Provides excellent protection.",
-	"value": "560",
+	"description": "It's an Iron platebody.",
+	"value": "211",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 2534,
 	"name": "Steel fire arrows",
-	"description": "Arrows with steel heads and oil soaked cloth.",
-	"value": "3",
+	"description": "It's a Steel fire arrows.",
+	"value": "295",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

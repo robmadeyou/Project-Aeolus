@@ -1,7 +1,7 @@
 {
 	"id": 476,
 	"name": "Broken pickaxe",
-	"description": "Nurmof can fix this for me.",
-	"value": "107",
+	"description": "It's a Broken pickaxe.",
+	"value": "1",
 	"stackable": false
 }

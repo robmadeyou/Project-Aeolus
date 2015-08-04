@@ -1,7 +1,30 @@
 {
 	"id": 7433,
 	"name": "Wooden spoon",
-	"description": "Spoooooon!",
-	"value": "35",
+	"description": "It's a Wooden spoon.",
+	"value": "27",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		4,
+		5,
+		-2,
+		0,
+		0,
+		0,
+		3,
+		2,
+		0,
+		0,
+		7,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

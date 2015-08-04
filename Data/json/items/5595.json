@@ -1,7 +1,7 @@
 {
 	"id": 5595,
 	"name": "Tin",
-	"description": "There is an impression of a key, filled with tin ore.",
+	"description": "It's a Tin.",
 	"value": "20",
 	"stackable": false
 }

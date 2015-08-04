@@ -1,7 +1,7 @@
 {
 	"id": 6797,
 	"name": "Watering can",
-	"description": "Handy for watering crops.",
+	"description": "It's a Watering can.",
 	"value": "1",
 	"equipSlot": "ring",
 	"bonuses" : [

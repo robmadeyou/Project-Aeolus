@@ -1,8 +1,8 @@
 {
 	"id": 1177,
 	"name": "Steel sq shield",
-	"description": "A medium square shield.",
-	"value": "600",
+	"description": "It's a Steel sq shield.",
+	"value": "235",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 4757,
 	"name": "Verac's brassard",
-	"description": "Verac the Defiled's brassard.",
-	"value": "280000",
+	"description": "It's a Verac's brassard.",
+	"value": "310300",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		0,
 		81,
 		0,
-		5
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

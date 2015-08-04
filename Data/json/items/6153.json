@@ -1,8 +1,8 @@
 {
 	"id": 6153,
 	"name": "Skeletal gloves",
-	"description": "Fremennik gloves stitched together from wallasalki bones fragments.",
-	"value": "650",
+	"description": "It's a Skeletal gloves.",
+	"value": "104100",
 	"equipSlot": "gloves",
 	"bonuses" : [
 		0,
@@ -11,10 +11,10 @@
 		0,
 		0,
 		0,
-		0,
-		0,
 		1,
 		2,
+		0,
+		0,
 		0,
 		0
 	],

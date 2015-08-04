@@ -1,8 +1,8 @@
 {
 	"id": 6583,
 	"name": "Ring of stone",
-	"description": "An enchanted ring.",
-	"value": "202000",
+	"description": "It's a Ring of stone.",
+	"value": "602900",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 1201,
 	"name": "Rune kiteshield",
-	"description": "A large metal shield.",
-	"value": "54400",
+	"description": "It's a Rune kiteshield.",
+	"value": "34200",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

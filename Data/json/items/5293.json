@@ -1,7 +1,7 @@
 {
 	"id": 5293,
 	"name": "Tarromin seed",
-	"description": "A tarromin seed - plant in a herb patch.",
-	"value": "1000",
+	"description": "It's a Tarromin seed.",
+	"value": "2",
 	"stackable": true
 }

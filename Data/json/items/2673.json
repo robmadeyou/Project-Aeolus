@@ -1,7 +1,7 @@
 {
 	"id": 2673,
 	"name": "Guthix full helm",
-	"description": "A rune full face helmet in the colours of Guthix.",
+	"description": "It's a Guthix full helm.",
 	"value": "35200",
 	"equipSlot": "hat",
 	"bonuses" : [

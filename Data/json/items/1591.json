@@ -1,7 +1,7 @@
 {
 	"id": 1591,
 	"name": "Jail key",
-	"description": "Key to a cell.",
+	"description": "It's a Jail key.",
 	"value": "1",
 	"stackable": false
 }

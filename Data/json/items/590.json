@@ -1,7 +1,7 @@
 {
 	"id": 590,
 	"name": "Tinderbox",
-	"description": "Useful for lighting a fire.",
-	"value": "1",
+	"description": "It's a Tinderbox.",
+	"value": "90",
 	"stackable": false
 }

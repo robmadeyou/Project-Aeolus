@@ -1,9 +1,9 @@
 {
 	"id": 11128,
 	"name": "Berserker necklace",
-	"description": "Makes obsidian weapons even stronger!",
-	"value": "202000",
-	"equipSlot": "amulet",
+	"description": "It's a Berserker necklace.",
+	"value": "2800000",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		-10,
 		-10,

@@ -1,7 +1,7 @@
 {
 	"id": 8282,
 	"name": "Anti-dragon shield",
-	"description": "Null",
+	"description": "It's an Anti-dragon shield.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		7,
+		9,
+		8,
+		2,
+		8,
 		0,
 		0
 	],

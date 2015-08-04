@@ -1,30 +1,7 @@
 {
 	"id": 10822,
-	"name": "Yak-hide plate",
-	"description": "Smelly yak body armour.",
-	"value": "500",
-	"equipSlot": "weapon",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		-5,
-		0,
-		25,
-		20,
-		15,
-		-2,
-		25,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
+	"name": "Yak-hide armour",
+	"description": "It's a Yak-hide armour.",
+	"value": "202",
 	"stackable": false
 }

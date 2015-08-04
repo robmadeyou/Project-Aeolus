@@ -1,7 +1,30 @@
 {
 	"id": 45,
-	"name": "Opal bolttips",
-	"description": "I can make bolts with these.",
-	"value": "7",
+	"name": "Opal bolt tips",
+	"description": "It's an Opal bolt tips.",
+	"value": "1",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

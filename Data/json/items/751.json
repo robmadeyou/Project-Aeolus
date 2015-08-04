@@ -1,7 +1,7 @@
 {
 	"id": 751,
 	"name": "Gnomeball",
-	"description": "A ball used in Gnomeball.",
+	"description": "It's a Gnomeball.",
 	"value": "1",
 	"stackable": false
 }

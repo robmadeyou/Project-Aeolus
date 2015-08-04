@@ -1,8 +1,8 @@
 {
 	"id": 881,
 	"name": "Barbed bolts",
-	"description": "Great if you have a crossbow!",
-	"value": "200",
+	"description": "It's a Barbed bolts.",
+	"value": "39",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 5418,
 	"name": "Empty sack",
-	"description": "An empty vegetable sack.",
-	"value": "1",
+	"description": "It's an Empty sack.",
+	"value": "3",
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 9139,
 	"name": "Blurite bolts",
-	"description": "Blurite crossbow bolts.",
+	"description": "It's a Blurite bolts.",
 	"value": "2",
 	"equipSlot": "arrows",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 4161,
 	"name": "Bag of salt",
-	"description": "A bag of salt.",
-	"value": "10",
+	"description": "It's a Bag of salt.",
+	"value": "1",
 	"stackable": true
 }

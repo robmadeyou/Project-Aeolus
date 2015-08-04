@@ -1,9 +1,9 @@
 {
 	"id": 3793,
 	"name": "Fremennik robe",
-	"description": "The latest fashion in Rellekka.",
-	"value": "500",
-	"equipSlot": "legs",
+	"description": "It's a Fremennik robe.",
+	"value": "1150",
+	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,

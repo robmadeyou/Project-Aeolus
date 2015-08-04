@@ -1,8 +1,8 @@
 {
 	"id": 9375,
 	"name": "Bronze bolts (unf)",
-	"description": "Unfeathered bronze crossbow bolts.",
-	"value": "1",
+	"description": "It's a Bronze bolts (unf).",
+	"value": "11",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 6283,
 	"name": "Thatch spar med",
-	"description": "A wooden pole for use in primitive construction.",
-	"value": "15",
+	"description": "It's a Thatch spar med.",
+	"value": "3",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

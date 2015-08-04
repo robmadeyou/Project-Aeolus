@@ -1,7 +1,7 @@
 {
 	"id": 11283,
 	"name": "Dragonfire shield",
-	"description": "A heavy shield with a snarling, draconic visage.",
+	"description": "It's a Dragonfire shield.",
 	"value": "2000000",
 	"equipSlot": "shield",
 	"bonuses" : [

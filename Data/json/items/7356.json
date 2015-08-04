@@ -1,8 +1,8 @@
 {
 	"id": 7356,
-	"name": "Black kiteshield(h)",
-	"description": "A shield with a heraldic design",
-	"value": "1632",
+	"name": "Black shield (h5)",
+	"description": "It's a Black shield (h5).",
+	"value": "8795",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

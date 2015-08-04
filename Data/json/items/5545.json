@@ -1,8 +1,8 @@
 {
 	"id": 5545,
 	"name": "Law tiara",
-	"description": "A tiara infused with the properties of law.",
-	"value": "100",
+	"description": "It's a Law tiara.",
+	"value": "70",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

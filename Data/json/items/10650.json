@@ -1,7 +1,7 @@
 {
 	"id": 10650,
 	"name": "Thieving cape",
-	"description": "Null",
+	"description": "It's a Thieving cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		9,
+		9,
+		9,
+		9,
+		9,
 		0,
 		0
 	],

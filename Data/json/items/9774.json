@@ -1,7 +1,7 @@
 {
 	"id": 9774,
 	"name": "Herblore cape",
-	"description": "The cape worn by masters of Herblore.",
+	"description": "It's a Herblore cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

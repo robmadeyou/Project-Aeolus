@@ -1,14 +1,14 @@
 {
 	"id": 6135,
 	"name": "Spined chaps",
-	"description": "Stylish leg armour for rangers with a lingering smell of raw fish...",
-	"value": "3900",
+	"description": "It's a Spined chaps.",
+	"value": "8675",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
 		0,
 		0,
-		10,
+		-10,
 		8,
 		22,
 		16,

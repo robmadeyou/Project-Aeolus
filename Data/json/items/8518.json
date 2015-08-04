@@ -1,7 +1,7 @@
 {
 	"id": 8518,
 	"name": "Cider barrel",
-	"description": "Null",
-	"value": "10",
+	"description": "It's a Cider barrel.",
+	"value": "15600",
 	"stackable": false
 }

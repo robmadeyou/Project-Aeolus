@@ -1,8 +1,8 @@
 {
 	"id": 3385,
 	"name": "Splitbark helm",
-	"description": "A wooden helmet.",
-	"value": "10000",
+	"description": "It's a Splitbark helm.",
+	"value": "10200",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

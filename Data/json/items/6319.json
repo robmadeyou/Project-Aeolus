@@ -1,7 +1,30 @@
 {
 	"id": 6319,
 	"name": "Proboscis",
-	"description": "A giant mosquito's proboscis, aerodynamic and sharp!",
-	"value": "5",
+	"description": "It's a Proboscis.",
+	"value": "8976",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		16,
+		-2,
+		0,
+		0,
+		0,
+		1,
+		1,
+		0,
+		1,
+		10,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

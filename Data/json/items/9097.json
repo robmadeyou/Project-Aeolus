@@ -1,9 +1,9 @@
 {
 	"id": 9097,
 	"name": "Lunar torso",
-	"description": "Provides good protection",
+	"description": "It's a Lunar torso.",
 	"value": "100",
-	"equipSlot": "body",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

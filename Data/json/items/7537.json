@@ -1,7 +1,30 @@
 {
 	"id": 7537,
 	"name": "Crab claw",
-	"description": "If it's good enough for crabs, it's good enough for me!",
+	"description": "It's a Crab claw.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		3,
+		4,
+		2,
+		0,
+		0,
+		1,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

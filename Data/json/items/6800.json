@@ -1,7 +1,7 @@
 {
 	"id": 6800,
 	"name": "Champion scroll",
-	"description": "It's a challenge from the Giant Champion!",
+	"description": "It's a Champion scroll.",
 	"value": "1",
 	"stackable": false
 }

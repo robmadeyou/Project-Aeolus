@@ -1,8 +1,31 @@
 {
 	"id": 7675,
 	"name": "Wooden sword",
-	"description": "A less-than razor sharp sword.",
+	"description": "It's a Wooden sword.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		4,
+		3,
+		-2,
+		0,
+		0,
+		0,
+		2,
+		1,
+		0,
+		0,
+		5,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"combatAnimations" : [
 		451,
 		451,

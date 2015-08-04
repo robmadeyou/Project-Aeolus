@@ -1,7 +1,30 @@
 {
 	"id": 4803,
 	"name": "Rune brutal",
-	"description": "Blunt rune arrow...ouch",
-	"value": "450",
+	"description": "It's a Rune brutal.",
+	"value": "196",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

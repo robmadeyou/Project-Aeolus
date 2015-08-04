@@ -1,8 +1,8 @@
 {
 	"id": 2865,
 	"name": "Flighted ogre arrow",
-	"description": "A wooden arrow shaft with four flights attached.",
-	"value": "1",
+	"description": "It's a Flighted ogre arrow.",
+	"value": "113",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

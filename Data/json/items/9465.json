@@ -1,8 +1,8 @@
 {
 	"id": 9465,
-	"name": "Runite c'bow (u)",
-	"description": "Null",
-	"value": "16167",
+	"name": "Runite crossbow (u)",
+	"description": "It's a Runite crossbow (u).",
+	"value": "9633",
 	"animations" : [
 		808,
 		0,
@@ -13,10 +13,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

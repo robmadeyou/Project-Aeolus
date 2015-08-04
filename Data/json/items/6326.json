@@ -1,8 +1,8 @@
 {
 	"id": 6326,
 	"name": "Snakeskin bandana",
-	"description": "Lightweight head protection.",
-	"value": "300",
+	"description": "It's a Snakeskin bandana.",
+	"value": "2125",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

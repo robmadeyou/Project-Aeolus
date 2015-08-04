@@ -1,7 +1,7 @@
 {
 	"id": 5103,
 	"name": "Dwellberry seed",
-	"description": "A dwellberry bush seed - plant in a bush patch.",
-	"value": "25",
+	"description": "It's a Dwellberry seed.",
+	"value": "1",
 	"stackable": true
 }

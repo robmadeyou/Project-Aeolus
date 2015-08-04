@@ -1,7 +1,7 @@
 {
 	"id": 7460,
-	"name": "Gloves",
-	"description": "A pair of very nice gloves.",
+	"name": "Rune gloves",
+	"description": "It's a Rune gloves.",
 	"value": "5000",
 	"equipSlot": "gloves",
 	"bonuses" : [

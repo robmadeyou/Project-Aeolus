@@ -1,7 +1,7 @@
 {
 	"id": 9789,
 	"name": "Construct. cape",
-	"description": "The cape worn by masters of Construct..",
+	"description": "It's a Construct. cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

@@ -1,8 +1,8 @@
 {
 	"id": 10344,
 	"name": "3rd age amulet",
-	"description": "Fabulously rare mage protection enchanted in the 3rd age.",
-	"value": "20000",
+	"description": "It's a 3rd age amulet.",
+	"value": "14400000",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

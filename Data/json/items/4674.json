@@ -1,7 +1,7 @@
 {
 	"id": 4674,
 	"name": "Gilded cross",
-	"description": "An old and strangely shaped metal cross.",
+	"description": "It's a Gilded cross.",
 	"value": "250",
 	"combatAnimations" : [
 		4230,

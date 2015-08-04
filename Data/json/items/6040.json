@@ -1,7 +1,7 @@
 {
 	"id": 6040,
 	"name": "Amulet of nature",
-	"description": "An Amulet of Nature.",
+	"description": "It's an Amulet of nature.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

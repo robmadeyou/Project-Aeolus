@@ -1,7 +1,7 @@
 {
 	"id": 6859,
 	"name": "Jester scarf",
-	"description": "A woolly jester scarf.",
+	"description": "It's a Jester scarf.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

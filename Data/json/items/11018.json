@@ -1,7 +1,7 @@
 {
 	"id": 11018,
 	"name": "Chicken legs",
-	"description": "Null",
+	"description": "It's a Chicken legs.",
 	"value": "1",
 	"equipSlot": "legs",
 	"bonuses" : [

@@ -1,8 +1,8 @@
 {
 	"id": 10828,
 	"name": "Helm of neitiznot",
-	"description": "A gift from Neitiznot's Burgher.",
-	"value": "50000",
+	"description": "It's a Helm of neitiznot.",
+	"value": "40200",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		3,
 		30,
 		3,
-		3
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

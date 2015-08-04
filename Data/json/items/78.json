@@ -1,7 +1,7 @@
 {
 	"id": 78,
 	"name": "Ice arrows",
-	"description": "Can only be fired with yew or magic bows.",
+	"description": "It's an Ice arrows.",
 	"value": "2",
 	"equipSlot": "arrows",
 	"bonuses" : [

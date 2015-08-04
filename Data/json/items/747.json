@@ -1,7 +1,7 @@
 {
 	"id": 747,
 	"name": "Glowing dagger",
-	"description": "A black obsidian dagger, it has a strange aura about it - it seems to be glowing.",
+	"description": "It's a Glowing dagger.",
 	"value": "1",
 	"equipSlot": "weapon",
 	"bonuses" : [
@@ -13,7 +13,7 @@
 		0,
 		0,
 		0,
-		0,
+		1,
 		0,
 		0,
 		0

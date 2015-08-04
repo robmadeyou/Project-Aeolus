@@ -1,8 +1,8 @@
 {
 	"id": 890,
 	"name": "Adamant arrow",
-	"description": "Arrows with adamantite heads.",
-	"value": "80",
+	"description": "It's an Adamant arrow.",
+	"value": "119",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

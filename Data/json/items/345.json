@@ -1,8 +1,8 @@
 {
 	"id": 345,
 	"name": "Raw herring",
-	"description": "I should try cooking this.",
-	"value": "15",
+	"description": "It's a Raw herring.",
+	"value": "17",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

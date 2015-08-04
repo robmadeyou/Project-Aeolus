@@ -1,7 +1,7 @@
 {
 	"id": 1409,
 	"name": "Iban's staff",
-	"description": "An ancient staff, formerly the property of Iban.",
+	"description": "It's an Iban's staff.",
 	"value": "42500",
 	"equipSlot": "weapon",
 	"bonuses" : [

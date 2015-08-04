@@ -1,8 +1,8 @@
 {
 	"id": 1111,
 	"name": "Adamant chainbody",
-	"description": "A series of connected metal rings.",
-	"value": "4800",
+	"description": "It's an Adamant chainbody.",
+	"value": "2759",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

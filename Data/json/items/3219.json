@@ -1,7 +1,7 @@
 {
 	"id": 3219,
 	"name": "Barrel bomb",
-	"description": "A fused barrel full of fire oil.",
+	"description": "It's a Barrel bomb.",
 	"value": "1",
 	"stackable": false
 }

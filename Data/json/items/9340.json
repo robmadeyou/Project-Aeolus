@@ -1,8 +1,8 @@
 {
 	"id": 9340,
 	"name": "Diamond bolts",
-	"description": "Diamond tipped Adamantite crossbow bolts.",
-	"value": "192",
+	"description": "It's a Diamond bolts.",
+	"value": "1113",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

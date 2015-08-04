@@ -1,7 +1,7 @@
 {
 	"id": 5294,
 	"name": "Harralander seed",
-	"description": "A harralander seed - plant in a herb patch.",
-	"value": "1000",
+	"description": "It's a Harralander seed.",
+	"value": "3",
 	"stackable": true
 }

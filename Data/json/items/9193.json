@@ -1,7 +1,30 @@
 {
 	"id": 9193,
 	"name": "Dragon bolt tips",
-	"description": "Dragon bolt tips.",
-	"value": "667",
+	"description": "It's a Dragon bolt tips.",
+	"value": "5044",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

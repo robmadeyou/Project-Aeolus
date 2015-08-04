@@ -1,8 +1,8 @@
 {
 	"id": 11222,
 	"name": "Dragon fire arrows",
-	"description": "Null",
-	"value": "10",
+	"description": "It's a Dragon fire arrows.",
+	"value": "2036",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

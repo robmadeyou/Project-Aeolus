@@ -1,7 +1,30 @@
 {
 	"id": 11721,
-	"name": "Armadyl chestplate",
-	"description": "Swap this note at any bank for the equivelent item.",
-	"value": "60000",
+	"name": "Iron pickaxe (nz)",
+	"description": "It's an Iron pickaxe (nz).",
+	"value": "0",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		5,
+		-2,
+		3,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		7,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

@@ -1,7 +1,7 @@
 {
 	"id": 0,
 	"name": "Dwarf remains",
-	"description": "The body of a Dwarf savaged by Goblins.",
+	"description": "It's a Dwarf remains.",
 	"value": "1",
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 9750,
 	"name": "Strength cape",
-	"description": "The cape worn by masters of Strength.",
+	"description": "It's a Strength cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

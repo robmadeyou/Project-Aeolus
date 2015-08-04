@@ -1,8 +1,8 @@
 {
 	"id": 4115,
-	"name": "Mystic gloves",
-	"description": "Bright magical gloves.",
-	"value": "10000",
+	"name": "Mystic gloves (light)",
+	"description": "It's a Mystic gloves (light).",
+	"value": "110500",
 	"equipSlot": "gloves",
 	"bonuses" : [
 		0,

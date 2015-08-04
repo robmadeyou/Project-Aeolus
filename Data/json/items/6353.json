@@ -1,8 +1,8 @@
 {
 	"id": 6353,
 	"name": "Villager robe",
-	"description": "A brightly coloured robe prized by the Tai Bwo Wannai peoples.",
-	"value": "250",
+	"description": "It's a Villager robe.",
+	"value": "1523",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

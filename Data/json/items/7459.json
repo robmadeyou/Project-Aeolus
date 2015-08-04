@@ -1,7 +1,7 @@
 {
 	"id": 7459,
-	"name": "Gloves",
-	"description": "A pair of nice gloves.",
+	"name": "Adamant gloves",
+	"description": "It's an Adamant gloves.",
 	"value": "2500",
 	"equipSlot": "gloves",
 	"bonuses" : [

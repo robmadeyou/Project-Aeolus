@@ -1,7 +1,7 @@
 {
 	"id": 2651,
 	"name": "Pirate's hat",
-	"description": "Shiver me timbers!",
+	"description": "It's a Pirate's hat.",
 	"value": "180",
 	"equipSlot": "hat",
 	"bonuses" : [

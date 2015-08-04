@@ -1,8 +1,8 @@
 {
 	"id": 9845,
-	"name": "M'gany cape rack",
-	"description": "Null",
-	"value": "10",
+	"name": "Mahogany cape rack",
+	"description": "It's a Mahogany cape rack.",
+	"value": "62",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,

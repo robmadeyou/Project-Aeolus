@@ -1,8 +1,8 @@
 {
 	"id": 3486,
 	"name": "Gilded full helm",
-	"description": "Rune full helm with gold plate.",
-	"value": "35200",
+	"description": "It's a Gilded full helm.",
+	"value": "483600",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 1159,
 	"name": "Mithril full helm",
-	"description": "A full face helmet.",
-	"value": "1430",
+	"description": "It's a Mithril full helm.",
+	"value": "748",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 4759,
 	"name": "Verac's plateskirt",
-	"description": "Verac the Defiled's plate skirt.",
-	"value": "275000",
+	"description": "It's a Verac's plateskirt.",
+	"value": "855800",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		0,
 		84,
 		0,
-		4
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

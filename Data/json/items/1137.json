@@ -1,15 +1,15 @@
 {
 	"id": 1137,
 	"name": "Iron med helm",
-	"description": "A medium sized helmet.",
-	"value": "84",
+	"description": "It's an Iron med helm.",
+	"value": "5",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
 		0,
 		0,
 		-3,
-		-3,
+		-1,
 		4,
 		5,
 		3,

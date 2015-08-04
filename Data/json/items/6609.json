@@ -1,8 +1,8 @@
 {
 	"id": 6609,
 	"name": "White 2h sword",
-	"description": "A two handed sword.",
-	"value": "1920",
+	"description": "It's a White 2h sword.",
+	"value": "4655",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-4,
@@ -16,7 +16,7 @@
 		0,
 		-1,
 		26,
-		1
+		0
 	],
 	"attackDelay": "6",
 	"levelRequirements" : [

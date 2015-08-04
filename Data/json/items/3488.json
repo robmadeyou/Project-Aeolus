@@ -1,8 +1,8 @@
 {
 	"id": 3488,
 	"name": "Gilded kiteshield",
-	"description": "Rune kiteshield with gold plate.",
-	"value": "54400",
+	"description": "It's a Gilded kiteshield.",
+	"value": "395300",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

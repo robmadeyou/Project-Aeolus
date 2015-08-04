@@ -1,30 +1,7 @@
 {
 	"id": 10420,
-	"name": "White ele' blouse",
-	"description": "A well made elegant ladies' white blouse.",
-	"value": "2000",
-	"equipSlot": "body",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
+	"name": "White elegant blouse",
+	"description": "It's a White elegant blouse.",
+	"value": "595200",
 	"stackable": false
 }

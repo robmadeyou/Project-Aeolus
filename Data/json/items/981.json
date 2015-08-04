@@ -1,7 +1,30 @@
 {
 	"id": 981,
 	"name": "Disk of returning",
-	"description": "Used to get out of Thordur's blackhole.",
-	"value": "12",
+	"description": "It's a Disk of returning.",
+	"value": "151500000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		6,
+		-2,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		5,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 5098,
 	"name": "Nasturtium seed",
-	"description": "A nasturtium seed - plant in a flower patch.",
-	"value": "11",
+	"description": "It's a Nasturtium seed.",
+	"value": "1",
 	"stackable": true
 }

@@ -1,7 +1,30 @@
 {
 	"id": 6541,
 	"name": "Mouse toy",
-	"description": "An Advanced Combat Training Device.",
+	"description": "It's a Mouse toy.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-100,
+		-100,
+		-50,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		-10,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 288,
 	"name": "Goblin mail",
-	"description": "Armour designed to fit goblins.",
-	"value": "40",
+	"description": "It's a Goblin mail.",
+	"value": "46",
 	"stackable": false
 }

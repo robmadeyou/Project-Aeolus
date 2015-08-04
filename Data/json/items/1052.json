@@ -1,7 +1,7 @@
 {
 	"id": 1052,
 	"name": "Cape of legends",
-	"description": "The cape worn by members of the Legends Guild.",
+	"description": "It's a Cape of legends.",
 	"value": "450",
 	"equipSlot": "cape",
 	"bonuses" : [

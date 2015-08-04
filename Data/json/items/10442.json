@@ -1,9 +1,9 @@
 {
 	"id": 10442,
 	"name": "Guthix crozier",
-	"description": "A guthix crozier.",
-	"value": "5000",
-	"equipSlot": "body",
+	"description": "It's a Guthix crozier.",
+	"value": "2902",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		7,
 		-1,
@@ -16,7 +16,7 @@
 		10,
 		0,
 		32,
-		6
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

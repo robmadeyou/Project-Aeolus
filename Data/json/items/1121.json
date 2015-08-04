@@ -1,8 +1,8 @@
 {
 	"id": 1121,
 	"name": "Mithril platebody",
-	"description": "Provides excellent protection.",
-	"value": "5200",
+	"description": "It's a Mithril platebody.",
+	"value": "2978",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

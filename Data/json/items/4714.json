@@ -1,8 +1,8 @@
 {
 	"id": 4714,
 	"name": "Ahrim's robeskirt",
-	"description": "Ahrim the Blighted's armoured robe skirt.",
-	"value": "47000",
+	"description": "It's an Ahrim's robeskirt.",
+	"value": "3300000",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

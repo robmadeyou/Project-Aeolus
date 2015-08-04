@@ -1,7 +1,7 @@
 {
 	"id": 3727,
 	"name": "Empty bucket",
-	"description": "This bucket is completely empty. It has a 5 painted on its side.",
+	"description": "It's an Empty bucket.",
 	"value": "1",
 	"stackable": false
 }

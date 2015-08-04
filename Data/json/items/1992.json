@@ -1,7 +1,7 @@
 {
 	"id": 1992,
 	"name": "Jug of bad wine",
-	"description": "Swap this note at any bank for the equivalent item.",
+	"description": "It's a Jug of bad wine.",
 	"value": "1",
 	"stackable": true
 }

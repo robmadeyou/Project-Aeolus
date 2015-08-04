@@ -1,7 +1,7 @@
 {
 	"id": 1853,
 	"name": "Prototype dart tip",
-	"description": "A prototype dart tip - it looks deadly.",
+	"description": "It's a Prototype dart tip.",
 	"value": "1",
 	"combatAnimations" : [
 		6600,

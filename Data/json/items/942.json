@@ -1,8 +1,8 @@
 {
 	"id": 942,
 	"name": "Bronze fire arrows",
-	"description": "These bronze headed arrows are ablaze with fire.",
-	"value": "10",
+	"description": "It's a Bronze fire arrows.",
+	"value": "308",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 7593,
 	"name": "Zombie trousers",
-	"description": "Good for a shamble about town.",
+	"description": "It's a Zombie trousers.",
 	"value": "1",
 	"equipSlot": "legs",
 	"bonuses" : [

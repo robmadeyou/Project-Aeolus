@@ -1,7 +1,7 @@
 {
 	"id": 9820,
 	"name": "Gilded cape rack",
-	"description": "Null",
+	"description": "It's a Gilded cape rack.",
 	"value": "1",
 	"equipSlot": "cape",
 	"bonuses" : [

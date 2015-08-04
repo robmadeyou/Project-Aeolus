@@ -1,8 +1,8 @@
 {
 	"id": 9454,
-	"name": "Bronze c'bow (u)",
-	"description": "Null",
-	"value": "40",
+	"name": "Bronze crossbow (u)",
+	"description": "It's a Bronze crossbow (u).",
+	"value": "23",
 	"animations" : [
 		808,
 		0,
@@ -13,10 +13,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

@@ -1,8 +1,8 @@
 {
 	"id": 1791,
 	"name": "Unfired bowl",
-	"description": "I need to put this in a pottery oven.",
-	"value": "2",
+	"description": "It's an Unfired bowl.",
+	"value": "128",
 	"animations" : [
 		808,
 		0,

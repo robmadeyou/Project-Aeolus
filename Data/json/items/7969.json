@@ -1,7 +1,7 @@
 {
 	"id": 7969,
 	"name": "Pulley beam",
-	"description": "A beam with a pulley attached.",
+	"description": "It's a Pulley beam.",
 	"value": "5",
 	"stackable": false
 }

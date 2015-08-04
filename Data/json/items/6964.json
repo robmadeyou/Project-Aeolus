@@ -1,7 +1,7 @@
 {
 	"id": 6964,
-	"name": "Waste disposal",
-	"description": "Gets rid of all that nasty kitchen waste.",
+	"name": "Coins",
+	"description": "It's a Coins.",
 	"value": "6",
 	"stackable": false
 }

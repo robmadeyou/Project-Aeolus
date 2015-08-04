@@ -1,30 +1,7 @@
 {
 	"id": 11724,
-	"name": "Bandos chestplate",
-	"description": "A sturdy chest plate.",
-	"value": "265000",
-	"equipSlot": "body",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		-15,
-		-10,
-		98,
-		93,
-		105,
-		-6,
-		133,
-		4,
-		1
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		65,
-		0,
-		0,
-		0
-	],
+	"name": "Super ranging (2)",
+	"description": "It's a Super ranging (2).",
+	"value": "19500000",
 	"stackable": false
 }

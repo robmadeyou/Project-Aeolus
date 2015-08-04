@@ -1,7 +1,7 @@
 {
 	"id": 9804,
 	"name": "Firemaking cape",
-	"description": "The cape worn by masters of Firemaking.",
+	"description": "It's a Firemaking cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

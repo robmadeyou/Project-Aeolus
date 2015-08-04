@@ -1,7 +1,7 @@
 {
 	"id": 1506,
 	"name": "Gas mask",
-	"description": "Stops me from breathing nasty stuff!",
+	"description": "It's a Gas mask.",
 	"value": "2",
 	"equipSlot": "hat",
 	"bonuses" : [

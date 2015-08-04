@@ -1,7 +1,7 @@
 {
 	"id": 86,
 	"name": "Pendant of lucien",
-	"description": "The amulet that Lucien gave you.",
+	"description": "It's a Pendant of lucien.",
 	"value": "12",
 	"equipSlot": "amulet",
 	"bonuses" : [

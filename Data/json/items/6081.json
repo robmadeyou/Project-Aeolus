@@ -1,7 +1,7 @@
 {
 	"id": 6081,
 	"name": "Broken device",
-	"description": "A strange broken device of gnomic design.",
+	"description": "It's a Broken device.",
 	"value": "10",
 	"stackable": false
 }

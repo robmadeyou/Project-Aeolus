@@ -1,11 +1,11 @@
 {
 	"id": 1395,
 	"name": "Water battlestaff",
-	"description": "It's a slightly magical stick.",
-	"value": "15500",
+	"description": "It's a Water battlestaff.",
+	"value": "9169",
 	"equipSlot": "weapon",
 	"bonuses" : [
-		7,
+		10,
 		-1,
 		28,
 		10,

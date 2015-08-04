@@ -1,7 +1,7 @@
 {
 	"id": 10836,
 	"name": "Silly jester hat",
-	"description": "Null",
+	"description": "It's a Silly jester hat.",
 	"value": "100",
 	"equipSlot": "hat",
 	"bonuses" : [
@@ -13,8 +13,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		5,
+		-5,
 		0,
 		0
 	],

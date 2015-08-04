@@ -1,8 +1,8 @@
 {
 	"id": 5539,
 	"name": "Cosmic tiara",
-	"description": "A tiara infused with the properties of the cosmos.",
-	"value": "100",
+	"description": "It's a Cosmic tiara.",
+	"value": "11",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

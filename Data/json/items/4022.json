@@ -1,7 +1,7 @@
 {
 	"id": 4022,
 	"name": "M'speak amulet",
-	"description": "It's an unstrung Amulet of Monkey Speak. It makes vague chattering noises.",
+	"description": "It's a M'speak amulet.",
 	"value": "500",
 	"equipSlot": "amulet",
 	"bonuses" : [

@@ -1,8 +1,8 @@
 {
 	"id": 1187,
 	"name": "Dragon sq shield",
-	"description": "An ancient and powerful looking Dragon Square shield.",
-	"value": "500000",
+	"description": "It's a Dragon sq shield.",
+	"value": "315600",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

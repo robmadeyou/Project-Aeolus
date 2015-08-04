@@ -1,8 +1,8 @@
 {
 	"id": 5345,
 	"name": "Gardening boots",
-	"description": "A pair of gardening boots.",
-	"value": "25",
+	"description": "It's a Gardening boots.",
+	"value": "13800",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

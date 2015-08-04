@@ -1,7 +1,30 @@
 {
 	"id": 2406,
 	"name": "Hazeel's mark",
-	"description": "A sign of my commitment to Hazeel.",
+	"description": "It's a Hazeel's mark.",
 	"value": "1",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

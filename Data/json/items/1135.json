@@ -1,14 +1,14 @@
 {
 	"id": 1135,
 	"name": "Green d'hide body",
-	"description": "Made from 100% real dragonhide.",
-	"value": "20000",
+	"description": "It's a Green d'hide body.",
+	"value": "4677",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,
 		0,
-		-18,
+		-15,
 		15,
 		40,
 		32,

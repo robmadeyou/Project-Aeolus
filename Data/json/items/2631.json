@@ -1,8 +1,8 @@
 {
 	"id": 2631,
 	"name": "Highwayman mask",
-	"description": "Your money or your life!",
-	"value": "40",
+	"description": "It's a Highwayman mask.",
+	"value": "111300",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

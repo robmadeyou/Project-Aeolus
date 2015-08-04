@@ -1,7 +1,7 @@
 {
 	"id": 9704,
 	"name": "Training shield",
-	"description": "Null",
+	"description": "It's a Training shield.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		4,
+		5,
+		3,
+		1,
+		4,
 		0,
 		0
 	],

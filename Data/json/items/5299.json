@@ -1,7 +1,7 @@
 {
 	"id": 5299,
 	"name": "Kwuarm seed",
-	"description": "A kwuarm seed - plant in a herb patch.",
-	"value": "10000",
+	"description": "It's a Kwuarm seed.",
+	"value": "2046",
 	"stackable": true
 }

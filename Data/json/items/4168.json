@@ -1,8 +1,8 @@
 {
 	"id": 4168,
 	"name": "Nose peg",
-	"description": "Protects me from any bad smells.",
-	"value": "200",
+	"description": "It's a Nose peg.",
+	"value": "411",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 3057,
 	"name": "Mime mask",
-	"description": "A mime would wear this.",
+	"description": "It's a Mime mask.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 9921,
 	"name": "Skeleton boots",
-	"description": "Null",
+	"description": "It's a Skeleton boots.",
 	"value": "1",
 	"equipSlot": "boots",
 	"bonuses" : [

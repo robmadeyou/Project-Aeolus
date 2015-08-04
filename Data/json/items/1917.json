@@ -1,7 +1,7 @@
 {
 	"id": 1917,
 	"name": "Beer",
-	"description": "A glass of frothy ale.",
-	"value": "2",
+	"description": "It's a Beer.",
+	"value": "101",
 	"stackable": false
 }

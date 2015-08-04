@@ -1,7 +1,7 @@
 {
 	"id": 11274,
 	"name": "Ham shirt",
-	"description": "Null",
+	"description": "It's a Ham shirt.",
 	"value": "75",
 	"equipSlot": "body",
 	"bonuses" : [
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		2,
+		2,
 		0,
 		0,
 		0,

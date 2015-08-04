@@ -1,7 +1,7 @@
 {
 	"id": 88,
 	"name": "Boots of lightness",
-	"description": "Magic boots that make you lighter than normal.",
+	"description": "It's a Boots of lightness.",
 	"value": "6",
 	"equipSlot": "boots",
 	"bonuses" : [

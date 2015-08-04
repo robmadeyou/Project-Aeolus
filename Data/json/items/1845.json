@@ -1,7 +1,7 @@
 {
 	"id": 1845,
 	"name": "Slave robe",
-	"description": "A filthy, smelly, flea infested robe.",
+	"description": "It's a Slave robe.",
 	"value": "40",
 	"equipSlot": "legs",
 	"bonuses" : [

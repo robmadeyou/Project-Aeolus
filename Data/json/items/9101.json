@@ -1,10 +1,11 @@
 {
 	"id": 9101,
 	"name": "Lunar cape",
-	"description": "Oooo pretty!",
+	"description": "It's a Lunar cape.",
 	"value": "2",
 	"equipSlot": "cape",
 	"bonuses" : [
+		0,
 		0,
 		0,
 		0,
@@ -14,7 +15,6 @@
 		1,
 		0,
 		2,
-		0,
 		0,
 		0
 	],

@@ -1,8 +1,8 @@
 {
 	"id": 6619,
 	"name": "White boots",
-	"description": "These will protect my feet.",
-	"value": "576",
+	"description": "It's a White boots.",
+	"value": "1227",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		0,
-		1
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

@@ -1,8 +1,8 @@
 {
 	"id": 1119,
 	"name": "Steel platebody",
-	"description": "Provides excellent protection.",
-	"value": "2000",
+	"description": "It's a Steel platebody.",
+	"value": "1088",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

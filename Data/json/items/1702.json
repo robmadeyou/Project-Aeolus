@@ -1,7 +1,30 @@
 {
 	"id": 1702,
-	"name": "Dragonstone ammy",
-	"description": "I wonder if I can get this enchanted.",
-	"value": "17625",
+	"name": "Dragonstone amulet",
+	"description": "It's a Dragonstone amulet.",
+	"value": "60300",
+	"equipSlot": "amulet",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 2639,
 	"name": "Tan cavalier",
-	"description": "All for one and one for all!",
-	"value": "200",
+	"description": "It's a Tan cavalier.",
+	"value": "15100",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

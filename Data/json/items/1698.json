@@ -1,8 +1,8 @@
 {
 	"id": 1698,
 	"name": "Ruby amulet",
-	"description": "I wonder if I can get this enchanted.",
-	"value": "2025",
+	"description": "It's a Ruby amulet.",
+	"value": "1200",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

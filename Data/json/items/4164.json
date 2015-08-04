@@ -1,8 +1,8 @@
 {
 	"id": 4164,
 	"name": "Facemask",
-	"description": "Stops me breathing in too much dust.",
-	"value": "200",
+	"description": "It's a Facemask.",
+	"value": "921",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

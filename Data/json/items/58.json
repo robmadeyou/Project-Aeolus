@@ -1,8 +1,8 @@
 {
 	"id": 58,
 	"name": "Willow longbow (u)",
-	"description": "An unstrung willow longbow, I need a bowstring for this.",
-	"value": "160",
+	"description": "It's a Willow longbow (u).",
+	"value": "23",
 	"animations" : [
 		808,
 		0,

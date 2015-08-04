@@ -1,7 +1,30 @@
 {
 	"id": 11733,
-	"name": "Dragon boots",
-	"description": "Swap this note at any bank for the equivelent item.",
-	"value": "20000",
+	"name": "Overload (1)",
+	"description": "It's an Overload (1).",
+	"value": "110",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

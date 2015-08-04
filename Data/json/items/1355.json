@@ -1,9 +1,9 @@
 {
 	"id": 1355,
 	"name": "Mithril axe",
-	"description": "A powerful axe.",
-	"value": "520",
-	"equipSlot": "weapon",
+	"description": "It's a Mithril axe.",
+	"value": "200",
+	"equipSlot": "body",
 	"bonuses" : [
 		-2,
 		12,
@@ -11,11 +11,11 @@
 		0,
 		0,
 		0,
+		1,
 		0,
 		0,
 		0,
-		0,
-		10,
+		13,
 		0
 	],
 	"attackDelay": "5",

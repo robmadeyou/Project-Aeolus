@@ -1,8 +1,8 @@
 {
 	"id": 1157,
 	"name": "Steel full helm",
-	"description": "A full face helmet.",
-	"value": "550",
+	"description": "It's a Steel full helm.",
+	"value": "226",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

@@ -1,30 +1,7 @@
 {
 	"id": 11074,
 	"name": "Bracelet of clay",
-	"description": "Now I can become a potter.",
-	"value": "1265",
-	"equipSlot": "gloves",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
+	"description": "It's a Bracelet of clay.",
+	"value": "660",
 	"stackable": false
 }

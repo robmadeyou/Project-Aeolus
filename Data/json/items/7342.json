@@ -1,8 +1,8 @@
 {
 	"id": 7342,
-	"name": "Rune kiteshield(h)",
-	"description": "A shield with a heraldic design",
-	"value": "54400",
+	"name": "Rune shield (h2)",
+	"description": "It's a Rune shield (h2).",
+	"value": "33900",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

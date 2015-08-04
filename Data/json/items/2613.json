@@ -1,8 +1,8 @@
 {
 	"id": 2613,
-	"name": "Adam full helm(g)",
-	"description": "Adamant full helm with gold trim.",
-	"value": "3520",
+	"name": "Adamant full helm (g)",
+	"description": "It's an Adamant full helm (g).",
+	"value": "232200",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

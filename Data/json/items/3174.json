@@ -1,7 +1,7 @@
 {
 	"id": 3174,
 	"name": "Adamant spear(kp)",
-	"description": "A Karambwan poisoned adamantite tipped spear.",
+	"description": "It's an Adamant spear(kp).",
 	"value": "2080",
 	"equipSlot": "weapon",
 	"bonuses" : [

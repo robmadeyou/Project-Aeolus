@@ -1,8 +1,8 @@
 {
 	"id": 2539,
-	"name": "Addy fire arrows",
-	"description": "These adamant headed arrows are ablaze with fire.",
-	"value": "10",
+	"name": "Adamant fire arrows",
+	"description": "It's an Adamant fire arrows.",
+	"value": "84",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

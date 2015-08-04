@@ -1,16 +1,7 @@
 {
 	"id": 11736,
-	"name": "Steam battlestaff",
-	"description": "It's a slightly magical stick.",
-	"value": "17000",
-	"animations" : [
-		809,
-		0,
-		1146,
-		0,
-		0,
-		0,
-		1210
-	],
+	"name": "Absorption (2)",
+	"description": "It's an Absorption (2).",
+	"value": "177100",
 	"stackable": false
 }

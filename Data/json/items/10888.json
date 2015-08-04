@@ -1,7 +1,30 @@
 {
 	"id": 10888,
 	"name": "Barrelchest anchor",
-	"description": "It's broken. I should see if a pirate smith can fix it.",
+	"description": "It's a Barrelchest anchor.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-2,
+		10,
+		92,
+		0,
+		0,
+		0,
+		0,
+		20,
+		0,
+		0,
+		100,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

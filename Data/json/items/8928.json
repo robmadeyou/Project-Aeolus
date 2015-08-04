@@ -1,8 +1,8 @@
 {
 	"id": 8928,
-	"name": "Hat and eyepatch",
-	"description": "Null",
-	"value": "1",
+	"name": "Hat eyepatch",
+	"description": "It's a Hat eyepatch.",
+	"value": "142000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

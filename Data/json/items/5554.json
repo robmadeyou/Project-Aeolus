@@ -1,7 +1,7 @@
 {
 	"id": 5554,
 	"name": "Rogue mask",
-	"description": "Black banded leather armour, a rogue's dream!",
+	"description": "It's a Rogue mask.",
 	"value": "375",
 	"equipSlot": "hat",
 	"bonuses" : [

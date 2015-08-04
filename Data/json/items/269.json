@@ -1,7 +1,7 @@
 {
 	"id": 269,
-	"name": "Clean torstol",
-	"description": "A fresh herb.",
-	"value": "75",
+	"name": "Torstol",
+	"description": "It's a Torstol.",
+	"value": "55000",
 	"stackable": false
 }

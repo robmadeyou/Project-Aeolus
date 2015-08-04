@@ -1,7 +1,7 @@
 {
 	"id": 548,
 	"name": "Shade robe",
-	"description": "If a shade had knees, this would keep them nice and warm.",
+	"description": "It's a Shade robe.",
 	"value": "30",
 	"equipSlot": "legs",
 	"bonuses" : [
@@ -16,7 +16,7 @@
 		0,
 		0,
 		0,
-		4
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

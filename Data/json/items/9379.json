@@ -1,8 +1,8 @@
 {
 	"id": 9379,
 	"name": "Mithril bolts (unf)",
-	"description": "Unfeathered mithril crossbow bolts.",
-	"value": "1",
+	"description": "It's a Mithril bolts (unf).",
+	"value": "116",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

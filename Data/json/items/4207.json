@@ -1,7 +1,7 @@
 {
 	"id": 4207,
 	"name": "Crystal seed",
-	"description": "This crystal seed looks grey and dead.",
-	"value": "1",
+	"description": "It's a Crystal seed.",
+	"value": "57600",
 	"stackable": false
 }

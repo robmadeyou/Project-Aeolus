@@ -1,8 +1,8 @@
 {
 	"id": 4749,
 	"name": "Torag's platebody",
-	"description": "Torag the Corrupted's plate body armour.",
-	"value": "280000",
+	"description": "It's a Torag's platebody.",
+	"value": "640200",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

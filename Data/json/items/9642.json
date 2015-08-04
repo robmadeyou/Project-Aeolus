@@ -1,9 +1,9 @@
 {
 	"id": 9642,
 	"name": "Citizen trousers",
-	"description": "Null",
-	"value": "5",
-	"equipSlot": "legs",
+	"description": "It's a Citizen trousers.",
+	"value": "328",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		2,
+		2,
 		0,
 		0,
 		0,

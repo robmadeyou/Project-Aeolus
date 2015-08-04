@@ -1,8 +1,8 @@
 {
 	"id": 830,
 	"name": "Rune javelin",
-	"description": "A rune tipped javelin.",
-	"value": "400",
+	"description": "It's a Rune javelin.",
+	"value": "261",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,

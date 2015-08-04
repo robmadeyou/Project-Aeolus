@@ -1,7 +1,7 @@
 {
 	"id": 4542,
 	"name": "Lantern lens",
-	"description": "A roughly circular disc of glass.",
-	"value": "70",
+	"description": "It's a Lantern lens.",
+	"value": "1",
 	"stackable": false
 }

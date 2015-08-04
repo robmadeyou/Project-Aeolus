@@ -1,8 +1,31 @@
 {
 	"id": 4236,
-	"name": "Oak longbow",
-	"description": "This bow has been signed by Robin, Master Bowman.",
+	"name": "Signed oak bow",
+	"description": "It's a Signed oak bow.",
 	"value": "160",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		14,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		808,
 		0,
@@ -19,7 +42,7 @@
 		426,
 		0
 	],
-	"twoHanded": true,
+	"twoHanded": false,
 	"special": false,
 	"stackable": false
 }

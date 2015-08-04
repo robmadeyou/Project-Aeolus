@@ -1,7 +1,7 @@
 {
 	"id": 2996,
 	"name": "Agility arena ticket",
-	"description": "I can exchange these for further experience or items.",
+	"description": "It's an Agility arena ticket.",
 	"value": "1",
 	"stackable": true
 }

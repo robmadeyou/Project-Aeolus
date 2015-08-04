@@ -1,8 +1,8 @@
 {
 	"id": 1149,
 	"name": "Dragon med helm",
-	"description": "Makes the wearer pretty intimidating.",
-	"value": "100000",
+	"description": "It's a Dragon med helm.",
+	"value": "59700",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
@@ -14,7 +14,7 @@
 		35,
 		32,
 		-1,
-		38,
+		34,
 		0,
 		0
 	],

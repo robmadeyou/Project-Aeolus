@@ -1,7 +1,7 @@
 {
 	"id": 1501,
 	"name": "Dwarf brew",
-	"description": "Smells stronger than most spirits.",
+	"description": "It's a Dwarf brew.",
 	"value": "2",
 	"stackable": false
 }

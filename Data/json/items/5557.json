@@ -1,7 +1,7 @@
 {
 	"id": 5557,
 	"name": "Rogue boots",
-	"description": "Black banded leather boots, a rogue's dream!",
+	"description": "It's a Rogue boots.",
 	"value": "250",
 	"equipSlot": "boots",
 	"bonuses" : [

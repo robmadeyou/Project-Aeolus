@@ -1,8 +1,8 @@
 {
 	"id": 1061,
 	"name": "Leather boots",
-	"description": "Comfortable leather boots.",
-	"value": "6",
+	"description": "It's a Leather boots.",
+	"value": "159",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

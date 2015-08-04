@@ -1,7 +1,7 @@
 {
 	"id": 561,
 	"name": "Nature rune",
-	"description": "Used for alchemy spells.",
-	"value": "180",
+	"description": "It's a Nature rune.",
+	"value": "158",
 	"stackable": true
 }

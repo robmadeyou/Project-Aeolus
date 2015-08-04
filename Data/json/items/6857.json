@@ -1,7 +1,7 @@
 {
 	"id": 6857,
 	"name": "Bobble scarf",
-	"description": "A woolly scarf.",
+	"description": "It's a Bobble scarf.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 6109,
 	"name": "Ghostly hood",
-	"description": "A ghostly hood, fit for a ghostly head.",
+	"description": "It's a Ghostly hood.",
 	"value": "300",
 	"equipSlot": "hat",
 	"bonuses" : [

@@ -1,9 +1,9 @@
 {
 	"id": 6129,
 	"name": "Rock-shell plate",
-	"description": "A sturdy body armour made from rock crab pieces.",
-	"value": "65000",
-	"equipSlot": "weapon",
+	"description": "It's a Rock-shell plate.",
+	"value": "37800",
+	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,

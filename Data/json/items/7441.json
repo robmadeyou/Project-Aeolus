@@ -1,7 +1,30 @@
 {
 	"id": 7441,
 	"name": "Frying pan",
-	"description": "Looks like it's non-stick too!",
-	"value": "1660",
+	"description": "It's a Frying pan.",
+	"value": "868",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-4,
+		-4,
+		25,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		20,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

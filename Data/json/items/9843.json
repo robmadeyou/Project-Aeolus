@@ -1,8 +1,8 @@
 {
 	"id": 9843,
 	"name": "Oak cape rack",
-	"description": "Null",
-	"value": "10",
+	"description": "It's an Oak cape rack.",
+	"value": "14",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,

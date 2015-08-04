@@ -1,7 +1,7 @@
 {
 	"id": 6745,
 	"name": "Silverlight",
-	"description": "The magical sword 'Silverlight', stained black with mushroom ink.",
+	"description": "It's a Silverlight.",
 	"value": "50",
 	"equipSlot": "weapon",
 	"bonuses" : [

@@ -1,9 +1,9 @@
 {
 	"id": 10334,
 	"name": "3rd age range coif",
-	"description": "Fabulously ancient range protection crafted from white dragonhide.",
-	"value": "10000",
-	"equipSlot": "hat",
+	"description": "It's a 3rd age range coif.",
+	"value": "7200000",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

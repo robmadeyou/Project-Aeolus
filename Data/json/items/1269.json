@@ -1,8 +1,8 @@
 {
 	"id": 1269,
 	"name": "Steel pickaxe",
-	"description": "Used for mining.",
-	"value": "500",
+	"description": "It's a Steel pickaxe.",
+	"value": "1195",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		8,
@@ -11,7 +11,7 @@
 		0,
 		0,
 		0,
-		2,
+		1,
 		0,
 		0,
 		0,

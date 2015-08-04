@@ -1,7 +1,7 @@
 {
 	"id": 9759,
 	"name": "Prayer cape",
-	"description": "The cape worn by masters of Prayer.",
+	"description": "It's a Prayer cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

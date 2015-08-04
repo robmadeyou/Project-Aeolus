@@ -1,7 +1,7 @@
 {
 	"id": 554,
 	"name": "Fire rune",
-	"description": "One of the 4 basic elemental Runes.",
-	"value": "4",
+	"description": "It's a Fire rune.",
+	"value": "3",
 	"stackable": true
 }

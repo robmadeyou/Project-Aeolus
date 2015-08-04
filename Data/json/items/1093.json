@@ -1,8 +1,8 @@
 {
 	"id": 1093,
 	"name": "Rune plateskirt",
-	"description": "Designer leg protection.",
-	"value": "64000",
+	"description": "It's a Rune plateskirt.",
+	"value": "38300",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

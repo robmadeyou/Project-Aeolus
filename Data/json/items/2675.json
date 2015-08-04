@@ -1,8 +1,8 @@
 {
 	"id": 2675,
 	"name": "Guthix kiteshield",
-	"description": "Rune kiteshield in the colours of Guthix.",
-	"value": "54400",
+	"description": "It's a Guthix kiteshield.",
+	"value": "300300",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

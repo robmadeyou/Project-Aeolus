@@ -1,7 +1,7 @@
 {
 	"id": 5302,
 	"name": "Lantadyme seed",
-	"description": "A lantadyme seed - plant in a herb patch.",
-	"value": "5000",
+	"description": "It's a Lantadyme seed.",
+	"value": "33200",
 	"stackable": true
 }

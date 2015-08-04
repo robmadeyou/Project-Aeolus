@@ -1,7 +1,7 @@
 {
 	"id": 5284,
 	"name": "Banana tree seed",
-	"description": "Plant in a plantpot of soil to grow a sapling.",
-	"value": "20",
+	"description": "It's a Banana tree seed.",
+	"value": "3",
 	"stackable": true
 }

@@ -1,7 +1,7 @@
 {
 	"id": 3552,
-	"name": "Clue scroll",
-	"description": "Perhaps someone at the observatory can teach me to navigate?",
+	"name": "Clue scroll (hard)",
+	"description": "It's a Clue scroll (hard).",
 	"value": "1",
 	"stackable": false
 }

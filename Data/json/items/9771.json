@@ -1,7 +1,7 @@
 {
 	"id": 9771,
 	"name": "Agility cape",
-	"description": "The cape worn by masters of Agility.",
+	"description": "It's an Agility cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

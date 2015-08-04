@@ -1,7 +1,7 @@
 {
 	"id": 10941,
 	"name": "Lumberjack hat",
-	"description": "Null",
+	"description": "It's a Lumberjack hat.",
 	"value": "50",
 	"equipSlot": "hat",
 	"bonuses" : [

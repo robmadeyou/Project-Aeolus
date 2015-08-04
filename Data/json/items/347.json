@@ -1,8 +1,8 @@
 {
 	"id": 347,
 	"name": "Herring",
-	"description": "Some nicely cooked fish.",
-	"value": "15",
+	"description": "It's a Herring.",
+	"value": "7",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 6322,
 	"name": "Snakeskin body",
-	"description": "Made from 100% real snakeskin.",
-	"value": "1250",
+	"description": "It's a Snakeskin body.",
+	"value": "30100",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -11,7 +11,7 @@
 		-5,
 		12,
 		25,
-		38,
+		28,
 		32,
 		15,
 		35,

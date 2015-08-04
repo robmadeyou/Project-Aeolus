@@ -1,7 +1,30 @@
 {
 	"id": 3345,
 	"name": "Blamish myre shell",
-	"description": "A large 'Myre' coloured blamish snail shell, looks protective.",
-	"value": "150",
+	"description": "It's a Blamish myre shell.",
+	"value": "149",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-3,
+		-1,
+		7,
+		8,
+		6,
+		-1,
+		7,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

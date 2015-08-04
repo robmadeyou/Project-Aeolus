@@ -1,9 +1,9 @@
 {
 	"id": 10376,
 	"name": "Guthix bracers",
-	"description": "Guthix blessed dragonhide vambraces.",
-	"value": "6000",
-	"equipSlot": "body",
+	"description": "It's a Guthix bracers.",
+	"value": "3051",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

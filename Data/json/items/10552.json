@@ -1,8 +1,8 @@
 {
 	"id": 10552,
 	"name": "Runner boots",
-	"description": "Boots made from a Penance runner.",
-	"value": "5000",
+	"description": "It's a Runner boots.",
+	"value": "65003",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

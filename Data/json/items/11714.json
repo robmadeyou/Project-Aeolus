@@ -1,25 +1,7 @@
 {
 	"id": 11714,
-	"name": "Godsword shard 3",
-	"description": "A part of the godsword Blade.",
-	"value": "250000",
-	"animations" : [
-		7047,
-		7044,
-		7046,
-		7044,
-		7044,
-		7044,
-		7039
-	],
-	"combatAnimations" : [
-		7042,
-		7049,
-		7041,
-		7048,
-		0
-	],
-	"twoHanded": false,
-	"special": false,
+	"name": "Blood rune (nz)",
+	"description": "It's a Blood rune (nz).",
+	"value": "3152400",
 	"stackable": false
 }

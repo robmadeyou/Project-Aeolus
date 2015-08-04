@@ -1,7 +1,7 @@
 {
 	"id": 9096,
 	"name": "Lunar helm",
-	"description": "A mystical helmet.",
+	"description": "It's a Lunar helm.",
 	"value": "100",
 	"equipSlot": "hat",
 	"bonuses" : [

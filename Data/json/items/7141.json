@@ -1,7 +1,30 @@
 {
 	"id": 7141,
 	"name": "Harry's cutlass",
-	"description": "I hope he doesn't want it back.",
+	"description": "It's a Harry's cutlass.",
 	"value": "1040",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		3,
+		14,
+		0,
+		-5,
+		0,
+		4,
+		4,
+		4,
+		0,
+		0,
+		22,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

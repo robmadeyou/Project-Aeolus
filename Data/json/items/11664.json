@@ -1,7 +1,7 @@
 {
 	"id": 11664,
 	"name": "Void ranger helm",
-	"description": "A ranger helm from the order of the Void Knights.",
+	"description": "It's a Void ranger helm.",
 	"value": "9851",
 	"equipSlot": "hat",
 	"bonuses" : [

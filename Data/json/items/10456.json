@@ -1,9 +1,9 @@
 {
 	"id": 10456,
 	"name": "Zamorak mitre",
-	"description": "A Zamorak mitre.",
-	"value": "5000",
-	"equipSlot": "hat",
+	"description": "It's a Zamorak mitre.",
+	"value": "243500",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
@@ -16,7 +16,7 @@
 		4,
 		0,
 		0,
-		5
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

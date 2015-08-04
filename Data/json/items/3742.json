@@ -1,7 +1,7 @@
 {
 	"id": 3742,
 	"name": "Red herring",
-	"description": "The colouring on it seems to be some kind of sticky goop...",
+	"description": "It's a Red herring.",
 	"value": "1",
 	"equipSlot": "ring",
 	"bonuses" : [

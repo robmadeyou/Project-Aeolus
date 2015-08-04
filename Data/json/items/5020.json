@@ -1,7 +1,30 @@
 {
 	"id": 5020,
 	"name": "Minecart ticket",
-	"description": "A ticket to take you from Keldagrim to the dwarven mines under Ice Mountain.",
+	"description": "It's a Minecart ticket.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		-4,
+		-4,
+		16,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		15,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 9144,
 	"name": "Runite bolts",
-	"description": "Runite crossbow bolts.",
-	"value": "300",
+	"description": "It's a Runite bolts.",
+	"value": "836",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

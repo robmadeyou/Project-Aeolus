@@ -1,8 +1,8 @@
 {
 	"id": 1645,
 	"name": "Dragonstone ring",
-	"description": "A valuable ring.",
-	"value": "17625",
+	"description": "It's a Dragonstone ring.",
+	"value": "56600",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

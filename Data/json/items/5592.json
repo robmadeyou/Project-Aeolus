@@ -1,7 +1,7 @@
 {
 	"id": 5592,
 	"name": "Tin",
-	"description": "I could probably pour something into this.",
+	"description": "It's a Tin.",
 	"value": "10",
 	"stackable": false
 }

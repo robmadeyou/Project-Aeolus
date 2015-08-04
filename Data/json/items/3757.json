@@ -1,7 +1,7 @@
 {
 	"id": 3757,
 	"name": "Fremennik blade",
-	"description": "A sword used only by Fremennik warriors.",
+	"description": "It's a Fremennik blade.",
 	"value": "5000",
 	"equipSlot": "weapon",
 	"bonuses" : [

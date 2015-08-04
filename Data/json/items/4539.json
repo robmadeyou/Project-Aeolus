@@ -1,30 +1,7 @@
 {
 	"id": 4539,
 	"name": "Oil lantern",
-	"description": "It lights your way through the dark places of the earth.",
+	"description": "It's an Oil lantern.",
 	"value": "125",
-	"equipSlot": "shield",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
 	"stackable": false
 }

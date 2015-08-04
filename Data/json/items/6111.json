@@ -1,7 +1,7 @@
 {
 	"id": 6111,
 	"name": "Ghostly cloak",
-	"description": "Made of a strange ghostly material...",
+	"description": "It's a Ghostly cloak.",
 	"value": "250",
 	"equipSlot": "cape",
 	"bonuses" : [

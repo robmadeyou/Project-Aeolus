@@ -1,8 +1,8 @@
 {
 	"id": 1243,
 	"name": "Mithril spear",
-	"description": "A mithril tipped spear.",
-	"value": "845",
+	"description": "It's a Mithril spear.",
+	"value": "375",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		17,
@@ -15,8 +15,8 @@
 		0,
 		0,
 		0,
-		0,
-		18
+		18,
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

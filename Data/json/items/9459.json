@@ -1,8 +1,8 @@
 {
 	"id": 9459,
-	"name": "Steel c'bow (u)",
-	"description": "Null",
-	"value": "327",
+	"name": "Steel crossbow (u)",
+	"description": "It's a Steel crossbow (u).",
+	"value": "126",
 	"animations" : [
 		808,
 		0,
@@ -13,10 +13,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

@@ -1,8 +1,8 @@
 {
 	"id": 1109,
 	"name": "Mithril chainbody",
-	"description": "A series of connected metal rings.",
-	"value": "1950",
+	"description": "It's a Mithril chainbody.",
+	"value": "1059",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

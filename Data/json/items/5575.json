@@ -1,8 +1,8 @@
 {
 	"id": 5575,
 	"name": "Initiate hauberk",
-	"description": "An initiate Temple Knight's Armour.",
-	"value": "10000",
+	"description": "It's an Initiate hauberk.",
+	"value": "6248",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		-6,
 		44,
 		0,
-		6
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

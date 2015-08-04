@@ -1,7 +1,7 @@
 {
 	"id": 565,
 	"name": "Blood rune",
-	"description": "Used for high level missile spells.",
-	"value": "400",
+	"description": "It's a Blood rune.",
+	"value": "395",
 	"stackable": true
 }

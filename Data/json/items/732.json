@@ -1,7 +1,30 @@
 {
 	"id": 732,
 	"name": "Holy water",
-	"description": "A vial of holy water, good against certain demons.",
+	"description": "It's a Holy water.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		6,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

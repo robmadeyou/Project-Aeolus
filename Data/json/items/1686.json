@@ -1,7 +1,30 @@
 {
 	"id": 1686,
-	"name": "Whoopsie",
-	"description": "Just chuck this away, it's useless!",
-	"value": "1",
+	"name": "Karamja gloves",
+	"description": "It's a Karamja gloves.",
+	"value": "0",
+	"equipSlot": "gloves",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

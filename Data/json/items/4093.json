@@ -1,8 +1,8 @@
 {
 	"id": 4093,
 	"name": "Mystic robe bottom",
-	"description": "The lower half of a magical robe.",
-	"value": "80000",
+	"description": "It's a Mystic robe bottom.",
+	"value": "48200",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

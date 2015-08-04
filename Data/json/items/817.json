@@ -1,15 +1,15 @@
 {
 	"id": 817,
 	"name": "Rune dart(p)",
-	"description": "A deadly poisoned dart with a rune tip.",
-	"value": "350",
+	"description": "It's a Rune dart(p).",
+	"value": "101",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
 		0,
 		0,
-		18,
+		15,
 		0,
 		0,
 		0,

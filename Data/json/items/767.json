@@ -1,7 +1,7 @@
 {
 	"id": 767,
 	"name": "Phoenix crossbow",
-	"description": "Former property of the Phoenix Gang.",
+	"description": "It's a Phoenix crossbow.",
 	"value": "4",
 	"equipSlot": "weapon",
 	"bonuses" : [

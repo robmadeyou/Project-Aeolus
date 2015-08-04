@@ -1,7 +1,7 @@
 {
 	"id": 766,
-	"name": "Broken shield",
-	"description": "Swap this note at any bank for the equivalent item.",
-	"value": "1",
+	"name": "Gem bag",
+	"description": "It's a Gem bag.",
+	"value": "100",
 	"stackable": false
 }

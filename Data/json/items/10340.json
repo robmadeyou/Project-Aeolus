@@ -1,9 +1,9 @@
 {
 	"id": 10340,
 	"name": "3rd age robe",
-	"description": "Fabulously rare mage protection enchanted in the 3rd age.",
-	"value": "40000",
-	"equipSlot": "legs",
+	"description": "It's a 3rd age robe.",
+	"value": "25700000",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

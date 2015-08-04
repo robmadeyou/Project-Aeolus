@@ -1,8 +1,8 @@
 {
 	"id": 2619,
-	"name": "Rune full helm(g)",
-	"description": "Rune full helm with gold trim.",
-	"value": "35200",
+	"name": "Rune full helm (g)",
+	"description": "It's a Rune full helm (g).",
+	"value": "510200",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

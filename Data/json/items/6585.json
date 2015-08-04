@@ -1,8 +1,8 @@
 {
 	"id": 6585,
 	"name": "Amulet of fury",
-	"description": "A very powerful onyx amulet.",
-	"value": "202000",
+	"description": "It's an Amulet of fury.",
+	"value": "15600000",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		10,
@@ -16,7 +16,7 @@
 		15,
 		15,
 		8,
-		5
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

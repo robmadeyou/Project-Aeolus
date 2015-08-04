@@ -1,7 +1,30 @@
 {
 	"id": 1720,
 	"name": "Unstrung emblem",
-	"description": "It needs a string so I can wear it.",
-	"value": "200",
+	"description": "It's an Unstrung emblem.",
+	"value": "251",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		2,
+		2,
+		2,
+		2,
+		2,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

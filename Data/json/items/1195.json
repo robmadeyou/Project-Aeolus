@@ -1,8 +1,8 @@
 {
 	"id": 1195,
 	"name": "Black kiteshield",
-	"description": "A large metal shield.",
-	"value": "1632",
+	"description": "It's a Black kiteshield.",
+	"value": "3806",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

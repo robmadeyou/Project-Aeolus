@@ -1,7 +1,7 @@
 {
 	"id": 983,
 	"name": "Brass key",
-	"description": "Opens a door that leads into a dungeon.",
-	"value": "1",
+	"description": "It's a Brass key.",
+	"value": "370",
 	"stackable": false
 }

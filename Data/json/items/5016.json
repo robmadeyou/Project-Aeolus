@@ -1,7 +1,30 @@
 {
 	"id": 5016,
 	"name": "Bone spear",
-	"description": "Basic but brutal!",
-	"value": "600",
+	"description": "It's a Bone spear.",
+	"value": "248",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		11,
+		11,
+		11,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		13,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 70,
 	"name": "Magic longbow (u)",
-	"description": "An unstrung magic longbow, I need a bowstring for this.",
-	"value": "1280",
+	"description": "It's a Magic longbow (u).",
+	"value": "1270",
 	"animations" : [
 		808,
 		0,

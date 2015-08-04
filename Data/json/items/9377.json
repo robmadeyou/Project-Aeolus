@@ -1,8 +1,8 @@
 {
 	"id": 9377,
 	"name": "Iron bolts (unf)",
-	"description": "Unfeathered iron crossbow bolts.",
-	"value": "1",
+	"description": "It's an Iron bolts (unf).",
+	"value": "20",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

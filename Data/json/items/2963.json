@@ -1,7 +1,7 @@
 {
 	"id": 2963,
 	"name": "Silver sickle(b)",
-	"description": "It's a blessed silver sickle.",
+	"description": "It's a Silver sickle(b).",
 	"value": "250",
 	"equipSlot": "weapon",
 	"bonuses" : [
@@ -10,13 +10,13 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		2,
+		2,
+		2,
+		2,
+		2,
 		1,
-		5
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

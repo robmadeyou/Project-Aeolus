@@ -1,8 +1,8 @@
 {
 	"id": 6575,
 	"name": "Onyx ring",
-	"description": "A valuable ring.",
-	"value": "201000",
+	"description": "It's an Onyx ring.",
+	"value": "11400000",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

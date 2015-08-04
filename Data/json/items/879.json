@@ -1,8 +1,8 @@
 {
 	"id": 879,
 	"name": "Opal bolts",
-	"description": "Great if you have a crossbow!",
-	"value": "7",
+	"description": "It's an Opal bolts.",
+	"value": "9",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

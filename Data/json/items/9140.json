@@ -1,8 +1,8 @@
 {
 	"id": 9140,
 	"name": "Iron bolts",
-	"description": "Iron crossbow bolts.",
-	"value": "2",
+	"description": "It's an Iron bolts.",
+	"value": "38",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

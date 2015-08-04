@@ -1,7 +1,7 @@
 {
 	"id": 8006,
 	"name": "Large map",
-	"description": "A large map of Runescape.",
+	"description": "It's a Large map.",
 	"value": "1000",
 	"stackable": false
 }

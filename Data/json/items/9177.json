@@ -1,8 +1,31 @@
 {
 	"id": 9177,
-	"name": "Iron c'bow",
-	"description": "An iron crossbow.",
-	"value": "157",
+	"name": "Iron crossbow",
+	"description": "It's an Iron crossbow.",
+	"value": "32",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		42,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		808,
 		0,
@@ -13,10 +36,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

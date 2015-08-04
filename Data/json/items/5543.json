@@ -1,8 +1,8 @@
 {
 	"id": 5543,
 	"name": "Chaos tiara",
-	"description": "A tiara infused with the properties of chaos.",
-	"value": "100",
+	"description": "It's a Chaos tiara.",
+	"value": "93",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

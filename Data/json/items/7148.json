@@ -1,7 +1,7 @@
 {
 	"id": 7148,
 	"name": "Repair plank",
-	"description": "A plank of wood to repair the hull with.",
+	"description": "It's a Repair plank.",
 	"value": "1",
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 9847,
 	"name": "Marble cape rack",
-	"description": "Null",
-	"value": "10",
+	"description": "It's a Marble cape rack.",
+	"value": "326000",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,

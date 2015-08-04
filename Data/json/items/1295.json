@@ -1,12 +1,13 @@
 {
 	"id": 1295,
 	"name": "Steel longsword",
-	"description": "A razor sharp longsword.",
-	"value": "500",
+	"description": "It's a Steel longsword.",
+	"value": "183",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		9,
 		14,
+		-2,
 		0,
 		0,
 		0,
@@ -14,8 +15,7 @@
 		2,
 		0,
 		0,
-		0,
-		15,
+		16,
 		0
 	],
 	"attackDelay": "5",

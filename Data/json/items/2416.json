@@ -1,9 +1,9 @@
 {
 	"id": 2416,
 	"name": "Guthix staff",
-	"description": "A magical staff imbued with the power of Guthix.",
+	"description": "It's a Guthix staff.",
 	"value": "80000",
-	"equipSlot": "body",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		-1,
 		-1,
@@ -15,8 +15,8 @@
 		1,
 		6,
 		0,
-		0,
-		20
+		2,
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

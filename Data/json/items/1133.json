@@ -1,8 +1,8 @@
 {
 	"id": 1133,
 	"name": "Studded body",
-	"description": "Those studs should provide a bit more protection.",
-	"value": "850",
+	"description": "It's a Studded body.",
+	"value": "454",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

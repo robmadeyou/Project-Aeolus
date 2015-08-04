@@ -1,8 +1,8 @@
 {
 	"id": 598,
 	"name": "Bronze fire arrows",
-	"description": "Arrows with bronze heads and oil soaked cloth.",
-	"value": "10",
+	"description": "It's a Bronze fire arrows.",
+	"value": "277",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

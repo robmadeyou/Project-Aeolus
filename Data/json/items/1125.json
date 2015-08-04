@@ -1,8 +1,8 @@
 {
 	"id": 1125,
 	"name": "Black platebody",
-	"description": "Provides excellent protection.",
-	"value": "3840",
+	"description": "It's a Black platebody.",
+	"value": "4433",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

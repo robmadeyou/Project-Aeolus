@@ -1,7 +1,7 @@
 {
 	"id": 11282,
-	"name": "Beret and mask",
-	"description": "Null",
+	"name": "Beret mask",
+	"description": "It's a Beret mask.",
 	"value": "80",
 	"equipSlot": "hat",
 	"bonuses" : [

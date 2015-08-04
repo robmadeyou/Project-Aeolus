@@ -1,7 +1,7 @@
 {
 	"id": 10736,
-	"name": "Strength amulet(t)",
-	"description": "Null",
+	"name": "Strength amulet (t)",
+	"description": "It's a Strength amulet (t).",
 	"value": "2025",
 	"equipSlot": "amulet",
 	"bonuses" : [
@@ -15,7 +15,7 @@
 		0,
 		0,
 		0,
-		0,
+		10,
 		0
 	],
 	"attackDelay": "5",

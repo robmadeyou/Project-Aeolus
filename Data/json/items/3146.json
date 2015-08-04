@@ -1,7 +1,7 @@
 {
 	"id": 3146,
-	"name": "Cooked karambwan",
-	"description": "Cooked octopus. It looks a little suspect.",
+	"name": "Poison karambwan",
+	"description": "It's a Poison karambwan.",
 	"value": "250",
 	"stackable": false
 }

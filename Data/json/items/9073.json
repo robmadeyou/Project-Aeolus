@@ -1,7 +1,7 @@
 {
 	"id": 9073,
 	"name": "Moonclan boots",
-	"description": "Groovy foot protection.",
+	"description": "It's a Moonclan boots.",
 	"value": "900",
 	"equipSlot": "boots",
 	"bonuses" : [

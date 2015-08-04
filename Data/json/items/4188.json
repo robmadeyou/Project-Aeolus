@@ -1,7 +1,7 @@
 {
 	"id": 4188,
 	"name": "Obsidian amulet",
-	"description": "Triangular in shape, made from obsidian, and as large as your hand.",
+	"description": "It's an Obsidian amulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

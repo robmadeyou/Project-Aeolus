@@ -1,8 +1,31 @@
 {
 	"id": 4068,
 	"name": "Decorative sword",
-	"description": "A very decorative sword.",
+	"description": "It's a Decorative sword.",
 	"value": "500",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		20,
+		29,
+		-2,
+		0,
+		0,
+		0,
+		3,
+		2,
+		0,
+		0,
+		31,
+		0
+	],
+	"attackDelay": "4",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"combatAnimations" : [
 		451,
 		451,

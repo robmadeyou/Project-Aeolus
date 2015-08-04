@@ -1,7 +1,7 @@
 {
 	"id": 9070,
 	"name": "Moonclan armour",
-	"description": "Provides good protection.",
+	"description": "It's a Moonclan armour.",
 	"value": "1000",
 	"equipSlot": "weapon",
 	"bonuses" : [

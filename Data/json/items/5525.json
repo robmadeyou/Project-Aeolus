@@ -1,8 +1,8 @@
 {
 	"id": 5525,
 	"name": "Tiara",
-	"description": "Makes me feel like a Princess.",
-	"value": "100",
+	"description": "It's a Tiara.",
+	"value": "10",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

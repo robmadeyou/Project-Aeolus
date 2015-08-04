@@ -1,7 +1,7 @@
 {
 	"id": 4597,
 	"name": "Note",
-	"description": "A note found in the Mayor's bedroom mentioning the word 'Fibonacci'.",
+	"description": "It's a Note.",
 	"value": "1",
 	"stackable": false
 }

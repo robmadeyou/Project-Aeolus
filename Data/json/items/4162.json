@@ -1,7 +1,7 @@
 {
 	"id": 4162,
 	"name": "Rock hammer",
-	"description": "I can even smash stone with this.",
-	"value": "500",
+	"description": "It's a Rock hammer.",
+	"value": "204",
 	"stackable": false
 }

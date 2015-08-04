@@ -1,9 +1,9 @@
 {
 	"id": 10384,
 	"name": "Saradomin bracers",
-	"description": "Saradomin blessed dragonhide vambraces.",
-	"value": "4000",
-	"equipSlot": "body",
+	"description": "It's a Saradomin bracers.",
+	"value": "76800",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

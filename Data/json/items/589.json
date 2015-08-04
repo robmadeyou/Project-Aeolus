@@ -1,7 +1,7 @@
 {
 	"id": 589,
 	"name": "Gnome amulet",
-	"description": "It's an amulet of protection given to me by the gnomes.",
+	"description": "It's a Gnome amulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

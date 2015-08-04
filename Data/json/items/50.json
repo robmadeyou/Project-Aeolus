@@ -1,8 +1,8 @@
 {
 	"id": 50,
 	"name": "Shortbow (u)",
-	"description": "I need to find a string for this.",
-	"value": "23",
+	"description": "It's a Shortbow (u).",
+	"value": "2",
 	"animations" : [
 		808,
 		0,

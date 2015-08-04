@@ -1,7 +1,7 @@
 {
 	"id": 3100,
 	"name": "Adamant claws",
-	"description": "A set of fighting claws.",
+	"description": "It's an Adamant claws.",
 	"value": "1200",
 	"equipSlot": "weapon",
 	"bonuses" : [

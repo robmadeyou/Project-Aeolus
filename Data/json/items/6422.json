@@ -1,7 +1,30 @@
 {
 	"id": 6422,
 	"name": "Air rune",
-	"description": "One of the 4 basic elemental Runes.",
+	"description": "It's an Air rune.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		20,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		40,
+		40,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

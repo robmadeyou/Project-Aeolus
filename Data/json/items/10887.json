@@ -1,7 +1,7 @@
 {
 	"id": 10887,
 	"name": "Barrelchest anchor",
-	"description": "This is likely to put my back out...",
+	"description": "It's a Barrelchest anchor.",
 	"value": "230000",
 	"equipSlot": "weapon",
 	"bonuses" : [
@@ -12,7 +12,7 @@
 		0,
 		0,
 		0,
-		0,
+		20,
 		0,
 		0,
 		100,

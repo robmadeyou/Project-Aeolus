@@ -1,7 +1,30 @@
 {
 	"id": 11691,
-	"name": "Godsword blade",
-	"description": "Swap this note at any bank for the equivelent item.",
-	"value": "750000",
+	"name": "Body rune",
+	"description": "It's a Body rune.",
+	"value": "0",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		40,
+		40,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

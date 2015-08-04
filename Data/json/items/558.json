@@ -1,7 +1,7 @@
 {
 	"id": 558,
 	"name": "Mind rune",
-	"description": "Used for basic level missile spells.",
+	"description": "It's a Mind rune.",
 	"value": "3",
 	"stackable": true
 }

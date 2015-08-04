@@ -1,7 +1,7 @@
 {
 	"id": 738,
 	"name": "Ardrigal mixture",
-	"description": "It's a mixture of Ardrigal and water. Needs another ingredient.",
+	"description": "It's an Ardrigal mixture.",
 	"value": "1",
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 6916,
 	"name": "Infinity top",
-	"description": "Mystical robes.",
-	"value": "140000",
+	"description": "It's an Infinity top.",
+	"value": "1700000",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -12,8 +12,8 @@
 		0,
 		0,
 		0,
-		22,
 		0,
+		22,
 		0,
 		0,
 		0

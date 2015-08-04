@@ -1,7 +1,7 @@
 {
 	"id": 4160,
 	"name": "Broad arrows",
-	"description": "Arrows with a wider than normal tip.",
+	"description": "It's a Broad arrows.",
 	"value": "60",
 	"equipSlot": "arrows",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 8847,
 	"name": "Black defender",
-	"description": "A defensive weapon.",
+	"description": "It's a Black defender.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 8024,
 	"name": "Fencing ring",
-	"description": "Null",
+	"description": "It's a Fencing ring.",
 	"value": "1",
 	"equipSlot": "ring",
 	"bonuses" : [

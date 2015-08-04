@@ -1,7 +1,7 @@
 {
 	"id": 403,
 	"name": "Edible seaweed",
-	"description": "Slightly damp seaweed.",
-	"value": "2",
+	"description": "It's an Edible seaweed.",
+	"value": "321",
 	"stackable": false
 }

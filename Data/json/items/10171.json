@@ -1,7 +1,7 @@
 {
 	"id": 10171,
 	"name": "Eagle cape",
-	"description": "Null",
+	"description": "It's an Eagle cape.",
 	"value": "1",
 	"equipSlot": "cape",
 	"bonuses" : [

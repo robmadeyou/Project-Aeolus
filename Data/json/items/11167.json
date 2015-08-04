@@ -1,8 +1,31 @@
 {
 	"id": 11167,
 	"name": "Phoenix crossbow",
-	"description": "Null",
+	"description": "It's a Phoenix crossbow.",
 	"value": "4",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		6,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		808,
 		0,

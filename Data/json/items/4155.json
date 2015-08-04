@@ -1,7 +1,30 @@
 {
 	"id": 4155,
 	"name": "Enchanted gem",
-	"description": "I can contact the Slayer Masters with this.",
-	"value": "100",
+	"description": "It's an Enchanted gem.",
+	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		81,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		79,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		20,
+		0,
+		0,
+		20
+	],
 	"stackable": false
 }

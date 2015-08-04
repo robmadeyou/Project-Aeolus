@@ -1,7 +1,7 @@
 {
 	"id": 5375,
 	"name": "Spirit sapling",
-	"description": "This sapling is ready to be replanted in a Spirit patch.",
+	"description": "It's a Spirit sapling.",
 	"value": "1",
 	"stackable": false
 }

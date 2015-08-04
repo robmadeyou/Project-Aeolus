@@ -1,8 +1,8 @@
 {
 	"id": 1637,
 	"name": "Sapphire ring",
-	"description": "A valuable ring.",
-	"value": "900",
+	"description": "It's a Sapphire ring.",
+	"value": "546",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

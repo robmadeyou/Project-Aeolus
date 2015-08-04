@@ -1,7 +1,7 @@
 {
 	"id": 2661,
-	"name": "Saradomin plate",
-	"description": "Rune platebody in the colours of Saradomin.",
+	"name": "Saradomin platebody",
+	"description": "It's a Saradomin platebody.",
 	"value": "65000",
 	"equipSlot": "body",
 	"bonuses" : [

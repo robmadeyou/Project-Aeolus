@@ -1,8 +1,8 @@
 {
 	"id": 1009,
 	"name": "Brass necklace",
-	"description": "I'd prefer a gold one.",
-	"value": "30",
+	"description": "It's a Brass necklace.",
+	"value": "34",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 1519,
 	"name": "Willow logs",
-	"description": "Logs cut from a willow tree.",
-	"value": "40",
+	"description": "It's a Willow logs.",
+	"value": "16",
 	"stackable": false
 }

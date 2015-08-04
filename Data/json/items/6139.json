@@ -1,8 +1,8 @@
 {
 	"id": 6139,
 	"name": "Skeletal top",
-	"description": "The bones in this armour seem to vibrate with a magical quality...",
-	"value": "45000",
+	"description": "It's a Skeletal top.",
+	"value": "26900",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

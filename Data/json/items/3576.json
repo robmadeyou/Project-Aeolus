@@ -1,7 +1,7 @@
 {
 	"id": 3576,
-	"name": "Puzzle box",
-	"description": "I need to solve this!",
+	"name": "Puzzle box (hard)",
+	"description": "It's a Puzzle box (hard).",
 	"value": "100",
 	"stackable": false
 }

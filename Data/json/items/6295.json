@@ -1,7 +1,7 @@
 {
 	"id": 6295,
 	"name": "Spider on shaft",
-	"description": "A raw spider threaded onto an arrow shaft.",
-	"value": "20",
+	"description": "It's a Spider on shaft.",
+	"value": "100",
 	"stackable": false
 }

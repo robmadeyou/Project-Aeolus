@@ -1,8 +1,8 @@
 {
 	"id": 3140,
 	"name": "Dragon chainbody",
-	"description": "A series of connected metal rings.",
-	"value": "250000",
+	"description": "It's a Dragon chainbody.",
+	"value": "5000000",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

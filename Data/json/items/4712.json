@@ -1,8 +1,8 @@
 {
 	"id": 4712,
 	"name": "Ahrim's robetop",
-	"description": "Ahrim the Blighted's armoured robe top.",
-	"value": "50000",
+	"description": "It's an Ahrim's robetop.",
+	"value": "1900000",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

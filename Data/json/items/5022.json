@@ -1,7 +1,7 @@
 {
 	"id": 5022,
 	"name": "Minecart ticket",
-	"description": "A ticket to take you from Keldagrim to the passage under White Wolf Mountain.",
+	"description": "It's a Minecart ticket.",
 	"value": "1",
 	"stackable": false
 }

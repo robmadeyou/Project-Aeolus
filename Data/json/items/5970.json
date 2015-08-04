@@ -1,7 +1,7 @@
 {
 	"id": 5970,
 	"name": "Curry leaf",
-	"description": "I could make a spicy curry with this.",
-	"value": "19",
+	"description": "It's a Curry leaf.",
+	"value": "101",
 	"stackable": false
 }

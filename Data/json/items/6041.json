@@ -1,8 +1,8 @@
 {
 	"id": 6041,
-	"name": "Emerald amulet",
-	"description": "This amulet has been strung with the root of a Magic Tree.",
-	"value": "1",
+	"name": "Pre-nature amulet",
+	"description": "It's a Pre-nature amulet.",
+	"value": "11800",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

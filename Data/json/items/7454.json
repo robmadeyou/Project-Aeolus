@@ -1,7 +1,7 @@
 {
 	"id": 7454,
-	"name": "Bronze Gloves",
-	"description": "A pair of gloves.",
+	"name": "Bronze gloves",
+	"description": "It's a Bronze gloves.",
 	"value": "100",
 	"equipSlot": "gloves",
 	"bonuses" : [

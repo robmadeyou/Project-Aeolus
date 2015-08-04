@@ -1,8 +1,8 @@
 {
 	"id": 41,
 	"name": "Steel arrowtips",
-	"description": "I can make an arrow with these.",
-	"value": "6",
+	"description": "It's a Steel arrowtips.",
+	"value": "41",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

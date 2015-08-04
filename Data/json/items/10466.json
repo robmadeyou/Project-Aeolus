@@ -1,8 +1,8 @@
 {
 	"id": 10466,
 	"name": "Guthix robe legs",
-	"description": "Leggings from the Guthix Vestments.",
-	"value": "7000",
+	"description": "It's a Guthix robe legs.",
+	"value": "232700",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		4,
 		0,
 		0,
-		4
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

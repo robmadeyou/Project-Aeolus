@@ -1,7 +1,7 @@
 {
 	"id": 787,
 	"name": "Lumber order",
-	"description": "An order from the Karamja shipyard.",
+	"description": "It's a Lumber order.",
 	"value": "2",
 	"stackable": false
 }

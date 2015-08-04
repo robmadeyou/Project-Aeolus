@@ -1,7 +1,30 @@
 {
 	"id": 4600,
-	"name": "Willow-blackjack",
-	"description": "A handy little club made out of willow.",
-	"value": "600",
+	"name": "Willow blackjack",
+	"description": "It's a Willow blackjack.",
+	"value": "229",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		8,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		10,
+		10,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

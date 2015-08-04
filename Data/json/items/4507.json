@@ -1,7 +1,7 @@
 {
 	"id": 4507,
 	"name": "Decorative shield",
-	"description": "A very decorative shield.",
+	"description": "It's a Decorative shield.",
 	"value": "2210",
 	"equipSlot": "shield",
 	"bonuses" : [

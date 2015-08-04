@@ -1,8 +1,8 @@
 {
 	"id": 6577,
 	"name": "Onyx necklace",
-	"description": "I wonder if this is valuable.",
-	"value": "201000",
+	"description": "It's an Onyx necklace.",
+	"value": "3100000",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

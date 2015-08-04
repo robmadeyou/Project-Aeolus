@@ -1,30 +1,7 @@
 {
 	"id": 3827,
 	"name": "Saradomin page 1",
-	"description": "This seems to have been torn from a book...",
-	"value": "200",
-	"equipSlot": "body",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
+	"description": "It's a Saradomin page 1.",
+	"value": "1671400",
 	"stackable": true
 }

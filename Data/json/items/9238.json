@@ -1,8 +1,8 @@
 {
 	"id": 9238,
 	"name": "Pearl bolts (e)",
-	"description": "Enchanted pearl tipped iron crossbow bolts.",
-	"value": "15",
+	"description": "It's a Pearl bolts (e).",
+	"value": "53",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

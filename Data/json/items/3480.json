@@ -1,8 +1,8 @@
 {
 	"id": 3480,
 	"name": "Guthix plateskirt",
-	"description": "Rune plateskirt in the colours of Guthix.",
-	"value": "64000",
+	"description": "It's a Guthix plateskirt.",
+	"value": "40900",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

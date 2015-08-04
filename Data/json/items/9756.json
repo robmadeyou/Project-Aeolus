@@ -1,7 +1,7 @@
 {
 	"id": 9756,
 	"name": "Ranging cape",
-	"description": "The cape worn by masters of Ranging.",
+	"description": "It's a Ranging cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

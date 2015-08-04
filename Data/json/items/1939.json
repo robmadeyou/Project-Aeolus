@@ -1,7 +1,7 @@
 {
 	"id": 1939,
 	"name": "Swamp tar",
-	"description": "A foul smelling thick tar-like substance.",
-	"value": "1",
+	"description": "It's a Swamp tar.",
+	"value": "158",
 	"stackable": true
 }

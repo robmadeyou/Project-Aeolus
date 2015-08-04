@@ -1,8 +1,8 @@
 {
 	"id": 1718,
 	"name": "Holy symbol",
-	"description": "A blessed holy symbol of Saradomin.",
-	"value": "300",
+	"description": "It's a Holy symbol.",
+	"value": "115",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		2,
 		2,
 		0,
-		8
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

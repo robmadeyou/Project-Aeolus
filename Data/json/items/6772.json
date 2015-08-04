@@ -1,7 +1,7 @@
 {
 	"id": 6772,
 	"name": "Smouldering pot",
-	"description": "Contains slowly burning garden weeds.",
+	"description": "It's a Smouldering pot.",
 	"value": "1",
 	"equipSlot": "ring",
 	"bonuses" : [

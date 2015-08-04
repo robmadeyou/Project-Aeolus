@@ -1,19 +1,19 @@
 {
 	"id": 3797,
 	"name": "Fremennik hat",
-	"description": "A silly pointed hat.",
-	"value": "500",
+	"description": "It's a Fremennik hat.",
+	"value": "1303",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		3,
 		0,
 		0,
 		0,
 		0,
-		0,
-		0,
+		3,
 		0,
 		0,
 		0

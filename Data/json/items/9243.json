@@ -1,8 +1,8 @@
 {
 	"id": 9243,
 	"name": "Diamond bolts (e)",
-	"description": "Enchanted diamond tipped adamantite crossbow bolts.",
-	"value": "211",
+	"description": "It's a Diamond bolts (e).",
+	"value": "1258",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

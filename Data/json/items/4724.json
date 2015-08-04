@@ -1,8 +1,8 @@
 {
 	"id": 4724,
 	"name": "Guthan's helm",
-	"description": "Guthan the Infested's helm.",
-	"value": "103000",
+	"description": "It's a Guthan's helm.",
+	"value": "1500000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

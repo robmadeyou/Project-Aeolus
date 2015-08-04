@@ -1,7 +1,7 @@
 {
 	"id": 9102,
 	"name": "Lunar amulet",
-	"description": "Awesome.",
+	"description": "It's a Lunar amulet.",
 	"value": "30",
 	"equipSlot": "amulet",
 	"bonuses" : [

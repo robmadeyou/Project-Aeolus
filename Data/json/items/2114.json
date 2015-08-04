@@ -1,7 +1,7 @@
 {
 	"id": 2114,
 	"name": "Pineapple",
-	"description": "It can be cut up into something more manageable with a knife.",
-	"value": "2",
+	"description": "It's a Pineapple.",
+	"value": "60",
 	"stackable": false
 }

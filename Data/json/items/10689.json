@@ -1,19 +1,19 @@
 {
 	"id": 10689,
 	"name": "Wizard boots",
-	"description": "Null",
+	"description": "It's a Wizard boots.",
 	"value": "200",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		4,
 		0,
 		0,
 		0,
 		0,
-		0,
-		0,
+		4,
 		0,
 		0,
 		0

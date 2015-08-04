@@ -1,8 +1,8 @@
 {
 	"id": 9244,
 	"name": "Dragon bolts (e)",
-	"description": "Enchanted dragonstone tipped rune crossbow bolts.",
-	"value": "1063",
+	"description": "It's a Dragon bolts (e).",
+	"value": "6128",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

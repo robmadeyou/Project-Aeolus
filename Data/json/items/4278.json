@@ -1,7 +1,7 @@
 {
 	"id": 4278,
 	"name": "Ecto-token",
-	"description": "A token with ectoplasm on it.",
+	"description": "It's an Ecto-token.",
 	"value": "1",
 	"stackable": true
 }

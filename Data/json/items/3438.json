@@ -1,7 +1,7 @@
 {
 	"id": 3438,
 	"name": "Pyre logs",
-	"description": "Logs prepared with sacred oil for a funeral pyre.",
-	"value": "8",
+	"description": "It's a Pyre logs.",
+	"value": "1003",
 	"stackable": false
 }

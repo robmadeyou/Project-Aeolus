@@ -1,8 +1,31 @@
 {
 	"id": 10284,
 	"name": "Magic comp bow",
-	"description": "Null",
-	"value": "2500",
+	"description": "It's a Magic comp bow.",
+	"value": "1322",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		71,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		808,
 		0,

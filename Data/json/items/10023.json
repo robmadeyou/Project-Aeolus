@@ -1,9 +1,9 @@
 {
 	"id": 10023,
 	"name": "Falconer's glove",
-	"description": "Null",
+	"description": "It's a Falconer's glove.",
 	"value": "1",
-	"equipSlot": "gloves",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		1,
+		1,
 		0,
 		0,
 		0,

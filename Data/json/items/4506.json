@@ -1,7 +1,7 @@
 {
 	"id": 4506,
 	"name": "Decorative helm",
-	"description": "A very decorative helm.",
+	"description": "It's a Decorative helm.",
 	"value": "780",
 	"equipSlot": "hat",
 	"bonuses" : [

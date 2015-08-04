@@ -1,7 +1,7 @@
 {
 	"id": 7918,
 	"name": "Bonesack",
-	"description": "The Bonesack is a little old item that protects like leather.",
+	"description": "It's a Bonesack.",
 	"value": "1",
 	"equipSlot": "cape",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		4,
+		4,
+		4,
+		4,
+		4,
 		0,
 		0
 	],

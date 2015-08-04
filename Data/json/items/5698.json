@@ -1,8 +1,8 @@
 {
 	"id": 5698,
-	"name": "Drag dagger(p++)",
-	"description": "A powerful dagger.",
-	"value": "24000",
+	"name": "Dragon dagger(p++)",
+	"description": "It's a Dragon dagger(p++).",
+	"value": "25100",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		40,
@@ -26,5 +26,14 @@
 		0,
 		0
 	],
+	"combatAnimations" : [
+		402,
+		402,
+		402,
+		402,
+		0
+	],
+	"twoHanded": false,
+	"special": true,
 	"stackable": false
 }

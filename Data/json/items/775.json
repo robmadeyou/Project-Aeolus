@@ -1,7 +1,7 @@
 {
 	"id": 775,
 	"name": "Cooking gauntlets",
-	"description": "These gauntlets empower with a greater ability to cook fish.",
+	"description": "It's a Cooking gauntlets.",
 	"value": "1",
 	"equipSlot": "gloves",
 	"bonuses" : [
@@ -12,7 +12,7 @@
 		0,
 		8,
 		9,
-		0,
+		7,
 		0,
 		0,
 		2,

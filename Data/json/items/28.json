@@ -1,7 +1,7 @@
 {
 	"id": 28,
 	"name": "Insect repellent",
-	"description": "Drives away all known 6 legged creatures.",
+	"description": "It's an Insect repellent.",
 	"value": "3",
 	"stackable": false
 }

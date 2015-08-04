@@ -1,7 +1,7 @@
 {
 	"id": 9100,
 	"name": "Lunar boots",
-	"description": "Mystical foot protection.",
+	"description": "It's a Lunar boots.",
 	"value": "100",
 	"equipSlot": "boots",
 	"bonuses" : [

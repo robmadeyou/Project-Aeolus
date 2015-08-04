@@ -1,7 +1,7 @@
 {
 	"id": 5310,
 	"name": "Krandorian seed",
-	"description": "A Krandorian hop seed - plant in a hops patch.",
-	"value": "8",
+	"description": "It's a Krandorian seed.",
+	"value": "1",
 	"stackable": true
 }

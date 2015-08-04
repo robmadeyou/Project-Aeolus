@@ -1,7 +1,7 @@
 {
 	"id": 4663,
 	"name": "Blessed pot",
-	"description": "A blessed silver pot filled with blood and garlic.",
+	"description": "It's a Blessed pot.",
 	"value": "250",
 	"stackable": false
 }

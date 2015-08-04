@@ -1,7 +1,7 @@
 {
 	"id": 3161,
 	"name": "Crafting manual",
-	"description": "A set of instructions explaining how to construct a Karambwan vessel.",
+	"description": "It's a Crafting manual.",
 	"value": "5",
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 868,
 	"name": "Rune knife",
-	"description": "A finely balanced throwing knife.",
-	"value": "167",
+	"description": "It's a Rune knife.",
+	"value": "1883",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,

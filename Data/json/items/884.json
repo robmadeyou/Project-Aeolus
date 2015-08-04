@@ -1,8 +1,8 @@
 {
 	"id": 884,
 	"name": "Iron arrow",
-	"description": "Arrows with iron heads.",
-	"value": "3",
+	"description": "It's an Iron arrow.",
+	"value": "20",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 3755,
 	"name": "Farseer helm",
-	"description": "This helmet is worn by farseers.",
-	"value": "60000",
+	"description": "It's a Farseer helm.",
+	"value": "49200",
 	"equipSlot": "hat",
 	"bonuses" : [
 		-5,

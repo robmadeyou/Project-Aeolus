@@ -1,8 +1,8 @@
 {
 	"id": 2541,
 	"name": "Rune fire arrows",
-	"description": "These rune headed arrows are ablaze with fire.",
-	"value": "10",
+	"description": "It's a Rune fire arrows.",
+	"value": "367",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 10844,
 	"name": "Spring sq'irk",
-	"description": "Null",
+	"description": "It's a Spring sq'irk.",
 	"value": "1",
 	"equipSlot": "ring",
 	"bonuses" : [
@@ -10,12 +10,12 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		31,
+		29,
+		34,
+		3,
+		30,
+		3,
 		0
 	],
 	"attackDelay": "5",

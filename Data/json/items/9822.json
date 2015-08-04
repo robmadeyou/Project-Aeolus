@@ -1,7 +1,7 @@
 {
 	"id": 9822,
 	"name": "Magical cape rack",
-	"description": "Null",
+	"description": "It's a Magical cape rack.",
 	"value": "1",
 	"equipSlot": "cape",
 	"bonuses" : [

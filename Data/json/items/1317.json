@@ -1,8 +1,8 @@
 {
 	"id": 1317,
 	"name": "Adamant 2h sword",
-	"description": "A two handed sword.",
-	"value": "6400",
+	"description": "It's an Adamant 2h sword.",
+	"value": "3748",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-4,
@@ -14,7 +14,7 @@
 		0,
 		0,
 		0,
-		1,
+		-1,
 		44,
 		0
 	],

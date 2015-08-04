@@ -1,8 +1,8 @@
 {
 	"id": 2671,
 	"name": "Guthix platelegs",
-	"description": "Rune plate legs in the colours of Guthix.",
-	"value": "64000",
+	"description": "It's a Guthix platelegs.",
+	"value": "178800",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

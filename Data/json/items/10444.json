@@ -1,9 +1,9 @@
 {
 	"id": 10444,
 	"name": "Zamorak crozier",
-	"description": "A Zamorak crozier.",
-	"value": "5000",
-	"equipSlot": "body",
+	"description": "It's a Zamorak crozier.",
+	"value": "2945",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		7,
 		-1,
@@ -16,7 +16,7 @@
 		10,
 		0,
 		32,
-		6
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

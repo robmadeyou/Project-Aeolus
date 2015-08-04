@@ -1,8 +1,8 @@
 {
 	"id": 6889,
 	"name": "Mage's book",
-	"description": "The magical book of the Mage.",
-	"value": "500",
+	"description": "It's a Mage's book.",
+	"value": "5000000",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

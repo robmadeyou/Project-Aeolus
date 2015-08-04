@@ -1,8 +1,8 @@
 {
 	"id": 9341,
 	"name": "Dragon bolts",
-	"description": "Dragonstone tipped Runite crossbow bolts.",
-	"value": "967",
+	"description": "It's a Dragon bolts.",
+	"value": "5974",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

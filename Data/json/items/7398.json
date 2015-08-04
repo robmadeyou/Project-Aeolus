@@ -1,8 +1,8 @@
 {
 	"id": 7398,
-	"name": "Enchanted bottoms",
-	"description": "Enchanted Wizards robes.",
-	"value": "80000",
+	"name": "Enchanted robe",
+	"description": "It's an Enchanted robe.",
+	"value": "116500",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

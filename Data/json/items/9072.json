@@ -1,7 +1,7 @@
 {
 	"id": 9072,
 	"name": "Moonclan gloves",
-	"description": "These should keep my hands safe.",
+	"description": "It's a Moonclan gloves.",
 	"value": "900",
 	"equipSlot": "gloves",
 	"bonuses" : [

@@ -1,8 +1,8 @@
 {
 	"id": 1656,
 	"name": "Sapphire necklace",
-	"description": "I wonder if this is valuable.",
-	"value": "1050",
+	"description": "It's a Sapphire necklace.",
+	"value": "570",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

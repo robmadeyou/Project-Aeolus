@@ -1,8 +1,8 @@
 {
 	"id": 1163,
 	"name": "Rune full helm",
-	"description": "A full face helmet.",
-	"value": "35200",
+	"description": "It's a Rune full helm.",
+	"value": "21000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

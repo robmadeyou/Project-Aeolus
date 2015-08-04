@@ -1,7 +1,7 @@
 {
 	"id": 1937,
 	"name": "Jug of water",
-	"description": "It's full of water.",
-	"value": "1",
+	"description": "It's a Jug of water.",
+	"value": "175",
 	"stackable": false
 }

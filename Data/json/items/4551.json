@@ -1,8 +1,8 @@
 {
 	"id": 4551,
 	"name": "Spiny helmet",
-	"description": "You don't want to wear it inside-out.",
-	"value": "650",
+	"description": "It's a Spiny helmet.",
+	"value": "923",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

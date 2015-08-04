@@ -1,8 +1,8 @@
 {
 	"id": 559,
 	"name": "Body rune",
-	"description": "Used for curse spells.",
-	"value": "3",
+	"description": "It's a Body rune.",
+	"value": "4",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

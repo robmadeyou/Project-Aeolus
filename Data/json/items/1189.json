@@ -1,14 +1,14 @@
 {
 	"id": 1189,
 	"name": "Bronze kiteshield",
-	"description": "A large metal shield.",
-	"value": "68",
+	"description": "It's a Bronze kiteshield.",
+	"value": "4",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,
 		0,
 		0,
-		-6,
+		-8,
 		-2,
 		5,
 		7,

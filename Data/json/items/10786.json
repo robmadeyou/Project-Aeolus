@@ -1,19 +1,19 @@
 {
 	"id": 10786,
 	"name": "Zamorak robe top",
-	"description": "Null",
+	"description": "It's a Zamorak robe top.",
 	"value": "7000",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		4,
 		0,
 		0,
 		0,
 		0,
-		0,
-		0,
+		4,
 		0,
 		0,
 		0

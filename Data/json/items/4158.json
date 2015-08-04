@@ -1,7 +1,7 @@
 {
 	"id": 4158,
 	"name": "Leaf-bladed spear",
-	"description": "A spear with a leaf-shaped point.",
+	"description": "It's a Leaf-bladed spear.",
 	"value": "31000",
 	"equipSlot": "weapon",
 	"bonuses" : [

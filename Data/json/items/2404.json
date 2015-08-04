@@ -1,7 +1,7 @@
 {
 	"id": 2404,
 	"name": "Chest key",
-	"description": "This key opens a chest in the Carnillean household.",
+	"description": "It's a Chest key.",
 	"value": "1",
 	"stackable": false
 }

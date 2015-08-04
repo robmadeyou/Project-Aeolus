@@ -1,7 +1,7 @@
 {
 	"id": 6548,
 	"name": "Nurse hat",
-	"description": "A nurses hat, but does it have healing powers?",
+	"description": "It's a Nurse hat.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [

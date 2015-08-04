@@ -1,7 +1,7 @@
 {
 	"id": 10500,
 	"name": "Crone-made amulet",
-	"description": "Null",
+	"description": "It's a Crone-made amulet.",
 	"value": "20",
 	"equipSlot": "amulet",
 	"bonuses" : [

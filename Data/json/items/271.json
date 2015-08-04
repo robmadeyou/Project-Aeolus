@@ -1,7 +1,7 @@
 {
 	"id": 271,
 	"name": "Pressure gauge",
-	"description": "It looks like part of a machine.",
+	"description": "It's a Pressure gauge.",
 	"value": "1",
 	"stackable": false
 }

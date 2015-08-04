@@ -1,8 +1,31 @@
 {
 	"id": 7447,
 	"name": "Kitchen knife",
-	"description": "A sharp, dependable knife, for filleting meat.",
-	"value": "8000",
+	"description": "It's a Kitchen knife.",
+	"value": "4665",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		25,
+		12,
+		-4,
+		1,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		24,
+		0
+	],
+	"attackDelay": "3",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"combatAnimations" : [
 		806,
 		806,

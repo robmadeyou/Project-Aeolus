@@ -1,8 +1,8 @@
 {
 	"id": 9640,
 	"name": "Citizen top",
-	"description": "Null",
-	"value": "5",
+	"description": "It's a Citizen top.",
+	"value": "344",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		2,
+		2,
 		0,
 		0,
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 5598,
 	"name": "Tin",
-	"description": "There is a bronze key surrounded by plaster in this tin.",
+	"description": "It's a Tin.",
 	"value": "20",
 	"stackable": false
 }

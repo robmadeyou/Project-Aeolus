@@ -1,7 +1,30 @@
 {
 	"id": 2952,
 	"name": "Wolfbane",
-	"description": "A silver dagger that can prevent werewolves changing form.",
+	"description": "It's a Wolfbane.",
 	"value": "300",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		11,
+		5,
+		-4,
+		1,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		10,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

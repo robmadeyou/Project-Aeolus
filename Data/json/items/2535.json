@@ -1,8 +1,8 @@
 {
 	"id": 2535,
 	"name": "Steel fire arrows",
-	"description": "These steel headed arrows are ablaze with fire.",
-	"value": "10",
+	"description": "It's a Steel fire arrows.",
+	"value": "293",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

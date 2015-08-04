@@ -1,7 +1,7 @@
 {
 	"id": 5306,
 	"name": "Jute seed",
-	"description": "A jute plant seed - plant in a hops patch.",
-	"value": "5",
+	"description": "It's a Jute seed.",
+	"value": "1",
 	"stackable": true
 }

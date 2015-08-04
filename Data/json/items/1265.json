@@ -1,7 +1,7 @@
 {
 	"id": 1265,
 	"name": "Bronze pickaxe",
-	"description": "Used for mining.",
+	"description": "It's a Bronze pickaxe.",
 	"value": "15",
 	"equipSlot": "weapon",
 	"bonuses" : [
@@ -11,7 +11,7 @@
 		0,
 		0,
 		0,
-		2,
+		1,
 		0,
 		0,
 		0,

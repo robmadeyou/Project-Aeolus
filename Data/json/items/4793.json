@@ -1,7 +1,30 @@
 {
 	"id": 4793,
 	"name": "Mithril brutal",
-	"description": "Blunt mithril arrow...ouch",
-	"value": "50",
+	"description": "It's a Mithril brutal.",
+	"value": "90",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

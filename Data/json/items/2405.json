@@ -1,7 +1,30 @@
 {
 	"id": 2405,
 	"name": "Carnillean armour",
-	"description": "Decorative armour; an heirloom of the Carnillean family.",
+	"description": "It's a Carnillean armour.",
 	"value": "65",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		20,
+		14,
+		8,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

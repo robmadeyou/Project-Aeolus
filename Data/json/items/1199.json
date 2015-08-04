@@ -1,8 +1,8 @@
 {
 	"id": 1199,
 	"name": "Adamant kiteshield",
-	"description": "A large metal shield.",
-	"value": "5440",
+	"description": "It's an Adamant kiteshield.",
+	"value": "3204",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

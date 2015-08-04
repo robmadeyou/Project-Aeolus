@@ -1,8 +1,8 @@
 {
 	"id": 1311,
 	"name": "Steel 2h sword",
-	"description": "A two handed sword.",
-	"value": "1000",
+	"description": "It's a Steel 2h sword.",
+	"value": "470",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-4,

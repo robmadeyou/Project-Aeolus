@@ -1,7 +1,7 @@
 {
 	"id": 8023,
 	"name": "Boxing ring",
-	"description": "Null",
+	"description": "It's a Boxing ring.",
 	"value": "1",
 	"equipSlot": "ring",
 	"bonuses" : [

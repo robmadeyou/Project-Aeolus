@@ -1,7 +1,7 @@
 {
 	"id": 7601,
 	"name": "Item",
-	"description": "It seems bleached with age.",
+	"description": "It's an Item.",
 	"value": "1",
 	"stackable": false
 }

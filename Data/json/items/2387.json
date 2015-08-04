@@ -1,7 +1,7 @@
 {
 	"id": 2387,
 	"name": "Damaged dagger",
-	"description": "Pointy.",
+	"description": "It's a Damaged dagger.",
 	"value": "1",
 	"combatAnimations" : [
 		412,

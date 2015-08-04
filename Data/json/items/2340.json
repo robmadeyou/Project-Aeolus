@@ -1,7 +1,7 @@
 {
 	"id": 2340,
 	"name": "Palm leaf",
-	"description": "Swap this note at any bank for the equivalent item.",
+	"description": "It's a Palm leaf.",
 	"value": "5",
 	"stackable": true
 }

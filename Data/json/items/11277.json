@@ -1,7 +1,7 @@
 {
 	"id": 11277,
 	"name": "Cavalier mask",
-	"description": "Null",
+	"description": "It's a Cavalier mask.",
 	"value": "200",
 	"equipSlot": "hat",
 	"bonuses" : [

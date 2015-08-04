@@ -1,8 +1,8 @@
 {
 	"id": 2601,
-	"name": "Adam platelegs (t)",
-	"description": "Adamant platelegs with trim.",
-	"value": "6400",
+	"name": "Adamant platelegs (t)",
+	"description": "It's an Adamant platelegs (t).",
+	"value": "24300",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

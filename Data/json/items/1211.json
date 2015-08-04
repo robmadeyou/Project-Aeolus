@@ -1,14 +1,14 @@
 {
 	"id": 1211,
 	"name": "Adamant dagger",
-	"description": "Short and deadly.",
-	"value": "800",
+	"description": "It's an Adamant dagger.",
+	"value": "360",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		15,
 		8,
 		-4,
-		0,
+		1,
 		0,
 		0,
 		0,

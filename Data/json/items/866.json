@@ -1,8 +1,8 @@
 {
 	"id": 866,
 	"name": "Mithril knife",
-	"description": "A finely balanced throwing knife.",
-	"value": "27",
+	"description": "It's a Mithril knife.",
+	"value": "147",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,

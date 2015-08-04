@@ -1,8 +1,31 @@
 {
 	"id": 10033,
 	"name": "Chinchompa",
-	"description": "Null",
-	"value": "140",
+	"description": "It's a Chinchompa.",
+	"value": "291",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		45,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"combatAnimations" : [
 		2779,
 		2779,

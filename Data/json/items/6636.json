@@ -1,7 +1,7 @@
 {
 	"id": 6636,
 	"name": "Solus's hat",
-	"description": "Proof that I have defeated the evil mage Solus.",
+	"description": "It's a Solus's hat.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [

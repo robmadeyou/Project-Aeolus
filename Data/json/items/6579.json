@@ -1,7 +1,7 @@
 {
 	"id": 6579,
-	"name": "Onyx amulet",
-	"description": "It needs a string so I can wear it.",
+	"name": "Onyx amulet (u)",
+	"description": "It's an Onyx amulet (u).",
 	"value": "201000",
 	"equipSlot": "amulet",
 	"bonuses" : [

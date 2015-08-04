@@ -1,7 +1,30 @@
 {
 	"id": 4773,
 	"name": "Bronze brutal",
-	"description": "Blunt bronze arrow...ouch",
-	"value": "5",
+	"description": "It's a Bronze brutal.",
+	"value": "71",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

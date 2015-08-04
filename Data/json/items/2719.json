@@ -1,7 +1,7 @@
 {
 	"id": 2719,
-	"name": "Clue scroll",
-	"description": "Part of the world map, but where?",
+	"name": "Clue scroll (easy)",
+	"description": "It's a Clue scroll (easy).",
 	"value": "1",
 	"stackable": false
 }

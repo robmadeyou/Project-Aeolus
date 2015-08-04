@@ -1,7 +1,7 @@
 {
 	"id": 1840,
 	"name": "Cell door key",
-	"description": "A metallic key, usually used by prison guards.",
+	"description": "It's a Cell door key.",
 	"value": "1",
 	"stackable": false
 }

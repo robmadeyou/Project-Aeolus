@@ -1,8 +1,8 @@
 {
 	"id": 3105,
 	"name": "Climbing boots",
-	"description": "Boots made for climbing.",
-	"value": "5000",
+	"description": "It's a Climbing boots.",
+	"value": "12",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

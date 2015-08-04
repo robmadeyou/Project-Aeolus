@@ -1,8 +1,8 @@
 {
 	"id": 1097,
 	"name": "Studded chaps",
-	"description": "Those studs should provide a bit more protection.",
-	"value": "750",
+	"description": "It's a Studded chaps.",
+	"value": "383",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 1679,
-	"name": "Ruby amulet",
-	"description": "It needs a string so I can wear it.",
-	"value": "2025",
+	"name": "Ruby amulet (u)",
+	"description": "It's a Ruby amulet (u).",
+	"value": "1220",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

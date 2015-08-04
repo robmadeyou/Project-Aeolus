@@ -1,8 +1,8 @@
 {
 	"id": 1727,
 	"name": "Amulet of magic",
-	"description": "An enchanted sapphire amulet of magic.",
-	"value": "1000",
+	"description": "It's an Amulet of magic.",
+	"value": "504",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

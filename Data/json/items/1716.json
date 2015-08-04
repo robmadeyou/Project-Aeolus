@@ -1,8 +1,8 @@
 {
 	"id": 1716,
 	"name": "Unblessed symbol",
-	"description": "A symbol of Saradomin.",
-	"value": "200",
+	"description": "It's an Unblessed symbol.",
+	"value": "36",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

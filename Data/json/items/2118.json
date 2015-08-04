@@ -1,8 +1,8 @@
 {
 	"id": 2118,
 	"name": "Pineapple ring",
-	"description": "Exotic fruit.",
-	"value": "1",
+	"description": "It's a Pineapple ring.",
+	"value": "24",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

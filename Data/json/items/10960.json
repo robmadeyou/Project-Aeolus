@@ -1,7 +1,30 @@
 {
 	"id": 10960,
 	"name": "Green gloop soup",
-	"description": "Null",
+	"description": "It's a Green gloop soup.",
 	"value": "10",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-8,
+		2,
+		1,
+		1,
+		1,
+		0,
+		1,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

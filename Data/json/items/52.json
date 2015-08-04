@@ -1,8 +1,8 @@
 {
 	"id": 52,
 	"name": "Arrow shaft",
-	"description": "A wooden arrow shaft.",
-	"value": "5",
+	"description": "It's an Arrow shaft.",
+	"value": "6",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

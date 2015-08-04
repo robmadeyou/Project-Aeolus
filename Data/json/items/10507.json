@@ -1,7 +1,7 @@
 {
 	"id": 10507,
 	"name": "Reindeer hat",
-	"description": "Null",
+	"description": "It's a Reindeer hat.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [

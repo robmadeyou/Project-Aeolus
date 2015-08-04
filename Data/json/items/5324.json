@@ -1,7 +1,7 @@
 {
 	"id": 5324,
 	"name": "Cabbage seed",
-	"description": "A cabbage seed - plant in an allotment.",
-	"value": "3",
+	"description": "It's a Cabbage seed.",
+	"value": "1",
 	"stackable": true
 }

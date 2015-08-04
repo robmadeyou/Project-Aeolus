@@ -1,7 +1,7 @@
 {
 	"id": 5301,
 	"name": "Cadantine seed",
-	"description": "A cadantine seed - plant in a herb patch.",
-	"value": "15000",
+	"description": "It's a Cadantine seed.",
+	"value": "919",
 	"stackable": true
 }

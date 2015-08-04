@@ -1,7 +1,30 @@
 {
 	"id": 4788,
 	"name": "Black brutal",
-	"description": "Blunt black arrow...ouch",
-	"value": "35",
+	"description": "It's a Black brutal.",
+	"value": "68",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

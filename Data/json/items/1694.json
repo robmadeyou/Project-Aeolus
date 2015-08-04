@@ -1,8 +1,8 @@
 {
 	"id": 1694,
 	"name": "Sapphire amulet",
-	"description": "I wonder if I can get this enchanted.",
-	"value": "900",
+	"description": "It's a Sapphire amulet.",
+	"value": "443",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

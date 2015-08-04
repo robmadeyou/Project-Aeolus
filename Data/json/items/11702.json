@@ -1,7 +1,30 @@
 {
 	"id": 11702,
-	"name": "Armadyl hilt",
-	"description": "Brimming with potential.",
-	"value": "500000",
+	"name": "Steel arrow",
+	"description": "It's a Steel arrow.",
+	"value": "51900000",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

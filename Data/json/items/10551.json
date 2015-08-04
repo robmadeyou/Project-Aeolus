@@ -1,9 +1,9 @@
 {
 	"id": 10551,
 	"name": "Fighter torso",
-	"description": "A Penance Fighter torso armour.",
-	"value": "20000",
-	"equipSlot": "body",
+	"description": "It's a Fighter torso.",
+	"value": "65006",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

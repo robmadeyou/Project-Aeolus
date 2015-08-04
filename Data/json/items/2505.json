@@ -1,7 +1,30 @@
 {
 	"id": 2505,
-	"name": "Blue d-leather",
-	"description": "It's a piece of prepared blue dragonhide.",
-	"value": "3000",
+	"name": "Blue dragon leather",
+	"description": "It's a Blue dragon leather.",
+	"value": "2568",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-15,
+		30,
+		55,
+		47,
+		60,
+		50,
+		55,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		60,
+		60,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

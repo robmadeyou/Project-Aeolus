@@ -1,8 +1,8 @@
 {
 	"id": 4304,
 	"name": "Ham cloak",
-	"description": "A HAM cape.",
-	"value": "75",
+	"description": "It's a Ham cloak.",
+	"value": "240",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,
@@ -11,10 +11,10 @@
 		0,
 		0,
 		0,
+		1,
+		1,
 		0,
-		0,
-		0,
-		0,
+		2,
 		0,
 		0
 	],

@@ -1,7 +1,7 @@
 {
 	"id": 1947,
 	"name": "Grain",
-	"description": "Some wheat heads.",
-	"value": "2",
+	"description": "It's a Grain.",
+	"value": "3",
 	"stackable": false
 }

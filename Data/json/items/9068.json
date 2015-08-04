@@ -1,7 +1,7 @@
 {
 	"id": 9068,
 	"name": "Moonclan helm",
-	"description": "Mystical headgear.",
+	"description": "It's a Moonclan helm.",
 	"value": "1000",
 	"equipSlot": "hat",
 	"bonuses" : [

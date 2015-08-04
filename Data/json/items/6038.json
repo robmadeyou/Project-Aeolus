@@ -1,8 +1,8 @@
 {
 	"id": 6038,
 	"name": "Magic string",
-	"description": "I could use this to make jewellery.",
-	"value": "1",
+	"description": "It's a Magic string.",
+	"value": "5583",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

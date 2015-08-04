@@ -1,7 +1,7 @@
 {
 	"id": 1999,
 	"name": "Incomplete stew",
-	"description": "I need to add some potato too.",
-	"value": "4",
+	"description": "It's an Incomplete stew.",
+	"value": "403",
 	"stackable": false
 }

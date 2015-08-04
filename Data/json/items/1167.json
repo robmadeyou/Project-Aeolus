@@ -1,8 +1,8 @@
 {
 	"id": 1167,
 	"name": "Leather cowl",
-	"description": "Better than no armour!",
-	"value": "24",
+	"description": "It's a Leather cowl.",
+	"value": "5",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

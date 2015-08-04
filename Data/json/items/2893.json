@@ -1,7 +1,7 @@
 {
 	"id": 2893,
 	"name": "Elemental metal",
-	"description": "It's a bar of refined elemental ore.",
+	"description": "It's an Elemental metal.",
 	"value": "8",
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 3173,
 	"name": "Mithril spear(kp)",
-	"description": "A Karambwan poisoned mithril tipped spear.",
+	"description": "It's a Mithril spear(kp).",
 	"value": "845",
 	"equipSlot": "weapon",
 	"bonuses" : [
@@ -15,8 +15,8 @@
 		0,
 		0,
 		0,
-		0,
-		18
+		18,
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

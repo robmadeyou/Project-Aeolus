@@ -1,7 +1,7 @@
 {
 	"id": 563,
 	"name": "Law rune",
-	"description": "Used for teleport spells.",
-	"value": "240",
+	"description": "It's a Law rune.",
+	"value": "279",
 	"stackable": true
 }

@@ -1,7 +1,7 @@
 {
 	"id": 557,
 	"name": "Earth rune",
-	"description": "One of the 4 basic elemental Runes.",
-	"value": "4",
+	"description": "It's an Earth rune.",
+	"value": "17",
 	"stackable": true
 }

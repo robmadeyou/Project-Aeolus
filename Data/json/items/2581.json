@@ -1,14 +1,14 @@
 {
 	"id": 2581,
 	"name": "Robin hood hat",
-	"description": "Endorsed by Robin Hood.",
-	"value": "450",
+	"description": "It's a Robin hood hat.",
+	"value": "4800000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
 		0,
 		0,
-		0,
+		-10,
 		8,
 		4,
 		6,

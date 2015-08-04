@@ -1,19 +1,19 @@
 {
 	"id": 10688,
 	"name": "Enchanted top",
-	"description": "Null",
+	"description": "It's an Enchanted top.",
 	"value": "120000",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		20,
 		0,
 		0,
 		0,
 		0,
-		0,
-		0,
+		20,
 		0,
 		0,
 		0

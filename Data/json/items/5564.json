@@ -1,7 +1,7 @@
 {
 	"id": 5564,
 	"name": "Gear",
-	"description": "Used in machines and locks the rune over.",
+	"description": "It's a Gear.",
 	"value": "1",
 	"stackable": false
 }

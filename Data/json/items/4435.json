@@ -1,7 +1,7 @@
 {
 	"id": 4435,
 	"name": "Weather report",
-	"description": "Clear skies ahead, with some chance of showers, thunderstorms, ice and hail.",
+	"description": "It's a Weather report.",
 	"value": "1",
 	"stackable": false
 }

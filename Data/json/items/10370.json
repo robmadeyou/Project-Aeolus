@@ -1,9 +1,9 @@
 {
 	"id": 10370,
 	"name": "Zamorak d'hide",
-	"description": "Zamorak blessed dragonhide chest.",
-	"value": "13000",
-	"equipSlot": "body",
+	"description": "It's a Zamorak d'hide.",
+	"value": "416100",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

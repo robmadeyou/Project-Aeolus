@@ -1,8 +1,8 @@
 {
 	"id": 6737,
 	"name": "Berserker ring",
-	"description": "A ring reputed to bring out a berserk fury in its wearer.",
-	"value": "10000",
+	"description": "It's a Berserker ring.",
+	"value": "4400000",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

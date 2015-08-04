@@ -1,8 +1,8 @@
 {
 	"id": 3122,
 	"name": "Granite shield",
-	"description": "A solid stone shield.",
-	"value": "2000",
+	"description": "It's a Granite shield.",
+	"value": "34300",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

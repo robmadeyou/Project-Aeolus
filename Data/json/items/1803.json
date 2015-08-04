@@ -1,30 +1,7 @@
 {
 	"id": 1803,
 	"name": "Silver book",
-	"description": "David's shiny silver coated book coated with a thin layer of flour.",
+	"description": "It's a Silver book.",
 	"value": "1",
-	"equipSlot": "shield",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
 	"stackable": false
 }

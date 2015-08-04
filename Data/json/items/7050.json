@@ -1,7 +1,7 @@
 {
 	"id": 7050,
 	"name": "Swarm",
-	"description": "A slayer monster.",
+	"description": "It's a Swarm.",
 	"value": "1",
 	"stackable": false
 }

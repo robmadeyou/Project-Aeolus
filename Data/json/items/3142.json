@@ -1,7 +1,30 @@
 {
 	"id": 3142,
 	"name": "Raw karambwan",
-	"description": "A raw green octopus.",
-	"value": "200",
+	"description": "It's a Raw karambwan.",
+	"value": "1829",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-15,
+		0,
+		81,
+		93,
+		98,
+		-3,
+		82,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

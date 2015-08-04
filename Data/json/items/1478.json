@@ -1,8 +1,8 @@
 {
 	"id": 1478,
 	"name": "Amulet of accuracy",
-	"description": "It increases my aim.",
-	"value": "100",
+	"description": "It's an Amulet of accuracy.",
+	"value": "3090",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		4,

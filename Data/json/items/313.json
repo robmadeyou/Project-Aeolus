@@ -1,7 +1,7 @@
 {
 	"id": 313,
 	"name": "Fishing bait",
-	"description": "For use with a fishing rod.",
-	"value": "3",
+	"description": "It's a Fishing bait.",
+	"value": "7",
 	"stackable": true
 }

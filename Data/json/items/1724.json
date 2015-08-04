@@ -1,8 +1,8 @@
 {
 	"id": 1724,
 	"name": "Unholy symbol",
-	"description": "An unholy symbol of Zamorak.",
-	"value": "200",
+	"description": "It's an Unholy symbol.",
+	"value": "45",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		2,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		0,
-		8
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

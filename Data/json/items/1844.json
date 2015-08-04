@@ -1,7 +1,7 @@
 {
 	"id": 1844,
 	"name": "Slave shirt",
-	"description": "A filthy, smelly, flea infested shirt.",
+	"description": "It's a Slave shirt.",
 	"value": "40",
 	"equipSlot": "body",
 	"bonuses" : [

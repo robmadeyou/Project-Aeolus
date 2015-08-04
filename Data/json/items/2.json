@@ -1,7 +1,7 @@
 {
 	"id": 2,
 	"name": "Cannonball",
-	"description": "Ammo for the Dwarf Cannon.",
-	"value": "5",
+	"description": "It's a Cannonball.",
+	"value": "292",
 	"stackable": true
 }

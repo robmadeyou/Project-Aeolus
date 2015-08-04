@@ -1,7 +1,30 @@
 {
 	"id": 9678,
 	"name": "Proselyte tasset",
-	"description": "Null",
-	"value": "10000",
+	"description": "It's a Proselyte tasset.",
+	"value": "5936",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-21,
+		-7,
+		33,
+		31,
+		29,
+		-4,
+		31,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

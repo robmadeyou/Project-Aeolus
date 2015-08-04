@@ -1,8 +1,8 @@
 {
 	"id": 2166,
 	"name": "Gnomebowl mould",
-	"description": "Null",
-	"value": "1",
+	"description": "It's a Gnomebowl mould.",
+	"value": "10",
 	"animations" : [
 		808,
 		0,

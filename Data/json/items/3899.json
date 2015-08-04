@@ -1,7 +1,30 @@
 {
 	"id": 3899,
 	"name": "Iron sickle",
-	"description": "Not as good as a pet frog.",
+	"description": "It's an Iron sickle.",
 	"value": "15",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		1,
+		1,
+		1,
+		1,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

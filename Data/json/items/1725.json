@@ -1,8 +1,8 @@
 {
 	"id": 1725,
 	"name": "Amulet of strength",
-	"description": "An enchanted ruby amulet.",
-	"value": "3000",
+	"description": "It's an Amulet of strength.",
+	"value": "1154",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

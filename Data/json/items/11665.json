@@ -1,7 +1,7 @@
 {
 	"id": 11665,
 	"name": "Void melee helm",
-	"description": "A melee helm from the order of the Void Knights.",
+	"description": "It's a Void melee helm.",
 	"value": "9851",
 	"equipSlot": "hat",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 687,
 	"name": "Broken arrow",
-	"description": "This must have been shot at high speed.",
+	"description": "It's a Broken arrow.",
 	"value": "1",
 	"equipSlot": "arrows",
 	"bonuses" : [

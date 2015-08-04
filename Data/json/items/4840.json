@@ -1,7 +1,7 @@
 {
 	"id": 4840,
-	"name": "Rogue's purse potion(unf)",
-	"description": "I need another ingredient to finish this Rogues purse potion.",
-	"value": "5",
+	"name": "Unfinished potion",
+	"description": "It's an Unfinished potion.",
+	"value": "1555",
 	"stackable": false
 }

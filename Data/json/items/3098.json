@@ -1,7 +1,7 @@
 {
 	"id": 3098,
 	"name": "Black claws",
-	"description": "A set of fighting claws.",
+	"description": "It's a Black claws.",
 	"value": "360",
 	"equipSlot": "weapon",
 	"bonuses" : [

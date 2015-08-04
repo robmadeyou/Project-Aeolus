@@ -1,7 +1,7 @@
 {
 	"id": 5305,
 	"name": "Barley seed",
-	"description": "A barley seed - plant in a hops patch.",
-	"value": "2",
+	"description": "It's a Barley seed.",
+	"value": "1",
 	"stackable": true
 }

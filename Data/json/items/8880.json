@@ -1,8 +1,31 @@
 {
 	"id": 8880,
-	"name": "Dorgeshuun c'bow",
-	"description": "This fires crossbow bolts.",
-	"value": "2000",
+	"name": "Dorgeshuun crossbow",
+	"description": "It's a Dorgeshuun crossbow.",
+	"value": "1622",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		42,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		808,
 		0,
@@ -13,10 +36,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

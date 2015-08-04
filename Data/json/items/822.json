@@ -1,8 +1,8 @@
 {
 	"id": 822,
 	"name": "Mithril dart tip",
-	"description": "A deadly looking dart tip made of mithril - needs feathers for flight.",
-	"value": "12",
+	"description": "It's a Mithril dart tip.",
+	"value": "95",
 	"combatAnimations" : [
 		6600,
 		6600,

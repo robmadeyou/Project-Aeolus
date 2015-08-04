@@ -1,8 +1,8 @@
 {
 	"id": 1019,
-	"name": "Cape",
-	"description": "A warm black cape.",
-	"value": "7",
+	"name": "Black cape",
+	"description": "It's a Black cape.",
+	"value": "90",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,
@@ -14,7 +14,7 @@
 		1,
 		1,
 		0,
-		1,
+		2,
 		0,
 		0
 	],

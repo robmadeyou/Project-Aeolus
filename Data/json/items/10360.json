@@ -1,7 +1,7 @@
 {
 	"id": 10360,
-	"name": "Amulet of glory(t1)",
-	"description": "A very powerful dragonstone amulet.",
+	"name": "Amulet of glory (t1)",
+	"description": "It's an Amulet of glory (t1).",
 	"value": "17625",
 	"equipSlot": "amulet",
 	"bonuses" : [
@@ -16,7 +16,7 @@
 		3,
 		3,
 		6,
-		3
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

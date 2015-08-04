@@ -1,19 +1,19 @@
 {
 	"id": 6107,
-	"name": "Ghostly robetop",
-	"description": "A particularly spooky robe top.",
+	"name": "Ghostly robe",
+	"description": "It's a Ghostly robe.",
 	"value": "300",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,
 		0,
-		5,
 		0,
 		0,
 		0,
 		0,
-		5,
+		0,
+		0,
 		0,
 		0,
 		0

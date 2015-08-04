@@ -1,8 +1,8 @@
 {
 	"id": 1063,
 	"name": "Leather vambraces",
-	"description": "Better than no armour!",
-	"value": "18",
+	"description": "It's a Leather vambraces.",
+	"value": "9",
 	"equipSlot": "gloves",
 	"bonuses" : [
 		0,

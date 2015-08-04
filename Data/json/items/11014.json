@@ -1,19 +1,19 @@
 {
 	"id": 11014,
 	"name": "Beacon ring",
-	"description": "Null",
+	"description": "It's a Beacon ring.",
 	"value": "0",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		2,
 		0,
 		0,
 		0,
 		0,
-		0,
-		0,
+		1,
 		0,
 		0,
 		0

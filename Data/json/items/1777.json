@@ -1,8 +1,8 @@
 {
 	"id": 1777,
 	"name": "Bow string",
-	"description": "I need a bow stave to attach this to.",
-	"value": "10",
+	"description": "It's a Bow string.",
+	"value": "137",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

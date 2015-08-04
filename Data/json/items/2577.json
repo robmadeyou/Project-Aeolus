@@ -1,8 +1,8 @@
 {
 	"id": 2577,
 	"name": "Ranger boots",
-	"description": "Lightweight boots ideal for rangers.",
-	"value": "200",
+	"description": "It's a Ranger boots.",
+	"value": "21700000",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

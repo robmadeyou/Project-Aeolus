@@ -1,8 +1,8 @@
 {
 	"id": 4156,
 	"name": "Mirror shield",
-	"description": "I can just about see things in this shield's reflection.",
-	"value": "5000",
+	"description": "It's a Mirror shield.",
+	"value": "3217",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

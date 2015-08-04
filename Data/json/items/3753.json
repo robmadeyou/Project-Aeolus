@@ -1,8 +1,8 @@
 {
 	"id": 3753,
 	"name": "Warrior helm",
-	"description": "This helmet is worn by warriors.",
-	"value": "60000",
+	"description": "It's a Warrior helm.",
+	"value": "48700",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

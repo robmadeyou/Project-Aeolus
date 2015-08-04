@@ -1,7 +1,7 @@
 {
 	"id": 1689,
 	"name": "Ruby amulet",
-	"description": "It needs a string so I can wear it.",
+	"description": "It's a Ruby amulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

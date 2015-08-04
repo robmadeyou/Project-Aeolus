@@ -1,8 +1,8 @@
 {
 	"id": 1722,
 	"name": "Unpowered symbol",
-	"description": "An unblessed symbol of Zamorak.",
-	"value": "200",
+	"description": "It's an Unpowered symbol.",
+	"value": "38",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

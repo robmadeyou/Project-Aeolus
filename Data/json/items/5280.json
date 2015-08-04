@@ -1,7 +1,7 @@
 {
 	"id": 5280,
 	"name": "Cactus seed",
-	"description": "A Cactus seed - plant in a cactus patch.",
-	"value": "99",
+	"description": "It's a Cactus seed.",
+	"value": "8",
 	"stackable": true
 }

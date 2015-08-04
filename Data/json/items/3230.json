@@ -1,30 +1,7 @@
 {
 	"id": 3230,
 	"name": "Big book of bangs",
-	"description": "A book by Mel Achy.",
+	"description": "It's a Big book of bangs.",
 	"value": "1",
-	"equipSlot": "shield",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
 	"stackable": false
 }

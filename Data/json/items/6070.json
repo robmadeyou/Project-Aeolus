@@ -1,7 +1,7 @@
 {
 	"id": 6070,
 	"name": "Mourner cloak",
-	"description": "A dull brown cape.",
+	"description": "It's a Mourner cloak.",
 	"value": "50",
 	"equipSlot": "cape",
 	"bonuses" : [

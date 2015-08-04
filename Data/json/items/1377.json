@@ -1,8 +1,8 @@
 {
 	"id": 1377,
 	"name": "Dragon battleaxe",
-	"description": "A vicious looking axe.",
-	"value": "200000",
+	"description": "It's a Dragon battleaxe.",
+	"value": "131600",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-2,
@@ -14,7 +14,7 @@
 		0,
 		0,
 		0,
-		0,
+		-1,
 		85,
 		0
 	],

@@ -1,7 +1,30 @@
 {
 	"id": 8281,
 	"name": "Darklight",
-	"description": "Null",
+	"description": "It's a Darklight.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		10,
+		16,
+		-2,
+		0,
+		0,
+		0,
+		3,
+		2,
+		2,
+		0,
+		13,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 5514,
 	"name": "Giant pouch",
-	"description": "A giant-sized pouch used for storing essence.",
+	"description": "It's a Giant pouch.",
 	"value": "1200",
 	"stackable": false
 }

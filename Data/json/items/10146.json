@@ -1,7 +1,30 @@
 {
 	"id": 10146,
 	"name": "Orange salamander",
-	"description": "Null",
-	"value": "100",
+	"description": "It's an Orange salamander.",
+	"value": "65",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		19,
+		0,
+		0,
+		29,
+		0,
+		0,
+		0,
+		0,
+		0,
+		31,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

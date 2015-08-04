@@ -1,8 +1,8 @@
 {
 	"id": 5527,
 	"name": "Air tiara",
-	"description": "A tiara infused with the properties of air.",
-	"value": "100",
+	"description": "It's an Air tiara.",
+	"value": "5",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

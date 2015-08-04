@@ -1,7 +1,7 @@
 {
 	"id": 9762,
 	"name": "Magic cape",
-	"description": "The cape worn by masters of Magic.",
+	"description": "It's a Magic cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

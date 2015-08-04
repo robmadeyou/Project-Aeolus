@@ -1,7 +1,7 @@
 {
 	"id": 965,
 	"name": "Skull",
-	"description": "Swap this note at any bank for the equivalent item.",
+	"description": "It's a Skull.",
 	"value": "1",
 	"stackable": true
 }

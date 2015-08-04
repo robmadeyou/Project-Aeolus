@@ -1,31 +1,8 @@
 {
 	"id": 11696,
-	"name": "Bandos godsword",
-	"description": "A brutally heavy sword.",
-	"value": "1250000",
-	"equipSlot": "weapon",
-	"bonuses" : [
-		0,
-		132,
-		80,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		132,
-		8
-	],
-	"attackDelay": "6",
-	"levelRequirements" : [
-		75,
-		0,
-		0,
-		0,
-		0
-	],
+	"name": "Cosmic rune",
+	"description": "It's a Cosmic rune.",
+	"value": "9900000",
 	"animations" : [
 		7047,
 		7044,
@@ -35,14 +12,5 @@
 		7044,
 		7039
 	],
-	"combatAnimations" : [
-		7042,
-		7049,
-		7041,
-		7048,
-		7050
-	],
-	"twoHanded": true,
-	"special": true,
 	"stackable": false
 }

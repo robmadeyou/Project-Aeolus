@@ -1,7 +1,7 @@
 {
 	"id": 10940,
 	"name": "Lumberjack legs",
-	"description": "Null",
+	"description": "It's a Lumberjack legs.",
 	"value": "50",
 	"equipSlot": "legs",
 	"bonuses" : [

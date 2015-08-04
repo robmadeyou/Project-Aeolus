@@ -1,7 +1,7 @@
 {
 	"id": 625,
 	"name": "Wampum belt",
-	"description": "A decorated belt used to trade information between distant villages.",
+	"description": "It's a Wampum belt.",
 	"value": "5",
 	"stackable": false
 }

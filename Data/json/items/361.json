@@ -1,7 +1,7 @@
 {
 	"id": 361,
 	"name": "Tuna",
-	"description": "Wow, this is a big fish.",
-	"value": "100",
+	"description": "It's a Tuna.",
+	"value": "33",
 	"stackable": false
 }

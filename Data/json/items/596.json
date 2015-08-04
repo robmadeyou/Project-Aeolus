@@ -1,7 +1,7 @@
 {
 	"id": 596,
-	"name": "Torch",
-	"description": "An unlit home-made torch.",
-	"value": "4",
+	"name": "Unlit torch",
+	"description": "It's an Unlit torch.",
+	"value": "1",
 	"stackable": false
 }

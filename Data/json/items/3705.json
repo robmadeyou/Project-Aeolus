@@ -1,7 +1,7 @@
 {
 	"id": 3705,
 	"name": "Weather forecast",
-	"description": "An estimate of expected local weather patterns.",
+	"description": "It's a Weather forecast.",
 	"value": "1",
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 9783,
 	"name": "Fletching cape",
-	"description": "The cape worn by masters of Fletching.",
+	"description": "It's a Fletching cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

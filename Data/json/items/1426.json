@@ -1,8 +1,8 @@
 {
 	"id": 1426,
 	"name": "Black mace",
-	"description": "A spiky mace.",
-	"value": "432",
+	"description": "It's a Black mace.",
+	"value": "2463",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		8,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		13,
-		2
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

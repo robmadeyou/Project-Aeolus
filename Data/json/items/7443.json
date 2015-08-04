@@ -1,7 +1,30 @@
 {
 	"id": 7443,
 	"name": "Skewer",
-	"description": "Generally used for impaling fresh meat.",
-	"value": "3200",
+	"description": "It's a Skewer.",
+	"value": "1823",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		20,
+		29,
+		-2,
+		0,
+		0,
+		0,
+		3,
+		2,
+		0,
+		0,
+		31,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

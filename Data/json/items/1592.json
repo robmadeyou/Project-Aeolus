@@ -1,8 +1,8 @@
 {
 	"id": 1592,
 	"name": "Ring mould",
-	"description": "Used to make gold rings.",
-	"value": "5",
+	"description": "It's a Ring mould.",
+	"value": "153",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

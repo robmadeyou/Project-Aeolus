@@ -1,7 +1,7 @@
 {
 	"id": 3701,
-	"name": "Hunters map",
-	"description": "A map showing very active hunting spots.",
+	"name": "Tracking map",
+	"description": "It's a Tracking map.",
 	"value": "1",
 	"stackable": false
 }

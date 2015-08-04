@@ -1,8 +1,8 @@
 {
 	"id": 6137,
 	"name": "Skeletal helm",
-	"description": "Make your foes cower by wearing a skull as a helmet!",
-	"value": "10000",
+	"description": "It's a Skeletal helm.",
+	"value": "38000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

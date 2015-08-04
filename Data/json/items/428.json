@@ -1,9 +1,9 @@
 {
 	"id": 428,
 	"name": "Priest gown",
-	"description": "Bottom half of a priest suit.",
-	"value": "5",
-	"equipSlot": "body",
+	"description": "It's a Priest gown.",
+	"value": "28",
+	"equipSlot": "legs",
 	"bonuses" : [
 		0,
 		0,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		0,
-		3
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

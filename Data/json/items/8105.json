@@ -1,7 +1,7 @@
 {
 	"id": 8105,
 	"name": "Round shield",
-	"description": "Null",
+	"description": "It's a Round shield.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [

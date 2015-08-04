@@ -1,8 +1,8 @@
 {
 	"id": 1123,
 	"name": "Adamant platebody",
-	"description": "Provides excellent protection.",
-	"value": "12800",
+	"description": "It's an Adamant platebody.",
+	"value": "9821",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

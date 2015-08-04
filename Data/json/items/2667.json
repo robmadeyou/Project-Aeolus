@@ -1,8 +1,8 @@
 {
 	"id": 2667,
-	"name": "Saradomin kite",
-	"description": "Rune kiteshield in the colours of Saradomin.",
-	"value": "54400",
+	"name": "Saradomin kiteshield",
+	"description": "It's a Saradomin kiteshield.",
+	"value": "881500",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

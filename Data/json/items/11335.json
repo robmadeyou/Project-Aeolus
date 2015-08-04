@@ -1,8 +1,8 @@
 {
 	"id": 11335,
 	"name": "Dragon full helm",
-	"description": "Looks impressive and protects your head too.",
-	"value": "150000",
+	"description": "It's a Dragon full helm.",
+	"value": "39500000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

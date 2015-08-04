@@ -1,7 +1,7 @@
 {
 	"id": 2401,
-	"name": "Key",
-	"description": "A key I found in a drain.",
+	"name": "Silverlight key",
+	"description": "It's a Silverlight key.",
 	"value": "100",
 	"stackable": false
 }

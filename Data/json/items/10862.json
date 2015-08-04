@@ -1,7 +1,7 @@
 {
 	"id": 10862,
 	"name": "Hard hat",
-	"description": "Null",
+	"description": "It's a Hard hat.",
 	"value": "100",
 	"equipSlot": "hat",
 	"bonuses" : [

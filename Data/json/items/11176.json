@@ -1,7 +1,7 @@
 {
 	"id": 11176,
 	"name": "Arrowheads",
-	"description": "Null",
+	"description": "It's an Arrowheads.",
 	"value": "1",
 	"equipSlot": "arrows",
 	"bonuses" : [

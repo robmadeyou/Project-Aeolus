@@ -1,8 +1,8 @@
 {
 	"id": 6625,
 	"name": "White platelegs",
-	"description": "Big, White and heavy looking.",
-	"value": "1920",
+	"description": "It's a White platelegs.",
+	"value": "1470",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		-4,
 		20,
 		0,
-		1
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

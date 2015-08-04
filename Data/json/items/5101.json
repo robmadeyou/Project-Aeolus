@@ -1,7 +1,7 @@
 {
 	"id": 5101,
 	"name": "Redberry seed",
-	"description": "A redberry bush seed - plant in a bush patch.",
-	"value": "4",
+	"description": "It's a Redberry seed.",
+	"value": "1",
 	"stackable": true
 }

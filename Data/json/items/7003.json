@@ -1,7 +1,7 @@
 {
 	"id": 7003,
 	"name": "Camel mask",
-	"description": "Blend in in the desert.",
+	"description": "It's a Camel mask.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [

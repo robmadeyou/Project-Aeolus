@@ -1,7 +1,7 @@
 {
 	"id": 11739,
-	"name": "Mystic steam staff",
-	"description": "Swap this note at any bank for the equivalent item.",
-	"value": "45000",
+	"name": "Opened herb box",
+	"description": "It's an Opened herb box.",
+	"value": "30",
 	"stackable": true
 }

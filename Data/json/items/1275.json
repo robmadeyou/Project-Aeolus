@@ -1,8 +1,8 @@
 {
 	"id": 1275,
 	"name": "Rune pickaxe",
-	"description": "Used for mining.",
-	"value": "32000",
+	"description": "It's a Rune pickaxe.",
+	"value": "19200",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		26,

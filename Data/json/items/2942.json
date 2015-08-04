@@ -1,7 +1,7 @@
 {
 	"id": 2942,
-	"name": "Gloves",
-	"description": "These will keep my hands warm!",
+	"name": "Purple gloves",
+	"description": "It's a Purple gloves.",
 	"value": "500",
 	"equipSlot": "gloves",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 7676,
 	"name": "Wooden shield",
-	"description": "A less-than strong shield.",
+	"description": "It's a Wooden shield.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		4,
+		5,
+		3,
+		1,
+		4,
 		0,
 		0
 	],

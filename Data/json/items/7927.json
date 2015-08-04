@@ -1,7 +1,7 @@
 {
 	"id": 7927,
 	"name": "Easter ring",
-	"description": "A ring given to you by the Easter Bunny.",
+	"description": "It's an Easter ring.",
 	"value": "1",
 	"equipSlot": "ring",
 	"bonuses" : [

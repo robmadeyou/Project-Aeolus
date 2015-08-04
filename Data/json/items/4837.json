@@ -1,30 +1,7 @@
 {
 	"id": 4837,
 	"name": "Necromancy book",
-	"description": "A book of necromantic spells.",
+	"description": "It's a Necromancy book.",
 	"value": "1",
-	"equipSlot": "shield",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
 	"stackable": false
 }

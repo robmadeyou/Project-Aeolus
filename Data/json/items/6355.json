@@ -1,8 +1,8 @@
 {
 	"id": 6355,
 	"name": "Villager hat",
-	"description": "A brightly coloured hat prized by the Tai Bwo Wannai peoples.",
-	"value": "200",
+	"description": "It's a Villager hat.",
+	"value": "2488",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

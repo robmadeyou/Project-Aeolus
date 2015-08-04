@@ -1,8 +1,8 @@
 {
 	"id": 5050,
 	"name": "Skirt",
-	"description": "Lilac skirt.",
-	"value": "550",
+	"description": "It's a Skirt.",
+	"value": "1043",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

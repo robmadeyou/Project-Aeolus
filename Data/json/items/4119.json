@@ -1,8 +1,8 @@
 {
 	"id": 4119,
 	"name": "Bronze boots",
-	"description": "These will protect my feet.",
-	"value": "24",
+	"description": "It's a Bronze boots.",
+	"value": "920",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,
@@ -12,7 +12,7 @@
 		-1,
 		1,
 		2,
-		0,
+		3,
 		0,
 		0,
 		0,

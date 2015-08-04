@@ -1,8 +1,8 @@
 {
 	"id": 5533,
 	"name": "Body tiara",
-	"description": "A tiara infused with the properties of the body.",
-	"value": "100",
+	"description": "It's a Body tiara.",
+	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

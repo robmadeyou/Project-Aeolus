@@ -1,8 +1,8 @@
 {
 	"id": 1131,
 	"name": "Hardleather body",
-	"description": "Harder than normal leather.",
-	"value": "170",
+	"description": "It's a Hardleather body.",
+	"value": "26",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

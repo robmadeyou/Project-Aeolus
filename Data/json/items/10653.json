@@ -1,7 +1,7 @@
 {
 	"id": 10653,
 	"name": "Slayer cape",
-	"description": "Null",
+	"description": "It's a Slayer cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		9,
+		9,
+		9,
+		9,
+		9,
 		0,
 		0
 	],

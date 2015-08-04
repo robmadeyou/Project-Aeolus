@@ -1,8 +1,8 @@
 {
 	"id": 11212,
 	"name": "Dragon arrow",
-	"description": "Null",
-	"value": "800",
+	"description": "It's a Dragon arrow.",
+	"value": "2104",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

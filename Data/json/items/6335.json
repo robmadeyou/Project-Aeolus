@@ -1,8 +1,8 @@
 {
 	"id": 6335,
 	"name": "Tribal mask",
-	"description": "A ceremonial wooden mask.",
-	"value": "500",
+	"description": "It's a Tribal mask.",
+	"value": "14000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

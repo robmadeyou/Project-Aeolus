@@ -1,7 +1,7 @@
 {
 	"id": 6746,
 	"name": "Darklight",
-	"description": "The magical sword 'Silverlight', enhanced with the blood of Agrith-Naar.",
+	"description": "It's a Darklight.",
 	"value": "500",
 	"equipSlot": "weapon",
 	"bonuses" : [

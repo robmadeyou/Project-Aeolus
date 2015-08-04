@@ -1,7 +1,7 @@
 {
 	"id": 2233,
-	"name": "Worm hole",
-	"description": "It actually smells quite good.",
-	"value": "150",
+	"name": "Premade worm hole",
+	"description": "It's a Premade worm hole.",
+	"value": "221",
 	"stackable": false
 }

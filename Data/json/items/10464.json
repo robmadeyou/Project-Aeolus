@@ -1,8 +1,8 @@
 {
 	"id": 10464,
 	"name": "Saradomin robe legs",
-	"description": "Leggings from the Saradomin Vestments.",
-	"value": "7000",
+	"description": "It's a Saradomin robe legs.",
+	"value": "283800",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		4,
 		0,
 		0,
-		4
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

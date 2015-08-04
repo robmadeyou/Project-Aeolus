@@ -1,9 +1,9 @@
 {
 	"id": 6788,
 	"name": "Torn robe",
-	"description": "This robe is too torn to wear.",
+	"description": "It's a Torn robe.",
 	"value": "1",
-	"equipSlot": "legs",
+	"equipSlot": "shield",
 	"bonuses" : [
 		0,
 		0,

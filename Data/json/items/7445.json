@@ -1,7 +1,30 @@
 {
 	"id": 7445,
 	"name": "Rolling pin",
-	"description": "That's how I roll!",
-	"value": "14400",
+	"description": "It's a Rolling pin.",
+	"value": "8497",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		20,
+		-2,
+		39,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		36,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

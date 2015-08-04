@@ -1,19 +1,19 @@
 {
 	"id": 6891,
 	"name": "Arena book",
-	"description": "A book about the Training Arena.",
+	"description": "It's an Arena book.",
 	"value": "1",
-	"equipSlot": "shield",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		15,
 		0,
 		0,
 		0,
 		0,
-		0,
-		0,
+		15,
 		0,
 		0,
 		0

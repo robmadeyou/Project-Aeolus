@@ -1,8 +1,8 @@
 {
 	"id": 3751,
 	"name": "Berserker helm",
-	"description": "This helmet is worn by berserkers.",
-	"value": "60000",
+	"description": "It's a Berserker helm.",
+	"value": "84500",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

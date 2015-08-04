@@ -1,7 +1,7 @@
 {
 	"id": 6669,
 	"name": "Fishbowl",
-	"description": "A fishless fishbowl with some seaweed.",
+	"description": "It's a Fishbowl.",
 	"value": "0",
 	"animations" : [
 		808,

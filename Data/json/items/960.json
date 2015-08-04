@@ -1,7 +1,7 @@
 {
 	"id": 960,
 	"name": "Plank",
-	"description": "A plank of wood!",
-	"value": "1",
+	"description": "It's a Plank.",
+	"value": "342",
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 7330,
 	"name": "Green firelighter",
-	"description": "Makes firelighting lots easier",
-	"value": "15",
+	"description": "It's a Green firelighter.",
+	"value": "110",
 	"stackable": true
 }

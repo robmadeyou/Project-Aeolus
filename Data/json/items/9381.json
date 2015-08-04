@@ -1,8 +1,8 @@
 {
 	"id": 9381,
 	"name": "Runite bolts (unf)",
-	"description": "Unfeathered rune crossbow bolts.",
-	"value": "1",
+	"description": "It's a Runite bolts (unf).",
+	"value": "1344",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

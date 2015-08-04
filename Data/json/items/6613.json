@@ -1,8 +1,8 @@
 {
 	"id": 6613,
 	"name": "White warhammer",
-	"description": "I don't think it's intended for joinery.",
-	"value": "980",
+	"description": "It's a White warhammer.",
+	"value": "1164",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-4,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		19,
-		1
+		0
 	],
 	"attackDelay": "6",
 	"levelRequirements" : [

@@ -1,8 +1,8 @@
 {
 	"id": 1015,
 	"name": "Black skirt",
-	"description": "Clothing favoured by women and dark wizards.",
-	"value": "2",
+	"description": "It's a Black skirt.",
+	"value": "16",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

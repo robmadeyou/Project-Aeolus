@@ -1,8 +1,8 @@
 {
 	"id": 2669,
 	"name": "Guthix platebody",
-	"description": "Rune plate body in the colours of Guthix.",
-	"value": "65000",
+	"description": "It's a Guthix platebody.",
+	"value": "398100",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

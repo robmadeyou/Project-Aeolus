@@ -1,8 +1,8 @@
 {
 	"id": 6570,
 	"name": "Fire cape",
-	"description": "A cape of fire.",
-	"value": "60000",
+	"description": "It's a Fire cape.",
+	"value": "65007",
 	"equipSlot": "cape",
 	"bonuses" : [
 		1,
@@ -16,7 +16,7 @@
 		11,
 		11,
 		4,
-		2
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

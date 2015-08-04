@@ -1,7 +1,30 @@
 {
 	"id": 9433,
 	"name": "Bolt pouch",
-	"description": "Null",
+	"description": "It's a Bolt pouch.",
 	"value": "5000",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 9801,
 	"name": "Cooking cape",
-	"description": "The cape worn by masters of Cooking.",
+	"description": "It's a Cooking cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

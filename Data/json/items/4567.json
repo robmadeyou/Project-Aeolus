@@ -1,7 +1,7 @@
 {
 	"id": 4567,
 	"name": "Gold helmet",
-	"description": "Made of gold and white gold.",
+	"description": "It's a Gold helmet.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [
@@ -11,10 +11,10 @@
 		0,
 		0,
 		0,
+		10,
+		20,
 		0,
-		0,
-		0,
-		0,
+		10,
 		0,
 		0
 	],

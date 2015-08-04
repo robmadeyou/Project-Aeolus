@@ -1,7 +1,7 @@
 {
 	"id": 5555,
 	"name": "Rogue trousers",
-	"description": "Black banded leather armour, a rogue's dream!",
+	"description": "It's a Rogue trousers.",
 	"value": "500",
 	"equipSlot": "legs",
 	"bonuses" : [

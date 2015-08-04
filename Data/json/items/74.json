@@ -1,7 +1,7 @@
 {
 	"id": 74,
 	"name": "Khazard helmet",
-	"description": "A helmet, as worn by the minions of General Khazard.",
+	"description": "It's a Khazard helmet.",
 	"value": "10",
 	"equipSlot": "hat",
 	"bonuses" : [
@@ -10,9 +10,9 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
+		4,
+		5,
+		3,
 		0,
 		0,
 		0,

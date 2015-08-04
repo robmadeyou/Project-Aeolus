@@ -1,8 +1,8 @@
 {
 	"id": 9382,
 	"name": "Silver bolts (unf)",
-	"description": "Unfeathered silver crossbow bolts.",
-	"value": "1",
+	"description": "It's a Silver bolts (unf).",
+	"value": "3",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 1241,
 	"name": "Steel spear",
-	"description": "A steel tipped spear.",
-	"value": "325",
+	"description": "It's a Steel spear.",
+	"value": "94",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		12,

@@ -1,7 +1,7 @@
 {
 	"id": 9074,
 	"name": "Moonclan cape",
-	"description": "A mystical cape.",
+	"description": "It's a Moonclan cape.",
 	"value": "200",
 	"equipSlot": "cape",
 	"bonuses" : [

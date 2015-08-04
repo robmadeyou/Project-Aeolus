@@ -1,8 +1,8 @@
 {
 	"id": 10061,
 	"name": "Desert camo top",
-	"description": "Null",
-	"value": "20",
+	"description": "It's a Desert camo top.",
+	"value": "768",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
+		10,
+		15,
+		19,
 		0,
-		0,
-		0,
-		0,
-		0,
+		12,
 		0,
 		0
 	],

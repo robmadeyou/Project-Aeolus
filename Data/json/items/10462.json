@@ -1,8 +1,8 @@
 {
 	"id": 10462,
 	"name": "Guthix robe top",
-	"description": "Guthix Vestments.",
-	"value": "7000",
+	"description": "It's a Guthix robe top.",
+	"value": "127100",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		4,
 		0,
 		0,
-		4
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

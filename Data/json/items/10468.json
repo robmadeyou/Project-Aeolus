@@ -1,8 +1,8 @@
 {
 	"id": 10468,
 	"name": "Zamorak robe legs",
-	"description": "Leggings from the Zamorak Vestments.",
-	"value": "7000",
+	"description": "It's a Zamorak robe legs.",
+	"value": "420800",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		4,
 		0,
 		0,
-		4
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

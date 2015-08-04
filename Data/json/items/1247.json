@@ -1,8 +1,8 @@
 {
 	"id": 1247,
 	"name": "Rune spear",
-	"description": "A rune tipped spear.",
-	"value": "20800",
+	"description": "It's a Rune spear.",
+	"value": "12400",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		36,

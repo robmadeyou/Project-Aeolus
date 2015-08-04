@@ -1,8 +1,8 @@
 {
 	"id": 9242,
 	"name": "Ruby bolts (e)",
-	"description": "Enchanted ruby tipped adamantite crossbow bolts.",
-	"value": "138",
+	"description": "It's a Ruby bolts (e).",
+	"value": "468",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

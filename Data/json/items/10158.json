@@ -1,8 +1,8 @@
 {
 	"id": 10158,
 	"name": "Kebbit bolts",
-	"description": "Null",
-	"value": "18",
+	"description": "It's a Kebbit bolts.",
+	"value": "39",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 3114,
 	"name": "Certificate",
-	"description": "Entrance certificate to the Imperial Guard.",
+	"description": "It's a Certificate.",
 	"value": "1",
 	"stackable": false
 }

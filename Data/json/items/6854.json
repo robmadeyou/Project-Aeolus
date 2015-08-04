@@ -1,7 +1,7 @@
 {
 	"id": 6854,
 	"name": "Puppet box",
-	"description": "A box full of puppets. Bring to the Taverly members gate.",
+	"description": "It's a Puppet box.",
 	"value": "1",
 	"stackable": false
 }

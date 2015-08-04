@@ -1,7 +1,30 @@
 {
 	"id": 3135,
 	"name": "Prison key",
-	"description": "The key to the troll prison.",
+	"description": "It's a Prison key.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-12,
+		-8,
+		40,
+		42,
+		38,
+		0,
+		65,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

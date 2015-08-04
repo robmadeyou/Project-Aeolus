@@ -1,7 +1,30 @@
 {
 	"id": 6155,
 	"name": "Dagannoth hide",
-	"description": "A sturdy piece of dagannoth hide.",
-	"value": "60",
+	"description": "It's a Dagannoth hide.",
+	"value": "4295",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		2,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

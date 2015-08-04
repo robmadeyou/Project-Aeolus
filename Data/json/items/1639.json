@@ -1,8 +1,8 @@
 {
 	"id": 1639,
 	"name": "Emerald ring",
-	"description": "A valuable ring.",
-	"value": "1275",
+	"description": "It's an Emerald ring.",
+	"value": "1455",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

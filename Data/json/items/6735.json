@@ -1,8 +1,8 @@
 {
 	"id": 6735,
 	"name": "Warrior ring",
-	"description": "A legendary ring once worn by Fremennik warriors.",
-	"value": "10000",
+	"description": "It's a Warrior ring.",
+	"value": "449100",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

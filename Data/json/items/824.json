@@ -1,8 +1,8 @@
 {
 	"id": 824,
 	"name": "Rune dart tip",
-	"description": "A deadly looking dart tip made of runite - needs feathers for flight.",
-	"value": "175",
+	"description": "It's a Rune dart tip.",
+	"value": "422",
 	"combatAnimations" : [
 		6600,
 		6600,

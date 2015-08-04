@@ -1,7 +1,7 @@
 {
 	"id": 4187,
 	"name": "Marble amulet",
-	"description": "Triangular in shape, made from marble, and as large as your hand.",
+	"description": "It's a Marble amulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

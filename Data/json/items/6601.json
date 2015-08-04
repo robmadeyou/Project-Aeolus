@@ -1,8 +1,8 @@
 {
 	"id": 6601,
 	"name": "White mace",
-	"description": "A spiky mace.",
-	"value": "432",
+	"description": "It's a White mace.",
+	"value": "489",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		8,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		13,
-		1
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

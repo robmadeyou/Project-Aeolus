@@ -1,8 +1,8 @@
 {
 	"id": 6623,
 	"name": "White full helm",
-	"description": "A full face helmet.",
-	"value": "1056",
+	"description": "It's a White full helm.",
+	"value": "1570",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		-1,
 		12,
 		0,
-		1
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

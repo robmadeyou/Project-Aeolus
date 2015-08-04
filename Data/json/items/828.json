@@ -1,8 +1,8 @@
 {
 	"id": 828,
 	"name": "Mithril javelin",
-	"description": "A mithril tipped javelin.",
-	"value": "64",
+	"description": "It's a Mithril javelin.",
+	"value": "26",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,

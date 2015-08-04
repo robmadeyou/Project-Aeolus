@@ -1,19 +1,19 @@
 {
 	"id": 6108,
-	"name": "Ghostly bottoms",
-	"description": "An unearthly set of robe bottoms.",
+	"name": "Ghostly robe",
+	"description": "It's a Ghostly robe.",
 	"value": "300",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
 		0,
 		0,
-		4,
 		0,
 		0,
 		0,
 		0,
-		4,
+		0,
+		0,
 		0,
 		0,
 		0

@@ -1,8 +1,8 @@
 {
 	"id": 1185,
 	"name": "Rune sq shield",
-	"description": "A medium square shield.",
-	"value": "38400",
+	"description": "It's a Rune sq shield.",
+	"value": "22900",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

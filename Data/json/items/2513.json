@@ -1,7 +1,30 @@
 {
 	"id": 2513,
-	"name": "Waste disposal",
-	"description": "Gets rid of all that nasty kitchen waste.",
+	"name": "Dragon chainbody",
+	"description": "It's a Dragon chainbody.",
 	"value": "6",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-15,
+		0,
+		81,
+		93,
+		98,
+		-3,
+		82,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

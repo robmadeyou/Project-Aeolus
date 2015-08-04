@@ -1,8 +1,8 @@
 {
 	"id": 2572,
 	"name": "Ring of wealth",
-	"description": "An enchanted ring.",
-	"value": "17625",
+	"description": "It's a Ring of wealth.",
+	"value": "16300",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

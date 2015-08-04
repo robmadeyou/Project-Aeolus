@@ -1,8 +1,8 @@
 {
 	"id": 2621,
 	"name": "Rune kiteshield (g)",
-	"description": "Rune kiteshield with gold trim.",
-	"value": "54400",
+	"description": "It's a Rune kiteshield (g).",
+	"value": "391600",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

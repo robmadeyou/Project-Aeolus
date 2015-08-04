@@ -1,7 +1,7 @@
 {
 	"id": 2968,
 	"name": "Druidic spell",
-	"description": "A druidic spell given to you freely by the spirit of Filliman Tarlock.",
+	"description": "It's a Druidic spell.",
 	"value": "1",
 	"stackable": false
 }

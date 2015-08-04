@@ -1,8 +1,8 @@
 {
 	"id": 6589,
 	"name": "White battleaxe",
-	"description": "A vicious looking axe.",
-	"value": "1248",
+	"description": "It's a White battleaxe.",
+	"value": "1432",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-2,
@@ -16,7 +16,7 @@
 		0,
 		-1,
 		24,
-		1
+		0
 	],
 	"attackDelay": "6",
 	"levelRequirements" : [

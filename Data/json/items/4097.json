@@ -1,8 +1,8 @@
 {
 	"id": 4097,
 	"name": "Mystic boots",
-	"description": "Magical boots.",
-	"value": "10000",
+	"description": "It's a Mystic boots.",
+	"value": "6020",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

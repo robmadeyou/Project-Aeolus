@@ -1,7 +1,7 @@
 {
 	"id": 7758,
 	"name": "Rusty sword",
-	"description": "A decent enough weapon gone rusty.",
+	"description": "It's a Rusty sword.",
 	"value": "1",
 	"combatAnimations" : [
 		451,

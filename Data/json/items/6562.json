@@ -1,8 +1,31 @@
 {
 	"id": 6562,
 	"name": "Mud battlestaff",
-	"description": "It's a slightly magical stick.",
-	"value": "17000",
+	"description": "It's a Mud battlestaff.",
+	"value": "555600",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		7,
+		-1,
+		28,
+		10,
+		0,
+		2,
+		3,
+		1,
+		10,
+		0,
+		35,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		809,
 		0,

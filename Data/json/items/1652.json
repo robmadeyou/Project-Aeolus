@@ -1,7 +1,7 @@
 {
 	"id": 1652,
 	"name": "Diamond ring",
-	"description": "A valuable ring.",
+	"description": "It's a Diamond ring.",
 	"value": "1",
 	"equipSlot": "ring",
 	"bonuses" : [

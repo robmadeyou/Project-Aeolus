@@ -1,8 +1,8 @@
 {
 	"id": 6731,
-	"name": "Seer's ring",
-	"description": "A mysterious ring that can fill the wearer with magical power...",
-	"value": "10000",
+	"name": "Seers ring",
+	"description": "It's a Seers ring.",
+	"value": "429000",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

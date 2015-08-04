@@ -1,8 +1,8 @@
 {
 	"id": 9143,
 	"name": "Adamant bolts",
-	"description": "Adamant crossbow bolts.",
-	"value": "58",
+	"description": "It's an Adamant bolts.",
+	"value": "223",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

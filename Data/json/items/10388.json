@@ -1,9 +1,9 @@
 {
 	"id": 10388,
 	"name": "Saradomin chaps",
-	"description": "Saradomin blessed dragonhide chaps.",
-	"value": "6000",
-	"equipSlot": "legs",
+	"description": "It's a Saradomin chaps.",
+	"value": "42400",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

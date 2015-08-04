@@ -1,7 +1,7 @@
 {
 	"id": 9747,
 	"name": "Attack cape",
-	"description": "The cape worn by masters of Attack.",
+	"description": "It's an Attack cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

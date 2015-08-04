@@ -1,7 +1,30 @@
 {
 	"id": 6786,
 	"name": "Robe of elidinis",
-	"description": "This looks quite old.",
+	"description": "It's a Robe of elidinis.",
 	"value": "1",
+	"equipSlot": "body",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

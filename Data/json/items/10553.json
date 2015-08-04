@@ -1,8 +1,8 @@
 {
 	"id": 10553,
 	"name": "Penance gloves",
-	"description": "These gloves seem unbelieveably light!",
-	"value": "200",
+	"description": "It's a Penance gloves.",
+	"value": "65001",
 	"equipSlot": "gloves",
 	"bonuses" : [
 		0,

@@ -1,7 +1,30 @@
 {
 	"id": 6313,
 	"name": "Opal machete",
-	"description": "A jungle specific slashing device.",
-	"value": "500",
+	"description": "It's an Opal machete.",
+	"value": "254",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		8,
+		-2,
+		0,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		4,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

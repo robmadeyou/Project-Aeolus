@@ -1,7 +1,7 @@
 {
 	"id": 5560,
 	"name": "Stethoscope",
-	"description": "A useful hearing aid.",
+	"description": "It's a Stethoscope.",
 	"value": "10",
 	"stackable": false
 }

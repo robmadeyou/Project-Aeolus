@@ -1,7 +1,7 @@
 {
 	"id": 3061,
 	"name": "Mime boots",
-	"description": "A mime would wear these.",
+	"description": "It's a Mime boots.",
 	"value": "1",
 	"equipSlot": "boots",
 	"bonuses" : [

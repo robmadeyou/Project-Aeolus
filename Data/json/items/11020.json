@@ -1,9 +1,9 @@
 {
 	"id": 11020,
 	"name": "Chicken wings",
-	"description": "Null",
+	"description": "It's a Chicken wings.",
 	"value": "1",
-	"equipSlot": "body",
+	"equipSlot": "amulet",
 	"bonuses" : [
 		0,
 		0,

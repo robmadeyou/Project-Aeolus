@@ -1,7 +1,7 @@
 {
 	"id": 6094,
 	"name": "Apple barrel",
-	"description": "A barrel full of mushed apples.",
+	"description": "It's an Apple barrel.",
 	"value": "1",
 	"stackable": false
 }

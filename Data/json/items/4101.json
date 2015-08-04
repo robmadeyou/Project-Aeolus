@@ -1,8 +1,8 @@
 {
 	"id": 4101,
-	"name": "Mystic robe top",
-	"description": "The upper half of a dark magical robe.",
-	"value": "120000",
+	"name": "Mystic robe top (dark)",
+	"description": "It's a Mystic robe top (dark).",
+	"value": "74300",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

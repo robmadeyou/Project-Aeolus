@@ -1,8 +1,8 @@
 {
 	"id": 809,
 	"name": "Mithril dart",
-	"description": "A deadly throwing dart with a mithril tip.",
-	"value": "25",
+	"description": "It's a Mithril dart.",
+	"value": "53",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 2655,
 	"name": "Zamorak platelegs",
-	"description": "Rune platelegs in the colours of Zamorak.",
+	"description": "It's a Zamorak platelegs.",
 	"value": "64000",
 	"equipSlot": "legs",
 	"bonuses" : [

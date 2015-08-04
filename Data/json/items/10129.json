@@ -1,7 +1,30 @@
 {
 	"id": 10129,
 	"name": "Barb-tail harpoon",
-	"description": "Null",
-	"value": "36",
+	"description": "It's a Barb-tail harpoon.",
+	"value": "76",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		9,
+		4,
+		-4,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		6,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

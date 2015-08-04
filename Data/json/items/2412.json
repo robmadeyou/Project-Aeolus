@@ -1,7 +1,7 @@
 {
 	"id": 2412,
 	"name": "Saradomin cape",
-	"description": "A cape from the almighty god Saradomin.",
+	"description": "It's a Saradomin cape.",
 	"value": "100",
 	"equipSlot": "cape",
 	"bonuses" : [

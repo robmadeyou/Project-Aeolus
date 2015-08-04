@@ -1,8 +1,8 @@
 {
 	"id": 1664,
 	"name": "Dragon necklace",
-	"description": "I wonder if this is valuable.",
-	"value": "18375",
+	"description": "It's a Dragon necklace.",
+	"value": "25300",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

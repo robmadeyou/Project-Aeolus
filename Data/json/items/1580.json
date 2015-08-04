@@ -1,7 +1,7 @@
 {
 	"id": 1580,
 	"name": "Ice gloves",
-	"description": "These will keep my hands cold!",
+	"description": "It's an Ice gloves.",
 	"value": "6",
 	"equipSlot": "gloves",
 	"bonuses" : [
@@ -11,10 +11,10 @@
 		0,
 		0,
 		0,
+		3,
+		4,
 		0,
-		0,
-		0,
-		0,
+		2,
 		0,
 		0
 	],

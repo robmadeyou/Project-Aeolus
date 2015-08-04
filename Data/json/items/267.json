@@ -1,7 +1,7 @@
 {
 	"id": 267,
-	"name": "Clean dwarf weed",
-	"description": "A fresh herb.",
-	"value": "70",
+	"name": "Dwarf weed",
+	"description": "It's a Dwarf weed.",
+	"value": "6232",
 	"stackable": false
 }

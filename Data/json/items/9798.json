@@ -1,7 +1,7 @@
 {
 	"id": 9798,
 	"name": "Fishing cape",
-	"description": "The cape worn by masters of Fishing.",
+	"description": "It's a Fishing cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

@@ -1,14 +1,14 @@
 {
 	"id": 1343,
 	"name": "Mithril warhammer",
-	"description": "I don't think it's intended for joinery.",
-	"value": "1660",
+	"description": "It's a Mithril warhammer.",
+	"value": "1163",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-4,
 		-4,
 		25,
-		0,
+		-4,
 		0,
 		0,
 		0,

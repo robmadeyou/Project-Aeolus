@@ -1,7 +1,7 @@
 {
 	"id": 9807,
 	"name": "Woodcutting cape",
-	"description": "The cape worn by masters of Woodcutting.",
+	"description": "It's a Woodcutting cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

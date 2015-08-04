@@ -1,7 +1,30 @@
 {
 	"id": 3049,
 	"name": "Grimy toadflax",
-	"description": "I need to clean this herb before I can use it.",
-	"value": "1",
+	"description": "It's a Grimy toadflax.",
+	"value": "5068",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		5,
+		3,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

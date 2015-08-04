@@ -1,7 +1,7 @@
 {
 	"id": 87,
 	"name": "Armadyl pendant",
-	"description": "Yet another amulet.",
+	"description": "It's an Armadyl pendant.",
 	"value": "12",
 	"equipSlot": "amulet",
 	"bonuses" : [

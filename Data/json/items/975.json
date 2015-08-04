@@ -1,7 +1,30 @@
 {
 	"id": 975,
 	"name": "Machete",
-	"description": "A jungle specific slashing device.",
-	"value": "40",
+	"description": "It's a Machete.",
+	"value": "246",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		6,
+		-2,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		5,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

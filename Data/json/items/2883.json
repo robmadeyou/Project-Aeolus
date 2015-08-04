@@ -1,8 +1,31 @@
 {
 	"id": 2883,
 	"name": "Ogre bow",
-	"description": "More powerful than a normal bow, useful against large game birds.",
+	"description": "It's an Ogre bow.",
 	"value": "500",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		38,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "8",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		808,
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 6386,
 	"name": "Desert robes",
-	"description": "Has a coarse hard wearing texture.",
-	"value": "25",
+	"description": "It's a Desert robes.",
+	"value": "305",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

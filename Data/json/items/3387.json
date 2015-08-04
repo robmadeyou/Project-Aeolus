@@ -1,8 +1,8 @@
 {
 	"id": 3387,
 	"name": "Splitbark body",
-	"description": "Provides good protection.",
-	"value": "45000",
+	"description": "It's a Splitbark body.",
+	"value": "70600",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

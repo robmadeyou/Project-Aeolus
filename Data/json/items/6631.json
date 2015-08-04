@@ -1,22 +1,22 @@
 {
 	"id": 6631,
 	"name": "White sq shield",
-	"description": "A medium square shield.",
-	"value": "1152",
+	"description": "It's a White sq shield.",
+	"value": "1330",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		-6,
+		-2,
+		15,
+		16,
+		14,
 		0,
+		15,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		1
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

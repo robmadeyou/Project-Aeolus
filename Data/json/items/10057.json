@@ -1,8 +1,8 @@
 {
 	"id": 10057,
 	"name": "Jungle camo top",
-	"description": "Null",
-	"value": "20",
+	"description": "It's a Jungle camo top.",
+	"value": "487",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
+		10,
+		15,
+		19,
 		0,
-		0,
-		0,
-		0,
-		0,
+		12,
 		0,
 		0
 	],

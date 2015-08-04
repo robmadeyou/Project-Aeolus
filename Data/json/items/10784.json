@@ -1,19 +1,19 @@
 {
 	"id": 10784,
 	"name": "Saradomin robe top",
-	"description": "Null",
+	"description": "It's a Saradomin robe top.",
 	"value": "7000",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		4,
 		0,
 		0,
 		0,
 		0,
-		0,
-		0,
+		4,
 		0,
 		0,
 		0

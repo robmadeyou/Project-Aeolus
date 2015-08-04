@@ -1,9 +1,9 @@
 {
 	"id": 10499,
 	"name": "Ava's accumulator",
-	"description": "A superior bagged chicken ready to serve you, magnet in claw.",
+	"description": "It's an Ava's accumulator.",
 	"value": "1000",
-	"equipSlot": "cape",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
@@ -13,8 +13,8 @@
 		0,
 		1,
 		0,
-		0,
 		4,
+		0,
 		0,
 		0
 	],

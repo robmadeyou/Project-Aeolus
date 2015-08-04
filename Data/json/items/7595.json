@@ -1,7 +1,7 @@
 {
 	"id": 7595,
 	"name": "Zombie gloves",
-	"description": "Smells pretty funky.",
+	"description": "It's a Zombie gloves.",
 	"value": "1",
 	"equipSlot": "gloves",
 	"bonuses" : [

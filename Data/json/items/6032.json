@@ -1,7 +1,7 @@
 {
 	"id": 6032,
 	"name": "Compost",
-	"description": "Good for plants, helps them grow.",
-	"value": "20",
+	"description": "It's a Compost.",
+	"value": "143",
 	"stackable": false
 }

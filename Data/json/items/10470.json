@@ -1,9 +1,9 @@
 {
 	"id": 10470,
 	"name": "Saradomin stole",
-	"description": "A Saradomin stole.",
-	"value": "2500",
-	"equipSlot": "body",
+	"description": "It's a Saradomin stole.",
+	"value": "23300",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
@@ -16,7 +16,7 @@
 		2,
 		0,
 		0,
-		10
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

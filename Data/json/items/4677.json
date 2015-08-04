@@ -1,7 +1,7 @@
 {
 	"id": 4677,
 	"name": "Catspeak amulet",
-	"description": "It's an amulet of cat speak. It makes vague purring noises.",
+	"description": "It's a Catspeak amulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

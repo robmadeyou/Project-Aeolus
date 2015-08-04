@@ -1,7 +1,30 @@
 {
 	"id": 10476,
 	"name": "Purple sweets",
-	"description": "Remember to brush after eating this Treasure Trail treat!",
-	"value": "15",
+	"description": "It's a Purple sweets.",
+	"value": "15000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0,
+		0,
+		2,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

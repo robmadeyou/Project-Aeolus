@@ -1,8 +1,8 @@
 {
 	"id": 1696,
 	"name": "Emerald amulet",
-	"description": "I wonder if I can get this enchanted.",
-	"value": "1275",
+	"description": "It's an Emerald amulet.",
+	"value": "687",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

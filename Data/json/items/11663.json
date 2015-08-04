@@ -1,7 +1,7 @@
 {
 	"id": 11663,
 	"name": "Void mage helm",
-	"description": "A mage helm from the order of the Void Knights.",
+	"description": "It's a Void mage helm.",
 	"value": "9851",
 	"equipSlot": "hat",
 	"bonuses" : [

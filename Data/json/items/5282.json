@@ -1,7 +1,7 @@
 {
 	"id": 5282,
 	"name": "Mushroom spore",
-	"description": "A Bittercap mushroom spore - plant in a mushroom patch.",
-	"value": "86",
+	"description": "It's a Mushroom spore.",
+	"value": "5",
 	"stackable": true
 }

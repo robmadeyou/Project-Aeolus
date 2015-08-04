@@ -1,8 +1,8 @@
 {
 	"id": 7352,
-	"name": "Adam kiteshield(h)",
-	"description": "A shield with a heraldic design",
-	"value": "5440",
+	"name": "Adamant shield (h4)",
+	"description": "It's an Adamant shield (h4).",
+	"value": "8317",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,
@@ -10,7 +10,7 @@
 		0,
 		-8,
 		-2,
-		21,
+		27,
 		31,
 		29,
 		-1,

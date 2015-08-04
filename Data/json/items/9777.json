@@ -1,7 +1,7 @@
 {
 	"id": 9777,
 	"name": "Thieving cape",
-	"description": "The cape worn by masters of Thieving.",
+	"description": "It's a Thieving cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

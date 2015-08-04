@@ -1,7 +1,7 @@
 {
 	"id": 8017,
 	"name": "Enchant emerald",
-	"description": "A tablet containing a magic spell.",
-	"value": "1",
+	"description": "It's an Enchant emerald.",
+	"value": "625",
 	"stackable": true
 }

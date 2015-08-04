@@ -1,7 +1,7 @@
 {
 	"id": 8869,
 	"name": "Iron key",
-	"description": "You stole this key from a guard deep in the HAM cave.",
+	"description": "It's an Iron key.",
 	"value": "1",
 	"stackable": false
 }

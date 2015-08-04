@@ -1,13 +1,11 @@
 {
 	"id": 11700,
-	"name": "Zamorak godsword",
-	"description": "A terrifying, heavy sword.",
-	"value": "1250000",
-	"equipSlot": "weapon",
+	"name": "Bronze arrow",
+	"description": "It's a Bronze arrow.",
+	"value": "12700000",
+	"equipSlot": "arrows",
 	"bonuses" : [
 		0,
-		132,
-		80,
 		0,
 		0,
 		0,
@@ -15,12 +13,14 @@
 		0,
 		0,
 		0,
-		132,
-		8
+		0,
+		0,
+		0,
+		0
 	],
-	"attackDelay": "6",
+	"attackDelay": "5",
 	"levelRequirements" : [
-		75,
+		0,
 		0,
 		0,
 		0,
@@ -35,14 +35,5 @@
 		7044,
 		7039
 	],
-	"combatAnimations" : [
-		7042,
-		7049,
-		7041,
-		7048,
-		7050
-	],
-	"twoHanded": true,
-	"special": true,
 	"stackable": false
 }

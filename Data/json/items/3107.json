@@ -1,7 +1,7 @@
 {
 	"id": 3107,
 	"name": "Spiked boots",
-	"description": "Climbing boots with spikes.",
+	"description": "It's a Spiked boots.",
 	"value": "30",
 	"equipSlot": "boots",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 10612,
 	"name": "Rogue mask",
-	"description": "Null",
+	"description": "It's a Rogue mask.",
 	"value": "375",
 	"equipSlot": "hat",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		5,
+		5,
+		5,
+		5,
+		5,
 		0,
 		0
 	],

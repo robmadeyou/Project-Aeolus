@@ -1,7 +1,7 @@
 {
 	"id": 7917,
 	"name": "Ram skull helm",
-	"description": "Makes me feel baaad to the bone.",
+	"description": "It's a Ram skull helm.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [
@@ -9,12 +9,12 @@
 		0,
 		0,
 		0,
+		-2,
+		19,
+		21,
+		16,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		19,
 		0,
 		0
 	],

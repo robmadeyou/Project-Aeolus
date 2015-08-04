@@ -1,7 +1,7 @@
 {
 	"id": 5,
 	"name": "Instruction manual",
-	"description": "An old note book.",
+	"description": "It's an Instruction manual.",
 	"value": "10",
 	"stackable": false
 }

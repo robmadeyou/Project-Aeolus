@@ -1,7 +1,7 @@
 {
 	"id": 1503,
 	"name": "Warrant",
-	"description": "A search warrant for a house in Ardougne.",
+	"description": "It's a Warrant.",
 	"value": "5",
 	"stackable": false
 }

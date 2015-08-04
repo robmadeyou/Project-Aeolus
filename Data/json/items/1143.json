@@ -1,8 +1,8 @@
 {
 	"id": 1143,
 	"name": "Mithril med helm",
-	"description": "A medium sized helmet.",
-	"value": "780",
+	"description": "It's a Mithril med helm.",
+	"value": "340",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
@@ -10,11 +10,11 @@
 		0,
 		-3,
 		-1,
-		9,
 		10,
-		8,
-		-1,
+		11,
 		9,
+		-1,
+		10,
 		0,
 		0
 	],

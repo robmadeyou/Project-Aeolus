@@ -1,8 +1,8 @@
 {
 	"id": 2663,
-	"name": "Saradomin legs",
-	"description": "Rune platelegs in the colours of Saradomin.",
-	"value": "64000",
+	"name": "Saradomin platelegs",
+	"description": "It's a Saradomin platelegs.",
+	"value": "313100",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

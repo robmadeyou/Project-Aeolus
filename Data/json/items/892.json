@@ -1,15 +1,15 @@
 {
 	"id": 892,
 	"name": "Rune arrow",
-	"description": "Arrows with rune heads.",
-	"value": "400",
+	"description": "It's a Rune arrow.",
+	"value": "218",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,
 		0,
 		0,
 		0,
-		49,
+		0,
 		0,
 		0,
 		0,

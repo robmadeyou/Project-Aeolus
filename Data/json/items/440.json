@@ -1,7 +1,7 @@
 {
 	"id": 440,
 	"name": "Iron ore",
-	"description": "This needs refining.",
-	"value": "17",
+	"description": "It's an Iron ore.",
+	"value": "157",
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 1957,
 	"name": "Onion",
-	"description": "A strong smelling onion.",
-	"value": "3",
+	"description": "It's an Onion.",
+	"value": "40",
 	"stackable": false
 }

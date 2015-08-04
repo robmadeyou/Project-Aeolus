@@ -1,7 +1,30 @@
 {
 	"id": 9187,
 	"name": "Jade bolt tips",
-	"description": "Jade bolt tips.",
-	"value": "10",
+	"description": "It's a Jade bolt tips.",
+	"value": "1",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		90,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

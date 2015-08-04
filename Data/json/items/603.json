@@ -1,7 +1,7 @@
 {
 	"id": 603,
-	"name": "Lens",
-	"description": "A perfectly circular disc of glass.",
+	"name": "Observatory lens",
+	"description": "It's an Observatory lens.",
 	"value": "3",
 	"stackable": false
 }

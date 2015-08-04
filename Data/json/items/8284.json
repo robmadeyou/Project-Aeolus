@@ -1,7 +1,7 @@
 {
 	"id": 8284,
 	"name": "Cape of legends",
-	"description": "Null",
+	"description": "It's a Cape of legends.",
 	"value": "1",
 	"equipSlot": "cape",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		7,
+		7,
+		7,
+		7,
+		7,
 		0,
 		0
 	],

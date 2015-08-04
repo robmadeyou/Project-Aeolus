@@ -1,7 +1,7 @@
 {
 	"id": 6432,
 	"name": "Death rune",
-	"description": "Used for medium level missile spells.",
+	"description": "It's a Death rune.",
 	"value": "1",
 	"stackable": false
 }

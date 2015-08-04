@@ -1,7 +1,7 @@
 {
 	"id": 6547,
 	"name": "Doctors hat",
-	"description": "A mirror helps reflect light on the subject.",
+	"description": "It's a Doctors hat.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [

@@ -1,8 +1,8 @@
 {
 	"id": 3389,
 	"name": "Splitbark legs",
-	"description": "These should protect my legs.",
-	"value": "40000",
+	"description": "It's a Splitbark legs.",
+	"value": "56600",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

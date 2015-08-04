@@ -1,8 +1,8 @@
 {
 	"id": 2599,
-	"name": "Adam platebody (t)",
-	"description": "Adamant platebody with trim.",
-	"value": "12800",
+	"name": "Adamant platebody (t)",
+	"description": "It's an Adamant platebody (t).",
+	"value": "72400",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

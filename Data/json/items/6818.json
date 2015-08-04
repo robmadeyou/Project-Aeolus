@@ -1,7 +1,7 @@
 {
 	"id": 6818,
 	"name": "Bow-sword",
-	"description": "A sharp sword that can also fire arrows.",
+	"description": "It's a Bow-sword.",
 	"value": "1",
 	"animations" : [
 		808,

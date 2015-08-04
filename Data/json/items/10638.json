@@ -1,7 +1,7 @@
 {
 	"id": 10638,
 	"name": "Team-1 cape",
-	"description": "Null",
+	"description": "It's a Team-1 cape.",
 	"value": "50",
 	"equipSlot": "cape",
 	"bonuses" : [
@@ -11,10 +11,10 @@
 		0,
 		0,
 		0,
+		1,
+		1,
 		0,
-		0,
-		0,
-		0,
+		2,
 		0,
 		0
 	],

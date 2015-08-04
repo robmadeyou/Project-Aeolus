@@ -1,7 +1,7 @@
 {
 	"id": 1739,
 	"name": "Cowhide",
-	"description": "I should take this to the tannery.",
-	"value": "1",
+	"description": "It's a Cowhide.",
+	"value": "210",
 	"stackable": false
 }

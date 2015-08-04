@@ -1,8 +1,8 @@
 {
 	"id": 1675,
-	"name": "Sapphire amulet",
-	"description": "It needs a string so I can wear it.",
-	"value": "900",
+	"name": "Sapphire amulet (u)",
+	"description": "It's a Sapphire amulet (u).",
+	"value": "479",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

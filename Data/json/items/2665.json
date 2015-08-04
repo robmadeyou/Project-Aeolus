@@ -1,8 +1,8 @@
 {
 	"id": 2665,
 	"name": "Saradomin full helm",
-	"description": "Rune full helm in the colours of Saradomin.",
-	"value": "35200",
+	"description": "It's a Saradomin full helm.",
+	"value": "1100000",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

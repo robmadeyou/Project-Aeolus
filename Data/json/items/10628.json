@@ -1,7 +1,7 @@
 {
 	"id": 10628,
 	"name": "Polar camo top",
-	"description": "Null",
+	"description": "It's a Polar camo top.",
 	"value": "20",
 	"equipSlot": "body",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
+		10,
+		15,
+		19,
 		0,
-		0,
-		0,
-		0,
-		0,
+		12,
 		0,
 		0
 	],

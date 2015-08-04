@@ -1,7 +1,7 @@
 {
 	"id": 8848,
 	"name": "Mithril defender",
-	"description": "A defensive weapon.",
+	"description": "It's a Mithril defender.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [

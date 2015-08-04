@@ -1,7 +1,30 @@
 {
 	"id": 7142,
 	"name": "Rapier",
-	"description": "The very butcher of a silk button.",
+	"description": "It's a Rapier.",
 	"value": "25600",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		45,
+		7,
+		-2,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		44,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 10717,
-	"name": "Bob shirt",
-	"description": "Null",
+	"name": "Bob's black shirt",
+	"description": "It's a Bob's black shirt.",
 	"value": "3",
 	"equipSlot": "body",
 	"bonuses" : [
@@ -20,8 +20,8 @@
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [
-		0,
-		0,
+		10,
+		10,
 		0,
 		0,
 		0

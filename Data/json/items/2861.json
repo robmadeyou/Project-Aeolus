@@ -1,8 +1,8 @@
 {
 	"id": 2861,
 	"name": "Wolfbone arrowtips",
-	"description": "I can make an ogre arrow with these.",
-	"value": "3",
+	"description": "It's a Wolfbone arrowtips.",
+	"value": "24",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

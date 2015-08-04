@@ -1,7 +1,7 @@
 {
 	"id": 2366,
 	"name": "Shield left half",
-	"description": "The left half of a dragon square shield.",
+	"description": "It's a Shield left half.",
 	"value": "110000",
 	"equipSlot": "shield",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 187,
 	"name": "Weapon poison",
-	"description": "For use on daggers and projectiles.",
-	"value": "144",
+	"description": "It's a Weapon poison.",
+	"value": "35",
 	"stackable": false
 }

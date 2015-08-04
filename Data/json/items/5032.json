@@ -1,8 +1,8 @@
 {
 	"id": 5032,
 	"name": "Shirt",
-	"description": "Tiny!",
-	"value": "600",
+	"description": "It's a Shirt.",
+	"value": "1043",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 10624,
 	"name": "Graahk top",
-	"description": "Null",
+	"description": "It's a Graahk top.",
 	"value": "150",
 	"equipSlot": "body",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
+		10,
+		15,
+		19,
 		0,
-		0,
-		0,
-		0,
-		0,
+		12,
 		0,
 		0
 	],

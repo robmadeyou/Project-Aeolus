@@ -1,8 +1,8 @@
 {
 	"id": 6568,
 	"name": "Obsidian cape",
-	"description": "A cape of woven obsidian plates.",
-	"value": "60000",
+	"description": "It's an Obsidian cape.",
+	"value": "36700",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,

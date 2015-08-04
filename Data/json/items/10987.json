@@ -1,7 +1,7 @@
 {
 	"id": 10987,
 	"name": "Meter",
-	"description": "Null",
+	"description": "It's a Meter.",
 	"value": "0",
 	"stackable": false
 }

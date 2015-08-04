@@ -1,7 +1,7 @@
 {
 	"id": 10837,
 	"name": "Silly jester top",
-	"description": "Null",
+	"description": "It's a Silly jester top.",
 	"value": "100",
 	"equipSlot": "body",
 	"bonuses" : [
@@ -13,8 +13,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		5,
+		-5,
 		0,
 		0
 	],

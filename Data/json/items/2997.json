@@ -1,7 +1,30 @@
 {
 	"id": 2997,
 	"name": "Pirate's hook",
-	"description": "You should see the shark...",
-	"value": "89",
+	"description": "It's a Pirate's hook.",
+	"value": "1500000",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		5,
+		3,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

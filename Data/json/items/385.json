@@ -1,7 +1,7 @@
 {
 	"id": 385,
 	"name": "Shark",
-	"description": "I'd better be careful eating this.",
-	"value": "300",
+	"description": "It's a Shark.",
+	"value": "625",
 	"stackable": false
 }

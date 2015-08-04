@@ -1,7 +1,7 @@
 {
 	"id": 9335,
 	"name": "Jade bolts",
-	"description": "Jade tipped Blurite crossbow bolts.",
+	"description": "It's a Jade bolts.",
 	"value": "12",
 	"equipSlot": "arrows",
 	"bonuses" : [

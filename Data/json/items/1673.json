@@ -1,8 +1,8 @@
 {
 	"id": 1673,
-	"name": "Gold amulet",
-	"description": "It needs a string so I can wear it.",
-	"value": "350",
+	"name": "Gold amulet (u)",
+	"description": "It's a Gold amulet (u).",
+	"value": "176",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 5021,
 	"name": "Minecart ticket",
-	"description": "A ticket to take you from the dwarven mines under Ice Mountain to Keldagrim.",
+	"description": "It's a Minecart ticket.",
 	"value": "1",
 	"stackable": false
 }

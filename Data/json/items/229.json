@@ -1,7 +1,7 @@
 {
 	"id": 229,
 	"name": "Vial",
-	"description": "An empty glass vial.",
-	"value": "2",
+	"description": "It's a Vial.",
+	"value": "7",
 	"stackable": false
 }

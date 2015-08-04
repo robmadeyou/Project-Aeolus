@@ -1,8 +1,8 @@
 {
 	"id": 6615,
 	"name": "White chainbody",
-	"description": "A series of connected metal rings.",
-	"value": "1440",
+	"description": "It's a White chainbody.",
+	"value": "738",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		-3,
 		24,
 		0,
-		1
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

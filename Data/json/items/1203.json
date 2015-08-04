@@ -1,8 +1,8 @@
 {
 	"id": 1203,
 	"name": "Iron dagger",
-	"description": "Short but pointy.",
-	"value": "35",
+	"description": "It's an Iron dagger.",
+	"value": "1",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		5,

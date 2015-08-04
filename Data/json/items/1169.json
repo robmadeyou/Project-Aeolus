@@ -1,9 +1,9 @@
 {
 	"id": 1169,
 	"name": "Coif",
-	"description": "Light weight head protection.",
-	"value": "200",
-	"equipSlot": "weapon",
+	"description": "It's a Coif.",
+	"value": "48",
+	"equipSlot": "hat",
 	"bonuses" : [
 		0,
 		0,

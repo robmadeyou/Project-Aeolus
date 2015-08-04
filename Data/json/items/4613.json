@@ -1,7 +1,30 @@
 {
 	"id": 4613,
 	"name": "Spinning plate",
-	"description": "It has a picture of a dragon on it.",
+	"description": "It's a Spinning plate.",
 	"value": "50",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		8,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

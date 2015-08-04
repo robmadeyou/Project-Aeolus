@@ -1,7 +1,30 @@
 {
 	"id": 6367,
 	"name": "Villager sandals",
-	"description": "A brightly coloured pair of local sandals.",
-	"value": "100",
+	"description": "It's a Villager sandals.",
+	"value": "1599",
+	"equipSlot": "boots",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

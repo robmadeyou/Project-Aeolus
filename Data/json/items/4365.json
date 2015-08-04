@@ -1,8 +1,8 @@
 {
 	"id": 4365,
 	"name": "Team-26 cape",
-	"description": "Ooohhh look at the pretty colours...",
-	"value": "50",
+	"description": "It's a Team-26 cape.",
+	"value": "26",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,

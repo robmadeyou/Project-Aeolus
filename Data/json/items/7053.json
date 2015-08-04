@@ -1,7 +1,7 @@
 {
 	"id": 7053,
 	"name": "Lit bug lantern",
-	"description": "A lantern to aid attacking Harpie bugs.",
+	"description": "It's a Lit bug lantern.",
 	"value": "130",
 	"equipSlot": "shield",
 	"bonuses" : [

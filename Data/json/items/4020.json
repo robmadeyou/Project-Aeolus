@@ -1,7 +1,7 @@
 {
 	"id": 4020,
 	"name": "M'amulet mould",
-	"description": "It's an amulet mould shaped like a monkey head.",
+	"description": "It's a M'amulet mould.",
 	"value": "10",
 	"equipSlot": "amulet",
 	"bonuses" : [

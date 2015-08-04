@@ -1,8 +1,8 @@
 {
 	"id": 2890,
 	"name": "Elemental shield",
-	"description": "A magic shield.",
-	"value": "20",
+	"description": "It's an Elemental shield.",
+	"value": "1250",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

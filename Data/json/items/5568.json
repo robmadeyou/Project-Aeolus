@@ -1,7 +1,7 @@
 {
 	"id": 5568,
 	"name": "Tile",
-	"description": "For a mosaic.",
+	"description": "It's a Tile.",
 	"value": "1",
 	"stackable": false
 }

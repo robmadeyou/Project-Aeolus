@@ -1,8 +1,8 @@
 {
 	"id": 1271,
 	"name": "Adamant pickaxe",
-	"description": "Used for mining.",
-	"value": "3200",
+	"description": "It's an Adamant pickaxe.",
+	"value": "1805",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		17,

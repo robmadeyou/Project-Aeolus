@@ -1,8 +1,31 @@
 {
 	"id": 9183,
-	"name": "Adamant c'bow",
-	"description": "An adamant crossbow.",
-	"value": "1767",
+	"name": "Adamant crossbow",
+	"description": "It's an Adamant crossbow.",
+	"value": "1040",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		78,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		808,
 		0,
@@ -13,10 +36,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

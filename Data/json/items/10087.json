@@ -1,7 +1,30 @@
 {
 	"id": 10087,
 	"name": "Stripy feather",
-	"description": "Null",
-	"value": "20",
+	"description": "It's a Stripy feather.",
+	"value": "5",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		11,
+		6,
+		5,
+		7,
+		8,
+		0,
+		2,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

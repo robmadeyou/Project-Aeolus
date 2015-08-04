@@ -1,8 +1,31 @@
 {
 	"id": 9181,
-	"name": "Mith c'bow",
-	"description": "A mithril crossbow.",
-	"value": "783",
+	"name": "Mith crossbow",
+	"description": "It's a Mith crossbow.",
+	"value": "364",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		66,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"animations" : [
 		808,
 		0,
@@ -13,10 +36,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

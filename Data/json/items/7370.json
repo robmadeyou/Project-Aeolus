@@ -1,8 +1,8 @@
 {
 	"id": 7370,
-	"name": "D-hide body(g)",
-	"description": "Made from 100% real dragonhide. With colourful trim!",
-	"value": "7800",
+	"name": "Green d'hide body (g)",
+	"description": "It's a Green d'hide body (g).",
+	"value": "119700",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -21,9 +21,9 @@
 	"attackDelay": "5",
 	"levelRequirements" : [
 		0,
+		40,
 		0,
-		0,
-		0,
+		40,
 		0
 	],
 	"stackable": false

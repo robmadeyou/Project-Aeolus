@@ -1,8 +1,8 @@
 {
 	"id": 1179,
 	"name": "Black sq shield",
-	"description": "A medium square shield.",
-	"value": "1152",
+	"description": "It's a Black sq shield.",
+	"value": "592",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

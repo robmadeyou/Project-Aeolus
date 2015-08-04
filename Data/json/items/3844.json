@@ -1,7 +1,7 @@
 {
 	"id": 3844,
 	"name": "Book of balance",
-	"description": "The holy book of Guthix.",
+	"description": "It's a Book of balance.",
 	"value": "200",
 	"equipSlot": "shield",
 	"bonuses" : [
@@ -16,7 +16,7 @@
 		4,
 		4,
 		0,
-		5
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

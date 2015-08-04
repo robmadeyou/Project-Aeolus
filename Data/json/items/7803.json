@@ -1,7 +1,7 @@
 {
 	"id": 7803,
 	"name": "Yin yang amulet",
-	"description": "A non-magical copy of the make-over mage's amulet.",
+	"description": "It's a Yin yang amulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [

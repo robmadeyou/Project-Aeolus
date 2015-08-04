@@ -1,8 +1,8 @@
 {
 	"id": 1105,
 	"name": "Steel chainbody",
-	"description": "A series of connected metal rings.",
-	"value": "750",
+	"description": "It's a Steel chainbody.",
+	"value": "336",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
@@ -14,7 +14,7 @@
 		25,
 		30,
 		-3,
-		12,
+		19,
 		0,
 		0
 	],

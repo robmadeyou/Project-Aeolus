@@ -1,7 +1,7 @@
 {
 	"id": 3732,
 	"name": "Empty jug",
-	"description": "This jug is completely empty. It has a 3 painted on its side.",
+	"description": "It's an Empty jug.",
 	"value": "1",
 	"stackable": false
 }

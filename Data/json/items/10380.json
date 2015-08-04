@@ -1,9 +1,9 @@
 {
 	"id": 10380,
 	"name": "Guthix chaps",
-	"description": "Guthix blessed dragonhide chaps.",
-	"value": "6000",
-	"equipSlot": "legs",
+	"description": "It's a Guthix chaps.",
+	"value": "22300",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,

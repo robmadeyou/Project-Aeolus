@@ -1,19 +1,19 @@
 {
 	"id": 10605,
 	"name": "Infinity top",
-	"description": "Null",
+	"description": "It's an Infinity top.",
 	"value": "140000",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		22,
 		0,
 		0,
 		0,
 		0,
-		0,
-		0,
+		22,
 		0,
 		0,
 		0

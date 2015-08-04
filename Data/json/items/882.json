@@ -1,8 +1,8 @@
 {
 	"id": 882,
 	"name": "Bronze arrow",
-	"description": "Arrows with bronze heads.",
-	"value": "1",
+	"description": "It's a Bronze arrow.",
+	"value": "17",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

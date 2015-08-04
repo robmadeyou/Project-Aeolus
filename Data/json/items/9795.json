@@ -1,7 +1,7 @@
 {
 	"id": 9795,
 	"name": "Smithing cape",
-	"description": "The cape worn by masters of Smithing.",
+	"description": "It's a Smithing cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

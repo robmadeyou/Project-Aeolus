@@ -1,7 +1,7 @@
 {
 	"id": 3805,
 	"name": "Tankard",
-	"description": "A big cup for a big thirst.",
+	"description": "It's a Tankard.",
 	"value": "5",
 	"stackable": false
 }

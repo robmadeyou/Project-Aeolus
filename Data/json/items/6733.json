@@ -1,8 +1,8 @@
 {
 	"id": 6733,
 	"name": "Archers ring",
-	"description": "A fabled ring that improves the wearer's skill with a bow...",
-	"value": "10000",
+	"description": "It's an Archers ring.",
+	"value": "2000000",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

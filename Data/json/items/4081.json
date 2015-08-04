@@ -1,7 +1,7 @@
 {
 	"id": 4081,
 	"name": "Salve amulet",
-	"description": "Increases the wearer's strength and accuracy by 15% when fighting the undead.",
+	"description": "It's a Salve amulet.",
 	"value": "1",
 	"equipSlot": "amulet",
 	"bonuses" : [
@@ -10,9 +10,9 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
+		3,
+		3,
+		3,
 		0,
 		0,
 		0,

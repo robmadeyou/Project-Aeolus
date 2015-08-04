@@ -1,22 +1,22 @@
 {
 	"id": 6627,
 	"name": "White plateskirt",
-	"description": "Big, White and heavy looking.",
-	"value": "1920",
+	"description": "It's a White plateskirt.",
+	"value": "1984",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		-21,
+		-7,
+		21,
+		20,
+		19,
+		-4,
+		20,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		1
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

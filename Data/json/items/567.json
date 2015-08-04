@@ -1,7 +1,7 @@
 {
 	"id": 567,
 	"name": "Unpowered orb",
-	"description": "I'd prefer it if it was powered.",
-	"value": "100",
+	"description": "It's an Unpowered orb.",
+	"value": "460",
 	"stackable": false
 }

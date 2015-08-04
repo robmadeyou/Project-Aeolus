@@ -1,7 +1,7 @@
 {
 	"id": 8004,
 	"name": "Small map",
-	"description": "A small map of Runescape.",
+	"description": "It's a Small map.",
 	"value": "1000",
 	"animations" : [
 		2065,

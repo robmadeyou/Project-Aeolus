@@ -1,8 +1,8 @@
 {
 	"id": 10549,
 	"name": "Runner hat",
-	"description": "A Penance Runner hat.",
-	"value": "5000",
+	"description": "It's a Runner hat.",
+	"value": "65002",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

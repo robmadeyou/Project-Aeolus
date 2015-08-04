@@ -1,7 +1,7 @@
 {
 	"id": 5281,
 	"name": "Belladonna seed",
-	"description": "Also known as Deadly Nightshade - plant in a belladonna patch.",
-	"value": "177",
+	"description": "It's a Belladonna seed.",
+	"value": "19",
 	"stackable": true
 }

@@ -1,7 +1,7 @@
 {
 	"id": 9792,
 	"name": "Mining cape",
-	"description": "The cape worn by masters of Mining.",
+	"description": "It's a Mining cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

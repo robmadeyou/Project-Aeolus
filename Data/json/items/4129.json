@@ -1,8 +1,8 @@
 {
 	"id": 4129,
 	"name": "Adamant boots",
-	"description": "These will protect my feet.",
-	"value": "1920",
+	"description": "It's an Adamant boots.",
+	"value": "3656",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

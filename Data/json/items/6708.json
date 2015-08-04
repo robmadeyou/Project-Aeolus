@@ -1,7 +1,7 @@
 {
 	"id": 6708,
 	"name": "Slayer gloves",
-	"description": "Too thick for monsters to bite through.",
+	"description": "It's a Slayer gloves.",
 	"value": "1",
 	"equipSlot": "gloves",
 	"bonuses" : [
@@ -10,9 +10,9 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
+		4,
+		5,
+		3,
 		0,
 		0,
 		0,

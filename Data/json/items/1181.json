@@ -1,8 +1,8 @@
 {
 	"id": 1181,
 	"name": "Mithril sq shield",
-	"description": "A medium square shield.",
-	"value": "1560",
+	"description": "It's a Mithril sq shield.",
+	"value": "810",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

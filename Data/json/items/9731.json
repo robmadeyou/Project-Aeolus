@@ -1,8 +1,8 @@
 {
 	"id": 9731,
 	"name": "Mind shield",
-	"description": "Null",
-	"value": "3000",
+	"description": "It's a Mind shield.",
+	"value": "7345",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,
@@ -13,7 +13,7 @@
 		0,
 		0,
 		0,
-		0,
+		9,
 		0,
 		0,
 		0

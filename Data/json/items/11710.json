@@ -1,25 +1,30 @@
 {
 	"id": 11710,
-	"name": "Godsword shard 1",
-	"description": "A part of the godsword Blade.",
-	"value": "250000",
-	"animations" : [
-		7047,
-		7044,
-		7046,
-		7044,
-		7044,
-		7044,
-		7039
-	],
-	"combatAnimations" : [
-		7042,
-		7049,
-		7041,
-		7048,
+	"name": "Anti-dragon shield (nz)",
+	"description": "It's an Anti-dragon shield (nz).",
+	"value": "1151400",
+	"equipSlot": "shield",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		7,
+		9,
+		8,
+		2,
+		8,
+		0,
 		0
 	],
-	"twoHanded": false,
-	"special": false,
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

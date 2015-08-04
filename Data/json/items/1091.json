@@ -1,8 +1,8 @@
 {
 	"id": 1091,
 	"name": "Adamant plateskirt",
-	"description": "Designer leg protection.",
-	"value": "6400",
+	"description": "It's an Adamant plateskirt.",
+	"value": "4195",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
@@ -10,8 +10,8 @@
 		0,
 		-21,
 		-7,
-		33,
 		31,
+		33,
 		29,
 		-4,
 		31,

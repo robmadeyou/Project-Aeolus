@@ -1,8 +1,8 @@
 {
 	"id": 5541,
 	"name": "Nature tiara",
-	"description": "A tiara infused with the properties of nature.",
-	"value": "100",
+	"description": "It's a Nature tiara.",
+	"value": "52",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

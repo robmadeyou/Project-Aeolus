@@ -1,7 +1,7 @@
 {
 	"id": 11687,
-	"name": "Godsword shards",
-	"description": "Swap this note at any bank for the equivelent item.",
-	"value": "500000",
+	"name": "Water rune",
+	"description": "It's a Water rune.",
+	"value": "0",
 	"stackable": true
 }

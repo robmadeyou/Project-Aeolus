@@ -1,7 +1,7 @@
 {
 	"id": 1941,
 	"name": "Swamp paste",
-	"description": "A tar-like substance mixed with flour and warmed.",
-	"value": "30",
+	"description": "It's a Swamp paste.",
+	"value": "1",
 	"stackable": true
 }

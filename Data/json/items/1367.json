@@ -1,8 +1,8 @@
 {
 	"id": 1367,
 	"name": "Black battleaxe",
-	"description": "A vicious looking axe.",
-	"value": "1248",
+	"description": "It's a Black battleaxe.",
+	"value": "677",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-2,
@@ -14,7 +14,7 @@
 		0,
 		0,
 		0,
-		0,
+		-1,
 		24,
 		0
 	],

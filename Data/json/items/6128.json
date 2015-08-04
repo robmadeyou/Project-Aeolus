@@ -1,8 +1,8 @@
 {
 	"id": 6128,
 	"name": "Rock-shell helm",
-	"description": "Protective headwear made from crabs. Better than that sounds.",
-	"value": "35200",
+	"description": "It's a Rock-shell helm.",
+	"value": "22200",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

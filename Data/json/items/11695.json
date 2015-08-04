@@ -1,7 +1,7 @@
 {
 	"id": 11695,
-	"name": "Armadyl godsword",
-	"description": "Swap this note at any bank for the equivelent item.",
-	"value": "1250000",
+	"name": "Law rune",
+	"description": "It's a Law rune.",
+	"value": "0",
 	"stackable": true
 }

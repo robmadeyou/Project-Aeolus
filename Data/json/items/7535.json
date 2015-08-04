@@ -1,7 +1,7 @@
 {
 	"id": 7535,
 	"name": "Diving apparatus",
-	"description": "I'll need a helmet to make this work.",
+	"description": "It's a Diving apparatus.",
 	"value": "1",
 	"equipSlot": "cape",
 	"bonuses" : [

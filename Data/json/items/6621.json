@@ -1,22 +1,22 @@
 {
 	"id": 6621,
 	"name": "White med helm",
-	"description": "A medium sized helmet.",
-	"value": "576",
+	"description": "It's a White med helm.",
+	"value": "752",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
 		0,
 		0,
+		-3,
+		-1,
+		9,
+		10,
+		8,
+		-1,
+		9,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		1
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

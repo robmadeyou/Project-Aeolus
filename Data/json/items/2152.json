@@ -1,7 +1,7 @@
 {
 	"id": 2152,
 	"name": "Toad's legs",
-	"description": "They're a gnome delicacy apparently.",
+	"description": "It's a Toad's legs.",
 	"value": "2",
 	"equipSlot": "legs",
 	"bonuses" : [

@@ -1,8 +1,8 @@
 {
 	"id": 10364,
-	"name": "Strength amulet(t)",
-	"description": "An enchanted ruby amulet.",
-	"value": "2025",
+	"name": "Strength amulet (t)",
+	"description": "It's a Strength amulet (t).",
+	"value": "806200",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

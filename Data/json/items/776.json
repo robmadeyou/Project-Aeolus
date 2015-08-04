@@ -1,9 +1,9 @@
 {
 	"id": 776,
 	"name": "Goldsmith gauntlet",
-	"description": "These gauntlets empower the bearer whilst making gold.",
+	"description": "It's a Goldsmith gauntlet.",
 	"value": "1",
-	"equipSlot": "weapon",
+	"equipSlot": "gloves",
 	"bonuses" : [
 		2,
 		2,
@@ -12,7 +12,7 @@
 		0,
 		8,
 		9,
-		0,
+		7,
 		0,
 		0,
 		2,

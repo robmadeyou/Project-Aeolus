@@ -1,7 +1,7 @@
 {
 	"id": 2169,
 	"name": "Gnome spice",
-	"description": "It's Aluft Gianne's secret mix of spices.",
-	"value": "2",
+	"description": "It's a Gnome spice.",
+	"value": "123",
 	"stackable": false
 }

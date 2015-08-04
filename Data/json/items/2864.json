@@ -1,8 +1,8 @@
 {
 	"id": 2864,
 	"name": "Ogre arrow shaft",
-	"description": "A wooden arrow shaft.",
-	"value": "1",
+	"description": "It's an Ogre arrow shaft.",
+	"value": "50",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

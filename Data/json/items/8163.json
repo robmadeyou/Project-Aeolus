@@ -1,7 +1,7 @@
 {
 	"id": 8163,
 	"name": "Dartboard",
-	"description": "Null",
+	"description": "It's a Dartboard.",
 	"value": "1",
 	"combatAnimations" : [
 		6600,

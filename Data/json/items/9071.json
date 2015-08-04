@@ -1,7 +1,7 @@
 {
 	"id": 9071,
 	"name": "Moonclan skirt",
-	"description": "This should protect my legs.",
+	"description": "It's a Moonclan skirt.",
 	"value": "1000",
 	"equipSlot": "legs",
 	"bonuses" : [

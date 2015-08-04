@@ -1,8 +1,8 @@
 {
 	"id": 1357,
 	"name": "Adamant axe",
-	"description": "A powerful axe.",
-	"value": "1280",
+	"description": "It's an Adamant axe.",
+	"value": "663",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		-2,
@@ -11,7 +11,7 @@
 		0,
 		0,
 		0,
-		0,
+		1,
 		0,
 		0,
 		0,

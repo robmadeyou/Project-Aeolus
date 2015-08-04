@@ -1,7 +1,7 @@
 {
 	"id": 2587,
-	"name": "Black full helm(t)",
-	"description": "Black full helm with trim.",
+	"name": "Black full helm (t)",
+	"description": "It's a Black full helm (t).",
 	"value": "1056",
 	"equipSlot": "hat",
 	"bonuses" : [

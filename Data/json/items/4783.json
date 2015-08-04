@@ -1,7 +1,30 @@
 {
 	"id": 4783,
 	"name": "Steel brutal",
-	"description": "Blunt steel arrow...ouch",
-	"value": "20",
+	"description": "It's a Steel brutal.",
+	"value": "33",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

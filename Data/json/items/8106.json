@@ -1,7 +1,7 @@
 {
 	"id": 8106,
 	"name": "Square shield",
-	"description": "Null",
+	"description": "It's a Square shield.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [

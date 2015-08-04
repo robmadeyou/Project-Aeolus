@@ -1,8 +1,8 @@
 {
 	"id": 10071,
 	"name": "Spottier cape",
-	"description": "Null",
-	"value": "800",
+	"description": "It's a Spottier cape.",
+	"value": "1554",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,
@@ -11,10 +11,10 @@
 		0,
 		0,
 		0,
+		1,
+		1,
 		0,
-		0,
-		0,
-		0,
+		2,
 		0,
 		0
 	],

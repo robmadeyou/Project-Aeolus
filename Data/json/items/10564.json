@@ -1,8 +1,8 @@
 {
 	"id": 10564,
 	"name": "Granite body",
-	"description": "Provides excellent protection.",
-	"value": "80000",
+	"description": "It's a Granite body.",
+	"value": "122900",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

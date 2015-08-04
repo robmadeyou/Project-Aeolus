@@ -1,7 +1,30 @@
 {
 	"id": 7451,
 	"name": "Cleaver",
-	"description": "An effective tool for chopping tough meat.",
-	"value": "25600",
+	"description": "It's a Cleaver.",
+	"value": "15200",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		7,
+		45,
+		-2,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		0,
+		44,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

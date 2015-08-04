@@ -1,8 +1,8 @@
 {
 	"id": 1729,
 	"name": "Amulet of defence",
-	"description": "An enchanted emerald amulet of protection.",
-	"value": "1750",
+	"description": "It's an Amulet of defence.",
+	"value": "702",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

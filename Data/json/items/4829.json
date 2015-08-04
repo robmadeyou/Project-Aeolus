@@ -1,15 +1,15 @@
 {
 	"id": 4829,
 	"name": "Book of 'h.a.m'",
-	"description": "A book of H.A.M affiliation.",
+	"description": "It's a Book of 'h.a.m'.",
 	"value": "1",
-	"equipSlot": "shield",
+	"equipSlot": "weapon",
 	"bonuses" : [
 		0,
 		0,
 		0,
 		0,
-		0,
+		38,
 		0,
 		0,
 		0,

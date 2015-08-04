@@ -1,8 +1,8 @@
 {
 	"id": 4308,
-	"name": "Gloves",
-	"description": "HAM gloves as worn by the Humans Against Monsters group.",
-	"value": "75",
+	"name": "Ham gloves",
+	"description": "It's a Ham gloves.",
+	"value": "483",
 	"equipSlot": "gloves",
 	"bonuses" : [
 		0,
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		1,
+		2,
 		0,
 		0,
 		0,

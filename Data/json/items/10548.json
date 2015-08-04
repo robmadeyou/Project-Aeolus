@@ -1,8 +1,8 @@
 {
 	"id": 10548,
 	"name": "Fighter hat",
-	"description": "A Penance Fighter hat.",
-	"value": "5000",
+	"description": "It's a Fighter hat.",
+	"value": "65002",
 	"equipSlot": "hat",
 	"bonuses" : [
 		5,

@@ -1,7 +1,7 @@
 {
 	"id": 5510,
 	"name": "Medium pouch",
-	"description": "A medium-sized pouch used for storing essence.",
+	"description": "It's a Medium pouch.",
 	"value": "300",
 	"stackable": false
 }

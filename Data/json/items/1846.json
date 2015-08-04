@@ -1,7 +1,7 @@
 {
 	"id": 1846,
 	"name": "Slave boots",
-	"description": "A set of filthy, smelly, flea infested desert slave boots.",
+	"description": "It's a Slave boots.",
 	"value": "1",
 	"equipSlot": "boots",
 	"bonuses" : [

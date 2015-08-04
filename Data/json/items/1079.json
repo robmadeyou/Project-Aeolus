@@ -1,8 +1,8 @@
 {
 	"id": 1079,
 	"name": "Rune platelegs",
-	"description": "These look pretty heavy.",
-	"value": "64000",
+	"description": "It's a Rune platelegs.",
+	"value": "38300",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

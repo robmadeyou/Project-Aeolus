@@ -1,8 +1,8 @@
 {
 	"id": 6145,
 	"name": "Rock-shell boots",
-	"description": "Some Fremennik boots, made from the shards of a rock crabs' shell.",
-	"value": "650",
+	"description": "It's a Rock-shell boots.",
+	"value": "3673",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

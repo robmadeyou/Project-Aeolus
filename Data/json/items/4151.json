@@ -1,8 +1,8 @@
 {
 	"id": 4151,
 	"name": "Abyssal whip",
-	"description": "A weapon from the abyss.",
-	"value": "130001",
+	"description": "It's an Abyssal whip.",
+	"value": "1600000",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		0,

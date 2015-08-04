@@ -1,7 +1,7 @@
 {
 	"id": 9810,
 	"name": "Farming cape",
-	"description": "The cape worn by masters of Farming.",
+	"description": "It's a Farming cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

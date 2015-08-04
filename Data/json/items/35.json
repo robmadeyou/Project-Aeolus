@@ -1,7 +1,7 @@
 {
 	"id": 35,
 	"name": "Excalibur",
-	"description": "This used to belong to King Arthur.",
+	"description": "It's an Excalibur.",
 	"value": "200",
 	"equipSlot": "weapon",
 	"bonuses" : [

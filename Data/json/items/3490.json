@@ -1,7 +1,30 @@
 {
 	"id": 3490,
-	"name": "Clue scroll",
-	"description": "A clue!",
+	"name": "Clue scroll (easy)",
+	"description": "It's a Clue scroll (easy).",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-8,
+		-2,
+		44,
+		48,
+		46,
+		-1,
+		46,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

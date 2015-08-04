@@ -1,7 +1,7 @@
 {
 	"id": 10718,
-	"name": "Bob shirt",
-	"description": "Null",
+	"name": "Bob's purple shirt",
+	"description": "It's a Bob's purple shirt.",
 	"value": "3",
 	"equipSlot": "body",
 	"bonuses" : [

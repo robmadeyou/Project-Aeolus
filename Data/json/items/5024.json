@@ -1,8 +1,8 @@
 {
 	"id": 5024,
 	"name": "Woven top",
-	"description": "Far too small to wear.",
-	"value": "500",
+	"description": "It's a Woven top.",
+	"value": "755",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

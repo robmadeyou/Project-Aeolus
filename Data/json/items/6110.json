@@ -1,7 +1,7 @@
 {
 	"id": 6110,
 	"name": "Ghostly gloves",
-	"description": "They seem to fade in and out of existence...",
+	"description": "It's a Ghostly gloves.",
 	"value": "300",
 	"equipSlot": "gloves",
 	"bonuses" : [

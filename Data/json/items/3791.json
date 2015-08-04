@@ -1,8 +1,8 @@
 {
 	"id": 3791,
 	"name": "Fremennik boots",
-	"description": "Very stylish!",
-	"value": "500",
+	"description": "It's a Fremennik boots.",
+	"value": "544",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

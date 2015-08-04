@@ -1,8 +1,8 @@
 {
 	"id": 53,
 	"name": "Headless arrow",
-	"description": "A wooden arrow shaft with flights attached.",
-	"value": "1",
+	"description": "It's a Headless arrow.",
+	"value": "23",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

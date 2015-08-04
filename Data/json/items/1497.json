@@ -1,7 +1,7 @@
 {
 	"id": 1497,
 	"name": "Amulet of othanian",
-	"description": "A mystical demonic amulet.",
+	"description": "It's an Amulet of othanian.",
 	"value": "0",
 	"equipSlot": "amulet",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 2003,
 	"name": "Stew",
-	"description": "It's a meat and potato stew.",
-	"value": "20",
+	"description": "It's a Stew.",
+	"value": "310",
 	"stackable": false
 }

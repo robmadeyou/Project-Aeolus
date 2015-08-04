@@ -1,7 +1,7 @@
 {
 	"id": 1814,
 	"name": "Criminal's dagger",
-	"description": "A flimsy-looking dagger found at the crime scene coated with a thin layer of flour.",
+	"description": "It's a Criminal's dagger.",
 	"value": "1",
 	"combatAnimations" : [
 		412,

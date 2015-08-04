@@ -1,7 +1,30 @@
 {
 	"id": 4133,
 	"name": "Crawling hand",
-	"description": "A slayer monster.",
+	"description": "It's a Crawling hand.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-3,
+		-1,
+		12,
+		13,
+		14,
+		0,
+		0,
+		2,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 6605,
 	"name": "White sword",
-	"description": "A razor sharp sword.",
-	"value": "624",
+	"description": "It's a White sword.",
+	"value": "897",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		14,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		12,
-		1
+		0
 	],
 	"attackDelay": "4",
 	"levelRequirements" : [

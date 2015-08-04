@@ -1,8 +1,8 @@
 {
 	"id": 9636,
 	"name": "Vyrewatch legs",
-	"description": "Null",
-	"value": "500",
+	"description": "It's a Vyrewatch legs.",
+	"value": "1255",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		2,
+		2,
 		0,
 		0,
 		0,

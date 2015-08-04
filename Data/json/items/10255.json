@@ -1,7 +1,7 @@
 {
 	"id": 10255,
-	"name": "Casket",
-	"description": "I hope there's treasure in it.",
+	"name": "Casket (medium)",
+	"description": "It's a Casket (medium).",
 	"value": "50",
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 197,
 	"name": "Poison chalice",
-	"description": "A cup of a strange brew...",
-	"value": "20",
+	"description": "It's a Poison chalice.",
+	"value": "124",
 	"stackable": false
 }

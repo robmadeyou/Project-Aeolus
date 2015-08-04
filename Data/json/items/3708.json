@@ -1,7 +1,7 @@
 {
 	"id": 3708,
 	"name": "Fiscal statement",
-	"description": "A signed statement promising a reduction on sales tax.",
+	"description": "It's a Fiscal statement.",
 	"value": "1",
 	"stackable": false
 }

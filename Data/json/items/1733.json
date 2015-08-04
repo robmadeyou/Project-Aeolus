@@ -1,7 +1,30 @@
 {
 	"id": 1733,
 	"name": "Needle",
-	"description": "Used with a thread to make clothes.",
+	"description": "It's a Needle.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		6,
+		6,
+		6,
+		6,
+		6,
+		6,
+		6,
+		6,
+		6,
+		6,
+		6,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

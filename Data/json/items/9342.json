@@ -1,8 +1,8 @@
 {
 	"id": 9342,
 	"name": "Onyx bolts",
-	"description": "Onyx tipped Runite crossbow bolts.",
-	"value": "13633",
+	"description": "It's an Onyx bolts.",
+	"value": "8688",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 1858,
 	"name": "Address label",
-	"description": "It says 'To Lord Handelmort, Handelmort Mansion'.",
+	"description": "It's an Address label.",
 	"value": "10",
 	"stackable": false
 }

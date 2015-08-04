@@ -1,7 +1,7 @@
 {
 	"id": 2413,
 	"name": "Guthix cape",
-	"description": "A cape from the almighty god Guthix.",
+	"description": "It's a Guthix cape.",
 	"value": "100",
 	"equipSlot": "cape",
 	"bonuses" : [

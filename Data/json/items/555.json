@@ -1,7 +1,7 @@
 {
 	"id": 555,
 	"name": "Water rune",
-	"description": "One of the 4 basic elemental Runes.",
-	"value": "4",
+	"description": "It's a Water rune.",
+	"value": "15",
 	"stackable": true
 }

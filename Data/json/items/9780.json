@@ -1,7 +1,7 @@
 {
 	"id": 9780,
 	"name": "Crafting cape",
-	"description": "The cape worn by masters of Crafting.",
+	"description": "It's a Crafting cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

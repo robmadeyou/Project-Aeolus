@@ -1,30 +1,7 @@
 {
 	"id": 4037,
 	"name": "Saradomin banner",
-	"description": "The Saradomin Team Standard.",
+	"description": "It's a Saradomin banner.",
 	"value": "1",
-	"equipSlot": "body",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
 	"stackable": false
 }

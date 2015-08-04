@@ -1,7 +1,7 @@
 {
 	"id": 5519,
 	"name": "Scrying orb",
-	"description": "This orb apparently contains a cypher spell.",
+	"description": "It's a Scrying orb.",
 	"value": "1",
 	"stackable": false
 }

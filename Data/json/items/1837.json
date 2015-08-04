@@ -1,8 +1,8 @@
 {
 	"id": 1837,
 	"name": "Desert boots",
-	"description": "Comfortable desert shoes.",
-	"value": "20",
+	"description": "It's a Desert boots.",
+	"value": "651",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,

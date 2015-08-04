@@ -1,7 +1,7 @@
 {
 	"id": 6987,
 	"name": "Sandstone body",
-	"description": "The body of a sandstone statue.",
+	"description": "It's a Sandstone body.",
 	"value": "1",
 	"equipSlot": "body",
 	"bonuses" : [

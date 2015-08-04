@@ -1,8 +1,8 @@
 {
 	"id": 6133,
 	"name": "Spined body",
-	"description": "A constant reminder that I'm above a Dagannoth in the food chain.",
-	"value": "7800",
+	"description": "It's a Spined body.",
+	"value": "10100",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

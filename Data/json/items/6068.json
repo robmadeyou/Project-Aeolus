@@ -1,7 +1,7 @@
 {
 	"id": 6068,
 	"name": "Mourner gloves",
-	"description": "These will keep my hands warm!",
+	"description": "It's a Mourner gloves.",
 	"value": "20",
 	"equipSlot": "gloves",
 	"bonuses" : [

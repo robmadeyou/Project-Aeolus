@@ -1,7 +1,7 @@
 {
 	"id": 5605,
 	"name": "Knife",
-	"description": "A dangerous looking knife.",
+	"description": "It's a Knife.",
 	"value": "6",
 	"combatAnimations" : [
 		806,

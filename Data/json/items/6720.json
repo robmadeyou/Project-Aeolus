@@ -1,7 +1,7 @@
 {
 	"id": 6720,
 	"name": "Slayer gloves",
-	"description": "Especially good against diseased arachnids.",
+	"description": "It's a Slayer gloves.",
 	"value": "200",
 	"equipSlot": "gloves",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 7118,
-	"name": "Cannister",
-	"description": "A cannister holding shrapnel.",
+	"name": "Canister",
+	"description": "It's a Canister.",
 	"value": "1",
 	"stackable": false
 }

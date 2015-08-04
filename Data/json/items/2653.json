@@ -1,7 +1,7 @@
 {
 	"id": 2653,
 	"name": "Zamorak platebody",
-	"description": "Rune platebody in the colours of Zamorak.",
+	"description": "It's a Zamorak platebody.",
 	"value": "65000",
 	"equipSlot": "body",
 	"bonuses" : [

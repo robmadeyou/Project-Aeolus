@@ -1,13 +1,13 @@
 {
 	"id": 1428,
 	"name": "Mithril mace",
-	"description": "A spiky mace.",
-	"value": "585",
+	"description": "It's a Mithril mace.",
+	"value": "233",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		11,
 		-2,
-		11,
+		18,
 		0,
 		0,
 		0,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		16,
-		3
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

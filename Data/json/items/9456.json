@@ -1,7 +1,7 @@
 {
 	"id": 9456,
-	"name": "Blurite c'bow (u)",
-	"description": "Null",
+	"name": "Blurite crossbow (u)",
+	"description": "It's a Blurite crossbow (u).",
 	"value": "60",
 	"animations" : [
 		808,
@@ -13,10 +13,10 @@
 		824
 	],
 	"combatAnimations" : [
-		4230,
-		4230,
-		4230,
-		4230,
+		426,
+		426,
+		426,
+		426,
 		0
 	],
 	"twoHanded": false,

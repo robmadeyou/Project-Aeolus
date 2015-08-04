@@ -1,8 +1,8 @@
 {
 	"id": 6371,
 	"name": "Tribal top",
-	"description": "Local dress.",
-	"value": "300",
+	"description": "It's a Tribal top.",
+	"value": "3371",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

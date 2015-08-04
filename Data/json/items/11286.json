@@ -1,7 +1,30 @@
 {
 	"id": 11286,
 	"name": "Draconic visage",
-	"description": "It looks like this could be attached to a shield somehow.",
-	"value": "750000",
+	"description": "It's a Draconic visage.",
+	"value": "19100000",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		-10,
+		-5,
+		70,
+		75,
+		72,
+		10,
+		72,
+		7,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 9099,
 	"name": "Lunar gloves",
-	"description": "These should keep my hands safe.",
+	"description": "It's a Lunar gloves.",
 	"value": "100",
 	"equipSlot": "gloves",
 	"bonuses" : [

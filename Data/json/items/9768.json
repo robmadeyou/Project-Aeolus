@@ -1,7 +1,7 @@
 {
 	"id": 9768,
 	"name": "Hitpoints cape",
-	"description": "The cape worn by masters of Hitpoints.",
+	"description": "It's a Hitpoints cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [

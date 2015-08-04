@@ -1,7 +1,7 @@
 {
 	"id": 4514,
 	"name": "Castlewars cloak",
-	"description": "A fine castlewars Cape.",
+	"description": "It's a Castlewars cloak.",
 	"value": "100",
 	"equipSlot": "cape",
 	"bonuses" : [

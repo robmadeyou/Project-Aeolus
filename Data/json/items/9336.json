@@ -1,8 +1,8 @@
 {
 	"id": 9336,
 	"name": "Topaz bolts",
-	"description": "Topaz tipped Steel crossbow bolts.",
-	"value": "22",
+	"description": "It's a Topaz bolts.",
+	"value": "73",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

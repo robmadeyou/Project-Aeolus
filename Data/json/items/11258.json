@@ -1,7 +1,7 @@
 {
 	"id": 11258,
 	"name": "Jar generator",
-	"description": "Null",
+	"description": "It's a Jar generator.",
 	"value": "600",
 	"stackable": false
 }

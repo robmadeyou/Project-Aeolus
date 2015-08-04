@@ -1,22 +1,22 @@
 {
 	"id": 11728,
-	"name": "Bandos boots",
-	"description": "Some sturdy boots.",
-	"value": "25000",
+	"name": "Super magic potion (2)",
+	"description": "It's a Super magic potion (2).",
+	"value": "406100",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,
 		0,
 		0,
-		-5,
-		-3,
-		17,
-		18,
-		19,
 		0,
 		0,
 		0,
-		1
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

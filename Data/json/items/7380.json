@@ -1,8 +1,8 @@
 {
 	"id": 7380,
-	"name": "D-hide chaps (t)",
-	"description": "Made from 100% real dragonhide. With colourful trim!",
-	"value": "3900",
+	"name": "Green d'hide chaps (t)",
+	"description": "It's a Green d'hide chaps (t).",
+	"value": "259400",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,
@@ -23,7 +23,7 @@
 		0,
 		0,
 		0,
-		0,
+		40,
 		0
 	],
 	"stackable": false

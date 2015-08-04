@@ -1,8 +1,8 @@
 {
 	"id": 9844,
 	"name": "Teak cape rack",
-	"description": "Null",
-	"value": "10",
+	"description": "It's a Teak cape rack.",
+	"value": "154",
 	"equipSlot": "cape",
 	"bonuses" : [
 		0,

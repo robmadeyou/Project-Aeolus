@@ -1,7 +1,7 @@
 {
 	"id": 10643,
 	"name": "Prayer cape",
-	"description": "Null",
+	"description": "It's a Prayer cape.",
 	"value": "99000",
 	"equipSlot": "cape",
 	"bonuses" : [
@@ -10,11 +10,11 @@
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
-		0,
+		9,
+		9,
+		9,
+		9,
+		9,
 		0,
 		0
 	],

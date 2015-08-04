@@ -1,7 +1,30 @@
 {
 	"id": 9188,
 	"name": "Topaz bolt tips",
-	"description": "Topaz bolt tips.",
-	"value": "13",
+	"description": "It's a Topaz bolt tips.",
+	"value": "1",
+	"equipSlot": "arrows",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": true
 }

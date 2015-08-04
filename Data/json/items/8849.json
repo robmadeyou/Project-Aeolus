@@ -1,7 +1,7 @@
 {
 	"id": 8849,
 	"name": "Adamant defender",
-	"description": "A defensive weapon.",
+	"description": "It's an Adamant defender.",
 	"value": "1",
 	"equipSlot": "shield",
 	"bonuses" : [

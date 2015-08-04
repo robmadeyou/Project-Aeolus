@@ -1,8 +1,8 @@
 {
 	"id": 1069,
 	"name": "Steel platelegs",
-	"description": "These look pretty heavy.",
-	"value": "1000",
+	"description": "It's a Steel platelegs.",
+	"value": "485",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 7400,
 	"name": "Enchanted hat",
-	"description": "A three pointed hat of magic.",
-	"value": "15000",
+	"description": "It's an Enchanted hat.",
+	"value": "10600",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

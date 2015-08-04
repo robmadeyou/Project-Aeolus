@@ -1,8 +1,8 @@
 {
 	"id": 1389,
 	"name": "Magic staff",
-	"description": "A Magical staff.",
-	"value": "200",
+	"description": "It's a Magic staff.",
+	"value": "58",
 	"equipSlot": "weapon",
 	"bonuses" : [
 		2,

@@ -1,8 +1,8 @@
 {
 	"id": 1677,
-	"name": "Emerald amulet",
-	"description": "It needs a string so I can wear it.",
-	"value": "1275",
+	"name": "Emerald amulet (u)",
+	"description": "It's an Emerald amulet (u).",
+	"value": "716",
 	"equipSlot": "amulet",
 	"bonuses" : [
 		0,

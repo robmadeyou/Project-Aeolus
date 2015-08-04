@@ -1,9 +1,9 @@
 {
 	"id": 546,
-	"name": "Shade robe",
-	"description": "I feel closer to the gods when I am wearing this.",
+	"name": "Shade robe top",
+	"description": "It's a Shade robe top.",
 	"value": "40",
-	"equipSlot": "legs",
+	"equipSlot": "body",
 	"bonuses" : [
 		0,
 		0,
@@ -16,7 +16,7 @@
 		0,
 		0,
 		0,
-		5
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

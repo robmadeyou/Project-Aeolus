@@ -1,7 +1,7 @@
 {
 	"id": 11699,
-	"name": "Saradomin godsword",
-	"description": "Swap this note at any bank for the equivelent item.",
-	"value": "1250000",
+	"name": "Astral rune",
+	"description": "It's an Astral rune.",
+	"value": "0",
 	"stackable": true
 }

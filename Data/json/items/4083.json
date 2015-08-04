@@ -1,7 +1,7 @@
 {
 	"id": 4083,
 	"name": "Sled",
-	"description": "It needs waxing before I can use it.",
+	"description": "It's a Sled.",
 	"value": "150",
 	"animations" : [
 		1461,

@@ -1,7 +1,7 @@
 {
 	"id": 6862,
 	"name": "Woolly hat",
-	"description": "A woolly tobogganing hat.",
+	"description": "It's a Woolly hat.",
 	"value": "1",
 	"equipSlot": "hat",
 	"bonuses" : [

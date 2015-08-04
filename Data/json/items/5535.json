@@ -1,8 +1,8 @@
 {
 	"id": 5535,
 	"name": "Earth tiara",
-	"description": "A tiara infused with the properties of the earth.",
-	"value": "100",
+	"description": "It's an Earth tiara.",
+	"value": "5",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

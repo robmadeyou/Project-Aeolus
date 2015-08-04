@@ -1,10 +1,11 @@
 {
 	"id": 10550,
 	"name": "Ranger hat",
-	"description": "A Penance Ranger hat.",
-	"value": "5000",
+	"description": "It's a Ranger hat.",
+	"value": "65002",
 	"equipSlot": "hat",
 	"bonuses" : [
+		-5,
 		-5,
 		-5,
 		-5,
@@ -14,7 +15,6 @@
 		11,
 		5,
 		8,
-		0,
 		0,
 		0
 	],

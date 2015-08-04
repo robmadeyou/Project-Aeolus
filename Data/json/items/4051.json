@@ -1,7 +1,7 @@
 {
 	"id": 4051,
-	"name": "Toolbox",
-	"description": "I can use this to repair things.",
+	"name": "Toolkit",
+	"description": "It's a Toolkit.",
 	"value": "1",
 	"stackable": false
 }

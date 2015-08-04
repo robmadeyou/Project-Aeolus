@@ -1,7 +1,7 @@
 {
 	"id": 3728,
 	"name": "Frozen bucket",
-	"description": "This bucket of water is frozen solid.",
+	"description": "It's a Frozen bucket.",
 	"value": "1",
 	"stackable": false
 }

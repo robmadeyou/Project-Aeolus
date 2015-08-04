@@ -1,8 +1,8 @@
 {
 	"id": 9339,
 	"name": "Ruby bolts",
-	"description": "Ruby tipped Adamantite crossbow bolts.",
-	"value": "125",
+	"description": "It's a Ruby bolts.",
+	"value": "413",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

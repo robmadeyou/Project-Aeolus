@@ -1,7 +1,7 @@
 {
 	"id": 764,
-	"name": "Broken shield",
-	"description": "Swap this note at any bank for the equivalent item.",
-	"value": "1",
+	"name": "Coal bag",
+	"description": "It's a Coal bag.",
+	"value": "100",
 	"stackable": false
 }

@@ -1,8 +1,8 @@
 {
 	"id": 9733,
 	"name": "Mind helmet",
-	"description": "Null",
-	"value": "3000",
+	"description": "It's a Mind helmet.",
+	"value": "1697",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,
@@ -13,7 +13,7 @@
 		0,
 		0,
 		0,
-		0,
+		6,
 		0,
 		0,
 		0

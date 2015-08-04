@@ -1,7 +1,7 @@
 {
 	"id": 8005,
 	"name": "Medium map",
-	"description": "A medium map of Runescape.",
+	"description": "It's a Medium map.",
 	"value": "1000",
 	"stackable": false
 }

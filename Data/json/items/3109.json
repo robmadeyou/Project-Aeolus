@@ -1,7 +1,30 @@
 {
 	"id": 3109,
 	"name": "Stone ball",
-	"description": "Place on the stone mechanism in the right order to open the door.",
+	"description": "It's a Stone ball.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		2,
+		2,
+		0,
+		0,
+		2,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

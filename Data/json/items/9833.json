@@ -1,30 +1,7 @@
 {
 	"id": 9833,
-	"name": "Mahogany magic wardrobe",
-	"description": "Null",
+	"name": "Mahogany wardrobe",
+	"description": "It's a Mahogany wardrobe.",
 	"value": "1",
-	"equipSlot": "legs",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
 	"stackable": false
 }

@@ -1,7 +1,7 @@
 {
 	"id": 1523,
 	"name": "Lockpick",
-	"description": "For picking tough locks.",
-	"value": "20",
+	"description": "It's a Lockpick.",
+	"value": "731",
 	"stackable": false
 }

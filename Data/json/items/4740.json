@@ -1,8 +1,8 @@
 {
 	"id": 4740,
 	"name": "Bolt rack",
-	"description": "Must need a special type of crossbow to use this.",
-	"value": "50",
+	"description": "It's a Bolt rack.",
+	"value": "346",
 	"equipSlot": "arrows",
 	"bonuses" : [
 		0,

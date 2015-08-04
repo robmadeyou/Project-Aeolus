@@ -1,7 +1,7 @@
 {
 	"id": 4042,
 	"name": "Hooded cloak",
-	"description": "The colours of Zamorak.",
+	"description": "It's a Hooded cloak.",
 	"value": "1",
 	"equipSlot": "cape",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 2394,
 	"name": "Potion",
-	"description": "A strange brew.",
+	"description": "It's a Potion.",
 	"value": "120",
 	"stackable": false
 }

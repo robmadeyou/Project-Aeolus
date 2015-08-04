@@ -1,7 +1,30 @@
 {
 	"id": 6315,
 	"name": "Jade machete",
-	"description": "A jungle specific slashing device.",
-	"value": "1000",
+	"description": "It's a Jade machete.",
+	"value": "6968",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		6,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

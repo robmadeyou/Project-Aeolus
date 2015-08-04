@@ -1,8 +1,8 @@
 {
 	"id": 1197,
 	"name": "Mithril kiteshield",
-	"description": "A large metal shield.",
-	"value": "2210",
+	"description": "It's a Mithril kiteshield.",
+	"value": "1202",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

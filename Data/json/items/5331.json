@@ -1,8 +1,8 @@
 {
 	"id": 5331,
 	"name": "Watering can",
-	"description": "This watering can is empty.",
-	"value": "8",
+	"description": "It's a Watering can.",
+	"value": "315",
 	"equipSlot": "ring",
 	"bonuses" : [
 		0,

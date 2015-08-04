@@ -1,7 +1,7 @@
 {
 	"id": 3758,
 	"name": "Fremennik shield",
-	"description": "A shield worn by Fremennik warriors.",
+	"description": "It's a Fremennik shield.",
 	"value": "5000",
 	"equipSlot": "shield",
 	"bonuses" : [

@@ -1,7 +1,7 @@
 {
 	"id": 552,
 	"name": "Ghostspeak amulet",
-	"description": "It lets me talk to ghosts.",
+	"description": "It's a Ghostspeak amulet.",
 	"value": "35",
 	"equipSlot": "amulet",
 	"bonuses" : [

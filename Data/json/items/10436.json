@@ -1,30 +1,7 @@
 {
 	"id": 10436,
-	"name": "Purple ele' blouse",
-	"description": "A well made elegant ladies' purple blouse.",
-	"value": "2000",
-	"equipSlot": "body",
-	"bonuses" : [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"attackDelay": "5",
-	"levelRequirements" : [
-		0,
-		0,
-		0,
-		0,
-		0
-	],
+	"name": "Purple elegant blouse",
+	"description": "It's a Purple elegant blouse.",
+	"value": "32300",
 	"stackable": false
 }

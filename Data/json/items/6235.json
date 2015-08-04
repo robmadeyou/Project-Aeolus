@@ -1,8 +1,8 @@
 {
 	"id": 6235,
 	"name": "Broodoo shield",
-	"description": "A scary broodoo shield.",
-	"value": "3000",
+	"description": "It's a Broodoo shield.",
+	"value": "85300",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,
@@ -16,7 +16,7 @@
 		5,
 		0,
 		0,
-		5
+		0
 	],
 	"attackDelay": "5",
 	"levelRequirements" : [

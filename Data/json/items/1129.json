@@ -1,8 +1,8 @@
 {
 	"id": 1129,
 	"name": "Leather body",
-	"description": "Better than no armour!",
-	"value": "21",
+	"description": "It's a Leather body.",
+	"value": "36",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,

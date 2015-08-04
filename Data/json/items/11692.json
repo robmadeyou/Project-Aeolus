@@ -1,25 +1,7 @@
 {
 	"id": 11692,
-	"name": "Godsword shards",
-	"description": "Godsword shards 2 and 3.",
-	"value": "500000",
-	"animations" : [
-		7047,
-		7044,
-		7046,
-		7044,
-		7044,
-		7044,
-		7039
-	],
-	"combatAnimations" : [
-		7042,
-		7049,
-		7041,
-		7048,
-		0
-	],
-	"twoHanded": false,
-	"special": false,
+	"name": "Death rune",
+	"description": "It's a Death rune.",
+	"value": "299900",
 	"stackable": false
 }

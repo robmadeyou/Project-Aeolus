@@ -1,9 +1,9 @@
 {
 	"id": 3393,
-	"name": "Splitbark greaves",
-	"description": "Wooden foot protection.",
-	"value": "5000",
-	"equipSlot": "weapon",
+	"name": "Splitbark boots",
+	"description": "It's a Splitbark boots.",
+	"value": "11000",
+	"equipSlot": "boots",
 	"bonuses" : [
 		0,
 		0,

@@ -1,7 +1,7 @@
 {
 	"id": 7671,
 	"name": "Boxing gloves",
-	"description": "I think they look a bit silly.",
+	"description": "It's a Boxing gloves.",
 	"value": "0",
 	"equipSlot": "gloves",
 	"bonuses" : [
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		1,
+		2,
 		0,
 		0,
 		0,

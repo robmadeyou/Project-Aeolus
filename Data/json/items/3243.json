@@ -1,7 +1,7 @@
 {
 	"id": 3243,
 	"name": "Farmer",
-	"description": "He grows the crops.",
+	"description": "It's a Farmer.",
 	"value": "1",
 	"stackable": false
 }

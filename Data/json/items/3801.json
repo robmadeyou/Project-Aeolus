@@ -1,7 +1,30 @@
 {
 	"id": 3801,
 	"name": "Keg of beer",
-	"description": "A lot of beer in a barrel.",
-	"value": "250",
+	"description": "It's a Keg of beer.",
+	"value": "713",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		2,
+		0,
+		0,
+		0,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

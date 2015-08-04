@@ -1,8 +1,8 @@
 {
 	"id": 1145,
 	"name": "Adamant med helm",
-	"description": "A medium sized helmet.",
-	"value": "1920",
+	"description": "It's an Adamant med helm.",
+	"value": "1033",
 	"equipSlot": "hat",
 	"bonuses" : [
 		0,

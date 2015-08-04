@@ -1,7 +1,7 @@
 {
 	"id": 6036,
 	"name": "Plant cure",
-	"description": "Use this on plants to cure disease.",
-	"value": "40",
+	"description": "It's a Plant cure.",
+	"value": "171",
 	"stackable": false
 }

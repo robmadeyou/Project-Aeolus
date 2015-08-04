@@ -1,8 +1,8 @@
 {
 	"id": 4310,
-	"name": "Boots",
-	"description": "HAM boots as worn by the Humans Against Monsters group.",
-	"value": "75",
+	"name": "Ham boots",
+	"description": "It's a Ham boots.",
+	"value": "270",
 	"equipSlot": "boots",
 	"bonuses" : [
 		0,
@@ -11,8 +11,8 @@
 		0,
 		0,
 		0,
-		0,
-		0,
+		1,
+		1,
 		0,
 		0,
 		0,

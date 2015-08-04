@@ -1,7 +1,7 @@
 {
 	"id": 1417,
 	"name": "Javelin",
-	"description": "A javelin.",
+	"description": "It's a Javelin.",
 	"value": "1",
 	"combatAnimations" : [
 		806,

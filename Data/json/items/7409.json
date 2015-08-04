@@ -1,7 +1,30 @@
 {
 	"id": 7409,
 	"name": "Magic secateurs",
-	"description": "The only way to kill a Tanglefoot.",
+	"description": "It's a Magic secateurs.",
 	"value": "1",
+	"equipSlot": "weapon",
+	"bonuses" : [
+		7,
+		9,
+		-5,
+		1,
+		0,
+		0,
+		1,
+		0,
+		1,
+		0,
+		1,
+		0
+	],
+	"attackDelay": "5",
+	"levelRequirements" : [
+		0,
+		0,
+		0,
+		0,
+		0
+	],
 	"stackable": false
 }

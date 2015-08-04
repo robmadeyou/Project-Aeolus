@@ -1,7 +1,7 @@
 {
 	"id": 9104,
 	"name": "Lunar ring",
-	"description": "A mysterious ring that can fill the wearer with magical power...",
+	"description": "It's a Lunar ring.",
 	"value": "100",
 	"equipSlot": "ring",
 	"bonuses" : [

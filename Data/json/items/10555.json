@@ -1,8 +1,8 @@
 {
 	"id": 10555,
 	"name": "Penance skirt",
-	"description": "A skirt made of the skin of a penance ranger.",
-	"value": "8000",
+	"description": "It's a Penance skirt.",
+	"value": "65005",
 	"equipSlot": "legs",
 	"bonuses" : [
 		0,

@@ -1,8 +1,8 @@
 {
 	"id": 1540,
 	"name": "Anti-dragon shield",
-	"description": "This provides partial protection from dragon-breath attacks.",
-	"value": "20",
+	"description": "It's an Anti-dragon shield.",
+	"value": "237",
 	"equipSlot": "shield",
 	"bonuses" : [
 		0,

@@ -1,13 +1,13 @@
 {
 	"id": 3054,
 	"name": "Mystic lava staff",
-	"description": "It's a slightly magical stick.",
-	"value": "45000",
+	"description": "It's a Mystic lava staff.",
+	"value": "26800",
 	"equipSlot": "weapon",
 	"bonuses" : [
-		7,
+		10,
 		-1,
-		28,
+		40,
 		10,
 		0,
 		2,
@@ -15,7 +15,7 @@
 		1,
 		10,
 		0,
-		35,
+		50,
 		0
 	],
 	"attackDelay": "5",

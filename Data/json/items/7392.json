@@ -1,8 +1,8 @@
 {
 	"id": 7392,
-	"name": "Wizard robe (t)",
-	"description": "I can do magic better in this.",
-	"value": "15",
+	"name": "Blue wizard robe (t)",
+	"description": "It's a Blue wizard robe (t).",
+	"value": "445700",
 	"equipSlot": "body",
 	"bonuses" : [
 		0,
