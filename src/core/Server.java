@@ -24,11 +24,13 @@ import core.game.task.Task2;
 import core.game.task.TaskScheduler;
 import core.game.util.Misc;
 import core.game.util.json.NpcDefinitionLoader;
+import core.game.util.log.CustomLogger;
 import core.game.world.StillGraphicsManager;
 import core.game.world.World;
 import core.game.world.clipping.region.ObjectDef;
 import core.game.world.clipping.region.Region;
 import core.net.PipelineFactory;
+import core.net.fileserver.jagcached.FileServer;
 import core.net.packets.incoming.PlayerManager;
 
 /**
@@ -122,7 +124,7 @@ public class Server {
 	 */
 	private static final TaskScheduler scheduler = new TaskScheduler();
 
-	private static final PluginManager pluginManager = new PluginManager();
+	private static PluginManager pluginManager;
 
 	/**
 	 * Gets the task scheduler.
@@ -143,12 +145,16 @@ public class Server {
 
 	/**
 	 * Starts the server.
+	 * @throws Exception 
 	 */
 	public static void main(java.lang.String args[])
-			throws NullPointerException, IOException {
+			throws Exception {
 		if(Config.SERVER_DEBUG)
 		System.setOut(new Misc.TimestampLogger(System.out, Config.DATA_DIR + "/logs/out.log"));
 		System.setErr(new Misc.TimestampLogger(System.err, Config.DATA_DIR + "/logs/error/error.log"));
+		System.setOut(new CustomLogger(System.out));
+		System.out.println("Creating Game server...");
+		pluginManager = new PluginManager();
 		ObjectDef.loadConfig();
 		Region.load();
 		playerWorld = World.getSingleton();
@@ -169,7 +175,8 @@ public class Server {
 		 */
 		long endTime = System.currentTimeMillis();
 		long elapsed = endTime - startTime;
-		System.out.println("Server Initiated in " + elapsed + " milliseconds.");
+	
+		System.out.println("Server Initialized in " + elapsed + " milliseconds.");
 
 		/**
 		 * Main server tick.
