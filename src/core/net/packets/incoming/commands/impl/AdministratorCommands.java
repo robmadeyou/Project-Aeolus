@@ -87,13 +87,15 @@ public class AdministratorCommands implements Command {
 			int level = Integer.parseInt(command[2]);
 			if (level > 99) {
 				level = 99;
-				player.sendMessage("You cannot exceed 99 hitpoints.");
-			} else if (level < 1) {
+				player.sendMessage("You cannot exceed a level higher than 99.");
+			}
+			if (level < 1) {
 				level = 1;
-				player.sendMessage("You cannot send your level below 1.");
-			} else if (level < (player.playerLevel[3] = 10)) {
+				player.sendMessage("You cannot set your level below 1.");
+			}
+			if ((skill == player.playerHitpoints) && level < 10) {
 				level = 10;
-				player.sendMessage("You cannot set your HP below 10.");
+				player.sendMessage("You cannot set your health below 10.");
 			}
 			player.playerXP[skill] = player.getPA().getXPForLevel(level) + 5;
 			player.playerLevel[skill] = player.getPA().getLevelForXP(player.playerXP[skill]);
@@ -141,8 +143,7 @@ public class AdministratorCommands implements Command {
 			for (int j = 0; j < ItemTableManager.ITEMS.size(); j++) {
 				if (!ItemTableManager.ITEMS.isEmpty()) {
 					player.getEquipment();
-					if (Equipment.getItemName(j).replace("_", " ").toLowerCase()
-							.contains(nameOfItem.toLowerCase())) {
+					if (Equipment.getItemName(j).replace("_", " ").toLowerCase().contains(nameOfItem.toLowerCase())) {
 						player.getEquipment();
 						player.sendMessage("<col=255>" + Equipment.getItemName(j).replace("_", " ") + " - "
 								+ player.getItems().getItemId(j));
@@ -272,13 +273,14 @@ public class AdministratorCommands implements Command {
 		case "maxhitr":
 			player.sendMessage("Your current maxhit is: " + player.getCombat().calculateRangeAttack());
 			break;
-			
+
 		case "maxhitmelee":
 			player.sendMessage("Your current maxhit is: " + player.getCombat().calculateMeleeMaxHit());
 			break;
-			
+
 		case "maxhitmagic":
-			//player.sendMessage("Your current maxhit is: " + player.getCombat().ca);
+			// player.sendMessage("Your current maxhit is: " +
+			// player.getCombat().ca);
 			break;
 		}
 	}
