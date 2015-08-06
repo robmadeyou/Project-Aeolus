@@ -70,7 +70,7 @@ public class Dueling {
 		c.getPA().sendFrame126("Dueling with: " + o.playerName + " (level-" + o.combatLevel + ")", 6671);
 		c.getPA().sendFrame126("", 6684);
 		c.getPA().sendFrame248(6575, 3321);
-		c.getItems().resetItems(3322);
+		c.getInventory().resetItems(3322);
 	}
 	
 	public void sendDuelEquipment(int itemId, int amount, int slot) {
@@ -191,22 +191,22 @@ public class Dueling {
 		changeDuelStuff();
 		if(!Item.itemStackable[itemID]) {
 			for(int a = 0; a < amount; a++) {
-				if(c.getItems().playerHasItem(itemID, 1)) {
+				if(c.getInventory().playerHasItem(itemID, 1)) {
 					stakedItems.add(new GameItem(itemID, 1));	
-					c.getItems().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
+					c.getInventory().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
 				}
 			}		
-			c.getItems().resetItems(3214);
-			c.getItems().resetItems(3322);
-			o.getItems().resetItems(3214);
-			o.getItems().resetItems(3322);
+			c.getInventory().resetItems(3214);
+			c.getInventory().resetItems(3322);
+			o.getInventory().resetItems(3214);
+			o.getInventory().resetItems(3322);
 			refreshDuelScreen();
 			o.getContentManager().getDueling().refreshDuelScreen();
 			c.getPA().sendFrame126("", 6684);
 			o.getPA().sendFrame126("", 6684);
 		}
 		
-		if(!c.getItems().playerHasItem(itemID, amount)) {
+		if(!c.getInventory().playerHasItem(itemID, amount)) {
 			return false;
 		}
 		if (Item.itemStackable[itemID] || Item.itemIsNote[itemID]) {
@@ -215,20 +215,20 @@ public class Dueling {
 				if (item.id == itemID) {
 					found = true;
 					item.amount += amount;
-					c.getItems().deleteItem(itemID, fromSlot, amount);
+					c.getInventory().deleteItem(itemID, fromSlot, amount);
 					break;
 				}
 			}
 			if (!found) {
-				c.getItems().deleteItem(itemID, fromSlot, amount);
+				c.getInventory().deleteItem(itemID, fromSlot, amount);
 				stakedItems.add(new GameItem(itemID, amount));
 			}
 		}
 		
-		c.getItems().resetItems(3214);
-		c.getItems().resetItems(3322);
-		o.getItems().resetItems(3214);
-		o.getItems().resetItems(3322);
+		c.getInventory().resetItems(3214);
+		c.getInventory().resetItems(3322);
+		o.getInventory().resetItems(3214);
+		o.getInventory().resetItems(3322);
 		refreshDuelScreen();
 		o.getContentManager().getDueling().refreshDuelScreen();
 		c.getPA().sendFrame126("", 6684);
@@ -249,7 +249,7 @@ public class Dueling {
 			return false;
 		}
 		if(Item.itemStackable[itemID]) {
-			if(c.getItems().freeSlots() - 1 < (c.duelSpaceReq)) {
+			if(c.getInventory().freeSlots() - 1 < (c.duelSpaceReq)) {
 				c.sendMessage("You have too many rules set to remove that item.");
 				return false;
 			}
@@ -266,38 +266,38 @@ public class Dueling {
 				for (GameItem item : stakedItems) {
 					if(item.id == itemID) {
 						if(!item.stackable) {
-							if(c.getItems().freeSlots() - 1 < (c.duelSpaceReq)) {
+							if(c.getInventory().freeSlots() - 1 < (c.duelSpaceReq)) {
 								goodSpace = false;
 								break;
 							}
 							stakedItems.remove(item);	
-							c.getItems().addItem(itemID, 1);				
+							c.getInventory().addItem(itemID, 1);				
 						}  else  {
-							if(c.getItems().freeSlots() - 1 < (c.duelSpaceReq)) {
+							if(c.getInventory().freeSlots() - 1 < (c.duelSpaceReq)) {
 								goodSpace = false;
 								break;
 							}
 							if(item.amount > amount) {
 								item.amount -= amount;
-								c.getItems().addItem(itemID, amount);						
+								c.getInventory().addItem(itemID, amount);						
 							} else  {
-								if(c.getItems().freeSlots() - 1 < (c.duelSpaceReq)) {
+								if(c.getInventory().freeSlots() - 1 < (c.duelSpaceReq)) {
 									goodSpace = false;
 									break;
 								}
 								amount = item.amount;
 								stakedItems.remove(item);
-								c.getItems().addItem(itemID, amount);
+								c.getInventory().addItem(itemID, amount);
 							}
 						}
 						break;
 					}
 					o.duelStatus = 1;
 					c.duelStatus = 1;					
-					c.getItems().resetItems(3214);
-					c.getItems().resetItems(3322);
-					o.getItems().resetItems(3214);
-					o.getItems().resetItems(3322);
+					c.getInventory().resetItems(3214);
+					c.getInventory().resetItems(3322);
+					o.getInventory().resetItems(3214);
+					o.getInventory().resetItems(3322);
 					c.getContentManager().getDueling().refreshDuelScreen();
 					o.getContentManager().getDueling().refreshDuelScreen();
 					o.getPA().sendFrame126("", 6684);
@@ -311,11 +311,11 @@ public class Dueling {
 				} else {
 					if(item.amount > amount) {
 						item.amount -= amount;
-						c.getItems().addItem(itemID, amount);
+						c.getInventory().addItem(itemID, amount);
 					} else {
 						amount = item.amount;
 						stakedItems.remove(item);
-						c.getItems().addItem(itemID, amount);
+						c.getInventory().addItem(itemID, amount);
 					}
 				}
 				break;
@@ -323,10 +323,10 @@ public class Dueling {
 		}
 		o.duelStatus = 1;
 		c.duelStatus = 1;					
-		c.getItems().resetItems(3214);
-		c.getItems().resetItems(3322);
-		o.getItems().resetItems(3214);
-		o.getItems().resetItems(3322);
+		c.getInventory().resetItems(3214);
+		c.getInventory().resetItems(3322);
+		o.getInventory().resetItems(3214);
+		o.getInventory().resetItems(3322);
 		c.getContentManager().getDueling().refreshDuelScreen();
 		o.getContentManager().getDueling().refreshDuelScreen();
 		o.getPA().sendFrame126("", 6684);
@@ -439,7 +439,7 @@ public class Dueling {
 		c.duelStatus = 5;
 		c.getPA().removeAllWindows();
 		c.specAmount = 10;
-		c.getItems().addSpecialBar(c.playerEquipment[c.playerWeapon]);
+		c.getEquipment().addSpecialBar(c.playerEquipment[c.playerWeapon]);
 		
 		if(c.duelRule[8]){	
 			if(c.duelRule[1]) {
@@ -525,13 +525,13 @@ public class Dueling {
 		for(GameItem item : otherStakedItems) {
 			if(item.id > 0 && item.amount > 0) {
 				if(Item.itemStackable[item.id]) {
-					if(!c.getItems().addItem(item.id, item.amount)) {
+					if(!c.getInventory().addItem(item.id, item.amount)) {
 						Server.itemHandler.createGroundItem(c, item.id, c.getX(), c.getY(), item.amount, c.getId());
 					}
 				} else {
 					int amount = item.amount;
 					for(int a = 1; a <= amount; a++) {
-						if(!c.getItems().addItem(item.id, 1)) {
+						if(!c.getInventory().addItem(item.id, 1)) {
 							Server.itemHandler.createGroundItem(c, item.id, c.getX(), c.getY(), 1, c.getId());
 						}
 					}
@@ -541,13 +541,13 @@ public class Dueling {
 		for(GameItem item : stakedItems) {
 			if(item.id > 0 && item.amount > 0) {
 				if(Item.itemStackable[item.id]) {
-					if(!c.getItems().addItem(item.id, item.amount)) {
+					if(!c.getInventory().addItem(item.id, item.amount)) {
 						Server.itemHandler.createGroundItem(c, item.id, c.getX(), c.getY(), item.amount, c.getId());
 					}
 				} else {
 					int amount = item.amount;
 					for(int a = 1; a <= amount; a++) {
-						if(!c.getItems().addItem(item.id, 1)) {
+						if(!c.getInventory().addItem(item.id, 1)) {
 							Server.itemHandler.createGroundItem(c, item.id, c.getX(), c.getY(), 1, c.getId());
 						}
 					}
@@ -569,9 +569,9 @@ public class Dueling {
 		for(GameItem item : stakedItems) {
 			if(item.amount < 1) continue;
 			if(Item.itemStackable[item.id] || Item.itemIsNote[item.id]) {
-				c.getItems().addItem(item.id, item.amount);
+				c.getInventory().addItem(item.id, item.amount);
 			} else  {
-				c.getItems().addItem(item.id, 1);
+				c.getInventory().addItem(item.id, 1);
 			}
 		}
 		stakedItems.clear();
@@ -640,7 +640,7 @@ public class Dueling {
 		}
 
 		if(i >= 11) {
-			if(c.getItems().freeSlots() < (c.duelSpaceReq ) || o.getItems().freeSlots() < (o.duelSpaceReq)) {
+			if(c.getInventory().freeSlots() < (c.duelSpaceReq ) || o.getInventory().freeSlots() < (o.duelSpaceReq)) {
 				c.sendMessage("You or your opponent don't have the required space to set this rule.");
 				if(c.playerEquipment[c.duelSlot] > 0) {
 					c.duelSpaceReq--;

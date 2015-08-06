@@ -20,10 +20,9 @@ public class ShopAssistant {
 	
 	/**
 	*Shops
-	**/
-	
+	**/	
 	public void openShop(int ShopID){		
-		c.getItems().resetItems(3823);
+		c.getInventory().resetItems(3823);
 		resetShop(ShopID);
 		c.isShopping = true;
 		c.myShopId = ShopID;
@@ -40,7 +39,6 @@ public class ShopAssistant {
 			}
 		}
 	}
-	
 	
 	public void updateshop(int i){
 		resetShop(i);
@@ -236,8 +234,8 @@ public class ShopAssistant {
 
 			if (amount > c.playerItemsN[fromSlot] && (Item.itemIsNote[(c.playerItems[fromSlot] - 1)] == true || Item.itemStackable[(c.playerItems[fromSlot] - 1)] == true)) {
 				amount = c.playerItemsN[fromSlot];
-			} else if (amount > c.getItems().getItemAmount(itemID) && Item.itemIsNote[(c.playerItems[fromSlot] - 1)] == false && Item.itemStackable[(c.playerItems[fromSlot] - 1)] == false) {
-				amount = c.getItems().getItemAmount(itemID);
+			} else if (amount > c.getInventory().getItemAmount(itemID) && Item.itemIsNote[(c.playerItems[fromSlot] - 1)] == false && Item.itemStackable[(c.playerItems[fromSlot] - 1)] == false) {
+				amount = c.getInventory().getItemAmount(itemID);
 			}
 			//double ShopValue;
 			//double TotPrice;
@@ -245,20 +243,20 @@ public class ShopAssistant {
 			//int Overstock;
 			for (int i = amount; i > 0; i--) {
 				TotPrice2 = (int)Math.floor(getItemShopValue(itemID, 1, fromSlot));
-				if (c.getItems().freeSlots() > 0 || c.getItems().playerHasItem(995)) {
+				if (c.getInventory().freeSlots() > 0 || c.getInventory().playerHasItem(995)) {
 					if (Item.itemIsNote[itemID] == false) {
-						c.getItems().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
+						c.getInventory().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
 					} else {
-						c.getItems().deleteItem(itemID, fromSlot, 1);
+						c.getInventory().deleteItem(itemID, fromSlot, 1);
 					}
-					c.getItems().addItem(995, TotPrice2);
+					c.getInventory().addItem(995, TotPrice2);
 					addShopItem(itemID, 1);
 				} else {
 					c.sendMessage("You don't have enough space in your inventory.");
 					break;
 				}
 			}
-			c.getItems().resetItems(3823);
+			c.getInventory().resetItems(3823);
 			resetShop(c.myShopId);
 			updatePlayerShop();
 			return true;
@@ -330,9 +328,9 @@ public class ShopAssistant {
                 }
                 if(c.myShopId != 29 || c.myShopId != 30 || c.myShopId != 31 || c.myShopId != 47) {
 					if (c.playerItemsN[Slot] >= TotPrice2) {
-						if (c.getItems().freeSlots() > 0) {
-							c.getItems().deleteItem(995, c.getEquipment().getItemSlot(995), TotPrice2);
-							c.getItems().addItem(itemID, 1);
+						if (c.getInventory().freeSlots() > 0) {
+							c.getInventory().deleteItem(995, c.getEquipment().getItemSlot(995), TotPrice2);
+							c.getInventory().addItem(itemID, 1);
 							ShopHandler.ShopItemsN[c.myShopId][fromSlot] -= 1;
 							ShopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
 							if ((fromSlot + 1) > ShopHandler.ShopItemsStandard[c.myShopId]) {
@@ -349,9 +347,9 @@ public class ShopAssistant {
                 }
                 if(c.myShopId == 29 || c.myShopId == 30 || c.myShopId == 31) {
                 	if (c.playerItemsN[Slot1] >= TotPrice2) {
-						if (c.getItems().freeSlots() > 0) {
-							c.getItems().deleteItem(6529, c.getEquipment().getItemSlot(6529), TotPrice2);
-							c.getItems().addItem(itemID, 1);
+						if (c.getInventory().freeSlots() > 0) {
+							c.getInventory().deleteItem(6529, c.getEquipment().getItemSlot(6529), TotPrice2);
+							c.getInventory().addItem(itemID, 1);
 							ShopHandler.ShopItemsN[c.myShopId][fromSlot] -= 1;
 							ShopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
 							if ((fromSlot + 1) > ShopHandler.ShopItemsStandard[c.myShopId]) {
@@ -368,7 +366,7 @@ public class ShopAssistant {
                 }
                 
 			}
-			c.getItems().resetItems(3823);
+			c.getInventory().resetItems(3823);
 			resetShop(c.myShopId);
 			updatePlayerShop();
 			return true;
@@ -403,7 +401,7 @@ public class ShopAssistant {
 		
 		public void setupSkillCapes(int capes, int capes2) {
 			synchronized(c) {
-				c.getItems().resetItems(3823);
+				c.getInventory().resetItems(3823);
 				c.isShopping = true;
 				c.myShopId = 14;
 				c.getPA().sendFrame248(3824, 3822);
@@ -438,12 +436,12 @@ public class ShopAssistant {
 				nn = 0;			
 			for (int j = 0; j < skillCapes.length; j++) {
 				if (skillCapes[j] == item || skillCapes[j]+1 == item) {
-					if (c.getItems().freeSlots() > 1) {
-						if (c.getItems().playerHasItem(995,99000)) {
+					if (c.getInventory().freeSlots() > 1) {
+						if (c.getInventory().playerHasItem(995,99000)) {
 							if (c.getLevelForXP(c.playerXP[j]) >= 99) {
-								c.getItems().deleteItem(995, c.getEquipment().getItemSlot(995), 99000);
-								c.getItems().addItem(skillCapes[j] + nn,1);
-								c.getItems().addItem(skillCapes[j] + 2,1);
+								c.getInventory().deleteItem(995, c.getEquipment().getItemSlot(995), 99000);
+								c.getInventory().addItem(skillCapes[j] + nn,1);
+								c.getInventory().addItem(skillCapes[j] + 2,1);
 							} else {
 								c.sendMessage("You must have 99 in the skill of the cape you're trying to buy.");
 							}
@@ -453,27 +451,9 @@ public class ShopAssistant {
 					} else {
 						c.sendMessage("You must have at least 1 inventory spaces to buy this item.");					
 					}				
-				}
-				/*if (skillCapes[j][1 + nn] == item) {
-					if (c.getItems().freeSlots() >= 1) {
-						if (c.getItems().playerHasItem(995,99000)) {
-							if (c.getLevelForXP(c.playerXP[j]) >= 99) {
-								c.getItems().deleteItem(995, c.getItems().getItemSlot(995), 99000);
-								c.getItems().addItem(skillCapes[j] + nn,1);
-								c.getItems().addItem(skillCapes[j] + 2,1);
-							} else {
-								c.sendMessage("You must have 99 in the skill of the cape you're trying to buy.");
-							}
-						} else {
-							c.sendMessage("You need 99k to buy this item.");
-						}
-					} else {
-						c.sendMessage("You must have at least 1 inventory spaces to buy this item.");					
-					}
-					break;				
-				}*/			
+				}		
 			}
-			c.getItems().resetItems(3823);			
+			c.getInventory().resetItems(3823);			
 		}
 		
 		public void openVoid() {

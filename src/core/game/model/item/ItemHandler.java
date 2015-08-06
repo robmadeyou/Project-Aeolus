@@ -208,7 +208,7 @@ public class ItemHandler {
 				if(i.hideTicks > 0 && i.getName().equalsIgnoreCase(c.playerName)) {
 					if(add) {
 						if (!c.getItems().specialCase(itemId)) {
-							if(c.getItems().addItem(i.getItemId(), i.getItemAmount())) {   
+							if(c.getInventory().addItem(i.getItemId(), i.getItemAmount())) {   
 								removeControllersItem(i, c, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
 								break;
 							}
@@ -223,7 +223,7 @@ public class ItemHandler {
 					}
 				} else if (i.hideTicks <= 0) {
 					if(add) {
-						if(c.getItems().addItem(i.getItemId(), i.getItemAmount())) {  
+						if(c.getInventory().addItem(i.getItemId(), i.getItemAmount())) {  
 							removeGlobalItem(i, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
 							break;
 						}

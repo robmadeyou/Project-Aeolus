@@ -19,6 +19,8 @@ import core.game.event.tick.Tick;
 import core.game.model.entity.Entity;
 import core.game.model.entity.npc.NPC;
 import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.player.container.Equipment;
+import core.game.model.entity.player.container.Inventory;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.model.item.Item;
 import core.game.model.item.ItemAssistant;
@@ -55,6 +57,7 @@ public class Player extends Entity {
 	private TradeLogger tradeLog = new TradeLogger(this);
 	private ChatLogger chatLog = new ChatLogger(this);
 	private Censor censor = new Censor(this);
+	private Inventory inventory = new Inventory(this);
 
 	public int lowMemoryVersion = 0;
 	public int timeOutCounter = 0;
@@ -720,6 +723,10 @@ public class Player extends Entity {
 
 	public Equipment getEquipment() {
 		return equipment;
+	}
+	
+	public Inventory getInventory() {
+		return inventory;
 	}
 
 	public boolean processQueuedPackets() {
@@ -2064,9 +2071,9 @@ public class Player extends Entity {
 		sendMessage("Welcome to " + Config.SERVER_NAME);
 		getPA().showOption(5, 0, "Follow", 4);
 		getPA().showOption(4, 0, "Trade With", 3);
-		getItems().resetItems(3214);
-		getItems().sendWeapon(playerEquipment[playerWeapon], getEquipment().getItemName(playerEquipment[playerWeapon]));
-		getItems().resetBonus();
+		getInventory().resetItems(3214);
+		getEquipment().sendWeapon(playerEquipment[playerWeapon], getEquipment().getItemName(playerEquipment[playerWeapon]));
+		getEquipment().resetBonus();
 		getEquipment().getBonus();
 		getEquipment().writeBonus();
 		getEquipment().setEquipment(playerEquipment[playerHat], 1, playerHat);
@@ -2082,7 +2089,7 @@ public class Player extends Entity {
 		getEquipment().setEquipment(playerEquipment[playerWeapon], playerEquipmentN[playerWeapon], playerWeapon);
 		getCombat().getPlayerAnimIndex(getEquipment().getItemName(playerEquipment[playerWeapon]).toLowerCase());
 		getPA().logIntoPM();
-		getItems().addSpecialBar(playerEquipment[playerWeapon]);
+		getEquipment().addSpecialBar(playerEquipment[playerWeapon]);
 		saveTimer = GameConstants.SAVE_TIMER;
 		saveCharacter = true;
 		Misc.println("[REGISTERED]: " + playerName + "");
@@ -2128,7 +2135,7 @@ public class Player extends Entity {
 				specAmount += .5;
 				if (specAmount > 10)
 					specAmount = 10;
-				getItems().addSpecialBar(playerEquipment[playerWeapon]);
+				getEquipment().addSpecialBar(playerEquipment[playerWeapon]);
 			}
 		}
 

@@ -1,7 +1,9 @@
-package core.game.model.entity.player;
+package core.game.model.entity.player.container;
 
 import core.Config;
 import core.game.GameConstants;
+import core.game.model.entity.player.Player;
+import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.model.item.Item;
 import core.game.model.item.ItemTableManager;
@@ -767,13 +769,13 @@ public class Equipment {
 				c.flushOutStream();
 				c.playerEquipment[targetSlot] = wearID;
 				c.playerEquipmentN[targetSlot] = wearAmount;
-				c.getItems().sendWeapon(
+				this.sendWeapon(
 						c.playerEquipment[c.playerWeapon],
 						c.getEquipment().getItemName(
 								c.playerEquipment[c.playerWeapon]));
-				c.getItems().resetBonus();
-				c.getEquipment().getBonus();
-				c.getEquipment().writeBonus();
+				this.resetBonus();
+				this.getBonus();
+				this.writeBonus();
 				c.getCombat().getPlayerAnimIndex(c.getEquipment()
 								.getItemName(c.playerEquipment[c.playerWeapon])
 								.toLowerCase());
@@ -1070,7 +1072,7 @@ public class Equipment {
 					if ((amount < GameConstants.MAXITEM_AMOUNT) && (amount > -1)) {
 						c.playerItemsN[i] = 1;
 						if (amount > 1) {
-							c.getItems().addItem(item, amount - 1);
+							c.getInventory().addItem(item, amount - 1);
 							return true;
 						}
 					} else {

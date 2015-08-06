@@ -300,21 +300,21 @@ public class FirstClickButton {
 
 			for (GameItem item : c.getContentManager().getTrading().offeredItems) {
 				if (item.id > 0) {
-					if (ot.getItems().freeSlots() < c.getContentManager().getTrading().offeredItems
+					if (ot.getInventory().freeSlots() < c.getContentManager().getTrading().offeredItems
 							.size()) {
 						c.sendMessage(ot.playerName
 								+ " only has "
-								+ ot.getItems().freeSlots()
+								+ ot.getInventory().freeSlots()
 								+ " free slots, please remove "
 								+ (c.getContentManager().getTrading().offeredItems.size() - ot
-										.getItems().freeSlots()) + " items.");
+										.getInventory().freeSlots()) + " items.");
 						ot.sendMessage(c.playerName
 								+ " has to remove "
 								+ (c.getContentManager().getTrading().offeredItems.size() - ot
-										.getItems().freeSlots())
+										.getInventory().freeSlots())
 								+ " items or you could offer them "
 								+ (c.getContentManager().getTrading().offeredItems.size() - ot
-										.getItems().freeSlots()) + " items.");
+										.getInventory().freeSlots()) + " items.");
 						c.goodTrade = false;
 						ot.goodTrade = false;
 						c.getPA().sendFrame126("Not enough inventory space...",

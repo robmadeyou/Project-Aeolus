@@ -13,6 +13,6 @@ public class MoveItems implements PacketType {
 		int somejunk = c.getInStream().readUnsignedWordA(); //junk
 		int itemFrom =  c.getInStream().readUnsignedWordA();// slot1
 		int itemTo = (c.getInStream().readUnsignedWordA() -128);// slot2
-		c.getItems().moveItems(itemFrom, itemTo, somejunk);
+		c.getInventory().moveItems(itemFrom, itemTo, somejunk);
 	}
 }

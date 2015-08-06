@@ -29,7 +29,7 @@ public class BankAll implements PacketType {
 			if (Item.itemStackable[removeId]) {
 				c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.playerItemsN[removeSlot]);
 			} else {
-				c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.getItems().itemAmount(c.playerItems[removeSlot]));
+				c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.getInventory().itemAmount(c.playerItems[removeSlot]));
 			}
 			break;
 			
@@ -74,10 +74,10 @@ public class BankAll implements PacketType {
 			case 7295:
 			if (Item.itemStackable[removeId]) {
 			c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.playerItemsN[removeSlot]);
-			c.getItems().resetItems(7423);
+			c.getInventory().resetItems(7423);
 			} else {
-			c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.getItems().itemAmount(c.playerItems[removeSlot]));
-			c.getItems().resetItems(7423);
+			c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.getInventory().itemAmount(c.playerItems[removeSlot]));
+			c.getInventory().resetItems(7423);
 			}
 			break;
 			

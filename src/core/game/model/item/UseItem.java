@@ -6,7 +6,7 @@ public class UseItem {
 	
 	public static void ItemonObject(Player c, int objectID, int objectX,
 			int objectY, int itemId) {
-		if (!c.getItems().playerHasItem(itemId, 1))
+		if (!c.getInventory().playerHasItem(itemId, 1))
 			return;
 		switch (objectID) {
 		}

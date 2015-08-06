@@ -2,11 +2,11 @@ package core.net.packets.incoming.commands.impl;
 
 import core.Server;
 import core.game.GameConstants;
-import core.game.model.entity.player.Equipment;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Punishments;
 import core.game.model.entity.player.Rights;
+import core.game.model.entity.player.container.Equipment;
 import core.game.model.item.ItemTableManager;
 import core.net.packets.incoming.commands.Command;
 

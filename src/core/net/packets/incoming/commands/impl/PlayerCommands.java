@@ -32,7 +32,7 @@ public class PlayerCommands implements Command {
 					int newItemID = Integer.parseInt(command[1]);
 					int newItemAmount = Integer.parseInt(command[2]);
 					if ((newItemID <= 20200) && (newItemID >= 0)) {
-						player.getItems().addItem(newItemID, newItemAmount);
+						player.getInventory().addItem(newItemID, newItemAmount);
 					} else {
 						player.sendMessage("No such item.");
 					}

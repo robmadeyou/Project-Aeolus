@@ -8,7 +8,7 @@ public class ItemClick2 implements PacketType {
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
 		int itemId = c.getInStream().readSignedWordA();
-		if (!c.getItems().playerHasItem(itemId,1))
+		if (!c.getInventory().playerHasItem(itemId,1))
 			return;
 		switch (itemId) {
 		}

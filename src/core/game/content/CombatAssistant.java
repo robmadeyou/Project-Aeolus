@@ -160,7 +160,7 @@ public class CombatAssistant {
                     } else {
                         c.sendMessage("You don't have the required special energy to use this attack.");
                         c.usingSpecial = false;
-                        c.getItems().updateSpecialBar();
+                        c.getEquipment().updateSpecialBar();
                         c.npcIndex = 0;
                         return;
                     }
@@ -270,7 +270,7 @@ public class CombatAssistant {
                             case 4223: // 1/10 bow
                                 c.getEquipment().wearItem(-1, 1, 3);
                                 c.sendMessage("Your crystal bow has fully degraded.");
-                                if (!c.getItems().addItem(4207, 1)) {
+                                if (!c.getInventory().addItem(4207, 1)) {
                                     Server.itemHandler.createGroundItem(c, 4207, c.getX(), c.getY(), 1, c.getId());
                                 }
                                 c.crystalBowArrowCount = 0;
@@ -744,7 +744,7 @@ public class CombatAssistant {
                     if (c.duelRule[10] && c.duelStatus == 5) {
                         c.sendMessage("Special attacks have been disabled during this duel!");
                         c.usingSpecial = false;
-                        c.getItems().updateSpecialBar();
+                        c.getEquipment().updateSpecialBar();
                         resetPlayerAttack();
                         return;
                     }
@@ -756,7 +756,7 @@ public class CombatAssistant {
                     } else {
                         c.sendMessage("You don't have the required special energy to use this attack.");
                         c.usingSpecial = false;
-                        c.getItems().updateSpecialBar();
+                        c.getEquipment().updateSpecialBar();
                         c.playerIndex = 0;
                         return;
                     }
@@ -897,7 +897,7 @@ public class CombatAssistant {
                             case 4223: // 1/10 bow
                                 c.getEquipment().wearItem(-1, 1, 3);
                                 c.sendMessage("Your crystal bow has fully degraded.");
-                                if (!c.getItems().addItem(4207, 1)) {
+                                if (!c.getInventory().addItem(4207, 1)) {
                                     Server.itemHandler.createGroundItem(c, 4207, c.getX(), c.getY(), 1, c.getId());
                                 }
                                 c.crystalBowArrowCount = 0;
@@ -1993,7 +1993,7 @@ public class CombatAssistant {
         c.delayedDamage = Misc.random(calculateMeleeMaxHit());
         c.delayedDamage2 = Misc.random(calculateMeleeMaxHit());
         c.usingSpecial = false;
-        c.getItems().updateSpecialBar();
+        c.getEquipment().updateSpecialBar();
     }
 
     public boolean checkSpecAmount(int weapon) {
@@ -2007,7 +2007,7 @@ public class CombatAssistant {
             case 1434:
                 if (c.specAmount >= 2.5) {
                     c.specAmount -= 2.5;
-                    c.getItems().addSpecialBar(weapon);
+                    c.getEquipment().addSpecialBar(weapon);
                     return true;
                 }
                 return false;
@@ -2018,7 +2018,7 @@ public class CombatAssistant {
             case 4153:
                 if (c.specAmount >= 5) {
                     c.specAmount -= 5;
-                    c.getItems().addSpecialBar(weapon);
+                    c.getEquipment().addSpecialBar(weapon);
                     return true;
                 }
                 return false;
@@ -2026,7 +2026,7 @@ public class CombatAssistant {
             case 3204:
                 if (c.specAmount >= 3) {
                     c.specAmount -= 3;
-                    c.getItems().addSpecialBar(weapon);
+                    c.getEquipment().addSpecialBar(weapon);
                     return true;
                 }
                 return false;
@@ -2036,7 +2036,7 @@ public class CombatAssistant {
             case 11730:
                 if (c.specAmount >= 10) {
                     c.specAmount -= 10;
-                    c.getItems().addSpecialBar(weapon);
+                    c.getEquipment().addSpecialBar(weapon);
                     return true;
                 }
                 return false;
@@ -2048,7 +2048,7 @@ public class CombatAssistant {
             case 11700:
                 if (c.specAmount >= 5.5) {
                     c.specAmount -= 5.5;
-                    c.getItems().addSpecialBar(weapon);
+                    c.getEquipment().addSpecialBar(weapon);
                     return true;
                 }
                 return false;
@@ -3275,7 +3275,7 @@ public class CombatAssistant {
 
     public boolean checkMagicReqs(int spell) {
         if (c.usingMagic && Config.RUNES_REQUIRED) { // check for runes
-            if ((!c.getItems().playerHasItem(c.MAGIC_SPELLS[spell][8], c.MAGIC_SPELLS[spell][9]) && !wearingStaff(c.MAGIC_SPELLS[spell][8])) || (!c.getItems().playerHasItem(c.MAGIC_SPELLS[spell][10], c.MAGIC_SPELLS[spell][11]) && !wearingStaff(c.MAGIC_SPELLS[spell][10])) || (!c.getItems().playerHasItem(c.MAGIC_SPELLS[spell][12], c.MAGIC_SPELLS[spell][13]) && !wearingStaff(c.MAGIC_SPELLS[spell][12])) || (!c.getItems().playerHasItem(c.MAGIC_SPELLS[spell][14], c.MAGIC_SPELLS[spell][15]) && !wearingStaff(c.MAGIC_SPELLS[spell][14]))) {
+            if ((!c.getInventory().playerHasItem(c.MAGIC_SPELLS[spell][8], c.MAGIC_SPELLS[spell][9]) && !wearingStaff(c.MAGIC_SPELLS[spell][8])) || (!c.getInventory().playerHasItem(c.MAGIC_SPELLS[spell][10], c.MAGIC_SPELLS[spell][11]) && !wearingStaff(c.MAGIC_SPELLS[spell][10])) || (!c.getInventory().playerHasItem(c.MAGIC_SPELLS[spell][12], c.MAGIC_SPELLS[spell][13]) && !wearingStaff(c.MAGIC_SPELLS[spell][12])) || (!c.getInventory().playerHasItem(c.MAGIC_SPELLS[spell][14], c.MAGIC_SPELLS[spell][15]) && !wearingStaff(c.MAGIC_SPELLS[spell][14]))) {
                 c.sendMessage("You don't have the required runes to cast this spell.");
                 return false;
             }
@@ -3325,19 +3325,19 @@ public class CombatAssistant {
         if (c.usingMagic && Config.RUNES_REQUIRED) {
             if (c.MAGIC_SPELLS[spell][8] > 0) { // deleting runes
                 if (!wearingStaff(c.MAGIC_SPELLS[spell][8]))
-                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][8], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][8]), c.MAGIC_SPELLS[spell][9]);
+                    c.getInventory().deleteItem(c.MAGIC_SPELLS[spell][8], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][8]), c.MAGIC_SPELLS[spell][9]);
             }
             if (c.MAGIC_SPELLS[spell][10] > 0) {
                 if (!wearingStaff(c.MAGIC_SPELLS[spell][10]))
-                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][10], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][10]), c.MAGIC_SPELLS[spell][11]);
+                    c.getInventory().deleteItem(c.MAGIC_SPELLS[spell][10], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][10]), c.MAGIC_SPELLS[spell][11]);
             }
             if (c.MAGIC_SPELLS[spell][12] > 0) {
                 if (!wearingStaff(c.MAGIC_SPELLS[spell][12]))
-                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][12], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][12]), c.MAGIC_SPELLS[spell][13]);
+                    c.getInventory().deleteItem(c.MAGIC_SPELLS[spell][12], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][12]), c.MAGIC_SPELLS[spell][13]);
             }
             if (c.MAGIC_SPELLS[spell][14] > 0) {
                 if (!wearingStaff(c.MAGIC_SPELLS[spell][14]))
-                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][14], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][14]), c.MAGIC_SPELLS[spell][15]);
+                    c.getInventory().deleteItem(c.MAGIC_SPELLS[spell][14], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][14]), c.MAGIC_SPELLS[spell][15]);
             }
         }
         return true;

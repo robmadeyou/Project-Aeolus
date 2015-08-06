@@ -882,7 +882,7 @@ public class PlayerAssistant{
 		c.getAttributes().put("isBanking", Boolean.TRUE);
 		//synchronized(c) {
 			if(c.getOutStream() != null && c != null) {
-				c.getItems().resetItems(5064);
+				c.getInventory().resetItems(5064);
 				c.getItems().rearrangeBank();
 				c.getItems().resetBank();
 				c.getItems().resetTempItems();
@@ -1015,7 +1015,7 @@ public class PlayerAssistant{
 			return;
 		}
 		if(!c.isDead && System.currentTimeMillis() - c.foodDelay > 2000) {
-			if(c.getItems().playerHasItem(itemId, 1, itemSlot)) {
+			if(c.getInventory().playerHasItem(itemId, 1, itemSlot)) {
 				c.sendMessage("You drink the "+ c.getEquipment().getItemName(itemId).toLowerCase()+".");
 				c.foodDelay = System.currentTimeMillis();
 				// Actions
@@ -1025,8 +1025,8 @@ public class PlayerAssistant{
 					//Cures The Poison + protects from getting poison again
 				}
 				c.startAnimation(0x33D);
-				c.getItems().deleteItem(itemId, itemSlot, 1);
-				c.getItems().addItem(newItemId, 1);
+				c.getInventory().deleteItem(itemId, itemSlot, 1);
+				c.getInventory().addItem(newItemId, 1);
 				requestUpdates();
 			}
 		}
@@ -1049,8 +1049,8 @@ public class PlayerAssistant{
 					c.sendMessage("You can't alch coins");
 					break;
 				}
-				c.getItems().deleteItem(itemId, slot, 1);
-				c.getItems().addItem(995, c.getShops().getItemShopValue(itemId)/3);
+				c.getInventory().deleteItem(itemId, slot, 1);
+				c.getInventory().addItem(995, c.getShops().getItemShopValue(itemId)/3);
 				c.startAnimation(c.MAGIC_SPELLS[49][2]);
 				c.gfx100(c.MAGIC_SPELLS[49][3]);
 				c.alchDelay = System.currentTimeMillis();
@@ -1069,8 +1069,8 @@ public class PlayerAssistant{
 					c.sendMessage("You can't alch coins");
 					break;
 				}				
-				c.getItems().deleteItem(itemId, slot, 1);
-				c.getItems().addItem(995, (int)(c.getShops().getItemShopValue(itemId)*.75));
+				c.getInventory().deleteItem(itemId, slot, 1);
+				c.getInventory().addItem(995, (int)(c.getShops().getItemShopValue(itemId)*.75));
 				c.startAnimation(c.MAGIC_SPELLS[50][2]);
 				c.gfx100(c.MAGIC_SPELLS[50][3]);
 				c.alchDelay = System.currentTimeMillis();
@@ -1114,7 +1114,7 @@ public class PlayerAssistant{
 		}
 		resetDamageDone();
 		c.specAmount = 10;
-		c.getItems().addSpecialBar(c.playerEquipment[c.playerWeapon]);
+		c.getEquipment().addSpecialBar(c.playerEquipment[c.playerWeapon]);
 		c.lastVeng = 0;
 		c.vengOn = false;
 		resetFollowers();
@@ -1131,14 +1131,14 @@ public class PlayerAssistant{
 	
 	public void vengMe() {
 		if (System.currentTimeMillis() - c.lastVeng > 30000) {
-			if (c.getItems().playerHasItem(557,10) && c.getItems().playerHasItem(9075,4) && c.getItems().playerHasItem(560,2)) {
+			if (c.getInventory().playerHasItem(557,10) && c.getInventory().playerHasItem(9075,4) && c.getInventory().playerHasItem(560,2)) {
 				c.vengOn = true;
 				c.lastVeng = System.currentTimeMillis();
 				c.startAnimation(4410);
 				c.gfx100(726);
-				c.getItems().deleteItem(557,c.getEquipment().getItemSlot(557),10);
-				c.getItems().deleteItem(560,c.getEquipment().getItemSlot(560),2);
-				c.getItems().deleteItem(9075,c.getEquipment().getItemSlot(9075),4);
+				c.getInventory().deleteItem(557,c.getEquipment().getItemSlot(557),10);
+				c.getInventory().deleteItem(560,c.getEquipment().getItemSlot(560),2);
+				c.getInventory().deleteItem(9075,c.getEquipment().getItemSlot(9075),4);
 			} else {
 				c.sendMessage("You do not have the required runes to cast this spell. (9075 for astrals)");
 			}
@@ -1154,7 +1154,7 @@ public class PlayerAssistant{
 	
 	public void handleStatus(int i, int i2, int i3) {
 		if (i == 1)
-			c.getItems().addItem(i2,i3);
+			c.getInventory().addItem(i2,i3);
 		else if (i == 2) {
 			c.playerXP[i2] = c.getPA().getXPForLevel(i3)+5;
 			c.playerLevel[i2] = c.getPA().getLevelForXP(c.playerXP[i2]);
@@ -1193,13 +1193,13 @@ public class PlayerAssistant{
 					if(!(Boolean) c.getAttributes().get("isSkulled")) { // add the kept items once we finish deleting and dropping them	
 						for (int i1 = 0; i1 < 3; i1++) {
 							if(c.itemKeptId[i1] > 0) {
-								c.getItems().addItem(c.itemKeptId[i1], 1);
+								c.getInventory().addItem(c.itemKeptId[i1], 1);
 							}
 						}
 					}	
 					if(c.prayerActive[10]) { // if we have protect items 
 						if(c.itemKeptId[3] > 0) {
-							c.getItems().addItem(c.itemKeptId[3], 1);
+							c.getInventory().addItem(c.itemKeptId[3], 1);
 						}
 					}
 				}
@@ -2134,7 +2134,7 @@ public class PlayerAssistant{
 	public boolean checkForFlags() {
 		int[][] itemsToCheck = {{995,100000000},{35,5},{667,5},{2402,5},{746,5},{4151,150},{565,100000},{560,100000},{555,300000},{11235,10}};
 		for (int j = 0; j < itemsToCheck.length; j++) {
-			if (itemsToCheck[j][1] < c.getItems().getTotalCount(itemsToCheck[j][0]))
+			if (itemsToCheck[j][1] < c.getInventory().getTotalCount(itemsToCheck[j][0]))
 				return true;		
 		}
 		return false;
@@ -2142,7 +2142,7 @@ public class PlayerAssistant{
 	
 	public void addStarter() {
 	c.getPA().showInterface(3559); c.canChangeAppearance = true;
-		c.getItems().addItem(995,50000);
+		c.getInventory().addItem(995,50000);
 	}
 	
 	public int getWearingAmount() {
