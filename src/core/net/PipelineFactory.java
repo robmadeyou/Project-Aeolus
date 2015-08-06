@@ -21,10 +21,10 @@ public class PipelineFactory implements ChannelPipelineFactory {
 	@Override
 	public ChannelPipeline getPipeline() throws Exception {
 		final ChannelPipeline pipeline = new DefaultChannelPipeline();
-		pipeline.addLast("timeout", new ReadTimeoutHandler(timer, 10));
 		pipeline.addLast("encoder", new RS2Encoder());
 		pipeline.addLast("decoder", new RS2LoginProtocol());
 		pipeline.addLast("handler", new ChannelHandler());
+		pipeline.addLast("timeout", new ReadTimeoutHandler(timer, 10));
 		return pipeline;
 	}
 
