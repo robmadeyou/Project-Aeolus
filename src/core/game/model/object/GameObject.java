@@ -18,7 +18,6 @@ public final class GameObject {
     public int id() {
         return id;
     }
-
     public int type() {
         return type;
     }
