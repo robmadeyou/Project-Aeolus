@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import core.Config;
 
@@ -120,7 +121,7 @@ public final class NPCSpawns {
 	public static final class NpcSpawnBuilder {
 
 		protected static NPCSpawns[] deserialize() {
-			Gson gson = new Gson();
+			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			try (final FileReader reader = new FileReader(
 					Config.DATA_DIR + "json/npc_spawns.json")) {
 				return gson.fromJson(reader, NPCSpawns[].class);
@@ -128,7 +129,5 @@ public final class NPCSpawns {
 				return null;
 			}
 		}
-
 	}
-
 }

@@ -1,10 +1,15 @@
 package core.game.model.entity.npc;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import core.Config;
 import core.Server;
@@ -13,6 +18,7 @@ import core.game.model.entity.Hit;
 import core.game.model.entity.npc.NPCSpawns.NpcSpawnBuilder;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
+import core.game.util.JsonSaver;
 import core.game.util.Misc;
 
 @SuppressWarnings("all")
@@ -41,10 +47,9 @@ public class NPCHandler {
 
 		for (NPCSpawns spawn : loaded) {
 			newNPC(spawn);
-		}
-		Misc.println("Loaded: "
-				+ NPCSpawns.NpcSpawnBuilder.deserialize().length
-				+ " Npc Spawns");
+		}			
+
+		Misc.println("Loaded: "+NPCSpawns.NpcSpawnBuilder.deserialize().length+" Npc Spawns");
 	}
 
 	public void multiAttackGfx(int i, int gfx) {
@@ -55,17 +60,15 @@ public class NPCHandler {
 				Player c = (Player) PlayerHandler.players[j];
 				if (c.heightLevel != npcs[i].heightLevel)
 					continue;
-				if (PlayerHandler.players[j].goodDistance(c.absX, c.absY,
-						npcs[i].absX, npcs[i].absY, 15)) {
+				if (PlayerHandler.players[j].goodDistance(c.absX, c.absY, npcs[i].absX, npcs[i].absY, 15)) {
 					int nX = NPCHandler.npcs[i].getX() + offset(i);
 					int nY = NPCHandler.npcs[i].getY() + offset(i);
 					int pX = c.getX();
 					int pY = c.getY();
 					int offX = (nY - pY) * -1;
 					int offY = (nX - pX) * -1;
-					c.getPA().createPlayersProjectile(nX, nY, offX, offY, 50,
-							getProjectileSpeed(i), npcs[i].projectileId, 43,
-							31, -c.getId() - 1, 65);
+					c.getPA().createPlayersProjectile(nX, nY, offX, offY, 50, getProjectileSpeed(i),
+							npcs[i].projectileId, 43, 31, -c.getId() - 1, 65);
 				}
 			}
 		}
@@ -91,56 +94,53 @@ public class NPCHandler {
 		return false;
 	}
 
-    public void multiAttackDamage(int i) {
-        int max = getMaxHit(i);
-        for (int j = 0; j < Server.playerHandler.players.length; j++) {
-            if (Server.playerHandler.players[j] != null) {
-                Player c = Server.playerHandler.players[j];
-                if (c.isDead || c.heightLevel != npcs[i].heightLevel)
-                    continue;
-                if (Server.playerHandler.players[j].goodDistance(c.absX, c.absY, npcs[i].absX, npcs[i].absY, 15)) {
-                    if (npcs[i].attackType == 2) {
-                        if (!c.prayerActive[16]) {
-                            if (Misc.random(500) + 200 > Misc.random(c.getCombat().mageDef())) {
-                                int dam = Misc.random(max);
-                                c.dealHit(new Hit(dam));
-                            } else {
-                                c.dealHit(new Hit(0));
-                            }
-                        } else {
-                            c.dealHit(new Hit(0));
-                        }
-                    } else if (npcs[i].attackType == 1) {
-                        if (!c.prayerActive[17]) {
-                            int dam = Misc.random(max);
-                            if (Misc.random(500) + 200 > Misc.random(c.getCombat().calculateRangeDefence())) {
-                                c.dealHit(new Hit(dam));
-                            } else {
-                                c.dealHit(new Hit(0));
-                            }
-                        } else {
-                            c.dealHit(new Hit(0));
-                        }
-                    }
-                    if (npcs[i].endGfx > 0) {
-                        c.gfx0(npcs[i].endGfx);
-                    }
-                }
-                c.getPA().refreshSkill(3);
-            }
-        }
-    }
+	public void multiAttackDamage(int i) {
+		int max = getMaxHit(i);
+		for (int j = 0; j < Server.playerHandler.players.length; j++) {
+			if (Server.playerHandler.players[j] != null) {
+				Player c = Server.playerHandler.players[j];
+				if (c.isDead || c.heightLevel != npcs[i].heightLevel)
+					continue;
+				if (Server.playerHandler.players[j].goodDistance(c.absX, c.absY, npcs[i].absX, npcs[i].absY, 15)) {
+					if (npcs[i].attackType == 2) {
+						if (!c.prayerActive[16]) {
+							if (Misc.random(500) + 200 > Misc.random(c.getCombat().mageDef())) {
+								int dam = Misc.random(max);
+								c.dealHit(new Hit(dam));
+							} else {
+								c.dealHit(new Hit(0));
+							}
+						} else {
+							c.dealHit(new Hit(0));
+						}
+					} else if (npcs[i].attackType == 1) {
+						if (!c.prayerActive[17]) {
+							int dam = Misc.random(max);
+							if (Misc.random(500) + 200 > Misc.random(c.getCombat().calculateRangeDefence())) {
+								c.dealHit(new Hit(dam));
+							} else {
+								c.dealHit(new Hit(0));
+							}
+						} else {
+							c.dealHit(new Hit(0));
+						}
+					}
+					if (npcs[i].endGfx > 0) {
+						c.gfx0(npcs[i].endGfx);
+					}
+				}
+				c.getPA().refreshSkill(3);
+			}
+		}
+	}
 
 	public int getClosePlayer(int i) {
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (PlayerHandler.players[j] != null) {
 				if (j == npcs[i].spawnedBy)
 					return j;
-				if (goodDistance(PlayerHandler.players[j].absX,
-						PlayerHandler.players[j].absY, npcs[i].absX,
-						npcs[i].absY, 2 + distanceRequired(i)
-								+ followDistance(i))
-						|| isFightCaveNpc(i)) {
+				if (goodDistance(PlayerHandler.players[j].absX, PlayerHandler.players[j].absY, npcs[i].absX,
+						npcs[i].absY, 2 + distanceRequired(i) + followDistance(i)) || isFightCaveNpc(i)) {
 					if ((PlayerHandler.players[j].underAttackBy <= 0 && PlayerHandler.players[j].underAttackBy2 <= 0)
 							|| PlayerHandler.players[j].inMulti())
 						if (PlayerHandler.players[j].heightLevel == npcs[i].heightLevel)
@@ -155,11 +155,8 @@ public class NPCHandler {
 		ArrayList<Integer> players = new ArrayList<Integer>();
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (PlayerHandler.players[j] != null) {
-				if (goodDistance(PlayerHandler.players[j].absX,
-						PlayerHandler.players[j].absY, npcs[i].absX,
-						npcs[i].absY, 2 + distanceRequired(i)
-								+ followDistance(i))
-						|| isFightCaveNpc(i)) {
+				if (goodDistance(PlayerHandler.players[j].absX, PlayerHandler.players[j].absY, npcs[i].absX,
+						npcs[i].absY, 2 + distanceRequired(i) + followDistance(i)) || isFightCaveNpc(i)) {
 					if ((PlayerHandler.players[j].underAttackBy <= 0 && PlayerHandler.players[j].underAttackBy2 <= 0)
 							|| PlayerHandler.players[j].inMulti())
 						if (PlayerHandler.players[j].heightLevel == npcs[i].heightLevel)
@@ -227,9 +224,8 @@ public class NPCHandler {
 	/**
 	 * Summon npc, etc
 	 **/
-	public void spawnNpc(Player c, int npcType, int x, int y, int heightLevel,
-			int WalkingType, int HP, int maxHit, int attack, int defence,
-			boolean attackPlayer, boolean headIcon) {
+	public void spawnNpc(Player c, int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit,
+			int attack, int defence, boolean attackPlayer, boolean headIcon) {
 		// first, search for a free slot
 		int slot = -1;
 		for (int i = 1; i < maxNPCs; i++) {
@@ -266,8 +262,8 @@ public class NPCHandler {
 		npcs[slot] = newNPC;
 	}
 
-	public void spawnNpc2(int npcType, int x, int y, int heightLevel,
-			int WalkingType, int HP, int maxHit, int attack, int defence) {
+	public void spawnNpc2(int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit, int attack,
+			int defence) {
 		// first, search for a free slot
 		int slot = -1;
 		for (int i = 1; i < maxNPCs; i++) {
@@ -323,13 +319,13 @@ public class NPCHandler {
 			return 2611;
 		case 2743:// 360
 			return 2647;
-			// bandos gwd
+		// bandos gwd
 		case 2551:
 		case 2552:
 		case 2553:
 			return 6154;
-			// end of gwd
-			// arma gwd
+		// end of gwd
+		// arma gwd
 		case 2558:
 			return 3505;
 		case 2560:
@@ -338,8 +334,8 @@ public class NPCHandler {
 			return 6952;
 		case 2561:
 			return 6954;
-			// end of arma gwd
-			// sara gwd
+		// end of arma gwd
+		// sara gwd
 		case 2562:
 			return 6964;
 		case 2563:
@@ -348,7 +344,7 @@ public class NPCHandler {
 			return 7018;
 		case 2565:
 			return 7009;
-			// end of sara gwd
+		// end of sara gwd
 		case 13: // wizards
 			return 711;
 
@@ -544,7 +540,7 @@ public class NPCHandler {
 			return 7016;
 		case 2565:
 			return 7011;
-			// bandos gwd
+		// bandos gwd
 		case 2551:
 		case 2552:
 		case 2553:
@@ -771,7 +767,7 @@ public class NPCHandler {
 		case 2561:
 		case 2550:
 			return 6;
-			// saradomin gw boss
+		// saradomin gw boss
 		case 2562:
 			return 2;
 
@@ -874,8 +870,8 @@ public class NPCHandler {
 		npcs[slot] = newNPC;
 	}
 
-	public void newNPC(int npcType, int x, int y, int heightLevel,
-			int WalkingType, int HP, int maxHit, int attack, int defence, int hp) {
+	public void newNPC(int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit, int attack,
+			int defence, int hp) {
 		// first, search for a free slot
 		int slot = -1;
 		for (int i = 1; i < maxNPCs; i++) {
@@ -945,14 +941,9 @@ public class NPCHandler {
 					if (PlayerHandler.players[npcs[i].spawnedBy] == null
 							|| PlayerHandler.players[npcs[i].spawnedBy].heightLevel != npcs[i].heightLevel
 							|| PlayerHandler.players[npcs[i].spawnedBy].respawnTimer > 0
-							|| !PlayerHandler.players[npcs[i].spawnedBy]
-									.goodDistance(
-											npcs[i].getX(),
-											npcs[i].getY(),
-											PlayerHandler.players[npcs[i].spawnedBy]
-													.getX(),
-											PlayerHandler.players[npcs[i].spawnedBy]
-													.getY(), 20)) {
+							|| !PlayerHandler.players[npcs[i].spawnedBy].goodDistance(npcs[i].getX(), npcs[i].getY(),
+									PlayerHandler.players[npcs[i].spawnedBy].getX(),
+									PlayerHandler.players[npcs[i].spawnedBy].getY(), 20)) {
 
 						if (PlayerHandler.players[npcs[i].spawnedBy] != null) {
 
@@ -966,19 +957,17 @@ public class NPCHandler {
 				/**
 				 * Attacking player
 				 **/
-				if (isAggressive(i) && !npcs[i].underAttack && !npcs[i].isDead
-						&& !switchesAttackers(i)) {
+				if (isAggressive(i) && !npcs[i].underAttack && !npcs[i].isDead && !switchesAttackers(i)) {
 					npcs[i].killerId = getCloseRandomPlayer(i);
-				} else if (isAggressive(i) && !npcs[i].underAttack
-						&& !npcs[i].isDead && switchesAttackers(i)) {
+				} else if (isAggressive(i) && !npcs[i].underAttack && !npcs[i].isDead && switchesAttackers(i)) {
 					npcs[i].killerId = getCloseRandomPlayer(i);
 				}
 
 				if (System.currentTimeMillis() - npcs[i].lastDamageTaken > 5000)
 					npcs[i].underAttackBy = 0;
 
-				if ((npcs[i].killerId > 0 || npcs[i].underAttack)
-						&& !npcs[i].walkingHome && retaliates(npcs[i].npcType)) {
+				if ((npcs[i].killerId > 0 || npcs[i].underAttack) && !npcs[i].walkingHome
+						&& retaliates(npcs[i].npcType)) {
 					if (!npcs[i].isDead) {
 						int p = npcs[i].killerId;
 						if (PlayerHandler.players[p] != null) {
@@ -1008,25 +997,19 @@ public class NPCHandler {
 				 **/
 				if (npcs[i] == null)
 					continue;
-				if ((!npcs[i].underAttack || npcs[i].walkingHome)
-						&& npcs[i].randomWalk && !npcs[i].isDead) {
+				if ((!npcs[i].underAttack || npcs[i].walkingHome) && npcs[i].randomWalk && !npcs[i].isDead) {
 					npcs[i].facePlayer(0);
 					npcs[i].killerId = 0;
 					if (npcs[i].spawnedBy == 0) {
-						if ((npcs[i].absX > npcs[i].makeX
-								+ GameConstants.NPC_RANDOM_WALK_DISTANCE)
-								|| (npcs[i].absX < npcs[i].makeX
-										- GameConstants.NPC_RANDOM_WALK_DISTANCE)
-								|| (npcs[i].absY > npcs[i].makeY
-										+ GameConstants.NPC_RANDOM_WALK_DISTANCE)
-								|| (npcs[i].absY < npcs[i].makeY
-										- GameConstants.NPC_RANDOM_WALK_DISTANCE)) {
+						if ((npcs[i].absX > npcs[i].makeX + GameConstants.NPC_RANDOM_WALK_DISTANCE)
+								|| (npcs[i].absX < npcs[i].makeX - GameConstants.NPC_RANDOM_WALK_DISTANCE)
+								|| (npcs[i].absY > npcs[i].makeY + GameConstants.NPC_RANDOM_WALK_DISTANCE)
+								|| (npcs[i].absY < npcs[i].makeY - GameConstants.NPC_RANDOM_WALK_DISTANCE)) {
 							npcs[i].walkingHome = true;
 						}
 					}
 
-					if (npcs[i].walkingHome && npcs[i].absX == npcs[i].makeX
-							&& npcs[i].absY == npcs[i].makeY) {
+					if (npcs[i].walkingHome && npcs[i].absX == npcs[i].makeX && npcs[i].absY == npcs[i].makeY) {
 						npcs[i].walkingHome = false;
 					} else if (npcs[i].walkingHome) {
 						npcs[i].moveX = GetMove(npcs[i].absX, npcs[i].makeX);
@@ -1109,8 +1092,7 @@ public class NPCHandler {
 				}
 
 				if (npcs[i].isDead == true) {
-					if (npcs[i].actionTimer == 0 && npcs[i].applyDead == false
-							&& npcs[i].needRespawn == false) {
+					if (npcs[i].actionTimer == 0 && npcs[i].applyDead == false && npcs[i].needRespawn == false) {
 						npcs[i].updateRequired = true;
 						npcs[i].facePlayer(0);
 						npcs[i].killedBy = getNpcKillerId(i);
@@ -1120,9 +1102,7 @@ public class NPCHandler {
 						npcs[i].applyDead = true;
 						npcs[i].actionTimer = 4; // delete time
 						resetPlayersInCombat(i);
-					} else if (npcs[i].actionTimer == 0
-							&& npcs[i].applyDead == true
-							&& npcs[i].needRespawn == false) {
+					} else if (npcs[i].actionTimer == 0 && npcs[i].applyDead == true && npcs[i].needRespawn == false) {
 						npcs[i].needRespawn = true;
 						npcs[i].actionTimer = getRespawnTime(i); // respawn time
 						dropItems(i); // npc drops items!
@@ -1135,14 +1115,12 @@ public class NPCHandler {
 						npcs[i].updateRequired = true;
 						npcs[i].animUpdateRequired = true;
 						if (npcs[i].npcType >= 2440 && npcs[i].npcType <= 2446) {
-							Server.objectManager.removeObject(npcs[i].absX,
-									npcs[i].absY);
+							Server.objectManager.removeObject(npcs[i].absX, npcs[i].absY);
 						}
 						if (npcs[i].npcType == 2745) {
 							// handleJadDeath(i);
 						}
-					} else if (npcs[i].actionTimer == 0
-							&& npcs[i].needRespawn == true) {
+					} else if (npcs[i].actionTimer == 0 && npcs[i].needRespawn == true) {
 						Player player = (Player) PlayerHandler.players[npcs[i].spawnedBy];
 						if (player != null) {
 							npcs[i] = null;
@@ -1159,8 +1137,7 @@ public class NPCHandler {
 							int old10 = npcs[i].hp;
 
 							npcs[i] = null;
-							newNPC(old1, old2, old3, old4, old5, old6, old7,
-									old8, old9, old10);
+							newNPC(old1, old2, old3, old4, old5, old6, old7, old8, old9, old10);
 						}
 					}
 				}
@@ -1230,8 +1207,7 @@ public class NPCHandler {
 	public void appendKillCount(int i) {
 		Player c = (Player) PlayerHandler.players[npcs[i].killedBy];
 		if (c != null) {
-			int[] kcMonsters = { 122, 49, 2558, 2559, 2560, 2561, 2550, 2551,
-					2552, 2553, 2562, 2563, 2564, 2565 };
+			int[] kcMonsters = { 122, 49, 2558, 2559, 2560, 2561, 2550, 2551, 2552, 2553, 2562, 2563, 2564, 2565 };
 			for (int j : kcMonsters) {
 				if (npcs[i].npcType == j) {
 					if (c.killCount < 20) {
@@ -1438,16 +1414,12 @@ public class NPCHandler {
 		int playerX = PlayerHandler.players[playerId].absX;
 		int playerY = PlayerHandler.players[playerId].absY;
 		npcs[i].randomWalk = false;
-		if (goodDistance(npcs[i].getX(), npcs[i].getY(), playerX, playerY,
-				distanceRequired(i)))
+		if (goodDistance(npcs[i].getX(), npcs[i].getY(), playerX, playerY, distanceRequired(i)))
 			return;
-		if ((npcs[i].spawnedBy > 0)
-				|| ((npcs[i].absX < npcs[i].makeX + GameConstants.NPC_FOLLOW_DISTANCE)
-						&& (npcs[i].absX > npcs[i].makeX
-								- GameConstants.NPC_FOLLOW_DISTANCE)
-						&& (npcs[i].absY < npcs[i].makeY
-								+ GameConstants.NPC_FOLLOW_DISTANCE) && (npcs[i].absY > npcs[i].makeY
-						- GameConstants.NPC_FOLLOW_DISTANCE))) {
+		if ((npcs[i].spawnedBy > 0) || ((npcs[i].absX < npcs[i].makeX + GameConstants.NPC_FOLLOW_DISTANCE)
+				&& (npcs[i].absX > npcs[i].makeX - GameConstants.NPC_FOLLOW_DISTANCE)
+				&& (npcs[i].absY < npcs[i].makeY + GameConstants.NPC_FOLLOW_DISTANCE)
+				&& (npcs[i].absY > npcs[i].makeY - GameConstants.NPC_FOLLOW_DISTANCE))) {
 			if (npcs[i].heightLevel == PlayerHandler.players[playerId].heightLevel) {
 				if (PlayerHandler.players[playerId] != null && npcs[i] != null) {
 					if (playerY < npcs[i].absY) {
@@ -1462,8 +1434,7 @@ public class NPCHandler {
 					} else if (playerX > npcs[i].absX) {
 						npcs[i].moveX = GetMove(npcs[i].absX, playerX);
 						npcs[i].moveY = GetMove(npcs[i].absY, playerY);
-					} else if (playerX == npcs[i].absX
-							|| playerY == npcs[i].absY) {
+					} else if (playerX == npcs[i].absX || playerY == npcs[i].absY) {
 						int o = Misc.random(3);
 						switch (o) {
 						case 0:
@@ -1697,8 +1668,7 @@ public class NPCHandler {
 			break;
 		case 2745:
 			int r3 = 0;
-			if (goodDistance(npcs[i].absX, npcs[i].absY,
-					PlayerHandler.players[npcs[i].spawnedBy].absX,
+			if (goodDistance(npcs[i].absX, npcs[i].absY, PlayerHandler.players[npcs[i].spawnedBy].absX,
 					PlayerHandler.players[npcs[i].spawnedBy].absY, 1))
 				r3 = Misc.random(2);
 			else
@@ -1759,7 +1729,7 @@ public class NPCHandler {
 		case 2564:
 		case 2565:
 			return 9;
-			// things around dags
+		// things around dags
 		case 2892:
 		case 2894:
 			return 10;
@@ -1818,13 +1788,11 @@ public class NPCHandler {
 		if (npcs[i] != null) {
 			if (npcs[i].isDead)
 				return;
-			if (!npcs[i].inMulti() && npcs[i].underAttackBy > 0
-					&& npcs[i].underAttackBy != c.playerId) {
+			if (!npcs[i].inMulti() && npcs[i].underAttackBy > 0 && npcs[i].underAttackBy != c.playerId) {
 				npcs[i].killerId = 0;
 				return;
 			}
-			if (!npcs[i].inMulti()
-					&& (c.underAttackBy > 0 || (c.underAttackBy2 > 0 && c.underAttackBy2 != i))) {
+			if (!npcs[i].inMulti() && (c.underAttackBy > 0 || (c.underAttackBy2 > 0 && c.underAttackBy2 != i))) {
 				npcs[i].killerId = 0;
 				return;
 			}
@@ -1834,8 +1802,7 @@ public class NPCHandler {
 			}
 			npcs[i].facePlayer(c.playerId);
 			boolean special = false;// specialCase(c,i);
-			if (goodDistance(npcs[i].getX(), npcs[i].getY(), c.getX(),
-					c.getY(), distanceRequired(i)) || special) {
+			if (goodDistance(npcs[i].getX(), npcs[i].getY(), c.getX(), c.getY(), distanceRequired(i)) || special) {
 				if (c.respawnTimer <= 0) {
 					npcs[i].facePlayer(c.playerId);
 					npcs[i].attackTimer = getNpcDelay(i);
@@ -1860,10 +1827,8 @@ public class NPCHandler {
 						int pY = c.getY();
 						int offX = (nY - pY) * -1;
 						int offY = (nX - pX) * -1;
-						c.getPA().createPlayersProjectile(nX, nY, offX, offY,
-								50, getProjectileSpeed(i),
-								npcs[i].projectileId, 43, 31, -c.getId() - 1,
-								65);
+						c.getPA().createPlayersProjectile(nX, nY, offX, offY, 50, getProjectileSpeed(i),
+								npcs[i].projectileId, 43, 31, -c.getId() - 1, 65);
 					}
 					c.underAttackBy2 = i;
 					c.singleCombatDelay2 = System.currentTimeMillis();
@@ -1892,104 +1857,104 @@ public class NPCHandler {
 	public boolean specialCase(Player c, int i) { // responsible for npcs that
 													// much
 		if (goodDistance(npcs[i].getX(), npcs[i].getY(), c.getX(), c.getY(), 8)
-				&& !goodDistance(npcs[i].getX(), npcs[i].getY(), c.getX(),
-						c.getY(), distanceRequired(i)))
+				&& !goodDistance(npcs[i].getX(), npcs[i].getY(), c.getX(), c.getY(), distanceRequired(i)))
 			return true;
 		return false;
 	}
 
 	public boolean retaliates(int npcType) {
-		return npcType < 3777 || npcType > 3780
-				&& !(npcType >= 2440 && npcType <= 2446);
+		return npcType < 3777 || npcType > 3780 && !(npcType >= 2440 && npcType <= 2446);
 	}
 
-    public void applyDamage(int i) {
-        if (npcs[i] != null) {
-            if (Server.playerHandler.players[npcs[i].oldIndex] == null) {
-                return;
-            }
-            if (npcs[i].isDead)
-                return;
-            Player c = Server.playerHandler.players[npcs[i].oldIndex];
-            if (multiAttacks(i)) {
-                multiAttackDamage(i);
-                return;
-            }
-            if (c.playerIndex <= 0 && c.npcIndex <= 0)
-                if (c.autoRet == 1)
-                    c.npcIndex = i;
-            if (c.attackTimer <= 3 || c.attackTimer == 0 && c.npcIndex == 0 && c.oldNpcIndex == 0) {
-                c.startAnimation(c.getCombat().getBlockEmote());
-            }
-            if (c.respawnTimer <= 0) {
-                int damage = 0;
-                if (npcs[i].attackType == 0) {
-                    damage = Misc.random(npcs[i].maxHit);
-                    if (10 + Misc.random(c.getCombat().calculateMeleeDefence()) > Misc.random(Server.npcHandler.npcs[i].attack)) {
-                        damage = 0;
-                    }
-                    if (c.prayerActive[18]) { // protect from melee
-                        damage = 0;
-                    }
-                    if (c.playerLevel[3] - damage < 0) {
-                        damage = c.playerLevel[3];
-                    }
-                }
+	public void applyDamage(int i) {
+		if (npcs[i] != null) {
+			if (Server.playerHandler.players[npcs[i].oldIndex] == null) {
+				return;
+			}
+			if (npcs[i].isDead)
+				return;
+			Player c = Server.playerHandler.players[npcs[i].oldIndex];
+			if (multiAttacks(i)) {
+				multiAttackDamage(i);
+				return;
+			}
+			if (c.playerIndex <= 0 && c.npcIndex <= 0)
+				if (c.autoRet == 1)
+					c.npcIndex = i;
+			if (c.attackTimer <= 3 || c.attackTimer == 0 && c.npcIndex == 0 && c.oldNpcIndex == 0) {
+				c.startAnimation(c.getCombat().getBlockEmote());
+			}
+			if (c.respawnTimer <= 0) {
+				int damage = 0;
+				if (npcs[i].attackType == 0) {
+					damage = Misc.random(npcs[i].maxHit);
+					if (10 + Misc.random(c.getCombat().calculateMeleeDefence()) > Misc
+							.random(Server.npcHandler.npcs[i].attack)) {
+						damage = 0;
+					}
+					if (c.prayerActive[18]) { // protect from melee
+						damage = 0;
+					}
+					if (c.playerLevel[3] - damage < 0) {
+						damage = c.playerLevel[3];
+					}
+				}
 
-                if (npcs[i].attackType == 1) { // range
-                    damage = Misc.random(npcs[i].maxHit);
-                    if (10 + Misc.random(c.getCombat().calculateRangeDefence()) > Misc.random(Server.npcHandler.npcs[i].attack)) {
-                        damage = 0;
-                    }
-                    if (c.prayerActive[17]) { // protect from range
-                        damage = 0;
-                    }
-                    if (c.playerLevel[3] - damage < 0) {
-                        damage = c.playerLevel[3];
-                    }
-                }
+				if (npcs[i].attackType == 1) { // range
+					damage = Misc.random(npcs[i].maxHit);
+					if (10 + Misc.random(c.getCombat().calculateRangeDefence()) > Misc
+							.random(Server.npcHandler.npcs[i].attack)) {
+						damage = 0;
+					}
+					if (c.prayerActive[17]) { // protect from range
+						damage = 0;
+					}
+					if (c.playerLevel[3] - damage < 0) {
+						damage = c.playerLevel[3];
+					}
+				}
 
-                if (npcs[i].attackType == 2) { // magic
-                    damage = Misc.random(npcs[i].maxHit);
-                    boolean magicFailed = false;
-                    if (10 + Misc.random(c.getCombat().mageDef()) > Misc.random(Server.npcHandler.npcs[i].attack)) {
-                        damage = 0;
-                        magicFailed = true;
-                    }
-                    if (c.prayerActive[16]) { // protect from magic
-                        damage = 0;
-                        magicFailed = true;
-                    }
-                    if (c.playerLevel[3] - damage < 0) {
-                        damage = c.playerLevel[3];
-                    }
-                    if (npcs[i].endGfx > 0 && (!magicFailed || isFightCaveNpc(i))) {
-                        c.gfx100(npcs[i].endGfx);
-                    } else {
-                        c.gfx100(85);
-                    }
-                }
+				if (npcs[i].attackType == 2) { // magic
+					damage = Misc.random(npcs[i].maxHit);
+					boolean magicFailed = false;
+					if (10 + Misc.random(c.getCombat().mageDef()) > Misc.random(Server.npcHandler.npcs[i].attack)) {
+						damage = 0;
+						magicFailed = true;
+					}
+					if (c.prayerActive[16]) { // protect from magic
+						damage = 0;
+						magicFailed = true;
+					}
+					if (c.playerLevel[3] - damage < 0) {
+						damage = c.playerLevel[3];
+					}
+					if (npcs[i].endGfx > 0 && (!magicFailed || isFightCaveNpc(i))) {
+						c.gfx100(npcs[i].endGfx);
+					} else {
+						c.gfx100(85);
+					}
+				}
 
-                if (npcs[i].attackType == 3) { // fire breath
-                    int anti = c.getPA().antiFire();
-                    if (anti == 0) {
-                        damage = Misc.random(30) + 10;
-                        c.sendMessage("You are badly burnt by the dragon fire!");
-                    } else if (anti == 1)
-                        damage = Misc.random(20);
-                    else if (anti == 2)
-                        damage = Misc.random(5);
-                    if (c.playerLevel[3] - damage < 0)
-                        damage = c.playerLevel[3];
-                    c.gfx100(npcs[i].endGfx);
-                }
-                handleSpecialEffects(c, i, damage);
-                c.logoutDelay = System.currentTimeMillis(); // logout delay
-                // c.setHitDiff(damage);
-                c.dealHit(new Hit(damage));
-            }
-        }
-    }
+				if (npcs[i].attackType == 3) { // fire breath
+					int anti = c.getPA().antiFire();
+					if (anti == 0) {
+						damage = Misc.random(30) + 10;
+						c.sendMessage("You are badly burnt by the dragon fire!");
+					} else if (anti == 1)
+						damage = Misc.random(20);
+					else if (anti == 2)
+						damage = Misc.random(5);
+					if (c.playerLevel[3] - damage < 0)
+						damage = c.playerLevel[3];
+					c.gfx100(npcs[i].endGfx);
+				}
+				handleSpecialEffects(c, i, damage);
+				c.logoutDelay = System.currentTimeMillis(); // logout delay
+				// c.setHitDiff(damage);
+				c.dealHit(new Hit(damage));
+			}
+		}
+	}
 
 	public void handleSpecialEffects(Player c, int i, int damage) {
 		if (npcs[i].npcType == 2892 || npcs[i].npcType == 2894) {
@@ -2012,21 +1977,17 @@ public class NPCHandler {
 		npcs[i].updateRequired = true;
 	}
 
-	public boolean goodDistance(int objectX, int objectY, int playerX,
-			int playerY, int distance) {
+	public boolean goodDistance(int objectX, int objectY, int playerX, int playerY, int distance) {
 		for (int i = 0; i <= distance; i++) {
 			for (int j = 0; j <= distance; j++) {
 				if ((objectX + i) == playerX
-						&& ((objectY + j) == playerY
-								|| (objectY - j) == playerY || objectY == playerY)) {
+						&& ((objectY + j) == playerY || (objectY - j) == playerY || objectY == playerY)) {
 					return true;
 				} else if ((objectX - i) == playerX
-						&& ((objectY + j) == playerY
-								|| (objectY - j) == playerY || objectY == playerY)) {
+						&& ((objectY + j) == playerY || (objectY - j) == playerY || objectY == playerY)) {
 					return true;
 				} else if (objectX == playerX
-						&& ((objectY + j) == playerY
-								|| (objectY - j) == playerY || objectY == playerY)) {
+						&& ((objectY + j) == playerY || (objectY - j) == playerY || objectY == playerY)) {
 					return true;
 				}
 			}
@@ -2069,5 +2030,5 @@ public class NPCHandler {
 			}
 		}
 		return "nameless";
-	}	
+	}
 }
