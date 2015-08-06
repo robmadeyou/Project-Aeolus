@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+
+import core.Config;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
@@ -14,14 +17,21 @@ import core.game.util.Misc;
 
 /**
  * @author Sanity
+ * @author 7Winds
  */
 @SuppressWarnings("all")
 public class ObjectHandler {
 
+	/**
+	 * List datatype used to store all the global objects
+	 */
 	public List<Objects> globalObjects = new ArrayList<Objects>();
 
+	/**
+	 * Constructor used to load the global objects
+	 */
 	public ObjectHandler() {
-//		loadGlobalObjects("./Data/cfg/global-objects.cfg"); - Cleaned
+		loadGlobalObjects(Config.DATA_DIR + "json/global_objects.json");
 	}
 
 	/**
@@ -43,8 +53,8 @@ public class ObjectHandler {
 	 **/
 	public Objects objectExists(int objectX, int objectY, int objectHeight) {
 		for (Objects o : globalObjects) {
-			if (o.getObjectX() == objectX && o.getObjectY() == objectY
-					&& o.getObjectHeight() == objectHeight) {
+			if (o.getX() == objectX && o.getY() == objectY
+					&& o.getHeight() == objectHeight) {
 				return o;
 			}
 		}
@@ -57,11 +67,11 @@ public class ObjectHandler {
 	public void updateObjects(Player c) {
 		for (Objects o : globalObjects) {
 			if (c != null) {
-				if (c.heightLevel == o.getObjectHeight() && o.objectTicks == 0) {
-					if (c.distanceToPoint(o.getObjectX(), o.getObjectY()) <= 60) {
-						c.getPA().object(o.getObjectId(), o.getObjectX(),
-								o.getObjectY(), o.getObjectFace(),
-								o.getObjectType());
+				if (c.heightLevel == o.getHeight() && o.objectTicks == 0) {
+					if (c.distanceToPoint(o.getX(), o.getY()) <= 60) {
+						c.getPA().object(o.getId(), o.getX(),
+								o.getY(), o.getFace(),
+								o.getType());
 					}
 				}
 			}
@@ -79,15 +89,15 @@ public class ObjectHandler {
 			if (p != null) {
 				Player person = p;
 				if (person != null) {
-					if (person.heightLevel == o.getObjectHeight()
+					if (person.heightLevel == o.getHeight()
 							&& o.objectTicks == 0) {
-						if (person.distanceToPoint(o.getObjectX(),
-								o.getObjectY()) <= 60) {
+						if (person.distanceToPoint(o.getX(),
+								o.getY()) <= 60) {
 							removeAllObjects(o);
 							globalObjects.add(o);
-							person.getPA().object(o.getObjectId(),
-									o.getObjectX(), o.getObjectY(),
-									o.getObjectFace(), o.getObjectType());
+							person.getPA().object(o.getId(),
+									o.getX(), o.getY(),
+									o.getFace(), o.getType());
 						}
 					}
 				}
@@ -95,16 +105,23 @@ public class ObjectHandler {
 		}
 	}
 
+	/**
+	 * Removes all global objects from the list.
+	 */
 	public void removeAllObjects(Objects o) {
 		for (Objects s : globalObjects) {
-			if (s.getObjectX() == o.objectX && s.getObjectY() == o.objectY
-					&& s.getObjectHeight() == o.getObjectHeight()) {
+			if (s.getX() == o.objectX && s.getY() == o.objectY
+					&& s.getHeight() == o.getHeight()) {
 				globalObjects.remove(s);
 				break;
 			}
 		}
 	}
 
+	/**
+	 * The tick method for global objects,
+	 * used for adding and removing global objects
+	 */
 	public void process() {
 		for (int j = 0; j < globalObjects.size(); j++) {
 			if (globalObjects.get(j) != null) {
@@ -113,8 +130,8 @@ public class ObjectHandler {
 					o.objectTicks--;
 				}
 				if (o.objectTicks == 1) {
-					Objects deleteObject = objectExists(o.getObjectX(),
-							o.getObjectY(), o.getObjectHeight());
+					Objects deleteObject = objectExists(o.getX(),
+							o.getY(), o.getHeight());
 					removeObject(deleteObject);
 					o.objectTicks = 0;
 					placeObject(o);
@@ -123,81 +140,29 @@ public class ObjectHandler {
 			}
 
 		}
-		/*
-		 * for(Objects o : globalObjects) { if(o.objectTicks > 0) {
-		 * o.objectTicks--; } if(o.objectTicks == 1) { Objects deleteObject =
-		 * objectExists(o.getObjectX(), o.getObjectY(), o.getObjectHeight());
-		 * if(deleteObject != null) { removeObject(deleteObject); }
-		 * o.objectTicks = 0; placeObject(o); removeObject(o); if
-		 * (isObelisk(o.objectId)) { int index = getObeliskIndex(o.objectId); if
-		 * (activated[index]) { activated[index] = false;
-		 * teleportObelisk(index); } } break; } }
-		 */
 	}
-
-	public boolean loadGlobalObjects(String fileName) {
-		String line = "";
-		String token = "";
-		String token2 = "";
-		String token2_2 = "";
-		String[] token3 = new String[10];
-		boolean EndOfFile = false;
-		int ReadMode = 0;
-		BufferedReader objectFile = null;
+	
+	/**
+	 * Deserializes the global_objects.json file and stores the objects in the
+	 * in the List @see globalObjects
+	 */
+	public void loadGlobalObjects(String filename) {
+		Gson gson = new Gson();
+		
 		try {
-			objectFile = new BufferedReader(new FileReader("./" + fileName));
-		} catch (FileNotFoundException fileex) {
-			Misc.println(fileName + ": file not found.");
-			return false;
+			System.out.println("Reading file");
+			
+			BufferedReader br = new BufferedReader(new FileReader(filename));
+			
+			Objects obj = gson.fromJson(br, Objects.class);
+			
+			Objects object = new Objects(obj.getId(), obj.getType(), obj.getX(), obj.getY(),
+					obj.getHeight(), obj.getFace(), 0);
+			addObject(object);
+			
+			System.out.println("Created: " + globalObjects.size() + " Global Objects");
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		try {
-			line = objectFile.readLine();
-		} catch (IOException ioexception) {
-			Misc.println(fileName + ": error loading file.");
-			return false;
-		}
-		while (EndOfFile == false && line != null) {
-			line = line.trim();
-			int spot = line.indexOf("=");
-			if (spot > -1) {
-				token = line.substring(0, spot);
-				token = token.trim();
-				token2 = line.substring(spot + 1);
-				token2 = token2.trim();
-				token2_2 = token2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token3 = token2_2.split("\t");
-				if (token.equals("object")) {
-					Objects object = new Objects(Integer.parseInt(token3[0]),
-							Integer.parseInt(token3[1]),
-							Integer.parseInt(token3[2]),
-							Integer.parseInt(token3[3]),
-							Integer.parseInt(token3[4]),
-							Integer.parseInt(token3[5]), 0);
-					addObject(object);
-				}
-			} else {
-				if (line.equals("[ENDOFOBJECTLIST]")) {
-					try {
-						objectFile.close();
-					} catch (IOException ioexception) {
-					}
-					return true;
-				}
-			}
-			try {
-				line = objectFile.readLine();
-			} catch (IOException ioexception1) {
-				EndOfFile = true;
-			}
-		}
-		try {
-			objectFile.close();
-		} catch (IOException ioexception) {
-		}
-		return false;
 	}
 }

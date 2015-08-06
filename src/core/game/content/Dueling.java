@@ -193,7 +193,7 @@ public class Dueling {
 			for(int a = 0; a < amount; a++) {
 				if(c.getItems().playerHasItem(itemID, 1)) {
 					stakedItems.add(new GameItem(itemID, 1));	
-					c.getItems().deleteItem(itemID, c.getItems().getItemSlot(itemID), 1);
+					c.getItems().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
 				}
 			}		
 			c.getItems().resetItems(3214);
@@ -404,37 +404,37 @@ public class Dueling {
 			c.getPA().requestUpdates();
 		}		
 		if(c.duelRule[11]) {
-			c.getItems().removeItem(c.playerEquipment[0], 0);
+			c.getEquipment().removeItem(c.playerEquipment[0], 0);
 		}
 		if(c.duelRule[12]) {
-			c.getItems().removeItem(c.playerEquipment[1], 1);
+			c.getEquipment().removeItem(c.playerEquipment[1], 1);
 		}
 		if(c.duelRule[13]) {
-			c.getItems().removeItem(c.playerEquipment[2], 2);
+			c.getEquipment().removeItem(c.playerEquipment[2], 2);
 		}
 		if(c.duelRule[14]) {
-			c.getItems().removeItem(c.playerEquipment[3], 3);
+			c.getEquipment().removeItem(c.playerEquipment[3], 3);
 		}
 		if(c.duelRule[15]) {
-			c.getItems().removeItem(c.playerEquipment[4], 4);
+			c.getEquipment().removeItem(c.playerEquipment[4], 4);
 		}
 		if(c.duelRule[16]) {
-			c.getItems().removeItem(c.playerEquipment[5], 5);
+			c.getEquipment().removeItem(c.playerEquipment[5], 5);
 		}
 		if(c.duelRule[17]) {
-			c.getItems().removeItem(c.playerEquipment[7], 7);
+			c.getEquipment().removeItem(c.playerEquipment[7], 7);
 		}
 		if(c.duelRule[18]) {
-			c.getItems().removeItem(c.playerEquipment[9], 9);
+			c.getEquipment().removeItem(c.playerEquipment[9], 9);
 		}
 		if(c.duelRule[19]) {
-			c.getItems().removeItem(c.playerEquipment[10], 10);
+			c.getEquipment().removeItem(c.playerEquipment[10], 10);
 		}
 		if(c.duelRule[20]) {
-			c.getItems().removeItem(c.playerEquipment[12], 12);
+			c.getEquipment().removeItem(c.playerEquipment[12], 12);
 		}
 		if(c.duelRule[21]) {
-			c.getItems().removeItem(c.playerEquipment[13], 13);
+			c.getEquipment().removeItem(c.playerEquipment[13], 13);
 		}		
 		c.duelStatus = 5;
 		c.getPA().removeAllWindows();

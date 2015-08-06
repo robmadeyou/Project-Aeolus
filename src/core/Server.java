@@ -114,7 +114,7 @@ public class Server {
 	/**
 	 * Handles global objects.
 	 */
-	public static ObjectHandler objectHandler = new ObjectHandler();
+	public static ObjectHandler objectHandler;
 	public static ObjectManager objectManager = new ObjectManager();
 	
 	public static World playerWorld = null;
@@ -159,6 +159,7 @@ public class Server {
 		Region.load();
 		playerWorld = World.getSingleton();
 		playerWorld.setupPlayerRegions();
+		objectHandler = new ObjectHandler();
 		ItemTableManager.load();
 		new NpcDefinitionLoader().load();
 		npcHandler.build();

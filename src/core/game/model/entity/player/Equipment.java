@@ -741,6 +741,47 @@ public class Equipment {
 			return false;
 		}
 	}
+	
+	/**
+	 * Indicates the action to wear an item.
+	 * 
+	 * @param wearID
+	 * @param wearAmount
+	 * @param targetSlot
+	 */
+	public void wearItem(int wearID, int wearAmount, int targetSlot) {
+		synchronized (c) {
+			if (c.getOutStream() != null && c != null) {
+				c.getOutStream().createFrameVarSizeWord(34);
+				c.getOutStream().writeWord(1688);
+				c.getOutStream().writeByte(targetSlot);
+				c.getOutStream().writeWord(wearID + 1);
+
+				if (wearAmount > 254) {
+					c.getOutStream().writeByte(255);
+					c.getOutStream().writeDWord(wearAmount);
+				} else {
+					c.getOutStream().writeByte(wearAmount);
+				}
+				c.getOutStream().endFrameVarSizeWord();
+				c.flushOutStream();
+				c.playerEquipment[targetSlot] = wearID;
+				c.playerEquipmentN[targetSlot] = wearAmount;
+				c.getItems().sendWeapon(
+						c.playerEquipment[c.playerWeapon],
+						c.getEquipment().getItemName(
+								c.playerEquipment[c.playerWeapon]));
+				c.getItems().resetBonus();
+				c.getEquipment().getBonus();
+				c.getEquipment().writeBonus();
+				c.getCombat().getPlayerAnimIndex(c.getEquipment()
+								.getItemName(c.playerEquipment[c.playerWeapon])
+								.toLowerCase());
+				c.updateRequired = true;
+				c.setAppearanceUpdateRequired(true);
+			}
+		}
+	}
 
 	public void deleteItem(int id, int amount) {
 		deleteItem(id, getItemSlot(id), amount);
@@ -1190,5 +1231,102 @@ public class Equipment {
 								+ "%)" : "@bla@Special Attack (" + percent
 								+ "%)", c.specBarId);
 	}
+	
+	/**
+	 * Updates the equipment tab.
+	 **/
+	public void setEquipment(int wearID, int amount, int targetSlot) {
+		synchronized (c) {
+			c.getOutStream().createFrameVarSizeWord(34);
+			c.getOutStream().writeWord(1688);
+			c.getOutStream().writeByte(targetSlot);
+			c.getOutStream().writeWord(wearID + 1);
+			if (amount > 254) {
+				c.getOutStream().writeByte(255);
+				c.getOutStream().writeDWord(amount);
+			} else {
+				c.getOutStream().writeByte(amount);
+			}
+			c.getOutStream().endFrameVarSizeWord();
+			c.flushOutStream();
+			c.playerEquipment[targetSlot] = wearID;
+			c.playerEquipmentN[targetSlot] = amount;
+			c.updateRequired = true;
+			c.setAppearanceUpdateRequired(true);
+		}
+	}
+	
+	/**
+	 * Delete item equipment.
+	 **/
+	public void deleteEquipment(int i, int j) {
+		synchronized (c) {
+			if (PlayerHandler.players[c.playerId] == null) {
+				return;
+			}
+			if (i < 0) {
+				return;
+			}
 
+			c.playerEquipment[j] = -1;
+			c.playerEquipmentN[j] = c.playerEquipmentN[j] - 1;
+			c.getOutStream().createFrame(34);
+			c.getOutStream().writeWord(6);
+			c.getOutStream().writeWord(1688);
+			c.getOutStream().writeByte(j);
+			c.getOutStream().writeWord(0);
+			c.getOutStream().writeByte(0);
+			c.getEquipment().getBonus();
+			if (j == c.playerWeapon) {
+				sendWeapon(-1, "Unarmed");
+			}
+			resetBonus();
+			c.getEquipment().getBonus();
+			c.getEquipment().writeBonus();
+			c.updateRequired = true;
+			c.setAppearanceUpdateRequired(true);
+		}
+	}
+	
+	public void deleteEquipment() {
+		synchronized (c) {
+			if (c.playerEquipmentN[c.playerWeapon] == 1) {
+				c.getEquipment().deleteEquipment(c.playerEquipment[c.playerWeapon],
+						c.playerWeapon);
+			}
+			if (c.playerEquipmentN[c.playerWeapon] != 0) {
+				c.getOutStream().createFrameVarSizeWord(34);
+				c.getOutStream().writeWord(1688);
+				c.getOutStream().writeByte(c.playerWeapon);
+				c.getOutStream().writeWord(
+						c.playerEquipment[c.playerWeapon] + 1);
+				if (c.playerEquipmentN[c.playerWeapon] - 1 > 254) {
+					c.getOutStream().writeByte(255);
+					c.getOutStream().writeDWord(
+							c.playerEquipmentN[c.playerWeapon] - 1);
+				} else {
+					c.getOutStream().writeByte(
+							c.playerEquipmentN[c.playerWeapon] - 1);
+				}
+				c.getOutStream().endFrameVarSizeWord();
+				c.flushOutStream();
+				c.playerEquipmentN[c.playerWeapon] -= 1;
+			}
+			c.updateRequired = true;
+			c.setAppearanceUpdateRequired(true);
+		}
+	}
+	
+	/**
+	 * Removes all items from player's equipment.
+	 */
+	public void removeAllItems() {
+		for (int i = 0; i < c.playerItems.length; i++) {
+			c.playerItems[i] = 0;
+		}
+		for (int i = 0; i < c.playerItemsN.length; i++) {
+			c.playerItemsN[i] = 0;
+		}
+		resetItems(3214);
+	}
 }

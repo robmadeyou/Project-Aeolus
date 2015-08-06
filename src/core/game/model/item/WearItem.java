@@ -19,6 +19,6 @@ public class WearItem implements PacketType {
 		int oldCombatTimer = c.attackTimer;
 		if (c.playerIndex > 0 || c.npcIndex > 0)
 			c.getCombat().resetPlayerAttack();
-		c.getItems().wearItem(c.wearId, c.wearSlot);
+		c.getEquipment().wearItem(c.wearId, c.wearSlot);
 	}
 }

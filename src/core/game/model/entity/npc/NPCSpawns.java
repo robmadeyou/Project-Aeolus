@@ -122,7 +122,7 @@ public final class NPCSpawns {
 		protected static NPCSpawns[] deserialize() {
 			Gson gson = new Gson();
 			try (final FileReader reader = new FileReader(
-					Config.DATA_DIR + "json/npc-spawns.json")) {
+					Config.DATA_DIR + "json/npc_spawns.json")) {
 				return gson.fromJson(reader, NPCSpawns[].class);
 			} catch (IOException e) {
 				return null;

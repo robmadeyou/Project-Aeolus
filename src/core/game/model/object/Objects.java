@@ -21,27 +21,27 @@ public class Objects {
 		this.objectTicks = ticks;
 	}
 
-	public int getObjectId() {
+	public int getId() {
 		return this.objectId;
 	}
 
-	public int getObjectX() {
+	public int getX() {
 		return this.objectX;
 	}
 
-	public int getObjectY() {
+	public int getY() {
 		return this.objectY;
 	}
 
-	public int getObjectHeight() {
+	public int getHeight() {
 		return this.objectHeight;
 	}
 
-	public int getObjectFace() {
+	public int getFace() {
 		return this.objectFace;
 	}
 
-	public int getObjectType() {
+	public int getType() {
 		return this.objectType;
 	}
 

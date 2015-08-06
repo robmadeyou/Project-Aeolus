@@ -196,7 +196,7 @@ public class Trading {
 			for(int a = 0; a < amount; a++) {
 				if(c.getItems().playerHasItem(itemID, 1)) {
 					offeredItems.add(new GameItem(itemID, 1));	
-					c.getItems().deleteItem(itemID, c.getItems().getItemSlot(itemID), 1);
+					c.getItems().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
 					o.getPA().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getItems().freeSlots()+" free slots" ,3417);	
 				}
 			}
@@ -219,7 +219,7 @@ public class Trading {
 				if(item.id == itemID) {
 					inTrade = true;
 					item.amount += amount;
-					c.getItems().deleteItem(itemID, c.getItems().getItemSlot(itemID), amount);
+					c.getItems().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), amount);
 					o.getPA().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getItems().freeSlots()+" free slots" ,3417);	
 					break;	
 				}

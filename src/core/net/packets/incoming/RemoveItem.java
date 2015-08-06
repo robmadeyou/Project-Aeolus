@@ -22,7 +22,7 @@ public class RemoveItem implements PacketType {
 		switch(interfaceId) {
 			
 			case 1688:
-			c.getItems().removeItem(removeId, removeSlot);
+			c.getEquipment().removeItem(removeId, removeSlot);
 			break;
 			
 			case 5064:

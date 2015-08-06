@@ -247,7 +247,7 @@ public class ShopAssistant {
 				TotPrice2 = (int)Math.floor(getItemShopValue(itemID, 1, fromSlot));
 				if (c.getItems().freeSlots() > 0 || c.getItems().playerHasItem(995)) {
 					if (Item.itemIsNote[itemID] == false) {
-						c.getItems().deleteItem(itemID, c.getItems().getItemSlot(itemID), 1);
+						c.getItems().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
 					} else {
 						c.getItems().deleteItem(itemID, fromSlot, 1);
 					}
@@ -314,8 +314,8 @@ public class ShopAssistant {
 			int Slot2 = 0;//Pking Points
 			for (int i = amount; i > 0; i--) {
 				TotPrice2 = (int)Math.floor(getItemShopValue(itemID, 0, fromSlot));
-				Slot = c.getItems().getItemSlot(995);
-				Slot1 = c.getItems().getItemSlot(6529);
+				Slot = c.getEquipment().getItemSlot(995);
+				Slot1 = c.getEquipment().getItemSlot(6529);
 				if (Slot == -1 && c.myShopId != 29 && c.myShopId != 30 && c.myShopId != 31 && c.myShopId != 47) {
 					c.sendMessage("You don't have enough coins.");
 					break;
@@ -331,7 +331,7 @@ public class ShopAssistant {
                 if(c.myShopId != 29 || c.myShopId != 30 || c.myShopId != 31 || c.myShopId != 47) {
 					if (c.playerItemsN[Slot] >= TotPrice2) {
 						if (c.getItems().freeSlots() > 0) {
-							c.getItems().deleteItem(995, c.getItems().getItemSlot(995), TotPrice2);
+							c.getItems().deleteItem(995, c.getEquipment().getItemSlot(995), TotPrice2);
 							c.getItems().addItem(itemID, 1);
 							ShopHandler.ShopItemsN[c.myShopId][fromSlot] -= 1;
 							ShopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
@@ -350,7 +350,7 @@ public class ShopAssistant {
                 if(c.myShopId == 29 || c.myShopId == 30 || c.myShopId == 31) {
                 	if (c.playerItemsN[Slot1] >= TotPrice2) {
 						if (c.getItems().freeSlots() > 0) {
-							c.getItems().deleteItem(6529, c.getItems().getItemSlot(6529), TotPrice2);
+							c.getItems().deleteItem(6529, c.getEquipment().getItemSlot(6529), TotPrice2);
 							c.getItems().addItem(itemID, 1);
 							ShopHandler.ShopItemsN[c.myShopId][fromSlot] -= 1;
 							ShopHandler.ShopItemsDelay[c.myShopId][fromSlot] = 0;
@@ -441,7 +441,7 @@ public class ShopAssistant {
 					if (c.getItems().freeSlots() > 1) {
 						if (c.getItems().playerHasItem(995,99000)) {
 							if (c.getLevelForXP(c.playerXP[j]) >= 99) {
-								c.getItems().deleteItem(995, c.getItems().getItemSlot(995), 99000);
+								c.getItems().deleteItem(995, c.getEquipment().getItemSlot(995), 99000);
 								c.getItems().addItem(skillCapes[j] + nn,1);
 								c.getItems().addItem(skillCapes[j] + 2,1);
 							} else {

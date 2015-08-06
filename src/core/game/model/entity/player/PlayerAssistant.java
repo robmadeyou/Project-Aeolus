@@ -1136,9 +1136,9 @@ public class PlayerAssistant{
 				c.lastVeng = System.currentTimeMillis();
 				c.startAnimation(4410);
 				c.gfx100(726);
-				c.getItems().deleteItem(557,c.getItems().getItemSlot(557),10);
-				c.getItems().deleteItem(560,c.getItems().getItemSlot(560),2);
-				c.getItems().deleteItem(9075,c.getItems().getItemSlot(9075),4);
+				c.getItems().deleteItem(557,c.getEquipment().getItemSlot(557),10);
+				c.getItems().deleteItem(560,c.getEquipment().getItemSlot(560),2);
+				c.getItems().deleteItem(9075,c.getEquipment().getItemSlot(9075),4);
 			} else {
 				c.sendMessage("You do not have the required runes to cast this spell. (9075 for astrals)");
 			}

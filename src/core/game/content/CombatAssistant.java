@@ -211,7 +211,7 @@ public class CombatAssistant {
                     // hit
                     // delay
                     c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
-                    c.getItems().deleteEquipment();
+                    c.getEquipment().deleteEquipment();
                     c.gfx100(getRangeStartGFX());
                     c.lastArrowUsed = 0;
                     c.hitDelay = getHitDelay(c.getEquipment().getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase());
@@ -261,14 +261,14 @@ public class CombatAssistant {
                         // the
                         // first
                         // shot
-                        c.getItems().wearItem(4214, 1, 3);
+                        c.getEquipment().wearItem(4214, 1, 3);
                     }
 
                     if (c.crystalBowArrowCount >= 250) {
                         switch (c.playerEquipment[c.playerWeapon]) {
 
                             case 4223: // 1/10 bow
-                                c.getItems().wearItem(-1, 1, 3);
+                                c.getEquipment().wearItem(-1, 1, 3);
                                 c.sendMessage("Your crystal bow has fully degraded.");
                                 if (!c.getItems().addItem(4207, 1)) {
                                     Server.itemHandler.createGroundItem(c, 4207, c.getX(), c.getY(), 1, c.getId());
@@ -277,7 +277,7 @@ public class CombatAssistant {
                                 break;
 
                             default:
-                                c.getItems().wearItem(++c.playerEquipment[c.playerWeapon], 1, 3);
+                                c.getEquipment().wearItem(++c.playerEquipment[c.playerWeapon], 1, 3);
                                 c.sendMessage("Your crystal bow degrades.");
                                 c.crystalBowArrowCount = 0;
                                 break;
@@ -815,7 +815,7 @@ public class CombatAssistant {
 
                 if (usingOtherRangeWeapons) { // knives, darts, etc hit delay
                     c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
-                    c.getItems().deleteEquipment();
+                    c.getEquipment().deleteEquipment();
                     c.usingRangeWeapon = true;
                     c.followId = Server.playerHandler.players[c.playerIndex].slot;
                     c.getPA().followPlayer();
@@ -888,14 +888,14 @@ public class CombatAssistant {
                         // the
                         // first
                         // shot
-                        c.getItems().wearItem(4214, 1, 3);
+                        c.getEquipment().wearItem(4214, 1, 3);
                     }
 
                     if (c.crystalBowArrowCount >= 250) {
                         switch (c.playerEquipment[c.playerWeapon]) {
 
                             case 4223: // 1/10 bow
-                                c.getItems().wearItem(-1, 1, 3);
+                                c.getEquipment().wearItem(-1, 1, 3);
                                 c.sendMessage("Your crystal bow has fully degraded.");
                                 if (!c.getItems().addItem(4207, 1)) {
                                     Server.itemHandler.createGroundItem(c, 4207, c.getX(), c.getY(), 1, c.getId());
@@ -904,7 +904,7 @@ public class CombatAssistant {
                                 break;
 
                             default:
-                                c.getItems().wearItem(++c.playerEquipment[c.playerWeapon], 1, 3);
+                                c.getEquipment().wearItem(++c.playerEquipment[c.playerWeapon], 1, 3);
                                 c.sendMessage("Your crystal bow degrades.");
                                 c.crystalBowArrowCount = 0;
                                 break;
@@ -3325,19 +3325,19 @@ public class CombatAssistant {
         if (c.usingMagic && Config.RUNES_REQUIRED) {
             if (c.MAGIC_SPELLS[spell][8] > 0) { // deleting runes
                 if (!wearingStaff(c.MAGIC_SPELLS[spell][8]))
-                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][8], c.getItems().getItemSlot(c.MAGIC_SPELLS[spell][8]), c.MAGIC_SPELLS[spell][9]);
+                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][8], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][8]), c.MAGIC_SPELLS[spell][9]);
             }
             if (c.MAGIC_SPELLS[spell][10] > 0) {
                 if (!wearingStaff(c.MAGIC_SPELLS[spell][10]))
-                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][10], c.getItems().getItemSlot(c.MAGIC_SPELLS[spell][10]), c.MAGIC_SPELLS[spell][11]);
+                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][10], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][10]), c.MAGIC_SPELLS[spell][11]);
             }
             if (c.MAGIC_SPELLS[spell][12] > 0) {
                 if (!wearingStaff(c.MAGIC_SPELLS[spell][12]))
-                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][12], c.getItems().getItemSlot(c.MAGIC_SPELLS[spell][12]), c.MAGIC_SPELLS[spell][13]);
+                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][12], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][12]), c.MAGIC_SPELLS[spell][13]);
             }
             if (c.MAGIC_SPELLS[spell][14] > 0) {
                 if (!wearingStaff(c.MAGIC_SPELLS[spell][14]))
-                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][14], c.getItems().getItemSlot(c.MAGIC_SPELLS[spell][14]), c.MAGIC_SPELLS[spell][15]);
+                    c.getItems().deleteItem(c.MAGIC_SPELLS[spell][14], c.getEquipment().getItemSlot(c.MAGIC_SPELLS[spell][14]), c.MAGIC_SPELLS[spell][15]);
             }
         }
         return true;
