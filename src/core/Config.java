@@ -32,7 +32,12 @@ public class Config {
 	public static final String FORUMS = "your forums here";
 	
 	/**
-	 * 
+	 * Toggles the ability to log player chat messages
+	 */
+	public static final boolean logChat = false;
+	
+	/**
+	 * Toggles the ability for players to swear
 	 */
 	public static final boolean enableCensor = true;
 	

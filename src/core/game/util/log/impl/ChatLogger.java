@@ -21,7 +21,8 @@ public class ChatLogger {
 		this.c = c;
 	}
 
-	public void logMasterChat(String message) {		
+	public void logMasterChat(String message) {
+		if (Config.logChat) {
 		if (c.getRights().equal(Rights.PLAYER)) {
 			try {
 				BufferedWriter bItem = new BufferedWriter(new FileWriter(
@@ -62,8 +63,10 @@ public class ChatLogger {
 			}
 		}
 	}
+	}
 
 	public void logChat(String message) {
+		if (Config.logChat) {
 		if (c.getRights().equal(Rights.PLAYER)) {
 			try {
 				BufferedWriter bItem = new BufferedWriter(new FileWriter(
@@ -103,5 +106,6 @@ public class ChatLogger {
 				e.printStackTrace();
 			}
 		}
+	}
 	}
 }
