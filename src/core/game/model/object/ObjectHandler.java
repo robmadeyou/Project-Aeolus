@@ -13,7 +13,9 @@ import core.Config;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
+import core.game.util.JsonSaver;
 import core.game.util.Misc;
+import core.game.util.json.GlobalObjectLoader;
 
 /**
  * @author Sanity
@@ -25,13 +27,11 @@ public class ObjectHandler {
 	/**
 	 * List datatype used to store all the global objects
 	 */
-	public List<Objects> globalObjects = new ArrayList<Objects>();
+	public static List<Objects> globalObjects = new ArrayList<Objects>();
 
-	/**
-	 * Constructor used to load the global objects
-	 */
+
 	public ObjectHandler() {
-		loadGlobalObjects(Config.DATA_DIR + "json/global_objects.json");
+		new GlobalObjectLoader().load();
 	}
 
 	/**
@@ -53,8 +53,7 @@ public class ObjectHandler {
 	 **/
 	public Objects objectExists(int objectX, int objectY, int objectHeight) {
 		for (Objects o : globalObjects) {
-			if (o.getX() == objectX && o.getY() == objectY
-					&& o.getHeight() == objectHeight) {
+			if (o.getX() == objectX && o.getY() == objectY && o.getHeight() == objectHeight) {
 				return o;
 			}
 		}
@@ -69,9 +68,7 @@ public class ObjectHandler {
 			if (c != null) {
 				if (c.heightLevel == o.getHeight() && o.objectTicks == 0) {
 					if (c.distanceToPoint(o.getX(), o.getY()) <= 60) {
-						c.getPA().object(o.getId(), o.getX(),
-								o.getY(), o.getFace(),
-								o.getType());
+						c.getPA().object(o.getId(), o.getX(), o.getY(), o.getFace(), o.getType());
 					}
 				}
 			}
@@ -89,15 +86,11 @@ public class ObjectHandler {
 			if (p != null) {
 				Player person = p;
 				if (person != null) {
-					if (person.heightLevel == o.getHeight()
-							&& o.objectTicks == 0) {
-						if (person.distanceToPoint(o.getX(),
-								o.getY()) <= 60) {
+					if (person.heightLevel == o.getHeight() && o.objectTicks == 0) {
+						if (person.distanceToPoint(o.getX(), o.getY()) <= 60) {
 							removeAllObjects(o);
 							globalObjects.add(o);
-							person.getPA().object(o.getId(),
-									o.getX(), o.getY(),
-									o.getFace(), o.getType());
+							person.getPA().object(o.getId(), o.getX(), o.getY(), o.getFace(), o.getType());
 						}
 					}
 				}
@@ -110,8 +103,7 @@ public class ObjectHandler {
 	 */
 	public void removeAllObjects(Objects o) {
 		for (Objects s : globalObjects) {
-			if (s.getX() == o.objectX && s.getY() == o.objectY
-					&& s.getHeight() == o.getHeight()) {
+			if (s.getX() == o.objectX && s.getY() == o.objectY && s.getHeight() == o.getHeight()) {
 				globalObjects.remove(s);
 				break;
 			}
@@ -119,8 +111,8 @@ public class ObjectHandler {
 	}
 
 	/**
-	 * The tick method for global objects,
-	 * used for adding and removing global objects
+	 * The tick method for global objects, used for adding and removing global
+	 * objects
 	 */
 	public void process() {
 		for (int j = 0; j < globalObjects.size(); j++) {
@@ -130,8 +122,7 @@ public class ObjectHandler {
 					o.objectTicks--;
 				}
 				if (o.objectTicks == 1) {
-					Objects deleteObject = objectExists(o.getX(),
-							o.getY(), o.getHeight());
+					Objects deleteObject = objectExists(o.getX(), o.getY(), o.getHeight());
 					removeObject(deleteObject);
 					o.objectTicks = 0;
 					placeObject(o);
@@ -141,28 +132,26 @@ public class ObjectHandler {
 
 		}
 	}
-	
+
 	/**
-	 * Deserializes the global_objects.json file and stores the objects in the
+	 * Serializes the global_objects.json file and stores the objects in the
 	 * in the List @see globalObjects
 	 */
-	public void loadGlobalObjects(String filename) {
+	public void savesGlobalObjects(String filename) {
 		Gson gson = new Gson();
-		
-		try {
-			System.out.println("Reading file");
-			
-			BufferedReader br = new BufferedReader(new FileReader(filename));
-			
-			Objects obj = gson.fromJson(br, Objects.class);
-			
-			Objects object = new Objects(obj.getId(), obj.getType(), obj.getX(), obj.getY(),
-					obj.getHeight(), obj.getFace(), 0);
+		JsonSaver json = new JsonSaver();
+		Objects object = new Objects(0, 0, 0, 0, 0, 0, 0);
+			json.current().addProperty("objectId", object.getId());
+			json.current().addProperty("objectX", object.getX());
+			json.current().addProperty("objectY", object.getY());
+			json.current().addProperty("objectHeight", object.getHeight());
+			json.current().addProperty("objectFace", object.getFace());
+			json.current().addProperty("objectType", object.getType());
+			json.current().addProperty("objectTicks", 0);
+			json.split();
 			addObject(object);
-			
-			System.out.println("Created: " + globalObjects.size() + " Global Objects");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
+		json.publish(filename);
+		System.out.println("Created: " + globalObjects.size() + " Global Objects");
 	}
 }

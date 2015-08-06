@@ -1,9 +1,11 @@
-{
-  "objectId": 5,
-  "objectX": 3086,
-  "objectY": 3495,
-  "objectHeight": 0,
-  "objectFace": 2,
-  "objectType": 0,
-  "objectTicks": 0
-}
+[
+  {
+    "objectId": 0,
+    "objectX": 0,
+    "objectY": 0,
+    "objectHeight": 0,
+    "objectFace": 0,
+    "objectType": 0,
+    "objectTicks": 0
+  }
+]

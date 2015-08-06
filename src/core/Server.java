@@ -23,6 +23,7 @@ import core.game.model.object.ObjectManager;
 import core.game.model.shop.ShopHandler;
 import core.game.plugin.PluginManager;
 import core.game.util.Misc;
+import core.game.util.json.GlobalObjectLoader;
 import core.game.util.json.NpcDefinitionLoader;
 import core.game.util.log.CustomLogger;
 import core.game.world.StillGraphicsManager;
