@@ -44,10 +44,9 @@ public class NPCHandler {
 		if (loaded == null) {
 			System.out.println("Failed to load");
 		}
-
 		for (NPCSpawns spawn : loaded) {
 			newNPC(spawn);
-		}			
+		}
 
 		Misc.println("Loaded: "+NPCSpawns.NpcSpawnBuilder.deserialize().length+" Npc Spawns");
 	}
@@ -864,9 +863,6 @@ public class NPCHandler {
 		int hp = getNpcListHP(s.getNpcId());
 		newNPC.HP = hp;
 		newNPC.maxHP = hp;
-		newNPC.maxHit = s.getMaxHit();
-		newNPC.attack = s.getAttack();
-		newNPC.defence = s.getDefence();
 		npcs[slot] = newNPC;
 	}
 

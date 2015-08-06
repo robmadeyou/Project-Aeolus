@@ -8,6 +8,9 @@ import com.google.gson.GsonBuilder;
 
 import core.Config;
 
+/**
+ * @author 7Winds
+ */
 public final class NPCSpawns {
 
 	/**
@@ -35,31 +38,12 @@ public final class NPCSpawns {
 	 */
 	private int walkType;
 
-	/**
-	 * The highest possible hit for the npc.
-	 */
-	private int maxHit;
-
-	/**
-	 * The attack level of the npc.
-	 */
-	private int attack;
-
-	/**
-	 * The defence level of the npc.
-	 */
-	private int defence;
-
-	public NPCSpawns(int npcid, int xPos, int yPos, int height, int walkType,
-			int maxHit, int attack, int defence) {
+	public NPCSpawns(int npcid, int xPos, int yPos, int height, int walkType) {
 		this.npcId = npcid;
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.height = height;
 		this.walkType = walkType;
-		this.maxHit = maxHit;
-		this.attack = attack;
-		this.defence = defence;
 	}
 
 	/**
@@ -95,27 +79,6 @@ public final class NPCSpawns {
 	 */
 	public int getWalkType() {
 		return walkType;
-	}
-
-	/**
-	 * @return maxHit
-	 */
-	public int getMaxHit() {
-		return maxHit;
-	}
-
-	/**
-	 * @return attack
-	 */
-	public int getAttack() {
-		return attack;
-	}
-
-	/**
-	 * @return defence
-	 */
-	public int getDefence() {
-		return defence;
 	}
 
 	public static final class NpcSpawnBuilder {
