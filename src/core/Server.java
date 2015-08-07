@@ -13,6 +13,7 @@ import org.jboss.netty.util.HashedWheelTimer;
 
 import core.game.event.task.Task2;
 import core.game.event.task.TaskScheduler;
+import core.game.model.entity.npc.NPCDrops;
 import core.game.model.entity.npc.NPCHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
@@ -163,6 +164,7 @@ public class Server {
 		objectHandler = new ObjectHandler();
 		ItemTableManager.load();
 		new NpcDefinitionLoader().load();
+		new NPCDrops().load();
 		npcHandler.build();
 		
 		long startTime = System.currentTimeMillis();
