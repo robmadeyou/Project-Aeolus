@@ -54,3 +54,14 @@
 ~ August 3, 2015
 - Chat logs, Trade logs, and Report logs made
 - Clipping system added, tested and works great.
+
+~ August 6, 2015
+- Global objects are now loading through json
+- Cleaned out Item Assistant, created 2 new classes that act as containers. Inventory, and Equipment
+- Reformatted NPCSpawns which now use pretty printing for readability.
+- Removed maxHit, attack, and defense from npc_spawns.json, they will be loaded through NPCDefinitions
+
+~ August 8, 2015
+- Now fully working songs and sound effects
+- Removed all the individual item files, now using a complete 602 Item Definitions
+
