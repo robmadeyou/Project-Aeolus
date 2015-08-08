@@ -17,5 +17,7 @@ public class ClickItem implements PacketType {
 		if (itemId != c.playerItems[itemSlot] - 1) {
 			return;
 		}
+		if (c.getFood().isFood(itemId))
+			c.getFood().eat(itemId, itemSlot);
 	}
 }

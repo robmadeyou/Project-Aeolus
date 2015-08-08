@@ -12,6 +12,7 @@ import core.Config;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
+import core.game.sound.region.RegionalMusic;
 import core.game.util.Misc;
 
 public class PlayerSave {
@@ -70,10 +71,10 @@ public class PlayerSave {
 				case 2:
 					if (token.equals("character-height")) {
 						p.heightLevel = Integer.parseInt(token2);
-					} else if (token.equals("character-posx")) {
+					} else if (token.equals("character-xPos")) {
 						p.teleportToX = (Integer.parseInt(token2) <= 0 ? 3210
 								: Integer.parseInt(token2));
-					} else if (token.equals("character-posy")) {
+					} else if (token.equals("character-yPos")) {
 						p.teleportToY = (Integer.parseInt(token2) <= 0 ? 3424
 								: Integer.parseInt(token2));
 					} else if (token.equals("character-rights")) {
@@ -93,7 +94,15 @@ public class PlayerSave {
 						p.autoRet = Integer.parseInt(token2);
 					} else if (token.equals("flagged")) {
 						p.accountFlagged = Boolean.parseBoolean(token2);
-					}
+					} else if (token.equals("enableMusic")) {
+						Config.enableMusic = Boolean.parseBoolean(token2);
+					} else if (token.equals("enableSound")) {
+						Config.enableSound = Boolean.parseBoolean(token2);
+					} else if (token.equals("music-unlocked")) {
+						for (int j = 0; j < token3.length; j++) {
+							RegionalMusic.unlocked[j] = Boolean.parseBoolean(token3[j]);
+						}
+					} 
 					break;
 				case 3:
 					if (token.equals("character-equip")) {
@@ -231,11 +240,11 @@ public class PlayerSave {
 			characterfile.write(Integer.toString(p.heightLevel), 0, Integer
 					.toString(p.heightLevel).length());
 			characterfile.newLine();
-			characterfile.write("character-posx = ", 0, 17);
+			characterfile.write("character-xPos = ", 0, 17);
 			characterfile.write(Integer.toString(p.absX), 0,
 					Integer.toString(p.absX).length());
 			characterfile.newLine();
-			characterfile.write("character-posy = ", 0, 17);
+			characterfile.write("character-yPos = ", 0, 17);
 			characterfile.write(Integer.toString(p.absY), 0,
 					Integer.toString(p.absY).length());
 			characterfile.newLine();
@@ -270,6 +279,21 @@ public class PlayerSave {
 			characterfile.write("flagged = ", 0, 10);
 			characterfile.write(Boolean.toString(p.accountFlagged), 0, Boolean
 					.toString(p.accountFlagged).length());
+			characterfile.newLine();
+			characterfile.write("enableMusic = ");
+			characterfile.write(Boolean.toString(Config.enableMusic), 0, Boolean
+					.toString(Config.enableMusic).length());
+			characterfile.newLine();
+			characterfile.write("enableSound = ");
+			characterfile.write(Boolean.toString(Config.enableSound), 0, Boolean
+					.toString(Config.enableSound).length());
+			characterfile.newLine();
+			characterfile.write("music-unlocked = ", 0, 17);			
+			String music = "";
+			for (int i = 0; i < RegionalMusic.unlocked.length; i++)
+				music += RegionalMusic.unlocked[i] + "\t";
+			characterfile.write(music);
+			characterfile.newLine();
 			characterfile.newLine();
 
 			/* EQUIPMENT */

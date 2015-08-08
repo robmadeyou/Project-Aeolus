@@ -38,6 +38,10 @@ public class DropItem implements PacketType {
 				}
 				Server.itemHandler.createGroundItem(c, itemId, c.getX(), c.getY(), c.playerItemsN[slot], c.getId());
 				c.getInventory().deleteItem(itemId, slot, c.playerItemsN[slot]);
+				if (Config.enableSound) {
+					c.sendMessage("test");
+					c.getPA().sendSound(c.getSound().DROPITEM);
+				}
 			} else {
 				c.sendMessage("This items cannot be dropped.");
 			}

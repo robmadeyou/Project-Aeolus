@@ -9,11 +9,13 @@ import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
 
 import core.Config;
+import core.Server;
 import core.game.GameConstants;
 import core.game.content.CombatAssistant;
 import core.game.content.ContentManager;
 import core.game.content.DialogueHandler;
 import core.game.content.PlayerKilling;
+import core.game.content.consumables.Food;
 import core.game.event.tick.Scheduler;
 import core.game.event.tick.Tick;
 import core.game.model.entity.Entity;
@@ -25,6 +27,8 @@ import core.game.model.entity.player.save.PlayerSave;
 import core.game.model.item.Item;
 import core.game.model.item.ItemAssistant;
 import core.game.model.shop.ShopAssistant;
+import core.game.sound.effects.SoundEffects;
+import core.game.sound.region.RegionalMusic;
 import core.game.util.Censor;
 import core.game.util.Misc;
 import core.game.util.Stream;
@@ -57,7 +61,9 @@ public class Player extends Entity {
 	private TradeLogger tradeLog = new TradeLogger(this);
 	private ChatLogger chatLog = new ChatLogger(this);
 	private Censor censor = new Censor(this);
-	private Inventory inventory = new Inventory(this);
+	private Inventory inventory = new Inventory(this);	
+	public SoundEffects soundEffects = new SoundEffects(this);
+	private Food food = new Food(this);
 
 	public int lowMemoryVersion = 0;
 	public int timeOutCounter = 0;
@@ -2042,6 +2048,7 @@ public class Player extends Entity {
 			prayerActive[p] = false;
 			getPA().sendFrame36(PRAYER_GLOW[p], 0);
 		}
+		loadRegion();
 		getPA().handleWeaponStyle();
 		accountFlagged = getPA().checkForFlags();
 		// getPA().sendFrame36(43, fightMode-1);
@@ -2049,25 +2056,7 @@ public class Player extends Entity {
 		getPA().sendFrame36(172, 1);
 		getPA().sendFrame107(); // reset screen
 		getPA().setChatOptions(0, 0, 0); // reset private messaging options
-		setSidebarInterface(1, 3917);
-		setSidebarInterface(2, 638);
-		setSidebarInterface(3, 3213);
-		setSidebarInterface(4, 1644);
-		setSidebarInterface(5, 5608);
-		if (playerMagicBook == 0) {
-			setSidebarInterface(6, 1151); // modern
-		} else {
-			setSidebarInterface(6, 12855); // ancient
-		}
-		// setSidebarInterface(7, 18128);
-		setSidebarInterface(8, 5065);
-		setSidebarInterface(9, 5715);
-		setSidebarInterface(10, 2449);
-		// setSidebarInterface(11, 4445); // wrench tab
-		setSidebarInterface(11, 904); // wrench tab
-		setSidebarInterface(12, 147); // run tab
-		setSidebarInterface(13, -1);
-		setSidebarInterface(0, 2423);
+		getPA().setSideBarInterfaces(this, true);
 		sendMessage("Welcome to " + Config.SERVER_NAME);
 		getPA().showOption(5, 0, "Follow", 4);
 		getPA().showOption(4, 0, "Trade With", 3);
@@ -2105,7 +2094,14 @@ public class Player extends Entity {
 		else
 			getPA().sendFrame36(172, 0);
 	}
-
+	
+	private void loadRegion() {
+		if (Config.enableMusic)
+		RegionalMusic.playMusic(this);
+		Server.itemHandler.reloadItems(this);
+		Server.objectManager.loadObjects(this);
+	}
+	
 	public void update() {
 		synchronized (this) {
 			handler.updatePlayer(this, outStream);
@@ -2129,6 +2125,8 @@ public class Player extends Entity {
 
 	@Override
 	public void process() {
+		this.getPA().sendFrame126((int) (specAmount * 10)+"", 155);
+		
 		if (System.currentTimeMillis() - specDelay > GameConstants.INCREASE_SPECIAL_AMOUNT) {
 			specDelay = System.currentTimeMillis();
 			if (specAmount < 10) {
@@ -2488,7 +2486,15 @@ public class Player extends Entity {
 	public void setOutStreamDecryption(ISAACCipher outStreamDecryption) {
 		this.outStreamDecryption = outStreamDecryption;
 	}
+	
+	public SoundEffects getSound() {
+		return soundEffects;
+	}
 
+	public Food getFood() {
+		return food;
+	}
+	
 	@Override
 	public void initAttributes() {
 		this.getAttributes().put("isBusy", Boolean.FALSE);

@@ -18,6 +18,7 @@ import core.game.model.entity.Hit;
 import core.game.model.entity.npc.NPCSpawns.NpcSpawnBuilder;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
+import core.game.sound.effects.SoundEffects;
 import core.game.util.JsonSaver;
 import core.game.util.Misc;
 
@@ -1813,6 +1814,10 @@ public class NPCHandler {
 					if (multiAttacks(i)) {
 						multiAttackGfx(i, npcs[i].projectileId);
 						startAnimation(getAttackEmote(i), i);
+						if (Config.enableSound) {
+							c.getPA().sendSound(SoundEffects
+									.getNpcAttackSounds(npcs[i].npcType));
+						}
 						npcs[i].oldIndex = c.playerId;
 						return;
 					}

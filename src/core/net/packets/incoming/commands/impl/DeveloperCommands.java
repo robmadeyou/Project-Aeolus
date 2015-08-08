@@ -18,7 +18,17 @@ import core.net.packets.incoming.commands.Command;
 public class DeveloperCommands implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
-		switch (command[0]) {		
+		switch (command[0]) {
+		
+		case "sound":
+			int soundId= Integer.parseInt(command[1]);
+			player.getPA().sendSound(soundId);
+			break;
+			
+		case "music":
+			int musicId = Integer.parseInt(command[1]);
+			player.getPA().sendMusic(player, musicId);
+			break;
 		
 		case "test":
 			player.sendMessage("I have access to developer commands.");

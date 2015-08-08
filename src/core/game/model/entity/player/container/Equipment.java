@@ -622,7 +622,8 @@ public class Equipment {
 			if (!canWearItem) {
 				return false;
 			}
-
+			if (Config.enableSound)
+				c.getPA().sendSound(230);
 			int wearAmount = c.playerItemsN[slot];
 			if (wearAmount < 1) {
 				return false;

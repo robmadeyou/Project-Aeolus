@@ -48,7 +48,7 @@ public class PlayerAssistant{
 	}
 	
 	/**
-	 * Sends a player a sound
+	 * Sends a player a sound effect
 	 */
 	public void sendSound(int soundId) {
 		if (soundId > 0 & c != null && c.outStream != null) {
@@ -60,7 +60,7 @@ public class PlayerAssistant{
 	}
 
 	/**
-	 * Sends a player a sound
+	 * Sends a player a sound effect
 	 */
 	public void sound(int soundId) {
 		if (soundId > 0 && c.outStream != null) {
@@ -72,7 +72,7 @@ public class PlayerAssistant{
 	}
 
 	/**
-	 * Send a player a sound
+	 * Sends a player a sound effect
 	 */
 	public void sendSound2(int i1, int i2, int i3) {
 		c.outStream.createFrame(174);
@@ -86,11 +86,13 @@ public class PlayerAssistant{
 	}
 
 	/**
-	 * Sends regional music
+	 * Sends a song
+	 * @param client
+	 * @param sound
 	 */
-	public void sendMusic(Player client, int soundId) {
+	public void sendMusic(Player client, int songId) {
 		client.outStream.createFrame(74);
-		client.outStream.writeWordBigEndian(soundId);
+		client.outStream.writeWordBigEndian(songId);
 	}
 	
 	public void clearClanChat() {
@@ -123,6 +125,51 @@ public class PlayerAssistant{
 			}
 		}
 		return false;
+	}
+	
+	public void setSideBarInterfaces(Player p, boolean enable) {
+		if(enable) {
+			p.setSidebarInterface(1, 3917);
+			p.setSidebarInterface(2, 638);
+			p.setSidebarInterface(3, 3213);
+			p.setSidebarInterface(4, 1644);
+			p.setSidebarInterface(5, 5608);
+			if (p.playerMagicBook == 0) {
+				p.setSidebarInterface(6, 1151); // modern
+			} else {
+				p.setSidebarInterface(6, 12855); // ancient
+			}
+			p.setSidebarInterface(7, 18128); //clan chat
+			p.setSidebarInterface(8, 5065);
+			p.setSidebarInterface(9, 5715);
+			p.setSidebarInterface(10, 2449);
+			// setSidebarInterface(11, 4445); // wrench tab
+			p.setSidebarInterface(11, 904); // wrench tab
+			p.setSidebarInterface(12, 147); // run tab
+			p.setSidebarInterface(13, 962); //music tab
+			//p.setSidebarInterface(13, -1);
+			p.setSidebarInterface(0, 2423);
+		} else {
+			p.setSidebarInterface(1, -1);
+			p.setSidebarInterface(2, -1);
+			p.setSidebarInterface(3, 6014);//
+			p.setSidebarInterface(4, -1);
+			p.setSidebarInterface(5, -1);
+			if (p.playerMagicBook == 0) {
+				p.setSidebarInterface(6, -1); // modern
+			} else {
+				p.setSidebarInterface(6, -1); // ancient
+			}
+			p.setSidebarInterface(7, 18128); // clan chat
+			p.setSidebarInterface(8, 5065);
+			p.setSidebarInterface(9, 5715);
+			p.setSidebarInterface(10, -1);
+			p.setSidebarInterface(11, -1); // wrench tab
+			p.setSidebarInterface(12, -1); // run tab
+			p.setSidebarInterface(13, -1);
+			p.setSidebarInterface(14, -1);
+			p.setSidebarInterface(0, -1);
+		}
 	}
 	
 	public int freeSlots() {
@@ -1592,10 +1639,6 @@ public class PlayerAssistant{
 		c.followId = 0;
 		c.followId2 = 0;
 		c.mageFollow = false;
-		c.outStream.createFrame(174);
-		c.outStream.writeWord(0);
-		c.outStream.writeByte(0);
-		c.outStream.writeWord(1);
 	}
 	
 	public void walkTo(int dirX, int dirY) {

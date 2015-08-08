@@ -2,6 +2,7 @@ package core.net.packets.incoming;
 
 import core.Server;
 import core.game.model.entity.player.Player;
+import core.game.sound.region.RegionalMusic;
 import core.net.packets.PacketType;
 
 /**
@@ -15,6 +16,7 @@ public class ChangeRegions implements PacketType {
 		Server.itemHandler.reloadItems(player);
 		//Server.objectManager.loadObjects(c);
 		player.updateSigns();
+		RegionalMusic.playMusic(player);
 		player.saveFile = true;
 		if(player.skullTimer > 0) {
 			player.getAttributes().put("isSkulled", Boolean.TRUE);	

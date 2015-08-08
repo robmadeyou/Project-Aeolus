@@ -49,7 +49,7 @@ public class Config {
 	/**
 	 * Toggles the use of regional music
 	 */
-	public static boolean enableMusic = false;
+	public static boolean enableMusic = true;
 	
 	/**
 	 * Toggles the ability for admins to trade
