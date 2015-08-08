@@ -1,3 +1,4 @@
+~ Project Aeolus by: 7Winds (nshusa99@gmail.com)
 ~ July 10, 2015
 - NPCSpawns in json
 - Repackaged source
@@ -64,4 +65,5 @@
 ~ August 8, 2015
 - Now fully working songs and sound effects
 - Removed all the individual item files, now using a complete 602 Item Definitions
+- Added consumables
 
