@@ -3,6 +3,7 @@ package core.game.model.entity.player.container;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
 import core.game.model.item.Item;
+import core.game.model.item.ItemDefinition;
 
 public class Inventory {
 	
@@ -105,11 +106,11 @@ public class Inventory {
 			if (item <= 0) {
 				return false;
 			}
-			if ((((freeSlots() >= 1) || playerHasItem(item, 1)) && Item.itemStackable[item])
-					|| ((freeSlots() > 0) && !Item.itemStackable[item])) {
+			if ((((freeSlots() >= 1) || playerHasItem(item, 1)) && this.getStackable(item))
+					|| ((freeSlots() > 0) && !this.getStackable(item))) {
 				for (int i = 0; i < player.playerItems.length; i++) {
 					if ((player.playerItems[i] == (item + 1))
-							&& Item.itemStackable[item]
+							&& this.getStackable(item)
 							&& (player.playerItems[i] > 0)) {
 						player.playerItems[i] = (item + 1);
 						if (((player.playerItemsN[i] + amount) < GameConstants.MAXITEM_AMOUNT)
@@ -160,6 +161,10 @@ public class Inventory {
 				return false;
 			}
 		}
+	}
+	
+	public boolean getStackable(int itemId) {
+		return ItemDefinition.getDefinitions()[itemId].isStackable();
 	}
 	
 	/**

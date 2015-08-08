@@ -274,11 +274,6 @@ public class Item {
 	}
 
 	/**
-	 * Checks if the item is stackable.
-	 */
-	public static boolean[] itemStackable = new boolean[GameConstants.ITEM_LIMIT];
-
-	/**
 	 * Checks if the item can be made into a note.
 	 */
 	public static boolean[] itemIsNote = new boolean[GameConstants.ITEM_LIMIT];

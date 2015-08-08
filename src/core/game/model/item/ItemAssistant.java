@@ -408,7 +408,7 @@ public class ItemAssistant {
 			if (c.playerItems[fromSlot] <= 0) {
 				return false;
 			}
-			if (Item.itemStackable[c.playerItems[fromSlot] - 1]
+			if (c.getInventory().getStackable(c.playerItems[fromSlot - 1])
 					|| c.playerItemsN[fromSlot] > 1) {
 				int toBankSlot = 0;
 				boolean alreadyInBank = false;
@@ -541,7 +541,7 @@ public class ItemAssistant {
 			if (c.playerItems[fromSlot] <= 0) {
 				return false;
 			}
-			if (Item.itemStackable[c.playerItems[fromSlot] - 1]
+			if (c.getInventory().getStackable(c.playerItems[fromSlot] - 1)
 					|| c.playerItemsN[fromSlot] > 1) {
 				int toBankSlot = 0;
 				boolean alreadyInBank = false;
@@ -692,7 +692,7 @@ public class ItemAssistant {
 		if (amount > 0) {
 			if (c.bankItems[fromSlot] > 0) {
 				if (!c.takeAsNote) {
-					if (Item.itemStackable[c.bankItems[fromSlot] - 1]) {
+					if (c.getInventory().getStackable(c.bankItems[fromSlot] - 1)) {
 						if (c.bankItemsN[fromSlot] > amount) {
 							if (c.getInventory().addItem((c.bankItems[fromSlot] - 1), amount)) {
 								c.bankItemsN[fromSlot] -= amount;
@@ -743,7 +743,7 @@ public class ItemAssistant {
 					}
 				} else {
 					c.sendMessage("This item can't be withdrawn as a note.");
-					if (Item.itemStackable[c.bankItems[fromSlot] - 1]) {
+					if (c.getInventory().getStackable(c.bankItems[fromSlot] - 1)) {
 						if (c.bankItemsN[fromSlot] > amount) {
 							if (c.getInventory().addItem((c.bankItems[fromSlot] - 1), amount)) {
 								c.bankItemsN[fromSlot] -= amount;

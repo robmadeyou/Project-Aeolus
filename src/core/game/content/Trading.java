@@ -114,7 +114,7 @@ public class Trading {
 			}
 		c.tradeConfirmed = false;
 		o.tradeConfirmed = false;
-			if(!Item.itemStackable[itemID]) {
+			if(!c.getInventory().getStackable(itemID)) {
 				for(int a = 0; a < amount; a++) {
 					for (GameItem item : offeredItems) {
 						if(item.id == itemID) {	
@@ -192,10 +192,10 @@ public class Trading {
 		}
 		c.tradeConfirmed = false;
 		o.tradeConfirmed = false;
-		if(!Item.itemStackable[itemID] && !Item.itemIsNote[itemID]) {
+		if(!c.getInventory().getStackable(itemID) && !Item.itemIsNote[itemID]) {
 			for(int a = 0; a < amount; a++) {
 				if(c.getInventory().playerHasItem(itemID, 1)) {
-					offeredItems.add(new GameItem(itemID, 1));	
+					offeredItems.add(new GameItem(c, itemID, 1));	
 					c.getInventory().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
 					o.getPA().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 				}
@@ -213,7 +213,7 @@ public class Trading {
 			return false;
 		}
 		
-		if(Item.itemStackable[itemID] || Item.itemIsNote[itemID]) {
+		if(c.getInventory().getStackable(itemID) || Item.itemIsNote[itemID]) {
 			boolean inTrade = false;
 			for(GameItem item : offeredItems) {
 				if(item.id == itemID) {
@@ -226,7 +226,7 @@ public class Trading {
 			}
 
 			if(!inTrade) {
-				offeredItems.add(new GameItem(itemID, amount));
+				offeredItems.add(new GameItem(c, itemID, amount));
 				c.getInventory().deleteItem(itemID, fromSlot, amount);
 				o.getPA().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 			}

@@ -236,9 +236,9 @@ public class ShopAssistant {
 				}
 			}
 
-			if (amount > c.playerItemsN[fromSlot] && (Item.itemIsNote[(c.playerItems[fromSlot] - 1)] == true || Item.itemStackable[(c.playerItems[fromSlot] - 1)] == true)) {
+			if (amount > c.playerItemsN[fromSlot] && (Item.itemIsNote[(c.playerItems[fromSlot] - 1)] == true || c.getInventory().getStackable((c.playerItems[fromSlot] - 1)) == true)) {
 				amount = c.playerItemsN[fromSlot];
-			} else if (amount > c.getInventory().getItemAmount(itemID) && Item.itemIsNote[(c.playerItems[fromSlot] - 1)] == false && Item.itemStackable[(c.playerItems[fromSlot] - 1)] == false) {
+			} else if (amount > c.getInventory().getItemAmount(itemID) && Item.itemIsNote[(c.playerItems[fromSlot] - 1)] == false && c.getInventory().getStackable((c.playerItems[fromSlot] - 1)) == false) {
 				amount = c.getInventory().getItemAmount(itemID);
 			}
 			//double ShopValue;

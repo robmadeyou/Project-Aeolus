@@ -26,7 +26,7 @@ public class BankAll implements PacketType {
 			break;
 			
 			case 5064:
-			if (Item.itemStackable[removeId]) {
+			if (c.getInventory().getStackable(removeId)) {
 				c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.playerItemsN[removeSlot]);
 			} else {
 				c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.getInventory().itemAmount(c.playerItems[removeSlot]));
@@ -39,13 +39,13 @@ public class BankAll implements PacketType {
 			
 			case 3322:
 			if(c.duelStatus <= 0) { 
-				if(Item.itemStackable[removeId]){
+				if(c.getInventory().getStackable(removeId)){
 					c.getContentManager().getTrading().tradeItem(removeId, removeSlot, c.playerItemsN[removeSlot]);
 		    	} else {
 					c.getContentManager().getTrading().tradeItem(removeId, removeSlot, 28);  
 				}
 			} else {
-				if(Item.itemStackable[removeId] || Item.itemIsNote[removeId]) {
+				if(c.getInventory().getStackable(removeId) || Item.itemIsNote[removeId]) {
 					c.getContentManager().getDueling().stakeItem(removeId, removeSlot, c.playerItemsN[removeSlot]);
 				} else {
 					c.getContentManager().getDueling().stakeItem(removeId, removeSlot, 28);
@@ -55,7 +55,7 @@ public class BankAll implements PacketType {
 			
 			case 3415: 
 			if(c.duelStatus <= 0) { 
-				if(Item.itemStackable[removeId]) {
+				if(c.getInventory().getStackable(removeId)) {
 					for (GameItem item : c.getContentManager().getTrading().offeredItems) {
 						if(item.id == removeId) {
 							c.getContentManager().getTrading().fromTrade(removeId, removeSlot, c.getContentManager().getTrading().offeredItems.get(removeSlot).amount);
@@ -72,7 +72,7 @@ public class BankAll implements PacketType {
 			break;
 			
 			case 7295:
-			if (Item.itemStackable[removeId]) {
+			if (c.getInventory().getStackable(removeId)) {
 			c.getItems().bankItem(c.playerItems[removeSlot] , removeSlot, c.playerItemsN[removeSlot]);
 			c.getInventory().resetItems(7423);
 			} else {
@@ -82,7 +82,7 @@ public class BankAll implements PacketType {
 			break;
 			
 			case 6669:
-			if(Item.itemStackable[removeId] || Item.itemIsNote[removeId]) {
+			if(c.getInventory().getStackable(removeId) || Item.itemIsNote[removeId]) {
 				for (GameItem item : c.getContentManager().getDueling().stakedItems) {
 					if(item.id == removeId) {
 						c.getContentManager().getDueling().fromDuel(removeId, removeSlot, c.getContentManager().getDueling().stakedItems.get(removeSlot).amount);

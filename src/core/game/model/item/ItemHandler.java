@@ -185,7 +185,7 @@ public class ItemHandler {
 					}
 				}
 			}
-			if (!core.game.model.item.Item.itemStackable[itemId] && itemAmount > 0) {
+			if (!c.getInventory().getStackable(itemId) && itemAmount > 0) {
 				for (int j = 0; j < itemAmount; j++) {
 					c.getItems().createGroundItem(itemId, itemX, itemY, 1);
 					GroundItem item = new GroundItem(itemId, itemX, itemY, 1, c.playerId, HIDE_TICKS, PlayerHandler.players[playerId].playerName);

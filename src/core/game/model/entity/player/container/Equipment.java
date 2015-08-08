@@ -617,7 +617,7 @@ public class Equipment {
 				int toEquipN = c.playerItemsN[slot];
 				int toRemove = c.playerEquipment[targetSlot];
 				int toRemoveN = c.playerEquipmentN[targetSlot];
-				if (toEquip == toRemove + 1 && Item.itemStackable[toRemove]) {
+				if (toEquip == toRemove + 1 && c.getInventory().getStackable(toRemove)) {
 					deleteItem(toRemove, getItemSlot(toRemove), toEquipN);
 					c.playerEquipmentN[targetSlot] += toEquipN;
 				} else if (targetSlot != 5 && targetSlot != 3) {
@@ -1009,11 +1009,11 @@ public class Equipment {
 		if (item <= 0) {
 			return false;
 		}
-		if ((((freeSlots() >= 1) || playerHasItem(item, 1)) && Item.itemStackable[item])
-				|| ((freeSlots() > 0) && !Item.itemStackable[item])) {
+		if ((((freeSlots() >= 1) || playerHasItem(item, 1)) && c.getInventory().getStackable(item))
+				|| ((freeSlots() > 0) && !c.getInventory().getStackable(item))) {
 			for (int i = 0; i < c.playerItems.length; i++) {
 				if ((c.playerItems[i] == (item + 1))
-						&& Item.itemStackable[item] && (c.playerItems[i] > 0)) {
+						&& c.getInventory().getStackable(item) && (c.playerItems[i] > 0)) {
 					c.playerItems[i] = (item + 1);
 					if (((c.playerItemsN[i] + amount) < GameConstants.MAXITEM_AMOUNT)
 							&& ((c.playerItemsN[i] + amount) > -1)) {

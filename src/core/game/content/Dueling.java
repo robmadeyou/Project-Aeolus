@@ -189,10 +189,10 @@ public class Dueling {
 			return false;
 		}
 		changeDuelStuff();
-		if(!Item.itemStackable[itemID]) {
+		if(!c.getInventory().getStackable(itemID)) {
 			for(int a = 0; a < amount; a++) {
 				if(c.getInventory().playerHasItem(itemID, 1)) {
-					stakedItems.add(new GameItem(itemID, 1));	
+					stakedItems.add(new GameItem(c, itemID, 1));	
 					c.getInventory().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
 				}
 			}		
@@ -209,7 +209,7 @@ public class Dueling {
 		if(!c.getInventory().playerHasItem(itemID, amount)) {
 			return false;
 		}
-		if (Item.itemStackable[itemID] || Item.itemIsNote[itemID]) {
+		if (c.getInventory().getStackable(itemID) || Item.itemIsNote[itemID]) {
 			boolean found = false;
 			for (GameItem item : stakedItems) {
 				if (item.id == itemID) {
@@ -221,7 +221,7 @@ public class Dueling {
 			}
 			if (!found) {
 				c.getInventory().deleteItem(itemID, fromSlot, amount);
-				stakedItems.add(new GameItem(itemID, amount));
+				stakedItems.add(new GameItem(c, itemID, amount));
 			}
 		}
 		
@@ -248,7 +248,7 @@ public class Dueling {
 			o.getContentManager().getDueling().declineDuel();
 			return false;
 		}
-		if(Item.itemStackable[itemID]) {
+		if(c.getInventory().getStackable(itemID)) {
 			if(c.getInventory().freeSlots() - 1 < (c.duelSpaceReq)) {
 				c.sendMessage("You have too many rules set to remove that item.");
 				return false;
@@ -261,7 +261,7 @@ public class Dueling {
 		
 		changeDuelStuff();
 		boolean goodSpace = true;
-		if(!Item.itemStackable[itemID]) {
+		if(!c.getInventory().getStackable(itemID)) {
 			for(int a = 0; a < amount; a++) {
 				for (GameItem item : stakedItems) {
 					if(item.id == itemID) {
@@ -345,7 +345,7 @@ public class Dueling {
 		}
 		String itemId = "";
 		for(GameItem item : stakedItems) {
-			if(Item.itemStackable[item.id] || Item.itemIsNote[item.id]) {
+			if(c.getInventory().getStackable(item.id) || Item.itemIsNote[item.id]) {
 				itemId += c.getEquipment().getItemName(item.id) + " x " + Misc.format(item.amount) +"\\n";
 			}  else  {
 				itemId += c.getEquipment().getItemName(item.id) + "\\n";
@@ -354,7 +354,7 @@ public class Dueling {
 		c.getPA().sendFrame126(itemId, 6516);
 		itemId = "";
 		for(GameItem item : o.getContentManager().getDueling().stakedItems) {
-			if(Item.itemStackable[item.id] || Item.itemIsNote[item.id]) {
+			if(c.getInventory().getStackable(item.id) || Item.itemIsNote[item.id]) {
 				itemId += c.getEquipment().getItemName(item.id) + " x " + Misc.format(item.amount) +"\\n";
 			} else {
 				itemId += c.getEquipment().getItemName(item.id) +"\\n";
@@ -462,7 +462,7 @@ public class Dueling {
 			c.getPA().refreshSkill(i);
 		}
 		for(GameItem item : o.getContentManager().getDueling().stakedItems) {
-			otherStakedItems.add(new GameItem(item.id, item.amount));
+			otherStakedItems.add(new GameItem(c, item.id, item.amount));
 		}
 		c.getPA().requestUpdates();			
 	}
@@ -524,7 +524,7 @@ public class Dueling {
 	public void claimStakedItems() {
 		for(GameItem item : otherStakedItems) {
 			if(item.id > 0 && item.amount > 0) {
-				if(Item.itemStackable[item.id]) {
+				if(c.getInventory().getStackable(item.id)) {
 					if(!c.getInventory().addItem(item.id, item.amount)) {
 						Server.itemHandler.createGroundItem(c, item.id, c.getX(), c.getY(), item.amount, c.getId());
 					}
@@ -540,7 +540,7 @@ public class Dueling {
 		}
 		for(GameItem item : stakedItems) {
 			if(item.id > 0 && item.amount > 0) {
-				if(Item.itemStackable[item.id]) {
+				if(c.getInventory().getStackable(item.id)) {
 					if(!c.getInventory().addItem(item.id, item.amount)) {
 						Server.itemHandler.createGroundItem(c, item.id, c.getX(), c.getY(), item.amount, c.getId());
 					}
@@ -568,7 +568,7 @@ public class Dueling {
 		c.duelRequested = false;
 		for(GameItem item : stakedItems) {
 			if(item.amount < 1) continue;
-			if(Item.itemStackable[item.id] || Item.itemIsNote[item.id]) {
+			if(c.getInventory().getStackable(item.id) || Item.itemIsNote[item.id]) {
 				c.getInventory().addItem(item.id, item.amount);
 			} else  {
 				c.getInventory().addItem(item.id, 1);
