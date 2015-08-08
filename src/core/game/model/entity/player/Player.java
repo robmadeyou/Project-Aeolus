@@ -99,13 +99,13 @@ public class Player extends Entity {
 
 	dtOption = false, dtOption2 = false, doricOption = false, doricOption2 = false, caOption2 = false,
 			caOption2a = false, caOption4a = false, caOption4b = false, caOption4c = false, caPlayerTalk1 = false,
-			disableAttEvt = false, AttackEventRunning = false, npcindex, spawned = false;
+			disableAttEvt = false, AttackEventRunning = false, npcindex, spawned = false, autoRet = false;
 
 	public int saveDelay, playerKilled, stotalPlayerDamageDealt, killedBy, lastChatId = 1, privateChat, friendSlot = 0,
 			dialogueId, randomCoffin, newLocation, specEffect, specBarId, attackLevelReq, defenceLevelReq,
 			strengthLevelReq, rangeLevelReq, magicLevelReq, followId, skullTimer, nextChat = 0, talkingNpc = -1,
 			dialogueAction = 0, autocastId, followDistance, followId2, barrageCount = 0, delayedDamage = 0,
-			delayedDamage2 = 0, lastArrowUsed = -1, clanId = -1, autoRet = 0, xInterfaceId = 0, xRemoveId = 0,
+			delayedDamage2 = 0, lastArrowUsed = -1, clanId = -1, xInterfaceId = 0, xRemoveId = 0,
 			xRemoveSlot = 0, frozenBy = 0, poisonDamage = 0, teleAction = 0, bonusAttack = 0, lastNpcAttacked = 0,
 			killCount = 0, actionTimer, height = 0;
 
@@ -2054,6 +2054,7 @@ public class Player extends Entity {
 		// getPA().sendFrame36(43, fightMode-1);
 		getPA().sendFrame36(108, 0);// resets autocast button
 		getPA().sendFrame36(172, 1);
+		getPA().sendFrame36(507, 1); //Brightness Level 3
 		getPA().sendFrame107(); // reset screen
 		getPA().setChatOptions(0, 0, 0); // reset private messaging options
 		getPA().setSideBarInterfaces(this, true);
@@ -2089,7 +2090,7 @@ public class Player extends Entity {
 
 		if (addStarter)
 			getPA().addStarter();
-		if (autoRet == 1)
+		if (autoRet)
 			getPA().sendFrame36(172, 1);
 		else
 			getPA().sendFrame36(172, 0);

@@ -33,6 +33,10 @@ public class FirstClickButton {
 		MusicTab.handleClick(c, actionButtonId);
 		switch (actionButtonId) {
 		
+		case 89061:
+			c.autoRet = !c.autoRet;
+			break;
+		
 		/**
 		 * Dialogue Options
 		 */			

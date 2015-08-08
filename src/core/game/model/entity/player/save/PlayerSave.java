@@ -91,7 +91,7 @@ public class PlayerSave {
 						p.teleBlockDelay = System.currentTimeMillis();
 						p.teleBlockLength = Integer.parseInt(token2);
 					} else if (token.equals("autoRet")) {
-						p.autoRet = Integer.parseInt(token2);
+						p.autoRet = Boolean.parseBoolean(token2);
 					} else if (token.equals("flagged")) {
 						p.accountFlagged = Boolean.parseBoolean(token2);
 					} else if (token.equals("enableMusic")) {
@@ -273,7 +273,7 @@ public class PlayerSave {
 					Integer.toString(tbTime).length());
 			characterfile.newLine();
 			characterfile.write("autoRet = ", 0, 10);
-			characterfile.write(Integer.toString(p.autoRet), 0, Integer
+			characterfile.write(Boolean.toString(p.autoRet), 0, Boolean
 					.toString(p.autoRet).length());
 			characterfile.newLine();
 			characterfile.write("flagged = ", 0, 10);

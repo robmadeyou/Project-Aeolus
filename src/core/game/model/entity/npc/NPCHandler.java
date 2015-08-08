@@ -1880,7 +1880,7 @@ public class NPCHandler {
 				return;
 			}
 			if (c.playerIndex <= 0 && c.npcIndex <= 0)
-				if (c.autoRet == 1)
+				if (c.autoRet)
 					c.npcIndex = i;
 			if (c.attackTimer <= 3 || c.attackTimer == 0 && c.npcIndex == 0 && c.oldNpcIndex == 0) {
 				c.startAnimation(c.getCombat().getBlockEmote());

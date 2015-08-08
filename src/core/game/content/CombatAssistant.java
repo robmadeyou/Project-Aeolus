@@ -948,7 +948,7 @@ public class CombatAssistant {
             Player o = Server.playerHandler.players[i];
             o.getPA().removeAllWindows();
             if (o.playerIndex <= 0 && o.npcIndex <= 0) {
-                if (o.autoRet == 1) {
+                if (o.autoRet) {
                     o.playerIndex = c.slot;
                 }
             }
