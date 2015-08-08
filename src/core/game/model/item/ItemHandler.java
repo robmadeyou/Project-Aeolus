@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+
 import core.Config;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Player;
@@ -27,6 +31,26 @@ public class ItemHandler {
 	public ItemHandler() {		
 
 	}
+	
+	/**
+     * Parse the item definitions.
+     * 
+     * @throws Exception
+     *         if any errors occur while parsing this file.
+     */
+    public static void loadItemDefinitions() throws JsonIOException, JsonSyntaxException, FileNotFoundException {
+    	final Gson gson = new Gson();
+		final long start = System.currentTimeMillis();
+		System.out.println("Loading item definitions...");
+		try (final FileReader reader = new FileReader(Config.DATA_DIR + "json/item_definitions.json")) {
+			ItemDefinition.setDefinitions(gson.fromJson(reader, ItemDefinition[].class));
+		} catch (IOException e) {
+			System.out.println("Failed to load item definitions!");
+			System.exit(0);
+		} finally {
+			System.out.println("Loaded " + ItemDefinition.getDefinitions().length + " item definitions in " + (System.currentTimeMillis() - start) + "ms.");
+		}
+    }
 	
 	/**
 	* Adds item to list

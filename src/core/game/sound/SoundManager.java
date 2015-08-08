@@ -3,7 +3,7 @@ package core.game.sound;
 import core.Config;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.container.Equipment;
-import core.game.model.item.ItemTableManager;
+import core.game.model.item.ItemDefinition;
 
 /**
  * 
@@ -243,7 +243,7 @@ public class SoundManager {
 		 * Represent's players combat sounds. (when you hit with a weapon)
 		 */
 		case MELEE_COMBAT:
-			final String weaponName = ItemTableManager.forID(id).getName()
+			final String weaponName = ItemDefinition.getDefinitions()[id].getName()
 					.toLowerCase();
 			if (weaponName.contains("scimitar"))
 				p.getPlayerAssistant().sendSound(396);

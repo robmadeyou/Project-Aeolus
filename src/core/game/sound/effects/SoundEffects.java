@@ -2,7 +2,7 @@ package core.game.sound.effects;
 
 import core.game.model.entity.npc.NPCDefinitions;
 import core.game.model.entity.player.Player;
-import core.game.model.item.ItemTableManager;
+import core.game.model.item.ItemDefinition;
 import core.game.util.Misc;
 
 /**
@@ -172,8 +172,8 @@ public class SoundEffects {
 		return NPCDefinitions.getDefinitions()[NpcID].getName();
 	}
 
-	public static String getItemName(int ItemID) {
-		return ItemTableManager.forID(ItemID).getName();
+	public static String getItemName(int itemId) {
+		return ItemDefinition.getDefinitions()[itemId].getName();
 	}
 
 	public static int getPlayerBlockSounds(Player player) {

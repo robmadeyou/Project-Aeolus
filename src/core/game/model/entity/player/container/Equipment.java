@@ -6,8 +6,7 @@ import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.model.item.Item;
-import core.game.model.item.ItemTableManager;
-import core.game.model.item.PlayerItem;
+import core.game.model.item.ItemDefinition;
 
 public class Equipment {
 
@@ -127,8 +126,10 @@ public class Equipment {
 	/**
 	 * Gets the item name from the item json
 	 */
-	public static String getItemName(int ItemID) {
-		return ItemTableManager.forID(ItemID).getName();
+	public static String getItemName(int itemId) {
+        if(itemId <= 0)
+            return "Unarmed";
+        return ItemDefinition.getDefinitions()[itemId].getName();
 	}
 
 	/**
@@ -189,7 +190,7 @@ public class Equipment {
 	 **/
 	public void getRequirements(String itemName, int itemId) {
 		c.attackLevelReq = c.defenceLevelReq = c.strengthLevelReq = c.rangeLevelReq = c.magicLevelReq = 0;
-		int[] reqLvl = ItemTableManager.forID(itemId).getLevelRequirements();
+		int[] reqLvl = ItemDefinition.getDefinitions()[itemId].getRequirement();
 		c.attackLevelReq = reqLvl[0];// attack
 		c.defenceLevelReq = reqLvl[1];// defence
 		c.strengthLevelReq = reqLvl[2];// strength
@@ -273,38 +274,11 @@ public class Equipment {
 	 **/
 	@SuppressWarnings("static-access")
 	public boolean wearItem(int wearID, int slot) {
-		int targetSlot = 0;
+        int targetSlot = ItemDefinition.getDefinitions()[wearID].getEquipmentType().getSlot();
 		boolean canWearItem = true;
-		PlayerItem item = ItemTableManager.forID(wearID);
-		if (c.playerItems[slot] == (wearID + 1)) {
+		
+		if(c.playerItems[slot] == (wearID + 1)) {
 			getRequirements(getItemName(wearID).toLowerCase(), wearID);
-			String wearSlot = item.getEquipSlot();
-			targetSlot = Item.targetSlots[wearID];
-			if (wearSlot.equalsIgnoreCase("cape")) {
-				targetSlot = 1;
-			} else if (wearSlot.equalsIgnoreCase("hat")) {
-				targetSlot = 0;
-			} else if (wearSlot.equalsIgnoreCase("amulet")) {
-				targetSlot = 2;
-			} else if (wearSlot.equalsIgnoreCase("arrows")) {
-				targetSlot = 13;
-			} else if (wearSlot.equalsIgnoreCase("body")) {
-				targetSlot = 4;
-			} else if (wearSlot.equalsIgnoreCase("shield")) {
-				targetSlot = 5;
-			} else if (wearSlot.equalsIgnoreCase("legs")) {
-				targetSlot = 7;
-			} else if (wearSlot.equalsIgnoreCase("gloves")) {
-				targetSlot = 9;
-			} else if (wearSlot.equalsIgnoreCase("boots")) {
-				targetSlot = 10;
-			} else if (wearSlot.equalsIgnoreCase("ring")) {
-				targetSlot = 12;
-			} else {
-				targetSlot = 3;
-
-			}
-			
 			switch (wearID) {			
 			
 			/* Gloves */
@@ -616,6 +590,9 @@ public class Equipment {
 							canWearItem = false;
 						}
 					}
+				} else {
+					return false;
+				}
 				}
 			}
 
@@ -740,10 +717,8 @@ public class Equipment {
 							.toLowerCase());
 			c.getPA().requestUpdates();
 			return true;
-		} else {
-			return false;
 		}
-	}
+
 	
 	/**
 	 * Indicates the action to wear an item.
@@ -837,20 +812,17 @@ public class Equipment {
 	}
 
 	/**
-	 * Gets the item bonus from the item json.
+	 * Gets the item bonuses from item_definitions.json
 	 */
-	public void getBonus() {
-		for (int i = 0; i < c.playerEquipment.length; i++) {
-			if (c.playerEquipment[i] > -1) {
-
-				for (int k = 0; k < c.playerBonus.length; k++) {
-					c.playerBonus[k] += ItemTableManager.forID(
-							c.playerEquipment[i]).getBonusById(k);
-				}
-
-			}
-		}
-	}
+    public void getBonus() {
+        for (int i = 0; i < c.playerEquipment.length; i++) {
+                if (c.playerEquipment[i] > -1) {
+                        for (int k = 0; k < c.playerBonus.length; k++) {
+                                c.playerBonus[k] += ItemDefinition.getDefinitions()[c.playerEquipment[i]].getBonus()[k];
+                        }
+                }
+        }
+}
 
 	/**
 	 * Weapon type.

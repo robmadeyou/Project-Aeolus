@@ -18,7 +18,6 @@ import core.game.model.entity.npc.NPCHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.item.ItemHandler;
-import core.game.model.item.ItemTableManager;
 import core.game.model.object.ObjectHandler;
 import core.game.model.object.ObjectManager;
 import core.game.model.shop.ShopHandler;
@@ -162,7 +161,7 @@ public class Server {
 		playerWorld = World.getSingleton();
 		playerWorld.setupPlayerRegions();
 		objectHandler = new ObjectHandler();
-		ItemTableManager.load();
+		ItemHandler.loadItemDefinitions();
 		new NpcDefinitionLoader().load();
 		new NPCDrops().load();
 		npcHandler.build();

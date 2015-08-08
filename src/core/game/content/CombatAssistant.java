@@ -8,8 +8,6 @@ import core.game.model.entity.Hit.HitType;
 import core.game.model.entity.npc.NPCHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
-import core.game.model.item.ItemTableManager;
-import core.game.model.item.PlayerItem;
 import core.game.util.Misc;
 
 @SuppressWarnings("all")

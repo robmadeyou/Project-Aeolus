@@ -268,7 +268,9 @@ public class Item {
 	 * @param ItemID
 	 */
 	public static String getItemName(int ItemID) {
-		return ItemTableManager.forID(ItemID).getName();
+        if(ItemID < 0)
+            return "Unarmed";
+        return ItemDefinition.getDefinitions()[ItemID].getName();
 	}
 
 	/**

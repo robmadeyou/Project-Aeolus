@@ -7,7 +7,7 @@ import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Punishments;
 import core.game.model.entity.player.Rights;
 import core.game.model.entity.player.container.Equipment;
-import core.game.model.item.ItemTableManager;
+import core.game.model.item.ItemDefinition;
 import core.net.packets.incoming.commands.Command;
 
 /**
@@ -140,8 +140,8 @@ public class AdministratorCommands implements Command {
 			}
 			nameOfItem = nameOfItem.substring(0, nameOfItem.length() - 1);
 			player.sendMessage("Searching: " + nameOfItem);
-			for (int j = 0; j < ItemTableManager.ITEMS.size(); j++) {
-				if (!ItemTableManager.ITEMS.isEmpty()) {
+			for (int j = 0; j < ItemDefinition.getDefinitions().length; j++) {
+				if (ItemDefinition.getDefinitions() != null) {
 					player.getEquipment();
 					if (Equipment.getItemName(j).replace("_", " ").toLowerCase().contains(nameOfItem.toLowerCase())) {
 						player.getEquipment();

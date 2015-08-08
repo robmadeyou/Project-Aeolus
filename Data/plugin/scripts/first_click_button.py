@@ -53,8 +53,6 @@ def clickButton_74205(c):
 
 # Character Equipment Screen
 def clickButton_108005(c):
-    if (c.inTrade):
-        return
     c.getPA().showInterface(15106)
 
 # Items on Death Screen

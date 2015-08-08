@@ -7,7 +7,7 @@ import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
 import core.game.model.item.Item;
-import core.game.model.item.ItemTableManager;
+import core.game.model.item.ItemDefinition;
 
 @SuppressWarnings("all")
 public class ShopAssistant {
@@ -88,8 +88,10 @@ public class ShopAssistant {
 	 * @param Type
 	 * @param fromSlot
 	 */	
-	public int getItemShopValue(int ItemID, int Type, int fromSlot) {
-		return ItemTableManager.forID(ItemID).getValue();
+	public int getItemShopValue(int itemId, int Type, int fromSlot) {
+        if (itemId <= 0)
+            return 0;
+        return ItemDefinition.getDefinitions()[itemId].getValue();
 	}
 
 	/**
@@ -97,7 +99,9 @@ public class ShopAssistant {
 	 * @param itemId
 	 */
 	public int getItemShopValue(int itemId) {
-		return ItemTableManager.forID(itemId).getValue();
+        if (itemId <= 0)
+            return 0;
+        return ItemDefinition.getDefinitions()[itemId].getValue();
 	}
 	
 	/**
