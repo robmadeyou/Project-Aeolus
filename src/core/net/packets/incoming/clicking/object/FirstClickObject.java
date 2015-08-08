@@ -11,10 +11,6 @@ public class FirstClickObject {
 		c.clickObjectType = 0;
 		switch (objectType) {
 		
-		case 2213:
-			c.sendMessage("Test");
-			break;		
-		
 		default:
 			PluginManager.callFunc("objectClick1_" + objectType, c, objectType,
 					obX, obY);

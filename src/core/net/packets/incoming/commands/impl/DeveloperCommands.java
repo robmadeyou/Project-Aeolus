@@ -1,5 +1,7 @@
 package core.net.packets.incoming.commands.impl;
 
+import java.io.IOException;
+
 import core.game.GameConstants;
 import core.game.model.entity.Hit;
 import core.game.model.entity.Hit.HitType;
@@ -7,6 +9,7 @@ import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
 import core.game.model.entity.player.save.PlayerSave;
+import core.game.plugin.PluginManager;
 import core.net.packets.incoming.commands.Command;
 
 /**
@@ -19,6 +22,14 @@ public class DeveloperCommands implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		switch (command[0]) {
+		
+		case "reloadplugins":
+			try {
+				PluginManager.loadScripts();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			break;
 		
 		case "sound":
 			int soundId= Integer.parseInt(command[1]);
