@@ -37,6 +37,7 @@ import core.game.util.log.impl.TradeLogger;
 import core.net.Packet;
 import core.net.Packet.Type;
 import core.net.packets.PacketHandler;
+import core.net.packets.outgoing.ActionSender;
 import core.net.security.ISAACCipher;
 
 @SuppressWarnings("all")
@@ -50,7 +51,7 @@ public class Player extends Entity {
 	private Channel session;
 	private ItemAssistant itemAssistant = new ItemAssistant(this);
 	private ShopAssistant shopAssistant = new ShopAssistant(this);
-	private PlayerAssistant playerAssistant = new PlayerAssistant(this);
+	private ActionSender actionSender = new ActionSender(this);
 	private CombatAssistant combatAssistant = new CombatAssistant(this);
 	private ActionsPerformed actionHandler = new ActionsPerformed(this);
 	private PlayerKilling playerKilling = new PlayerKilling(this);
@@ -675,8 +676,8 @@ public class Player extends Entity {
 		this.canWalk = canWalk;
 	}
 
-	public PlayerAssistant getPlayerAssistant() {
-		return playerAssistant;
+	public ActionSender getPlayerAssistant() {
+		return actionSender;
 	}
 
 	public void queueMessage(Packet arg1) {
@@ -789,8 +790,8 @@ public class Player extends Entity {
 		return itemAssistant;
 	}
 
-	public PlayerAssistant getPA() {
-		return playerAssistant;
+	public ActionSender getPA() {
+		return actionSender;
 	}
 
 	public DialogueHandler getDH() {

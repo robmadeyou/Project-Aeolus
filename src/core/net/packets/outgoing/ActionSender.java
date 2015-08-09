@@ -1,18 +1,26 @@
-package core.game.model.entity.player;
+package core.net.packets.outgoing;
 
 import core.Config;
-import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.player.Player;
+import core.game.model.entity.player.PlayerHandler;
+import core.game.model.entity.player.Rights;
+import core.game.model.entity.player.container.Equipment;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.util.Misc;
 import core.game.world.clipping.PathFinder;
 
-@SuppressWarnings("all")
-public class PlayerAssistant{
+/**
+ * A class which holds methods for outgoing {@link Packet}s.
+ * There's still a lot of methods that need to be moved out of this class, because they 
+ * are not outgoing packets.
+ * @author 7Winds
+ */
+public class ActionSender{
 
 	private Player c;
-	public PlayerAssistant(Player Player) {
+	public ActionSender(Player Player) {
 		this.c = Player;
 	}
 	
@@ -696,19 +704,21 @@ public class PlayerAssistant{
 		}
 	}
 	
-	/**public void sendCrashFrame() { // used for crashing cheat Players
+	/**
+	 * Commonly used for crashing cheat clients
+	 */
+	public void sendCrashFrame() {
 		synchronized(c) {
 			if(c.getOutStream() != null && c != null) {
 				c.getOutStream().createFrame(123);
 				c.flushOutStream();
 			}
 		}
-	}**/
+	}
 	
 	/**
 	* Reseting animations for everyone
 	**/
-
 	public void frame1() {
 		//synchronized(c) {
 			for(int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
@@ -773,11 +783,13 @@ public class PlayerAssistant{
 				c.getOutStream().writeByte(slope);
 				c.getOutStream().writeByte(64);
 				c.flushOutStream();
-			}
-		
+			}	
     }
 	
-	// projectiles for everyone within 25 squares
+
+	/**
+	 * Creates a projectile for everyone within 25 squares
+	 */
 	public void createPlayersProjectile(int x, int y, int offX, int offY, int angle, int speed, int gfxMoving, int startHeight, int endHeight, int lockon, int time) {
 		//synchronized(c) {
 			for(int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
@@ -834,8 +846,10 @@ public class PlayerAssistant{
 			}
 		
 	}
-	
-	//creates gfx for everyone
+
+	/**
+	 * Creates a gfx for everyone
+	 */
 	public void createPlayersStillGfx(int id, int x, int y, int height, int time) {
 		//synchronized(c) {
 			for(int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
@@ -989,8 +1003,10 @@ public class PlayerAssistant{
 		}
 	}
 	
-	
-	public void updatePM(int pID, int world) { // used for private chat updates
+	/**
+	 * Used for private chat updates
+	 */
+	public void updatePM(int pID, int world) {
 		Player p = PlayerHandler.players[pID];
 		if(p == null || p.playerName == null || p.playerName.equals("null")){
 			return;
@@ -1082,8 +1098,7 @@ public class PlayerAssistant{
 	
 	/**
 	* Magic on items
-	**/
-	
+	**/	
 	public void magicOnItems(int slot, int itemId, int spellId) {
 		
 		switch(spellId) {
@@ -1131,8 +1146,7 @@ public class PlayerAssistant{
 	
 	/**
 	* Dieing
-	**/
-	
+	**/	
 	public void applyDead() {	
 		c.respawnTimer = 15;
 		c.isDead = false;
@@ -1194,6 +1208,9 @@ public class PlayerAssistant{
 		}
 	}
 	
+	/**
+	 * Resets the teleblock timer to 0.
+	 */
 	public void resetTb() {
 		c.teleBlockLength = 0;
 		c.teleBlockDelay = 0;	
@@ -1208,6 +1225,9 @@ public class PlayerAssistant{
 		}
 	}
 	
+	/**
+	 * Resets the player following
+	 */
 	public void resetFollowers() {
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (PlayerHandler.players[j] != null) {
@@ -1409,7 +1429,7 @@ public class PlayerAssistant{
 	}
 	
 	/**
-	 * Following
+	 * Following another player
 	 **/
 	public void followPlayer() {
 		if (PlayerHandler.players[c.followId] == null
@@ -1537,8 +1557,6 @@ public class PlayerAssistant{
 		int otherY = NPCHandler.npcs[c.followId2].getY();
 		boolean withinDistance = c.goodDistance(otherX, otherY, c.getX(),
 				c.getY(), 2);
-		boolean goodDistance = c.goodDistance(otherX, otherY, c.getX(),
-				c.getY(), 1);
 		boolean hallyDistance = c.goodDistance(otherX, otherY, c.getX(),
 				c.getY(), 2);
 		boolean bowDistance = c.goodDistance(otherX, otherY, c.getX(),
@@ -1675,11 +1693,6 @@ public class PlayerAssistant{
 		int yMove = 0;
 		if (xMove == 0)
 			yMove = otherY - c.getY();
-		/*if (!clipHor) {
-			yMove = 0;
-		} else if (!clipVer) {
-			xMove = 0;	
-		}*/
 		
 		int k = c.getX() + xMove;
         k -= c.mapRegionX * 8;
@@ -1732,7 +1745,7 @@ public class PlayerAssistant{
 	* reseting animation
 	**/
 	public void resetAnimation() {
-		c.getCombat().getPlayerAnimIndex(c.getEquipment().getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase());
+		c.getCombat().getPlayerAnimIndex(Equipment.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase());
 		c.startAnimation(c.playerStandIndex);
 		requestUpdates();
 	}
@@ -1775,9 +1788,7 @@ public class PlayerAssistant{
             sendFrame126("Congratulations, you just advanced a hitpoints level!", 6217);
             sendFrame126("Your hitpoints level is now "+getLevelForXP(c.playerXP[skill])+".", 6218);
             c.sendMessage("Congratulations, you just advanced a hitpoints level.");
-			sendFrame164(6216);
-			//hitpoints
-			
+			sendFrame164(6216);				
 			break;
 			
 			case 4:
@@ -1901,8 +1912,8 @@ public class PlayerAssistant{
 		c.nextChat = 0;
 	}
 	
-	public void refreshSkill(int i) {
-		switch (i) {
+	public void refreshSkill(int skillId) {
+		switch (skillId) {
 			case 0:
 			sendFrame126("" + c.playerLevel[0] + "", 4004);
 			sendFrame126("" + getLevelForXP(c.playerXP[0]) + "", 4005);
@@ -2103,15 +2114,7 @@ public class PlayerAssistant{
 		refreshSkill(skill);
 		return true;
 	}
-	public static int Runes[] = {4740,558,560,565};
-	public static int Pots[] = {};
-	public int randomRunes() {
-		return Runes[(int) (Math.random()*Runes.length)];
-	}
-	
-	public int randomPots() {
-		return Pots[(int) (Math.random()*Pots.length)];
-	}
+
 	/**
 	 * Show an arrow icon on the selected player.
 	 * @Param i - Either 0 or 1; 1 is arrow, 0 is none.
@@ -2134,17 +2137,6 @@ public class PlayerAssistant{
 				c.outStream.writeByte(j);
 			}
 		
-	}
-	
-	public int getNpcId(int id) {
-		for(int i = 0; i < NPCHandler.maxNPCs; i++) {
-			if(NPCHandler.npcs[i] != null) {
-				if(NPCHandler.npcs[i].npcId == id) {
-					return i;
-				}
-			}
-		}
-		return -1;
 	}
 	
 	public void removeObject(int x, int y) {
@@ -2245,16 +2237,6 @@ public class PlayerAssistant{
 			c.sendMessage("You have been poisoned.");
 			c.poisonDamage = damage;
 		}	
-	}
-	
-	public boolean checkForPlayer(int x, int y) {
-		for (Player p : PlayerHandler.players) {
-			if (p != null) {
-				if (p.getX() == x && p.getY() == y)
-					return true;
-			}	
-		}
-		return false;	
 	}
 
 	public void handleWeaponStyle() {
