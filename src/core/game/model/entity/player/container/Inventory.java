@@ -36,6 +36,18 @@ public class Inventory {
 			}
 		}
 	}
+
+	/**
+	 * Replaces an item in a players inventory
+	 */
+	public void replaceItem(Player c, int i, int l) {
+		for (int k = 0; k < c.playerItems.length; k++) {
+			if (playerHasItem(i, 1)) {
+				deleteItem(i, c.getEquipment().getItemSlot(i), 1);
+				addItem(l, 1);
+			}
+		}
+	}
 	
 	/**
 	 * Counts (a) player's items.

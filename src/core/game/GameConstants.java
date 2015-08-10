@@ -159,6 +159,12 @@ public class GameConstants {
 	public static final int ITEM_LIMIT = 16000;	
 	
 	/**
+	 * The timer in which you are skulled goes away. Seconds x2 Ex. 60x2=120
+	 * Skull timer would be 1 minute.
+	 */
+	public static final int SKULL_TIMER = 1200;
+	
+	/**
 	 * Buffer size.
 	 */
 	public static final int BUFFER_SIZE = 512;

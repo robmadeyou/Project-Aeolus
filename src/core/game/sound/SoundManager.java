@@ -36,7 +36,7 @@ public class SoundManager {
 		 * RANGE COMBAT SOUNDS so basically if i want to add new bow soudn
 		 */
 		case RANGED_COMBAT:
-			String bow = Equipment.getItemName(id).toLowerCase();
+			String bow = p.getEquipment().getItemName(id).toLowerCase();
 			if (bow.contains("shortbow") || bow.contains("longbow"))
 				p.getPlayerAssistant().sendSound(370);
 			else if (bow.contains("knife") || bow.contains("dart"))
@@ -53,7 +53,7 @@ public class SoundManager {
 		case PLAYER_BLOCK:
 			// String shield = p.getItems()
 			// .getItemName(p.playerEquipment[p.playerShield]).toLowerCase();
-			String shield = Equipment.getItemName(id).toLowerCase();
+			String shield = p.getEquipment().getItemName(id).toLowerCase();
 			if (shield.contains("kiteshield")
 					|| shield.contains("toktz-ket-xil"))
 				p.getPlayerAssistant().sendSound(414);

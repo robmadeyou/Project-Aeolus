@@ -786,6 +786,40 @@ public class ActionSender{
 			}	
     }
 	
+	public void createProjectile3(int casterY, int casterX, int offsetY,
+			int offsetX, int gfxMoving, int StartHeight, int endHeight,
+			int speed, int AtkIndex) {
+		for (int i = 1; i < GameConstants.MAX_PLAYERS; i++) {
+			if (PlayerHandler.players[i] != null) {
+				Player p = PlayerHandler.players[i];
+				if (p.goodDistance(c.absX, c.absY, p.absX, p.absY, 60)) {
+					if (p.heightLevel == c.heightLevel) {
+						if (PlayerHandler.players[i] != null
+								&& !PlayerHandler.players[i].disconnected) {
+							p.outStream.createFrame(85);
+							p.outStream
+									.writeByteC((casterY - (p.mapRegionY * 8)) - 2);
+							p.outStream
+									.writeByteC((casterX - (p.mapRegionX * 8)) - 3);
+							p.outStream.createFrame(117);
+							p.outStream.writeByte(50);
+							p.outStream.writeByte(offsetY);
+							p.outStream.writeByte(offsetX);
+							p.outStream.writeWord(AtkIndex);
+							p.outStream.writeWord(gfxMoving);
+							p.outStream.writeByte(StartHeight);
+							p.outStream.writeByte(endHeight);
+							p.outStream.writeWord(51);
+							p.outStream.writeWord(speed);
+							p.outStream.writeByte(16);
+							p.outStream.writeByte(64);
+						}
+					}
+				}
+			}
+		}
+	}
+	
 
 	/**
 	 * Creates a projectile for everyone within 25 squares
@@ -1745,7 +1779,7 @@ public class ActionSender{
 	* reseting animation
 	**/
 	public void resetAnimation() {
-		c.getCombat().getPlayerAnimIndex(Equipment.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase());
+		c.getCombat().getPlayerAnimIndex(c.getEquipment().getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase());
 		c.startAnimation(c.playerStandIndex);
 		requestUpdates();
 	}

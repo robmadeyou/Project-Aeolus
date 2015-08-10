@@ -143,9 +143,9 @@ public class AdministratorCommands implements Command {
 			for (int j = 0; j < ItemDefinition.getDefinitions().length; j++) {
 				if (ItemDefinition.getDefinitions() != null) {
 					player.getEquipment();
-					if (Equipment.getItemName(j).replace("_", " ").toLowerCase().contains(nameOfItem.toLowerCase())) {
+					if (player.getEquipment().getItemName(j).replace("_", " ").toLowerCase().contains(nameOfItem.toLowerCase())) {
 						player.getEquipment();
-						player.sendMessage("<col=255>" + Equipment.getItemName(j).replace("_", " ") + " - "
+						player.sendMessage("<col=255>" + player.getEquipment().getItemName(j).replace("_", " ") + " - "
 								+ player.getItems().getItemId(j));
 						results++;
 					}

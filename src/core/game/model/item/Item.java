@@ -272,14 +272,13 @@ public class Item {
             return "Unarmed";
         return ItemDefinition.getDefinitions()[ItemID].getName();
 	}
+	
+	public static boolean isStackable(int itemId) {
+		return ItemDefinition.getDefinitions()[itemId].isStackable();
+	}
 
 	/**
 	 * Checks if the item can be made into a note.
 	 */
 	public static boolean[] itemIsNote = new boolean[GameConstants.ITEM_LIMIT];
-
-	/**
-	 * Checks if the item can wield into a slot.
-	 */
-	public static int[] targetSlots = new int[GameConstants.ITEM_LIMIT];
 }

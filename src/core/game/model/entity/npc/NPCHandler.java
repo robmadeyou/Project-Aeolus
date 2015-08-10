@@ -1972,7 +1972,7 @@ public class NPCHandler {
 
 	}
 
-	public void startAnimation(int animId, int i) {
+	public static void startAnimation(int animId, int i) {
 		npcs[i].animNumber = animId;
 		npcs[i].animUpdateRequired = true;
 		npcs[i].updateRequired = true;
@@ -2012,24 +2012,17 @@ public class NPCHandler {
 	}
 
 	public int getNpcListHP(int npcId) {
-		for (int i = 0; i < maxListedNPCs; i++) {
-			if (npcDefinitions[i] != null) {
-				if (npcDefinitions[i].getId() == npcId) {
-					return npcDefinitions[i].getHitpoints();
-				}
-			}
-		}
-		return 0;
+		return NPCDefinitions.DEFINITIONS[npcId].getHitpoints();
 	}
 
 	public String getNpcListName(int npcId) {
-		for (int i = 0; i < maxListedNPCs; i++) {
-			if (npcDefinitions[i] != null) {
-				if (npcDefinitions[i].getId() == npcId) {
-					return npcDefinitions[i].getName();
-				}
-			}
+		if (NPCDefinitions.DEFINITIONS != null) {
+			return NPCDefinitions.DEFINITIONS[npcId].getName();
 		}
 		return "nameless";
+	}
+	
+	public NPC[] getNPCs() {
+		return npcs;
 	}
 }

@@ -110,6 +110,14 @@ public class Player extends Entity {
 			xRemoveSlot = 0, frozenBy = 0, poisonDamage = 0, teleAction = 0, bonusAttack = 0, lastNpcAttacked = 0,
 			killCount = 0, actionTimer, height = 0;
 
+	public boolean usingOtherRangeWeapons, usingCross, usingArrows, magicDef, ignoreDefence,
+	spellSwap, rangeEndGFXHeight, stopPlayerSkill, oldSpec, multiAttacking, prayerDisabled;
+	
+	public int rangeEndGFX, boltDamage, previousDamage, slayerTask, taskAmount, teleotherType,
+	dfsCount;
+	
+	public double crossbowDamage;
+	
 	public int[] voidStatus = new int[5];
 	public int[] itemKeptId = new int[4];
 	public boolean[] invSlot = new boolean[28], equipSlot = new boolean[14];
@@ -140,6 +148,15 @@ public class Player extends Entity {
 	public boolean isDead = false;
 	public boolean randomEvent = false;
 	public boolean FirstClickRunning = false;
+	public boolean protectItem = false;
+	
+	public boolean isPrayerDisabled() {
+		return prayerDisabled;
+	}
+	
+	public void setPrayerDisabled(boolean prayerDisabled) {
+		this.prayerDisabled = prayerDisabled;
+	}
 	
 	/**
 	 * Music
@@ -614,18 +631,6 @@ public class Player extends Entity {
 		underAttackBy = attacker;
 		logoutDelay = System.currentTimeMillis();
 		singleCombatDelay = System.currentTimeMillis();
-	}
-
-	public void dealDamage(int damage) {
-		if (teleTimer <= 0)
-			playerLevel[3] -= damage;
-		else {
-			if (hitUpdateRequired)
-				hitUpdateRequired = false;
-			if (hitUpdateRequired2)
-				hitUpdateRequired2 = false;
-		}
-
 	}
 
 	public int[] damageTaken = new int[GameConstants.MAX_PLAYERS];
@@ -2235,15 +2240,11 @@ public class Player extends Entity {
 
 		if (hitDelay == 1) {
 			if (oldNpcIndex > 0) {
-				getCombat().delayedHit(oldNpcIndex);
+				getCombat().delayedHit(this, oldNpcIndex);
 			}
 			if (oldPlayerIndex > 0) {
-				getCombat().playerDelayedHit(oldPlayerIndex);
+				getCombat().playerDelayedHit(this, oldPlayerIndex);
 			}
-		}
-
-		if (attackTimer > 0) {
-			attackTimer--;
 		}
 
 		if (attackTimer > 0) {
