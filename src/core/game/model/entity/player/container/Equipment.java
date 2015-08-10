@@ -7,6 +7,7 @@ import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.model.item.Item;
 import core.game.model.item.ItemDefinition;
+import core.game.model.item.WieldType;
 
 public class Equipment {
 
@@ -26,6 +27,10 @@ public class Equipment {
 	 */
 	public static final String[] WEAPONS = { "rapier", "maul", "staff",
 			"longsword" };
+	
+	public boolean tentacleWhip() {
+		return c.playerEquipment[c.playerWeapon] == 14004;
+	}
 	
 	/**
 	 * Checks if player is wearing an Anti-Fire Shield
@@ -126,7 +131,7 @@ public class Equipment {
 	/**
 	 * Gets the item name from the item json
 	 */
-	public static String getItemName(int itemId) {
+	public String getItemName(int itemId) {
         if(itemId <= 0)
             return "Unarmed";
         return ItemDefinition.getDefinitions()[itemId].getName();
@@ -272,452 +277,250 @@ public class Equipment {
 	/**
 	 * Wielding items.
 	 **/
-	@SuppressWarnings("static-access")
 	public boolean wearItem(int wearID, int slot) {
-        int targetSlot = ItemDefinition.getDefinitions()[wearID].getEquipmentType().getSlot();
-		boolean canWearItem = true;
-		
-		if(c.playerItems[slot] == (wearID + 1)) {
-			getRequirements(getItemName(wearID).toLowerCase(), wearID);
-			switch (wearID) {			
-			
-			/* Gloves */
-			case 10336:
-			case 9922:
-			case 8842:
-				targetSlot = 9;
-				break;
-			/* Arrows */
-			case 9144:
-				targetSlot = 13;
-				break;
-			/* Capes */
-			case 9813:
-			case 9747:
-			case 9748:
-			case 9750:
-			case 9790:
-			case 9751:
-			case 9753:
-			case 9754:
-			case 9756:
-			case 9757:
-			case 9759:
-			case 9760:
-			case 9762:
-			case 9763:
-			case 9765:
-			case 9766:
-			case 9768:
-			case 9769:
-			case 9771:
-			case 9772:
-			case 9774:
-			case 9775:
-			case 10446:
-			case 10448:
-			case 10450:
-			case 9777:
-			case 9778:
-			case 9780:
-			case 9781:
-			case 9783:
-			case 9784:
-			case 9786:
-			case 9787:
-			case 9792:
-			case 9793:
-			case 9795:
-			case 9796:
-			case 9798:
-			case 9799:
-			case 9801:
-			case 9802:
-			case 9804:
-			case 9805:
-			case 9807:
-			case 9808:
-			case 9810:
-			case 9811:
-			case 10499:
-				targetSlot = 1;
-				break;
+		synchronized (c) {
+			int targetSlot = 0;
+			boolean canWearItem = true;
+			if (c.playerItems[slot] == (wearID + 1)) {
+				getRequirements(getItemName(wearID).toLowerCase(), wearID);
+				targetSlot = ItemDefinition.getDefinitions()[wearID].getEquipmentType().getSlot();
 
-			/* Arrows */
-			case 9244:
-				targetSlot = 13;
-				break;
-
-			/* Boots */
-			case 15037:
-			case 14605:
-			case 11019:
-			case 9921:
-			case 11728:
-			case 10839:
-				targetSlot = 10;
-				break;
-
-			/* Legs */
-			case 11726:
-			case 11722:
-			case 9678:
-			case 9923:
-			case 9676:
-			case 10394:
-			case 8840:
-			case 15035:
-			case 10332:
-			case 15036:
-			case 14603:
-			case 14938:
-			case 14077:
-			case 10346:
-			case 10372:
-			case 10838:
-			case 11022:
-			case 10388:
-			case 10380:
-			case 10340:
-			case 15425:
-			case 13360:
-			case 13352:
-			case 13346:
-				targetSlot = 7;
-				break;
-
-			/* Amulets */
-			case 6861:
-			case 6859:
-			case 6863:
-			case 9470:
-			case 6857:
-			case 10344:
-			case 11128:
-				targetSlot = 2;
-				break;
-
-			/* Shields */
-			case 8850:
-			case 8849:
-			case 8848:
-			case 8847:
-			case 8846:
-			case 8845:
-			case 8844:
-			case 11283:
-			case 10352:
-				targetSlot = 5;
-				break;
-
-			/* Bodies */
-			case 10551:
-			case 10348:
-			case 9674:
-			case 10837:
-			case 14936:
-			case 15034:
-			case 10386:
-			case 10370:
-			case 11720:
-			case 10330:
-			case 15423:
-			case 14076:
-			case 11020:
-			case 14595:
-			case 8839:
-			case 10338:
-			case 13348:
-			case 13354:
-			case 13358:
-			case 9924:
-			case 11724:
-				targetSlot = 4;
-				break;
-
-			/* Helms */
-			case 13263:
-			case 9920:
-			case 10507:
-			case 10836:
-			case 10828:
-			case 9672:
-			case 10334:
-			case 10350:
-			case 10390:
-			case 11718:
-			case 10374:
-			case 11021:
-			case 15422:
-			case 15033:
-			case 9925:
-			case 13362:
-			case 11663:
-			case 11664:
-			case 11665:
-			case 13355:
-			case 13350:
-			case 10342:
-			case 1037:
-			case 11335:
-			case 10548:
-			case 9749:
-			case 9752:
-			case 9755:
-			case 9758:
-			case 9761:
-			case 9764:
-			case 9767:
-			case 9770:
-			case 9773:
-			case 9776:
-			case 9779:
-			case 9782:
-			case 9785:
-			case 9788:
-			case 9791:
-			case 9794:
-			case 9797:
-			case 9800:
-			case 9803:
-			case 9806:
-			case 9809:
-			case 9812:
-				targetSlot = 0;
-				break;
-
-			/* Boots */
-			case 11732:
-				targetSlot = 10;
-				break;
-			}
-
-			if (c.duelRule[11] && targetSlot == 0) {
-				c.sendMessage("Wearing hats has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[12] && targetSlot == 1) {
-				c.sendMessage("Wearing capes has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[13] && targetSlot == 2) {
-				c.sendMessage("Wearing amulets has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[14] && targetSlot == 3) {
-				c.sendMessage("Wielding weapons has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[15] && targetSlot == 4) {
-				c.sendMessage("Wearing bodies has been disabled in this duel!");
-				return false;
-			}
-			if ((c.duelRule[16] && targetSlot == 5)
-					|| (c.duelRule[16] && is2handed(getItemName(wearID)
-							.toLowerCase(), wearID))) {
-				c.sendMessage("Wearing shield has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[17] && targetSlot == 7) {
-				c.sendMessage("Wearing legs has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[18] && targetSlot == 9) {
-				c.sendMessage("Wearing gloves has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[19] && targetSlot == 10) {
-				c.sendMessage("Wearing boots has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[20] && targetSlot == 12) {
-				c.sendMessage("Wearing rings has been disabled in this duel!");
-				return false;
-			}
-			if (c.duelRule[21] && targetSlot == 13) {
-				c.sendMessage("Wearing arrows has been disabled in this duel!");
-				return false;
-			}
-
-			if (Config.itemRequirements) {
-				if (targetSlot == 10 || targetSlot == 7 || targetSlot == 5
-						|| targetSlot == 4 || targetSlot == 0
-						|| targetSlot == 9 || targetSlot == 10) {
-					if (c.defenceLevelReq > 0) {
-						if (c.getPA().getLevelForXP(c.playerXP[1]) < c.defenceLevelReq) {
-							c.sendMessage("You need a defence level of "
-									+ c.defenceLevelReq + " to wear this item.");
-							canWearItem = false;
-						}
-					}
-					if (c.rangeLevelReq > 0) {
-						if (c.getPA().getLevelForXP(c.playerXP[4]) < c.rangeLevelReq) {
-							c.sendMessage("You need a range level of "
-									+ c.rangeLevelReq + " to wear this item.");
-							canWearItem = false;
-						}
-					}
-					if (c.magicLevelReq > 0) {
-						if (c.getPA().getLevelForXP(c.playerXP[6]) < c.magicLevelReq) {
-							c.sendMessage("You need a magic level of "
-									+ c.magicLevelReq + " to wear this item.");
-							canWearItem = false;
-						}
-					}
-				}
-				if (targetSlot == 3) {
-					if (c.attackLevelReq > 0) {
-						if (c.getPA().getLevelForXP(c.playerXP[0]) < c.attackLevelReq) {
-							c.sendMessage("You need an attack level of "
-									+ c.attackLevelReq
-									+ " to wield this weapon.");
-							canWearItem = false;
-						}
-					}
-					if (c.rangeLevelReq > 0) {
-						if (c.getPA().getLevelForXP(c.playerXP[4]) < c.rangeLevelReq) {
-							c.sendMessage("You need a range level of "
-									+ c.rangeLevelReq
-									+ " to wield this weapon.");
-							canWearItem = false;
-						}
-					}
-					if (c.magicLevelReq > 0) {
-						if (c.getPA().getLevelForXP(c.playerXP[6]) < c.magicLevelReq) {
-							c.sendMessage("You need a magic level of "
-									+ c.magicLevelReq
-									+ " to wield this weapon.");
-							canWearItem = false;
-						}
-					}
-				} else {
+				if (c.duelRule[11] && targetSlot == 0) {
+					c.sendMessage("Wearing hats has been disabled in this duel!");
 					return false;
 				}
+				if (c.duelRule[12] && targetSlot == 1) {
+					c.sendMessage("Wearing capes has been disabled in this duel!");
+					return false;
 				}
-			}
+				if (c.duelRule[13] && targetSlot == 2) {
+					c.sendMessage("Wearing amulets has been disabled in this duel!");
+					return false;
+				}
+				if (c.duelRule[14] && targetSlot == 3) {
+					c.sendMessage("Wielding weapons has been disabled in this duel!");
+					return false;
+				}
+				if (c.duelRule[15] && targetSlot == 4) {
+					c.sendMessage("Wearing bodies has been disabled in this duel!");
+					return false;
+				}
+				if ((c.duelRule[16] && targetSlot == 5)
+						|| (c.duelRule[16] && is2handed(getItemName(wearID)
+								.toLowerCase(), wearID))) {
+					c.sendMessage("Wearing shield has been disabled in this duel!");
+					return false;
+				}
+				if (c.duelRule[17] && targetSlot == 7) {
+					c.sendMessage("Wearing legs has been disabled in this duel!");
+					return false;
+				}
+				if (c.duelRule[18] && targetSlot == 9) {
+					c.sendMessage("Wearing gloves has been disabled in this duel!");
+					return false;
+				}
+				if (c.duelRule[19] && targetSlot == 10) {
+					c.sendMessage("Wearing boots has been disabled in this duel!");
+					return false;
+				}
+				if (c.duelRule[20] && targetSlot == 12) {
+					c.sendMessage("Wearing rings has been disabled in this duel!");
+					return false;
+				}
+				if (c.duelRule[21] && targetSlot == 13) {
+					c.sendMessage("Wearing arrows has been disabled in this duel!");
+					return false;
+				}
 
-			if (!canWearItem) {
-				return false;
-			}
-			if (Config.enableSound)
-				c.getPA().sendSound(230);
-			int wearAmount = c.playerItemsN[slot];
-			if (wearAmount < 1) {
-				return false;
-			}
-
-			if (targetSlot == c.playerWeapon) {
-				c.autocasting = false;
-				c.autocastId = 0;
-				c.getPA().sendFrame36(108, 0);
-			}
-
-			if (slot >= 0 && wearID >= 0) {
-				int toEquip = c.playerItems[slot];
-				int toEquipN = c.playerItemsN[slot];
-				int toRemove = c.playerEquipment[targetSlot];
-				int toRemoveN = c.playerEquipmentN[targetSlot];
-				if (toEquip == toRemove + 1 && c.getInventory().getStackable(toRemove)) {
-					deleteItem(toRemove, getItemSlot(toRemove), toEquipN);
-					c.playerEquipmentN[targetSlot] += toEquipN;
-				} else if (targetSlot != 5 && targetSlot != 3) {
-					c.playerItems[slot] = toRemove + 1;
-					c.playerItemsN[slot] = toRemoveN;
-					c.playerEquipment[targetSlot] = toEquip - 1;
-					c.playerEquipmentN[targetSlot] = toEquipN;
-				} else if (targetSlot == 5) {
-					boolean wearing2h = is2handed(
-							getItemName(c.playerEquipment[c.playerWeapon])
-									.toLowerCase(),
-							c.playerEquipment[c.playerWeapon]);
-					@SuppressWarnings("unused")
-					boolean wearingShield = c.playerEquipment[c.playerShield] > 0;
-					if (wearing2h) {
-						toRemove = c.playerEquipment[c.playerWeapon];
-						toRemoveN = c.playerEquipmentN[c.playerWeapon];
-						c.playerEquipment[c.playerWeapon] = -1;
-						c.playerEquipmentN[c.playerWeapon] = 0;
-						c.getEquipment().updateSlot(c.playerWeapon);
+				if (Config.itemRequirements) {
+					if (targetSlot == 10 || targetSlot == 7 || targetSlot == 5
+							|| targetSlot == 4 || targetSlot == 0
+							|| targetSlot == 9 || targetSlot == 10) {
+						if (c.defenceLevelReq > 0) {
+							if (c.getPA().getLevelForXP(c.playerXP[1]) < c.defenceLevelReq) {
+								c.sendMessage("You need a defence level of "
+										+ c.defenceLevelReq
+										+ " to wear this item.");
+								canWearItem = false;
+							}
+						}
+						if (c.rangeLevelReq > 0) {
+							if (c.getPA().getLevelForXP(c.playerXP[4]) < c.rangeLevelReq) {
+								c.sendMessage("You need a range level of "
+										+ c.rangeLevelReq
+										+ " to wear this item.");
+								canWearItem = false;
+							}
+						}
+						if (c.magicLevelReq > 0) {
+							if (c.getPA().getLevelForXP(c.playerXP[6]) < c.magicLevelReq) {
+								c.sendMessage("You need a magic level of "
+										+ c.magicLevelReq
+										+ " to wear this item.");
+								canWearItem = false;
+							}
+						}
 					}
-					c.playerItems[slot] = toRemove + 1;
-					c.playerItemsN[slot] = toRemoveN;
-					c.playerEquipment[targetSlot] = toEquip - 1;
-					c.playerEquipmentN[targetSlot] = toEquipN;
-				} else if (targetSlot == 3) {
-					boolean is2h = is2handed(getItemName(wearID).toLowerCase(),
-							wearID);
-					boolean wearingShield = c.playerEquipment[c.playerShield] > 0;
-					boolean wearingWeapon = c.playerEquipment[c.playerWeapon] > 0;
-					if (is2h) {
-						if (wearingShield && wearingWeapon) {
-							if (c.getEquipment().freeSlots() > 0) {
+					if (targetSlot == 3) {
+						if (c.attackLevelReq > 0) {
+							if (c.getPA().getLevelForXP(c.playerXP[0]) < c.attackLevelReq) {
+								c.sendMessage("You need an attack level of "
+										+ c.attackLevelReq
+										+ " to wield this weapon.");
+								canWearItem = false;
+							}
+						}
+						if (c.rangeLevelReq > 0) {
+							if (c.getPA().getLevelForXP(c.playerXP[4]) < c.rangeLevelReq) {
+								c.sendMessage("You need a range level of "
+										+ c.rangeLevelReq
+										+ " to wield this weapon.");
+								canWearItem = false;
+							}
+						}
+						if (c.magicLevelReq > 0) {
+							if (c.getPA().getLevelForXP(c.playerXP[6]) < c.magicLevelReq) {
+								c.sendMessage("You need a magic level of "
+										+ c.magicLevelReq
+										+ " to wield this weapon.");
+								canWearItem = false;
+							}
+						}
+					}
+				}
+
+				if (!canWearItem) {
+					return false;
+				}
+				c.getPA().sendSound(230);
+				int wearAmount = c.playerItemsN[slot];
+				if (wearAmount < 1) {
+					return false;
+				}
+
+				if (targetSlot == c.playerWeapon) {
+					c.autocasting = false;
+					c.autocastId = 0;
+					c.getPA().sendFrame36(108, 0);
+				}
+
+				if (slot >= 0 && wearID >= 0) {
+					int toEquip = c.playerItems[slot];
+					int toEquipN = c.playerItemsN[slot];
+					int toRemove = c.playerEquipment[targetSlot];
+					int toRemoveN = c.playerEquipmentN[targetSlot];
+					if (toEquip == toRemove + 1 && Item.isStackable(toRemove)) {
+						deleteItem(toRemove, getItemSlot(toRemove), toEquipN);
+						c.playerEquipmentN[targetSlot] += toEquipN;
+					} else if (targetSlot != 5 && targetSlot != 3) {
+						c.playerItems[slot] = toRemove + 1;
+						c.playerItemsN[slot] = toRemoveN;
+						c.playerEquipment[targetSlot] = toEquip - 1;
+						c.playerEquipmentN[targetSlot] = toEquipN;
+					} else if (targetSlot == 5) {
+						boolean wearing2h = is2handed(
+								getItemName(c.playerEquipment[c.playerWeapon])
+										.toLowerCase(),
+								c.playerEquipment[c.playerWeapon]);
+						boolean wearingShield = c.playerEquipment[c.playerShield] > 0;
+						if (wearing2h) {
+							toRemove = c.playerEquipment[c.playerWeapon];
+							toRemoveN = c.playerEquipmentN[c.playerWeapon];
+							c.playerEquipment[c.playerWeapon] = -1;
+							c.playerEquipmentN[c.playerWeapon] = 0;
+							updateSlot(c.playerWeapon);
+						}
+						c.playerItems[slot] = toRemove + 1;
+						c.playerItemsN[slot] = toRemoveN;
+						c.playerEquipment[targetSlot] = toEquip - 1;
+						c.playerEquipmentN[targetSlot] = toEquipN;
+					} else if (targetSlot == 3) {
+						boolean is2h = is2handed(getItemName(wearID)
+								.toLowerCase(), wearID);
+						boolean wearingShield = c.playerEquipment[c.playerShield] > 0;
+						boolean wearingWeapon = c.playerEquipment[c.playerWeapon] > 0;
+
+						if (is2h) {
+							if (wearingShield && wearingWeapon) {
+								if (freeSlots() > 0) {
+									c.playerItems[slot] = toRemove + 1;
+									c.playerItemsN[slot] = toRemoveN;
+									c.playerEquipment[targetSlot] = toEquip - 1;
+									c.playerEquipmentN[targetSlot] = toEquipN;
+									removeItem(
+											c.playerEquipment[c.playerShield],
+											c.playerShield);
+								} else {
+									c.sendMessage("You do not have enough inventory space to do this.");
+									return false;
+								}
+							} else if (wearingShield && !wearingWeapon) {
+								c.playerItems[slot] = c.playerEquipment[c.playerShield] + 1;
+								c.playerItemsN[slot] = c.playerEquipmentN[c.playerShield];
+								c.playerEquipment[targetSlot] = toEquip - 1;
+								c.playerEquipmentN[targetSlot] = toEquipN;
+								c.playerEquipment[c.playerShield] = -1;
+								c.playerEquipmentN[c.playerShield] = 0;
+								updateSlot(c.playerShield);
+							} else {
 								c.playerItems[slot] = toRemove + 1;
 								c.playerItemsN[slot] = toRemoveN;
 								c.playerEquipment[targetSlot] = toEquip - 1;
 								c.playerEquipmentN[targetSlot] = toEquipN;
-								removeItem(c.playerEquipment[c.playerShield],
-										c.playerShield);
-							} else {
-								c.sendMessage("You do not have enough inventory space to do this.");
-								return false;
 							}
-						} else if (wearingShield && !wearingWeapon) {
-							c.playerItems[slot] = c.playerEquipment[c.playerShield] + 1;
-							c.playerItemsN[slot] = c.playerEquipmentN[c.playerShield];
-							c.playerEquipment[targetSlot] = toEquip - 1;
-							c.playerEquipmentN[targetSlot] = toEquipN;
-							c.playerEquipment[c.playerShield] = -1;
-							c.playerEquipmentN[c.playerShield] = 0;
-							c.getEquipment().updateSlot(c.playerShield);
 						} else {
 							c.playerItems[slot] = toRemove + 1;
 							c.playerItemsN[slot] = toRemoveN;
 							c.playerEquipment[targetSlot] = toEquip - 1;
 							c.playerEquipmentN[targetSlot] = toEquipN;
 						}
-					} else {
-						c.playerItems[slot] = toRemove + 1;
-						c.playerItemsN[slot] = toRemoveN;
-						c.playerEquipment[targetSlot] = toEquip - 1;
-						c.playerEquipmentN[targetSlot] = toEquipN;
 					}
+					c.isFullHelm = Item
+							.isFullHelm(c.playerEquipment[c.playerHat]);
+					c.isFullMask = Item
+							.isFullMask(c.playerEquipment[c.playerHat]);
+					c.isFullBody = Item
+							.isFullBody(c.playerEquipment[c.playerChest]);
+					resetItems(3214);
 				}
-				c.isFullHelm = Item.isFullHelm(c.playerEquipment[c.playerHat]);
-				c.isFullMask = Item.isFullMask(c.playerEquipment[c.playerHat]);
-				c.isFullBody = Item
-						.isFullBody(c.playerEquipment[c.playerChest]);
-				resetItems(3214);
-			}
-			if (targetSlot == 3) {
-				c.usingSpecial = false;
-				addSpecialBar(wearID);
-			}
-			if (c.getOutStream() != null && c != null) {
-				c.getOutStream().createFrameVarSizeWord(34);
-				c.getOutStream().writeWord(1688);
-				c.getOutStream().writeByte(targetSlot);
-				c.getOutStream().writeWord(wearID + 1);
-
-				if (c.playerEquipmentN[targetSlot] > 254) {
-					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord(c.playerEquipmentN[targetSlot]);
-				} else {
-					c.getOutStream().writeByte(c.playerEquipmentN[targetSlot]);
+				if (targetSlot == 3) {
+					c.usingSpecial = false;
+					addSpecialBar(wearID);
 				}
+				if (c.getOutStream() != null && c != null) {
+					c.getOutStream().createFrameVarSizeWord(34);
+					c.getOutStream().writeWord(1688);
+					c.getOutStream().writeByte(targetSlot);
+					c.getOutStream().writeWord(wearID + 1);
 
-				c.getOutStream().endFrameVarSizeWord();
-				c.flushOutStream();
+					if (c.playerEquipmentN[targetSlot] > 254) {
+						c.getOutStream().writeByte(255);
+						c.getOutStream().writeDWord(
+								c.playerEquipmentN[targetSlot]);
+					} else {
+						c.getOutStream().writeByte(
+								c.playerEquipmentN[targetSlot]);
+					}
+
+					c.getOutStream().endFrameVarSizeWord();
+					c.flushOutStream();
+				}
+				sendWeapon(c.playerEquipment[c.playerWeapon],
+						getItemName(c.playerEquipment[c.playerWeapon]));
+				resetBonus();
+				getBonus();
+				writeBonus();
+				c.getCombat().getPlayerAnimIndex(
+						Item.getItemName(
+								c.playerEquipment[c.playerWeapon])
+								.toLowerCase());
+				c.getPA().requestUpdates();
+				return true;
+			} else {
+				return false;
 			}
-			sendWeapon(c.playerEquipment[c.playerWeapon],
-					getItemName(c.playerEquipment[c.playerWeapon]));
-			c.getEquipment().resetBonus();
-			c.getEquipment().getBonus();
-			c.getEquipment().writeBonus();
-			c.getCombat().getPlayerAnimIndex(c.getEquipment().getItemName(c.playerEquipment[c.playerWeapon])
-							.toLowerCase());
-			c.getPA().requestUpdates();
-			return true;
 		}
+	}
 
 	
 	/**
