@@ -299,12 +299,12 @@ public class FirstClickButton {
 			}
 			c.duelStatus = 2;
 			if (c.duelStatus == 2) {
-				c.getActionSender().sendFrame126("Waiting for other player...", 6684);
-				o.getActionSender().sendFrame126("Other player has accepted.", 6684);
+				c.getActionSender().textOnInterface("Waiting for other player...", 6684);
+				o.getActionSender().textOnInterface("Other player has accepted.", 6684);
 			}
 			if (o.duelStatus == 2) {
-				o.getActionSender().sendFrame126("Waiting for other player...", 6684);
-				c.getActionSender().sendFrame126("Other player has accepted.", 6684);
+				o.getActionSender().textOnInterface("Waiting for other player...", 6684);
+				c.getActionSender().textOnInterface("Other player has accepted.", 6684);
 			}
 
 			if (c.duelStatus == 2 && o.duelStatus == 2) {
@@ -359,8 +359,8 @@ public class FirstClickButton {
 				c.duelDelay = System.currentTimeMillis();
 				o1.duelDelay = System.currentTimeMillis();
 			} else {
-				c.getActionSender().sendFrame126("Waiting for other player...", 6571);
-				o1.getActionSender().sendFrame126("Other player has accepted", 6571);
+				c.getActionSender().textOnInterface("Waiting for other player...", 6571);
+				o1.getActionSender().textOnInterface("Other player has accepted", 6571);
 			}
 			break;
 
@@ -377,8 +377,8 @@ public class FirstClickButton {
 				c.sendMessage("Trade declined as the other player has disconnected.");
 				break;
 			}
-			c.getActionSender().sendFrame126("Waiting for other player...", 3431);
-			ot.getActionSender().sendFrame126("Other player has accepted", 3431);
+			c.getActionSender().textOnInterface("Waiting for other player...", 3431);
+			ot.getActionSender().textOnInterface("Other player has accepted", 3431);
 			c.goodTrade = true;
 			ot.goodTrade = true;
 
@@ -401,15 +401,15 @@ public class FirstClickButton {
 										.getInventory().freeSlots()) + " items.");
 						c.goodTrade = false;
 						ot.goodTrade = false;
-						c.getActionSender().sendFrame126("Not enough inventory space...",
+						c.getActionSender().textOnInterface("Not enough inventory space...",
 								3431);
-						ot.getActionSender().sendFrame126(
+						ot.getActionSender().textOnInterface(
 								"Not enough inventory space...", 3431);
 						break;
 					} else {
-						c.getActionSender().sendFrame126("Waiting for other player...",
+						c.getActionSender().textOnInterface("Waiting for other player...",
 								3431);
-						ot.getActionSender().sendFrame126("Other player has accepted",
+						ot.getActionSender().textOnInterface("Other player has accepted",
 								3431);
 						c.goodTrade = true;
 						ot.goodTrade = true;
@@ -447,8 +447,8 @@ public class FirstClickButton {
 					ot1.getContentManager().getTrading().giveItems();
 					break;
 				}
-				ot1.getActionSender().sendFrame126("Other player has accepted.", 3535);
-				c.getActionSender().sendFrame126("Waiting for other player...", 3535);
+				ot1.getActionSender().textOnInterface("Other player has accepted.", 3535);
+				c.getActionSender().textOnInterface("Waiting for other player...", 3535);
 			}
 
 			break;

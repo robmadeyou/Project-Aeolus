@@ -64,6 +64,16 @@ public class PlayerAssistant {
 		}
 	}
 	
+	public int antiFire() {
+		int toReturn = 0;
+		if (p.antiFirePot)
+			toReturn++;
+		if (p.playerEquipment[p.playerShield] == 1540 || p.prayerActive[12]
+				|| p.playerEquipment[p.playerShield] == 11284)
+			toReturn++;
+		return toReturn;
+	}
+	
 	/**
 	 * Magic on items
 	 **/
@@ -84,7 +94,7 @@ public class PlayerAssistant {
 				p.startAnimation(p.MAGIC_SPELLS[49][2]);
 				p.gfx100(p.MAGIC_SPELLS[49][3]);
 				p.alchDelay = System.currentTimeMillis();
-				p.getActionSender().sendFrame106(6);
+				p.getActionSender().forceOpenTab(6);
 				p.getActionSender().addSkillXP(p.MAGIC_SPELLS[49][7] * GameConstants.MAGIC_EXP_RATE, 6);
 				p.getActionSender().refreshSkill(6);
 			}
@@ -104,7 +114,7 @@ public class PlayerAssistant {
 				p.startAnimation(p.MAGIC_SPELLS[50][2]);
 				p.gfx100(p.MAGIC_SPELLS[50][3]);
 				p.alchDelay = System.currentTimeMillis();
-				p.getActionSender().sendFrame106(6);
+				p.getActionSender().forceOpenTab(6);
 				p.getActionSender().addSkillXP(p.MAGIC_SPELLS[50][7] * GameConstants.MAGIC_EXP_RATE, 6);
 				p.getActionSender().refreshSkill(6);
 			}
@@ -271,27 +281,27 @@ public class PlayerAssistant {
 	public void changeLocation() {
 		switch (p.newLocation) {
 		case 1:
-			p.getActionSender().sendFrame99(2);
+			p.getActionSender().disableMinimap(2);
 			p.getMovement().movePlayer(3578, 9706, -1);
 			break;
 		case 2:
-			p.getActionSender().sendFrame99(2);
+			p.getActionSender().disableMinimap(2);
 			p.getMovement().movePlayer(3568, 9683, -1);
 			break;
 		case 3:
-			p.getActionSender().sendFrame99(2);
+			p.getActionSender().disableMinimap(2);
 			p.getMovement().movePlayer(3557, 9703, -1);
 			break;
 		case 4:
-			p.getActionSender().sendFrame99(2);
+			p.getActionSender().disableMinimap(2);
 			p.getMovement().movePlayer(3556, 9718, -1);
 			break;
 		case 5:
-			p.getActionSender().sendFrame99(2);
+			p.getActionSender().disableMinimap(2);
 			p.getMovement().movePlayer(3534, 9704, -1);
 			break;
 		case 6:
-			p.getActionSender().sendFrame99(2);
+			p.getActionSender().disableMinimap(2);
 			p.getMovement().movePlayer(3546, 9684, -1);
 			break;
 		}

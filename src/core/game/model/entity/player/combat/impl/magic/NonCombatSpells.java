@@ -78,7 +78,7 @@ public class NonCombatSpells extends MagicRequirements {
 				c.getActionSender().addSkillXP(data[i][5], 6);
 				c.startAnimation(725);
 				c.gfx100(148);
-				c.getActionSender().sendFrame106(6);
+				c.getActionSender().forceOpenTab(6);
 				return;
 			}
 		}
@@ -110,7 +110,7 @@ public class NonCombatSpells extends MagicRequirements {
 						c.startAnimation(c.MAGIC_SPELLS[49][2]);
 						c.gfx100(c.MAGIC_SPELLS[49][3]);
 						c.alchDelay = System.currentTimeMillis();
-						c.getActionSender().sendFrame106(6);
+						c.getActionSender().forceOpenTab(6);
 						c.getActionSender().addSkillXP(
 								c.MAGIC_SPELLS[49][7]
 										* GameConstants.MAGIC_EXP_RATE, 6);
@@ -146,7 +146,7 @@ public class NonCombatSpells extends MagicRequirements {
 						c.startAnimation(c.MAGIC_SPELLS[50][2]);
 						c.gfx100(c.MAGIC_SPELLS[50][3]);
 						c.alchDelay = System.currentTimeMillis();
-						c.getActionSender().sendFrame106(6);
+						c.getActionSender().forceOpenTab(6);
 						c.getActionSender().addSkillXP(
 								c.MAGIC_SPELLS[50][7]
 										* GameConstants.MAGIC_EXP_RATE, 6);

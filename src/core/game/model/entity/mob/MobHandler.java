@@ -1965,7 +1965,7 @@ public class MobHandler {
 				}
 
 				if (npcs[i].attackType == 3) { // fire breath
-					int anti = c.getActionSender().antiFire();
+					int anti = c.getPA().antiFire();
 					if (anti == 0) {
 						damage = Misc.random(30) + 10;
 						c.sendMessage("You are badly burnt by the dragon fire!");

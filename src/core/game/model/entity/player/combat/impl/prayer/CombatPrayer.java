@@ -426,12 +426,12 @@ public class CombatPrayer {
 			} else {
 				c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 0);
 				c.getActionSender().sendSound(447);
-				c.getActionSender().sendFrame126(
+				c.getActionSender().textOnInterface(
 						"You need a @blu@Prayer level of "
 								+ c.PRAYER_LEVEL_REQUIRED[i] + " to use "
 								+ c.PRAYER_NAME[i] + ".", 357);
-				c.getActionSender().sendFrame126("Click here to continue", 358);
-				c.getActionSender().sendFrame164(356);
+				c.getActionSender().textOnInterface("Click here to continue", 358);
+				c.getActionSender().openBackDialogue(356);
 			}
 		} else {
 			c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 0);

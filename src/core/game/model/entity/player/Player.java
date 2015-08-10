@@ -362,7 +362,7 @@ public class Player extends Entity {
 				c.setSidebarInterface(0, 328);
 				// spellName = getSpellName(autocastId);
 				// spellName = spellName;
-				// c.getPA().sendFrame126(spellName, 354);
+				// c.getPA().textOnInterface(spellName, 354);
 				c = null;
 				break;
 			}
@@ -544,13 +544,13 @@ public class Player extends Entity {
 			getActionSender().walkableInterface(197);
 			if (Configuration.SINGLE_AND_MULTI_ZONES) {
 				if (inMulti()) {
-					getActionSender().sendFrame126("@yel@Level: " + wildLevel, 199);
+					getActionSender().textOnInterface("@yel@Level: " + wildLevel, 199);
 				} else {
-					getActionSender().sendFrame126("@yel@Level: " + wildLevel, 199);
+					getActionSender().textOnInterface("@yel@Level: " + wildLevel, 199);
 				}
 			} else {
 				getActionSender().multiWay(-1);
-				getActionSender().sendFrame126("@yel@Level: " + wildLevel, 199);
+				getActionSender().textOnInterface("@yel@Level: " + wildLevel, 199);
 			}
 			getActionSender().showOption(3, 0, "Attack", 1);
 		} else if (inDuelArena()) {
@@ -1036,51 +1036,51 @@ public class Player extends Entity {
 
 	public void ItemKeptInfo(Player c, int Lose) {
 		for (int i = 17109; i < 17131; i++) {
-			c.getActionSender().sendFrame126("", i);
+			c.getActionSender().textOnInterface("", i);
 		}
-		c.getActionSender().sendFrame126("Items you will keep on death:", 17104);
-		c.getActionSender().sendFrame126("Items you will lose on death:", 17105);
-		c.getActionSender().sendFrame126("Player Information", 17106);
-		c.getActionSender().sendFrame126("Max items kept on death:", 17107);
-		c.getActionSender().sendFrame126("~ " + Lose + " ~", 17108);
-		c.getActionSender().sendFrame126("The normal amount of", 17111);
-		c.getActionSender().sendFrame126("items kept is three.", 17112);
+		c.getActionSender().textOnInterface("Items you will keep on death:", 17104);
+		c.getActionSender().textOnInterface("Items you will lose on death:", 17105);
+		c.getActionSender().textOnInterface("Player Information", 17106);
+		c.getActionSender().textOnInterface("Max items kept on death:", 17107);
+		c.getActionSender().textOnInterface("~ " + Lose + " ~", 17108);
+		c.getActionSender().textOnInterface("The normal amount of", 17111);
+		c.getActionSender().textOnInterface("items kept is three.", 17112);
 		switch (Lose) {
 		case 0:
 		default:
-			c.getActionSender().sendFrame126("Items you will keep on death:", 17104);
-			c.getActionSender().sendFrame126("Items you will lose on death:", 17105);
-			c.getActionSender().sendFrame126("You're marked with a", 17111);
-			c.getActionSender().sendFrame126("@red@skull. @lre@This reduces the", 17112);
-			c.getActionSender().sendFrame126("items you keep from", 17113);
-			c.getActionSender().sendFrame126("three to zero!", 17114);
+			c.getActionSender().textOnInterface("Items you will keep on death:", 17104);
+			c.getActionSender().textOnInterface("Items you will lose on death:", 17105);
+			c.getActionSender().textOnInterface("You're marked with a", 17111);
+			c.getActionSender().textOnInterface("@red@skull. @lre@This reduces the", 17112);
+			c.getActionSender().textOnInterface("items you keep from", 17113);
+			c.getActionSender().textOnInterface("three to zero!", 17114);
 			break;
 		case 1:
-			c.getActionSender().sendFrame126("Items you will keep on death:", 17104);
-			c.getActionSender().sendFrame126("Items you will lose on death:", 17105);
-			c.getActionSender().sendFrame126("You're marked with a", 17111);
-			c.getActionSender().sendFrame126("@red@skull. @lre@This reduces the", 17112);
-			c.getActionSender().sendFrame126("items you keep from", 17113);
-			c.getActionSender().sendFrame126("three to zero!", 17114);
-			c.getActionSender().sendFrame126("However, you also have", 17115);
-			c.getActionSender().sendFrame126("the @red@Protect @lre@Items prayer", 17116);
-			c.getActionSender().sendFrame126("active, which saves you", 17117);
-			c.getActionSender().sendFrame126("one extra item!", 17118);
+			c.getActionSender().textOnInterface("Items you will keep on death:", 17104);
+			c.getActionSender().textOnInterface("Items you will lose on death:", 17105);
+			c.getActionSender().textOnInterface("You're marked with a", 17111);
+			c.getActionSender().textOnInterface("@red@skull. @lre@This reduces the", 17112);
+			c.getActionSender().textOnInterface("items you keep from", 17113);
+			c.getActionSender().textOnInterface("three to zero!", 17114);
+			c.getActionSender().textOnInterface("However, you also have", 17115);
+			c.getActionSender().textOnInterface("the @red@Protect @lre@Items prayer", 17116);
+			c.getActionSender().textOnInterface("active, which saves you", 17117);
+			c.getActionSender().textOnInterface("one extra item!", 17118);
 			break;
 		case 3:
-			c.getActionSender().sendFrame126("Items you will keep on death(if not skulled):", 17104);
-			c.getActionSender().sendFrame126("Items you will lose on death(if not skulled):", 17105);
-			c.getActionSender().sendFrame126("You have no factors", 17111);
-			c.getActionSender().sendFrame126("affecting the items you", 17112);
-			c.getActionSender().sendFrame126("keep.", 17113);
+			c.getActionSender().textOnInterface("Items you will keep on death(if not skulled):", 17104);
+			c.getActionSender().textOnInterface("Items you will lose on death(if not skulled):", 17105);
+			c.getActionSender().textOnInterface("You have no factors", 17111);
+			c.getActionSender().textOnInterface("affecting the items you", 17112);
+			c.getActionSender().textOnInterface("keep.", 17113);
 			break;
 		case 4:
-			c.getActionSender().sendFrame126("Items you will keep on death(if not skulled):", 17104);
-			c.getActionSender().sendFrame126("Items you will lose on death(if not skulled):", 17105);
-			c.getActionSender().sendFrame126("You have the @red@Protect", 17111);
-			c.getActionSender().sendFrame126("@red@Item @lre@prayer active,", 17112);
-			c.getActionSender().sendFrame126("which saves you one", 17113);
-			c.getActionSender().sendFrame126("extra item!", 17114);
+			c.getActionSender().textOnInterface("Items you will keep on death(if not skulled):", 17104);
+			c.getActionSender().textOnInterface("Items you will lose on death(if not skulled):", 17105);
+			c.getActionSender().textOnInterface("You have the @red@Protect", 17111);
+			c.getActionSender().textOnInterface("@red@Item @lre@prayer active,", 17112);
+			c.getActionSender().textOnInterface("which saves you one", 17113);
+			c.getActionSender().textOnInterface("extra item!", 17114);
 			break;
 		}
 	}
@@ -2057,15 +2057,35 @@ public class Player extends Entity {
 		this.getAttributes().put("isSkulled", Boolean.FALSE);
 		this.getAttributes().put("canWalk", Boolean.TRUE);
 	}
+	
+	public void showWelcomeScreen() {
+		getActionSender().showWelcomeScreen(0, 0, 1, 0, 0);
+		getActionSender().textOnInterface("Welcome to " + Configuration.SERVER_NAME + ".", 15257);
+		getActionSender().textOnInterface("Your ip: "+ this.getSession().getRemoteAddress(), 15258);
+		getActionSender().textOnInterface("Never tell anyone your password, even if they"
+				+ "claim to work for Jagex.", 15259);
+		getActionSender().textOnInterface("You have @gre@ 1 unread messages @yel@ in your ", 15260);
+		getActionSender().textOnInterface("message centre.", 15261);
+		getActionSender().textOnInterface("You have @gre@ 21 @yel@ days of RuneScape member", 15262);
+		getActionSender().textOnInterface("CLICK HERE TO PLAY", 15263);
+		getActionSender().textOnInterface("1", 15264);
+//		getActionSender().textOnInterface("2", 15265); //Hover
+//		getActionSender().textOnInterface("3", 15266); //Hover
+		getActionSender().textOnInterface("4", 15267);
+		getActionSender().textOnInterface("5", 15268);
+		getActionSender().textOnInterface("6", 15269);
+		getActionSender().textOnInterface("You do not have a Bank PIN. Please visit a bank", 15270);
+		getActionSender().textOnInterface("if you would like one.!", 15271);
+	}
 
 	/**
 	 * A players initial login, the step after the channels have accepted a valid password
 	 */
 	public void initialize() {
 		// synchronized (this) {
-		outStream.createFrame(249);
-		outStream.writeByteA(1); // 1 for members, zero for free
-		outStream.writeWordBigEndianA(playerId);
+		showWelcomeScreen();
+		getActionSender().initializePlayer(1, this.playerId);
+
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (j == playerId)
 				continue;
@@ -2089,7 +2109,7 @@ public class Player extends Entity {
 		getActionSender().sendFrame36(108, 0);// resets autocast button
 		getActionSender().sendFrame36(172, 1);
 		getActionSender().sendFrame36(507, 1); //Brightness Level 3
-		getActionSender().sendFrame107(); // reset screen
+		getActionSender().resetCamera(); // reset screen
 		getActionSender().setChatOptions(0, 0, 0); // reset private messaging options
 		getActionSender().setSideBarInterfaces(this, true);
 		sendMessage("Welcome to " + Configuration.SERVER_NAME);
@@ -2161,7 +2181,7 @@ public class Player extends Entity {
 	 */
 	@Override
 	public void process() {
-		this.getActionSender().sendFrame126((int) (specAmount * 10)+"", 155);
+		this.getActionSender().textOnInterface((int) (specAmount * 10)+"", 155);
 		
 		if (System.currentTimeMillis() - specDelay > GameConstants.INCREASE_SPECIAL_AMOUNT) {
 			specDelay = System.currentTimeMillis();

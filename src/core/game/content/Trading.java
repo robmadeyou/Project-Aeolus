@@ -66,9 +66,9 @@ public class Trading {
 		else if(o.getRights().equal(Rights.MODERATOR)) {
 			out = "@cr2@" + out;
 		}
-		c.getActionSender().sendFrame126("Trading with: " + o.playerName+" who has @gre@"+o.getInventory().freeSlots()+" free slots" ,3417);
-		c.getActionSender().sendFrame126("", 3431);
-		c.getActionSender().sendFrame126("Are you sure you want to make this trade?", 3535);
+		c.getActionSender().textOnInterface("Trading with: " + o.playerName+" who has @gre@"+o.getInventory().freeSlots()+" free slots" ,3417);
+		c.getActionSender().textOnInterface("", 3431);
+		c.getActionSender().textOnInterface("Are you sure you want to make this trade?", 3535);
 		c.getActionSender().sendFrame248(3323, 3321);
 	}	
 	
@@ -121,29 +121,29 @@ public class Trading {
 							if(!item.stackable) {	
 								offeredItems.remove(item);	
 								c.getInventory().addItem(itemID, 1);	
-								o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);		
+								o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);		
 							} else {
 								if(item.amount > amount) {
 									item.amount -= amount;
 									c.getInventory().addItem(itemID, amount);
-									o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);								
+									o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);								
 								} else {
 									amount = item.amount;
 									offeredItems.remove(item);
 									c.getInventory().addItem(itemID, amount);
-									o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+									o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 								}
 							}
 						break;
 						}
-					o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+					o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 					c.tradeConfirmed = false;
 					o.tradeConfirmed = false;
 					c.getInventory().resetItems(3322);
 					resetTItems(3415);
 					o.getContentManager().getTrading().resetOTItems(3416);
-					c.getActionSender().sendFrame126("", 3431);
-					o.getActionSender().sendFrame126("", 3431);
+					c.getActionSender().textOnInterface("", 3431);
+					o.getActionSender().textOnInterface("", 3431);
 					}
 				}	
 			}
@@ -154,26 +154,26 @@ public class Trading {
 						if(item.amount > amount) {
 							item.amount -= amount;
 							c.getInventory().addItem(itemID, amount);
-							o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+							o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 						} else  {
 							amount = item.amount;
 							offeredItems.remove(item);
 							c.getInventory().addItem(itemID, amount);
-							o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+							o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 						}
 					}
 					break;
 				}
 			}
 
-		o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+		o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 		c.tradeConfirmed = false;
 		o.tradeConfirmed = false;
 		c.getInventory().resetItems(3322);
 		resetTItems(3415);
 		o.getContentManager().getTrading().resetOTItems(3416);
-		c.getActionSender().sendFrame126("", 3431);
-		o.getActionSender().sendFrame126("", 3431);
+		c.getActionSender().textOnInterface("", 3431);
+		o.getActionSender().textOnInterface("", 3431);
 		} catch(Exception e){}
         return true;
     }
@@ -197,15 +197,15 @@ public class Trading {
 				if(c.getInventory().playerHasItem(itemID, 1)) {
 					offeredItems.add(new GameItem(c, itemID, 1));	
 					c.getInventory().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), 1);
-					o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+					o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 				}
 			}
-			o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+			o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 			c.getInventory().resetItems(3322);
 			resetTItems(3415);
 			o.getContentManager().getTrading().resetOTItems(3416);
-			c.getActionSender().sendFrame126("", 3431);
-			o.getActionSender().sendFrame126("", 3431);
+			c.getActionSender().textOnInterface("", 3431);
+			o.getActionSender().textOnInterface("", 3431);
 		}
 	
         if (!(Boolean) c.getAttributes().get("isTrading") || !c.canOffer) {
@@ -220,7 +220,7 @@ public class Trading {
 					inTrade = true;
 					item.amount += amount;
 					c.getInventory().deleteItem(itemID, c.getEquipment().getItemSlot(itemID), amount);
-					o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+					o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 					break;	
 				}
 			}
@@ -228,15 +228,15 @@ public class Trading {
 			if(!inTrade) {
 				offeredItems.add(new GameItem(c, itemID, amount));
 				c.getInventory().deleteItem(itemID, fromSlot, amount);
-				o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+				o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 			}
 		}
-		o.getActionSender().sendFrame126("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
+		o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 		c.getInventory().resetItems(3322);
 		resetTItems(3415);
 		o.getContentManager().getTrading().resetOTItems(3416);
-		c.getActionSender().sendFrame126("", 3431);
-		o.getActionSender().sendFrame126("", 3431);
+		c.getActionSender().textOnInterface("", 3431);
+		o.getActionSender().textOnInterface("", 3431);
 		return true;
 		}
 	
@@ -251,7 +251,7 @@ public class Trading {
 		c.acceptedTrade = false;
 		c.getActionSender().removeAllWindows();
 		c.tradeResetNeeded = false;
-		c.getActionSender().sendFrame126("Are you sure you want to make this trade?", 3535);
+		c.getActionSender().textOnInterface("Are you sure you want to make this trade?", 3535);
 	}
 	public void declineTrade() {
 		c.tradeStatus = 0;
@@ -358,7 +358,7 @@ public class Trading {
 		    }
 		}
 		
-		c.getActionSender().sendFrame126(SendTrade, 3557);
+		c.getActionSender().textOnInterface(SendTrade, 3557);
 		SendTrade = "Absolutely nothing!";
 		SendAmount = "";
 		Count = 0;
@@ -385,7 +385,7 @@ public class Trading {
 				Count++;
 		    }
 		}
-		c.getActionSender().sendFrame126(SendTrade, 3558);
+		c.getActionSender().textOnInterface(SendTrade, 3558);
 		//TODO: find out what 197 does eee 3213
 		c.getActionSender().sendFrame248(3443, 197);
 	}

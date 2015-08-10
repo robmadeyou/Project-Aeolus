@@ -76,5 +76,6 @@
 ~ August 10, 2015
 - Removed majority of PlayerAssistants outgoing packets and placed them in ActionSender
 - Created a new class dedicated to player movement
+- Removed all mob spawns greater than 6102 (greater than 474 revision). Added 2,223 mob spawns.
 
 

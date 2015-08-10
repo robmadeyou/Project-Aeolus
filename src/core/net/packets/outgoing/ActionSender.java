@@ -55,15 +55,27 @@ public class ActionSender {
 	/**
 	 * Displays the welcome screen.
 	 */
-	public void showWelcomeScreen(int days, int unreadMessages, int member, int ip) {
+	public void showWelcomeScreen(int days, int unreadMessages, int member, int ip, int daysSince) {
 		c.outStream.createFrame(176);
 		c.outStream.writeByteC(days);
 		c.outStream.writeWordA(unreadMessages);
 		c.outStream.writeByte(member);
 		c.outStream.writeDWord_v1(ip);
+		c.outStream.writeWord(daysSince);
+		c.getActionSender().showInterface(15244);
 	}
-
-
+	
+	/**
+	 * Spins a players camera
+	 */
+  	public static void spinCamera(Player c, int i1, int i2, int i3, int i4, int i5) {
+		c.outStream.createFrame(177);
+		c.outStream.writeByte(i1);
+		c.outStream.writeByte(i2);
+		c.outStream.writeWord(i3);
+		c.outStream.writeByte(i4);
+		c.outStream.writeByte(i5); 
+	}
 
 	/**
 	 * Updates the music tabs song colors
@@ -130,10 +142,10 @@ public class ActionSender {
 
 	public void clearClanChat() {
 		c.clanId = -1;
-		c.getActionSender().sendFrame126("Talking in: ", 18139);
-		c.getActionSender().sendFrame126("Owner: ", 18140);
+		c.getActionSender().textOnInterface("Talking in: ", 18139);
+		c.getActionSender().textOnInterface("Owner: ", 18140);
 		for (int j = 18144; j < 18244; j++)
-			c.getActionSender().sendFrame126("", j);
+			c.getActionSender().textOnInterface("", j);
 	}
 
 	public void resetAutocast() {
@@ -208,7 +220,7 @@ public class ActionSender {
 		if ((Boolean) c.getAttributes().get("isTrading")) {
 			return;
 		}
-		c.getActionSender().sendFrame126("Item's Kept on Death", 17103);
+		c.getActionSender().textOnInterface("Item's Kept on Death", 17103);
 		c.StartBestItemScan(c);
 		c.EquipStatus = 0;
 		for (int k = 0; k < 4; k++)
@@ -366,7 +378,7 @@ public class ActionSender {
 	/**
 	 * Sends text on interface text - String id - ShortA
 	 */
-	public void sendFrame126(String text, int id) {
+	public void textOnInterface(String text, int id) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrameVarSizeWord(126);
@@ -394,7 +406,7 @@ public class ActionSender {
 	/**
 	 * Enter name
 	 */
-	public void sendLink(String s) {
+	public void enterName(String s) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrameVarSizeWord(187);
@@ -418,7 +430,7 @@ public class ActionSender {
 	/**
 	 * Force Open Tab
 	 */
-	public void sendFrame106(int sideIcon) {
+	public void forceOpenTab(int sideIcon) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(106);
@@ -431,7 +443,7 @@ public class ActionSender {
 	/**
 	 * Resets Camera
 	 */
-	public void sendFrame107() {
+	public void resetCamera() {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(107);
@@ -456,7 +468,7 @@ public class ActionSender {
 	/**
 	 * Shows player head on interface
 	 */
-	public void sendFrame185(int Frame) {
+	public void showPlayerHeadOnInterface(int Frame) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(185);
@@ -495,7 +507,7 @@ public class ActionSender {
 	/**
 	 * Item on Interface
 	 */
-	public void sendFrame246(int MainFrame, int SubFrame, int SubFrame2) {
+	public void itemOnInterface(int MainFrame, int SubFrame, int SubFrame2) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(246);
@@ -507,6 +519,9 @@ public class ActionSender {
 		}
 	}
 
+	/**
+	 * Sets interface visibility
+	 */
 	public void sendFrame171(int MainFrame, int SubFrame) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
@@ -528,7 +543,7 @@ public class ActionSender {
 		}
 	}
 
-	public void sendFrame70(int i, int o, int id) {
+	public void moveComponent(int i, int o, int id) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(70);
@@ -540,7 +555,7 @@ public class ActionSender {
 
 	}
 
-	public void sendFrame75(int MainFrame, int SubFrame) {
+	public void showNpcHeadOnInterface(int MainFrame, int SubFrame) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(75);
@@ -551,7 +566,7 @@ public class ActionSender {
 
 	}
 
-	public void sendFrame164(int Frame) {
+	public void openBackDialogue(int Frame) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(164);
@@ -571,6 +586,10 @@ public class ActionSender {
 
 	}
 
+	/**
+	 * Sets different chat options
+	 * public, private, tradeblock
+	 */
 	public void setChatOptions(int publicChat, int privateChat, int tradeBlock) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
@@ -583,7 +602,7 @@ public class ActionSender {
 
 	}
 
-	public void sendFrame87(int id, int state) {
+	public void handleIntConfig(int id, int state) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(87);
@@ -695,7 +714,7 @@ public class ActionSender {
 	/**
 	 * Disables the minimap
 	 */
-	public void sendFrame99(int state) {
+	public void disableMinimap(int state) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			if (mapStatus != state) {
@@ -1432,154 +1451,154 @@ public class ActionSender {
 				+ getLevelForXP(c.playerXP[12]) + getLevelForXP(c.playerXP[13]) + getLevelForXP(c.playerXP[14])
 				+ getLevelForXP(c.playerXP[15]) + getLevelForXP(c.playerXP[16]) + getLevelForXP(c.playerXP[17])
 				+ getLevelForXP(c.playerXP[18]) + getLevelForXP(c.playerXP[19]) + getLevelForXP(c.playerXP[20]));
-		sendFrame126("Total Lvl: " + totalLevel, 3984);
+		textOnInterface("Total Lvl: " + totalLevel, 3984);
 		switch (skill) {
 		case 0:
-			sendFrame126("Congratulations, you just advanced an attack level!", 6248);
-			sendFrame126("Your attack level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6249);
+			textOnInterface("Congratulations, you just advanced an attack level!", 6248);
+			textOnInterface("Your attack level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6249);
 			c.sendMessage("Congratulations, you just advanced an attack level.");
-			sendFrame164(6247);
+			openBackDialogue(6247);
 
 			break;
 
 		case 1:
-			sendFrame126("Congratulations, you just advanced a defence level!", 6254);
-			sendFrame126("Your defence level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6255);
+			textOnInterface("Congratulations, you just advanced a defence level!", 6254);
+			textOnInterface("Your defence level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6255);
 			c.sendMessage("Congratulations, you just advanced a defence level.");
-			sendFrame164(6253);
+			openBackDialogue(6253);
 
 			break;
 
 		case 2:
-			sendFrame126("Congratulations, you just advanced a strength level!", 6207);
-			sendFrame126("Your strength level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6208);
+			textOnInterface("Congratulations, you just advanced a strength level!", 6207);
+			textOnInterface("Your strength level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6208);
 			c.sendMessage("Congratulations, you just advanced a strength level.");
-			sendFrame164(6206);
+			openBackDialogue(6206);
 
 			break;
 
 		case 3:
-			sendFrame126("Congratulations, you just advanced a hitpoints level!", 6217);
-			sendFrame126("Your hitpoints level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6218);
+			textOnInterface("Congratulations, you just advanced a hitpoints level!", 6217);
+			textOnInterface("Your hitpoints level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6218);
 			c.sendMessage("Congratulations, you just advanced a hitpoints level.");
-			sendFrame164(6216);
+			openBackDialogue(6216);
 			break;
 
 		case 4:
-			sendFrame126("Congratulations, you just advanced a ranged level!", 5453);
-			sendFrame126("Your ranged level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6114);
+			textOnInterface("Congratulations, you just advanced a ranged level!", 5453);
+			textOnInterface("Your ranged level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6114);
 			c.sendMessage("Congratulations, you just advanced a ranging level.");
-			sendFrame164(4443);
+			openBackDialogue(4443);
 
 			break;
 
 		case 5:
-			sendFrame126("Congratulations, you just advanced a prayer level!", 6243);
-			sendFrame126("Your prayer level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6244);
+			textOnInterface("Congratulations, you just advanced a prayer level!", 6243);
+			textOnInterface("Your prayer level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6244);
 			c.sendMessage("Congratulations, you just advanced a prayer level.");
-			sendFrame164(6242);
+			openBackDialogue(6242);
 
 			break;
 
 		case 6:
-			sendFrame126("Congratulations, you just advanced a magic level!", 6212);
-			sendFrame126("Your magic level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6213);
+			textOnInterface("Congratulations, you just advanced a magic level!", 6212);
+			textOnInterface("Your magic level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6213);
 			c.sendMessage("Congratulations, you just advanced a magic level.");
-			sendFrame164(6211);
+			openBackDialogue(6211);
 
 			break;
 
 		case 7:
-			sendFrame126("Congratulations, you just advanced a cooking level!", 6227);
-			sendFrame126("Your cooking level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6228);
+			textOnInterface("Congratulations, you just advanced a cooking level!", 6227);
+			textOnInterface("Your cooking level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6228);
 			c.sendMessage("Congratulations, you just advanced a cooking level.");
-			sendFrame164(6226);
+			openBackDialogue(6226);
 
 			break;
 
 		case 8:
-			sendFrame126("Congratulations, you just advanced a woodcutting level!", 4273);
-			sendFrame126("Your woodcutting level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4274);
+			textOnInterface("Congratulations, you just advanced a woodcutting level!", 4273);
+			textOnInterface("Your woodcutting level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4274);
 			c.sendMessage("Congratulations, you just advanced a woodcutting level.");
-			sendFrame164(4272);
+			openBackDialogue(4272);
 
 			break;
 
 		case 9:
-			sendFrame126("Congratulations, you just advanced a fletching level!", 6232);
-			sendFrame126("Your fletching level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6233);
+			textOnInterface("Congratulations, you just advanced a fletching level!", 6232);
+			textOnInterface("Your fletching level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6233);
 			c.sendMessage("Congratulations, you just advanced a fletching level.");
-			sendFrame164(6231);
+			openBackDialogue(6231);
 			break;
 
 		case 10:
-			sendFrame126("Congratulations, you just advanced a fishing level!", 6259);
-			sendFrame126("Your fishing level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6260);
+			textOnInterface("Congratulations, you just advanced a fishing level!", 6259);
+			textOnInterface("Your fishing level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6260);
 			c.sendMessage("Congratulations, you just advanced a fishing level.");
-			sendFrame164(6258);
+			openBackDialogue(6258);
 			break;
 
 		case 11:
-			sendFrame126("Congratulations, you just advanced a fire making level!", 4283);
-			sendFrame126("Your firemaking level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4284);
+			textOnInterface("Congratulations, you just advanced a fire making level!", 4283);
+			textOnInterface("Your firemaking level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4284);
 			c.sendMessage("Congratulations, you just advanced a fire making level.");
-			sendFrame164(4282);
+			openBackDialogue(4282);
 			break;
 
 		case 12:
-			sendFrame126("Congratulations, you just advanced a crafting level!", 6264);
-			sendFrame126("Your crafting level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6265);
+			textOnInterface("Congratulations, you just advanced a crafting level!", 6264);
+			textOnInterface("Your crafting level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6265);
 			c.sendMessage("Congratulations, you just advanced a crafting level.");
-			sendFrame164(6263);
+			openBackDialogue(6263);
 			break;
 
 		case 13:
-			sendFrame126("Congratulations, you just advanced a smithing level!", 6222);
-			sendFrame126("Your smithing level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6223);
+			textOnInterface("Congratulations, you just advanced a smithing level!", 6222);
+			textOnInterface("Your smithing level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6223);
 			c.sendMessage("Congratulations, you just advanced a smithing level.");
-			sendFrame164(6221);
+			openBackDialogue(6221);
 			break;
 
 		case 14:
-			sendFrame126("Congratulations, you just advanced a mining level!", 4417);
-			sendFrame126("Your mining level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4438);
+			textOnInterface("Congratulations, you just advanced a mining level!", 4417);
+			textOnInterface("Your mining level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4438);
 			c.sendMessage("Congratulations, you just advanced a mining level.");
-			sendFrame164(4416);
+			openBackDialogue(4416);
 			break;
 
 		case 15:
-			sendFrame126("Congratulations, you just advanced a herblore level!", 6238);
-			sendFrame126("Your herblore level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6239);
+			textOnInterface("Congratulations, you just advanced a herblore level!", 6238);
+			textOnInterface("Your herblore level is now " + getLevelForXP(c.playerXP[skill]) + ".", 6239);
 			c.sendMessage("Congratulations, you just advanced a herblore level.");
-			sendFrame164(6237);
+			openBackDialogue(6237);
 			break;
 
 		case 16:
-			sendFrame126("Congratulations, you just advanced a agility level!", 4278);
-			sendFrame126("Your agility level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4279);
+			textOnInterface("Congratulations, you just advanced a agility level!", 4278);
+			textOnInterface("Your agility level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4279);
 			c.sendMessage("Congratulations, you just advanced an agility level.");
-			sendFrame164(4277);
+			openBackDialogue(4277);
 			break;
 
 		case 17:
-			sendFrame126("Congratulations, you just advanced a thieving level!", 4263);
-			sendFrame126("Your theiving level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4264);
+			textOnInterface("Congratulations, you just advanced a thieving level!", 4263);
+			textOnInterface("Your theiving level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4264);
 			c.sendMessage("Congratulations, you just advanced a thieving level.");
-			sendFrame164(4261);
+			openBackDialogue(4261);
 			break;
 
 		case 18:
-			sendFrame126("Congratulations, you just advanced a slayer level!", 12123);
-			sendFrame126("Your slayer level is now " + getLevelForXP(c.playerXP[skill]) + ".", 12124);
+			textOnInterface("Congratulations, you just advanced a slayer level!", 12123);
+			textOnInterface("Your slayer level is now " + getLevelForXP(c.playerXP[skill]) + ".", 12124);
 			c.sendMessage("Congratulations, you just advanced a slayer level.");
-			sendFrame164(12122);
+			openBackDialogue(12122);
 			break;
 
 		case 20:
-			sendFrame126("Congratulations, you just advanced a runecrafting level!", 4268);
-			sendFrame126("Your runecrafting level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4269);
+			textOnInterface("Congratulations, you just advanced a runecrafting level!", 4268);
+			textOnInterface("Your runecrafting level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4269);
 			c.sendMessage("Congratulations, you just advanced a runecrafting level.");
-			sendFrame164(4267);
+			openBackDialogue(4267);
 			break;
 		}
 		c.dialogueAction = 0;
@@ -1589,152 +1608,152 @@ public class ActionSender {
 	public void refreshSkill(int skillId) {
 		switch (skillId) {
 		case 0:
-			sendFrame126("" + c.playerLevel[0] + "", 4004);
-			sendFrame126("" + getLevelForXP(c.playerXP[0]) + "", 4005);
-			sendFrame126("" + c.playerXP[0] + "", 4044);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[0]) + 1) + "", 4045);
+			textOnInterface("" + c.playerLevel[0] + "", 4004);
+			textOnInterface("" + getLevelForXP(c.playerXP[0]) + "", 4005);
+			textOnInterface("" + c.playerXP[0] + "", 4044);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[0]) + 1) + "", 4045);
 			break;
 
 		case 1:
-			sendFrame126("" + c.playerLevel[1] + "", 4008);
-			sendFrame126("" + getLevelForXP(c.playerXP[1]) + "", 4009);
-			sendFrame126("" + c.playerXP[1] + "", 4056);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[1]) + 1) + "", 4057);
+			textOnInterface("" + c.playerLevel[1] + "", 4008);
+			textOnInterface("" + getLevelForXP(c.playerXP[1]) + "", 4009);
+			textOnInterface("" + c.playerXP[1] + "", 4056);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[1]) + 1) + "", 4057);
 			break;
 
 		case 2:
-			sendFrame126("" + c.playerLevel[2] + "", 4006);
-			sendFrame126("" + getLevelForXP(c.playerXP[2]) + "", 4007);
-			sendFrame126("" + c.playerXP[2] + "", 4050);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[2]) + 1) + "", 4051);
+			textOnInterface("" + c.playerLevel[2] + "", 4006);
+			textOnInterface("" + getLevelForXP(c.playerXP[2]) + "", 4007);
+			textOnInterface("" + c.playerXP[2] + "", 4050);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[2]) + 1) + "", 4051);
 			break;
 
 		case 3:
-			sendFrame126("" + c.playerLevel[3] + "", 4016);
-			sendFrame126("" + getLevelForXP(c.playerXP[3]) + "", 4017);
-			sendFrame126("" + c.playerXP[3] + "", 4080);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[3]) + 1) + "", 4081);
+			textOnInterface("" + c.playerLevel[3] + "", 4016);
+			textOnInterface("" + getLevelForXP(c.playerXP[3]) + "", 4017);
+			textOnInterface("" + c.playerXP[3] + "", 4080);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[3]) + 1) + "", 4081);
 			break;
 
 		case 4:
-			sendFrame126("" + c.playerLevel[4] + "", 4010);
-			sendFrame126("" + getLevelForXP(c.playerXP[4]) + "", 4011);
-			sendFrame126("" + c.playerXP[4] + "", 4062);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[4]) + 1) + "", 4063);
+			textOnInterface("" + c.playerLevel[4] + "", 4010);
+			textOnInterface("" + getLevelForXP(c.playerXP[4]) + "", 4011);
+			textOnInterface("" + c.playerXP[4] + "", 4062);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[4]) + 1) + "", 4063);
 			break;
 
 		case 5:
-			sendFrame126("" + c.playerLevel[5] + "", 4012);
-			sendFrame126("" + getLevelForXP(c.playerXP[5]) + "", 4013);
-			sendFrame126("" + c.playerXP[5] + "", 4068);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[5]) + 1) + "", 4069);
-			sendFrame126("" + c.playerLevel[5] + "/" + getLevelForXP(c.playerXP[5]) + "", 687);// Prayer
+			textOnInterface("" + c.playerLevel[5] + "", 4012);
+			textOnInterface("" + getLevelForXP(c.playerXP[5]) + "", 4013);
+			textOnInterface("" + c.playerXP[5] + "", 4068);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[5]) + 1) + "", 4069);
+			textOnInterface("" + c.playerLevel[5] + "/" + getLevelForXP(c.playerXP[5]) + "", 687);// Prayer
 																								// frame
 			break;
 
 		case 6:
-			sendFrame126("" + c.playerLevel[6] + "", 4014);
-			sendFrame126("" + getLevelForXP(c.playerXP[6]) + "", 4015);
-			sendFrame126("" + c.playerXP[6] + "", 4074);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[6]) + 1) + "", 4075);
+			textOnInterface("" + c.playerLevel[6] + "", 4014);
+			textOnInterface("" + getLevelForXP(c.playerXP[6]) + "", 4015);
+			textOnInterface("" + c.playerXP[6] + "", 4074);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[6]) + 1) + "", 4075);
 			break;
 
 		case 7:
-			sendFrame126("" + c.playerLevel[7] + "", 4034);
-			sendFrame126("" + getLevelForXP(c.playerXP[7]) + "", 4035);
-			sendFrame126("" + c.playerXP[7] + "", 4134);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[7]) + 1) + "", 4135);
+			textOnInterface("" + c.playerLevel[7] + "", 4034);
+			textOnInterface("" + getLevelForXP(c.playerXP[7]) + "", 4035);
+			textOnInterface("" + c.playerXP[7] + "", 4134);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[7]) + 1) + "", 4135);
 			break;
 
 		case 8:
-			sendFrame126("" + c.playerLevel[8] + "", 4038);
-			sendFrame126("" + getLevelForXP(c.playerXP[8]) + "", 4039);
-			sendFrame126("" + c.playerXP[8] + "", 4146);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[8]) + 1) + "", 4147);
+			textOnInterface("" + c.playerLevel[8] + "", 4038);
+			textOnInterface("" + getLevelForXP(c.playerXP[8]) + "", 4039);
+			textOnInterface("" + c.playerXP[8] + "", 4146);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[8]) + 1) + "", 4147);
 			break;
 
 		case 9:
-			sendFrame126("" + c.playerLevel[9] + "", 4026);
-			sendFrame126("" + getLevelForXP(c.playerXP[9]) + "", 4027);
-			sendFrame126("" + c.playerXP[9] + "", 4110);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[9]) + 1) + "", 4111);
+			textOnInterface("" + c.playerLevel[9] + "", 4026);
+			textOnInterface("" + getLevelForXP(c.playerXP[9]) + "", 4027);
+			textOnInterface("" + c.playerXP[9] + "", 4110);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[9]) + 1) + "", 4111);
 			break;
 
 		case 10:
-			sendFrame126("" + c.playerLevel[10] + "", 4032);
-			sendFrame126("" + getLevelForXP(c.playerXP[10]) + "", 4033);
-			sendFrame126("" + c.playerXP[10] + "", 4128);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[10]) + 1) + "", 4129);
+			textOnInterface("" + c.playerLevel[10] + "", 4032);
+			textOnInterface("" + getLevelForXP(c.playerXP[10]) + "", 4033);
+			textOnInterface("" + c.playerXP[10] + "", 4128);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[10]) + 1) + "", 4129);
 			break;
 
 		case 11:
-			sendFrame126("" + c.playerLevel[11] + "", 4036);
-			sendFrame126("" + getLevelForXP(c.playerXP[11]) + "", 4037);
-			sendFrame126("" + c.playerXP[11] + "", 4140);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[11]) + 1) + "", 4141);
+			textOnInterface("" + c.playerLevel[11] + "", 4036);
+			textOnInterface("" + getLevelForXP(c.playerXP[11]) + "", 4037);
+			textOnInterface("" + c.playerXP[11] + "", 4140);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[11]) + 1) + "", 4141);
 			break;
 
 		case 12:
-			sendFrame126("" + c.playerLevel[12] + "", 4024);
-			sendFrame126("" + getLevelForXP(c.playerXP[12]) + "", 4025);
-			sendFrame126("" + c.playerXP[12] + "", 4104);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[12]) + 1) + "", 4105);
+			textOnInterface("" + c.playerLevel[12] + "", 4024);
+			textOnInterface("" + getLevelForXP(c.playerXP[12]) + "", 4025);
+			textOnInterface("" + c.playerXP[12] + "", 4104);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[12]) + 1) + "", 4105);
 			break;
 
 		case 13:
-			sendFrame126("" + c.playerLevel[13] + "", 4030);
-			sendFrame126("" + getLevelForXP(c.playerXP[13]) + "", 4031);
-			sendFrame126("" + c.playerXP[13] + "", 4122);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[13]) + 1) + "", 4123);
+			textOnInterface("" + c.playerLevel[13] + "", 4030);
+			textOnInterface("" + getLevelForXP(c.playerXP[13]) + "", 4031);
+			textOnInterface("" + c.playerXP[13] + "", 4122);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[13]) + 1) + "", 4123);
 			break;
 
 		case 14:
-			sendFrame126("" + c.playerLevel[14] + "", 4028);
-			sendFrame126("" + getLevelForXP(c.playerXP[14]) + "", 4029);
-			sendFrame126("" + c.playerXP[14] + "", 4116);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[14]) + 1) + "", 4117);
+			textOnInterface("" + c.playerLevel[14] + "", 4028);
+			textOnInterface("" + getLevelForXP(c.playerXP[14]) + "", 4029);
+			textOnInterface("" + c.playerXP[14] + "", 4116);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[14]) + 1) + "", 4117);
 			break;
 
 		case 15:
-			sendFrame126("" + c.playerLevel[15] + "", 4020);
-			sendFrame126("" + getLevelForXP(c.playerXP[15]) + "", 4021);
-			sendFrame126("" + c.playerXP[15] + "", 4092);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[15]) + 1) + "", 4093);
+			textOnInterface("" + c.playerLevel[15] + "", 4020);
+			textOnInterface("" + getLevelForXP(c.playerXP[15]) + "", 4021);
+			textOnInterface("" + c.playerXP[15] + "", 4092);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[15]) + 1) + "", 4093);
 			break;
 
 		case 16:
-			sendFrame126("" + c.playerLevel[16] + "", 4018);
-			sendFrame126("" + getLevelForXP(c.playerXP[16]) + "", 4019);
-			sendFrame126("" + c.playerXP[16] + "", 4086);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[16]) + 1) + "", 4087);
+			textOnInterface("" + c.playerLevel[16] + "", 4018);
+			textOnInterface("" + getLevelForXP(c.playerXP[16]) + "", 4019);
+			textOnInterface("" + c.playerXP[16] + "", 4086);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[16]) + 1) + "", 4087);
 			break;
 
 		case 17:
-			sendFrame126("" + c.playerLevel[17] + "", 4022);
-			sendFrame126("" + getLevelForXP(c.playerXP[17]) + "", 4023);
-			sendFrame126("" + c.playerXP[17] + "", 4098);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[17]) + 1) + "", 4099);
+			textOnInterface("" + c.playerLevel[17] + "", 4022);
+			textOnInterface("" + getLevelForXP(c.playerXP[17]) + "", 4023);
+			textOnInterface("" + c.playerXP[17] + "", 4098);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[17]) + 1) + "", 4099);
 			break;
 
 		case 18:
-			sendFrame126("" + c.playerLevel[18] + "", 12166);
-			sendFrame126("" + getLevelForXP(c.playerXP[18]) + "", 12167);
-			sendFrame126("" + c.playerXP[18] + "", 12171);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[18]) + 1) + "", 12172);
+			textOnInterface("" + c.playerLevel[18] + "", 12166);
+			textOnInterface("" + getLevelForXP(c.playerXP[18]) + "", 12167);
+			textOnInterface("" + c.playerXP[18] + "", 12171);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[18]) + 1) + "", 12172);
 			break;
 
 		case 19:
-			sendFrame126("" + c.playerLevel[19] + "", 13926);
-			sendFrame126("" + getLevelForXP(c.playerXP[19]) + "", 13927);
-			sendFrame126("" + c.playerXP[19] + "", 13921);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[19]) + 1) + "", 13922);
+			textOnInterface("" + c.playerLevel[19] + "", 13926);
+			textOnInterface("" + getLevelForXP(c.playerXP[19]) + "", 13927);
+			textOnInterface("" + c.playerXP[19] + "", 13921);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[19]) + 1) + "", 13922);
 			break;
 
 		case 20:
-			sendFrame126("" + c.playerLevel[20] + "", 4152);
-			sendFrame126("" + getLevelForXP(c.playerXP[20]) + "", 4153);
-			sendFrame126("" + c.playerXP[20] + "", 4157);
-			sendFrame126("" + getXPForLevel(getLevelForXP(c.playerXP[20]) + 1) + "", 4158);
+			textOnInterface("" + c.playerLevel[20] + "", 4152);
+			textOnInterface("" + getLevelForXP(c.playerXP[20]) + "", 4153);
+			textOnInterface("" + c.playerXP[20] + "", 4157);
+			textOnInterface("" + getXPForLevel(getLevelForXP(c.playerXP[20]) + 1) + "", 4158);
 			break;
 		}
 	}
@@ -1788,6 +1807,17 @@ public class ActionSender {
 		refreshSkill(skill);
 		return true;
 	}
+	
+	/**
+	 * Initializes a player upon login
+	 * @param playerIsMember 0 free, 1 Member
+	 * @param index playerId
+	 */
+	public void initializePlayer(int playerIsMember, int index) {
+		c.outStream.createFrame(249);
+		c.outStream.writeByteA(playerIsMember); // 1 for members, zero for free
+		c.outStream.writeWordBigEndianA(index);
+	}
 
 	/**
 	 * Show an arrow icon on the selected player.
@@ -1830,16 +1860,6 @@ public class ActionSender {
 		objectToRemove(2638, 4688);
 		objectToRemove2(2635, 4693);
 		objectToRemove2(2634, 4693);
-	}
-
-	public int antiFire() {
-		int toReturn = 0;
-		if (c.antiFirePot)
-			toReturn++;
-		if (c.playerEquipment[c.playerShield] == 1540 || c.prayerActive[12]
-				|| c.playerEquipment[c.playerShield] == 11284)
-			toReturn++;
-		return toReturn;
 	}
 
 	public boolean checkForFlags() {

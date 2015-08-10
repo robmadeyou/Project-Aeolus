@@ -143,8 +143,8 @@ public class CastOnOther extends MagicRequirements {
 		if (castOn != null) {
 			if (castOn.distanceToPoint(c.absX, c.absY) <= 15) {
 				if (c.heightLevel == castOn.heightLevel) {
-					castOn.getActionSender().sendFrame126(location[type], 12560);
-					castOn.getActionSender().sendFrame126(c.playerName, 12558);
+					castOn.getActionSender().textOnInterface(location[type], 12560);
+					castOn.getActionSender().textOnInterface(c.playerName, 12558);
 					castOn.getActionSender().showInterface(12468);
 					castOn.teleotherType = type;
 				}

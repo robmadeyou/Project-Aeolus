@@ -27,7 +27,7 @@ public class ShopAssistant {
 		c.isShopping = true;
 		c.myShopId = ShopID;
 		c.getActionSender().sendFrame248(3824, 3822);
-		c.getActionSender().sendFrame126(ShopHandler.ShopName[ShopID], 3901);
+		c.getActionSender().textOnInterface(ShopHandler.ShopName[ShopID], 3901);
 	}
 	
 	public void updatePlayerShop() {
@@ -409,7 +409,7 @@ public class ShopAssistant {
 				c.isShopping = true;
 				c.myShopId = 14;
 				c.getActionSender().sendFrame248(3824, 3822);
-				c.getActionSender().sendFrame126("Skillcape Shop", 3901);
+				c.getActionSender().textOnInterface("Skillcape Shop", 3901);
 				
 				int TotalItems = 0;
 				TotalItems = capes2;
@@ -466,7 +466,7 @@ public class ShopAssistant {
 				c.isShopping = true;
 				c.myShopId = 15;
 				c.getActionSender().sendFrame248(3824, 3822);
-				c.getActionSender().sendFrame126("Void Recovery", 3901);
+				c.getActionSender().textOnInterface("Void Recovery", 3901);
 				
 				int TotalItems = 5;
 				c.getOutStream().createFrameVarSizeWord(53);
