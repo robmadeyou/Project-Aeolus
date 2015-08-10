@@ -10,7 +10,7 @@ public final class MobDefinitions {
     /**
      * The array that contains all of the NPC definitions.
      */
-    public static final MobDefinitions[] DEFINITIONS = new MobDefinitions[6102];
+    public static final MobDefinitions[] DEFINITIONS = new MobDefinitions[MobHandler.maxListedNPCs];
 
     /**
      * The identification for this NPC.

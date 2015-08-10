@@ -1,15 +1,6 @@
 package core.game.model.entity.mob;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import core.Configuration;
 import core.Server;
@@ -21,14 +12,12 @@ import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.item.GameItem;
 import core.game.sound.effects.SoundEffects;
-import core.game.util.JsonSaver;
 import core.game.util.Misc;
 
-@SuppressWarnings("all")
 public class MobHandler {
 
 	public static int maxNPCs = 10000;
-	public static int maxListedNPCs = 10000;
+	public static int maxListedNPCs = 6102;
 	public static int maxNPCDrops = 10000;
 	public static Mob npcs[] = new Mob[maxNPCs];
 	public static MobDefinitions npcDefinitions[] = new MobDefinitions[maxListedNPCs];
