@@ -73,4 +73,8 @@
 - Implemented prayer
 - Fixed all prayers, no bugs that I am aware of.
 
+~ August 10, 2015
+- Removed majority of PlayerAssistants outgoing packets and placed them in ActionSender
+- Created a new class dedicated to player movement
+
 
