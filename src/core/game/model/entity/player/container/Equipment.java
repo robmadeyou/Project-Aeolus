@@ -7,7 +7,6 @@ import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.model.item.Item;
 import core.game.model.item.ItemDefinition;
-import core.game.model.item.WieldType;
 
 public class Equipment {
 
@@ -720,7 +719,6 @@ public class Equipment {
 	/**
 	 * Removes a wielded item.
 	 **/
-	@SuppressWarnings("static-access")
 	public void removeItem(int wearID, int slot) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
@@ -751,6 +749,7 @@ public class Equipment {
 							.isFullMask(c.playerEquipment[c.playerHat]);
 					c.isFullBody = Item
 							.isFullBody(c.playerEquipment[c.playerChest]);
+					c.getPA().sendSound(230);
 				}
 			}
 		}

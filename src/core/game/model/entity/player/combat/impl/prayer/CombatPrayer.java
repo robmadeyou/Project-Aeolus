@@ -1,4 +1,4 @@
-package core.game.model.entity.player.combat.impl.melee;
+package core.game.model.entity.player.combat.impl.prayer;
 
 import core.Configuration;
 import core.game.model.entity.player.Player;
@@ -8,10 +8,15 @@ import core.game.model.entity.player.Player;
  * 
  * @author 2012
  * @author Organic
+ * @author 7Winds (Modified)
  */
 
 public class CombatPrayer {
 
+	/**
+	 * Prayers in a array. This would be nicer to use an enum.
+	 * Arrays can get ugly to work with.
+	 */
 	public static double[] prayerData = { 1, // Thick Skin.
 			1, // Burst of Strength.
 			1, // Clarity of Thought.
@@ -40,6 +45,9 @@ public class CombatPrayer {
 			8, // Piety.
 	};
 
+	/**
+	 * Drains prayer points
+	 */
 	public static void handlePrayerDrain(Player c) {
 		c.usingPrayer = false;
 		double toRemove = 0.0;
@@ -58,7 +66,10 @@ public class CombatPrayer {
 			reducePrayerLevel(c);
 		}
 	}
-
+	
+	/**
+	 * Reduces a players prayer level (Smite)
+	 */
 	public static void reducePrayerLevel(Player c) {
 		if (c.playerLevel[5] - 1 > 0) {
 			c.playerLevel[5] -= 1;
@@ -71,6 +82,9 @@ public class CombatPrayer {
 		c.getPA().refreshSkill(5);
 	}
 
+	/**
+	 * Resets all player prayers
+	 */
 	public static void resetPrayers(Player c) {
 		for (int i = 0; i < c.prayerActive.length; i++) {
 			c.prayerActive[i] = false;
@@ -79,7 +93,40 @@ public class CombatPrayer {
 		c.headIcon = -1;
 		c.getPA().requestUpdates();
 	}
+	
+	/**
+	 * Prayer constants held within the array.
+	 */
+	private static final int THICK_SKIN = 0;	
+	private static final int BURST_OF_STRENGTH = 1;	
+	private static final int CLARITY_OF_THOUGHT = 2;
+	private static final int SHARP_EYE = 3;	
+	private static final int MYSTIC_WILL = 4;	
+	private static final int ROCK_SKIN = 5;	
+	private static final int SUPERHUMAN_STRENGTH = 6;	
+	private static final int IMPROVED_REFLEXES = 7;	
+	private static final int RAPID_RESTORE = 8;	
+	private static final int RAPID_HEAL = 9;	
+	private static final int PROTECT_ITEM = 10;	
+	private static final int HAWK_EYE = 11;	
+	private static final int MYSTIC_LORE = 12;	
+	private static final int STEEL_SKIN = 13;	
+	private static final int ULTIMATE_STRENGTH = 14;
+	private static final int INCREDIBLE_REFLEXES = 15;
+	private static final int PROTECT_FROM_MAGIC = 16;
+	private static final int PROTECT_FROM_MISSLES = 17;
+	private static final int PROTECT_FROM_MELEE = 18;
+	private static final int EAGLE_EYE = 19;
+	private static final int MYSTIC_MIGHT = 20;
+	private static final int RETRIBUTION = 21;
+	private static final int REDEMPTION = 22;
+	private static final int SMITE = 23;
+	private static final int CHIVALRY = 24;
+	private static final int PIETY = 25;
 
+	/**
+	 * Handles the activation of a players prayer.
+	 */
 	public static void activatePrayer(Player c, int i) {
 		if (c.isDead || c.playerLevel[3] <= 0) {
 			return;
@@ -104,9 +151,18 @@ public class CombatPrayer {
 				boolean headIcon = false;
 				switch (i) {
 
-				case 0:
-				case 5:
-				case 13:
+				case THICK_SKIN:
+					if (i == THICK_SKIN) {
+						c.getPA().sendSound(446);
+					}
+				case ROCK_SKIN:
+					if (i == ROCK_SKIN) {
+						c.getPA().sendSound(449);
+					}
+				case STEEL_SKIN:
+					if (i == STEEL_SKIN) {
+						c.getPA().sendSound(439);
+					}
 					if (c.prayerActive[i] == false) {
 						for (int j = 0; j < defPray.length; j++) {
 							if (defPray[j] != i) {
@@ -117,10 +173,16 @@ public class CombatPrayer {
 						}
 					}
 					break;
-				case 1:
-				case 6:
-				case 14:
-					c.getPA().sendSound(448);
+				case BURST_OF_STRENGTH:
+					if (i == BURST_OF_STRENGTH) {
+						c.getPA().sendSound(450);
+					}
+				case SUPERHUMAN_STRENGTH:
+					if (i == SUPERHUMAN_STRENGTH) {
+						c.getPA().sendSound(434);
+					}
+				case ULTIMATE_STRENGTH:
+					c.getPA().sendSound(441);
 					if (c.prayerActive[i] == false) {
 						for (int j = 0; j < strPray.length; j++) {
 							if (strPray[j] != i) {
@@ -146,9 +208,18 @@ public class CombatPrayer {
 					}
 					break;
 
-				case 2:
-				case 7:
-				case 15:
+				case CLARITY_OF_THOUGHT:
+					if (i == CLARITY_OF_THOUGHT) {
+						c.getPA().sendSound(448);
+					}
+				case IMPROVED_REFLEXES:
+					if (i == IMPROVED_REFLEXES) {
+						c.getPA().sendSound(436);
+					}
+				case INCREDIBLE_REFLEXES:
+					if (i == INCREDIBLE_REFLEXES) {
+						c.getPA().sendSound(440);
+					}
 					if (c.prayerActive[i] == false) {
 						for (int j = 0; j < atkPray.length; j++) {
 							if (atkPray[j] != i) {
@@ -173,10 +244,15 @@ public class CombatPrayer {
 						}
 					}
 					break;
+					
+				case RAPID_RESTORE:
+				case RAPID_HEAL:
+					
+					break;
 
-				case 3:// range prays
-				case 11:
-				case 19:
+				case SHARP_EYE:
+				case HAWK_EYE:
+				case EAGLE_EYE:
 					if (c.prayerActive[i] == false) {
 						for (int j = 0; j < atkPray.length; j++) {
 							c.getPA().sendSound(448);
@@ -209,9 +285,9 @@ public class CombatPrayer {
 						}
 					}
 					break;
-				case 4:
-				case 12:
-				case 20:
+				case MYSTIC_WILL:
+				case MYSTIC_LORE:
+				case MYSTIC_MIGHT:
 					if (c.prayerActive[i] == false) {
 						for (int j = 0; j < atkPray.length; j++) {
 							if (atkPray[j] != i) {
@@ -243,14 +319,21 @@ public class CombatPrayer {
 						}
 					}
 					break;
-				case 10:
+				case PROTECT_ITEM:
 					c.lastProtItem = System.currentTimeMillis();
 					c.protectItem = !c.protectItem;
+					c.getPA().sendSound(433);
 					break;
 
-				case 16:
-				case 17:
-				case 18:
+				case PROTECT_FROM_MAGIC:
+					if (i == PROTECT_FROM_MAGIC) {
+						c.getPA().sendSound(438);
+					}
+				case PROTECT_FROM_MISSLES:
+					if (i == PROTECT_FROM_MISSLES) {
+						c.getPA().sendSound(444);
+					}
+				case PROTECT_FROM_MELEE:
 					if (System.currentTimeMillis() - c.stopPrayerDelay < 5000) {
 						c.sendMessage("You have been injured and can't use this prayer!");
 						c.getPA().sendFrame36(c.PRAYER_GLOW[16], 0);
@@ -258,15 +341,15 @@ public class CombatPrayer {
 						c.getPA().sendFrame36(c.PRAYER_GLOW[18], 0);
 						return;
 					}
-					if (i == 16)
+					if (i == PROTECT_FROM_MAGIC)
 						c.protMageDelay = System.currentTimeMillis();
-					else if (i == 17)
+					else if (i == PROTECT_FROM_MISSLES)
 						c.protRangeDelay = System.currentTimeMillis();
-					else if (i == 18)
+					else if (i == PROTECT_FROM_MELEE)
 						c.protMeleeDelay = System.currentTimeMillis();
-				case 21:
-				case 22:
-				case 23:
+				case RETRIBUTION:
+				case REDEMPTION:
+				case SMITE:
 					headIcon = true;
 					for (int p = 16; p < 24; p++) {
 						if (i != p && p != 19 && p != 20) {
@@ -275,8 +358,8 @@ public class CombatPrayer {
 						}
 					}
 					break;
-				case 24:
-				case 25:
+				case CHIVALRY:
+				case PIETY:
 					if (c.prayerActive[i] == false) {
 						c.getPA().sendSound(448);
 						for (int j = 0; j < atkPray.length; j++) {
