@@ -8,7 +8,7 @@ import java.util.concurrent.Future;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.content.CombatAssistant;
@@ -107,7 +107,7 @@ public class Player extends Entity {
 			dialogueAction = 0, autocastId, followDistance, followId2, barrageCount = 0, delayedDamage = 0,
 			delayedDamage2 = 0, lastArrowUsed = -1, clanId = -1, xInterfaceId = 0, xRemoveId = 0,
 			xRemoveSlot = 0, frozenBy = 0, poisonDamage = 0, teleAction = 0, bonusAttack = 0, lastNpcAttacked = 0,
-			killCount = 0, actionTimer, height = 0;
+			killCount = 0, actionTimer, height = 0, magePoints = 0;
 
 	public boolean usingOtherRangeWeapons, usingCross, usingArrows, magicDef, ignoreDefence,
 	spellSwap, rangeEndGFXHeight, stopPlayerSkill, oldSpec, multiAttacking, prayerDisabled;
@@ -535,7 +535,7 @@ public class Player extends Entity {
 			int modY = absY > 6400 ? absY - 6400 : absY;
 			wildLevel = (((modY - 3520) / 8) + 1);
 			getPA().walkableInterface(197);
-			if (Config.SINGLE_AND_MULTI_ZONES) {
+			if (Configuration.SINGLE_AND_MULTI_ZONES) {
 				if (inMulti()) {
 					getPA().sendFrame126("@yel@Level: " + wildLevel, 199);
 				} else {
@@ -2069,7 +2069,7 @@ public class Player extends Entity {
 		getPA().sendFrame107(); // reset screen
 		getPA().setChatOptions(0, 0, 0); // reset private messaging options
 		getPA().setSideBarInterfaces(this, true);
-		sendMessage("Welcome to " + Config.SERVER_NAME);
+		sendMessage("Welcome to " + Configuration.SERVER_NAME);
 		getPA().showOption(5, 0, "Follow", 4);
 		getPA().showOption(4, 0, "Trade With", 3);
 		getInventory().resetItems(3214);

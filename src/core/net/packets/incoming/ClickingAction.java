@@ -1,6 +1,6 @@
 package core.net.packets.incoming;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.util.Misc;
@@ -42,7 +42,7 @@ public class ClickingAction implements PacketType {
 			if(c.duelStatus == 6) {
 				c.getContentManager().getDueling().claimStakedItems();		
 			}
-			if (Config.SERVER_DEBUG)
+			if (Configuration.SERVER_DEBUG)
 				System.out.println("ClickingAction - Close Window: " + "packetType " +  packetType + " " + "packetSize: " + packetSize);
 			break;		
 		}

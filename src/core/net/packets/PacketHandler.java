@@ -1,6 +1,6 @@
 package core.net.packets;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Rights;
 import core.game.model.item.WearItem;
@@ -134,7 +134,7 @@ public class PacketHandler{
 	public static void processPacket(Player c, int packetType, int packetSize) {
         PacketType p = packetId[packetType];
         if(p != null && packetType > 0 && packetType < 257 && packetType == c.packetType && packetSize == c.packetSize) {
-            if (Config.SERVER_DEBUG && c.getRights().equals(Rights.DEVELOPER)) {
+            if (Configuration.SERVER_DEBUG && c.getRights().equals(Rights.DEVELOPER)) {
                 c.sendMessage("PacketType: " + packetType + ". PacketSize: " + packetSize + ".");
             }
             try {

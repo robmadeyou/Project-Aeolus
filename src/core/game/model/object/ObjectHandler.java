@@ -9,7 +9,7 @@ import java.util.List;
 
 import com.google.gson.Gson;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;

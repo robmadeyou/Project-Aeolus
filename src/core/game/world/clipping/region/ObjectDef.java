@@ -1,6 +1,6 @@
 package core.game.world.clipping.region;
 
-import core.Config;
+import core.Configuration;
 
 public final class ObjectDef {
 
@@ -57,7 +57,7 @@ public final class ObjectDef {
 
 	public static byte[] getBuffer(String s) {
 		try {
-			java.io.File f = new java.io.File(Config.DATA_DIR + "world/object/" + s);
+			java.io.File f = new java.io.File(Configuration.DATA_DIR + "world/object/" + s);
 			if (!f.exists())
 				return null;
 			byte[] buffer = new byte[(int) f.length()];

@@ -1,6 +1,6 @@
 package core.game.model.entity.player.container;
 
-import core.Config;
+import core.Configuration;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
@@ -332,7 +332,7 @@ public class Equipment {
 					return false;
 				}
 
-				if (Config.itemRequirements) {
+				if (Configuration.itemRequirements) {
 					if (targetSlot == 10 || targetSlot == 7 || targetSlot == 5
 							|| targetSlot == 4 || targetSlot == 0
 							|| targetSlot == 9 || targetSlot == 10) {

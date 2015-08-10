@@ -13,7 +13,7 @@ import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.util.HashedWheelTimer;
 import org.jboss.netty.util.Timer;
 
-import core.Config;
+import core.Configuration;
 import core.game.util.Misc;
 import core.game.util.log.CustomLogger;
 import core.net.NetworkConstants;

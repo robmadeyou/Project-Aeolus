@@ -1,6 +1,6 @@
 package core.game.model.entity.player.combat.impl.magic;
 
-import core.Config;
+import core.Configuration;
 import core.game.GameConstants;
 import core.game.model.entity.Hit;
 import core.game.model.entity.mob.Mob;
@@ -40,7 +40,7 @@ public class MagicExtras {
 		if (!PlayerHandler.players[i].inWild()) {
 			return false;
 		}
-		if (Config.COMBAT_LEVEL_DIFFERENCE) {
+		if (Configuration.COMBAT_LEVEL_DIFFERENCE) {
 			int combatDif1 = c.getCombat().getCombatDifference(c.combatLevel,
 					PlayerHandler.players[i].combatLevel);
 			if (combatDif1 > c.wildLevel
@@ -50,7 +50,7 @@ public class MagicExtras {
 			}
 		}
 
-		if (Config.SINGLE_AND_MULTI_ZONES) {
+		if (Configuration.SINGLE_AND_MULTI_ZONES) {
 			if (!PlayerHandler.players[i].inMulti()) { // single combat zones
 				if (PlayerHandler.players[i].underAttackBy != c.playerId
 						&& PlayerHandler.players[i].underAttackBy != 0) {

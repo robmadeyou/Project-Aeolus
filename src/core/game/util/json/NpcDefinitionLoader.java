@@ -5,7 +5,7 @@ import java.util.Objects;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.mob.MobDefinitions;
 import core.game.util.JsonLoader;
 import core.game.util.Misc;
@@ -21,7 +21,7 @@ public final class NpcDefinitionLoader extends JsonLoader {
 	 * Creates a new {@link NpcDefinitionLoader}.
 	 */
 	public NpcDefinitionLoader() {
-		super(Config.DATA_DIR + "./json/npc_definitions.json");
+		super(Configuration.DATA_DIR + "./json/npc_definitions.json");
 		Misc.println("Loaded " + MobDefinitions.DEFINITIONS.length + " NPC Definitions");
 	}
 

@@ -1,6 +1,6 @@
 package core.game.model.entity.player.combat.impl.melee;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 
 /**
@@ -98,9 +98,9 @@ public class CombatPrayer {
 		int[] rangePray = { 3, 11, 19 };
 		int[] magePray = { 4, 12, 20 };
 
-		if (c.playerLevel[5] > 0 || !Config.PRAYER_POINTS_REQUIRED) {
+		if (c.playerLevel[5] > 0 || !Configuration.PRAYER_POINTS_REQUIRED) {
 			if (c.getPA().getLevelForXP(c.playerXP[5]) >= c.PRAYER_LEVEL_REQUIRED[i]
-					|| !Config.PRAYER_LEVEL_REQUIRED) {
+					|| !Configuration.PRAYER_LEVEL_REQUIRED) {
 				boolean headIcon = false;
 				switch (i) {
 

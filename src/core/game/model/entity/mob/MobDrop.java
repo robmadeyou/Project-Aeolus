@@ -15,7 +15,7 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.mob.drop.Drop;
 
 /**
@@ -27,7 +27,7 @@ public class MobDrop {
 	 * The directory/location of drops.json
 	 */
 	private static final File DROP_DIR = new File(
-			Config.DATA_DIR + "json/npc_drops.json");
+			Configuration.DATA_DIR + "json/npc_drops.json");
 
 	/**
 	 * Our single instance of Gson

@@ -7,6 +7,11 @@ package core.game;
 public class GameConstants {
 	
 	/**
+	 * Used to increase or decrease the chance of getting better items from a mob drop.
+	 */
+	public static final int DROP_RATE = 1;
+	
+	/**
 	 * Used for additional events, to multiply the current xp rates
 	 */
 	public static final int SERVER_EXP_BONUS = 0;
@@ -156,7 +161,7 @@ public class GameConstants {
 	/**
 	 * The max amount of items
 	 */
-	public static final int ITEM_LIMIT = 16000;	
+	public static final int ITEM_LIMIT = 11790;	// 474
 	
 	/**
 	 * The timer in which you are skulled goes away. Seconds x2 Ex. 60x2=120

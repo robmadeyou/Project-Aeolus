@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
@@ -42,7 +42,7 @@ public class ItemHandler {
     	final Gson gson = new Gson();
 		final long start = System.currentTimeMillis();
 		System.out.println("Loading item definitions...");
-		try (final FileReader reader = new FileReader(Config.DATA_DIR + "json/item_definitions.json")) {
+		try (final FileReader reader = new FileReader(Configuration.DATA_DIR + "json/item_definitions.json")) {
 			ItemDefinition.setDefinitions(gson.fromJson(reader, ItemDefinition[].class));
 		} catch (IOException e) {
 			System.out.println("Failed to load item definitions!");

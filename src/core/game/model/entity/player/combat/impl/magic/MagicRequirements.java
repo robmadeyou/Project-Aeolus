@@ -1,6 +1,6 @@
 package core.game.model.entity.player.combat.impl.magic;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
@@ -55,7 +55,7 @@ public class MagicRequirements extends MagicData {
 	}
 
 	public static boolean checkMagicReqs(Player c, int spell) {
-		if (c.usingMagic && Config.RUNES_REQUIRED) { // check for runes
+		if (c.usingMagic && Configuration.RUNES_REQUIRED) { // check for runes
 			if ((!c.getInventory().playerHasItem(c.MAGIC_SPELLS[spell][8],
 					c.MAGIC_SPELLS[spell][9]) && !wearingStaff(c,
 					c.MAGIC_SPELLS[spell][8]))
@@ -100,7 +100,7 @@ public class MagicRequirements extends MagicData {
 		}
 
 		int staffRequired = getStaffNeeded(c);
-		if (c.usingMagic && staffRequired > 0 && Config.RUNES_REQUIRED) { // staff
+		if (c.usingMagic && staffRequired > 0 && Configuration.RUNES_REQUIRED) { // staff
 																					// required
 			if (c.playerEquipment[c.playerWeapon] != staffRequired) {
 				c.sendMessage("You need a "
@@ -110,7 +110,7 @@ public class MagicRequirements extends MagicData {
 			}
 		}
 
-		if (c.usingMagic && Config.MAGIC_LEVEL_REQUIRED) { // check magic
+		if (c.usingMagic && Configuration.MAGIC_LEVEL_REQUIRED) { // check magic
 																	// level
 			if (c.playerLevel[6] < c.MAGIC_SPELLS[spell][1]) {
 				c.sendMessage("You need to have a magic level of "
@@ -118,7 +118,7 @@ public class MagicRequirements extends MagicData {
 				return false;
 			}
 		}
-		if (c.usingMagic && Config.RUNES_REQUIRED) {
+		if (c.usingMagic && Configuration.RUNES_REQUIRED) {
 			if (c.MAGIC_SPELLS[spell][8] > 0) { // deleting runes
 				if (!wearingStaff(c, c.MAGIC_SPELLS[spell][8]))
 					c.getInventory().deleteItem(c.MAGIC_SPELLS[spell][8],

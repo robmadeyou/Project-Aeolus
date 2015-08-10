@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import core.Config;
+import core.Configuration;
 
 /**
  * @author 7Winds
@@ -86,7 +86,7 @@ public final class MobSpawns {
 		protected static MobSpawns[] deserialize() {
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			try (final FileReader reader = new FileReader(
-					Config.DATA_DIR + "json/npc_spawns.json")) {
+					Configuration.DATA_DIR + "json/npc_spawns.json")) {
 				return gson.fromJson(reader, MobSpawns[].class);
 			} catch (IOException e) {
 				return null;

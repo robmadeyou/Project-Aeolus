@@ -3,7 +3,7 @@ package core.game.util.json;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.object.ObjectHandler;
 import core.game.model.object.Objects;
 import core.game.util.JsonLoader;
@@ -11,7 +11,7 @@ import core.game.util.JsonLoader;
 public class GlobalObjectLoader extends JsonLoader {
 
 	public GlobalObjectLoader() {
-		super(Config.DATA_DIR + "json/global_objects.json");
+		super(Configuration.DATA_DIR + "json/global_objects.json");
 	}
 
 	@Override

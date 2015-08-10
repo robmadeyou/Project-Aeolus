@@ -1,6 +1,6 @@
 package core.game.sound;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.item.ItemDefinition;
 
@@ -354,7 +354,7 @@ public class SoundManager {
 	 * @param id
 	 */
 	public static final void play(Player player, int i) {
-		if (!Config.enableSound)
+		if (!Configuration.enableSound)
 			return;
 		player.getPlayerAssistant().sendSound(i);
 	}

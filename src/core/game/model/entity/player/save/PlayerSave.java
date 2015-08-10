@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
@@ -94,9 +94,9 @@ public class PlayerSave {
 					} else if (token.equals("flagged")) {
 						p.accountFlagged = Boolean.parseBoolean(token2);
 					} else if (token.equals("enableMusic")) {
-						Config.enableMusic = Boolean.parseBoolean(token2);
+						Configuration.enableMusic = Boolean.parseBoolean(token2);
 					} else if (token.equals("enableSound")) {
-						Config.enableSound = Boolean.parseBoolean(token2);
+						Configuration.enableSound = Boolean.parseBoolean(token2);
 					} else if (token.equals("music-unlocked")) {
 						for (int j = 0; j < token3.length; j++) {
 							//RegionalMusic.unlocked[j] = Boolean.parseBoolean(token3[j]);
@@ -280,12 +280,12 @@ public class PlayerSave {
 					.toString(p.accountFlagged).length());
 			characterfile.newLine();
 			characterfile.write("enableMusic = ");
-			characterfile.write(Boolean.toString(Config.enableMusic), 0, Boolean
-					.toString(Config.enableMusic).length());
+			characterfile.write(Boolean.toString(Configuration.enableMusic), 0, Boolean
+					.toString(Configuration.enableMusic).length());
 			characterfile.newLine();
 			characterfile.write("enableSound = ");
-			characterfile.write(Boolean.toString(Config.enableSound), 0, Boolean
-					.toString(Config.enableSound).length());
+			characterfile.write(Boolean.toString(Configuration.enableSound), 0, Boolean
+					.toString(Configuration.enableSound).length());
 			characterfile.newLine();
 			characterfile.write("music-unlocked = ", 0, 17);			
 			String music = "";
@@ -464,13 +464,13 @@ public class PlayerSave {
 		int totalFriends = 0;
 		try {
 			file = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "characters/" + name + ".txt"));
+					Configuration.DATA_DIR + "characters/" + name + ".txt"));
 			file1 = true;
 		} catch (FileNotFoundException fileex1) {
 		}
 
 		if (file1) {
-			new File(Config.DATA_DIR + "characters/" + name + ".txt");
+			new File(Configuration.DATA_DIR + "characters/" + name + ".txt");
 		} else {
 			return null;
 		}

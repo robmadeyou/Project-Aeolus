@@ -1,6 +1,6 @@
 package core.net.packets.incoming;
 
-import core.Config;
+import core.Configuration;
 import core.game.event.task.Task;
 import core.game.event.task.TaskHandler;
 import core.game.model.entity.mob.MobHandler;
@@ -102,7 +102,7 @@ public class ClickNPC implements PacketType {
 				break;
 			}
 			if (c.getCombat().correctBowAndArrows() < c.playerEquipment[c.playerArrows]
-					&& Config.CORRECT_ARROWS
+					&& Configuration.CORRECT_ARROWS
 					&& usingBow
 					&& !c.getCombat().usingCrystalBow()
 					&& c.playerEquipment[c.playerWeapon] != 9185) {
@@ -167,7 +167,7 @@ public class ClickNPC implements PacketType {
 				}
 			}
 			if (castingSpellId == 1171) { // crumble undead
-				for (int npc : Config.UNDEAD_NPCS) {
+				for (int npc : Configuration.UNDEAD_NPCS) {
 					if (MobHandler.npcs[c.npcIndex].npcType != npc) {
 						c.sendMessage("You can only attack undead monsters with this spell.");
 						c.usingMagic = false;

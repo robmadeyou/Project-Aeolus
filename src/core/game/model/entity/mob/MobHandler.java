@@ -11,13 +11,15 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.Hit;
 import core.game.model.entity.mob.MobSpawns.NpcSpawnBuilder;
+import core.game.model.entity.mob.drop.Drop;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
+import core.game.model.item.GameItem;
 import core.game.sound.effects.SoundEffects;
 import core.game.util.JsonSaver;
 import core.game.util.Misc;
@@ -51,7 +53,56 @@ public class MobHandler {
 
 		Misc.println("Loaded: "+MobSpawns.NpcSpawnBuilder.deserialize().length+" Npc Spawns");
 	}
+	
+	public void sendDrop(Player player, Drop drop, int i) {
+		/*
+		 * This is to stop those items from dropping, If you load higher
+		 * revision items, I suggest you modify this.
+		 */
+		if (drop.getItemId() >= GameConstants.ITEM_LIMIT) {
+			return;
+		}
+		if (player.getEquipment().getItemName(drop.getItemId()) == null) {
+			return;
+		}
+		GameItem item = new GameItem(player, drop.getItemId(), 1).stackable ? new GameItem(player, 
+				drop.getItemId(), (drop.getMinAmount() * GameConstants.DROP_RATE)
+						+ Misc.random(drop.getExtraAmount() * GameConstants.DROP_RATE))
+				: new GameItem(player, drop.getItemId(), drop.getMinAmount()
+						+ Misc.random(drop.getExtraAmount()));
 
+		Server.itemHandler.createGroundItem(player, item.id, npcs[i].absX,
+				npcs[i].absY, item.amount, player.playerId);
+
+	}
+
+	public void dropItems(int i) {
+		Player killer = PlayerHandler.players[npcs[i].killedBy];
+		Drop[] drops = MobDrop.getDrops(npcs[i].npcType);
+		if (drops == null)
+			return;
+		Player c = (PlayerHandler.players[npcs[i].killedBy]);
+		if (c != null) {
+			if (npcs[i].npcType == 912 || npcs[i].npcType == 913
+					|| npcs[i].npcType == 914)
+				c.magePoints += 1;
+			Drop[] possibleDrops = new Drop[drops.length];
+			int possibleDropsCount = 0;
+			for (Drop drop : drops) {
+				if (drop.getRate() == 100)
+					sendDrop(killer, drop, i);
+				else {
+					if ((Misc.random(99) + 1) <= drop.getRate() * 1.0)
+						possibleDrops[possibleDropsCount++] = drop;
+				}
+			}
+			if (possibleDropsCount > 0)
+				sendDrop(killer,
+						possibleDrops[Misc.random(possibleDropsCount - 1)], i);
+
+		}
+	}
+	
 	public void multiAttackGfx(int i, int gfx) {
 		if (npcs[i].projectileId < 0)
 			return;
@@ -1102,9 +1153,8 @@ public class MobHandler {
 					} else if (npcs[i].actionTimer == 0 && npcs[i].applyDead == true && npcs[i].needRespawn == false) {
 						npcs[i].needRespawn = true;
 						npcs[i].actionTimer = getRespawnTime(i); // respawn time
-						dropItems(i); // npc drops items!
+						dropItems(i); //Mob drops
 						appendKillCount(i);
-						// appendJailKc(i);
 						npcs[i].absX = npcs[i].makeX;
 						npcs[i].absY = npcs[i].makeY;
 						npcs[i].HP = npcs[i].maxHP;
@@ -1188,17 +1238,6 @@ public class MobHandler {
 			}
 		}
 		return killerId;
-	}
-
-	/**
-	 * Dropping Items!
-	 **/
-
-	public void dropItems(int i) {
-		int npc = 0;
-		Player c = (Player) PlayerHandler.players[npcs[i].killedBy];
-		if (c != null) {
-		}
 	}
 
 	public void appendKillCount(int i) {
@@ -1814,7 +1853,7 @@ public class MobHandler {
 					if (multiAttacks(i)) {
 						multiAttackGfx(i, npcs[i].projectileId);
 						startAnimation(getAttackEmote(i), i);
-						if (Config.enableSound) {
+						if (Configuration.enableSound) {
 							c.getPA().sendSound(SoundEffects
 									.getNpcAttackSounds(npcs[i].npcType));
 						}

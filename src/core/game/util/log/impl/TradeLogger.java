@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 
@@ -26,7 +26,7 @@ public class TradeLogger {
 		Calendar C = Calendar.getInstance();
 		try {
 			BufferedWriter bItem = new BufferedWriter(new FileWriter(
-					Config.DATA_DIR + "logs/TradeLog/received/" + player.playerName
+					Configuration.DATA_DIR + "logs/TradeLog/received/" + player.playerName
 							+ ".txt", true));
 			try {
 				bItem.newLine();
@@ -55,7 +55,7 @@ public class TradeLogger {
 		Calendar C = Calendar.getInstance();
 		try {
 			BufferedWriter bItem = new BufferedWriter(new FileWriter(
-					Config.DATA_DIR + "logs/TradeLog/given/" + player.playerName
+					Configuration.DATA_DIR + "logs/TradeLog/given/" + player.playerName
 							+ ".txt", true));
 			try {
 				bItem.newLine();

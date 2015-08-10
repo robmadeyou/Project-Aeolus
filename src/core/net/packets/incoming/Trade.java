@@ -1,6 +1,6 @@
 package core.net.packets.incoming;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Rights;
 import core.net.packets.PacketType;
@@ -19,7 +19,7 @@ public class Trade implements PacketType {
 			c.sendMessage("You can't trade inside the arena!");
 			return;
 		}
-		if(c.getRights().equal(Rights.ADMINISTRATOR) && !Config.ADMIN_CAN_TRADE) {
+		if(c.getRights().equal(Rights.ADMINISTRATOR) && !Configuration.ADMIN_CAN_TRADE) {
 			c.sendMessage("Trading as an admin has been disabled.");
 			return;
 		}

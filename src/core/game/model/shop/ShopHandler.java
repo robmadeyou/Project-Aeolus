@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import core.Config;
+import core.Configuration;
 import core.game.GameConstants;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.util.Misc;

@@ -10,7 +10,7 @@ import org.python.core.PyFunction;
 import org.python.core.PyObject;
 import org.python.util.PythonInterpreter;
 
-import core.Config;
+import core.Configuration;
 import core.game.util.log.CustomLogger;
 
 public class PluginManager {
@@ -79,7 +79,7 @@ public class PluginManager {
 		System.setOut(new CustomLogger(System.out));
 		System.out.println("Loading scripts...");
 		PluginManager.python.cleanup();
-		File scriptDir = new File(Config.DATA_DIR + "./plugin/scripts/");
+		File scriptDir = new File(Configuration.DATA_DIR + "./plugin/scripts/");
 		if (scriptDir.isDirectory() && !scriptDir.getName().startsWith(".")) {
 			File[] children = scriptDir.listFiles();
 			for (File child : children)

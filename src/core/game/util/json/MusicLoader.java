@@ -7,7 +7,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import core.Config;
+import core.Configuration;
 import core.game.sound.MusicManager;
 import core.game.sound.region.Music;
 
@@ -27,7 +27,7 @@ public class MusicLoader {
 		System.out.println("Loading music...");
 		
 		JsonParser parser = new JsonParser();
-        JsonArray array = (JsonArray) parser.parse(new FileReader(new File(Config.DATA_DIR + "json/music.json")));
+        JsonArray array = (JsonArray) parser.parse(new FileReader(new File(Configuration.DATA_DIR + "json/music.json")));
         MusicManager.music = new Music[array.size()];
 		int count = 0;
 		

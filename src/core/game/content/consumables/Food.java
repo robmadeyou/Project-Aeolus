@@ -2,7 +2,7 @@ package core.game.content.consumables;
 
 import java.util.HashMap;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 
 public class Food {
@@ -109,7 +109,7 @@ public class Food {
 					p.playerLevel[3] = p.getLevelForXP(p.playerXP[3]);
 			}
 			p.foodDelay = System.currentTimeMillis();
-			if (Config.enableSound) {
+			if (Configuration.enableSound) {
 				p.getPA().sendSound(p.getSound().FOODEAT);
 			}
 			p.getPA().refreshSkill(3);

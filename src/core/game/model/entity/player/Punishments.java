@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import core.Config;
+import core.Configuration;
 
 /**
  * The Connection Check Class
@@ -46,7 +46,7 @@ public class Punishments {
 	public static void appendStarters() {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "starters/FirstStarterRecieved.txt"));
+					Configuration.DATA_DIR + "starters/FirstStarterRecieved.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -63,7 +63,7 @@ public class Punishments {
 	public static void appendStarters2() {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "starters/SecondStarterRecieved.txt"));
+					Configuration.DATA_DIR + "starters/SecondStarterRecieved.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -90,7 +90,7 @@ public class Punishments {
 	public static void addIpToStarterList1(String Name) {
 		try {
 			BufferedWriter out = new BufferedWriter(
-					new FileWriter(Config.DATA_DIR
+					new FileWriter(Configuration.DATA_DIR
 							+ "starters/FirstStarterRecieved.txt", true));
 			try {
 				out.newLine();
@@ -106,7 +106,7 @@ public class Punishments {
 	public static void addIpToStarterList2(String Name) {
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter(
-					Config.DATA_DIR + "starters/SecondStarterRecieved.txt",
+					Configuration.DATA_DIR + "starters/SecondStarterRecieved.txt",
 					true));
 			try {
 				out.newLine();
@@ -176,7 +176,7 @@ public class Punishments {
 	 */
 	public static void unMuteUser(String name) {
 		mutedNames.remove(name);
-		deleteFromFile(Config.DATA_DIR + "bans/UsersMuted.txt", name);
+		deleteFromFile(Configuration.DATA_DIR + "bans/UsersMuted.txt", name);
 	}
 
 	/**
@@ -184,12 +184,12 @@ public class Punishments {
 	 **/
 	public static void removeNameFromBanList(String name) {
 		bannedNames.remove(name.toLowerCase());
-		deleteFromFile(Config.DATA_DIR + "bans/UsersBanned.txt", name);
+		deleteFromFile(Configuration.DATA_DIR + "bans/UsersBanned.txt", name);
 	}
 
 	public static void removeNameFromMuteList(String name) {
 		bannedNames.remove(name.toLowerCase());
-		deleteFromFile(Config.DATA_DIR + "bans/UsersMuted.txt", name);
+		deleteFromFile(Configuration.DATA_DIR + "bans/UsersMuted.txt", name);
 	}
 
 	/**
@@ -228,7 +228,7 @@ public class Punishments {
 	 */
 	public static void unIPMuteUser(String name) {
 		mutedIps.remove(name);
-		deleteFromFile(Config.DATA_DIR + "bans/IpsMuted.txt", name);
+		deleteFromFile(Configuration.DATA_DIR + "bans/IpsMuted.txt", name);
 	}
 
 	/**
@@ -256,7 +256,7 @@ public class Punishments {
 	public static void muteUsers() {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "bans/UsersMuted.txt"));
+					Configuration.DATA_DIR + "bans/UsersMuted.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -276,7 +276,7 @@ public class Punishments {
 	public static void muteIps() {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "bans/IpsMuted.txt"));
+					Configuration.DATA_DIR + "bans/IpsMuted.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -331,7 +331,7 @@ public class Punishments {
 	public static void banUsers() {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "bans/UsersBanned.txt"));
+					Configuration.DATA_DIR + "bans/UsersBanned.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -351,7 +351,7 @@ public class Punishments {
 	public static void banIps() {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "bans/IpsBanned.txt"));
+					Configuration.DATA_DIR + "bans/IpsBanned.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -367,13 +367,13 @@ public class Punishments {
 
 	public static void unUidBanUser(String name) {
 		bannedUid.remove(name);
-		deleteFromFile(Config.DATA_DIR + "bans/UUIDBans.txt", name);
+		deleteFromFile(Configuration.DATA_DIR + "bans/UUIDBans.txt", name);
 	}
 
 	static String uidForUser = null;
 
 	public static void getUidForUser(Player c, String name) {
-		File file = new File(Config.DATA_DIR + "characters/" + name + ".txt");
+		File file = new File(Configuration.DATA_DIR + "characters/" + name + ".txt");
 		BufferedReader reader = null;
 		boolean error = false;
 		try {
@@ -435,7 +435,7 @@ public class Punishments {
 	public static void banUid() {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "bans/UUIDBans.txt"));
+					Configuration.DATA_DIR + "bans/UUIDBans.txt"));
 			String data;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -452,13 +452,13 @@ public class Punishments {
 
 	public static void removeUidFromBanList(String UUID) {
 		bannedUid.remove(UUID);
-		deleteFromFile(Config.DATA_DIR + "bans/UUIDBans.txt", UUID);
+		deleteFromFile(Configuration.DATA_DIR + "bans/UUIDBans.txt", UUID);
 	}
 
 	public static void addUidToFile(String UUID) {
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter(
-					Config.DATA_DIR + "bans/UUIDBans.txt", true));
+					Configuration.DATA_DIR + "bans/UUIDBans.txt", true));
 			try {
 				out.newLine();
 				out.write(UUID);
@@ -476,7 +476,7 @@ public class Punishments {
 	public static void addNameToFile(String Name) {
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter(
-					Config.DATA_DIR + "bans/UsersBanned.txt", true));
+					Configuration.DATA_DIR + "bans/UsersBanned.txt", true));
 			try {
 				out.newLine();
 				out.write(Name);
@@ -494,7 +494,7 @@ public class Punishments {
 	public static void addUserToFile(String Name) {
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter(
-					Config.DATA_DIR + "bans/UsersMuted.txt", true));
+					Configuration.DATA_DIR + "bans/UsersMuted.txt", true));
 			try {
 				out.newLine();
 				out.write(Name);
@@ -512,7 +512,7 @@ public class Punishments {
 	public static void addIpToFile(String Name) {
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter(
-					Config.DATA_DIR + "bans/IpsBanned.txt", true));
+					Configuration.DATA_DIR + "bans/IpsBanned.txt", true));
 			try {
 				out.newLine();
 				out.write(Name);
@@ -530,7 +530,7 @@ public class Punishments {
 	public static void addIpToMuteFile(String Name) {
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter(
-					Config.DATA_DIR + "bans/IpsMuted.txt", true));
+					Configuration.DATA_DIR + "bans/IpsMuted.txt", true));
 			try {
 				out.newLine();
 				out.write(Name);

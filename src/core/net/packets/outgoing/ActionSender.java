@@ -1,6 +1,6 @@
 package core.net.packets.outgoing;
 
-import core.Config;
+import core.Configuration;
 import core.game.GameConstants;
 import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
@@ -636,7 +636,7 @@ public class ActionSender{
 			if(c.getOutStream() != null && c != null) {
 				if(world != 0) {
 		            world += 9;
-				} else if(!Config.WORLD_LIST_FIX) {
+				} else if(!Configuration.WORLD_LIST_FIX) {
 					world += 1;
 				}	
 				c.getOutStream().createFrame(50);
@@ -1278,7 +1278,7 @@ public class ActionSender{
 		c.freezeTimer = 0;
 		if(c.duelStatus <= 4) { // if we are not in a duel we must be in wildy so remove items
 					c.getItems().resetKeepItems();
-				if((c.getRights().greaterOrEqual(Rights.ADMINISTRATOR) && Config.ADMIN_DROP_ITEMS)) {
+				if((c.getRights().greaterOrEqual(Rights.ADMINISTRATOR) && Configuration.ADMIN_DROP_ITEMS)) {
 					if(!(Boolean) c.getAttributes().get("isSkulled")) {	// what items to keep
 						c.getItems().keepItem(0, true);
 						c.getItems().keepItem(1, true);	
@@ -1323,8 +1323,8 @@ public class ActionSender{
 					o.getContentManager().getDueling().duelVictory();
 				}
 			}
-			c.getPA().movePlayer(GameConstants.DUELING_RESPAWN_X+(Misc.random(Config.RANDOM_DUELING_RESPAWN)), GameConstants.DUELING_RESPAWN_Y+(Misc.random(Config.RANDOM_DUELING_RESPAWN)), 0);
-			o.getPA().movePlayer(GameConstants.DUELING_RESPAWN_X+(Misc.random(Config.RANDOM_DUELING_RESPAWN)), GameConstants.DUELING_RESPAWN_Y+(Misc.random(Config.RANDOM_DUELING_RESPAWN)), 0);
+			c.getPA().movePlayer(GameConstants.DUELING_RESPAWN_X+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), GameConstants.DUELING_RESPAWN_Y+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), 0);
+			o.getPA().movePlayer(GameConstants.DUELING_RESPAWN_X+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), GameConstants.DUELING_RESPAWN_Y+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), 0);
 			if(c.duelStatus != 6) { // if we have won but have died, don't reset the duel status.
 				c.getContentManager().getDueling().resetDuel();
 			}
@@ -1391,8 +1391,8 @@ public class ActionSender{
 			c.sendMessage("You can't teleport during a duel!");
 			return;
 		}
-		if(c.inWild() && c.wildLevel > Config.NO_TELEPORT_WILD_LEVEL) {
-			c.sendMessage("You can't teleport above level "+Config.NO_TELEPORT_WILD_LEVEL+" in the wilderness.");
+		if(c.inWild() && c.wildLevel > Configuration.NO_TELEPORT_WILD_LEVEL) {
+			c.sendMessage("You can't teleport above level "+Configuration.NO_TELEPORT_WILD_LEVEL+" in the wilderness.");
 			return;
 		}
 		if(System.currentTimeMillis() - c.teleBlockDelay < c.teleBlockLength) {

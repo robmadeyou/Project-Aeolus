@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Rights;
 import core.game.util.Misc;
@@ -22,11 +22,11 @@ public class ChatLogger {
 	}
 
 	public void logMasterChat(String message) {
-		if (Config.logChat) {
+		if (Configuration.logChat) {
 		if (c.getRights().equal(Rights.PLAYER)) {
 			try {
 				BufferedWriter bItem = new BufferedWriter(new FileWriter(
-						Config.DATA_DIR + "logs/ChatLog/Master/Player/" +
+						Configuration.DATA_DIR + "logs/ChatLog/Master/Player/" +
 								"ChatLogs.log", true));
 				try {
 					bItem.newLine();
@@ -46,7 +46,7 @@ public class ChatLogger {
 		} else {
 			try {
 				BufferedWriter bItem = new BufferedWriter(new FileWriter(
-						Config.DATA_DIR + "logs/ChatLog/Master/Mod/"
+						Configuration.DATA_DIR + "logs/ChatLog/Master/Mod/"
 								+ c.playerName + ".log", true));
 				try {
 					bItem.newLine();
@@ -66,11 +66,11 @@ public class ChatLogger {
 	}
 
 	public void logChat(String message) {
-		if (Config.logChat) {
+		if (Configuration.logChat) {
 		if (c.getRights().equal(Rights.PLAYER)) {
 			try {
 				BufferedWriter bItem = new BufferedWriter(new FileWriter(
-						Config.DATA_DIR + "logs/ChatLog/Badword/Player/" + "Badwords"
+						Configuration.DATA_DIR + "logs/ChatLog/Badword/Player/" + "Badwords"
 								+ ".log", true));
 				try {
 					bItem.newLine();
@@ -90,7 +90,7 @@ public class ChatLogger {
 		} else {
 			try {
 				BufferedWriter bItem = new BufferedWriter(new FileWriter(
-						Config.DATA_DIR + "logs/ChatLog/Badword/Mod/" + c.playerName
+						Configuration.DATA_DIR + "logs/ChatLog/Badword/Mod/" + c.playerName
 								+ ".log", true));
 				try {
 					bItem.newLine();

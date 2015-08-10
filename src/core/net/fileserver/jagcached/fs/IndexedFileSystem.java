@@ -8,7 +8,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.util.zip.CRC32;
 
-import core.Config;
+import core.Configuration;
 
 /**
  * A file system based on top of the operating system's file system. It
@@ -65,7 +65,7 @@ public final class IndexedFileSystem implements Closeable {
 	private void detectLayout() throws Exception {
 		int indexCount = 0;
 		for (int index = 0; index < indices.length; index++) {
-			File f = new File(Config.DATA_DIR + "cache/main_file_cache.idx" + index);
+			File f = new File(Configuration.DATA_DIR + "cache/main_file_cache.idx" + index);
 			if (f.exists() && !f.isDirectory()) {
 				indexCount++;
 				indices[index] = new RandomAccessFile(f, readOnly ? "r" : "rw");
@@ -75,8 +75,8 @@ public final class IndexedFileSystem implements Closeable {
 			throw new Exception("No index file(s) present");
 		}
 		
-		File oldEngineData = new File(Config.DATA_DIR + "cache/main_file_cache.dat");
-		File newEngineData = new File(Config.DATA_DIR + "cache/main_file_cache.dat2");
+		File oldEngineData = new File(Configuration.DATA_DIR + "cache/main_file_cache.dat");
+		File newEngineData = new File(Configuration.DATA_DIR + "cache/main_file_cache.dat2");
 		if (oldEngineData.exists() && !oldEngineData.isDirectory()) {
 			data = new RandomAccessFile(oldEngineData, readOnly ? "r" : "rw");
 		} else if (newEngineData.exists() && !oldEngineData.isDirectory()) {

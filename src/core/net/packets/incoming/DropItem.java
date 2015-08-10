@@ -1,6 +1,6 @@
 package core.net.packets.incoming;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.model.entity.player.Player;
 import core.net.packets.PacketType;
@@ -22,7 +22,7 @@ public class DropItem implements PacketType {
 		}
 
 		boolean droppable = true;
-		for (int i : Config.UNDROPPABLE_ITEMS) {
+		for (int i : Configuration.UNDROPPABLE_ITEMS) {
 			if (i == itemId) {
 				droppable = false;
 				break;
@@ -38,7 +38,7 @@ public class DropItem implements PacketType {
 				}
 				Server.itemHandler.createGroundItem(c, itemId, c.getX(), c.getY(), c.playerItemsN[slot], c.getId());
 				c.getInventory().deleteItem(itemId, slot, c.playerItemsN[slot]);
-				if (Config.enableSound) {
+				if (Configuration.enableSound) {
 					c.sendMessage("test");
 					c.getPA().sendSound(c.getSound().DROPITEM);
 				}

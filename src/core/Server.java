@@ -152,9 +152,9 @@ public class Server {
 	 */
 	public static void main(java.lang.String args[])
 			throws Exception {
-		if(Config.SERVER_DEBUG)
-		System.setOut(new Misc.TimestampLogger(System.out, Config.DATA_DIR + "/logs/out.log"));
-		System.setErr(new Misc.TimestampLogger(System.err, Config.DATA_DIR + "/logs/error/error.log"));
+		if(Configuration.SERVER_DEBUG)
+		System.setOut(new Misc.TimestampLogger(System.out, Configuration.DATA_DIR + "/logs/out.log"));
+		System.setErr(new Misc.TimestampLogger(System.err, Configuration.DATA_DIR + "/logs/error/error.log"));
 		System.setOut(new CustomLogger(System.out));
 		System.out.println("Creating Game server...");
 		pluginManager = new PluginManager();

@@ -1,6 +1,6 @@
 package core.game.model.entity.player.combat;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.event.task.Task;
@@ -635,7 +635,7 @@ public class PlayerVsMob {
 					return;
 				}
 				if (c.getCombat().correctBowAndArrows() < c.playerEquipment[c.playerArrows]
-						&& Config.CORRECT_ARROWS
+						&& Configuration.CORRECT_ARROWS
 						&& c.usingBow
 						&& !c.getCombat().usingCrystalBow()
 						&& c.playerEquipment[c.playerWeapon] != 9185) {
@@ -826,7 +826,7 @@ public class PlayerVsMob {
 						c.npcIndex = 0;
 				}
 
-				if (c.usingBow && Config.CRYSTAL_BOW_DEGRADES) { // crystal bow
+				if (c.usingBow && Configuration.CRYSTAL_BOW_DEGRADES) { // crystal bow
 																	// degrading
 					if (c.playerEquipment[c.playerWeapon] == 4212) { // new
 																		// crystal

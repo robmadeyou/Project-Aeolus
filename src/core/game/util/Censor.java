@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 
 /**
@@ -94,7 +94,7 @@ public class Censor {
 		String word = null;
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(
-					Config.DATA_DIR + "/Censor.txt"));
+					Configuration.DATA_DIR + "/Censor.txt"));
 			while ((word = in.readLine()) != null) {
 				censored.add(word);
 			}

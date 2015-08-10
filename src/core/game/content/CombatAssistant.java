@@ -3,7 +3,7 @@ package core.game.content;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.Hit;

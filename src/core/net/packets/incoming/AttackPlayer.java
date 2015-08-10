@@ -1,6 +1,6 @@
 package core.net.packets.incoming;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.net.packets.PacketType;
@@ -66,7 +66,7 @@ public class AttackPlayer implements PacketType {
 				}
 				if(c.duelRule[9]){
 					boolean canUseWeapon = false;
-					for(int funWeapon: Config.FUN_WEAPONS) {
+					for(int funWeapon: Configuration.FUN_WEAPONS) {
 						if(c.playerEquipment[c.playerWeapon] == funWeapon) {
 							canUseWeapon = true;
 						}
@@ -105,7 +105,7 @@ public class AttackPlayer implements PacketType {
 				c.sendMessage("You have run out of arrows!");
 				return;
 			} 
-			if(c.getCombat().correctBowAndArrows() < c.playerEquipment[c.playerArrows] && Config.CORRECT_ARROWS && usingBow && !c.getCombat().usingCrystalBow() && c.playerEquipment[c.playerWeapon] != 9185) {
+			if(c.getCombat().correctBowAndArrows() < c.playerEquipment[c.playerArrows] && Configuration.CORRECT_ARROWS && usingBow && !c.getCombat().usingCrystalBow() && c.playerEquipment[c.playerWeapon] != 9185) {
 					c.sendMessage("You can't use "+c.getEquipment().getItemName(c.playerEquipment[c.playerArrows]).toLowerCase()+"s with a "+c.getEquipment().getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase()+".");
 					c.stopMovement();
 					c.getCombat().resetPlayerAttack();

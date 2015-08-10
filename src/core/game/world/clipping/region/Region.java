@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.zip.GZIPInputStream;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.object.Objects;
 
 public class Region {
@@ -359,7 +359,7 @@ public class Region {
 	public static void load() {
 		try {
 			System.out.println("Creating player regions");
-			File f = new File(Config.DATA_DIR + "world/map_index");
+			File f = new File(Configuration.DATA_DIR + "world/map_index");
 			byte[] buffer = new byte[(int) f.length()];
 			DataInputStream dis = new DataInputStream(new FileInputStream(f));
 			dis.readFully(buffer);
@@ -381,9 +381,9 @@ public class Region {
 				regions[i] = new Region(regionIds[i], isMembers[i]);
 			}
 			for (int i = 0; i < size; i++) {
-				byte[] file1 = getBuffer(new File(Config.DATA_DIR + "/world/map/"
+				byte[] file1 = getBuffer(new File(Configuration.DATA_DIR + "/world/map/"
 						+ mapObjectsFileIds[i] + ".gz"));
-				byte[] file2 = getBuffer(new File(Config.DATA_DIR + "world/map/"
+				byte[] file2 = getBuffer(new File(Configuration.DATA_DIR + "world/map/"
 						+ mapGroundFileIds[i] + ".gz"));
 				if (file1 == null || file2 == null) {
 					continue;

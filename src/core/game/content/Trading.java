@@ -2,7 +2,7 @@ package core.game.content;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
@@ -184,7 +184,7 @@ public class Trading {
 			return false;
 		}
 		
-		for (int i : Config.ITEM_TRADEABLE) {
+		for (int i : Configuration.ITEM_TRADEABLE) {
 			if(i == itemID) {
 				c.sendMessage("You can't trade this item.");
 				return false;

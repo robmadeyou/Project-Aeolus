@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import core.Config;
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.util.Misc;
 
@@ -91,7 +91,7 @@ public class ReportLogger {
 		BufferedWriter bw = null;
 
 		try {
-			bw = new BufferedWriter(new FileWriter(Config.DATA_DIR + "reports/"
+			bw = new BufferedWriter(new FileWriter(Configuration.DATA_DIR + "reports/"
 					+ file + ".log", true));
 			bw.write(data);
 			bw.newLine();

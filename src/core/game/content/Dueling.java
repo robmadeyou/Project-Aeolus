@@ -2,7 +2,7 @@ package core.game.content;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
@@ -167,7 +167,7 @@ public class Dueling {
 	
 	public boolean stakeItem(int itemID, int fromSlot, int amount) {
 		
-		for (int i : Config.ITEM_TRADEABLE) {
+		for (int i : Configuration.ITEM_TRADEABLE) {
 			if(i == itemID) {
 				c.sendMessage("You can't stake this item.");
 				return false;
@@ -487,7 +487,7 @@ public class Dueling {
 		c.getPA().refreshSkill(3);
 		duelRewardInterface();
 		c.getPA().showInterface(6733);
-		c.getPA().movePlayer(GameConstants.DUELING_RESPAWN_X+(Misc.random(Config.RANDOM_DUELING_RESPAWN)), GameConstants.DUELING_RESPAWN_Y+(Misc.random(Config.RANDOM_DUELING_RESPAWN)), 0);	
+		c.getPA().movePlayer(GameConstants.DUELING_RESPAWN_X+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), GameConstants.DUELING_RESPAWN_Y+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), 0);	
 		c.getPA().requestUpdates();
 		c.getPA().showOption(3, 0, "Challenge", 3);
 		c.getPA().createPlayerHints(10, -1);

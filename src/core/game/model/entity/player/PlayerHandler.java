@@ -1,6 +1,6 @@
 package core.game.model.entity.player;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.mob.MobHandler;
@@ -39,7 +39,7 @@ public class PlayerHandler {
 		player1.playerId = slot;
 		players[slot] = player1;
 		players[slot].isActive = true;
-		if (Config.SERVER_DEBUG)
+		if (Configuration.SERVER_DEBUG)
 			Misc.println("Player Slot " + slot + " slot 0 " + players[0] + " Player Hit " + players[slot]);
 		return true;
 	}

@@ -1,6 +1,6 @@
 package core.game.model.entity.player.combat;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.event.task.Task;
@@ -694,7 +694,7 @@ public class PlayerVsPlayer {
 
 				if (c.duelRule[9]) {
 					boolean canUseWeapon = false;
-					for (int funWeapon : Config.FUN_WEAPONS) {
+					for (int funWeapon : Configuration.FUN_WEAPONS) {
 						if (c.playerEquipment[c.playerWeapon] == funWeapon) {
 							canUseWeapon = true;
 						}
@@ -757,7 +757,7 @@ public class PlayerVsPlayer {
 					return;
 				}
 				if (c.getCombat().correctBowAndArrows() < c.playerEquipment[c.playerArrows]
-						&& Config.CORRECT_ARROWS
+						&& Configuration.CORRECT_ARROWS
 						&& c.usingBow
 						&& !c.getCombat().usingCrystalBow()
 						&& c.playerEquipment[c.playerWeapon] != 9185
@@ -997,7 +997,7 @@ public class PlayerVsPlayer {
 						c.playerIndex = 0;
 				}
 
-				if (c.usingBow && Config.CRYSTAL_BOW_DEGRADES) {
+				if (c.usingBow && Configuration.CRYSTAL_BOW_DEGRADES) {
 					
 					/**
 					 * Degrading of the crystal bow.

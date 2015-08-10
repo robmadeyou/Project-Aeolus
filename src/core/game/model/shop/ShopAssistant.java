@@ -1,6 +1,6 @@
 package core.game.model.shop;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
@@ -174,7 +174,7 @@ public class ShopAssistant {
 	*Sell item to shop (Shop Price)
 	**/
 	public void sellToShopPrice(int removeId, int removeSlot) {
-		for (int i : Config.ITEM_SELLABLE) {
+		for (int i : Configuration.ITEM_SELLABLE) {
 			if (i == removeId) {
 				c.sendMessage("You can't sell "+c.getEquipment().getItemName(removeId).toLowerCase()+".");
 				return;
@@ -210,13 +210,13 @@ public class ShopAssistant {
 	public boolean sellItem(int itemID, int fromSlot, int amount) {
 		if (c.myShopId == 14)
 			return false;
-		for (int i : Config.ITEM_SELLABLE) {
+		for (int i : Configuration.ITEM_SELLABLE) {
 			if (i == itemID) {
 				c.sendMessage("You can't sell "+c.getEquipment().getItemName(itemID).toLowerCase()+".");
 				return false;
 			} 
 		}
-		if(c.getRights().equal(Rights.ADMINISTRATOR) && !Config.ADMIN_CAN_SELL_ITEMS) {
+		if(c.getRights().equal(Rights.ADMINISTRATOR) && !Configuration.ADMIN_CAN_SELL_ITEMS) {
 			c.sendMessage("Selling items as an admin has been disabled.");
 			return false;
 		}

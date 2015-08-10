@@ -1,6 +1,6 @@
 package core.net.packets.incoming;
 
-import core.Config;
+import core.Configuration;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;

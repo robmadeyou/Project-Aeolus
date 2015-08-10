@@ -1,6 +1,6 @@
 package core.game.model.entity.player.combat.impl.melee;
 
-import core.Config;
+import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
@@ -76,7 +76,7 @@ public class MeleeRequirements {
 			c.getCombat().resetPlayerAttack();
 			return false;
 		}
-		if (Config.COMBAT_LEVEL_DIFFERENCE) {
+		if (Configuration.COMBAT_LEVEL_DIFFERENCE) {
 			if (c.inWild()) {
 				int combatDif1 = getCombatDifference(c.combatLevel,
 						PlayerHandler.players[c.playerIndex].combatLevel);
@@ -98,7 +98,7 @@ public class MeleeRequirements {
 			}
 		}
 
-		if (Config.SINGLE_AND_MULTI_ZONES) {
+		if (Configuration.SINGLE_AND_MULTI_ZONES) {
 			if (!Server.playerHandler.players[c.playerIndex].inMulti()) { // single
 																			// combat
 																			// zones
