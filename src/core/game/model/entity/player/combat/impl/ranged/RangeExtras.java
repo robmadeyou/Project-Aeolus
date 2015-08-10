@@ -66,7 +66,7 @@ public class RangeExtras {
 			createCombatGFX(c, i, 757, false);
 			if (c.playerIndex > 0) {
 				p.playerLevel[6] -= 2;
-				p.getPA().refreshSkill(6);
+				p.getActionSender().refreshSkill(6);
 				p.sendMessage("Your magic has been lowered!");
 			}
 			break;
@@ -74,13 +74,13 @@ public class RangeExtras {
 			createCombatGFX(c, i, 751, false);
 			if (c.playerIndex > 0) {
 				p.playerLevel[5] -= 2;
-				p.getPA().refreshSkill(5);
+				p.getActionSender().refreshSkill(5);
 				p.sendMessage("Your prayer has been lowered!");
 				c.playerLevel[5] += 2;
-				if (c.playerLevel[5] >= c.getPA().getLevelForXP(c.playerXP[5])) {
-					c.playerLevel[5] = c.getPA().getLevelForXP(c.playerXP[5]);
+				if (c.playerLevel[5] >= c.getActionSender().getLevelForXP(c.playerXP[5])) {
+					c.playerLevel[5] = c.getActionSender().getLevelForXP(c.playerXP[5]);
 				}
-				c.getPA().refreshSkill(5);
+				c.getActionSender().refreshSkill(5);
 			}
 			break;
 		case 9241: // Magical Posion
@@ -122,7 +122,7 @@ public class RangeExtras {
 			if (c.playerLevel[3] >= 112) {
 				c.playerLevel[3] = 112;
 			}
-			c.getPA().refreshSkill(3);
+			c.getActionSender().refreshSkill(3);
 			break;
 		}
 	}

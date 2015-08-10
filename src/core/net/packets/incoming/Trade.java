@@ -13,7 +13,7 @@ public class Trade implements PacketType {
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
 		int tradeId = c.getInStream().readSignedWordBigEndian();
-		c.getPA().resetFollow();
+		c.getActionSender().resetFollow();
 		
 		if(c.arenas()) {
 			c.sendMessage("You can't trade inside the arena!");

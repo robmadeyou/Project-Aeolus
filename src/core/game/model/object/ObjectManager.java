@@ -31,7 +31,7 @@ public class ObjectManager {
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (PlayerHandler.players[j] != null) {
 				Player c = (Player)PlayerHandler.players[j];
-				c.getPA().object(-1, x, y, 0, 10);			
+				c.getActionSender().object(-1, x, y, 0, 10);			
 			}	
 		}	
 	}
@@ -40,7 +40,7 @@ public class ObjectManager {
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (PlayerHandler.players[j] != null) {
 				Player c = (Player)PlayerHandler.players[j];
-				c.getPA().object(o.newId, o.objectX, o.objectY, o.face, o.type);			
+				c.getActionSender().object(o.newId, o.objectX, o.objectY, o.face, o.type);			
 			}	
 		}	
 	}
@@ -50,7 +50,7 @@ public class ObjectManager {
 			if (PlayerHandler.players[j] != null) {
 				Player c = (Player)PlayerHandler.players[j];
 				if (c.distanceToPoint(o.objectX, o.objectY) <= 60)
-					c.getPA().object(o.objectId, o.objectX, o.objectY, o.face, o.type);
+					c.getActionSender().object(o.objectId, o.objectX, o.objectY, o.face, o.type);
 			}	
 		}
 	}
@@ -68,15 +68,15 @@ public class ObjectManager {
 			return;
 		for (Object o : objects) {
 			if (loadForPlayer(o,c))
-				c.getPA().object(o.objectId, o.objectX, o.objectY, o.face, o.type);
+				c.getActionSender().object(o.objectId, o.objectX, o.objectY, o.face, o.type);
 		}
 		loadCustomSpawns(c);
 	}
 	
 	public void loadCustomSpawns(Player c) {
-			c.getPA().checkObjectSpawn(-1, 0, 0, 0, 10);
+			c.getActionSender().checkObjectSpawn(-1, 0, 0, 0, 10);
 		if (c.heightLevel == 1)
-			c.getPA().checkObjectSpawn(-1, 0, 0, 0, 10);
+			c.getActionSender().checkObjectSpawn(-1, 0, 0, 0, 10);
 	}
 	
 	public boolean loadForPlayer(Object o, Player c) {

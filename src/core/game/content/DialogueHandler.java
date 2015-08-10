@@ -37,146 +37,146 @@ public class DialogueHandler {
 	 * Information Box
 	 */	
 	public void sendStartInfo(String text, String text1, String text2, String text3, String title) {
-		c.getPA().sendFrame126(title, 6180);
-		c.getPA().sendFrame126(text, 6181);
-		c.getPA().sendFrame126(text1, 6182);
-		c.getPA().sendFrame126(text2, 6183);
-		c.getPA().sendFrame126(text3, 6184);
-		c.getPA().sendFrame164(6179);
+		c.getActionSender().sendFrame126(title, 6180);
+		c.getActionSender().sendFrame126(text, 6181);
+		c.getActionSender().sendFrame126(text1, 6182);
+		c.getActionSender().sendFrame126(text2, 6183);
+		c.getActionSender().sendFrame126(text3, 6184);
+		c.getActionSender().sendFrame164(6179);
 	}
 	
 	/*
 	 * Options
 	 */	
 	public void sendOption(String s) {
-		c.getPA().sendFrame126("Select an Option", 2470);
-	 	c.getPA().sendFrame126(s, 2471);
-		c.getPA().sendFrame126("Click here to continue", 2473);
-		c.getPA().sendFrame164(13758);
+		c.getActionSender().sendFrame126("Select an Option", 2470);
+	 	c.getActionSender().sendFrame126(s, 2471);
+		c.getActionSender().sendFrame126("Click here to continue", 2473);
+		c.getActionSender().sendFrame164(13758);
 	}	
 	
 	public void sendOption2(String s, String s1) {
-		c.getPA().sendFrame126("Select an Option", 2460);
-		c.getPA().sendFrame126(s, 2461);
-		c.getPA().sendFrame126(s1, 2462);
-		c.getPA().sendFrame164(2459);
+		c.getActionSender().sendFrame126("Select an Option", 2460);
+		c.getActionSender().sendFrame126(s, 2461);
+		c.getActionSender().sendFrame126(s1, 2462);
+		c.getActionSender().sendFrame164(2459);
 	}
 	
 	public void sendOption3(String s, String s1, String s2) {
-		c.getPA().sendFrame126("Select an Option", 2470);
-		c.getPA().sendFrame126(s, 2471);
-		c.getPA().sendFrame126(s1, 2472);
-		c.getPA().sendFrame126(s2, 2473);
-		c.getPA().sendFrame164(2469);
+		c.getActionSender().sendFrame126("Select an Option", 2470);
+		c.getActionSender().sendFrame126(s, 2471);
+		c.getActionSender().sendFrame126(s1, 2472);
+		c.getActionSender().sendFrame126(s2, 2473);
+		c.getActionSender().sendFrame164(2469);
 	}
 	
 	public void sendOption4(String s, String s1, String s2, String s3) {
-		c.getPA().sendFrame126("Select an Option", 2481);
-		c.getPA().sendFrame126(s, 2482);
-		c.getPA().sendFrame126(s1, 2483);
-		c.getPA().sendFrame126(s2, 2484);
-		c.getPA().sendFrame126(s3, 2485);
-		c.getPA().sendFrame164(2480);
+		c.getActionSender().sendFrame126("Select an Option", 2481);
+		c.getActionSender().sendFrame126(s, 2482);
+		c.getActionSender().sendFrame126(s1, 2483);
+		c.getActionSender().sendFrame126(s2, 2484);
+		c.getActionSender().sendFrame126(s3, 2485);
+		c.getActionSender().sendFrame164(2480);
 	}
 	
 	public void sendOption5(String s, String s1, String s2, String s3, String s4) {
-		c.getPA().sendFrame126("Select an Option", 2493);
-		c.getPA().sendFrame126(s, 2494);
-		c.getPA().sendFrame126(s1, 2495);
-		c.getPA().sendFrame126(s2, 2496);
-		c.getPA().sendFrame126(s3, 2497);
-		c.getPA().sendFrame126(s4, 2498);
-		c.getPA().sendFrame164(2492);
+		c.getActionSender().sendFrame126("Select an Option", 2493);
+		c.getActionSender().sendFrame126(s, 2494);
+		c.getActionSender().sendFrame126(s1, 2495);
+		c.getActionSender().sendFrame126(s2, 2496);
+		c.getActionSender().sendFrame126(s3, 2497);
+		c.getActionSender().sendFrame126(s4, 2498);
+		c.getActionSender().sendFrame164(2492);
 	}
 
 	/*
 	 * Statements
 	 */	
 	private void sendStatement(String s) { // 1 line click here to continue chat box interface
-		c.getPA().sendFrame126(s, 357);
-		c.getPA().sendFrame126("Click here to continue", 358);
-		c.getPA().sendFrame164(356);
+		c.getActionSender().sendFrame126(s, 357);
+		c.getActionSender().sendFrame126("Click here to continue", 358);
+		c.getActionSender().sendFrame164(356);
 	}
 	
 	/*
 	 * Npc Chatting
 	 */	
 	private void sendNpcChat1(String s, int ChatNpc, String name) {
-		c.getPA().sendFrame200(4883, 591);
-		c.getPA().sendFrame126(name, 4884);
-		c.getPA().sendFrame126(s, 4885);
-		c.getPA().sendFrame75(ChatNpc, 4883);
-		c.getPA().sendFrame164(4882);
+		c.getActionSender().sendFrame200(4883, 591);
+		c.getActionSender().sendFrame126(name, 4884);
+		c.getActionSender().sendFrame126(s, 4885);
+		c.getActionSender().sendFrame75(ChatNpc, 4883);
+		c.getActionSender().sendFrame164(4882);
 	}
 	
 	private void sendNpcChat2(String s, String s1, int ChatNpc, String name) {
-		c.getPA().sendFrame200(4888, 591);
-		c.getPA().sendFrame126(name, 4889);
-		c.getPA().sendFrame126(s, 4890);
-		c.getPA().sendFrame126(s1, 4891);
-		c.getPA().sendFrame75(ChatNpc, 4888);
-		c.getPA().sendFrame164(4887);
+		c.getActionSender().sendFrame200(4888, 591);
+		c.getActionSender().sendFrame126(name, 4889);
+		c.getActionSender().sendFrame126(s, 4890);
+		c.getActionSender().sendFrame126(s1, 4891);
+		c.getActionSender().sendFrame75(ChatNpc, 4888);
+		c.getActionSender().sendFrame164(4887);
 	}
 
 	private void sendNpcChat3(String s, String s1, String s2, int ChatNpc, String name) {
-		c.getPA().sendFrame200(4894, 591);
-		c.getPA().sendFrame126(name, 4895);
-		c.getPA().sendFrame126(s, 4896);
-		c.getPA().sendFrame126(s1, 4897);
-		c.getPA().sendFrame126(s2, 4898);
-		c.getPA().sendFrame75(ChatNpc, 4894);
-		c.getPA().sendFrame164(4893);
+		c.getActionSender().sendFrame200(4894, 591);
+		c.getActionSender().sendFrame126(name, 4895);
+		c.getActionSender().sendFrame126(s, 4896);
+		c.getActionSender().sendFrame126(s1, 4897);
+		c.getActionSender().sendFrame126(s2, 4898);
+		c.getActionSender().sendFrame75(ChatNpc, 4894);
+		c.getActionSender().sendFrame164(4893);
 	}
 	
 	private void sendNpcChat4(String s, String s1, String s2, String s3, int ChatNpc, String name) {
-		c.getPA().sendFrame200(4901, 591);
-		c.getPA().sendFrame126(name, 4902);
-		c.getPA().sendFrame126(s, 4903);
-		c.getPA().sendFrame126(s1, 4904);
-		c.getPA().sendFrame126(s2, 4905);
-		c.getPA().sendFrame126(s3, 4906);
-		c.getPA().sendFrame75(ChatNpc, 4901);
-		c.getPA().sendFrame164(4900);
+		c.getActionSender().sendFrame200(4901, 591);
+		c.getActionSender().sendFrame126(name, 4902);
+		c.getActionSender().sendFrame126(s, 4903);
+		c.getActionSender().sendFrame126(s1, 4904);
+		c.getActionSender().sendFrame126(s2, 4905);
+		c.getActionSender().sendFrame126(s3, 4906);
+		c.getActionSender().sendFrame75(ChatNpc, 4901);
+		c.getActionSender().sendFrame164(4900);
 	}
 	
 	/*
 	 * Player Chating Back
 	 */	
 	private void sendPlayerChat1(String s) {
-		c.getPA().sendFrame200(969, 591);
-		c.getPA().sendFrame126(c.playerName, 970);
-		c.getPA().sendFrame126(s, 971);
-		c.getPA().sendFrame185(969);
-		c.getPA().sendFrame164(968);
+		c.getActionSender().sendFrame200(969, 591);
+		c.getActionSender().sendFrame126(c.playerName, 970);
+		c.getActionSender().sendFrame126(s, 971);
+		c.getActionSender().sendFrame185(969);
+		c.getActionSender().sendFrame164(968);
 	}
 	
 	private void sendPlayerChat2(String s, String s1) {
-		c.getPA().sendFrame200(974, 591);
-		c.getPA().sendFrame126(c.playerName, 975);
-		c.getPA().sendFrame126(s, 976);
-		c.getPA().sendFrame126(s1, 977);
-		c.getPA().sendFrame185(974);
-		c.getPA().sendFrame164(973);
+		c.getActionSender().sendFrame200(974, 591);
+		c.getActionSender().sendFrame126(c.playerName, 975);
+		c.getActionSender().sendFrame126(s, 976);
+		c.getActionSender().sendFrame126(s1, 977);
+		c.getActionSender().sendFrame185(974);
+		c.getActionSender().sendFrame164(973);
 	}
 	
 	private void sendPlayerChat3(String s, String s1, String s2) {
-		c.getPA().sendFrame200(980, 591);
-		c.getPA().sendFrame126(c.playerName, 981);
-		c.getPA().sendFrame126(s, 982);
-		c.getPA().sendFrame126(s1, 983);
-		c.getPA().sendFrame126(s2, 984);
-		c.getPA().sendFrame185(980);
-		c.getPA().sendFrame164(979);
+		c.getActionSender().sendFrame200(980, 591);
+		c.getActionSender().sendFrame126(c.playerName, 981);
+		c.getActionSender().sendFrame126(s, 982);
+		c.getActionSender().sendFrame126(s1, 983);
+		c.getActionSender().sendFrame126(s2, 984);
+		c.getActionSender().sendFrame185(980);
+		c.getActionSender().sendFrame164(979);
 	}
 	
 	private void sendPlayerChat4(String s, String s1, String s2, String s3) {
-		c.getPA().sendFrame200(987, 591);
-		c.getPA().sendFrame126(c.playerName, 988);
-		c.getPA().sendFrame126(s, 989);
-		c.getPA().sendFrame126(s1, 990);
-		c.getPA().sendFrame126(s2, 991);
-		c.getPA().sendFrame126(s3, 992);
-		c.getPA().sendFrame185(987);
-		c.getPA().sendFrame164(986);
+		c.getActionSender().sendFrame200(987, 591);
+		c.getActionSender().sendFrame126(c.playerName, 988);
+		c.getActionSender().sendFrame126(s, 989);
+		c.getActionSender().sendFrame126(s1, 990);
+		c.getActionSender().sendFrame126(s2, 991);
+		c.getActionSender().sendFrame126(s3, 992);
+		c.getActionSender().sendFrame185(987);
+		c.getActionSender().sendFrame164(986);
 	}
 }

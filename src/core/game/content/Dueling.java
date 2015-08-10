@@ -67,9 +67,9 @@ public class Dueling {
 		for (int i = 0; i < c.playerEquipment.length; i++) {
 			sendDuelEquipment(c.playerEquipment[i], c.playerEquipmentN[i], i);
 		}
-		c.getPA().sendFrame126("Dueling with: " + o.playerName + " (level-" + o.combatLevel + ")", 6671);
-		c.getPA().sendFrame126("", 6684);
-		c.getPA().sendFrame248(6575, 3321);
+		c.getActionSender().sendFrame126("Dueling with: " + o.playerName + " (level-" + o.combatLevel + ")", 6671);
+		c.getActionSender().sendFrame126("", 6684);
+		c.getActionSender().sendFrame248(6575, 3321);
 		c.getInventory().resetItems(3322);
 	}
 	
@@ -97,7 +97,7 @@ public class Dueling {
 		for(int i = 0; i < c.duelRule.length; i++) {	
 			c.duelRule[i] = false;
 		}
-		c.getPA().sendFrame87(286, 0);
+		c.getActionSender().sendFrame87(286, 0);
 		c.duelOption = 0;
 	}
 	
@@ -202,8 +202,8 @@ public class Dueling {
 			o.getInventory().resetItems(3322);
 			refreshDuelScreen();
 			o.getContentManager().getDueling().refreshDuelScreen();
-			c.getPA().sendFrame126("", 6684);
-			o.getPA().sendFrame126("", 6684);
+			c.getActionSender().sendFrame126("", 6684);
+			o.getActionSender().sendFrame126("", 6684);
 		}
 		
 		if(!c.getInventory().playerHasItem(itemID, amount)) {
@@ -231,8 +231,8 @@ public class Dueling {
 		o.getInventory().resetItems(3322);
 		refreshDuelScreen();
 		o.getContentManager().getDueling().refreshDuelScreen();
-		c.getPA().sendFrame126("", 6684);
-		o.getPA().sendFrame126("", 6684);
+		c.getActionSender().sendFrame126("", 6684);
+		o.getActionSender().sendFrame126("", 6684);
 		return true;
 	}
 	
@@ -300,7 +300,7 @@ public class Dueling {
 					o.getInventory().resetItems(3322);
 					c.getContentManager().getDueling().refreshDuelScreen();
 					o.getContentManager().getDueling().refreshDuelScreen();
-					o.getPA().sendFrame126("", 6684);
+					o.getActionSender().sendFrame126("", 6684);
 				}
 			}		
 		}
@@ -329,7 +329,7 @@ public class Dueling {
 		o.getInventory().resetItems(3322);
 		c.getContentManager().getDueling().refreshDuelScreen();
 		o.getContentManager().getDueling().refreshDuelScreen();
-		o.getPA().sendFrame126("", 6684);
+		o.getActionSender().sendFrame126("", 6684);
 		if(!goodSpace) {
 			c.sendMessage("You have too many rules set to remove that item.");
 			return true;
@@ -351,7 +351,7 @@ public class Dueling {
 				itemId += c.getEquipment().getItemName(item.id) + "\\n";
 			}
 		}
-		c.getPA().sendFrame126(itemId, 6516);
+		c.getActionSender().sendFrame126(itemId, 6516);
 		itemId = "";
 		for(GameItem item : o.getContentManager().getDueling().stakedItems) {
 			if(c.getInventory().getStackable(item.id) || Item.itemIsNote[item.id]) {
@@ -360,31 +360,31 @@ public class Dueling {
 				itemId += c.getEquipment().getItemName(item.id) +"\\n";
 			}
 		}
-		c.getPA().sendFrame126(itemId, 6517);
-		c.getPA().sendFrame126("", 8242);
+		c.getActionSender().sendFrame126(itemId, 6517);
+		c.getActionSender().sendFrame126("", 8242);
 		for(int i = 8238; i <= 8253; i++) {
-			c.getPA().sendFrame126("", i);
+			c.getActionSender().sendFrame126("", i);
 		}
-		c.getPA().sendFrame126("Hitpoints will be restored.", 8250);
-		c.getPA().sendFrame126("Boosted stats will be restored.", 8238);
+		c.getActionSender().sendFrame126("Hitpoints will be restored.", 8250);
+		c.getActionSender().sendFrame126("Boosted stats will be restored.", 8238);
 		if(c.duelRule[8]) {
-			c.getPA().sendFrame126("There will be obstacles in the arena.", 8239);
+			c.getActionSender().sendFrame126("There will be obstacles in the arena.", 8239);
 		} 
-		c.getPA().sendFrame126("", 8240);
-		c.getPA().sendFrame126("", 8241);
+		c.getActionSender().sendFrame126("", 8240);
+		c.getActionSender().sendFrame126("", 8241);
 		
 		String[] rulesOption = {"Players cannot forfeit!", "Players cannot move.", "Players cannot use range.", "Players cannot use melee.", "Players cannot use magic.",  "Players cannot drink pots.",  "Players cannot eat food.", "Players cannot use prayer."};
 		
 		int lineNumber = 8242;
 		for(int i = 0; i < 8; i++) {
 			if(c.duelRule[i]) {
-				c.getPA().sendFrame126(""+rulesOption[i], lineNumber);
+				c.getActionSender().sendFrame126(""+rulesOption[i], lineNumber);
 				lineNumber ++;
 			}
 		}
-		c.getPA().sendFrame126("", 6571);
-		c.getPA().sendFrame248(6412, 197);
-		//c.getPA().showInterface(6412);
+		c.getActionSender().sendFrame126("", 6571);
+		c.getActionSender().sendFrame248(6412, 197);
+		//c.getActionSender().showInterface(6412);
 	}
 	
 	
@@ -398,10 +398,10 @@ public class Dueling {
 		if(c.duelRule[7]){
 			for(int p = 0; p < c.PRAYER.length; p++) { // reset prayer glows 
 				c.prayerActive[p] = false;
-				c.getPA().sendFrame36(c.PRAYER_GLOW[p], 0);		
+				c.getActionSender().sendFrame36(c.PRAYER_GLOW[p], 0);		
 			}
 			c.headIcon = -1;
-			c.getPA().requestUpdates();
+			c.getActionSender().requestUpdates();
 		}		
 		if(c.duelRule[11]) {
 			c.getEquipment().removeItem(c.playerEquipment[0], 0);
@@ -437,60 +437,60 @@ public class Dueling {
 			c.getEquipment().removeItem(c.playerEquipment[13], 13);
 		}		
 		c.duelStatus = 5;
-		c.getPA().removeAllWindows();
+		c.getActionSender().removeAllWindows();
 		c.specAmount = 10;
 		c.getEquipment().addSpecialBar(c.playerEquipment[c.playerWeapon]);
 		
 		if(c.duelRule[8]){	
 			if(c.duelRule[1]) {
-				c.getPA().movePlayer(c.duelTeleX, c.duelTeleY, 0);
+				c.getMovement().movePlayer(c.duelTeleX, c.duelTeleY, 0);
 			} else {
-				c.getPA().movePlayer(3366 + Misc.random(12), 3246 + Misc.random(6), 0);
+				c.getMovement().movePlayer(3366 + Misc.random(12), 3246 + Misc.random(6), 0);
 			}
 		} else {
 			if(c.duelRule[1]) {
-				c.getPA().movePlayer(c.duelTeleX, c.duelTeleY, 0);
+				c.getMovement().movePlayer(c.duelTeleX, c.duelTeleY, 0);
 			} else {	
-				c.getPA().movePlayer(3335 + Misc.random(12), 3246 + Misc.random(6), 0);
+				c.getMovement().movePlayer(3335 + Misc.random(12), 3246 + Misc.random(6), 0);
 			}
 		}
 
-		c.getPA().createPlayerHints(10, o.playerId);
-		c.getPA().showOption(3, 0, "Attack", 1);
+		c.getActionSender().createPlayerHints(10, o.playerId);
+		c.getActionSender().showOption(3, 0, "Attack", 1);
 		for (int i = 0; i < 20; i++) {
-			c.playerLevel[i] = c.getPA().getLevelForXP(c.playerXP[i]);
-			c.getPA().refreshSkill(i);
+			c.playerLevel[i] = c.getActionSender().getLevelForXP(c.playerXP[i]);
+			c.getActionSender().refreshSkill(i);
 		}
 		for(GameItem item : o.getContentManager().getDueling().stakedItems) {
 			otherStakedItems.add(new GameItem(c, item.id, item.amount));
 		}
-		c.getPA().requestUpdates();			
+		c.getActionSender().requestUpdates();			
 	}
 
 	
 	public void duelVictory() {
 		Player o = (Player) PlayerHandler.players[c.duelingWith];
 		if(o != null) {
-			c.getPA().sendFrame126(""+o.combatLevel, 6839);
-			c.getPA().sendFrame126(o.playerName, 6840);
+			c.getActionSender().sendFrame126(""+o.combatLevel, 6839);
+			c.getActionSender().sendFrame126(o.playerName, 6840);
 			o.duelStatus = 0;
 		} else {
-			c.getPA().sendFrame126("", 6839);
-			c.getPA().sendFrame126("", 6840);
+			c.getActionSender().sendFrame126("", 6839);
+			c.getActionSender().sendFrame126("", 6840);
 		}
 		c.duelStatus = 6;
 		c.getCombat().resetPrayers();
 		for (int i = 0; i < 20; i++) {
-			c.playerLevel[i] = c.getPA().getLevelForXP(c.playerXP[i]);
-			c.getPA().refreshSkill(i);
+			c.playerLevel[i] = c.getActionSender().getLevelForXP(c.playerXP[i]);
+			c.getActionSender().refreshSkill(i);
 		}
-		c.getPA().refreshSkill(3);
+		c.getActionSender().refreshSkill(3);
 		duelRewardInterface();
-		c.getPA().showInterface(6733);
-		c.getPA().movePlayer(GameConstants.DUELING_RESPAWN_X+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), GameConstants.DUELING_RESPAWN_Y+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), 0);	
-		c.getPA().requestUpdates();
-		c.getPA().showOption(3, 0, "Challenge", 3);
-		c.getPA().createPlayerHints(10, -1);
+		c.getActionSender().showInterface(6733);
+		c.getMovement().movePlayer(GameConstants.DUELING_RESPAWN_X+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), GameConstants.DUELING_RESPAWN_Y+(Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), 0);	
+		c.getActionSender().requestUpdates();
+		c.getActionSender().showOption(3, 0, "Challenge", 3);
+		c.getActionSender().createPlayerHints(10, -1);
 		c.canOffer = true;
 		c.duelSpaceReq = 0;
 		c.duelingWith = 0;
@@ -560,7 +560,7 @@ public class Dueling {
 	}
 	
 	public void declineDuel() {
-		c.getPA().removeAllWindows();
+		c.getActionSender().removeAllWindows();
 		c.canOffer = true;
 		c.duelStatus = 0;
 		c.duelingWith = 0;
@@ -581,17 +581,17 @@ public class Dueling {
 	}
 
 	public void resetDuel() {
-		c.getPA().showOption(3, 0, "Challenge", 3);
+		c.getActionSender().showOption(3, 0, "Challenge", 3);
 		c.headIconHints = 0;
 		for (int i = 0; i < c.duelRule.length; i++) { 
 			c.duelRule[i] = false;
 		}
-		c.getPA().createPlayerHints(10, -1);
+		c.getActionSender().createPlayerHints(10, -1);
 		c.duelStatus = 0;
 		c.canOffer = true;
 		c.duelSpaceReq = 0;
 		c.duelingWith = 0;
-		c.getPA().requestUpdates();
+		c.getActionSender().requestUpdates();
 		c.getCombat().resetPlayerAttack();
 		c.duelRequested = false;
 	}
@@ -608,8 +608,8 @@ public class Dueling {
 		}
 		o.duelStatus = 1;
 		c.duelStatus = 1;
-		o.getPA().sendFrame126("", 6684);
-		c.getPA().sendFrame126("", 6684);
+		o.getActionSender().sendFrame126("", 6684);
+		c.getActionSender().sendFrame126("", 6684);
 	}
 	
 	
@@ -660,10 +660,10 @@ public class Dueling {
 			c.duelOption -= c.DUEL_RULE_ID[i];
 		}
 
-		c.getPA().sendFrame87(286, c.duelOption);
+		c.getActionSender().sendFrame87(286, c.duelOption);
 		o.duelOption = c.duelOption;
 		o.duelRule[i] = c.duelRule[i];
-		o.getPA().sendFrame87(286, o.duelOption);
+		o.getActionSender().sendFrame87(286, o.duelOption);
 		
 		if(c.duelRule[8]){	
 			if(c.duelRule[1]) {

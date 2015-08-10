@@ -148,19 +148,19 @@ public class PlayerVsMob {
 			damage = (int) (damage * (double) 1.15);
 		}
 		if (c.fightMode == 3) {
-			c.getPA().addSkillXP((damage *GameConstants.MELEE_EXP_RATE / 3), 0);
-			c.getPA().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 1);
-			c.getPA().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 2);
-			c.getPA().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 3);
-			c.getPA().refreshSkill(0);
-			c.getPA().refreshSkill(1);
-			c.getPA().refreshSkill(2);
-			c.getPA().refreshSkill(3);
+			c.getActionSender().addSkillXP((damage *GameConstants.MELEE_EXP_RATE / 3), 0);
+			c.getActionSender().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 1);
+			c.getActionSender().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 2);
+			c.getActionSender().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 3);
+			c.getActionSender().refreshSkill(0);
+			c.getActionSender().refreshSkill(1);
+			c.getActionSender().refreshSkill(2);
+			c.getActionSender().refreshSkill(3);
 		} else {
-			c.getPA().addSkillXP((damage * GameConstants.MELEE_EXP_RATE), c.fightMode);
-			c.getPA().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 3);
-			c.getPA().refreshSkill(c.fightMode);
-			c.getPA().refreshSkill(3);
+			c.getActionSender().addSkillXP((damage * GameConstants.MELEE_EXP_RATE), c.fightMode);
+			c.getActionSender().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 3);
+			c.getActionSender().refreshSkill(c.fightMode);
+			c.getActionSender().refreshSkill(3);
 		}
 		if (damage > 0) {
 			// Pest Control shit was here
@@ -169,7 +169,7 @@ public class PlayerVsMob {
 			c.playerLevel[3] += damage;
 			if (c.playerLevel[3] > c.getLevelForXP(c.playerXP[3]))
 				c.playerLevel[3] = c.getLevelForXP(c.playerXP[3]);
-			c.getPA().refreshSkill(3);
+			c.getActionSender().refreshSkill(3);
 			MobHandler.npcs[i].gfx0(398);
 		}
 
@@ -187,7 +187,7 @@ public class PlayerVsMob {
 						c.playerLevel[3] = c.getLevelForXP(c.playerXP[3]);
 				else
 					c.playerLevel[3] += damage;
-				c.getPA().refreshSkill(3);
+				c.getActionSender().refreshSkill(3);
 			}
 			c.specEffect = 0;
 			break;
@@ -287,21 +287,21 @@ public class PlayerVsMob {
 					}
 				}
 				if (c.fightMode == 3) {
-					c.getPA().addSkillXP((damage * GameConstants.RANGE_EXP_RATE / 3),
+					c.getActionSender().addSkillXP((damage * GameConstants.RANGE_EXP_RATE / 3),
 							4);
-					c.getPA().addSkillXP((damage * GameConstants.RANGE_EXP_RATE / 3),
+					c.getActionSender().addSkillXP((damage * GameConstants.RANGE_EXP_RATE / 3),
 							1);
-					c.getPA().addSkillXP((damage * GameConstants.RANGE_EXP_RATE / 3),
+					c.getActionSender().addSkillXP((damage * GameConstants.RANGE_EXP_RATE / 3),
 							3);
-					c.getPA().refreshSkill(1);
-					c.getPA().refreshSkill(3);
-					c.getPA().refreshSkill(4);
+					c.getActionSender().refreshSkill(1);
+					c.getActionSender().refreshSkill(3);
+					c.getActionSender().refreshSkill(4);
 				} else {
-					c.getPA().addSkillXP((damage * GameConstants.RANGE_EXP_RATE), 4);
-					c.getPA().addSkillXP((damage * GameConstants.RANGE_EXP_RATE / 3),
+					c.getActionSender().addSkillXP((damage * GameConstants.RANGE_EXP_RATE), 4);
+					c.getActionSender().addSkillXP((damage * GameConstants.RANGE_EXP_RATE / 3),
 							3);
-					c.getPA().refreshSkill(3);
-					c.getPA().refreshSkill(4);
+					c.getActionSender().refreshSkill(3);
+					c.getActionSender().refreshSkill(4);
 				}
 				if (damage > 0) {
 
@@ -431,18 +431,18 @@ public class PlayerVsMob {
 					damage = MobHandler.npcs[i].HP;
 				}
 				if (c.magicDef) {
-					c.getPA().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 2),
+					c.getActionSender().addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 2),
 							1);
-					c.getPA().refreshSkill(1);
+					c.getActionSender().refreshSkill(1);
 				}
-				c.getPA().addSkillXP(
+				c.getActionSender().addSkillXP(
 						(c.MAGIC_SPELLS[c.oldSpellId][7] + damage
 								* GameConstants.MAGIC_EXP_RATE), 6);
-				c.getPA().addSkillXP(
+				c.getActionSender().addSkillXP(
 						(c.MAGIC_SPELLS[c.oldSpellId][7] + damage
 								* GameConstants.MAGIC_EXP_RATE / 3), 3);
-				c.getPA().refreshSkill(3);
-				c.getPA().refreshSkill(6);
+				c.getActionSender().refreshSkill(3);
+				c.getActionSender().refreshSkill(6);
 				if (damage > 0) {
 					// Pest Control Shit again.
 				}
@@ -474,14 +474,14 @@ public class PlayerVsMob {
 					case 12911:
 					case 12929:
 						int heal = Misc.random(damage / 2);
-						if (c.playerLevel[3] + heal >= c.getPA().getLevelForXP(
+						if (c.playerLevel[3] + heal >= c.getActionSender().getLevelForXP(
 								c.playerXP[3])) {
-							c.playerLevel[3] = c.getPA().getLevelForXP(
+							c.playerLevel[3] = c.getActionSender().getLevelForXP(
 									c.playerXP[3]);
 						} else {
 							c.playerLevel[3] += heal;
 						}
-						c.getPA().refreshSkill(3);
+						c.getActionSender().refreshSkill(3);
 						break;
 					}
 
@@ -561,7 +561,7 @@ public class PlayerVsMob {
 			}
 			if (c.getX() == MobHandler.npcs[i].getX()
 					&& c.getY() == MobHandler.npcs[i].getY()) {
-				c.getPA().walkTo(0, 1);
+				c.getActionSender().walkTo(0, 1);
 			}
 			c.followId2 = i;
 			c.followId = 0;
@@ -721,7 +721,7 @@ public class PlayerVsMob {
 																					// hit
 																					// delay
 					c.followId2 = MobHandler.npcs[i].npcId;
-					c.getPA().followNpc();
+					c.getActionSender().followNpc();
 					System.out.println("3");
 					c.hitDelay = c.getCombat().getHitDelay(
 							i,
@@ -739,7 +739,7 @@ public class PlayerVsMob {
 					if (c.fightMode == 2)
 						c.attackTimer--;
 					c.followId2 = MobHandler.npcs[i].npcId;
-					c.getPA().followNpc();
+					c.getActionSender().followNpc();
 					c.lastArrowUsed = c.playerEquipment[c.playerArrows];
 					c.lastWeaponUsed = c.playerEquipment[c.playerWeapon];
 					c.gfx100(c.getCombat().getRangeStartGFX());
@@ -769,7 +769,7 @@ public class PlayerVsMob {
 
 				if (c.usingOtherRangeWeapons && !c.usingMagic && !c.usingBow) {
 					c.followId2 = MobHandler.npcs[i].npcId;
-					c.getPA().followNpc();
+					c.getActionSender().followNpc();
 					c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
 					c.getEquipment().deleteEquipment();
 					c.gfx100(c.getCombat().getRangeStartGFX());
@@ -806,7 +806,7 @@ public class PlayerVsMob {
 						}
 					}
 					if (c.MAGIC_SPELLS[c.spellId][4] > 0) {
-						c.getPA().createPlayersProjectile(pX, pY, offX, offY,
+						c.getActionSender().createPlayersProjectile(pX, pY, offX, offY,
 								50, 78, c.MAGIC_SPELLS[c.spellId][4],
 								c.getCombat().getStartHeight(),
 								c.getCombat().getEndHeight(), i + 1, 50);

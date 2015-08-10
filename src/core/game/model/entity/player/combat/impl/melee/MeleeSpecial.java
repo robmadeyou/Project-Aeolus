@@ -105,11 +105,11 @@ public class MeleeSpecial {
 			PlayerHandler.players[i].killerId = c.playerId;
 		}
 		if (c.playerIndex > 0) {
-			c.getPA().followPlayer();
+			c.getActionSender().followPlayer();
 		} else if (c.npcIndex > 0) {
-			c.getPA().followNpc();
+			c.getActionSender().followNpc();
 		}
-		c.getPA().sound(
+		c.getActionSender().sound(
 				SoundManager.specialSounds(c.playerEquipment[c.playerWeapon]));
 		switch (weapon) {
 		case 10887:
@@ -233,7 +233,7 @@ public class MeleeSpecial {
 			c.gfx100(253);
 			if (c.playerIndex > 0) {
 				Player o = PlayerHandler.players[i];
-				o.getPA().getSpeared(c.absX, c.absY);
+				o.getActionSender().getSpeared(c.absX, c.absY);
 			}
 			break;
 

@@ -98,7 +98,7 @@ public class PlayerVsPlayer {
 			c.playerLevel[3] += damage;
 			if (c.playerLevel[3] > c.getLevelForXP(c.playerXP[3]))
 				c.playerLevel[3] = c.getLevelForXP(c.playerXP[3]);
-			c.getPA().refreshSkill(3);
+			c.getActionSender().refreshSkill(3);
 			o.gfx0(398);
 		}
 		if (c.ssSpec && damageMask == 2) {
@@ -118,16 +118,16 @@ public class PlayerVsPlayer {
 				if (o.prayerActive[16] || o.prayerActive[17]
 						|| o.prayerActive[18]) {
 					o.headIcon = -1;
-					o.getPA().sendFrame36(c.PRAYER_GLOW[16], 0);
-					o.getPA().sendFrame36(c.PRAYER_GLOW[17], 0);
-					o.getPA().sendFrame36(c.PRAYER_GLOW[18], 0);
+					o.getActionSender().sendFrame36(c.PRAYER_GLOW[16], 0);
+					o.getActionSender().sendFrame36(c.PRAYER_GLOW[17], 0);
+					o.getActionSender().sendFrame36(c.PRAYER_GLOW[18], 0);
 				}
 				o.sendMessage("You have been injured!");
 				o.stopPrayerDelay = System.currentTimeMillis();
 				o.prayerActive[16] = false;
 				o.prayerActive[17] = false;
 				o.prayerActive[18] = false;
-				o.getPA().requestUpdates();
+				o.getActionSender().requestUpdates();
 			}
 			break;
 		case 2:
@@ -147,7 +147,7 @@ public class PlayerVsPlayer {
 				o.sendMessage("You feel weak.");
 				if (o.playerLevel[1] < 1)
 					o.playerLevel[1] = 1;
-				o.getPA().refreshSkill(1);
+				o.getActionSender().refreshSkill(1);
 			}
 			break;
 		case 4:
@@ -159,31 +159,31 @@ public class PlayerVsPlayer {
 						c.playerLevel[3] = c.getLevelForXP(c.playerXP[3]);
 				else
 					c.playerLevel[3] += damage;
-				c.getPA().refreshSkill(3);
+				c.getActionSender().refreshSkill(3);
 			}
 			break;
 		}
 		c.specEffect = 0;
 		if (c.fightMode == 3) { // check
-			c.getPA()
+			c.getActionSender()
 					.addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 0);
-			c.getPA()
+			c.getActionSender()
 					.addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 1);
-			c.getPA()
+			c.getActionSender()
 					.addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 2);
-			c.getPA()
+			c.getActionSender()
 					.addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 3);
-			c.getPA().refreshSkill(0);
-			c.getPA().refreshSkill(1);
-			c.getPA().refreshSkill(2);
-			c.getPA().refreshSkill(3);
+			c.getActionSender().refreshSkill(0);
+			c.getActionSender().refreshSkill(1);
+			c.getActionSender().refreshSkill(2);
+			c.getActionSender().refreshSkill(3);
 		} else {
-			c.getPA().addSkillXP((damage * GameConstants.MELEE_EXP_RATE),
+			c.getActionSender().addSkillXP((damage * GameConstants.MELEE_EXP_RATE),
 					c.fightMode);
-			c.getPA()
+			c.getActionSender()
 					.addSkillXP((damage * GameConstants.MELEE_EXP_RATE / 3), 3);
-			c.getPA().refreshSkill(c.fightMode);
-			c.getPA().refreshSkill(3);
+			c.getActionSender().refreshSkill(c.fightMode);
+			c.getActionSender().refreshSkill(3);
 		}
 		PlayerHandler.players[i].logoutDelay = System.currentTimeMillis();
 		PlayerHandler.players[i].underAttackBy = c.playerId;
@@ -199,7 +199,7 @@ public class PlayerVsPlayer {
 			PlayerHandler.players[i].damageTaken[c.playerId] += damage;
 			c.totalPlayerDamageDealt += damage;
 			PlayerHandler.players[i].updateRequired = true;
-			o.getPA().refreshSkill(3);
+			o.getActionSender().refreshSkill(3);
 			break;
 
 		case 2:
@@ -208,7 +208,7 @@ public class PlayerVsPlayer {
 			c.totalPlayerDamageDealt += damage;
 			PlayerHandler.players[i].updateRequired = true;
 			c.doubleHit = false;
-			o.getPA().refreshSkill(3);
+			o.getActionSender().refreshSkill(3);
 			break;
 		}
 	}
@@ -227,7 +227,7 @@ public class PlayerVsPlayer {
 				return;
 			}
 			Player o = PlayerHandler.players[i];
-			o.getPA().removeAllWindows();
+			o.getActionSender().removeAllWindows();
 			if (o.playerIndex <= 0 && o.npcIndex <= 0) {
 				if (o.autoRet) {
 					o.playerIndex = c.playerId;
@@ -318,22 +318,22 @@ public class PlayerVsPlayer {
 				if (damage2 > 0)
 					c.getCombat().applyRecoil(damage2, i);
 				if (c.fightMode == 3) {
-					c.getPA().addSkillXP(
+					c.getActionSender().addSkillXP(
 							(damage * GameConstants.RANGE_EXP_RATE / 3), 4);
-					c.getPA().addSkillXP(
+					c.getActionSender().addSkillXP(
 							(damage * GameConstants.RANGE_EXP_RATE / 3), 1);
-					c.getPA().addSkillXP(
+					c.getActionSender().addSkillXP(
 							(damage * GameConstants.RANGE_EXP_RATE / 3), 3);
-					c.getPA().refreshSkill(1);
-					c.getPA().refreshSkill(3);
-					c.getPA().refreshSkill(4);
+					c.getActionSender().refreshSkill(1);
+					c.getActionSender().refreshSkill(3);
+					c.getActionSender().refreshSkill(4);
 				} else {
-					c.getPA().addSkillXP(
+					c.getActionSender().addSkillXP(
 							(damage * GameConstants.RANGE_EXP_RATE), 4);
-					c.getPA().addSkillXP(
+					c.getActionSender().addSkillXP(
 							(damage * GameConstants.RANGE_EXP_RATE / 3), 3);
-					c.getPA().refreshSkill(3);
-					c.getPA().refreshSkill(4);
+					c.getActionSender().refreshSkill(3);
+					c.getActionSender().refreshSkill(4);
 				}
 				boolean dropArrows = true;
 
@@ -369,7 +369,7 @@ public class PlayerVsPlayer {
 					PlayerHandler.players[i].dealSecondaryHit(new Hit(damage2));
 					PlayerHandler.players[i].damageTaken[c.playerId] += damage2;
 				}
-				o.getPA().refreshSkill(3);
+				o.getActionSender().refreshSkill(3);
 				PlayerHandler.players[i].updateRequired = true;
 				c.getCombat().applySmite(i, damage);
 				if (damage2 != -1)
@@ -415,18 +415,18 @@ public class PlayerVsPlayer {
 				if (damage > 0)
 					c.getCombat().applyRecoil(damage, i);
 				if (c.magicDef) {
-					c.getPA().addSkillXP(
+					c.getActionSender().addSkillXP(
 							(damage * GameConstants.MELEE_EXP_RATE / 3), 1);
-					c.getPA().refreshSkill(1);
+					c.getActionSender().refreshSkill(1);
 				}
-				c.getPA().addSkillXP(
+				c.getActionSender().addSkillXP(
 						(c.MAGIC_SPELLS[c.oldSpellId][7] + damage
 								* GameConstants.MAGIC_EXP_RATE), 6);
-				c.getPA().addSkillXP(
+				c.getActionSender().addSkillXP(
 						(c.MAGIC_SPELLS[c.oldSpellId][7] + damage
 								* GameConstants.MAGIC_EXP_RATE / 3), 3);
-				c.getPA().refreshSkill(3);
-				c.getPA().refreshSkill(6);
+				c.getActionSender().refreshSkill(3);
+				c.getActionSender().refreshSkill(6);
 
 				if (c.getCombat().getEndGfxHeight() == 100 && !c.magicFailed) { // end
 																				// GFX
@@ -450,7 +450,7 @@ public class PlayerVsPlayer {
 						case 12999:
 						case 13023:
 							PlayerHandler.players[i].playerLevel[0] -= ((o
-									.getPA()
+									.getActionSender()
 									.getLevelForXP(
 											PlayerHandler.players[i].playerXP[0]) * 10) / 100);
 							break;
@@ -476,74 +476,74 @@ public class PlayerVsPlayer {
 					case 12911:
 					case 12929:
 						int heal = (int) (damage / 4);
-						if (c.playerLevel[3] + heal > c.getPA().getLevelForXP(
+						if (c.playerLevel[3] + heal > c.getActionSender().getLevelForXP(
 								c.playerXP[3])) {
-							c.playerLevel[3] = c.getPA().getLevelForXP(
+							c.playerLevel[3] = c.getActionSender().getLevelForXP(
 									c.playerXP[3]);
 						} else {
 							c.playerLevel[3] += heal;
 						}
-						c.getPA().refreshSkill(3);
+						c.getActionSender().refreshSkill(3);
 						break;
 
 					case 1153:
-						PlayerHandler.players[i].playerLevel[0] -= ((o.getPA()
+						PlayerHandler.players[i].playerLevel[0] -= ((o.getActionSender()
 								.getLevelForXP(
 										PlayerHandler.players[i].playerXP[0]) * 5) / 100);
 						o.sendMessage("Your attack level has been reduced!");
 						PlayerHandler.players[i].reduceSpellDelay[c.reduceSpellId] = System
 								.currentTimeMillis();
-						o.getPA().refreshSkill(0);
+						o.getActionSender().refreshSkill(0);
 						break;
 
 					case 1157:
-						PlayerHandler.players[i].playerLevel[2] -= ((o.getPA()
+						PlayerHandler.players[i].playerLevel[2] -= ((o.getActionSender()
 								.getLevelForXP(
 										PlayerHandler.players[i].playerXP[2]) * 5) / 100);
 						o.sendMessage("Your strength level has been reduced!");
 						PlayerHandler.players[i].reduceSpellDelay[c.reduceSpellId] = System
 								.currentTimeMillis();
-						o.getPA().refreshSkill(2);
+						o.getActionSender().refreshSkill(2);
 						break;
 
 					case 1161:
-						PlayerHandler.players[i].playerLevel[1] -= ((o.getPA()
+						PlayerHandler.players[i].playerLevel[1] -= ((o.getActionSender()
 								.getLevelForXP(
 										PlayerHandler.players[i].playerXP[1]) * 5) / 100);
 						o.sendMessage("Your defence level has been reduced!");
 						PlayerHandler.players[i].reduceSpellDelay[c.reduceSpellId] = System
 								.currentTimeMillis();
-						o.getPA().refreshSkill(1);
+						o.getActionSender().refreshSkill(1);
 						break;
 
 					case 1542:
-						PlayerHandler.players[i].playerLevel[1] -= ((o.getPA()
+						PlayerHandler.players[i].playerLevel[1] -= ((o.getActionSender()
 								.getLevelForXP(
 										PlayerHandler.players[i].playerXP[1]) * 10) / 100);
 						o.sendMessage("Your defence level has been reduced!");
 						PlayerHandler.players[i].reduceSpellDelay[c.reduceSpellId] = System
 								.currentTimeMillis();
-						o.getPA().refreshSkill(1);
+						o.getActionSender().refreshSkill(1);
 						break;
 
 					case 1543:
-						PlayerHandler.players[i].playerLevel[2] -= ((o.getPA()
+						PlayerHandler.players[i].playerLevel[2] -= ((o.getActionSender()
 								.getLevelForXP(
 										PlayerHandler.players[i].playerXP[2]) * 10) / 100);
 						o.sendMessage("Your strength level has been reduced!");
 						PlayerHandler.players[i].reduceSpellDelay[c.reduceSpellId] = System
 								.currentTimeMillis();
-						o.getPA().refreshSkill(2);
+						o.getActionSender().refreshSkill(2);
 						break;
 
 					case 1562:
-						PlayerHandler.players[i].playerLevel[0] -= ((o.getPA()
+						PlayerHandler.players[i].playerLevel[0] -= ((o.getActionSender()
 								.getLevelForXP(
 										PlayerHandler.players[i].playerXP[0]) * 10) / 100);
 						o.sendMessage("Your attack level has been reduced!");
 						PlayerHandler.players[i].reduceSpellDelay[c.reduceSpellId] = System
 								.currentTimeMillis();
-						o.getPA().refreshSkill(0);
+						o.getActionSender().refreshSkill(0);
 						break;
 					}
 				}
@@ -561,7 +561,7 @@ public class PlayerVsPlayer {
 				}
 				c.getCombat().applySmite(i, damage);
 				c.killedBy = PlayerHandler.players[i].playerId;
-				o.getPA().refreshSkill(3);
+				o.getActionSender().refreshSkill(3);
 				PlayerHandler.players[i].updateRequired = true;
 				c.usingMagic = false;
 				c.castingMagic = false;
@@ -582,12 +582,12 @@ public class PlayerVsPlayer {
 					}
 				}
 				SoundManager.sendSound(c, c.oldSpellId, SoundType.MAGIC_COMBAT);
-				c.getPA().refreshSkill(3);
-				c.getPA().refreshSkill(6);
+				c.getActionSender().refreshSkill(3);
+				c.getActionSender().refreshSkill(6);
 				c.oldSpellId = 0;
 			}
 		}
-		c.getPA().requestUpdates();
+		c.getActionSender().requestUpdates();
 		if (c.bowSpecShot <= 0) {
 			c.oldPlayerIndex = 0;
 			c.projectileStage = 0;
@@ -806,7 +806,7 @@ public class PlayerVsPlayer {
 						c.getAttributes().put("isSkulled", Boolean.TRUE);
 						c.skullTimer = GameConstants.SKULL_TIMER;
 						c.headIconPk = 0;
-						c.getPA().requestUpdates();
+						c.getActionSender().requestUpdates();
 					}
 				}
 
@@ -865,7 +865,7 @@ public class PlayerVsPlayer {
 																					// hit
 																					// delay
 					c.followId = PlayerHandler.players[c.playerIndex].playerId;
-					c.getPA().followPlayer();
+					c.getActionSender().followPlayer();
 					SoundManager.sendSound(c,
 							c.playerEquipment[c.playerWeapon],
 							SoundType.MELEE_COMBAT);
@@ -897,7 +897,7 @@ public class PlayerVsPlayer {
 						c.usingBow = true;
 					c.usingBow = true;
 					c.followId = PlayerHandler.players[c.playerIndex].playerId;
-					c.getPA().followPlayer();
+					c.getActionSender().followPlayer();
 					c.lastWeaponUsed = c.playerEquipment[c.playerWeapon];
 					c.lastArrowUsed = c.playerEquipment[c.playerArrows];
 					c.gfx100(c.getCombat().getRangeStartGFX());
@@ -917,7 +917,7 @@ public class PlayerVsPlayer {
 					c.getEquipment().deleteEquipment();
 					c.usingRangeWeapon = true;
 					c.followId = PlayerHandler.players[c.playerIndex].playerId;
-					c.getPA().followPlayer();
+					c.getActionSender().followPlayer();
 					c.gfx100(c.getCombat().getRangeStartGFX());
 					if (c.fightMode == 2)
 						c.attackTimer--;
@@ -949,7 +949,7 @@ public class PlayerVsPlayer {
 						}
 					}
 					if (c.MAGIC_SPELLS[c.spellId][4] > 0) {
-						c.getPA().createPlayersProjectile(pX, pY, offX, offY,
+						c.getActionSender().createPlayersProjectile(pX, pY, offX, offY,
 								50, 78, c.MAGIC_SPELLS[c.spellId][4],
 								c.getCombat().getStartHeight(),
 								c.getCombat().getEndHeight(), -i - 1,
@@ -972,7 +972,7 @@ public class PlayerVsPlayer {
 					Player o = PlayerHandler.players[i];
 					if (c.MAGIC_SPELLS[c.oldSpellId][0] == 12891 && o.isMoving) {
 						// c.sendMessage("Barrage projectile..");
-						c.getPA().createPlayersProjectile(pX, pY, offX, offY,
+						c.getActionSender().createPlayersProjectile(pX, pY, offX, offY,
 								50, 85, 368, 25, 25, -i - 1,
 								c.getCombat().getStartDelay());
 					}

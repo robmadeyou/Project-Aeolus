@@ -23,13 +23,13 @@ public class RangeData {
 				int offY = (pX - nX) * -1;
 				SoundManager.sendSound(c, c.playerEquipment[c.playerWeapon],
 						SoundType.RANGED_COMBAT);
-				c.getPA().createPlayersProjectile(pX, pY, offX, offY, 50,
+				c.getActionSender().createPlayersProjectile(pX, pY, offX, offY, 50,
 						c.getCombat().getProjectileSpeed(),
 						c.getCombat().getRangeProjectileGFX(), 43, 31,
 						c.oldNpcIndex + 1,
 						c.getCombat().getProjectileShowDelay());
 				if (c.getCombat().usingDbow())
-					c.getPA().createPlayersProjectile2(pX, pY, offX, offY, 50,
+					c.getActionSender().createPlayersProjectile2(pX, pY, offX, offY, 50,
 							c.getCombat().getProjectileSpeed(),
 							c.getCombat().getRangeProjectileGFX(), 60, 31,
 							c.oldNpcIndex + 1, c.getCombat().getStartDelay(),
@@ -51,13 +51,13 @@ public class RangeData {
 				int offX = (pY - oY) * -1;
 				int offY = (pX - oX) * -1;
 				if (!c.msbSpec)
-					c.getPA().createPlayersProjectile(pX, pY, offX, offY, 50,
+					c.getActionSender().createPlayersProjectile(pX, pY, offX, offY, 50,
 							c.getCombat().getProjectileSpeed(),
 							c.getCombat().getRangeProjectileGFX(), 43, 31,
 							-c.oldPlayerIndex - 1,
 							c.getCombat().getStartDelay());
 				else if (c.msbSpec) {
-					c.getPA().createPlayersProjectile2(pX, pY, offX, offY, 50,
+					c.getActionSender().createPlayersProjectile2(pX, pY, offX, offY, 50,
 							c.getCombat().getProjectileSpeed(),
 							c.getCombat().getRangeProjectileGFX(), 43, 31,
 							-c.oldPlayerIndex - 1,
@@ -65,11 +65,11 @@ public class RangeData {
 					c.msbSpec = false;
 				}
 				if (c.getCombat().usingDbow())
-					// c.getPA().createProjectile3(pY, pX, offY, offX, 50,
+					// c.getActionSender().createProjectile3(pY, pX, offY, offX, 50,
 					// c.getCombat().getProjectileSpeed(),
 					// c.getCombat().getRangeProjectileGFX(), 60, 31, -
 					// c.oldPlayerIndex - 1, c.getCombat().getStartDelay(), 35);
-					c.getPA().createProjectile3(pY, pX, offY, offX,
+					c.getActionSender().createProjectile3(pY, pX, offY, offX,
 							c.getCombat().getRangeProjectileGFX(), 53, 31, 100,
 							-c.oldPlayerIndex - 1);
 

@@ -299,12 +299,12 @@ public class FirstClickButton {
 			}
 			c.duelStatus = 2;
 			if (c.duelStatus == 2) {
-				c.getPA().sendFrame126("Waiting for other player...", 6684);
-				o.getPA().sendFrame126("Other player has accepted.", 6684);
+				c.getActionSender().sendFrame126("Waiting for other player...", 6684);
+				o.getActionSender().sendFrame126("Other player has accepted.", 6684);
 			}
 			if (o.duelStatus == 2) {
-				o.getPA().sendFrame126("Waiting for other player...", 6684);
-				c.getPA().sendFrame126("Other player has accepted.", 6684);
+				o.getActionSender().sendFrame126("Waiting for other player...", 6684);
+				c.getActionSender().sendFrame126("Other player has accepted.", 6684);
 			}
 
 			if (c.duelStatus == 2 && o.duelStatus == 2) {
@@ -359,15 +359,15 @@ public class FirstClickButton {
 				c.duelDelay = System.currentTimeMillis();
 				o1.duelDelay = System.currentTimeMillis();
 			} else {
-				c.getPA().sendFrame126("Waiting for other player...", 6571);
-				o1.getPA().sendFrame126("Other player has accepted", 6571);
+				c.getActionSender().sendFrame126("Waiting for other player...", 6571);
+				o1.getActionSender().sendFrame126("Other player has accepted", 6571);
 			}
 			break;
 
 		case 152:
 			c.isRunning2 = !c.isRunning2;
 			int frame = c.isRunning2 == true ? 1 : 0;
-			c.getPA().sendFrame36(173, frame);
+			c.getActionSender().sendFrame36(173, frame);
 			break;
 
 		case 13092:
@@ -377,8 +377,8 @@ public class FirstClickButton {
 				c.sendMessage("Trade declined as the other player has disconnected.");
 				break;
 			}
-			c.getPA().sendFrame126("Waiting for other player...", 3431);
-			ot.getPA().sendFrame126("Other player has accepted", 3431);
+			c.getActionSender().sendFrame126("Waiting for other player...", 3431);
+			ot.getActionSender().sendFrame126("Other player has accepted", 3431);
 			c.goodTrade = true;
 			ot.goodTrade = true;
 
@@ -401,15 +401,15 @@ public class FirstClickButton {
 										.getInventory().freeSlots()) + " items.");
 						c.goodTrade = false;
 						ot.goodTrade = false;
-						c.getPA().sendFrame126("Not enough inventory space...",
+						c.getActionSender().sendFrame126("Not enough inventory space...",
 								3431);
-						ot.getPA().sendFrame126(
+						ot.getActionSender().sendFrame126(
 								"Not enough inventory space...", 3431);
 						break;
 					} else {
-						c.getPA().sendFrame126("Waiting for other player...",
+						c.getActionSender().sendFrame126("Waiting for other player...",
 								3431);
-						ot.getPA().sendFrame126("Other player has accepted",
+						ot.getActionSender().sendFrame126("Other player has accepted",
 								3431);
 						c.goodTrade = true;
 						ot.goodTrade = true;
@@ -447,8 +447,8 @@ public class FirstClickButton {
 					ot1.getContentManager().getTrading().giveItems();
 					break;
 				}
-				ot1.getPA().sendFrame126("Other player has accepted.", 3535);
-				c.getPA().sendFrame126("Waiting for other player...", 3535);
+				ot1.getActionSender().sendFrame126("Other player has accepted.", 3535);
+				c.getActionSender().sendFrame126("Waiting for other player...", 3535);
 			}
 
 			break;
@@ -456,15 +456,15 @@ public class FirstClickButton {
 		case 125011: // Click agree
 			if (!c.ruleAgreeButton) {
 				c.ruleAgreeButton = true;
-				c.getPA().sendFrame36(701, 1);
+				c.getActionSender().sendFrame36(701, 1);
 			} else {
 				c.ruleAgreeButton = false;
-				c.getPA().sendFrame36(701, 0);
+				c.getActionSender().sendFrame36(701, 0);
 			}
 			break;
 		case 125003:// Accept
 			if (c.ruleAgreeButton) {
-				c.getPA().showInterface(3559);
+				c.getActionSender().showInterface(3559);
 				c.newPlayer = false;
 			} else if (!c.ruleAgreeButton) {
 				c.sendMessage("You need to click on you agree before you can continue on.");
@@ -478,82 +478,82 @@ public class FirstClickButton {
 		case 74176:
 			if (!c.mouseButton) {
 				c.mouseButton = true;
-				c.getPA().sendFrame36(500, 1);
-				c.getPA().sendFrame36(170, 1);
+				c.getActionSender().sendFrame36(500, 1);
+				c.getActionSender().sendFrame36(170, 1);
 			} else if (c.mouseButton) {
 				c.mouseButton = false;
-				c.getPA().sendFrame36(500, 0);
-				c.getPA().sendFrame36(170, 0);
+				c.getActionSender().sendFrame36(500, 0);
+				c.getActionSender().sendFrame36(170, 0);
 			}
 			break;
 		case 74184:
 			if (!c.splitChat) {
 				c.splitChat = true;
-				c.getPA().sendFrame36(502, 1);
-				c.getPA().sendFrame36(287, 1);
+				c.getActionSender().sendFrame36(502, 1);
+				c.getActionSender().sendFrame36(287, 1);
 			} else {
 				c.splitChat = false;
-				c.getPA().sendFrame36(502, 0);
-				c.getPA().sendFrame36(287, 0);
+				c.getActionSender().sendFrame36(502, 0);
+				c.getActionSender().sendFrame36(287, 0);
 			}
 			break;
 		case 74180:
 			if (!c.chatEffects) {
 				c.chatEffects = true;
-				c.getPA().sendFrame36(501, 1);
-				c.getPA().sendFrame36(171, 0);
+				c.getActionSender().sendFrame36(501, 1);
+				c.getActionSender().sendFrame36(171, 0);
 			} else {
 				c.chatEffects = false;
-				c.getPA().sendFrame36(501, 0);
-				c.getPA().sendFrame36(171, 1);
+				c.getActionSender().sendFrame36(501, 0);
+				c.getActionSender().sendFrame36(171, 1);
 			}
 			break;
 		case 74188:
 			if (!c.acceptAid) {
 				c.acceptAid = true;
-				c.getPA().sendFrame36(503, 1);
-				c.getPA().sendFrame36(427, 1);
+				c.getActionSender().sendFrame36(503, 1);
+				c.getActionSender().sendFrame36(427, 1);
 			} else {
 				c.acceptAid = false;
-				c.getPA().sendFrame36(503, 0);
-				c.getPA().sendFrame36(427, 0);
+				c.getActionSender().sendFrame36(503, 0);
+				c.getActionSender().sendFrame36(427, 0);
 			}
 			break;
 		case 74192:
 			if (!c.isRunning2) {
 				c.isRunning2 = true;
-				c.getPA().sendFrame36(504, 1);
-				c.getPA().sendFrame36(173, 1);
+				c.getActionSender().sendFrame36(504, 1);
+				c.getActionSender().sendFrame36(173, 1);
 			} else {
 				c.isRunning2 = false;
-				c.getPA().sendFrame36(504, 0);
-				c.getPA().sendFrame36(173, 0);
+				c.getActionSender().sendFrame36(504, 0);
+				c.getActionSender().sendFrame36(173, 0);
 			}
 			break;
 
 		case 74206:// area1
-			c.getPA().sendFrame36(509, 1);
-			c.getPA().sendFrame36(510, 0);
-			c.getPA().sendFrame36(511, 0);
-			c.getPA().sendFrame36(512, 0);
+			c.getActionSender().sendFrame36(509, 1);
+			c.getActionSender().sendFrame36(510, 0);
+			c.getActionSender().sendFrame36(511, 0);
+			c.getActionSender().sendFrame36(512, 0);
 			break;
 		case 74207:// area2
-			c.getPA().sendFrame36(509, 0);
-			c.getPA().sendFrame36(510, 1);
-			c.getPA().sendFrame36(511, 0);
-			c.getPA().sendFrame36(512, 0);
+			c.getActionSender().sendFrame36(509, 0);
+			c.getActionSender().sendFrame36(510, 1);
+			c.getActionSender().sendFrame36(511, 0);
+			c.getActionSender().sendFrame36(512, 0);
 			break;
 		case 74208:// area3
-			c.getPA().sendFrame36(509, 0);
-			c.getPA().sendFrame36(510, 0);
-			c.getPA().sendFrame36(511, 1);
-			c.getPA().sendFrame36(512, 0);
+			c.getActionSender().sendFrame36(509, 0);
+			c.getActionSender().sendFrame36(510, 0);
+			c.getActionSender().sendFrame36(511, 1);
+			c.getActionSender().sendFrame36(512, 0);
 			break;
 		case 74209:// area4
-			c.getPA().sendFrame36(509, 0);
-			c.getPA().sendFrame36(510, 0);
-			c.getPA().sendFrame36(511, 0);
-			c.getPA().sendFrame36(512, 1);
+			c.getActionSender().sendFrame36(509, 0);
+			c.getActionSender().sendFrame36(510, 0);
+			c.getActionSender().sendFrame36(511, 0);
+			c.getActionSender().sendFrame36(512, 1);
 			break;
 			
 			default:

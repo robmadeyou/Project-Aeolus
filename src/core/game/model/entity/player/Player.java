@@ -33,6 +33,7 @@ import core.game.util.Misc;
 import core.game.util.Stream;
 import core.game.util.log.impl.ChatLogger;
 import core.game.util.log.impl.TradeLogger;
+import core.game.world.clipping.PathFinder;
 import core.net.Packet;
 import core.net.Packet.Type;
 import core.net.packets.PacketHandler;
@@ -62,7 +63,9 @@ public class Player extends Entity {
 	private ChatLogger chatLog = new ChatLogger(this);
 	private Censor censor = new Censor(this);
 	private Inventory inventory = new Inventory(this);	
-	public SoundEffects soundEffects = new SoundEffects(this);
+	private SoundEffects soundEffects = new SoundEffects(this);
+	private Movement movement = new Movement(this);
+	private PlayerAssistant playerAssistant = new PlayerAssistant(this);
 	private Food food = new Food(this);
 
 	public int lowMemoryVersion = 0;
@@ -155,6 +158,10 @@ public class Player extends Entity {
 	
 	public void setPrayerDisabled(boolean prayerDisabled) {
 		this.prayerDisabled = prayerDisabled;
+	}
+	
+	public void playerWalk(int x, int y) {
+		PathFinder.getPathFinder().findRoute(this, x, y, true, 1, 1);
 	}
 	
 	/**
@@ -351,7 +358,7 @@ public class Player extends Entity {
 				Player c = PlayerHandler.players[this.playerId];
 				autocasting = true;
 				autocastId = autocastIds[j + 1];
-				c.getPA().sendFrame36(108, 1);
+				c.getActionSender().sendFrame36(108, 1);
 				c.setSidebarInterface(0, 328);
 				// spellName = getSpellName(autocastId);
 				// spellName = spellName;
@@ -534,34 +541,34 @@ public class Player extends Entity {
 		if (inWild()) {
 			int modY = absY > 6400 ? absY - 6400 : absY;
 			wildLevel = (((modY - 3520) / 8) + 1);
-			getPA().walkableInterface(197);
+			getActionSender().walkableInterface(197);
 			if (Configuration.SINGLE_AND_MULTI_ZONES) {
 				if (inMulti()) {
-					getPA().sendFrame126("@yel@Level: " + wildLevel, 199);
+					getActionSender().sendFrame126("@yel@Level: " + wildLevel, 199);
 				} else {
-					getPA().sendFrame126("@yel@Level: " + wildLevel, 199);
+					getActionSender().sendFrame126("@yel@Level: " + wildLevel, 199);
 				}
 			} else {
-				getPA().multiWay(-1);
-				getPA().sendFrame126("@yel@Level: " + wildLevel, 199);
+				getActionSender().multiWay(-1);
+				getActionSender().sendFrame126("@yel@Level: " + wildLevel, 199);
 			}
-			getPA().showOption(3, 0, "Attack", 1);
+			getActionSender().showOption(3, 0, "Attack", 1);
 		} else if (inDuelArena()) {
-			getPA().walkableInterface(201);
+			getActionSender().walkableInterface(201);
 			if (duelStatus == 5) {
-				getPA().showOption(3, 0, "Attack", 1);
+				getActionSender().showOption(3, 0, "Attack", 1);
 			} else {
-				getPA().showOption(3, 0, "Challenge", 1);
+				getActionSender().showOption(3, 0, "Challenge", 1);
 			}
 		}
 		if (!hasMultiSign && inMulti()) {
 			hasMultiSign = true;
-			getPA().multiWay(1);
+			getActionSender().multiWay(1);
 		}
 
 		if (hasMultiSign && !inMulti()) {
 			hasMultiSign = false;
-			getPA().multiWay(-1);
+			getActionSender().multiWay(-1);
 		}
 	}
 
@@ -800,7 +807,7 @@ public class Player extends Entity {
 		return itemAssistant;
 	}
 
-	public ActionSender getPA() {
+	public ActionSender getActionSender() {
 		return actionSender;
 	}
 
@@ -1029,51 +1036,51 @@ public class Player extends Entity {
 
 	public void ItemKeptInfo(Player c, int Lose) {
 		for (int i = 17109; i < 17131; i++) {
-			c.getPA().sendFrame126("", i);
+			c.getActionSender().sendFrame126("", i);
 		}
-		c.getPA().sendFrame126("Items you will keep on death:", 17104);
-		c.getPA().sendFrame126("Items you will lose on death:", 17105);
-		c.getPA().sendFrame126("Player Information", 17106);
-		c.getPA().sendFrame126("Max items kept on death:", 17107);
-		c.getPA().sendFrame126("~ " + Lose + " ~", 17108);
-		c.getPA().sendFrame126("The normal amount of", 17111);
-		c.getPA().sendFrame126("items kept is three.", 17112);
+		c.getActionSender().sendFrame126("Items you will keep on death:", 17104);
+		c.getActionSender().sendFrame126("Items you will lose on death:", 17105);
+		c.getActionSender().sendFrame126("Player Information", 17106);
+		c.getActionSender().sendFrame126("Max items kept on death:", 17107);
+		c.getActionSender().sendFrame126("~ " + Lose + " ~", 17108);
+		c.getActionSender().sendFrame126("The normal amount of", 17111);
+		c.getActionSender().sendFrame126("items kept is three.", 17112);
 		switch (Lose) {
 		case 0:
 		default:
-			c.getPA().sendFrame126("Items you will keep on death:", 17104);
-			c.getPA().sendFrame126("Items you will lose on death:", 17105);
-			c.getPA().sendFrame126("You're marked with a", 17111);
-			c.getPA().sendFrame126("@red@skull. @lre@This reduces the", 17112);
-			c.getPA().sendFrame126("items you keep from", 17113);
-			c.getPA().sendFrame126("three to zero!", 17114);
+			c.getActionSender().sendFrame126("Items you will keep on death:", 17104);
+			c.getActionSender().sendFrame126("Items you will lose on death:", 17105);
+			c.getActionSender().sendFrame126("You're marked with a", 17111);
+			c.getActionSender().sendFrame126("@red@skull. @lre@This reduces the", 17112);
+			c.getActionSender().sendFrame126("items you keep from", 17113);
+			c.getActionSender().sendFrame126("three to zero!", 17114);
 			break;
 		case 1:
-			c.getPA().sendFrame126("Items you will keep on death:", 17104);
-			c.getPA().sendFrame126("Items you will lose on death:", 17105);
-			c.getPA().sendFrame126("You're marked with a", 17111);
-			c.getPA().sendFrame126("@red@skull. @lre@This reduces the", 17112);
-			c.getPA().sendFrame126("items you keep from", 17113);
-			c.getPA().sendFrame126("three to zero!", 17114);
-			c.getPA().sendFrame126("However, you also have", 17115);
-			c.getPA().sendFrame126("the @red@Protect @lre@Items prayer", 17116);
-			c.getPA().sendFrame126("active, which saves you", 17117);
-			c.getPA().sendFrame126("one extra item!", 17118);
+			c.getActionSender().sendFrame126("Items you will keep on death:", 17104);
+			c.getActionSender().sendFrame126("Items you will lose on death:", 17105);
+			c.getActionSender().sendFrame126("You're marked with a", 17111);
+			c.getActionSender().sendFrame126("@red@skull. @lre@This reduces the", 17112);
+			c.getActionSender().sendFrame126("items you keep from", 17113);
+			c.getActionSender().sendFrame126("three to zero!", 17114);
+			c.getActionSender().sendFrame126("However, you also have", 17115);
+			c.getActionSender().sendFrame126("the @red@Protect @lre@Items prayer", 17116);
+			c.getActionSender().sendFrame126("active, which saves you", 17117);
+			c.getActionSender().sendFrame126("one extra item!", 17118);
 			break;
 		case 3:
-			c.getPA().sendFrame126("Items you will keep on death(if not skulled):", 17104);
-			c.getPA().sendFrame126("Items you will lose on death(if not skulled):", 17105);
-			c.getPA().sendFrame126("You have no factors", 17111);
-			c.getPA().sendFrame126("affecting the items you", 17112);
-			c.getPA().sendFrame126("keep.", 17113);
+			c.getActionSender().sendFrame126("Items you will keep on death(if not skulled):", 17104);
+			c.getActionSender().sendFrame126("Items you will lose on death(if not skulled):", 17105);
+			c.getActionSender().sendFrame126("You have no factors", 17111);
+			c.getActionSender().sendFrame126("affecting the items you", 17112);
+			c.getActionSender().sendFrame126("keep.", 17113);
 			break;
 		case 4:
-			c.getPA().sendFrame126("Items you will keep on death(if not skulled):", 17104);
-			c.getPA().sendFrame126("Items you will lose on death(if not skulled):", 17105);
-			c.getPA().sendFrame126("You have the @red@Protect", 17111);
-			c.getPA().sendFrame126("@red@Item @lre@prayer active,", 17112);
-			c.getPA().sendFrame126("which saves you one", 17113);
-			c.getPA().sendFrame126("extra item!", 17114);
+			c.getActionSender().sendFrame126("Items you will keep on death(if not skulled):", 17104);
+			c.getActionSender().sendFrame126("Items you will lose on death(if not skulled):", 17105);
+			c.getActionSender().sendFrame126("You have the @red@Protect", 17111);
+			c.getActionSender().sendFrame126("@red@Item @lre@prayer active,", 17112);
+			c.getActionSender().sendFrame126("which saves you one", 17113);
+			c.getActionSender().sendFrame126("extra item!", 17114);
 			break;
 		}
 	}
@@ -2037,7 +2044,23 @@ public class Player extends Entity {
 		}
 
 	}
+	
+	/**
+	 * A single players attributes
+	 */
+	@Override
+	public void initAttributes() {
+		this.getAttributes().put("isBusy", Boolean.FALSE);
+		this.getAttributes().put("isBanking", Boolean.FALSE);
+		this.getAttributes().put("isTrading", Boolean.FALSE);
+		this.getAttributes().put("isDueling", Boolean.FALSE);
+		this.getAttributes().put("isSkulled", Boolean.FALSE);
+		this.getAttributes().put("canWalk", Boolean.TRUE);
+	}
 
+	/**
+	 * A players initial login, the step after the channels have accepted a valid password
+	 */
 	public void initialize() {
 		// synchronized (this) {
 		outStream.createFrame(249);
@@ -2052,26 +2075,26 @@ public class Player extends Entity {
 			}
 		}
 		for (int i = 0; i < 25; i++) {
-			getPA().setSkillLevel(i, playerLevel[i], playerXP[i]);
-			getPA().refreshSkill(i);
+			getActionSender().setSkillLevel(i, playerLevel[i], playerXP[i]);
+			getActionSender().refreshSkill(i);
 		}
 		for (int p = 0; p < PRAYER.length; p++) { // reset prayer glows
 			prayerActive[p] = false;
-			getPA().sendFrame36(PRAYER_GLOW[p], 0);
+			getActionSender().sendFrame36(PRAYER_GLOW[p], 0);
 		}
 		loadRegion();
-		getPA().handleWeaponStyle();
-		accountFlagged = getPA().checkForFlags();
+		getActionSender().handleWeaponStyle();
+		accountFlagged = getActionSender().checkForFlags();
 		// getPA().sendFrame36(43, fightMode-1);
-		getPA().sendFrame36(108, 0);// resets autocast button
-		getPA().sendFrame36(172, 1);
-		getPA().sendFrame36(507, 1); //Brightness Level 3
-		getPA().sendFrame107(); // reset screen
-		getPA().setChatOptions(0, 0, 0); // reset private messaging options
-		getPA().setSideBarInterfaces(this, true);
+		getActionSender().sendFrame36(108, 0);// resets autocast button
+		getActionSender().sendFrame36(172, 1);
+		getActionSender().sendFrame36(507, 1); //Brightness Level 3
+		getActionSender().sendFrame107(); // reset screen
+		getActionSender().setChatOptions(0, 0, 0); // reset private messaging options
+		getActionSender().setSideBarInterfaces(this, true);
 		sendMessage("Welcome to " + Configuration.SERVER_NAME);
-		getPA().showOption(5, 0, "Follow", 4);
-		getPA().showOption(4, 0, "Trade With", 3);
+		getActionSender().showOption(5, 0, "Follow", 4);
+		getActionSender().showOption(4, 0, "Trade With", 3);
 		getInventory().resetItems(3214);
 		getEquipment().sendWeapon(playerEquipment[playerWeapon], getEquipment().getItemName(playerEquipment[playerWeapon]));
 		getEquipment().resetBonus();
@@ -2089,7 +2112,7 @@ public class Player extends Entity {
 		getEquipment().setEquipment(playerEquipment[playerRing], 1, playerRing);
 		getEquipment().setEquipment(playerEquipment[playerWeapon], playerEquipmentN[playerWeapon], playerWeapon);
 		getCombat().getPlayerAnimIndex(getEquipment().getItemName(playerEquipment[playerWeapon]).toLowerCase());
-		getPA().logIntoPM();
+		getActionSender().logIntoPM();
 		getEquipment().addSpecialBar(playerEquipment[playerWeapon]);
 		saveTimer = GameConstants.SAVE_TIMER;
 		saveCharacter = true;
@@ -2097,14 +2120,14 @@ public class Player extends Entity {
 		handler.updatePlayer(this, outStream);
 		handler.updateNPC(this, outStream);
 		flushOutStream();
-		getPA().resetFollow();
+		getActionSender().resetFollow();
 
 		if (addStarter)
-			getPA().addStarter();
+			getActionSender().addStarter();
 		if (autoRet)
-			getPA().sendFrame36(172, 1);
+			getActionSender().sendFrame36(172, 1);
 		else
-			getPA().sendFrame36(172, 0);
+			getActionSender().sendFrame36(172, 0);
 	}
 	
 	private void loadRegion() {
@@ -2133,9 +2156,12 @@ public class Player extends Entity {
 
 	public int packetSize = 0, packetType = -1;
 
+	/**
+	 * The main tick for a player
+	 */
 	@Override
 	public void process() {
-		this.getPA().sendFrame126((int) (specAmount * 10)+"", 155);
+		this.getActionSender().sendFrame126((int) (specAmount * 10)+"", 155);
 		
 		if (System.currentTimeMillis() - specDelay > GameConstants.INCREASE_SPECIAL_AMOUNT) {
 			specDelay = System.currentTimeMillis();
@@ -2148,9 +2174,9 @@ public class Player extends Entity {
 		}
 
 		if (followId > 0) {
-			getPA().followPlayer();
+			getActionSender().followPlayer();
 		} else if (followId2 > 0) {
-			getPA().followNpc();
+			getActionSender().followNpc();
 		}
 		getCombat().handlePrayerDrain();
 		if (System.currentTimeMillis() - singleCombatDelay > 3300) {
@@ -2166,13 +2192,13 @@ public class Player extends Entity {
 				if (playerLevel[level] < getLevelForXP(playerXP[level])) {
 					if (level != 5) { // prayer doesn't restore
 						playerLevel[level] += 1;
-						getPA().setSkillLevel(level, playerLevel[level], playerXP[level]);
-						getPA().refreshSkill(level);
+						getActionSender().setSkillLevel(level, playerLevel[level], playerXP[level]);
+						getActionSender().refreshSkill(level);
 					}
 				} else if (playerLevel[level] > getLevelForXP(playerXP[level])) {
 					playerLevel[level] -= 1;
-					getPA().setSkillLevel(level, playerLevel[level], playerXP[level]);
-					getPA().refreshSkill(level);
+					getActionSender().setSkillLevel(level, playerLevel[level], playerXP[level]);
+					getActionSender().refreshSkill(level);
 				}
 			}
 		}
@@ -2183,7 +2209,7 @@ public class Player extends Entity {
 				attackedPlayers.clear();
 				headIconPk = -1;
 				skullTimer = -1;
-				getPA().requestUpdates();
+				getActionSender().requestUpdates();
 			}
 		}
 
@@ -2501,13 +2527,11 @@ public class Player extends Entity {
 		return food;
 	}
 	
-	@Override
-	public void initAttributes() {
-		this.getAttributes().put("isBusy", Boolean.FALSE);
-		this.getAttributes().put("isBanking", Boolean.FALSE);
-		this.getAttributes().put("isTrading", Boolean.FALSE);
-		this.getAttributes().put("isDueling", Boolean.FALSE);
-		this.getAttributes().put("isSkulled", Boolean.FALSE);
-		this.getAttributes().put("canWalk", Boolean.TRUE);
+	public Movement getMovement() {
+		return movement;
+	}
+	
+	public PlayerAssistant getPA() {
+		return playerAssistant;
 	}
 }

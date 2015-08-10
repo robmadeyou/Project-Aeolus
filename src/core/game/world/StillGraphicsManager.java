@@ -29,7 +29,7 @@ public class StillGraphicsManager {
 				continue;
 			Player c = p;
 			if (c == curPlr || c.withinDistance(absX, absY, heightLevel)) {
-				c.getPA().sendStillGraphics(id, heightLevel, absY, absX, pause);
+				c.getActionSender().sendStillGraphics(id, heightLevel, absY, absX, pause);
 			}
 		}
 	}

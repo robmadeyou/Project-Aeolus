@@ -17,7 +17,7 @@ public class ClickObject implements PacketType {
 	public void processPacket(final Player c, int packetType, int packetSize) {
 		c.clickObjectType = c.objectX = c.objectId = c.objectY = 0;
 		c.objectYOffset = c.objectXOffset = 0;
-		c.getPA().resetFollow();
+		c.getActionSender().resetFollow();
 		switch (packetType) {
 
 		case FIRST_CLICK:

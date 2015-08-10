@@ -15,7 +15,7 @@ public class Bank10 implements PacketType {
 					
 		switch(interfaceId){
 			case 1688:
-				c.getPA().useOperate(removeId);
+				c.getActionSender().useOperate(removeId);
 			break;
 			case 3900:
 			c.getShops().buyItem(removeId, removeSlot, 5);

@@ -23,7 +23,7 @@ public class MeleeExtras {
 				c2.playerLevel[5] = 0;
 				c2.getCombat().resetPrayers();
 			}
-			c2.getPA().refreshSkill(5);
+			c2.getActionSender().refreshSkill(5);
 		}
 	}
 
@@ -52,7 +52,7 @@ public class MeleeExtras {
 
 				@Override
 				public void execute() {
-					c.getPA().createPlayersProjectile(pX, pY, offX, offY, 50,
+					c.getActionSender().createPlayersProjectile(pX, pY, offX, offY, 50,
 							10, 1166, 25, 27, c.playerIndex - 1, 0);
 					this.cancel();
 				}
@@ -111,7 +111,7 @@ public class MeleeExtras {
 
 				@Override
 				public void execute() {
-					c.getPA().createPlayersProjectile(pX, pY, offX, offY, 50,
+					c.getActionSender().createPlayersProjectile(pX, pY, offX, offY, 50,
 							10, 1166, 25, 27, c.npcIndex + 1, 0);
 					this.cancel();					
 				}		
@@ -183,7 +183,7 @@ public class MeleeExtras {
 				c.dealSecondaryHit(new Hit(damage, HitType.NORMAL));
 			}
 			c.playerLevel[3] -= damage;
-			c.getPA().refreshSkill(3);
+			c.getActionSender().refreshSkill(3);
 		}
 		c.updateRequired = true;
 	}
@@ -249,7 +249,7 @@ public class MeleeExtras {
 						if (o.playerLevel[3] > 0) {
 							c.startAnimation(1667);
 							c.gfx100(340);
-							c.getPA().sendSound(1082);
+							c.getActionSender().sendSound(1082);
 							o.dealHit(new Hit(damage));
 						}
 					}

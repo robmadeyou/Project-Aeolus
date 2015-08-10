@@ -53,8 +53,8 @@ public class CastOnOther extends MagicRequirements {
 
 		p.playerLevel[3] += (int) hpPercent;
 
-		p.getPA().refreshSkill(3);
-		c.getPA().refreshSkill(3);
+		p.getActionSender().refreshSkill(3);
+		c.getActionSender().refreshSkill(3);
 		c.updateRequired = true;
 		c.faceUpdate(i + 32768);
 
@@ -143,9 +143,9 @@ public class CastOnOther extends MagicRequirements {
 		if (castOn != null) {
 			if (castOn.distanceToPoint(c.absX, c.absY) <= 15) {
 				if (c.heightLevel == castOn.heightLevel) {
-					castOn.getPA().sendFrame126(location[type], 12560);
-					castOn.getPA().sendFrame126(c.playerName, 12558);
-					castOn.getPA().showInterface(12468);
+					castOn.getActionSender().sendFrame126(location[type], 12560);
+					castOn.getActionSender().sendFrame126(c.playerName, 12558);
+					castOn.getActionSender().showInterface(12468);
 					castOn.teleotherType = type;
 				}
 			}
@@ -154,7 +154,7 @@ public class CastOnOther extends MagicRequirements {
 
 	public static void teleOtherLocation(final Player c, final int i,
 			boolean decline) {
-		c.getPA().removeAllWindows();
+		c.getActionSender().removeAllWindows();
 		final int[][] coords = { { 3222, 3218 }, // LUMBRIDGE
 				{ 2964, 3378 }, // FALADOR
 				{ 2757, 3477 }, // CAMELOT

@@ -47,7 +47,7 @@ public class Walking implements PacketType {
 			c.tradeStatus = 0;
 		}
 		
-		//c.getPA().sendMusic(c, MusicLoader.getSongID(MusicLoader.getAreaID(c)));
+		//c.getActionSender().sendMusic(c, MusicLoader.getSongID(MusicLoader.getAreaID(c)));
 
 		if ((Boolean) c.getAttributes().get("isTrading")) {
 			c.sendMessage("You must decline the trade to start walking.");
@@ -60,12 +60,12 @@ public class Walking implements PacketType {
 			c.npcIndex = 0;
 			c.playerIndex = 0;
 			if (c.followId > 0 || c.followId2 > 0)
-				c.getPA().resetFollow();
+				c.getActionSender().resetFollow();
 		}
 		if (c.canWalk == false) {
 			return;
 		}
-		c.getPA().removeAllWindows();
+		c.getActionSender().removeAllWindows();
 		if (c.duelRule[1] && c.duelStatus == 5) {
 			if (PlayerHandler.players[c.duelingWith] != null) {
 				if (!c.goodDistance(c.getX(), c.getY(),

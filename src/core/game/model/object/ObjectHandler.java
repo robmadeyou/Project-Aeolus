@@ -68,13 +68,13 @@ public class ObjectHandler {
 			if (c != null) {
 				if (c.heightLevel == o.getHeight() && o.objectTicks == 0) {
 					if (c.distanceToPoint(o.getX(), o.getY()) <= 60) {
-						c.getPA().object(o.getId(), o.getX(), o.getY(), o.getFace(), o.getType());
+						c.getActionSender().object(o.getId(), o.getX(), o.getY(), o.getFace(), o.getType());
 					}
 				}
 			}
 		}
 		if (c.distanceToPoint(2961, 3389) <= 60) {
-			c.getPA().object(6552, 2961, 3389, -1, 10);
+			c.getActionSender().object(6552, 2961, 3389, -1, 10);
 		}
 	}
 
@@ -90,7 +90,7 @@ public class ObjectHandler {
 						if (person.distanceToPoint(o.getX(), o.getY()) <= 60) {
 							removeAllObjects(o);
 							globalObjects.add(o);
-							person.getPA().object(o.getId(), o.getX(), o.getY(), o.getFace(), o.getType());
+							person.getActionSender().object(o.getId(), o.getX(), o.getY(), o.getFace(), o.getType());
 						}
 					}
 				}

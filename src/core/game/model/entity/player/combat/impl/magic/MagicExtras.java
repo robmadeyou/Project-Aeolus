@@ -116,13 +116,13 @@ public class MagicExtras {
 		case 12919: // blood spells
 		case 12929:
 			int heal = (int) (damage / 4);
-			if (c.playerLevel[3] + heal >= c.getPA().getLevelForXP(
+			if (c.playerLevel[3] + heal >= c.getActionSender().getLevelForXP(
 					c.playerXP[3])) {
-				c.playerLevel[3] = c.getPA().getLevelForXP(c.playerXP[3]);
+				c.playerLevel[3] = c.getActionSender().getLevelForXP(c.playerXP[3]);
 			} else {
 				c.playerLevel[3] += heal;
 			}
-			c.getPA().refreshSkill(3);
+			c.getActionSender().refreshSkill(3);
 			break;
 		case 12891:
 		case 12881:
@@ -157,15 +157,15 @@ public class MagicExtras {
 					if (c2.playerLevel[3] - damage < 0) {
 						damage = c2.playerLevel[3];
 					}
-					c.getPA().addSkillXP(
+					c.getActionSender().addSkillXP(
 							(c.MAGIC_SPELLS[c.oldSpellId][7] + damage
 									* GameConstants.MAGIC_EXP_RATE), 6);
-					c.getPA().addSkillXP(
+					c.getActionSender().addSkillXP(
 							(c.MAGIC_SPELLS[c.oldSpellId][7] + damage
 									* GameConstants.MAGIC_EXP_RATE / 3), 3);
 					PlayerHandler.players[playerId].dealHit(new Hit(damage));
 					PlayerHandler.players[playerId].damageTaken[c.playerId] += damage;
-					c2.getPA().refreshSkill(3);
+					c2.getActionSender().refreshSkill(3);
 					c.totalPlayerDamageDealt += damage;
 					c.getCombat().multiSpellEffect(playerId, damage);
 				} else {

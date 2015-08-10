@@ -16,7 +16,7 @@ public class DialoguePacket implements PacketType {
 			c.getDH().sendDialogues(c.nextChat, c.talkingNpc, 0);
 		} else {
 			c.getDH().sendDialogues(0, -1, 0);
-			c.getPA().closeAllWindows();
+			c.getActionSender().removeAllWindows();
 		}		
 	}
 }

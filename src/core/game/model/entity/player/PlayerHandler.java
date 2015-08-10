@@ -288,7 +288,7 @@ public class PlayerHandler {
 					continue;
 				Player o = PlayerHandler.players[i];
 				if (o != null) {
-					o.getPA().updatePM(plr.playerId, 0);
+					o.getActionSender().updatePM(plr.playerId, 0);
 				}
 			}
 		}

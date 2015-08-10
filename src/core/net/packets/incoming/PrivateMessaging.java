@@ -44,10 +44,10 @@ public class PrivateMessaging implements PacketType {
 								if (o != null) {
 									if (PlayerHandler.players[i2].privateChat == 0
 											|| (PlayerHandler.players[i2].privateChat == 1 && o
-													.getPA()
+													.getActionSender()
 													.isInPM(Misc
 															.playerNameToInt64(c.playerName)))) {
-										c.getPA().loadPM(friendToAdd, 1);
+										c.getActionSender().loadPM(friendToAdd, 1);
 										break;
 									}
 								}
@@ -76,10 +76,10 @@ public class PrivateMessaging implements PacketType {
 							if (o != null) {
 								if (PlayerHandler.players[i2].privateChat == 0
 										|| (PlayerHandler.players[i2].privateChat == 1 && o
-												.getPA()
+												.getActionSender()
 												.isInPM(Misc
 														.playerNameToInt64(c.playerName)))) {
-									o.getPA()
+									o.getActionSender()
 											.sendPM(Misc
 													.playerNameToInt64(c.playerName),
 													c.getRights().getValues(), pmchatText,
@@ -109,7 +109,7 @@ public class PrivateMessaging implements PacketType {
 						if (o != null) {
 							if (c.friends[i1] == Misc
 									.playerNameToInt64(PlayerHandler.players[i2].playerName)) {
-								o.getPA().updatePM(c.playerId, 0);
+								o.getActionSender().updatePM(c.playerId, 0);
 								break;
 							}
 						}
@@ -125,7 +125,7 @@ public class PrivateMessaging implements PacketType {
 			int i2 = c.getInStream().readDWord();
 			int i3 = c.getInStream().readDWord();
 			// for other status changing
-			c.getPA().handleStatus(i, i2, i3);
+			c.getActionSender().handleStatus(i, i2, i3);
 			break;
 
 		case CHANGE_PM_STATUS:
@@ -137,7 +137,7 @@ public class PrivateMessaging implements PacketType {
 						&& PlayerHandler.players[i1].isActive == true) {
 					Player o = (Player) PlayerHandler.players[i1];
 					if (o != null) {
-						o.getPA().updatePM(c.playerId, 1);
+						o.getActionSender().updatePM(c.playerId, 1);
 					}
 				}
 			}

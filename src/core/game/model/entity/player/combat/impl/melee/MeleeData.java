@@ -35,7 +35,7 @@ public class MeleeData {
 		c.npcIndex = 0;
 		c.faceUpdate(0);
 		c.playerIndex = 0;
-		c.getPA().resetFollow();
+		c.getActionSender().resetFollow();
 	}
 
 	public static boolean usingHally(Player c) {

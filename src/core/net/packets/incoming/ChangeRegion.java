@@ -7,7 +7,7 @@ public class ChangeRegion implements PacketType {
 
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
-		c.getPA().removeObjects();
+		c.getActionSender().removeObjects();
 		//Server.objectManager.loadObjects(c);
 	}
 

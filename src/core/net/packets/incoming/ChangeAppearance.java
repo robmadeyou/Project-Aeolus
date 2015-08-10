@@ -39,8 +39,8 @@ public class ChangeAppearance implements PacketType {
 			c.playerAppearance[11] = feetColour; // feet colour
 			c.playerAppearance[12] = skinColour; // skin colour
 
-			c.getPA().removeAllWindows();
-			c.getPA().requestUpdates();
+			c.getActionSender().removeAllWindows();
+			c.getActionSender().requestUpdates();
 			c.canChangeAppearance = false;
 		}	
 	}	

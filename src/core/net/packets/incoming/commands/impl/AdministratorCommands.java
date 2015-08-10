@@ -6,7 +6,6 @@ import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Punishments;
 import core.game.model.entity.player.Rights;
-import core.game.model.entity.player.container.Equipment;
 import core.game.model.item.ItemDefinition;
 import core.net.packets.incoming.commands.Command;
 
@@ -75,7 +74,7 @@ public class AdministratorCommands implements Command {
 							player.sendMessage("You cannot teleport to a player during a duel.");
 							return;
 						}
-						player.getPA().movePlayer(PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(),
+						player.getMovement().movePlayer(PlayerHandler.players[i].getX(), PlayerHandler.players[i].getY(),
 								player.heightLevel);
 					}
 				}
@@ -97,9 +96,9 @@ public class AdministratorCommands implements Command {
 				level = 10;
 				player.sendMessage("You cannot set your health below 10.");
 			}
-			player.playerXP[skill] = player.getPA().getXPForLevel(level) + 5;
-			player.playerLevel[skill] = player.getPA().getLevelForXP(player.playerXP[skill]);
-			player.getPA().refreshSkill(skill);
+			player.playerXP[skill] = player.getActionSender().getXPForLevel(level) + 5;
+			player.playerLevel[skill] = player.getActionSender().getLevelForXP(player.playerXP[skill]);
+			player.getActionSender().refreshSkill(skill);
 			player.updateRequired = true;
 			break;
 
@@ -126,9 +125,9 @@ public class AdministratorCommands implements Command {
 		case "tele":
 			String[] arg = command;
 			if (arg.length > 3)
-				player.getPA().movePlayer(Integer.parseInt(arg[1]), Integer.parseInt(arg[2]), Integer.parseInt(arg[3]));
+				player.getMovement().movePlayer(Integer.parseInt(arg[1]), Integer.parseInt(arg[2]), Integer.parseInt(arg[3]));
 			else if (arg.length == 3)
-				player.getPA().movePlayer(Integer.parseInt(arg[1]), Integer.parseInt(arg[2]), player.heightLevel);
+				player.getMovement().movePlayer(Integer.parseInt(arg[1]), Integer.parseInt(arg[2]), player.heightLevel);
 			break;
 
 		case "getid":
@@ -155,7 +154,7 @@ public class AdministratorCommands implements Command {
 			break;
 
 		case "bank":
-			player.getPA().openUpBank();
+			player.getActionSender().openUpBank();
 			break;
 
 		case "mypos":

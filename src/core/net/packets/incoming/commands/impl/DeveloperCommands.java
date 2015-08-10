@@ -33,12 +33,12 @@ public class DeveloperCommands implements Command {
 		
 		case "sound":
 			int soundId= Integer.parseInt(command[1]);
-			player.getPA().sendSound(soundId);
+			player.getActionSender().sendSound(soundId);
 			break;
 			
 		case "music":
 			int musicId = Integer.parseInt(command[1]);
-			player.getPA().sendMusic(player, musicId);
+			player.getActionSender().sendMusic(player, musicId);
 			break;
 		
 		case "test":
@@ -66,7 +66,7 @@ public class DeveloperCommands implements Command {
 			break;
 
 		case "object":
-			player.getPA().object(Integer.parseInt(command[1]), player.absX, player.absY, 0, 10);
+			player.getActionSender().object(Integer.parseInt(command[1]), player.absX, player.absY, 0, 10);
 			break;
 
 		case "forcechatall":
@@ -126,7 +126,7 @@ public class DeveloperCommands implements Command {
 		case "interface":
 			try {
 				int interfaceID = Integer.parseInt(command[1]);			
-				player.getPA().showInterface(interfaceID);
+				player.getActionSender().showInterface(interfaceID);
 				System.out.println(interfaceID);
 			} catch (Exception ex) {
 				player.sendMessage("Wrong Syntax use ::interface ####");
@@ -144,7 +144,7 @@ public class DeveloperCommands implements Command {
 
 		case "emote":
 			player.startAnimation(Integer.parseInt(command[1]));
-			player.getPA().requestUpdates();
+			player.getActionSender().requestUpdates();
 			break;
 		}
 	}

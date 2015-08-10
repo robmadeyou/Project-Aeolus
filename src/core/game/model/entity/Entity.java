@@ -205,7 +205,7 @@ public abstract class Entity {
             Player player = (Player) this;
             if (player.teleTimer <= 0) {
                 player.playerLevel[3] -= hit.getDamage();
-                player.getPA().refreshSkill(3);
+                player.getActionSender().refreshSkill(3);
             }
         }
     }
@@ -228,7 +228,7 @@ public abstract class Entity {
 
             if (player.teleTimer <= 0) {
                 player.playerLevel[3] -= hit.getDamage();
-                player.getPA().refreshSkill(3);
+                player.getActionSender().refreshSkill(3);
             }
         }
     }

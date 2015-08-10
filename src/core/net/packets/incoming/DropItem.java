@@ -40,7 +40,7 @@ public class DropItem implements PacketType {
 				c.getInventory().deleteItem(itemId, slot, c.playerItemsN[slot]);
 				if (Configuration.enableSound) {
 					c.sendMessage("test");
-					c.getPA().sendSound(c.getSound().DROPITEM);
+					c.getActionSender().sendSound(c.getSound().DROPITEM);
 				}
 			} else {
 				c.sendMessage("This items cannot be dropped.");

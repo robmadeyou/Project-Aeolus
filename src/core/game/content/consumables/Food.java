@@ -110,9 +110,9 @@ public class Food {
 			}
 			p.foodDelay = System.currentTimeMillis();
 			if (Configuration.enableSound) {
-				p.getPA().sendSound(p.getSound().FOODEAT);
+				p.getActionSender().sendSound(p.getSound().FOODEAT);
 			}
-			p.getPA().refreshSkill(3);
+			p.getActionSender().refreshSkill(3);
 			p.sendMessage("You eat the " + f.getName() + ".");
 		}
 	}

@@ -20,12 +20,12 @@ public class ClickNPC implements PacketType {
 		c.npcClickIndex = 0;
 		c.playerIndex = 0;
 		c.clickNpcType = 0;
-		c.getPA().resetFollow();
+		c.getActionSender().resetFollow();
 		c.followId2 = c.npcClickIndex;
 		//c.follow2 = c.npcClickIndex;
 		c.followDistance = 1;
 		c.faceUpdate(c.npcClickIndex);
-		c.getPA().followNpc();
+		c.getActionSender().followNpc();
 		c.faceUpdate(c.followId);
 
 		switch (packetType) {
@@ -127,7 +127,7 @@ public class ClickNPC implements PacketType {
 			}
 
 			if (c.followId > 0) {
-				c.getPA().resetFollow();
+				c.getActionSender().resetFollow();
 			}
 			if (c.attackTimer <= 0) {
 				c.getCombat().attackNpc(c.npcIndex);
@@ -198,7 +198,7 @@ public class ClickNPC implements PacketType {
 			if (c.isDead)
 				return;
 			c.npcClickIndex = c.inStream.readSignedWordBigEndian();
-			c.getPA().followNpc();
+			c.getActionSender().followNpc();
 			c.followId2 = c.npcClickIndex;
 			c.faceNPC(c.npcClickIndex);
 			c.faceUpdate(c.npcIndex);

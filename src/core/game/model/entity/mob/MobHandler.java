@@ -118,7 +118,7 @@ public class MobHandler {
 					int pY = c.getY();
 					int offX = (nY - pY) * -1;
 					int offY = (nX - pX) * -1;
-					c.getPA().createPlayersProjectile(nX, nY, offX, offY, 50, getProjectileSpeed(i),
+					c.getActionSender().createPlayersProjectile(nX, nY, offX, offY, 50, getProjectileSpeed(i),
 							npcs[i].projectileId, 43, 31, -c.getId() - 1, 65);
 				}
 			}
@@ -180,7 +180,7 @@ public class MobHandler {
 						c.gfx0(npcs[i].endGfx);
 					}
 				}
-				c.getPA().refreshSkill(3);
+				c.getActionSender().refreshSkill(3);
 			}
 		}
 	}
@@ -303,7 +303,7 @@ public class MobHandler {
 		newNPC.defence = defence;
 		newNPC.spawnedBy = c.getId();
 		if (headIcon)
-			c.getPA().drawHeadicon(1, slot, 0, 0);
+			c.getActionSender().drawHeadicon(1, slot, 0, 0);
 		if (attackPlayer) {
 			newNPC.underAttack = true;
 			if (c != null) {
@@ -1854,7 +1854,7 @@ public class MobHandler {
 						multiAttackGfx(i, npcs[i].projectileId);
 						startAnimation(getAttackEmote(i), i);
 						if (Configuration.enableSound) {
-							c.getPA().sendSound(SoundEffects
+							c.getActionSender().sendSound(SoundEffects
 									.getNpcAttackSounds(npcs[i].npcType));
 						}
 						npcs[i].oldIndex = c.playerId;
@@ -1867,14 +1867,14 @@ public class MobHandler {
 						int pY = c.getY();
 						int offX = (nY - pY) * -1;
 						int offY = (nX - pX) * -1;
-						c.getPA().createPlayersProjectile(nX, nY, offX, offY, 50, getProjectileSpeed(i),
+						c.getActionSender().createPlayersProjectile(nX, nY, offX, offY, 50, getProjectileSpeed(i),
 								npcs[i].projectileId, 43, 31, -c.getId() - 1, 65);
 					}
 					c.underAttackBy2 = i;
 					c.singleCombatDelay2 = System.currentTimeMillis();
 					npcs[i].oldIndex = c.playerId;
 					startAnimation(getAttackEmote(i), i);
-					c.getPA().removeAllWindows();
+					c.getActionSender().removeAllWindows();
 				}
 			}
 		}
@@ -1976,7 +1976,7 @@ public class MobHandler {
 				}
 
 				if (npcs[i].attackType == 3) { // fire breath
-					int anti = c.getPA().antiFire();
+					int anti = c.getActionSender().antiFire();
 					if (anti == 0) {
 						damage = Misc.random(30) + 10;
 						c.sendMessage("You are badly burnt by the dragon fire!");
@@ -2002,7 +2002,7 @@ public class MobHandler {
 				if (c != null) {
 					if (c.playerLevel[5] > 0) {
 						c.playerLevel[5]--;
-						c.getPA().refreshSkill(5);
+						c.getActionSender().refreshSkill(5);
 						c.getPA().appendPoison(12);
 					}
 				}

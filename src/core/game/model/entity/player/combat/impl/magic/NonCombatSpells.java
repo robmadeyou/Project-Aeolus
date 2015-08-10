@@ -36,7 +36,7 @@ public class NonCombatSpells extends MagicRequirements {
 		c.getInventory().replaceItem(c, item[0], item[1]);
 		c.gfx100(141);
 		c.startAnimation(722);
-		c.getPA().addSkillXP(100 * c.getInventory().getItemAmount(item[0]), 6);
+		c.getActionSender().addSkillXP(100 * c.getInventory().getItemAmount(item[0]), 6);
 		c.sendMessage("You use your magic power to convert bones into "
 				+ c.getEquipment().getItemName(item[1]).toLowerCase().toLowerCase()
 				+ "" + (item[1] != 1963 ? ("e") : ("")) + "s!");
@@ -75,10 +75,10 @@ public class NonCombatSpells extends MagicRequirements {
 							c.getEquipment().getItemSlot(data[i][2]), 1);
 				}
 				c.getInventory().addItem(data[i][4], 1);
-				c.getPA().addSkillXP(data[i][5], 6);
+				c.getActionSender().addSkillXP(data[i][5], 6);
 				c.startAnimation(725);
 				c.gfx100(148);
-				c.getPA().sendFrame106(6);
+				c.getActionSender().sendFrame106(6);
 				return;
 			}
 		}
@@ -110,11 +110,11 @@ public class NonCombatSpells extends MagicRequirements {
 						c.startAnimation(c.MAGIC_SPELLS[49][2]);
 						c.gfx100(c.MAGIC_SPELLS[49][3]);
 						c.alchDelay = System.currentTimeMillis();
-						c.getPA().sendFrame106(6);
-						c.getPA().addSkillXP(
+						c.getActionSender().sendFrame106(6);
+						c.getActionSender().addSkillXP(
 								c.MAGIC_SPELLS[49][7]
 										* GameConstants.MAGIC_EXP_RATE, 6);
-						c.getPA().refreshSkill(6);
+						c.getActionSender().refreshSkill(6);
 					}
 				}
 			}
@@ -146,11 +146,11 @@ public class NonCombatSpells extends MagicRequirements {
 						c.startAnimation(c.MAGIC_SPELLS[50][2]);
 						c.gfx100(c.MAGIC_SPELLS[50][3]);
 						c.alchDelay = System.currentTimeMillis();
-						c.getPA().sendFrame106(6);
-						c.getPA().addSkillXP(
+						c.getActionSender().sendFrame106(6);
+						c.getActionSender().addSkillXP(
 								c.MAGIC_SPELLS[50][7]
 										* GameConstants.MAGIC_EXP_RATE, 6);
-						c.getPA().refreshSkill(6);
+						c.getActionSender().refreshSkill(6);
 					}
 				}
 			}
