@@ -33,6 +33,86 @@ public class FirstClickButton {
 		MusicTab.handleClick(c, actionButtonId);
 		switch (actionButtonId) {
 		
+		/** Prayers **/
+		case 21233: // thick skin
+			c.getCombat().activatePrayer(0);
+			break;
+		case 21234: // burst of str
+			c.getCombat().activatePrayer(1);
+			break;
+		case 21235: // charity of thought
+			c.getCombat().activatePrayer(2);
+			break;
+		case 77100: // range
+			c.getCombat().activatePrayer(3);
+			break;
+		case 77102: // mage
+			c.getCombat().activatePrayer(4);
+			break;
+		case 21236: // rockskin
+			c.getCombat().activatePrayer(5);
+			break;
+		case 21237: // super human
+			c.getCombat().activatePrayer(6);
+			break;
+		case 21238: // improved reflexes
+			c.getCombat().activatePrayer(7);
+			break;
+		case 21239: // hawk eye
+			c.getCombat().activatePrayer(8);
+			break;
+		case 21240:
+			c.getCombat().activatePrayer(9);
+			break;
+		case 21241: // protect Item
+			c.getCombat().activatePrayer(10);
+			break;
+		case 77104: // 26 range
+			c.getCombat().activatePrayer(11);
+			break;
+		case 77106: // 27 mage
+			c.getCombat().activatePrayer(12);
+			break;
+		case 21242: // steel skin
+			c.getCombat().activatePrayer(13);
+			break;
+		case 21243: // ultimate str
+			c.getCombat().activatePrayer(14);
+			break;
+		case 21244: // incredible reflex
+			c.getCombat().activatePrayer(15);
+			break;
+		case 21245: // protect from magic
+			c.getCombat().activatePrayer(16);
+			break;
+		case 21246: // protect from range
+			c.getCombat().activatePrayer(17);
+			break;
+		case 21247: // protect from melee
+			c.getCombat().activatePrayer(18);
+			break;
+		case 77109: // 44 range
+			c.getCombat().activatePrayer(19);
+			break;
+		case 77111: // 45 mystic
+			c.getCombat().activatePrayer(20);
+			break;
+		case 2171: // retrui
+			c.getCombat().activatePrayer(21);
+			break;
+		case 2172: // redem
+			c.getCombat().activatePrayer(22);
+			break;
+		case 2173: // smite
+			c.getCombat().activatePrayer(23);
+			break;
+		case 77113: // chiv
+			c.getCombat().activatePrayer(24);
+			break;
+		case 77115: // piety
+			c.getCombat().activatePrayer(25);
+			break;
+		
 		case 89061:
 			c.autoRet = !c.autoRet;
 			break;

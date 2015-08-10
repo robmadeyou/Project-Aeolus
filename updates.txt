@@ -67,3 +67,10 @@
 - Removed all the individual item files, now using a complete 602 Item Definitions
 - Added consumables
 
+~ August 9, 2015
+- Implemented a combat system, I will be improving it.
+- All items are now wieldable
+- Implemented prayer
+- Fixed all prayers, no bugs that I am aware of.
+
+
