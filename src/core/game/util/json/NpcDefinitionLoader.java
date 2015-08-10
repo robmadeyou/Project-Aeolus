@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import core.Config;
-import core.game.model.entity.npc.NPCDefinitions;
+import core.game.model.entity.mob.MobDefinitions;
 import core.game.util.JsonLoader;
 import core.game.util.Misc;
 
@@ -22,7 +22,7 @@ public final class NpcDefinitionLoader extends JsonLoader {
 	 */
 	public NpcDefinitionLoader() {
 		super(Config.DATA_DIR + "./json/npc_definitions.json");
-		Misc.println("Loaded " + NPCDefinitions.DEFINITIONS.length + " NPC Definitions");
+		Misc.println("Loaded " + MobDefinitions.DEFINITIONS.length + " NPC Definitions");
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public final class NpcDefinitionLoader extends JsonLoader {
 		int rangedDefence = reader.get("defenceRange").getAsInt();
 		int magicDefence = reader.get("defenceMage").getAsInt();
 
-		NPCDefinitions.DEFINITIONS[index] = new NPCDefinitions(index, name,
+		MobDefinitions.DEFINITIONS[index] = new MobDefinitions(index, name,
 				description, combatLevel, size, attackable, aggressive,
 				retreats, poisonous, respawnTime, maxHit, hitpoints,
 				attackSpeed, attackAnim, defenceAnim, deathAnim, attackBonus,

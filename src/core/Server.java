@@ -13,8 +13,8 @@ import org.jboss.netty.util.HashedWheelTimer;
 
 import core.game.event.task.Task2;
 import core.game.event.task.TaskScheduler;
-import core.game.model.entity.npc.NPCDrops;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobDrop;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.item.ItemHandler;
@@ -105,7 +105,7 @@ public class Server {
 	/**
 	 * Handles global NPCs.
 	 */
-	public static NPCHandler npcHandler = new NPCHandler();
+	public static MobHandler npcHandler = new MobHandler();
 
 	/**
 	 * Handles global shops.
@@ -163,7 +163,7 @@ public class Server {
 		objectHandler = new ObjectHandler();
 		ItemHandler.loadItemDefinitions();
 		new NpcDefinitionLoader().load();
-		new NPCDrops().load();
+		new MobDrop().load();
 		npcHandler.build();
 		
 		long startTime = System.currentTimeMillis();

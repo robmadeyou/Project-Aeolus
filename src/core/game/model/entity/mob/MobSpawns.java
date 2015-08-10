@@ -1,4 +1,4 @@
-package core.game.model.entity.npc;
+package core.game.model.entity.mob;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import core.Config;
 /**
  * @author 7Winds
  */
-public final class NPCSpawns {
+public final class MobSpawns {
 
 	/**
 	 * The Id of the npc. Commonly referred to as npcType.
@@ -38,7 +38,7 @@ public final class NPCSpawns {
 	 */
 	private int walkType;
 
-	public NPCSpawns(int npcid, int xPos, int yPos, int height, int walkType) {
+	public MobSpawns(int npcid, int xPos, int yPos, int height, int walkType) {
 		this.npcId = npcid;
 		this.xPos = xPos;
 		this.yPos = yPos;
@@ -83,11 +83,11 @@ public final class NPCSpawns {
 
 	public static final class NpcSpawnBuilder {
 
-		protected static NPCSpawns[] deserialize() {
+		protected static MobSpawns[] deserialize() {
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			try (final FileReader reader = new FileReader(
 					Config.DATA_DIR + "json/npc_spawns.json")) {
-				return gson.fromJson(reader, NPCSpawns[].class);
+				return gson.fromJson(reader, MobSpawns[].class);
 			} catch (IOException e) {
 				return null;
 			}

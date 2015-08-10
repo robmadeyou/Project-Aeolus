@@ -1,6 +1,6 @@
 package core.game.model.entity.player.combat.impl.ranged;
 
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.sound.SoundManager;
@@ -13,12 +13,12 @@ public class RangeData {
 	public static void fireProjectileNpc(Player c) {
 
 		if (c.oldNpcIndex > 0) {
-			if (NPCHandler.npcs[c.oldNpcIndex] != null) {
+			if (MobHandler.npcs[c.oldNpcIndex] != null) {
 				c.projectileStage = 2;
 				int pX = c.getX();
 				int pY = c.getY();
-				int nX = NPCHandler.npcs[c.oldNpcIndex].getX();
-				int nY = NPCHandler.npcs[c.oldNpcIndex].getY();
+				int nX = MobHandler.npcs[c.oldNpcIndex].getX();
+				int nY = MobHandler.npcs[c.oldNpcIndex].getY();
 				int offX = (pY - nY) * -1;
 				int offY = (pX - nX) * -1;
 				SoundManager.sendSound(c, c.playerEquipment[c.playerWeapon],

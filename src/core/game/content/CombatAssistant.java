@@ -8,11 +8,11 @@ import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.Hit;
 import core.game.model.entity.Hit.HitType;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
-import core.game.model.entity.player.combat.AttackNPC;
-import core.game.model.entity.player.combat.AttackPlayer;
+import core.game.model.entity.player.combat.PlayerVsMob;
+import core.game.model.entity.player.combat.PlayerVsPlayer;
 import core.game.model.entity.player.combat.impl.magic.MagicData;
 import core.game.model.entity.player.combat.impl.magic.MagicExtras;
 import core.game.model.entity.player.combat.impl.magic.MagicMaxHit;
@@ -67,7 +67,7 @@ public class CombatAssistant {
 
 	public boolean goodSlayer(int i) {
 		for (int j = 0; j < slayerReqs.length; j++) {
-			if (slayerReqs[j][0] == NPCHandler.npcs[i].npcType) {
+			if (slayerReqs[j][0] == MobHandler.npcs[i].npcType) {
 				if (slayerReqs[j][1] > c.playerLevel[c.playerSlayer]) {
 					c.sendMessage("You need a slayer level of "
 							+ slayerReqs[j][1] + " to harm this NPC.");
@@ -79,7 +79,7 @@ public class CombatAssistant {
 	}
 
 	public boolean kalphite1(int i) {
-		switch (NPCHandler.npcs[i].npcType) {
+		switch (MobHandler.npcs[i].npcType) {
 		case 1158:
 			return true;
 		}
@@ -87,7 +87,7 @@ public class CombatAssistant {
 	}
 
 	public boolean kalphite2(int i) {
-		switch (NPCHandler.npcs[i].npcType) {
+		switch (MobHandler.npcs[i].npcType) {
 		case 1160:
 			return true;
 		}
@@ -131,7 +131,7 @@ public class CombatAssistant {
 	}
 
 	public void attackNpc(int i) {
-		AttackNPC.attackNpc(c, i);
+		PlayerVsMob.attackNpc(c, i);
 		if (KQnpc(i) && !c.getEquipment().isWearingVeracs(c) || c.usingMagic) {
 			resetPlayerAttack();
 			c.sendMessage("Your attacks are ineffective against the Kalphite Queen!");
@@ -140,8 +140,8 @@ public class CombatAssistant {
 	}
 
 	public boolean KQnpc(int i) {
-		if (NPCHandler.npcs[i] != null)
-			switch (NPCHandler.npcs[i].npcType) {
+		if (MobHandler.npcs[i] != null)
+			switch (MobHandler.npcs[i].npcType) {
 			case 1158:
 				return true;
 			}
@@ -149,32 +149,32 @@ public class CombatAssistant {
 	}
 
 	public void delayedHit(final Player c, final int i) {
-		AttackNPC.delayedHit(c, i);
+		PlayerVsMob.delayedHit(c, i);
 
 	}
 
 	public void applyNpcMeleeDamage(int i, int damageMask, int damage) {
-		AttackNPC.applyNpcMeleeDamage(c, i, damageMask, damage);
+		PlayerVsMob.applyNpcMeleeDamage(c, i, damageMask, damage);
 	}
 
 	public void attackPlayer(int i) {
-		AttackPlayer.attackPlayer(c, i);
+		PlayerVsPlayer.attackPlayer(c, i);
 	}
 
 	public void playerDelayedHit(final Player c, final int i) {
-		AttackPlayer.playerDelayedHit(c, i);
+		PlayerVsPlayer.playerDelayedHit(c, i);
 	}
 
 	public void applyPlayerMeleeDamage(int i, int damageMask, int damage) {
-		AttackPlayer.applyPlayerMeleeDamage(c, i, damageMask, damage);
+		PlayerVsPlayer.applyPlayerMeleeDamage(c, i, damageMask, damage);
 	}
 
 	public void addNPCHit(int i, Player c) {
-		AttackNPC.addNPCHit(i, c);
+		PlayerVsMob.addNPCHit(i, c);
 	}
 
 	public void applyPlayerHit(Player c, final int i) {
-		AttackPlayer.applyPlayerHit(c, i);
+		PlayerVsPlayer.applyPlayerHit(c, i);
 	}
 
 	public void fireProjectileNpc() {

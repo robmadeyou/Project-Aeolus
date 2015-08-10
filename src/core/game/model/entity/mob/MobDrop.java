@@ -1,4 +1,4 @@
-package core.game.model.entity.npc;
+package core.game.model.entity.mob;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,12 +16,12 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
 import core.Config;
-import core.game.model.entity.npc.drop.Drop;
+import core.game.model.entity.mob.drop.Drop;
 
 /**
- * A class that is used to deserialize the npc drops
+ * A class that is used to deserialize the mob drops
  */
-public class NPCDrops {
+public class MobDrop {
 
 	/**
 	 * The directory/location of drops.json

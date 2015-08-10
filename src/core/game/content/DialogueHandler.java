@@ -2,8 +2,8 @@ package core.game.content;
 
 import core.game.content.dialogue.DialogueEmotion;
 import core.game.model.entity.Entity;
-import core.game.model.entity.npc.NPC;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.Mob;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 
 @SuppressWarnings("all")
@@ -22,7 +22,7 @@ public class DialogueHandler {
 	 * @param npcId The npc id that the chat will focus on during the chat
 	 */
 	public void sendDialogues(int dialogue, int npcId, int npcId2) {
-		NPC npc = NPCHandler.npcs[npcId2];
+		Mob npc = MobHandler.npcs[npcId2];
 		
 		c.talkingNpc = npcId;
 		switch(dialogue) {

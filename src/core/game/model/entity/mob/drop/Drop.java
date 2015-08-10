@@ -1,4 +1,4 @@
-package core.game.model.entity.npc.drop;
+package core.game.model.entity.mob.drop;
 
 public class Drop {
 

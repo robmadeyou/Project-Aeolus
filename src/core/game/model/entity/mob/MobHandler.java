@@ -1,4 +1,4 @@
-package core.game.model.entity.npc;
+package core.game.model.entity.mob;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -15,7 +15,7 @@ import core.Config;
 import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.Hit;
-import core.game.model.entity.npc.NPCSpawns.NpcSpawnBuilder;
+import core.game.model.entity.mob.MobSpawns.NpcSpawnBuilder;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.sound.effects.SoundEffects;
@@ -23,15 +23,15 @@ import core.game.util.JsonSaver;
 import core.game.util.Misc;
 
 @SuppressWarnings("all")
-public class NPCHandler {
+public class MobHandler {
 
 	public static int maxNPCs = 10000;
 	public static int maxListedNPCs = 10000;
 	public static int maxNPCDrops = 10000;
-	public static NPC npcs[] = new NPC[maxNPCs];
-	public static NPCDefinitions npcDefinitions[] = new NPCDefinitions[maxListedNPCs];
+	public static Mob npcs[] = new Mob[maxNPCs];
+	public static MobDefinitions npcDefinitions[] = new MobDefinitions[maxListedNPCs];
 
-	public NPCHandler() {
+	public MobHandler() {
 		for (int i = 0; i < maxNPCs; i++) {
 			npcs[i] = null;
 		}
@@ -41,15 +41,15 @@ public class NPCHandler {
 	}
 
 	public void build() {
-		NPCSpawns[] loaded = NpcSpawnBuilder.deserialize();
+		MobSpawns[] loaded = NpcSpawnBuilder.deserialize();
 		if (loaded == null) {
 			System.out.println("Failed to load");
 		}
-		for (NPCSpawns spawn : loaded) {
+		for (MobSpawns spawn : loaded) {
 			newNPC(spawn);
 		}
 
-		Misc.println("Loaded: "+NPCSpawns.NpcSpawnBuilder.deserialize().length+" Npc Spawns");
+		Misc.println("Loaded: "+MobSpawns.NpcSpawnBuilder.deserialize().length+" Npc Spawns");
 	}
 
 	public void multiAttackGfx(int i, int gfx) {
@@ -61,8 +61,8 @@ public class NPCHandler {
 				if (c.heightLevel != npcs[i].heightLevel)
 					continue;
 				if (PlayerHandler.players[j].goodDistance(c.absX, c.absY, npcs[i].absX, npcs[i].absY, 15)) {
-					int nX = NPCHandler.npcs[i].getX() + offset(i);
-					int nY = NPCHandler.npcs[i].getY() + offset(i);
+					int nX = MobHandler.npcs[i].getX() + offset(i);
+					int nY = MobHandler.npcs[i].getY() + offset(i);
 					int pX = c.getX();
 					int pY = c.getY();
 					int offX = (nY - pY) * -1;
@@ -238,7 +238,7 @@ public class NPCHandler {
 			// Misc.println("No Free Slot");
 			return; // no free slot found
 		}
-		NPC newNPC = new NPC(slot, npcType);
+		Mob newNPC = new Mob(slot, npcType);
 		newNPC.absX = x;
 		newNPC.absY = y;
 		newNPC.makeX = x;
@@ -276,7 +276,7 @@ public class NPCHandler {
 			// Misc.println("No Free Slot");
 			return; // no free slot found
 		}
-		NPC newNPC = new NPC(slot, npcType);
+		Mob newNPC = new Mob(slot, npcType);
 		newNPC.absX = x;
 		newNPC.absY = y;
 		newNPC.makeX = x;
@@ -296,7 +296,7 @@ public class NPCHandler {
 	 **/
 
 	public static int getAttackEmote(int i) {
-		switch (NPCHandler.npcs[i].npcType) {
+		switch (MobHandler.npcs[i].npcType) {
 		case 2550:
 			if (npcs[i].attackType == 0)
 				return 7060;
@@ -841,7 +841,7 @@ public class NPCHandler {
 		}
 	}
 
-	public void newNPC(NPCSpawns s) {
+	public void newNPC(MobSpawns s) {
 		// first, search for a free slot
 		int slot = -1;
 		for (int i = 1; i < maxNPCs; i++) {
@@ -854,7 +854,7 @@ public class NPCHandler {
 		if (slot == -1)
 			return; // no free slot found
 
-		NPC newNPC = new NPC(slot, s.getNpcId());
+		Mob newNPC = new Mob(slot, s.getNpcId());
 		newNPC.absX = s.getXPos();
 		newNPC.absY = s.getYPos();
 		newNPC.makeX = s.getXPos();
@@ -881,7 +881,7 @@ public class NPCHandler {
 		if (slot == -1)
 			return; // no free slot found
 
-		NPC newNPC = new NPC(slot, npcType);
+		Mob newNPC = new Mob(slot, npcType);
 		newNPC.absX = x;
 		newNPC.absY = y;
 		newNPC.makeX = x;
@@ -1475,7 +1475,7 @@ public class NPCHandler {
 	}
 
 	public boolean checkClipping(int i) {
-		NPC npc = npcs[i];
+		Mob npc = npcs[i];
 		int size = npcSize(i);
 
 		for (int x = 0; x < size; x++) {
@@ -1822,8 +1822,8 @@ public class NPCHandler {
 						return;
 					}
 					if (npcs[i].projectileId > 0) {
-						int nX = NPCHandler.npcs[i].getX() + offset(i);
-						int nY = NPCHandler.npcs[i].getY() + offset(i);
+						int nX = MobHandler.npcs[i].getX() + offset(i);
+						int nY = MobHandler.npcs[i].getY() + offset(i);
 						int pX = c.getX();
 						int pY = c.getY();
 						int offX = (nY - pY) * -1;
@@ -2012,17 +2012,17 @@ public class NPCHandler {
 	}
 
 	public int getNpcListHP(int npcId) {
-		return NPCDefinitions.DEFINITIONS[npcId].getHitpoints();
+		return MobDefinitions.DEFINITIONS[npcId].getHitpoints();
 	}
 
 	public String getNpcListName(int npcId) {
-		if (NPCDefinitions.DEFINITIONS != null) {
-			return NPCDefinitions.DEFINITIONS[npcId].getName();
+		if (MobDefinitions.DEFINITIONS != null) {
+			return MobDefinitions.DEFINITIONS[npcId].getName();
 		}
 		return "nameless";
 	}
 	
-	public NPC[] getNPCs() {
+	public Mob[] getNPCs() {
 		return npcs;
 	}
 }

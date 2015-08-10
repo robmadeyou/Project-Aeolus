@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import core.game.model.entity.UpdateFlags.UpdateFlag;
-import core.game.model.entity.npc.NPC;
+import core.game.model.entity.mob.Mob;
 import core.game.model.entity.player.Player;
 
 /**
@@ -199,8 +199,8 @@ public abstract class Entity {
         updateRequired = true;
         hitUpdateRequired = true;
 
-        if (this instanceof NPC) {
-            ((NPC) this).HP -= hit.getDamage();
+        if (this instanceof Mob) {
+            ((Mob) this).HP -= hit.getDamage();
         } else if (this instanceof Player) {
             Player player = (Player) this;
             if (player.teleTimer <= 0) {
@@ -221,8 +221,8 @@ public abstract class Entity {
         updateRequired = true;
         secondaryHitUpdateRequired = true;
 
-        if (this instanceof NPC) {
-            ((NPC) this).HP -= hit.getDamage();
+        if (this instanceof Mob) {
+            ((Mob) this).HP -= hit.getDamage();
         } else if (this instanceof Player) {
             Player player = (Player) this;
 

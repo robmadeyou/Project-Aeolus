@@ -2,8 +2,8 @@ package core.game.model.entity.player.combat.impl.ranged;
 
 import core.game.model.entity.Hit;
 import core.game.model.entity.Hit.HitType;
-import core.game.model.entity.npc.NPC;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.Mob;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.util.Misc;
@@ -11,26 +11,26 @@ import core.game.util.Misc;
 public class RangeExtras {
 
 	public static void appendMutliChinchompa(Player c, int npcId) {
-		if (NPCHandler.npcs[npcId] != null) {
-			NPC n = (NPC) NPCHandler.npcs[npcId];
+		if (MobHandler.npcs[npcId] != null) {
+			Mob n = (Mob) MobHandler.npcs[npcId];
 			if (n.isDead) {
 				return;
 			}
 			c.multiAttacking = true;
 			int damage = Misc.random(c.getCombat().rangeMaxHit());
-			if (NPCHandler.npcs[npcId].HP - damage < 0) {
-				damage = NPCHandler.npcs[npcId].HP;
+			if (MobHandler.npcs[npcId].HP - damage < 0) {
+				damage = MobHandler.npcs[npcId].HP;
 			}
-			NPCHandler.npcs[npcId].underAttackBy = c.playerId;
-			NPCHandler.npcs[npcId].underAttack = true;
-			NPCHandler.npcs[npcId].dealHit(new Hit(damage, HitType.NORMAL));
+			MobHandler.npcs[npcId].underAttackBy = c.playerId;
+			MobHandler.npcs[npcId].underAttack = true;
+			MobHandler.npcs[npcId].dealHit(new Hit(damage, HitType.NORMAL));
 		}
 	}
 
 	private static void createCombatGFX(Player c, int i, int gfx,
 			boolean height100) {
 		Player p = PlayerHandler.players[i];
-		NPC n = (NPC) NPCHandler.npcs[i];
+		Mob n = (Mob) MobHandler.npcs[i];
 		if (c.playerIndex > 0) {
 			if (height100) {
 				p.gfx100(gfx);
@@ -48,7 +48,7 @@ public class RangeExtras {
 
 	public static void crossbowSpecial(Player c, int i) {
 		Player p = PlayerHandler.players[i];
-		NPC n = (NPC) NPCHandler.npcs[i];
+		Mob n = (Mob) MobHandler.npcs[i];
 		c.crossbowDamage = 1.4;
 		switch (c.lastArrowUsed) {
 		case 9236: // Lucky Lightning

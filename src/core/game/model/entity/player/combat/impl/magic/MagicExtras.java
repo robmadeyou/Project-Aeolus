@@ -3,8 +3,8 @@ package core.game.model.entity.player.combat.impl.magic;
 import core.Config;
 import core.game.GameConstants;
 import core.game.model.entity.Hit;
-import core.game.model.entity.npc.NPC;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.Mob;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.util.Misc;
@@ -15,8 +15,8 @@ public class MagicExtras {
 		switch (c.MAGIC_SPELLS[c.oldSpellId][0]) {
 		case 12891:
 		case 12881:
-			if (NPCHandler.npcs[npcId].freezeTimer < -4) {
-				NPCHandler.npcs[npcId].freezeTimer = c.getCombat()
+			if (MobHandler.npcs[npcId].freezeTimer < -4) {
+				MobHandler.npcs[npcId].freezeTimer = c.getCombat()
 						.getFreezeTime();
 			}
 			break;
@@ -24,7 +24,7 @@ public class MagicExtras {
 	}
 
 	public static boolean checkMultiBarrageReqsNPC(int i) {
-		if (NPCHandler.npcs[i] == null) {
+		if (MobHandler.npcs[i] == null) {
 			return false;
 		} else {
 			return true;
@@ -68,15 +68,15 @@ public class MagicExtras {
 
 	public static void appendMultiBarrageNPC(Player c, int npcId,
 			boolean splashed) {
-		if (NPCHandler.npcs[npcId] != null) {
-			NPC n = (NPC) NPCHandler.npcs[npcId];
+		if (MobHandler.npcs[npcId] != null) {
+			Mob n = (Mob) MobHandler.npcs[npcId];
 			if (n.isDead)
 				return;
 			if (checkMultiBarrageReqsNPC(npcId)) {
 				c.barrageCount++;
 				c.multiAttacking = true;
-				NPCHandler.npcs[npcId].underAttackBy = c.playerId;
-				NPCHandler.npcs[npcId].underAttack = true;
+				MobHandler.npcs[npcId].underAttackBy = c.playerId;
+				MobHandler.npcs[npcId].underAttack = true;
 				if (Misc.random(c.getCombat().mageAtk()) > Misc.random(c
 						.getCombat().mageDef()) && !c.magicFailed) {
 					if (c.getCombat().getEndGfxHeight() == 100) { // end GFX
@@ -85,11 +85,11 @@ public class MagicExtras {
 						n.gfx0(c.MAGIC_SPELLS[c.oldSpellId][5]);
 					}
 					int damage = Misc.random(c.getCombat().magicMaxHit());
-					if (NPCHandler.npcs[npcId].HP - damage < 0) {
-						damage = NPCHandler.npcs[npcId].HP;
+					if (MobHandler.npcs[npcId].HP - damage < 0) {
+						damage = MobHandler.npcs[npcId].HP;
 					}
-					NPCHandler.npcs[npcId].handleHitMask(damage);
-					NPCHandler.npcs[npcId].dealHit(new Hit(damage));
+					MobHandler.npcs[npcId].handleHitMask(damage);
+					MobHandler.npcs[npcId].dealHit(new Hit(damage));
 					c.totalPlayerDamageDealt += damage;
 					c.getCombat().multiSpellEffectNPC(npcId, damage);
 					c.totalDamageDealt += damage;

@@ -1,10 +1,10 @@
-package core.game.model.entity.npc;
+package core.game.model.entity.mob;
 
 import core.game.model.entity.Entity;
 import core.game.util.Misc;
 import core.game.util.Stream;
 
-public class NPC extends Entity {
+public class Mob extends Entity {
 
 	public String dagColor = "";
 
@@ -38,7 +38,7 @@ public class NPC extends Entity {
 	public int firstAttacker;
 	public String forcedText;
 
-	public NPC(int _npcId, int _npcType) {
+	public Mob(int _npcId, int _npcType) {
 		npcId = _npcId;
 		npcType = _npcType;
 		direction = -1;
@@ -230,7 +230,7 @@ public class NPC extends Entity {
 
 	public void getNextNPCMovement(int i) {
 		direction = -1;
-		if (NPCHandler.npcs[i].freezeTimer == 0) {
+		if (MobHandler.npcs[i].freezeTimer == 0) {
 			direction = getNextWalkingDirection();
 		}
 	}
@@ -328,10 +328,10 @@ public class NPC extends Entity {
 	 * Npc names
 	 **/
 	public String getNpcName(int npcId) {
-		if (NPCDefinitions.getDefinitions()[npcId] == null || npcId <= -1) {
+		if (MobDefinitions.getDefinitions()[npcId] == null || npcId <= -1) {
 			return "None";
 		}
-		return NPCDefinitions.getDefinitions()[npcId].getName();
+		return MobDefinitions.getDefinitions()[npcId].getName();
 	}
 	
 }

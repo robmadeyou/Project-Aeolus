@@ -2,7 +2,7 @@ package core.net.packets.outgoing;
 
 import core.Config;
 import core.game.GameConstants;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
@@ -1576,8 +1576,8 @@ public class ActionSender{
 	}
 	
 	public void followNpc() {
-		if (NPCHandler.npcs[c.followId] == null
-				|| NPCHandler.npcs[c.followId].isDead) {
+		if (MobHandler.npcs[c.followId] == null
+				|| MobHandler.npcs[c.followId].isDead) {
 			c.followId = 0;
 			return;
 		}
@@ -1587,8 +1587,8 @@ public class ActionSender{
 		if (c.isDead || c.playerLevel[3] <= 0)
 			return;
 
-		int otherX = NPCHandler.npcs[c.followId2].getX();
-		int otherY = NPCHandler.npcs[c.followId2].getY();
+		int otherX = MobHandler.npcs[c.followId2].getX();
+		int otherY = MobHandler.npcs[c.followId2].getY();
 		boolean withinDistance = c.goodDistance(otherX, otherY, c.getX(),
 				c.getY(), 2);
 		boolean hallyDistance = c.goodDistance(otherX, otherY, c.getX(),

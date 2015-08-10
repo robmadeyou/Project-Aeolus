@@ -3,7 +3,7 @@ package core.net.packets.incoming;
 import core.Config;
 import core.game.event.task.Task;
 import core.game.event.task.TaskHandler;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.net.packets.PacketType;
 
@@ -40,16 +40,16 @@ public class ClickNPC implements PacketType {
 				break;
 			}
 			c.npcIndex = c.getInStream().readUnsignedWordA();
-			if (NPCHandler.npcs[c.npcIndex] == null) {
+			if (MobHandler.npcs[c.npcIndex] == null) {
 				c.npcIndex = 0;
 				break;
 			}
-			if (NPCHandler.npcs[c.npcIndex].maxHP == 0) {
-				System.out.println("My health is " + NPCHandler.npcs[c.npcIndex].maxHP);
+			if (MobHandler.npcs[c.npcIndex].maxHP == 0) {
+				System.out.println("My health is " + MobHandler.npcs[c.npcIndex].maxHP);
 				c.npcIndex = 0;
 				break;
 			}
-			if (NPCHandler.npcs[c.npcIndex] == null) {
+			if (MobHandler.npcs[c.npcIndex] == null) {
 				break;
 			}
 			if (c.autocastId > 0)
@@ -84,15 +84,15 @@ public class ClickNPC implements PacketType {
 			}
 			if ((usingBow || c.autocasting)
 					&& c.goodDistance(c.getX(), c.getY(),
-							NPCHandler.npcs[c.npcIndex].getX(),
-							NPCHandler.npcs[c.npcIndex].getY(), 7)) {
+							MobHandler.npcs[c.npcIndex].getX(),
+							MobHandler.npcs[c.npcIndex].getY(), 7)) {
 				c.stopMovement();
 			}
 
 			if (usingOtherRangeWeapons
 					&& c.goodDistance(c.getX(), c.getY(),
-							NPCHandler.npcs[c.npcIndex].getX(),
-							NPCHandler.npcs[c.npcIndex].getY(), 4)) {
+							MobHandler.npcs[c.npcIndex].getX(),
+							MobHandler.npcs[c.npcIndex].getY(), 4)) {
 				c.stopMovement();
 			}
 			if (!usingCross && !usingArrows && usingBow
@@ -149,12 +149,12 @@ public class ClickNPC implements PacketType {
 			int castingSpellId = c.getInStream().readSignedWordA();
 			c.usingMagic = false;
 
-			if (NPCHandler.npcs[c.npcIndex] == null) {
+			if (MobHandler.npcs[c.npcIndex] == null) {
 				break;
 			}
 
-			if (NPCHandler.npcs[c.npcIndex].maxHP == 0
-					|| NPCHandler.npcs[c.npcIndex].npcType == 944) {
+			if (MobHandler.npcs[c.npcIndex].maxHP == 0
+					|| MobHandler.npcs[c.npcIndex].npcType == 944) {
 				c.sendMessage("You can't attack this npc.");
 				break;
 			}
@@ -168,7 +168,7 @@ public class ClickNPC implements PacketType {
 			}
 			if (castingSpellId == 1171) { // crumble undead
 				for (int npc : Config.UNDEAD_NPCS) {
-					if (NPCHandler.npcs[c.npcIndex].npcType != npc) {
+					if (MobHandler.npcs[c.npcIndex].npcType != npc) {
 						c.sendMessage("You can only attack undead monsters with this spell.");
 						c.usingMagic = false;
 						c.stopMovement();
@@ -182,8 +182,8 @@ public class ClickNPC implements PacketType {
 
 			if (c.usingMagic) {
 				if (c.goodDistance(c.getX(), c.getY(),
-						NPCHandler.npcs[c.npcIndex].getX(),
-						NPCHandler.npcs[c.npcIndex].getY(), 6)) {
+						MobHandler.npcs[c.npcIndex].getX(),
+						MobHandler.npcs[c.npcIndex].getY(), 6)) {
 					c.stopMovement();
 				}
 				if (c.attackTimer <= 0) {
@@ -205,16 +205,16 @@ public class ClickNPC implements PacketType {
 			c.faceUpdate(c.npcClickIndex);
 			c.faceUpdate(c.followId2);
 			c.faceUpdate(c.followId2);
-			if (c != null && NPCHandler.npcs[c.npcClickIndex] != null
+			if (c != null && MobHandler.npcs[c.npcClickIndex] != null
 					|| c.clickNpcType > 0)
-				c.npcType = NPCHandler.npcs[c.npcClickIndex].npcType;
+				c.npcType = MobHandler.npcs[c.npcClickIndex].npcType;
 
-			if (c.goodDistance(NPCHandler.npcs[c.npcClickIndex].getX(),
-					NPCHandler.npcs[c.npcClickIndex].getY(), c.getX(),
+			if (c.goodDistance(MobHandler.npcs[c.npcClickIndex].getX(),
+					MobHandler.npcs[c.npcClickIndex].getY(), c.getX(),
 					c.getY(), 2)) {
-				c.turnPlayerTo(NPCHandler.npcs[c.npcClickIndex].getX(),
-						NPCHandler.npcs[c.npcClickIndex].getY());
-				NPCHandler.npcs[c.npcClickIndex].facePlayer(c.playerId);
+				c.turnPlayerTo(MobHandler.npcs[c.npcClickIndex].getX(),
+						MobHandler.npcs[c.npcClickIndex].getY());
+				MobHandler.npcs[c.npcClickIndex].facePlayer(c.playerId);
 				c.getActions().firstClickNpc(c.npcType);
 			} else {
 				c.faceUpdate(c.followId2);
@@ -228,15 +228,15 @@ public class ClickNPC implements PacketType {
 						c.faceUpdate(c.npcIndex);
 						c.faceUpdate(c.followId2);
 						if ((c.clickNpcType == 1)
-								&& NPCHandler.npcs[c.npcClickIndex] != null) {
+								&& MobHandler.npcs[c.npcClickIndex] != null) {
 							if (c.goodDistance(c.getX(), c.getY(),
-									NPCHandler.npcs[c.npcClickIndex].getX(),
-									NPCHandler.npcs[c.npcClickIndex].getY(), 1)) {
+									MobHandler.npcs[c.npcClickIndex].getX(),
+									MobHandler.npcs[c.npcClickIndex].getY(), 1)) {
 								c.faceUpdate(c.npcIndex);
 								c.turnPlayerTo(
-										NPCHandler.npcs[c.npcClickIndex].getX(),
-										NPCHandler.npcs[c.npcClickIndex].getY());
-								NPCHandler.npcs[c.npcClickIndex]
+										MobHandler.npcs[c.npcClickIndex].getX(),
+										MobHandler.npcs[c.npcClickIndex].getY());
+								MobHandler.npcs[c.npcClickIndex]
 										.facePlayer(c.playerId);
 								c.getActions().firstClickNpc(c.npcType);
 								this.cancel();
@@ -259,14 +259,14 @@ public class ClickNPC implements PacketType {
 
 		case SECOND_CLICK:
 			c.npcClickIndex = c.inStream.readUnsignedWordBigEndianA();
-			c.npcType = NPCHandler.npcs[c.npcClickIndex].npcType;
-			if (c.goodDistance(NPCHandler.npcs[c.npcClickIndex].getX(),
-					NPCHandler.npcs[c.npcClickIndex].getY(), c.getX(),
+			c.npcType = MobHandler.npcs[c.npcClickIndex].npcType;
+			if (c.goodDistance(MobHandler.npcs[c.npcClickIndex].getX(),
+					MobHandler.npcs[c.npcClickIndex].getY(), c.getX(),
 					c.getY(), 2)) {
 				c.faceUpdate(c.npcClickIndex);
-				c.turnPlayerTo(NPCHandler.npcs[c.npcClickIndex].getX(),
-						NPCHandler.npcs[c.npcClickIndex].getY());
-				NPCHandler.npcs[c.npcClickIndex].facePlayer(c.playerId);
+				c.turnPlayerTo(MobHandler.npcs[c.npcClickIndex].getX(),
+						MobHandler.npcs[c.npcClickIndex].getY());
+				MobHandler.npcs[c.npcClickIndex].facePlayer(c.playerId);
 				c.getActions().secondClickNpc(c.npcType);
 			} else {
 				c.clickNpcType = 2;
@@ -276,14 +276,14 @@ public class ClickNPC implements PacketType {
 					@Override
 					public void execute() {
 						if ((c.clickNpcType == 2)
-								&& NPCHandler.npcs[c.npcClickIndex] != null) {
+								&& MobHandler.npcs[c.npcClickIndex] != null) {
 							if (c.goodDistance(c.getX(), c.getY(),
-									NPCHandler.npcs[c.npcClickIndex].getX(),
-									NPCHandler.npcs[c.npcClickIndex].getY(), 1)) {
+									MobHandler.npcs[c.npcClickIndex].getX(),
+									MobHandler.npcs[c.npcClickIndex].getY(), 1)) {
 								c.turnPlayerTo(
-										NPCHandler.npcs[c.npcClickIndex].getX(),
-										NPCHandler.npcs[c.npcClickIndex].getY());
-								NPCHandler.npcs[c.npcClickIndex]
+										MobHandler.npcs[c.npcClickIndex].getX(),
+										MobHandler.npcs[c.npcClickIndex].getY());
+								MobHandler.npcs[c.npcClickIndex]
 										.facePlayer(c.playerId);
 								c.faceUpdate(c.npcIndex);
 								c.getActions().secondClickNpc(c.npcType);
@@ -304,13 +304,13 @@ public class ClickNPC implements PacketType {
 
 		case THIRD_CLICK:
 			c.npcClickIndex = c.inStream.readSignedWord();
-			c.npcType = NPCHandler.npcs[c.npcClickIndex].npcType;
-			if (c.goodDistance(NPCHandler.npcs[c.npcClickIndex].getX(),
-					NPCHandler.npcs[c.npcClickIndex].getY(), c.getX(),
+			c.npcType = MobHandler.npcs[c.npcClickIndex].npcType;
+			if (c.goodDistance(MobHandler.npcs[c.npcClickIndex].getX(),
+					MobHandler.npcs[c.npcClickIndex].getY(), c.getX(),
 					c.getY(), 1)) {
-				c.turnPlayerTo(NPCHandler.npcs[c.npcClickIndex].getX(),
-						NPCHandler.npcs[c.npcClickIndex].getY());
-				NPCHandler.npcs[c.npcClickIndex].facePlayer(c.playerId);
+				c.turnPlayerTo(MobHandler.npcs[c.npcClickIndex].getX(),
+						MobHandler.npcs[c.npcClickIndex].getY());
+				MobHandler.npcs[c.npcClickIndex].facePlayer(c.playerId);
 				c.getActions().thirdClickNpc(c.npcType);
 			} else {
 				c.clickNpcType = 3;
@@ -320,14 +320,14 @@ public class ClickNPC implements PacketType {
 					@Override
 					public void execute() {
 						if ((c.clickNpcType == 3)
-								&& NPCHandler.npcs[c.npcClickIndex] != null) {
+								&& MobHandler.npcs[c.npcClickIndex] != null) {
 							if (c.goodDistance(c.getX(), c.getY(),
-									NPCHandler.npcs[c.npcClickIndex].getX(),
-									NPCHandler.npcs[c.npcClickIndex].getY(), 1)) {
+									MobHandler.npcs[c.npcClickIndex].getX(),
+									MobHandler.npcs[c.npcClickIndex].getY(), 1)) {
 								c.turnPlayerTo(
-										NPCHandler.npcs[c.npcClickIndex].getX(),
-										NPCHandler.npcs[c.npcClickIndex].getY());
-								NPCHandler.npcs[c.npcClickIndex]
+										MobHandler.npcs[c.npcClickIndex].getX(),
+										MobHandler.npcs[c.npcClickIndex].getY());
+								MobHandler.npcs[c.npcClickIndex]
 										.facePlayer(c.playerId);
 								c.getActions().thirdClickNpc(c.npcType);
 								this.cancel();

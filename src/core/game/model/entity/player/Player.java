@@ -19,8 +19,8 @@ import core.game.content.consumables.Food;
 import core.game.event.tick.Scheduler;
 import core.game.event.tick.Tick;
 import core.game.model.entity.Entity;
-import core.game.model.entity.npc.NPC;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.Mob;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.container.Equipment;
 import core.game.model.entity.player.container.Inventory;
 import core.game.model.entity.player.save.PlayerSave;
@@ -1258,11 +1258,11 @@ public class Player extends Entity {
 
 	public byte playerInListBitmap[] = new byte[(GameConstants.MAX_PLAYERS + 7) >> 3];
 
-	public static final int maxNPCListSize = NPCHandler.maxNPCs;
-	public NPC npcList[] = new NPC[maxNPCListSize];
+	public static final int maxNPCListSize = MobHandler.maxNPCs;
+	public Mob npcList[] = new Mob[maxNPCListSize];
 	public int npcListSize = 0;
 
-	public byte npcInListBitmap[] = new byte[(NPCHandler.maxNPCs + 7) >> 3];
+	public byte npcInListBitmap[] = new byte[(MobHandler.maxNPCs + 7) >> 3];
 
 	public boolean withinDistance(Player otherPlr) {
 		if (heightLevel != otherPlr.heightLevel)
@@ -1271,7 +1271,7 @@ public class Player extends Entity {
 		return deltaX <= 15 && deltaX >= -16 && deltaY <= 15 && deltaY >= -16;
 	}
 
-	public boolean withinDistance(NPC npc) {
+	public boolean withinDistance(Mob npc) {
 		if (heightLevel != npc.heightLevel)
 			return false;
 		if (npc.needRespawn == true)
@@ -1529,7 +1529,7 @@ public class Player extends Entity {
 
 	public byte cachedPropertiesBitmap[] = new byte[(GameConstants.MAX_PLAYERS + 7) >> 3];
 
-	public void addNewNPC(NPC npc, Stream str, Stream updateBlock) {
+	public void addNewNPC(Mob npc, Stream str, Stream updateBlock) {
 		// synchronized(this) {
 		int id = npc.npcId;
 		npcInListBitmap[id >> 3] |= 1 << (id & 7);

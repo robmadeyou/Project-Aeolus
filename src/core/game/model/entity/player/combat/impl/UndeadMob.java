@@ -1,5 +1,5 @@
 package core.game.model.entity.player.combat.impl;
 
-public class UndeadNPC {
+public class UndeadMob {
 
 }

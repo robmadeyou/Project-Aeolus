@@ -1,6 +1,6 @@
 package core.game.model.entity.player.combat.impl.melee;
 
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.sound.SoundManager;
@@ -84,7 +84,7 @@ public class MeleeSpecial {
 	}
 
 	public static void activateSpecial(Player c, int weapon, int i) {
-		if (NPCHandler.npcs[i] == null && c.npcIndex > 0) {
+		if (MobHandler.npcs[i] == null && c.npcIndex > 0) {
 			return;
 		}
 		/*
@@ -172,8 +172,8 @@ public class MeleeSpecial {
 			break;
 
 		case 4151: // whip
-			if (NPCHandler.npcs[i] != null) {
-				NPCHandler.npcs[i].gfx100(341);
+			if (MobHandler.npcs[i] != null) {
+				MobHandler.npcs[i].gfx100(341);
 			}
 			c.specAccuracy = 1.10;
 			c.startAnimation(1658);
@@ -244,9 +244,9 @@ public class MeleeSpecial {
 					i,
 					c.getEquipment().getItemName(c.playerEquipment[c.playerWeapon])
 							.toLowerCase());
-			if (NPCHandler.npcs[i] != null && c.npcIndex > 0) {
+			if (MobHandler.npcs[i] != null && c.npcIndex > 0) {
 				if (!c.goodDistance(c.getX(), c.getY(),
-						NPCHandler.npcs[i].getX(), NPCHandler.npcs[i].getY(), 1)) {
+						MobHandler.npcs[i].getX(), MobHandler.npcs[i].getY(), 1)) {
 					c.doubleHit = true;
 				}
 			}

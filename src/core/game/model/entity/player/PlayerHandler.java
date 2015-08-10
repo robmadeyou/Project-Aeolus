@@ -3,7 +3,7 @@ package core.game.model.entity.player;
 import core.Config;
 import core.Server;
 import core.game.GameConstants;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.util.Misc;
 import core.game.util.Stream;
@@ -189,15 +189,15 @@ public class PlayerHandler {
 			}
 		}
 
-		for (int i = 0; i < NPCHandler.maxNPCs; i++) {
-			if (NPCHandler.npcs[i] != null) {
-				int id = NPCHandler.npcs[i].npcId;
+		for (int i = 0; i < MobHandler.maxNPCs; i++) {
+			if (MobHandler.npcs[i] != null) {
+				int id = MobHandler.npcs[i].npcId;
 				if (plr.RebuildNPCList == false && (plr.npcInListBitmap[id >> 3] & (1 << (id & 7))) != 0) {
 
-				} else if (plr.withinDistance(NPCHandler.npcs[i]) == false) {
+				} else if (plr.withinDistance(MobHandler.npcs[i]) == false) {
 
 				} else {
-					plr.addNewNPC(NPCHandler.npcs[i], str, updateBlock);
+					plr.addNewNPC(MobHandler.npcs[i], str, updateBlock);
 				}
 			}
 		}

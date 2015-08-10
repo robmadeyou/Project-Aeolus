@@ -13,7 +13,7 @@ import core.game.sound.SoundManager;
 import core.game.sound.SoundManager.SoundType;
 import core.game.util.Misc;
 
-public class AttackPlayer {
+public class PlayerVsPlayer {
 
 	public static void applyPlayerHit(final Player c, final int i) {
 		c.stopPlayerSkill = false;

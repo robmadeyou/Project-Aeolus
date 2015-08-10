@@ -3,7 +3,7 @@ package core.game.model.item;
 import core.Config;
 import core.Server;
 import core.game.GameConstants;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.util.Misc;
@@ -821,8 +821,8 @@ public class ItemAssistant {
 	public void dropArrowNpc() {
 		if (c.playerEquipment[c.playerCape] == 10499)
 			return;
-		int enemyX = NPCHandler.npcs[c.oldNpcIndex].getX();
-		int enemyY = NPCHandler.npcs[c.oldNpcIndex].getY();
+		int enemyX = MobHandler.npcs[c.oldNpcIndex].getX();
+		int enemyY = MobHandler.npcs[c.oldNpcIndex].getY();
 		if (Misc.random(10) >= 4) {
 			if (Server.itemHandler.itemAmount(c.rangeItemUsed, enemyX, enemyY) == 0) {
 				Server.itemHandler.createGroundItem(c, c.rangeItemUsed, enemyX,

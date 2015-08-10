@@ -4,7 +4,7 @@ import core.game.event.task.Task;
 import core.game.event.task.TaskHandler;
 import core.game.model.entity.Hit;
 import core.game.model.entity.Hit.HitType;
-import core.game.model.entity.npc.NPCHandler;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.util.Misc;
@@ -84,21 +84,21 @@ public class MeleeExtras {
 	}
 
 	public static void handleDragonFireShieldNPC(final Player c) {
-		if (NPCHandler.npcs[c.npcIndex].HP <= 0) {
+		if (MobHandler.npcs[c.npcIndex].HP <= 0) {
 			return;
 		}
-		if (c.npcIndex > 0 && NPCHandler.npcs[c.npcIndex] != null) {
+		if (c.npcIndex > 0 && MobHandler.npcs[c.npcIndex] != null) {
 			if (c.dfsCount < 40) {
 				c.sendMessage("My shield hasn't finished charging.");
 				return;
 			}
-			if (NPCHandler.npcs[c.npcIndex].HP <= 1) {
+			if (MobHandler.npcs[c.npcIndex].HP <= 1) {
 				return;
 			}
 			final int pX = c.getX();
 			final int pY = c.getY();
-			final int nX = NPCHandler.npcs[c.npcIndex].getX();
-			final int nY = NPCHandler.npcs[c.npcIndex].getY();
+			final int nX = MobHandler.npcs[c.npcIndex].getX();
+			final int nY = MobHandler.npcs[c.npcIndex].getY();
 			final int offX = (pY - nY) * -1;
 			final int offY = (pX - nX) * -1;
 			final int damage = Misc.random(25) + 5;
@@ -122,9 +122,9 @@ public class MeleeExtras {
 
 				@Override
 				public void execute() {
-					NPCHandler.npcs[c.npcIndex].gfx100(1167);
-					NPCHandler.npcs[c.npcIndex].handleHitMask(damage);
-					NPCHandler.npcs[c.npcIndex].HP -= damage;
+					MobHandler.npcs[c.npcIndex].gfx100(1167);
+					MobHandler.npcs[c.npcIndex].handleHitMask(damage);
+					MobHandler.npcs[c.npcIndex].HP -= damage;
 					this.cancel();
 				}				
 			});			
@@ -147,18 +147,18 @@ public class MeleeExtras {
 	public static void appendVengeanceNPC(Player c, int otherPlayer, int damage) {
 		if (damage <= 0)
 			return;
-		if (c.npcIndex > 0 && NPCHandler.npcs[c.npcIndex] != null) {
+		if (c.npcIndex > 0 && MobHandler.npcs[c.npcIndex] != null) {
 			c.forcedChat = "Taste vengeance!";
 			c.forcedChatUpdateRequired = true;
 			c.updateRequired = true;
 			c.vengOn = false;
-			if ((NPCHandler.npcs[c.npcIndex].HP - damage) > 0) {
+			if ((MobHandler.npcs[c.npcIndex].HP - damage) > 0) {
 				damage = (int) (damage * 0.75);
-				if (damage > NPCHandler.npcs[c.npcIndex].HP) {
-					damage = NPCHandler.npcs[c.npcIndex].HP;
+				if (damage > MobHandler.npcs[c.npcIndex].HP) {
+					damage = MobHandler.npcs[c.npcIndex].HP;
 				}
-				NPCHandler.npcs[c.npcIndex].HP -= damage;
-				NPCHandler.npcs[c.npcIndex].handleHitMask(damage);
+				MobHandler.npcs[c.npcIndex].HP -= damage;
+				MobHandler.npcs[c.npcIndex].handleHitMask(damage);
 			}
 		}
 		c.updateRequired = true;
@@ -191,8 +191,8 @@ public class MeleeExtras {
 	public static void applyRecoilNPC(Player c, int damage, int i) {
 		if (damage > 0 && c.playerEquipment[c.playerRing] == 2550) {
 			int recDamage = damage / 10 + 1;
-			NPCHandler.npcs[c.npcIndex].HP -= recDamage;
-			NPCHandler.npcs[c.npcIndex].handleHitMask(recDamage);
+			MobHandler.npcs[c.npcIndex].HP -= recDamage;
+			MobHandler.npcs[c.npcIndex].handleHitMask(recDamage);
 			removeRecoil(c);
 			c.recoilHits += damage;
 		}
@@ -256,19 +256,19 @@ public class MeleeExtras {
 				}
 			}
 		} else if (c.npcIndex > 0) {
-			int x = NPCHandler.npcs[c.npcIndex].absX;
-			int y = NPCHandler.npcs[c.npcIndex].absY;
+			int x = MobHandler.npcs[c.npcIndex].absX;
+			int y = MobHandler.npcs[c.npcIndex].absY;
 			if (c.goodDistance(c.getX(), c.getY(), x, y, 2)) {
 				if (c.getCombat().checkReqs()) {
 					if (c.getCombat().checkSpecAmount(4153)) {
 						int damage = Misc.random(c.getCombat()
 								.calculateMeleeMaxHit());
-						if (NPCHandler.npcs[c.npcIndex].HP - damage < 0) {
-							damage = NPCHandler.npcs[c.npcIndex].HP;
+						if (MobHandler.npcs[c.npcIndex].HP - damage < 0) {
+							damage = MobHandler.npcs[c.npcIndex].HP;
 						}
-						if (NPCHandler.npcs[c.npcIndex].HP > 0) {
-							NPCHandler.npcs[c.npcIndex].HP -= damage;
-							NPCHandler.npcs[c.npcIndex].handleHitMask(damage);
+						if (MobHandler.npcs[c.npcIndex].HP > 0) {
+							MobHandler.npcs[c.npcIndex].HP -= damage;
+							MobHandler.npcs[c.npcIndex].handleHitMask(damage);
 							c.startAnimation(1667);
 							c.gfx100(337);
 						}
