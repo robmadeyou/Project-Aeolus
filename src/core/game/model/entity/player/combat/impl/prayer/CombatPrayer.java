@@ -339,6 +339,7 @@ public class CombatPrayer {
 						c.getPA().sendFrame36(c.PRAYER_GLOW[16], 0);
 						c.getPA().sendFrame36(c.PRAYER_GLOW[17], 0);
 						c.getPA().sendFrame36(c.PRAYER_GLOW[18], 0);
+						c.getPA().sendSound(433);
 						return;
 					}
 					if (i == PROTECT_FROM_MAGIC)
