@@ -12,7 +12,6 @@ import core.Config;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
-import core.game.sound.region.RegionalMusic;
 import core.game.util.Misc;
 
 public class PlayerSave {
@@ -100,7 +99,7 @@ public class PlayerSave {
 						Config.enableSound = Boolean.parseBoolean(token2);
 					} else if (token.equals("music-unlocked")) {
 						for (int j = 0; j < token3.length; j++) {
-							RegionalMusic.unlocked[j] = Boolean.parseBoolean(token3[j]);
+							//RegionalMusic.unlocked[j] = Boolean.parseBoolean(token3[j]);
 						}
 					} 
 					break;
@@ -290,8 +289,8 @@ public class PlayerSave {
 			characterfile.newLine();
 			characterfile.write("music-unlocked = ", 0, 17);			
 			String music = "";
-			for (int i = 0; i < RegionalMusic.unlocked.length; i++)
-				music += RegionalMusic.unlocked[i] + "\t";
+//			for (int i = 0; i < RegionalMusic.unlocked.length; i++)
+//				music += RegionalMusic.unlocked[i] + "\t";
 			characterfile.write(music);
 			characterfile.newLine();
 			characterfile.newLine();

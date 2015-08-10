@@ -4,7 +4,6 @@ import core.Config;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
-import core.game.model.entity.player.container.Equipment;
 
 public class MagicRequirements extends MagicData {
 

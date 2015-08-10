@@ -8,7 +8,6 @@ import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
 import core.game.model.item.GameItem;
 import core.game.plugin.PluginManager;
-import core.game.sound.region.MusicTab;
 import core.net.packets.incoming.clicking.dialogueoptions.DialogueOption;
 import core.net.packets.incoming.clicking.dialogueoptions.FiveOptionsDialogue;
 import core.net.packets.incoming.clicking.dialogueoptions.FourOptionsDialogue;
@@ -30,7 +29,6 @@ public class FirstClickButton {
 		
 		DialogueOption twoOptions = new TwoOptionDialogue(), threeOptions = new ThreeOptionsDialogue(), fourOptions = new FourOptionsDialogue(), fiveOptions = new FiveOptionsDialogue();
 		
-		MusicTab.handleClick(c, actionButtonId);
 		switch (actionButtonId) {
 		
 		/** Prayers **/

@@ -28,7 +28,6 @@ import core.game.model.item.Item;
 import core.game.model.item.ItemAssistant;
 import core.game.model.shop.ShopAssistant;
 import core.game.sound.effects.SoundEffects;
-import core.game.sound.region.RegionalMusic;
 import core.game.util.Censor;
 import core.game.util.Misc;
 import core.game.util.Stream;
@@ -2109,8 +2108,6 @@ public class Player extends Entity {
 	}
 	
 	private void loadRegion() {
-		if (Config.enableMusic)
-		RegionalMusic.playMusic(this);
 		Server.itemHandler.reloadItems(this);
 		Server.objectManager.loadObjects(this);
 	}

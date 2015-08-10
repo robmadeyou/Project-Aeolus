@@ -6,7 +6,6 @@ import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
-import core.game.model.entity.player.container.Equipment;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.util.Misc;
 import core.game.world.clipping.PathFinder;

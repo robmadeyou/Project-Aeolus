@@ -2,7 +2,6 @@ package core.game.sound;
 
 import core.Config;
 import core.game.model.entity.player.Player;
-import core.game.model.entity.player.container.Equipment;
 import core.game.model.item.ItemDefinition;
 
 /**

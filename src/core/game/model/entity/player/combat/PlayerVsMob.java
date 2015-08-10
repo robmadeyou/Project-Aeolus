@@ -9,7 +9,6 @@ import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.combat.impl.ranged.RangeData;
-import core.game.model.entity.player.container.Equipment;
 import core.game.sound.SoundManager;
 import core.game.sound.SoundManager.SoundType;
 import core.game.util.Misc;

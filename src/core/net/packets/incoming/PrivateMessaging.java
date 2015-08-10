@@ -19,7 +19,7 @@ public class PrivateMessaging implements PacketType {
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
 		switch (packetType) {
-
+		
 		case ADD_FRIEND:
 			c.friendUpdate = true;
 			long friendToAdd = c.getInStream().readQWord();

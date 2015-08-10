@@ -22,8 +22,10 @@ import core.game.model.object.ObjectHandler;
 import core.game.model.object.ObjectManager;
 import core.game.model.shop.ShopHandler;
 import core.game.plugin.PluginManager;
+import core.game.sound.MusicManager;
 import core.game.util.Misc;
 import core.game.util.json.GlobalObjectLoader;
+import core.game.util.json.MusicLoader;
 import core.game.util.json.NpcDefinitionLoader;
 import core.game.util.log.CustomLogger;
 import core.game.world.StillGraphicsManager;
@@ -160,6 +162,7 @@ public class Server {
 		Region.load();
 		playerWorld = World.getSingleton();
 		playerWorld.setupPlayerRegions();
+		new MusicLoader().load();
 		objectHandler = new ObjectHandler();
 		ItemHandler.loadItemDefinitions();
 		new NpcDefinitionLoader().load();

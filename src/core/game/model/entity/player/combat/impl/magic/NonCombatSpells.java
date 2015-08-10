@@ -2,7 +2,6 @@ package core.game.model.entity.player.combat.impl.magic;
 
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
-import core.game.model.entity.player.container.Equipment;
 
 public class NonCombatSpells extends MagicRequirements {
 

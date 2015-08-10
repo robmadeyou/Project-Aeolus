@@ -41,6 +41,7 @@ public class RangeMaxHit extends RangeData {
 
 	public static int maxHit(Player c) {
 		int a = c.playerLevel[4];
+		@SuppressWarnings("unused")
 		int rangedBonus = c.playerBonus[4];
 		int d = getRangeStr(c.usingBow ? c.playerEquipment[c.playerArrows]
 				: c.playerEquipment[c.playerWeapon]);

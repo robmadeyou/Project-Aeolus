@@ -4,7 +4,6 @@ import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
-import core.game.model.entity.player.container.Equipment;
 import core.game.sound.SoundManager;
 import core.game.sound.SoundManager.SoundType;
 

@@ -606,7 +606,6 @@ public class PlayerVsPlayer {
 				c.getCombat().resetPlayerAttack();
 				return;
 			}
-			Player c2 = PlayerHandler.players[i];
 
 			if (c.playerEquipment[c.playerWeapon] == 9703) {
 				c.sendMessage("You cannot attack players with training sword.");
@@ -661,7 +660,6 @@ public class PlayerVsPlayer {
 					c.attackTimer = 0;
 					return;
 				}
-				// c.sendMessage("Made it here1.");
 				if (!c.usingMagic) {
 					for (int bowId : c.BOWS) {
 						if (c.playerEquipment[c.playerWeapon] == bowId) {
@@ -980,13 +978,11 @@ public class PlayerVsPlayer {
 					}
 					if (Misc.random(o.getCombat().mageDef()) > Misc.random(c
 							.getCombat().mageAtk())) {
-						// if(Misc.random(o.getCombat().mageAtk()) >
-						// Misc.random(o.getCombat().mageDef())) {
 						c.magicFailed = true;
 					} else {
 						c.magicFailed = false;
 					}
-
+					
 					int freezeDelay = c.getCombat().getFreezeTime();// freeze
 																	// time
 					if (freezeDelay > 0
@@ -1001,19 +997,13 @@ public class PlayerVsPlayer {
 						c.playerIndex = 0;
 				}
 
-				if (c.usingBow && Config.CRYSTAL_BOW_DEGRADES) { // crystal
-																		// bow
-					// degrading
-					if (c.playerEquipment[c.playerWeapon] == 4212) { // new
-																		// crystal
-																		// bow
-																		// becomes
-																		// full
-																		// bow
-																		// on
-																		// the
-																		// first
-																		// shot
+				if (c.usingBow && Config.CRYSTAL_BOW_DEGRADES) {
+					
+					/**
+					 * Degrading of the crystal bow.
+					 * The new crystal bow becoms a full bow on first shot.
+					 */
+					if (c.playerEquipment[c.playerWeapon] == 4212) {
 						c.getEquipment().wearItem(4214, 1, 3);
 					}
 
