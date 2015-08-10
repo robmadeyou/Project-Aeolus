@@ -3,7 +3,7 @@ package core;
 /**
  * Class that contains all the main configurations of the server.
  */
-public class Config {
+public class Configuration {
 	
 	/**
 	 * Location of the data
