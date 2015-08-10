@@ -41,7 +41,7 @@ public class PlayerAssistant {
 	 */
 	public void potionPoisonHeal(int itemId, int itemSlot, int newItemId, int healType) {
 		p.attackTimer = p.getCombat()
-				.getAttackDelay(p.getEquipment().getItemName(p.playerEquipment[p.playerWeapon]).toLowerCase());
+				.getAttackDelay(p.getItems().getItemId(p.playerEquipment[p.playerWeapon]));
 		if (p.duelRule[5]) {
 			p.sendMessage("Potions has been disabled in this duel!");
 			return;

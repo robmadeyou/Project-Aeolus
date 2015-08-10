@@ -77,5 +77,6 @@
 - Removed majority of PlayerAssistants outgoing packets and placed them in ActionSender
 - Created a new class dedicated to player movement
 - Removed all mob spawns greater than 6102 (greater than 474 revision). Added 2,223 mob spawns.
-
-
+- Dumped all 474 weapon delays to json format
+- Almost all outgoing packets are now fully refactored
+- All weapon delays are now loaded through weapon_delays.json

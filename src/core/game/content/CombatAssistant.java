@@ -222,8 +222,8 @@ public class CombatAssistant {
 		return MeleeData.getBlockEmote(c);
 	}
 
-	public int getAttackDelay(String s) {
-		return MeleeData.getAttackDelay(c, s);
+	public int getAttackDelay(int id) {
+		return MeleeData.getAttackDelay(c, id);
 	}
 
 	public int getHitDelay(int i, String weaponName) {

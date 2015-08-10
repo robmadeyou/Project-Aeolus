@@ -45,7 +45,6 @@ public class ClickNPC implements PacketType {
 				break;
 			}
 			if (MobHandler.npcs[c.npcIndex].maxHP == 0) {
-				System.out.println("My health is " + MobHandler.npcs[c.npcIndex].maxHP);
 				c.npcIndex = 0;
 				break;
 			}

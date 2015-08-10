@@ -688,9 +688,7 @@ public class PlayerVsPlayer {
 					SoundManager.sendSound(c, c.spellId, SoundType.CAST_SOUND);
 				}
 				c.attackTimer = c.getCombat().getAttackDelay(
-						c.getEquipment()
-								.getItemName(c.playerEquipment[c.playerWeapon])
-								.toLowerCase());
+						c.getItems().getItemId(c.playerEquipment[c.playerWeapon]));
 
 				if (c.duelRule[9]) {
 					boolean canUseWeapon = false;

@@ -27,6 +27,7 @@ import core.game.util.Misc;
 import core.game.util.json.GlobalObjectLoader;
 import core.game.util.json.MusicLoader;
 import core.game.util.json.NpcDefinitionLoader;
+import core.game.util.json.WeaponDelayLoader;
 import core.game.util.log.CustomLogger;
 import core.game.world.StillGraphicsManager;
 import core.game.world.World;
@@ -145,6 +146,22 @@ public class Server {
 		shutdownServer = false;
 		sleepTime = 0;
 	}
+	
+	public static void initializeComponents() throws Exception {
+		
+		pluginManager = new PluginManager();
+		ObjectDef.loadConfig();
+		Region.load();
+		playerWorld = World.getSingleton();
+		playerWorld.setupPlayerRegions();
+		new MusicLoader().load();
+		objectHandler = new ObjectHandler();
+		ItemHandler.loadItemDefinitions();
+		new WeaponDelayLoader().load();
+		new NpcDefinitionLoader().load();
+		new MobDrop().load();
+		npcHandler.build();
+	}
 
 	/**
 	 * Starts the server.
@@ -157,17 +174,8 @@ public class Server {
 		System.setErr(new Misc.TimestampLogger(System.err, Configuration.DATA_DIR + "/logs/error/error.log"));
 		System.setOut(new CustomLogger(System.out));
 		System.out.println("Creating Game server...");
-		pluginManager = new PluginManager();
-		ObjectDef.loadConfig();
-		Region.load();
-		playerWorld = World.getSingleton();
-		playerWorld.setupPlayerRegions();
-		new MusicLoader().load();
-		objectHandler = new ObjectHandler();
-		ItemHandler.loadItemDefinitions();
-		new NpcDefinitionLoader().load();
-		new MobDrop().load();
-		npcHandler.build();
+
+		initializeComponents();
 		
 		long startTime = System.currentTimeMillis();
 		bind();

@@ -4,6 +4,8 @@ import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
+import core.game.model.item.ItemHandler;
+import core.game.model.item.WeaponDelay;
 import core.game.sound.SoundManager;
 import core.game.sound.SoundManager.SoundType;
 
@@ -15,8 +17,7 @@ public class MeleeData {
 		for (int i = 1; i < GameConstants.MAX_PLAYERS; i++) {
 			if (PlayerHandler.players[i] != null) {
 				if (PlayerHandler.players[i].killedBy == playerId) {
-					if (PlayerHandler.players[i]
-							.withinDistance(PlayerHandler.players[playerId])) {
+					if (PlayerHandler.players[i].withinDistance(PlayerHandler.players[playerId])) {
 						if (PlayerHandler.players[i].totalPlayerDamageDealt > oldDamage) {
 							oldDamage = PlayerHandler.players[i].totalPlayerDamageDealt;
 							killerId = i;
@@ -64,8 +65,7 @@ public class MeleeData {
 		c.playerTurn90CCWIndex = 0x336;
 		c.playerRunIndex = 0x338;
 
-		if (weaponName.contains("halberd") || weaponName.contains("hasta")
-				|| weaponName.contains("guthan")
+		if (weaponName.contains("halberd") || weaponName.contains("hasta") || weaponName.contains("guthan")
 				|| weaponName.contains("sceptre")) {
 			c.playerStandIndex = 809;
 			c.playerWalkIndex = 1146;
@@ -95,8 +95,7 @@ public class MeleeData {
 			c.playerRunIndex = 1831;
 			return;
 		}
-		if (weaponName.contains("wand") || weaponName.contains("staff")
-				|| weaponName.contains("seas")) {
+		if (weaponName.contains("wand") || weaponName.contains("staff") || weaponName.contains("seas")) {
 			c.playerStandIndex = 809;
 			c.playerRunIndex = 1210;
 			c.playerWalkIndex = 1146;
@@ -108,8 +107,7 @@ public class MeleeData {
 			c.playerRunIndex = 2077;
 			return;
 		}
-		if (weaponName.contains("2h sword") || weaponName.contains("godsword")
-				|| weaponName.contains("saradomin sw")) {
+		if (weaponName.contains("2h sword") || weaponName.contains("godsword") || weaponName.contains("saradomin sw")) {
 			c.playerStandIndex = 7047;
 			c.playerWalkIndex = 7046;
 			c.playerRunIndex = 7039;
@@ -188,16 +186,13 @@ public class MeleeData {
 			return c.fightMode == 2 ? 582 : 6600;
 		}
 
-		if (weaponName.contains("knife") || weaponName.contains("javelin")
-				|| weaponName.contains("thrownaxe")) {
+		if (weaponName.contains("knife") || weaponName.contains("javelin") || weaponName.contains("thrownaxe")) {
 			return 806;
 		}
 		if (weaponName.contains("cross") || weaponName.contains("c'bow")) {
 			return 4230;
 		}
-		if (weaponName.contains("halberd")
-				|| weaponName.contains("of the dead")
-				|| weaponName.contains("spear")) {
+		if (weaponName.contains("halberd") || weaponName.contains("of the dead") || weaponName.contains("spear")) {
 			return 440;
 		}
 		if (weaponName.startsWith("dragon dagger")) {
@@ -284,18 +279,14 @@ public class MeleeData {
 	}
 
 	public static int getBlockEmote(Player c) {
-		String shield = c.getEquipment()
-				.getItemName(c.playerEquipment[c.playerShield]).toLowerCase();
-		String weapon = c.getEquipment()
-				.getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase();
-		SoundManager.sendSound(c, c.playerEquipment[c.playerShield],
-				SoundType.PLAYER_BLOCK);
+		String shield = c.getEquipment().getItemName(c.playerEquipment[c.playerShield]).toLowerCase();
+		String weapon = c.getEquipment().getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase();
+		SoundManager.sendSound(c, c.playerEquipment[c.playerShield], SoundType.PLAYER_BLOCK);
 		if (shield.contains("defender"))
 			return 4177;
 		if (shield.contains("2h"))
 			return 7050;
-		if (shield.contains("book")
-				|| (weapon.contains("wand") || (weapon.contains("staff"))))
+		if (shield.contains("book") || (weapon.contains("wand") || (weapon.contains("staff"))))
 			return 420;
 		if (shield.contains("shield"))
 			return 1156;
@@ -339,122 +330,16 @@ public class MeleeData {
 		}
 	}
 
-	public static int getAttackDelay(Player c, String s) {
-		if (c.usingMagic) {
-			switch (c.MAGIC_SPELLS[c.spellId][0]) {
-			case 12871: // ice blitz
-			case 13023: // shadow barrage
-			case 12891: // ice barrage
-				return 5;
-
-			default:
-				return 5;
-			}
+	/**
+	 * Grabs a weapons attack delay from weapon_delays.json
+	 */
+	public static int getAttackDelay(Player c, int id) {
+			for(WeaponDelay delay : ItemHandler.weaponDelay) {
+				if (delay.getId() == id) {
+					System.out.println("WeaponID - " + delay.getId() + " : delay - " + delay.getDelay());
+					return delay.getDelay();
+				}
 		}
-		if (c.playerEquipment[c.playerWeapon] == -1)
-			return 4;// unarmed
-		switch (c.playerEquipment[c.playerWeapon]) {
-		case 11235:
-			return 9;
-		case 11730:
-			return 4;
-		case 6528:
-			return 7;
-		case 10033:
-		case 10034:
-			return 5;
-		case 11785:
-			return 7;
-		}
-		if (s.endsWith("greataxe"))
-			return 7;
-		else if (s.equals("torags hammers"))
-			return 5;
-		else if (s.equals("barrelchest anchor"))
-			return 7;
-		else if (s.equals("guthans warspear"))
-			return 5;
-		else if (s.equals("veracs flail"))
-			return 5;
-		else if (s.equals("ahrims staff"))
-			return 6;
-		else if (s.contains("staff")) {
-			if (s.contains("zamarok") || s.contains("guthix")
-					|| s.contains("saradomian") || s.contains("slayer")
-					|| s.contains("ancient"))
-				return 4;
-			else
-				return 5;
-		} else if (s.contains("bow")) {
-			if (s.contains("composite") || s.equals("seercull"))
-				return 5;
-			else if (s.contains("aril"))
-				return 4;
-			else if (s.contains("Ogre"))
-				return 8;
-			else if (s.contains("short") || s.contains("hunt")
-					|| s.contains("sword"))
-				return 4;
-			else if (s.contains("long") || s.contains("crystal"))
-				return 6;
-			else if (s.contains("'bow"))
-				return 7;
-
-			return 5;
-		} else if (s.contains("dagger"))
-			return 4;
-		else if (s.contains("godsword") || s.contains("2h"))
-			return 6;
-		else if (s.contains("longsword"))
-			return 5;
-		else if (s.contains("sword"))
-			return 4;
-		else if (s.contains("scimitar") || s.contains("trident"))
-			return 4;
-		else if (s.contains("mace"))
-			return 5;
-		else if (s.contains("battleaxe"))
-			return 6;
-		else if (s.contains("pickaxe"))
-			return 5;
-		else if (s.contains("thrownaxe"))
-			return 5;
-		else if (s.contains("axe"))
-			return 5;
-		else if (s.contains("warhammer"))
-			return 6;
-		else if (s.contains("2h"))
-			return 7;
-		else if (s.contains("spear"))
-			return 5;
-		else if (s.contains("claw"))
-			return 4;
-		else if (s.contains("halberd"))
-			return 7;
-		else if (s.equals("granite maul"))
-			return 7;
-		else if (s.equals("toktz-xil-ak"))// sword
-			return 4;
-		else if (s.equals("tzhaar-ket-em"))// mace
-			return 5;
-		else if (s.equals("tzhaar-ket-om"))// maul
-			return 7;
-		else if (s.equals("toktz-xil-ek"))// knife
-			return 4;
-		else if (s.equals("toktz-xil-ul"))// rings
-			return 4;
-		else if (s.equals("toktz-mej-tal"))// staff
-			return 6;
-		else if (s.contains("whip") || s.contains("abyssal tentacle")) {
-			System.out.println("whip retrieved");
-			return 4;
-		}
-		else if (s.contains("dart"))
-			return 3;
-		else if (s.contains("knife"))
-			return 3;
-		else if (s.contains("javelin"))
-			return 6;
 		return 5;
 	}
 
@@ -472,15 +357,13 @@ public class MeleeData {
 			if (weaponName.contains("dart")) {
 				return 3;
 			}
-			if (weaponName.contains("knife") || weaponName.contains("javelin")
-					|| weaponName.contains("thrownaxe")) {
+			if (weaponName.contains("knife") || weaponName.contains("javelin") || weaponName.contains("thrownaxe")) {
 				return 3;
 			}
 			if (weaponName.contains("cross") || weaponName.contains("c'bow")) {
 				return 4;
 			}
-			if (weaponName.contains("bow") || weaponName.contains("trident")
-					&& !c.dbowSpec) {
+			if (weaponName.contains("bow") || weaponName.contains("trident") && !c.dbowSpec) {
 				return 4;
 			} else if (c.dbowSpec) {
 				return 4;

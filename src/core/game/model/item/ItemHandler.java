@@ -18,6 +18,7 @@ import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.util.Misc;
+import core.game.util.json.WeaponDelayLoader;
 
 /**
 * Handles ground items
@@ -26,6 +27,8 @@ import core.game.util.Misc;
 public class ItemHandler {
 
 	public List<GroundItem> items = new ArrayList<GroundItem>();
+	public static List<WeaponDelay> weaponDelay = new ArrayList<>();
+	
 	public static final int HIDE_TICKS = 100;
 	
 	public ItemHandler() {		

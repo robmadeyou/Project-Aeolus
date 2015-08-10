@@ -582,9 +582,7 @@ public class PlayerVsMob {
 					c.usingMagic = true;
 				}
 				c.attackTimer = c.getCombat().getAttackDelay(
-						c.getEquipment()
-								.getItemName(c.playerEquipment[c.playerWeapon])
-								.toLowerCase());
+						c.getItems().getItemId(c.playerEquipment[c.playerWeapon]));
 				c.specAccuracy = 1.0;
 				c.specDamage = 1.0;
 				if (!c.usingMagic) {
