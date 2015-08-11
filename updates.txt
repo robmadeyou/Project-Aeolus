@@ -80,3 +80,4 @@
 - Dumped all 474 weapon delays to json format
 - Almost all outgoing packets are now fully refactored
 - All weapon delays are now loaded through weapon_delays.json
+- Fixed brightness on login. Default is set to 3.

@@ -408,7 +408,7 @@ public class ItemAssistant {
 			if (c.playerItems[fromSlot] <= 0) {
 				return false;
 			}
-			if (c.getInventory().getStackable(c.playerItems[fromSlot - 1])
+			if (c.getInventory().getStackable(c.playerItems[fromSlot])
 					|| c.playerItemsN[fromSlot] > 1) {
 				int toBankSlot = 0;
 				boolean alreadyInBank = false;

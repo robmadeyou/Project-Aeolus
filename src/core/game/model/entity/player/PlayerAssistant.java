@@ -403,6 +403,47 @@ public class PlayerAssistant {
 			p.startAnimation(p.teleEndAnimation);
 		}
 	}
+	
+	/**
+	 * A player casting vengeance
+	 */
+	public void castVeng() {
+		if (p.playerLevel[6] < 94) {
+			p.sendMessage("You need a magic level of 94 to cast this spell.");
+			return;
+		}
+		if (p.playerLevel[1] < 40) {
+			p.sendMessage("You need a defence level of 40 to cast this spell.");
+			return;
+		}
+		if (!p.getInventory().playerHasItem(9075, 4)
+				|| !p.getInventory().playerHasItem(557, 10)
+				|| !p.getInventory().playerHasItem(560, 2)) {
+			p.sendMessage("You don't have the required runes to cast this spell.");
+			return;
+		}
+		if (System.currentTimeMillis() - p.lastVeng < 30000) {
+			p.sendMessage("You can only cast vengeance every 30 seconds.");
+			return;
+		}
+		if (p.vengOn) {
+			p.sendMessage("You already have vengeance casted.");
+			return;
+		}
+		if (p.duelRule[4]) {
+			p.sendMessage("You can't cast this spell because magic has been disabled.");
+			return;
+		}
+		p.startAnimation(4410);
+		p.gfx100(726);
+		p.getInventory().deleteItem(9075, 4);
+		p.getInventory().deleteItem(557, 10);
+		p.getInventory().deleteItem(560, 2);
+		p.getActionSender().addSkillXP(10000, 6);
+		p.getActionSender().refreshSkill(6);
+		p.vengOn = true;
+		p.lastVeng = System.currentTimeMillis();
+	}
 
 	/**
 	 * Casts vengeance on self

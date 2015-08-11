@@ -720,7 +720,6 @@ public class PlayerVsMob {
 																					// delay
 					c.followId2 = MobHandler.npcs[i].npcId;
 					c.getActionSender().followNpc();
-					System.out.println("3");
 					c.hitDelay = c.getCombat().getHitDelay(
 							i,
 							c.getEquipment()
@@ -741,7 +740,6 @@ public class PlayerVsMob {
 					c.lastArrowUsed = c.playerEquipment[c.playerArrows];
 					c.lastWeaponUsed = c.playerEquipment[c.playerWeapon];
 					c.gfx100(c.getCombat().getRangeStartGFX());
-					System.out.println("4");
 					c.hitDelay = c.getCombat().getHitDelay(
 							i,
 							c.getEquipment()
@@ -772,7 +770,6 @@ public class PlayerVsMob {
 					c.getEquipment().deleteEquipment();
 					c.gfx100(c.getCombat().getRangeStartGFX());
 					c.lastArrowUsed = 0;
-					System.out.println("1");
 					c.hitDelay = c.getCombat().getHitDelay(
 							i,
 							c.getEquipment()
@@ -809,7 +806,6 @@ public class PlayerVsMob {
 								c.getCombat().getStartHeight(),
 								c.getCombat().getEndHeight(), i + 1, 50);
 					}
-					System.out.println("2");
 					c.hitDelay = c.getCombat().getHitDelay(
 							i,
 							c.getEquipment()

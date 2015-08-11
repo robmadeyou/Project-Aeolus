@@ -31,6 +31,87 @@ public class FirstClickButton {
 		
 		switch (actionButtonId) {
 		
+		/* VENG */
+		case 118098:
+			c.getPA().castVeng();
+			break;
+		/** Specials **/
+		case 29188:
+		case 29199:
+			c.specBarId = 7636;
+			c.usingSpecial = !c.usingSpecial;
+			c.getEquipment().updateSpecialBar();
+			break;
+
+		case 29163:
+			c.specBarId = 7611;
+			c.usingSpecial = !c.usingSpecial;
+			c.getEquipment().updateSpecialBar();
+			break;
+
+		case 33033:
+			c.specBarId = 8505;
+			c.usingSpecial = !c.usingSpecial;
+			c.getEquipment().updateSpecialBar();
+			break;
+		case 29049:
+		case 29038:
+			if (c.playerEquipment[c.playerWeapon] == 4153) {
+				c.specBarId = 7486;
+				c.getCombat().handleGmaulPlayer();
+				c.getEquipment().updateSpecialBar();
+			} else {
+				c.specBarId = 7486;
+				c.usingSpecial = !c.usingSpecial;
+				c.getEquipment().updateSpecialBar();
+			}
+			break;
+
+		case 29063:
+			if (c.inDuelArena()) {
+				c.sendMessage("You can't use dragon battleaxe special attack in Duel Arena, sorry sir.");
+			} else {
+				if (c.getCombat().checkSpecAmount(
+						c.playerEquipment[c.playerWeapon])) {
+					c.gfx0(246);
+					c.forcedChat("Raarrrrrgggggghhhhhhh!");
+					c.startAnimation(1056);
+					c.playerLevel[2] = c.getLevelForXP(c.playerXP[2])
+							+ (c.getLevelForXP(c.playerXP[2]) * 15 / 100);
+					c.getActionSender().refreshSkill(2);
+					c.getEquipment().updateSpecialBar();
+				} else {
+					c.sendMessage("You don't have the required special energy to use this attack.");
+				}
+			}
+			break;
+
+		case 48023:
+		case 48034:
+			c.specBarId = 12335;
+			c.usingSpecial = !c.usingSpecial;
+			c.getEquipment().updateSpecialBar();
+			break;
+
+		case 29138:
+			c.specBarId = 7586;
+			c.usingSpecial = !c.usingSpecial;
+			c.getEquipment().updateSpecialBar();
+			break;
+
+		case 29113:
+		case 29124:
+			c.specBarId = 7561;
+			c.usingSpecial = !c.usingSpecial;
+			c.getEquipment().updateSpecialBar();
+			break;
+
+		case 29238:
+			c.specBarId = 7686;
+			c.usingSpecial = !c.usingSpecial;
+			c.getEquipment().updateSpecialBar();
+			break;
+		
 		/** Prayers **/
 		case 21233: // thick skin
 			c.getCombat().activatePrayer(0);
