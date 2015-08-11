@@ -1,6 +1,7 @@
 package core.net.packets.incoming;
 
 import core.game.model.entity.player.Player;
+import core.game.model.entity.player.Rights;
 import core.net.packets.PacketType;
 
 
@@ -58,8 +59,12 @@ public class RemoveItem implements PacketType {
 			case 6669:
 			c.getContentManager().getDueling().fromDuel(removeId, removeSlot, 1);
 			break;
-			
 
+			default:
+				if (c.getRights().greaterOrEqual(Rights.DEVELOPER)) {
+					System.out.println("RemoveItem : InterfaceId - " + interfaceId);
+				}
+				break;
 		}
 	}
 			
