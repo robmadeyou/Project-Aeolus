@@ -2059,16 +2059,29 @@ public class Player extends Entity {
 	}
 	
 	public void showWelcomeScreen() {
-		getActionSender().showWelcomeScreen(2, 3, 1, 0, 5);
+		getActionSender().showWelcomeScreen(0, 0, 1, 0, 0);
 		getActionSender().showInterface(15244);
 		getActionSender().textOnInterface("Welcome to " + Configuration.SERVER_NAME + ".", 15257);
-		getActionSender().textOnInterface("You last logged in @red@%1@bla@ days ago from @red@%2", 15258);
-		getActionSender().textOnInterface("Recovery Questions Last Set: \n @gre@ 10-Aug-2015", 15259);
-		getActionSender().textOnInterface("Jagex Staff will NEVER email you.\n We use the message centre on this \nwebsite instead.", 15260);
-		getActionSender().textOnInterface("You have %1 unread messages\nin your message centre.", 15261);
-		getActionSender().textOnInterface("Donations are much appreciated \n any payment is will help.", 15262);
+		getActionSender().textOnInterface("Your ip: "+ this.getSession().getRemoteAddress(), 15258);
+		getActionSender().textOnInterface("\\n \\nRecovery Question Last Set: \\n @gre@ 10-Aug-2015", 15259);
+		getActionSender().textOnInterface("Jagex Staff will NEVER email you. We use the \\n"
+				+ "message centre on this website instead. \\n"
+				+ "\\n"
+				+ "You have @gre@ 3 unread messages @yel@ in your \\n"
+				+ "message centre.", 15260);
+		getActionSender().textOnInterface("", 15261);
+		getActionSender().textOnInterface("You are a member. Choose to subscribe \\n"
+				+ "and you'll get loads of extra benefits and \\n"
+				+ "features.", 15262);
 		getActionSender().textOnInterface("CLICK HERE TO PLAY", 15263);
-		getActionSender().textOnInterface("You do not have a Bank PIN. Please visit a bank \n if you would like one.", 15270);
+		getActionSender().textOnInterface("1", 15264);
+//		getActionSender().textOnInterface("2", 15265); //Hover
+//		getActionSender().textOnInterface("3", 15266); //Hover
+		getActionSender().textOnInterface("4", 15267);
+		getActionSender().textOnInterface("5", 15268);
+		getActionSender().textOnInterface("6", 15269);
+		getActionSender().textOnInterface("\\n You do not have a Bank PIN. Please visit a bank \\n"
+				+ "if you would like one.", 15270);
 	}
 
 	/**
