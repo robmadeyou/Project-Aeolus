@@ -62,7 +62,6 @@ public class ActionSender {
 		c.outStream.writeByte(member);
 		c.outStream.writeDWord_v1(ip);
 		c.outStream.writeWord(daysSince);
-		c.getActionSender().showInterface(15244);
 	}
 	
 	/**
