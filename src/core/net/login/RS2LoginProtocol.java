@@ -106,6 +106,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 
 	private static Player login(Channel channel, ISAACCipher inCipher, ISAACCipher outCipher, int version, String name, String pass) {
 		int returnCode = 2;
+		String ip = channel.getRemoteAddress().toString().replaceAll("/", "").split(":")[0];
 		if (!name.matches("[A-Za-z0-9 ]+")) {
 			returnCode = 4;
 		}
@@ -116,6 +117,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 		cl.playerName = name;
 		cl.playerName2 = cl.playerName;
 		cl.playerPass = pass;
+		cl.connectedFrom = ip;
 		cl.outStream.packetEncryption = outCipher;
 		cl.saveCharacter = false;
 		cl.isActive = true;

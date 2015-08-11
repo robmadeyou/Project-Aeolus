@@ -2062,7 +2062,7 @@ public class Player extends Entity {
 		getActionSender().showWelcomeScreen(0, 0, 1, 0, 0);
 		getActionSender().showInterface(15244);
 		getActionSender().textOnInterface("Welcome to " + Configuration.SERVER_NAME + ".", 15257);
-		getActionSender().textOnInterface("Your ip: "+ this.getSession().getRemoteAddress(), 15258);
+		getActionSender().textOnInterface("Your ip: "+ this.connectedFrom, 15258);
 		getActionSender().textOnInterface("\\n \\nRecovery Question Last Set: \\n @gre@ 10-Aug-2015", 15259);
 		getActionSender().textOnInterface("Jagex Staff will NEVER email you. We use the \\n"
 				+ "message centre on this website instead. \\n"
