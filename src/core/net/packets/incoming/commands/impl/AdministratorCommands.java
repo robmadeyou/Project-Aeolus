@@ -2,6 +2,7 @@ package core.net.packets.incoming.commands.impl;
 
 import core.Server;
 import core.game.GameConstants;
+import core.game.content.Spellbook;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Punishments;
@@ -22,6 +23,29 @@ public class AdministratorCommands implements Command {
 		switch (command[0]) {
 		case "test":
 			player.sendMessage("I have access to Admin commands.");
+			break;
+			
+		case "spellbook":
+			try {
+			int id = Integer.parseInt(command[1]);			
+			switch(id) {
+			
+			case 0:
+				player.getPA().setSpellbook(Spellbook.MODERN);
+				break;
+				
+			case 1:
+				player.getPA().setSpellbook(Spellbook.ANCIENT);
+				break;
+				
+			case 2:
+				player.getPA().setSpellbook(Spellbook.LUNAR);
+				break;			
+			}
+			
+			} catch(NumberFormatException ex) {
+				ex.printStackTrace();
+			}
 			break;
 
 		case "teletome":

@@ -2,21 +2,24 @@ package core.game.model.entity.player;
 
 import core.Configuration;
 import core.game.GameConstants;
+import core.game.content.Spellbook;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.util.Misc;
 
 /**
- * A class which contains methods not related to PlayerIO, instead helps a player do something
+ * A class which contains methods not related to PlayerIO, instead helps a
+ * player do something
+ * 
  * @author 7Winds
  */
 public class PlayerAssistant {
-	
+
 	private Player p;
-	
+
 	public PlayerAssistant(Player p) {
 		this.p = p;
 	}
-	
+
 	/**
 	 * Deals poisonous damage towards a Player
 	 */
@@ -26,7 +29,7 @@ public class PlayerAssistant {
 			p.poisonDamage = damage;
 		}
 	}
-	
+
 	/**
 	 * Drink AntiPosion Potions
 	 * 
@@ -40,8 +43,7 @@ public class PlayerAssistant {
 	 *            The type of poison it heals
 	 */
 	public void potionPoisonHeal(int itemId, int itemSlot, int newItemId, int healType) {
-		p.attackTimer = p.getCombat()
-				.getAttackDelay(p.getItems().getItemId(p.playerEquipment[p.playerWeapon]));
+		p.attackTimer = p.getCombat().getAttackDelay(p.getItems().getItemId(p.playerEquipment[p.playerWeapon]));
 		if (p.duelRule[5]) {
 			p.sendMessage("Potions has been disabled in this duel!");
 			return;
@@ -63,7 +65,18 @@ public class PlayerAssistant {
 			}
 		}
 	}
-	
+
+	/**
+	 * Changes a players spellbook
+	 */
+	public void setSpellbook(Spellbook book) {
+		p.playerMagicBook = book.getIndex();
+		p.setSidebarInterface(6, book.getInterfaceIndex());
+		p.getActionSender().removeAllWindows();
+		p.sendMessage("You read the lectern and " + book.toString().toLowerCase() + " magicks fills your mind.");
+		p.autocasting = false;
+	}
+
 	public int antiFire() {
 		int toReturn = 0;
 		if (p.antiFirePot)
@@ -73,7 +86,7 @@ public class PlayerAssistant {
 			toReturn++;
 		return toReturn;
 	}
-	
+
 	/**
 	 * Magic on items
 	 **/
@@ -121,7 +134,7 @@ public class PlayerAssistant {
 			break;
 		}
 	}
-	
+
 	/**
 	 * Finds the player that killed a player
 	 */
@@ -145,8 +158,7 @@ public class PlayerAssistant {
 		}
 		return killer;
 	}
-	
-	
+
 	public void giveLife() {
 		p.isDead = false;
 		p.faceUpdate(-1);
@@ -211,9 +223,11 @@ public class PlayerAssistant {
 					o.getContentManager().getDueling().duelVictory();
 				}
 			}
-			p.getMovement().movePlayer(GameConstants.DUELING_RESPAWN_X + (Misc.random(Configuration.RANDOM_DUELING_RESPAWN)),
+			p.getMovement().movePlayer(
+					GameConstants.DUELING_RESPAWN_X + (Misc.random(Configuration.RANDOM_DUELING_RESPAWN)),
 					GameConstants.DUELING_RESPAWN_Y + (Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), 0);
-			o.getMovement().movePlayer(GameConstants.DUELING_RESPAWN_X + (Misc.random(Configuration.RANDOM_DUELING_RESPAWN)),
+			o.getMovement().movePlayer(
+					GameConstants.DUELING_RESPAWN_X + (Misc.random(Configuration.RANDOM_DUELING_RESPAWN)),
 					GameConstants.DUELING_RESPAWN_Y + (Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), 0);
 			if (p.duelStatus != 6) { // if we have won but have died, don't
 										// reset the duel status.
@@ -235,7 +249,6 @@ public class PlayerAssistant {
 		p.getActionSender().requestUpdates();
 	}
 
-	
 	/**
 	 * Dieing
 	 **/
@@ -273,7 +286,7 @@ public class PlayerAssistant {
 		resetFollowers();
 		p.attackTimer = 10;
 	}
-	
+
 	/**
 	 * Location change for digging, levers etc
 	 **/
@@ -307,7 +320,7 @@ public class PlayerAssistant {
 		}
 		p.newLocation = 0;
 	}
-	
+
 	/**
 	 * Teleporting
 	 **/
@@ -390,7 +403,7 @@ public class PlayerAssistant {
 			p.startAnimation(p.teleEndAnimation);
 		}
 	}
-	
+
 	/**
 	 * Casts vengeance on self
 	 */
@@ -412,7 +425,7 @@ public class PlayerAssistant {
 			p.sendMessage("You must wait 30 seconds before casting this again.");
 		}
 	}
-	
+
 	public void resetDamageDone() {
 		for (int i = 0; i < PlayerHandler.players.length; i++) {
 			if (PlayerHandler.players[i] != null) {
@@ -420,7 +433,7 @@ public class PlayerAssistant {
 			}
 		}
 	}
-	
+
 	/**
 	 * Resets the player following
 	 */
@@ -434,7 +447,7 @@ public class PlayerAssistant {
 			}
 		}
 	}
-	
+
 	/**
 	 * Resets the teleblock timer to 0.
 	 */
@@ -442,5 +455,5 @@ public class PlayerAssistant {
 		p.teleBlockLength = 0;
 		p.teleBlockDelay = 0;
 	}
-	
+
 }

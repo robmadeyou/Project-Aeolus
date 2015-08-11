@@ -13,7 +13,7 @@ def clickButton_59004(c):
     c.getPA().removeAllWindows()
 
 def clickButton_70212(c):
-    c.getPA().showInterface(15456)
+    c.getActionSender().showInterface(15456)
 
 def clickButton_9154(c):
     c.logout()
@@ -53,14 +53,14 @@ def clickButton_74205(c):
 
 # Character Equipment Screen
 def clickButton_108005(c):
-    c.getPA().showInterface(15106)
+    c.getActionSender().showInterface(15106)
 
 # Items on Death Screen
 def clickButton_108006(c):
-    c.getPA().ItemsOnDeath(c)
+    c.getActionSender().ItemsOnDeath(c)
 
 def clickButton_59163(c):
-    c.getPA().closeAllWindows()
+    c.getActionSender().closeAllWindows()
 
 # Swapping from Quest Tab
 def clickButton_114119(c):

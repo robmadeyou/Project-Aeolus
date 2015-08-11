@@ -336,7 +336,7 @@ public class MeleeData {
 	public static int getAttackDelay(Player c, int id) {
 			for(WeaponDelay delay : ItemHandler.weaponDelay) {
 				if (delay.getId() == id) {
-					System.out.println("WeaponID - " + delay.getId() + " : delay - " + delay.getDelay());
+					//System.out.println("WeaponID - " + delay.getId() + " : delay - " + delay.getDelay());
 					return delay.getDelay();
 				}
 		}
