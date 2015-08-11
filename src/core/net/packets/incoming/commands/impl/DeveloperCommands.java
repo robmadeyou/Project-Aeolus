@@ -23,6 +23,10 @@ public class DeveloperCommands implements Command {
 	public void execute(Player player, String[] command) {
 		switch (command[0]) {
 		
+		case "sendframe36":
+			player.getActionSender().sendFrame36(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
+			break;
+		
 		case "reloadplugins":
 			try {
 				PluginManager.loadScripts();

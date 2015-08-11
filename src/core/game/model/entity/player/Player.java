@@ -2116,7 +2116,7 @@ public class Player extends Entity {
 		// getPA().sendFrame36(43, fightMode-1);
 		getActionSender().sendFrame36(108, 0);// resets autocast button
 		getActionSender().sendFrame36(172, 1);
-		getActionSender().sendFrame36(507, 1); //Brightness Level 3
+		getActionSender().sendFrame36(166, 3); //brightness level 3
 		getActionSender().resetCamera(); // reset screen
 		getActionSender().setChatOptions(0, 0, 0); // reset private messaging options
 		getActionSender().setSideBarInterfaces(this, true);

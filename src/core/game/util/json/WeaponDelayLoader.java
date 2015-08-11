@@ -12,7 +12,7 @@ public class WeaponDelayLoader extends JsonLoader {
 
 	public WeaponDelayLoader() {
 		super(Configuration.DATA_DIR + "json/equipment/weapon_delays.json");
-		System.out.println("Loaded: " + ItemHandler.weaponDelay.size() + " weapon delays.");
+		//System.out.println("Loaded: " + ItemHandler.weaponDelay.size() + " weapon delays.");
 	}
 
 	@Override
