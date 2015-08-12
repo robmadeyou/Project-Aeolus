@@ -1,6 +1,6 @@
 package core.game.sound.effects;
 
-import core.game.model.entity.mob.MobDefinitions;
+import core.game.model.entity.mob.MobDefinition;
 import core.game.model.entity.player.Player;
 import core.game.model.item.ItemDefinition;
 import core.game.util.Misc;
@@ -169,7 +169,7 @@ public class SoundEffects {
 	}
 
 	public static String GetNpcName(int NpcID) {
-		return MobDefinitions.getDefinitions()[NpcID].getName();
+		return MobDefinition.getDefinitions()[NpcID].getName();
 	}
 
 	public static String getItemName(int itemId) {

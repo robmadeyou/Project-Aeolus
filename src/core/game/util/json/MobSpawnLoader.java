@@ -7,7 +7,7 @@ import com.google.gson.JsonObject;
 
 import core.Configuration;
 import core.game.model.entity.mob.MobHandler;
-import core.game.model.entity.mob.MobSpawns;
+import core.game.model.entity.mob.MobSpawn;
 import core.game.model.entity.mob.WalkType;
 import core.game.util.JsonLoader;
 
@@ -25,7 +25,7 @@ public class MobSpawnLoader extends JsonLoader {
 		int yPos = reader.get("yPos").getAsInt();
 		int height = reader.get("height").getAsInt();
 		String walkType = Objects.requireNonNull(reader.get("walkType").getAsString());
-		MobSpawns spawn = new MobSpawns(npcId, xPos, yPos, height, WalkType.valueOf(walkType));
+		MobSpawn spawn = new MobSpawn(npcId, xPos, yPos, height, WalkType.valueOf(walkType));
 		MobHandler.newNPC(spawn);
 	}
 }

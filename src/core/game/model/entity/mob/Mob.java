@@ -330,10 +330,10 @@ public class Mob extends Entity {
 	 * Npc names
 	 **/
 	public String getNpcName(int npcId) {
-		if (MobDefinitions.getDefinitions()[npcId] == null || npcId <= -1) {
+		if (MobDefinition.getDefinitions()[npcId] == null || npcId <= -1) {
 			return "None";
 		}
-		return MobDefinitions.getDefinitions()[npcId].getName();
+		return MobDefinition.getDefinitions()[npcId].getName();
 	}
 	
 }

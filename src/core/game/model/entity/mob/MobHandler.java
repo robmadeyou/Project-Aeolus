@@ -19,7 +19,7 @@ public class MobHandler {
 	public static int maxListedNPCs = 6102;
 	public static int maxNPCDrops = 10000;
 	public static Mob npcs[] = new Mob[maxNPCs];
-	public static MobDefinitions npcDefinitions[] = new MobDefinitions[maxListedNPCs];
+	public static MobDefinition npcDefinitions[] = new MobDefinition[maxListedNPCs];
 
 	public MobHandler() {
 		for (int i = 0; i < maxNPCs; i++) {
@@ -865,7 +865,7 @@ public class MobHandler {
 		}
 	}
 
-	public static void newNPC(MobSpawns s) {
+	public static void newNPC(MobSpawn s) {
 		// first, search for a free slot
 		int slot = -1;
 		for (int i = 1; i < maxNPCs; i++) {
@@ -885,7 +885,7 @@ public class MobHandler {
 		newNPC.makeY = s.getYPos();
 		newNPC.heightLevel = s.getHeight();
 		newNPC.walkType = s.getWalkType();
-		int hp = MobDefinitions.getDefinitions()[s.getNpcId()].getHitpoints();
+		int hp = MobDefinition.getDefinitions()[s.getNpcId()].getHitpoints();
 		newNPC.HP = hp;
 		newNPC.maxHP = hp;
 		npcs[slot] = newNPC;
@@ -2066,12 +2066,12 @@ public class MobHandler {
 	}
 
 	public int getNpcListHP(int npcId) {
-		return MobDefinitions.DEFINITIONS[npcId].getHitpoints();
+		return MobDefinition.DEFINITIONS[npcId].getHitpoints();
 	}
 
 	public String getNpcListName(int npcId) {
-		if (MobDefinitions.DEFINITIONS != null) {
-			return MobDefinitions.DEFINITIONS[npcId].getName();
+		if (MobDefinition.DEFINITIONS != null) {
+			return MobDefinition.DEFINITIONS[npcId].getName();
 		}
 		return "nameless";
 	}
