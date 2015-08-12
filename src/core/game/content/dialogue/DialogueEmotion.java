@@ -1,5 +1,8 @@
 package core.game.content.dialogue;
 
+/**
+ * Dialogue emotions
+ */
 public enum DialogueEmotion {
 	
 	HAPPY(588),
@@ -33,6 +36,9 @@ public enum DialogueEmotion {
 	ANGRY_3(616),
 	ANGRY_4(617);
 	
+	/**
+	 * The identifier of the emote
+	 */
 	private int id;
 	
 	private DialogueEmotion(int id) {
