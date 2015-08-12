@@ -5,12 +5,12 @@ package core.game.model.entity.mob;
  *
  * @author lare96 <http://github.com/lare96>
  */
-public final class MobDefinitions {
+public final class MobDefinition {
 
     /**
      * The array that contains all of the NPC definitions.
      */
-    public static final MobDefinitions[] DEFINITIONS = new MobDefinitions[MobHandler.maxListedNPCs];
+    public static final MobDefinition[] DEFINITIONS = new MobDefinition[MobHandler.maxListedNPCs];
 
     /**
      * The identification for this NPC.
@@ -156,7 +156,7 @@ public final class MobDefinitions {
      * @param magicDefence
      *            the magic defence of this NPC.
      */
-    public MobDefinitions(int id, String name, String description, int combatLevel, int size, boolean attackable, boolean aggressive,
+    public MobDefinition(int id, String name, String description, int combatLevel, int size, boolean attackable, boolean aggressive,
         boolean retreats, boolean poisonous, int respawnTime, int maxHit, int hitpoints, int attackSpeed, int attackAnimation,
         int defenceAnimation, int deathAnimation, int attackBonus, int meleeDefence, int rangedDefence, int magicDefence) {
         this.id = id;
@@ -181,7 +181,7 @@ public final class MobDefinitions {
         this.magicDefence = magicDefence;
     }
     
-    public static MobDefinitions[] getDefinitions() {
+    public static MobDefinition[] getDefinitions() {
     	return DEFINITIONS;
     }
 

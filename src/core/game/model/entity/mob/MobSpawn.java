@@ -1,9 +1,10 @@
 package core.game.model.entity.mob;
 
 /**
+ * A class which represents a single Mob Spawn.
  * @author 7Winds
  */
-public final class MobSpawns {
+public final class MobSpawn {
 
 	/**
 	 * The Id of the npc. Commonly referred to as npcType.
@@ -30,7 +31,7 @@ public final class MobSpawns {
 	 */
 	private WalkType walkType;
 
-	public MobSpawns(int npcid, int xPos, int yPos, int height, WalkType walkType) {
+	public MobSpawn(int npcid, int xPos, int yPos, int height, WalkType walkType) {
 		this.npcId = npcid;
 		this.xPos = xPos;
 		this.yPos = yPos;
