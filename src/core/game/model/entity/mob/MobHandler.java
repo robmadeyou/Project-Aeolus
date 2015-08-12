@@ -12,6 +12,7 @@ import core.game.model.entity.player.PlayerHandler;
 import core.game.model.item.GameItem;
 import core.game.sound.effects.SoundEffects;
 import core.game.util.Misc;
+import core.game.world.clipping.region.Region;
 
 public class MobHandler {
 
@@ -1510,14 +1511,8 @@ public class MobHandler {
 							break;
 						}
 					}
-					int x = (npcs[i].absX + npcs[i].moveX);
-					int y = (npcs[i].absY + npcs[i].moveY);
-					npcs[i].facePlayer(playerId);
-					// if (checkClipping(i))
+					handleClipping(i);
 					npcs[i].getNextNPCMovement(i);
-					/*
-					 * else { npcs[i].moveX = 0; npcs[i].moveY = 0; }
-					 */
 					npcs[i].facePlayer(playerId);
 					npcs[i].updateRequired = true;
 				}
@@ -1529,26 +1524,63 @@ public class MobHandler {
 		}
 	}
 
-	public boolean checkClipping(int i) {
+	public void handleClipping(int i) {
 		Mob npc = npcs[i];
-		int size = npcSize(i);
-
-		for (int x = 0; x < size; x++) {
-			for (int y = 0; y < size; y++) {
-				// if (!VirtualWorld.I(npc.heightLevel, npc.absX + x, npc.absY +
-				// y, npc.absX + npc.moveX, npc.absY + npc.moveY, 0))
-				return false;
-			}
-		}
-
-		return true;
+			if(npc.moveX == 1 && npc.moveY == 1) {
+					if((Region.getClipping(npc.absX + 1, npc.absY + 1, npc.heightLevel) & 0x12801e0) != 0)  {
+							npc.moveX = 0; npc.moveY = 0;
+							if((Region.getClipping(npc.absX, npc.absY + 1, npc.heightLevel) & 0x1280120) == 0)
+								npc.moveY = 1;
+							else 
+								npc.moveX = 1; 				
+							}
+					} else if(npc.moveX == -1 && npc.moveY == -1) {
+						if((Region.getClipping(npc.absX - 1, npc.absY - 1, npc.heightLevel) & 0x128010e) != 0)  {
+							npc.moveX = 0; npc.moveY = 0;
+							if((Region.getClipping(npc.absX, npc.absY - 1, npc.heightLevel) & 0x1280102) == 0)
+								npc.moveY = -1;
+							else
+								npc.moveX = -1; 		
+					}
+					} else if(npc.moveX == 1 && npc.moveY == -1) {
+							if((Region.getClipping(npc.absX + 1, npc.absY - 1, npc.heightLevel) & 0x1280183) != 0)  {
+							npc.moveX = 0; npc.moveY = 0;
+							if((Region.getClipping(npc.absX, npc.absY - 1, npc.heightLevel) & 0x1280102) == 0)
+								npc.moveY = -1;
+							else
+								npc.moveX = 1; 
+							}
+					} else if(npc.moveX == -1 && npc.moveY == 1) {
+						if((Region.getClipping(npc.absX - 1, npc.absY + 1, npc.heightLevel) & 0x128013) != 0)  {
+							npc.moveX = 0; npc.moveY = 0;
+							if((Region.getClipping(npc.absX, npc.absY + 1, npc.heightLevel) & 0x1280120) == 0)
+								npc.moveY = 1;
+							else
+								npc.moveX = -1; 
+										}
+					} //Checking Diagonal movement. 
+					
+			if (npc.moveY == -1 ) {
+				if ((Region.getClipping(npc.absX, npc.absY - 1, npc.heightLevel) & 0x1280102) != 0)
+                    npc.moveY = 0;
+			} else if( npc.moveY == 1) {
+				if((Region.getClipping(npc.absX, npc.absY + 1, npc.heightLevel) & 0x1280120) != 0)
+					npc.moveY = 0;
+			} //Checking Y movement.
+			if(npc.moveX == 1) {
+				if((Region.getClipping(npc.absX + 1, npc.absY, npc.heightLevel) & 0x1280180) != 0) 
+					npc.moveX = 0;
+				} else if(npc.moveX == -1) {
+				 if((Region.getClipping(npc.absX - 1, npc.absY, npc.heightLevel) & 0x1280108) != 0)
+					npc.moveX = 0;
+			} //Checking X movement.
 	}
 
 	/**
 	 * load spell
 	 **/
 	public void loadSpell2(int i) {
-		npcs[i].attackType = AttackType.MAGIC;
+		npcs[i].attackType = AttackType.FIRE_BREATH;
 		int random = Misc.random(3);
 		if (random == 0) {
 			npcs[i].projectileId = 393; // red
