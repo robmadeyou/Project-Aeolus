@@ -379,11 +379,11 @@ public class PlayerVsPlayer {
 				int damage = 0;
 				if (c.spellSwap) {
 					c.spellSwap = false;
-					c.setSidebarInterface(6, 16640);
+					c.getActionSender().setSidebarInterface(6, 16640);
 					c.playerMagicBook = 2;
 					c.gfx0(-1);
 				}
-				if (c.fullVoidMage()
+				if (c.getEquipment().isWearingFullVoidMage(c)
 						&& c.playerEquipment[c.playerWeapon] == 8841) {
 					damage = Misc.random(c.getCombat().magicMaxHit() + 13);
 				} else {

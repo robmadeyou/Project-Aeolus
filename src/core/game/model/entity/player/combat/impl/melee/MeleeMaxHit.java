@@ -175,7 +175,7 @@ public class MeleeMaxHit {
 		} else if (c.prayerActive[25]) {
 			attackLevel += c.getLevelForXP(c.playerXP[c.playerAttack]) * 0.2;
 		}
-		if (c.fullVoidMelee()) {
+		if (c.getEquipment().isWearingFullVoidMelee(c)) {
 			attackLevel += c.getLevelForXP(c.playerXP[c.playerAttack]) * 0.1;
 		}
 		attackLevel *= c.specAccuracy;

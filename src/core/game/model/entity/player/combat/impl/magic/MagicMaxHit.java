@@ -6,7 +6,7 @@ public class MagicMaxHit {
 
 	public static int mageAttack(Player c) {
 		int attackLevel = c.playerLevel[6];
-		if (c.fullVoidMage()) {
+		if (c.getEquipment().isWearingFullVoidMage(c)) {
 			attackLevel += c.getLevelForXP(c.playerXP[6]) * 0.2;
 		}
 		if (c.prayerActive[4]) {

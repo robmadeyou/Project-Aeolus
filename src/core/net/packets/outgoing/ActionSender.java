@@ -50,7 +50,7 @@ public class ActionSender {
 			num += ((Integer.parseInt(addrArray[i]) % 256 * Math.pow(256, power)));
 		}
 		return num;
-	}
+	}	
 
 	/**
 	 * Displays the welcome screen.
@@ -62,6 +62,29 @@ public class ActionSender {
 		c.outStream.writeByte(member);
 		c.outStream.writeDWord_v1(ip);
 		c.outStream.writeWord(daysSince);
+	}
+	
+	/**
+	 * Sets a sidebar interface
+	 * @param menuId
+	 * @param form
+	 */
+	public void setSidebarInterface(int menuId, int form) {
+		// synchronized (this) {
+		if (c.getOutStream() != null) {
+			c.outStream.createFrame(71);
+			c.outStream.writeWord(form);
+			c.outStream.writeByteA(menuId);
+		}
+	}
+	
+	public void sendClan(String name, String message, String clan, int rights) {
+		c.outStream.createFrameVarSizeWord(217);
+		c.outStream.writeString(name);
+		c.outStream.writeString(message);
+		c.outStream.writeString(clan);
+		c.outStream.writeWord(c.getRights().getValues());
+		c.outStream.endFrameVarSize();
 	}
 	
 	/**
@@ -155,46 +178,46 @@ public class ActionSender {
 
 	public void setSideBarInterfaces(Player p, boolean enable) {
 		if (enable) {
-			p.setSidebarInterface(1, 3917);
-			p.setSidebarInterface(2, 638);
-			p.setSidebarInterface(3, 3213);
-			p.setSidebarInterface(4, 1644);
-			p.setSidebarInterface(5, 5608);
+			setSidebarInterface(1, 3917);
+			setSidebarInterface(2, 638);
+			setSidebarInterface(3, 3213);
+			setSidebarInterface(4, 1644);
+			setSidebarInterface(5, 5608);
 			if (p.playerMagicBook == 0) {
-				p.setSidebarInterface(6, 1151); // modern
+				setSidebarInterface(6, 1151); // modern
 			} else {
-				p.setSidebarInterface(6, 12855); // ancient
+				setSidebarInterface(6, 12855); // ancient
 			}
-			p.setSidebarInterface(7, 18128); // clan chat
-			p.setSidebarInterface(8, 5065);
-			p.setSidebarInterface(9, 5715);
-			p.setSidebarInterface(10, 2449);
+			setSidebarInterface(7, 18128); // clan chat
+			setSidebarInterface(8, 5065);
+			setSidebarInterface(9, 5715);
+			setSidebarInterface(10, 2449);
 			// setSidebarInterface(11, 4445); // wrench tab
-			p.setSidebarInterface(11, 904); // wrench tab
-			p.setSidebarInterface(12, 147); // run tab
-			p.setSidebarInterface(13, 962); // music tab
-			// p.setSidebarInterface(13, -1);
-			p.setSidebarInterface(0, 2423);
+			setSidebarInterface(11, 904); // wrench tab
+			setSidebarInterface(12, 147); // run tab
+			setSidebarInterface(13, 962); // music tab
+			// setSidebarInterface(13, -1);
+			setSidebarInterface(0, 2423);
 		} else {
-			p.setSidebarInterface(1, -1);
-			p.setSidebarInterface(2, -1);
-			p.setSidebarInterface(3, 6014);//
-			p.setSidebarInterface(4, -1);
-			p.setSidebarInterface(5, -1);
+			setSidebarInterface(1, -1);
+			setSidebarInterface(2, -1);
+			setSidebarInterface(3, 6014);//
+			setSidebarInterface(4, -1);
+			setSidebarInterface(5, -1);
 			if (p.playerMagicBook == 0) {
-				p.setSidebarInterface(6, -1); // modern
+				setSidebarInterface(6, -1); // modern
 			} else {
-				p.setSidebarInterface(6, -1); // ancient
+				setSidebarInterface(6, -1); // ancient
 			}
-			p.setSidebarInterface(7, 18128); // clan chat
-			p.setSidebarInterface(8, 5065);
-			p.setSidebarInterface(9, 5715);
-			p.setSidebarInterface(10, -1);
-			p.setSidebarInterface(11, -1); // wrench tab
-			p.setSidebarInterface(12, -1); // run tab
-			p.setSidebarInterface(13, -1);
-			p.setSidebarInterface(14, -1);
-			p.setSidebarInterface(0, -1);
+			setSidebarInterface(7, 18128); // clan chat
+			setSidebarInterface(8, 5065);
+			setSidebarInterface(9, 5715);
+			setSidebarInterface(10, -1);
+			setSidebarInterface(11, -1); // wrench tab
+			setSidebarInterface(12, -1); // run tab
+			setSidebarInterface(13, -1);
+			setSidebarInterface(14, -1);
+			setSidebarInterface(0, -1);
 		}
 	}
 

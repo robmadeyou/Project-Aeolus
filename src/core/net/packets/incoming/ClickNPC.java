@@ -132,7 +132,6 @@ public class ClickNPC implements PacketType {
 				c.getCombat().attackNpc(c.npcIndex);
 				c.attackTimer++;
 			}
-
 			break;
 
 		/**

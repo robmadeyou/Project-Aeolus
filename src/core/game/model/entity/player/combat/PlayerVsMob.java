@@ -381,13 +381,13 @@ public class PlayerVsMob {
 				}
 				if (c.spellSwap) {
 					c.spellSwap = false;
-					c.setSidebarInterface(6, 16640);
+					c.getActionSender().setSidebarInterface(6, 16640);
 					c.playerMagicBook = 2;
 					c.gfx0(-1);
 				}
 				int damage = 0;
 				c.usingMagic = true;
-				if (c.fullVoidMage()
+				if (c.getEquipment().isWearingFullVoidMage(c)
 						&& c.playerEquipment[c.playerWeapon] == 8841) {
 					damage = Misc.random(c.getCombat().magicMaxHit() + 10);
 				} else {

@@ -23,7 +23,7 @@ public class RangeMaxHit extends RangeData {
 	public static int calculateRangeAttack(Player c) {
 		int rangeLevel = c.playerLevel[4];
 		rangeLevel *= c.specAccuracy;
-		if (c.fullVoidRange()) {
+		if (c.getEquipment().isWearingFullVoidRange(c)) {
 			rangeLevel += c.getLevelForXP(c.playerXP[c.playerRanged]) * 0.1;
 		}
 		if (c.prayerActive[3]) {
@@ -33,7 +33,7 @@ public class RangeMaxHit extends RangeData {
 		} else if (c.prayerActive[19]) {
 			rangeLevel *= 1.15;
 		}
-		if (c.fullVoidRange() && c.specAccuracy > 1.15) {
+		if (c.getEquipment().isWearingFullVoidRange(c) && c.specAccuracy > 1.15) {
 			rangeLevel *= 1.75;
 		}
 		return (int) (rangeLevel + (c.playerBonus[4] * 1.95));
@@ -53,7 +53,7 @@ public class RangeMaxHit extends RangeData {
 		} else if (c.prayerActive[19]) {
 			b *= 1.15;
 		}
-		if (c.fullVoidRange()) {
+		if (c.getEquipment().isWearingFullVoidRange(c)) {
 			b *= 1.20;
 		}
 		double e = Math.floor(a * b);

@@ -71,7 +71,7 @@ public class PlayerAssistant {
 	 */
 	public void setSpellbook(Spellbook book) {
 		p.playerMagicBook = book.getIndex();
-		p.setSidebarInterface(6, book.getInterfaceIndex());
+		p.getActionSender().setSidebarInterface(6, book.getInterfaceIndex());
 		p.getActionSender().removeAllWindows();
 		p.sendMessage("You read the lectern and " + book.toString().toLowerCase() + " magicks fills your mind.");
 		p.autocasting = false;
@@ -167,6 +167,8 @@ public class PlayerAssistant {
 									// so remove items
 			p.getItems().resetKeepItems();
 			if ((p.getRights().greaterOrEqual(Rights.ADMINISTRATOR) && Configuration.ADMIN_DROP_ITEMS)) {
+				return;
+			}
 				if (!(Boolean) p.getAttributes().get("isSkulled")) { // what
 																		// items
 																		// to
@@ -202,7 +204,6 @@ public class PlayerAssistant {
 						p.getInventory().addItem(p.itemKeptId[3], 1);
 					}
 				}
-			}
 			p.getItems().resetKeepItems();
 		}
 		p.getCombat().resetPrayers();
@@ -482,7 +483,6 @@ public class PlayerAssistant {
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (PlayerHandler.players[j] != null) {
 				if (PlayerHandler.players[j].followId == p.playerId) {
-					Player c = PlayerHandler.players[j];
 					p.getActionSender().resetFollow();
 				}
 			}

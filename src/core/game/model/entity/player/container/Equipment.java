@@ -87,21 +87,21 @@ public class Equipment {
 	/**
 	 * Checks to see if player is wearing full Melee void
 	 */
-	public static boolean fullVoidMelee(Player c) {
+	public boolean isWearingFullVoidMelee(Player c) {
 		return c.playerEquipment != null && c.playerEquipment[c.playerHat] == 11665 && c.playerEquipment[c.playerChest] == 8839 && c.playerEquipment[c.playerLegs] == 8840 && c.playerEquipment[c.playerHands] == 8842;
 	}
 	
 	/**
 	 * Checks to see if player is wearing full Range void
 	 */
-	public static boolean fullVoidRange(Player c) {
+	public boolean isWearingFullVoidRange(Player c) {
 		return c.playerEquipment != null && c.playerEquipment[c.playerHat] == 11664 && c.playerEquipment[c.playerChest] == 8839 && c.playerEquipment[c.playerLegs] == 8840 && c.playerEquipment[c.playerHands] == 8842;
 	}
 	
 	/**
 	 * Checks to see if player is wearing full Mage void
 	 */
-	public static boolean fullVoidMage(Player c) {
+	public boolean isWearingFullVoidMage(Player c) {
 		return c.playerEquipment != null && c.playerEquipment[c.playerHat] == 11663 && c.playerEquipment[c.playerChest] == 8839 && c.playerEquipment[c.playerLegs] == 8840 && c.playerEquipment[c.playerHands] == 8842;
 	}
 	
@@ -646,70 +646,70 @@ public class Equipment {
 		 * Attack styles.
 		 */
 		if (WeaponName.equals("Unarmed")) {
-			c.setSidebarInterface(0, 5855); // punch, kick, block
+			c.getActionSender().setSidebarInterface(0, 5855); // punch, kick, block
 			c.getActionSender().textOnInterface(WeaponName, 5857);
 		} else if (WeaponName.endsWith("whip")
 				|| WeaponName.contains("tentacle")) {
-			c.setSidebarInterface(0, 12290); // flick, lash, deflect
+			c.getActionSender().setSidebarInterface(0, 12290); // flick, lash, deflect
 			c.getActionSender().itemOnInterface(12291, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 12293);
 		} else if (WeaponName.endsWith("bow") || WeaponName.endsWith("10")
 				|| WeaponName.endsWith("full")
 				|| WeaponName.startsWith("seercull")) {
-			c.setSidebarInterface(0, 1764); // accurate, rapid, longrange
+			c.getActionSender().setSidebarInterface(0, 1764); // accurate, rapid, longrange
 			c.getActionSender().itemOnInterface(1765, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 1767);
 		} else if (WeaponName.startsWith("Staff")
 				|| WeaponName.endsWith("seas") || WeaponName.endsWith("staff")
 				|| WeaponName.endsWith("wand")) {
-			c.setSidebarInterface(0, 328); // spike, impale, smash, block
+			c.getActionSender().setSidebarInterface(0, 328); // spike, impale, smash, block
 			c.getActionSender().itemOnInterface(329, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 331);
 		} else if (WeaponName2.startsWith("dart")
 				|| WeaponName2.startsWith("knife")
 				|| WeaponName2.startsWith("javelin")
 				|| WeaponName.equalsIgnoreCase("toktz-xil-ul")) {
-			c.setSidebarInterface(0, 4446); // accurate, rapid, longrange
+			c.getActionSender().setSidebarInterface(0, 4446); // accurate, rapid, longrange
 			c.getActionSender().itemOnInterface(4447, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 4449);
 		} else if (WeaponName2.startsWith("dagger")
 				|| WeaponName2.contains("anchor")
 				|| WeaponName2.contains("sword")) {
-			c.setSidebarInterface(0, 2276); // stab, lunge, slash, block
+			c.getActionSender().setSidebarInterface(0, 2276); // stab, lunge, slash, block
 			c.getActionSender().itemOnInterface(2277, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 2279);
 		} else if (WeaponName2.startsWith("pickaxe")) {
-			c.setSidebarInterface(0, 5570); // spike, impale, smash, block
+			c.getActionSender().setSidebarInterface(0, 5570); // spike, impale, smash, block
 			c.getActionSender().itemOnInterface(5571, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 5573);
 		} else if (WeaponName2.startsWith("axe")
 				|| WeaponName2.startsWith("battleaxe")) {
-			c.setSidebarInterface(0, 1698); // chop, hack, smash, block
+			c.getActionSender().setSidebarInterface(0, 1698); // chop, hack, smash, block
 			c.getActionSender().itemOnInterface(1699, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 1701);
 		} else if (WeaponName2.startsWith("halberd")) {
-			c.setSidebarInterface(0, 8460); // jab, swipe, fend
+			c.getActionSender().setSidebarInterface(0, 8460); // jab, swipe, fend
 			c.getActionSender().itemOnInterface(8461, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 8463);
 		} else if (WeaponName2.startsWith("Scythe")) {
-			c.setSidebarInterface(0, 8460); // jab, swipe, fend
+			c.getActionSender().setSidebarInterface(0, 8460); // jab, swipe, fend
 			c.getActionSender().itemOnInterface(8461, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 8463);
 		} else if (WeaponName2.startsWith("spear")) {
-			c.setSidebarInterface(0, 4679); // lunge, swipe, pound, block
+			c.getActionSender().setSidebarInterface(0, 4679); // lunge, swipe, pound, block
 			c.getActionSender().itemOnInterface(4680, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 4682);
 		} else if (WeaponName2.toLowerCase().contains("mace")) {
-			c.setSidebarInterface(0, 3796);
+			c.getActionSender().setSidebarInterface(0, 3796);
 			c.getActionSender().itemOnInterface(3797, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 3799);
 
 		} else if (c.playerEquipment[c.playerWeapon] == 4153) {
-			c.setSidebarInterface(0, 425); // war hammer equip.
+			c.getActionSender().setSidebarInterface(0, 425); // war hammer equip.
 			c.getActionSender().itemOnInterface(426, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 428);
 		} else {
-			c.setSidebarInterface(0, 2423); // chop, slash, lunge, block
+			c.getActionSender().setSidebarInterface(0, 2423); // chop, slash, lunge, block
 			c.getActionSender().itemOnInterface(2424, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 2426);
 		}

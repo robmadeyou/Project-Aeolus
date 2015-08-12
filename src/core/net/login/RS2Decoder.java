@@ -9,6 +9,7 @@ import org.jboss.netty.handler.codec.frame.FrameDecoder;
 import core.game.model.entity.player.Player;
 import core.net.Packet;
 import core.net.Packet.Type;
+import core.net.packets.PacketConstants;
 import core.net.security.ISAACCipher;
 
 public class RS2Decoder extends FrameDecoder {
@@ -28,7 +29,7 @@ public class RS2Decoder extends FrameDecoder {
 			if (buffer.readableBytes() >= 1) {
 				opcode = buffer.readByte() & 0xFF;
 				opcode = (opcode - cipher.getNextValue()) & 0xFF;
-				size = Player.PACKET_SIZES[opcode];
+				size = PacketConstants.PACKET_SIZES[opcode];
 			} else {
 				return null;
 			}

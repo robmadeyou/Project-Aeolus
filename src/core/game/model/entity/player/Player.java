@@ -40,7 +40,6 @@ import core.net.packets.PacketHandler;
 import core.net.packets.outgoing.ActionSender;
 import core.net.security.ISAACCipher;
 
-@SuppressWarnings("all")
 public class Player extends Entity {
 
 	public ArrayList<String> killedPlayers = new ArrayList<String>();
@@ -62,7 +61,7 @@ public class Player extends Entity {
 	private TradeLogger tradeLog = new TradeLogger(this);
 	private ChatLogger chatLog = new ChatLogger(this);
 	private Censor censor = new Censor(this);
-	private Inventory inventory = new Inventory(this);	
+	private Inventory inventory = new Inventory(this);
 	private SoundEffects soundEffects = new SoundEffects(this);
 	private Movement movement = new Movement(this);
 	private PlayerAssistant playerAssistant = new PlayerAssistant(this);
@@ -73,12 +72,12 @@ public class Player extends Entity {
 	public int returnCode = 2;
 	private Future<?> currentTask;
 	public int currentRegion = 0;
-	
+
 	/**
 	 * Time in milliseconds used for censoring
 	 */
 	public long muteEnd;
-	
+
 	/**
 	 * Reporting a player
 	 */
@@ -94,10 +93,10 @@ public class Player extends Entity {
 	public long dfsDelay;
 
 	public boolean initialized = false, disconnected = false, ruleAgreeButton = false, RebuildNPCList = false,
-			isActive = false, isKicked = false, friendUpdate = false, newPlayer = false,
-			hasMultiSign = false, saveCharacter = false, mouseButton = false, splitChat = false, chatEffects = true,
-			acceptAid = false, nextDialogue = false, autocasting = false, usedSpecial = false, mageFollow = false,
-			dbowSpec = false, properLogout = false, secDbow = false, maxNextHit = false, ssSpec = false, vengOn = false,
+			isActive = false, isKicked = false, friendUpdate = false, newPlayer = false, hasMultiSign = false,
+			saveCharacter = false, mouseButton = false, splitChat = false, chatEffects = true, acceptAid = false,
+			nextDialogue = false, autocasting = false, usedSpecial = false, mageFollow = false, dbowSpec = false,
+			properLogout = false, secDbow = false, maxNextHit = false, ssSpec = false, vengOn = false,
 			addStarter = false, accountFlagged = false, msbSpec = false,
 
 	dtOption = false, dtOption2 = false, doricOption = false, doricOption2 = false, caOption2 = false,
@@ -108,18 +107,17 @@ public class Player extends Entity {
 			dialogueId, randomCoffin, newLocation, specEffect, specBarId, attackLevelReq, defenceLevelReq,
 			strengthLevelReq, rangeLevelReq, magicLevelReq, followId, skullTimer, nextChat = 0, talkingNpc = -1,
 			dialogueAction = 0, autocastId, followDistance, followId2, barrageCount = 0, delayedDamage = 0,
-			delayedDamage2 = 0, lastArrowUsed = -1, clanId = -1, xInterfaceId = 0, xRemoveId = 0,
-			xRemoveSlot = 0, frozenBy = 0, poisonDamage = 0, teleAction = 0, bonusAttack = 0, lastNpcAttacked = 0,
-			killCount = 0, actionTimer, height = 0, magePoints = 0;
+			delayedDamage2 = 0, lastArrowUsed = -1, clanId = -1, xInterfaceId = 0, xRemoveId = 0, xRemoveSlot = 0,
+			frozenBy = 0, poisonDamage = 0, teleAction = 0, bonusAttack = 0, lastNpcAttacked = 0, killCount = 0,
+			actionTimer, height = 0, magePoints = 0;
 
-	public boolean usingOtherRangeWeapons, usingCross, usingArrows, magicDef, ignoreDefence,
-	spellSwap, rangeEndGFXHeight, stopPlayerSkill, oldSpec, multiAttacking, prayerDisabled;
-	
-	public int rangeEndGFX, boltDamage, previousDamage, slayerTask, taskAmount, teleotherType,
-	dfsCount;
-	
+	public boolean usingOtherRangeWeapons, usingCross, usingArrows, magicDef, ignoreDefence, spellSwap,
+			rangeEndGFXHeight, stopPlayerSkill, oldSpec, multiAttacking, prayerDisabled;
+
+	public int rangeEndGFX, boltDamage, previousDamage, slayerTask, taskAmount, teleotherType, dfsCount;
+
 	public double crossbowDamage;
-	
+
 	public int[] voidStatus = new int[5];
 	public int[] itemKeptId = new int[4];
 	public boolean[] invSlot = new boolean[28], equipSlot = new boolean[14];
@@ -151,19 +149,19 @@ public class Player extends Entity {
 	public boolean randomEvent = false;
 	public boolean FirstClickRunning = false;
 	public boolean protectItem = false;
-	
+
 	public boolean isPrayerDisabled() {
 		return prayerDisabled;
 	}
-	
+
 	public void setPrayerDisabled(boolean prayerDisabled) {
 		this.prayerDisabled = prayerDisabled;
 	}
-	
+
 	public void playerWalk(int x, int y) {
 		PathFinder.getPathFinder().findRoute(this, x, y, true, 1, 1);
 	}
-	
+
 	/**
 	 * Music
 	 */
@@ -187,7 +185,7 @@ public class Player extends Entity {
 	public boolean captainRovin = false;
 	public boolean prysin = false;
 	public boolean trailborn = false;
-	
+
 	public boolean openDuel = false;
 
 	/**
@@ -359,7 +357,7 @@ public class Player extends Entity {
 				autocasting = true;
 				autocastId = autocastIds[j + 1];
 				c.getActionSender().sendFrame36(108, 1);
-				c.setSidebarInterface(0, 328);
+				c.getActionSender().setSidebarInterface(0, 328);
 				// spellName = getSpellName(autocastId);
 				// spellName = spellName;
 				// c.getPA().textOnInterface(spellName, 354);
@@ -440,21 +438,6 @@ public class Player extends Entity {
 		}
 	}
 
-	public boolean fullVoidRange() {
-		return playerEquipment[playerHat] == 11664 && playerEquipment[playerLegs] == 8840
-				&& playerEquipment[playerChest] == 8839 && playerEquipment[playerHands] == 8842;
-	}
-
-	public boolean fullVoidMage() {
-		return playerEquipment[playerHat] == 11663 && playerEquipment[playerLegs] == 8840
-				&& playerEquipment[playerChest] == 8839 && playerEquipment[playerHands] == 8842;
-	}
-
-	public boolean fullVoidMelee() {
-		return playerEquipment[playerHat] == 11665 && playerEquipment[playerLegs] == 8840
-				&& playerEquipment[playerChest] == 8839 && playerEquipment[playerHands] == 8842;
-	}
-
 	public int reduceSpellId;
 	public final int[] REDUCE_SPELL_TIME = { 250000, 250000, 250000, 500000, 500000, 500000 }; // how
 																								// long
@@ -476,31 +459,24 @@ public class Player extends Entity {
 	public int bountyIcon = 0;
 	public long stopPrayerDelay, prayerDelay;
 	public boolean usingPrayer;
-	public final int[] PRAYER_DRAIN_RATE = { 500, 500, 500, 500, 500, 500, 500,
-			500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500,
-			500, 500, 500, 500, 500, 500 };
-	public final int[] PRAYER_LEVEL_REQUIRED = { 1, 4, 7, 8, 9, 10, 13, 16, 19,
-			22, 25, 26, 27, 28, 31, 34, 37, 40, 43, 44, 45, 46, 49, 52, 60, 70 };
-	public final int[] PRAYER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
-			14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
-	public final String[] PRAYER_NAME = { "Thick Skin", "Burst of Strength",
-			"Clarity of Thought", "Sharp Eye", "Mystic Will", "Rock Skin",
-			"Superhuman Strength", "Improved Reflexes", "Rapid Restore",
-			"Rapid Heal", "Protect Item", "Hawk Eye", "Mystic Lore",
-			"Steel Skin", "Ultimate Strength", "Incredible Reflexes",
-			"Protect from Magic", "Protect from Missiles",
-			"Protect from Melee", "Eagle Eye", "Mystic Might", "Retribution",
-			"Redemption", "Smite", "Chivalry", "Piety" };
-	public final int[] PRAYER_GLOW = { 83, 84, 85, 700, 701, 86, 87, 88, 89,
-			90, 91, 702, 703, 92, 93, 94, 95, 96, 97, 704, 705, 98, 99, 100,
-			706, 707 };
-	public final int[] PRAYER_HEAD_ICONS = { -1, -1, -1, -1, -1, -1, -1, -1,
-			-1, -1, -1, -1, -1, -1, -1, -1, 2, 1, 0, -1, -1, 3, 5, 4, -1, -1 };
+	public final int[] PRAYER_DRAIN_RATE = { 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500,
+			500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500 };
+	public final int[] PRAYER_LEVEL_REQUIRED = { 1, 4, 7, 8, 9, 10, 13, 16, 19, 22, 25, 26, 27, 28, 31, 34, 37, 40, 43,
+			44, 45, 46, 49, 52, 60, 70 };
+	public final int[] PRAYER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+			24, 25 };
+	public final String[] PRAYER_NAME = { "Thick Skin", "Burst of Strength", "Clarity of Thought", "Sharp Eye",
+			"Mystic Will", "Rock Skin", "Superhuman Strength", "Improved Reflexes", "Rapid Restore", "Rapid Heal",
+			"Protect Item", "Hawk Eye", "Mystic Lore", "Steel Skin", "Ultimate Strength", "Incredible Reflexes",
+			"Protect from Magic", "Protect from Missiles", "Protect from Melee", "Eagle Eye", "Mystic Might",
+			"Retribution", "Redemption", "Smite", "Chivalry", "Piety" };
+	public final int[] PRAYER_GLOW = { 83, 84, 85, 700, 701, 86, 87, 88, 89, 90, 91, 702, 703, 92, 93, 94, 95, 96, 97,
+			704, 705, 98, 99, 100, 706, 707 };
+	public final int[] PRAYER_HEAD_ICONS = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 2, 1, 0,
+			-1, -1, 3, 5, 4, -1, -1 };
 
-	public boolean[] prayerActive = { false, false, false, false, false, false,
-			false, false, false, false, false, false, false, false, false,
-			false, false, false, false, false, false, false, false, false,
-			false, false };
+	public boolean[] prayerActive = { false, false, false, false, false, false, false, false, false, false, false,
+			false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
 	public int duelTimer, duelTeleX, duelTeleY, duelSlot, duelSpaceReq, duelOption, duelingWith, duelStatus;
 	public int headIconPk = -1, headIconHints;
@@ -522,8 +498,8 @@ public class Player extends Entity {
 	public boolean isShopping, updateShop;
 	public int myShopId, totalPlayerDamageDealt;
 	public int tradeStatus, tradeWith;
-	public boolean tradeAccepted, goodTrade, tradeRequested, tradeResetNeeded, tradeConfirmed,
-			tradeConfirmed2, canOffer, acceptTrade, acceptedTrade;
+	public boolean tradeAccepted, goodTrade, tradeRequested, tradeResetNeeded, tradeConfirmed, tradeConfirmed2,
+			canOffer, acceptTrade, acceptedTrade;
 	public int attackAnim, animationRequest = -1, animationWaitCycles;
 	public int[] playerBonus = new int[12];
 	public boolean isRunning2 = true;
@@ -718,7 +694,7 @@ public class Player extends Entity {
 	public int getY() {
 		return absY;
 	}
-	
+
 	/**
 	 * Used for clipping
 	 */
@@ -748,7 +724,7 @@ public class Player extends Entity {
 	public Equipment getEquipment() {
 		return equipment;
 	}
-	
+
 	public Inventory getInventory() {
 		return inventory;
 	}
@@ -980,9 +956,9 @@ public class Player extends Entity {
 		absX = absY = -1;
 		mapRegionX = mapRegionY = -1;
 		currentX = currentY = 0;
-		
+
 		initAttributes();
-		
+
 		resetWalkingQueue();
 	}
 
@@ -1127,7 +1103,8 @@ public class Player extends Entity {
 				}
 			}
 		}
-		if (!(Boolean) this.getAttributes().get("isSkulled") && ItemsContained > 1 && (WillKeepAmt1 < 3 || (c.prayerActive[10] && WillKeepAmt1 < 4))) {
+		if (!(Boolean) this.getAttributes().get("isSkulled") && ItemsContained > 1
+				&& (WillKeepAmt1 < 3 || (c.prayerActive[10] && WillKeepAmt1 < 4))) {
 			BestItem2(c, ItemsContained);
 		}
 	}
@@ -1404,7 +1381,6 @@ public class Player extends Entity {
 			if (isRunning) {
 				dir2 = getNextWalkingDirection();
 			}
-			Player c = this;
 			int deltaX = 0, deltaY = 0;
 			if (currentX < 2 * 8) {
 				deltaX = 4 * 8;
@@ -1424,12 +1400,7 @@ public class Player extends Entity {
 				mapRegionY += 4;
 				mapRegionDidChange = true;
 			}
-
-			if (mapRegionDidChange/*
-									 * && VirtualWorld.I(heightLevel, currentX,
-									 * currentY, currentX + deltaX, currentY +
-									 * deltaY, 0)
-									 */) {
+			if (mapRegionDidChange) {
 				currentX += deltaX;
 				currentY += deltaY;
 				for (int i = 0; i < walkingQueueSize; i++) {
@@ -1437,8 +1408,6 @@ public class Player extends Entity {
 					walkingQueueY[i] += deltaY;
 				}
 			}
-			// CoordAssistant.processCoords(this);
-
 		}
 	}
 
@@ -1679,17 +1648,17 @@ public class Player extends Entity {
 		playerProps.writeByte(playerAppearance[10]);
 		playerProps.writeByte(playerAppearance[11]);
 		playerProps.writeByte(playerAppearance[12]);
-		playerProps.writeWord(playerStandIndex); // standAnimIndex
-		playerProps.writeWord(playerTurnIndex); // standTurnAnimIndex
-		playerProps.writeWord(playerWalkIndex); // walkAnimIndex
-		playerProps.writeWord(playerTurn180Index); // turn180AnimIndex
-		playerProps.writeWord(playerTurn90CWIndex); // turn90CWAnimIndex
-		playerProps.writeWord(playerTurn90CCWIndex); // turn90CCWAnimIndex
-		playerProps.writeWord(playerRunIndex); // runAnimIndex
+		playerProps.writeWord(playerStandIndex);
+		playerProps.writeWord(playerTurnIndex);
+		playerProps.writeWord(playerWalkIndex);
+		playerProps.writeWord(playerTurn180Index);
+		playerProps.writeWord(playerTurn90CWIndex);
+		playerProps.writeWord(playerTurn90CCWIndex);
+		playerProps.writeWord(playerRunIndex);
 
 		playerProps.writeQWord(Misc.playerNameToInt64(playerName));
 		combatLevel = calculateCombatLevel();
-		playerProps.writeByte(combatLevel); // combat level
+		playerProps.writeByte(combatLevel);
 		playerProps.writeWord(0);
 		str.writeByteC(playerProps.currentOffset);
 		str.writeBytes(playerProps.buffer, playerProps.currentOffset, 0);
@@ -1792,7 +1761,6 @@ public class Player extends Entity {
 	/**
 	 * Face Update
 	 **/
-
 	protected boolean faceUpdateRequired = false;
 	public int face = -1;
 	public int FocusPointX = -1, FocusPointY = -1;
@@ -1851,7 +1819,7 @@ public class Player extends Entity {
 	public void appendPlayerUpdateBlock(Stream str) {
 		// synchronized(this) {
 		if (!updateRequired && !isChatTextUpdateRequired())
-			return; // nothing required
+			return;
 		int updateMask = 0;
 		if (graphicsUpdateRequired) {
 			updateMask |= 0x100;
@@ -1972,48 +1940,10 @@ public class Player extends Entity {
 
 	}
 
-	public void sendClan(String name, String message, String clan, int rights) {
-		outStream.createFrameVarSizeWord(217);
-		outStream.writeString(name);
-		outStream.writeString(message);
-		outStream.writeString(clan);
-		outStream.writeWord(this.getRights().getValues());
-		outStream.endFrameVarSize();
-	}
-
-	public static final int PACKET_SIZES[] = { 0, 0, 0, 1, -1, 0, 0, 0, 0, 0, // 0
-			0, 0, 0, 0, 8, 0, 6, 2, 2, 0, // 10
-			0, 2, 0, 6, 0, 12, 0, 0, 0, 0, // 20
-			0, 0, 0, 0, 0, 8, 4, 0, 0, 2, // 30
-			2, 6, 0, 6, 0, -1, 0, 0, 0, 0, // 40
-			0, 0, 0, 12, 0, 0, 0, 8, 8, 12, // 50
-			8, 8, 0, 0, 0, 0, 0, 0, 0, 0, // 60
-			6, 0, 2, 2, 8, 6, 0, -1, 0, 6, // 70
-			0, 0, 0, 0, 0, 1, 4, 6, 0, 0, // 80
-			0, 0, 0, 0, 0, 3, 0, 0, -1, 0, // 90
-			0, 13, 0, -1, 0, 0, 0, 0, 0, 0, // 100
-			0, 0, 0, 0, 0, 0, 0, 6, 0, 0, // 110
-			1, 0, 6, 0, 0, 0, -1, 0, 2, 6, // 120
-			0, 4, 6, 8, 0, 6, 0, 0, 0, 2, // 130
-			0, 0, 0, 0, 0, 6, 0, 0, 0, 0, // 140
-			0, 0, 1, 2, 0, 2, 6, 0, 0, 0, // 150
-			0, 0, 0, 0, -1, -1, 0, 0, 0, 0, // 160
-			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 170
-			0, 8, 0, 3, 0, 2, 0, 0, 8, 1, // 180
-			0, 0, 12, 0, 0, 0, 0, 0, 0, 0, // 190
-			2, 0, 0, 0, 0, 0, 0, 0, 4, 0, // 200
-			4, 0, 0, 0, 7, 8, 0, 0, 10, 0, // 210
-			0, 0, 0, 0, 0, 0, -1, 0, 6, 0, // 220
-			1, 0, 0, 0, 6, 0, 6, 8, 1, 0, // 230
-			0, 4, 0, 0, 0, 0, -1, 0, -1, 4, // 240
-			0, 0, 6, 6, 0, 0, 0 // 250
-	};
-
 	public void destruct() {
 		if (session == null)
 			return;
 		// PlayerSaving.getSingleton().requestSave(playerId);
-
 		Misc.println("[DEREGISTERED]: " + playerName + "");
 		disconnected = true;
 		session.close();
@@ -2032,19 +1962,8 @@ public class Player extends Entity {
 			outStream.writeString(s);
 			outStream.endFrameVarSize();
 		}
-
 	}
 
-	public void setSidebarInterface(int menuId, int form) {
-		// synchronized (this) {
-		if (getOutStream() != null) {
-			outStream.createFrame(71);
-			outStream.writeWord(form);
-			outStream.writeByteA(menuId);
-		}
-
-	}
-	
 	/**
 	 * A single players attributes
 	 */
@@ -2057,43 +1976,42 @@ public class Player extends Entity {
 		this.getAttributes().put("isSkulled", Boolean.FALSE);
 		this.getAttributes().put("canWalk", Boolean.TRUE);
 	}
-	
+
 	public void showWelcomeScreen() {
 		getActionSender().showWelcomeScreen(0, 0, 1, 0, 0);
 		getActionSender().showInterface(15244);
 		getActionSender().textOnInterface("Welcome to " + Configuration.SERVER_NAME + ".", 15257);
-		getActionSender().textOnInterface("Your ip: "+ this.connectedFrom, 15258);
+		getActionSender().textOnInterface("Your ip: " + this.connectedFrom, 15258);
 		getActionSender().textOnInterface("\\n \\nRecovery Question Last Set: \\n @gre@ 10-Aug-2015", 15259);
-		getActionSender().textOnInterface("Jagex Staff will NEVER email you. We use the \\n"
-				+ "message centre on this website instead. \\n"
-				+ "\\n"
-				+ "You have @gre@ 3 unread messages @yel@ in your \\n"
-				+ "message centre.", 15260);
+		getActionSender().textOnInterface(
+				"Jagex Staff will NEVER email you. We use the \\n" + "message centre on this website instead. \\n"
+						+ "\\n" + "You have @gre@ 3 unread messages @yel@ in your \\n" + "message centre.",
+				15260);
 		getActionSender().textOnInterface("", 15261);
 		getActionSender().textOnInterface("You are a member. Choose to subscribe \\n"
-				+ "and you'll get loads of extra benefits and \\n"
-				+ "features.", 15262);
+				+ "and you'll get loads of extra benefits and \\n" + "features.", 15262);
 		getActionSender().textOnInterface("CLICK HERE TO PLAY", 15263);
 		getActionSender().textOnInterface("1", 15264);
-//		getActionSender().textOnInterface("2", 15265); //Hover
-//		getActionSender().textOnInterface("3", 15266); //Hover
+		// getActionSender().textOnInterface("2", 15265); //Hover
+		// getActionSender().textOnInterface("3", 15266); //Hover
 		getActionSender().textOnInterface("4", 15267);
 		getActionSender().textOnInterface("5", 15268);
 		getActionSender().textOnInterface("6", 15269);
-		getActionSender().textOnInterface("\\n You do not have a Bank PIN. Please visit a bank \\n"
-				+ "if you would like one.", 15270);
+		getActionSender().textOnInterface(
+				"\\n You do not have a Bank PIN. Please visit a bank \\n" + "if you would like one.", 15270);
 	}
 
 	/**
-	 * A players initial login, the step after the channels have accepted a valid password
+	 * A players initial login, the step after the channels have accepted a
+	 * valid password
 	 */
 	public void initialize() {
 		// synchronized (this) {
-	
+
 		showWelcomeScreen();
-		
+
 		getActionSender().initializePlayer(1, this.playerId);
-		
+
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (j == playerId)
 				continue;
@@ -2116,15 +2034,17 @@ public class Player extends Entity {
 		// getPA().sendFrame36(43, fightMode-1);
 		getActionSender().sendFrame36(108, 0);// resets autocast button
 		getActionSender().sendFrame36(172, 1);
-		getActionSender().sendFrame36(166, 3); //brightness level 3
+		getActionSender().sendFrame36(166, 3); // brightness level 3
 		getActionSender().resetCamera(); // reset screen
-		getActionSender().setChatOptions(0, 0, 0); // reset private messaging options
+		getActionSender().setChatOptions(0, 0, 0); // reset private messaging
+													// options
 		getActionSender().setSideBarInterfaces(this, true);
 		sendMessage("Welcome to " + Configuration.SERVER_NAME);
 		getActionSender().showOption(5, 0, "Follow", 4);
 		getActionSender().showOption(4, 0, "Trade With", 3);
 		getInventory().resetItems(3214);
-		getEquipment().sendWeapon(playerEquipment[playerWeapon], getEquipment().getItemName(playerEquipment[playerWeapon]));
+		getEquipment().sendWeapon(playerEquipment[playerWeapon],
+				getEquipment().getItemName(playerEquipment[playerWeapon]));
 		getEquipment().resetBonus();
 		getEquipment().getBonus();
 		getEquipment().writeBonus();
@@ -2157,12 +2077,12 @@ public class Player extends Entity {
 		else
 			getActionSender().sendFrame36(172, 0);
 	}
-	
+
 	private void loadRegion() {
 		Server.itemHandler.reloadItems(this);
 		Server.objectManager.loadObjects(this);
 	}
-	
+
 	public void update() {
 		synchronized (this) {
 			handler.updatePlayer(this, outStream);
@@ -2189,8 +2109,8 @@ public class Player extends Entity {
 	 */
 	@Override
 	public void process() {
-		this.getActionSender().textOnInterface((int) (specAmount * 10)+"", 155);
-		
+		this.getActionSender().textOnInterface((int) (specAmount * 10) + "", 155);
+
 		if (System.currentTimeMillis() - specDelay > GameConstants.INCREASE_SPECIAL_AMOUNT) {
 			specDelay = System.currentTimeMillis();
 			if (specAmount < 10) {
@@ -2492,11 +2412,11 @@ public class Player extends Entity {
 	public void setChatText(byte chatText[]) {
 		this.chatText = chatText;
 	}
-	
+
 	public ChatLogger getChatLog() {
 		return chatLog;
 	}
-	
+
 	public Censor getCensor() {
 		return censor;
 	}
@@ -2546,7 +2466,7 @@ public class Player extends Entity {
 	public void setOutStreamDecryption(ISAACCipher outStreamDecryption) {
 		this.outStreamDecryption = outStreamDecryption;
 	}
-	
+
 	public SoundEffects getSound() {
 		return soundEffects;
 	}
@@ -2554,12 +2474,16 @@ public class Player extends Entity {
 	public Food getFood() {
 		return food;
 	}
-	
+
 	public Movement getMovement() {
 		return movement;
 	}
-	
+
 	public PlayerAssistant getPA() {
 		return playerAssistant;
+	}
+
+	public TradeLogger getTradeLog() {
+		return tradeLog;
 	}
 }
