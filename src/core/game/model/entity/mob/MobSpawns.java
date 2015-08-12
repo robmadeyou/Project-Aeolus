@@ -1,13 +1,5 @@
 package core.game.model.entity.mob;
 
-import java.io.FileReader;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import core.Configuration;
-
 /**
  * @author 7Winds
  */
@@ -36,9 +28,9 @@ public final class MobSpawns {
 	/**
 	 * The Walking type for the npc.
 	 */
-	private int walkType;
+	private WalkType walkType;
 
-	public MobSpawns(int npcid, int xPos, int yPos, int height, int walkType) {
+	public MobSpawns(int npcid, int xPos, int yPos, int height, WalkType walkType) {
 		this.npcId = npcid;
 		this.xPos = xPos;
 		this.yPos = yPos;
@@ -77,20 +69,7 @@ public final class MobSpawns {
 	/**
 	 * @return walkType
 	 */
-	public int getWalkType() {
+	public WalkType getWalkType() {
 		return walkType;
-	}
-
-	public static final class NpcSpawnBuilder {
-
-		protected static MobSpawns[] deserialize() {
-			Gson gson = new GsonBuilder().setPrettyPrinting().create();
-			try (final FileReader reader = new FileReader(
-					Configuration.DATA_DIR + "json/npc_spawns.json")) {
-				return gson.fromJson(reader, MobSpawns[].class);
-			} catch (IOException e) {
-				return null;
-			}
-		}
 	}
 }

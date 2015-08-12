@@ -4706,30 +4706,30 @@
   {
     "npcId": 494,
     "xPos": 3096,
-    "yPos": 3493,
+    "yPos": 3492,
     "height": 0,
-    "walkType": 0
+    "walkType": 2
   },
   {
     "npcId": 495,
-    "xPos": 3097,
-    "yPos": 3494,
+    "xPos": 3098,
+    "yPos": 3492,
     "height": 0,
-    "walkType": 0
+    "walkType": 2
   },
   {
     "npcId": 494,
     "xPos": 3096,
     "yPos": 3491,
     "height": 0,
-    "walkType": 0
+    "walkType": 5
   },
   {
     "npcId": 495,
     "xPos": 3096,
     "yPos": 3489,
     "height": 0,
-    "walkType": 0
+    "walkType": 5
   },
   {
     "npcId": 175,

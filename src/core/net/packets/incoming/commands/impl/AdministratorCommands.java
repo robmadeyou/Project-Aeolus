@@ -3,6 +3,7 @@ package core.net.packets.incoming.commands.impl;
 import core.Server;
 import core.game.GameConstants;
 import core.game.content.Spellbook;
+import core.game.model.entity.mob.WalkType;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Punishments;
@@ -191,7 +192,7 @@ public class AdministratorCommands implements Command {
 			try {
 				int newNPC = Integer.parseInt(command[0].substring(4));
 				if (newNPC > 0) {
-					Server.npcHandler.spawnNpc(player, newNPC, player.absX, player.absY, 0, 0, 120, 7, 70, 70, false,
+					Server.npcHandler.spawnNpc(player, newNPC, player.absX, player.absY, 0, WalkType.SOUTH, 120, 7, 70, 70, false,
 							false);
 					player.sendMessage("You spawn a Npplayer.");
 				} else {

@@ -12,8 +12,10 @@ public class Mob extends Entity {
 	public int npcType;
 	public int absX, absY;
 	public int heightLevel;
-	public int makeX, makeY, maxHit, defence, attack, moveX, moveY, direction,
-			walkingType;
+	public int makeX, makeY, maxHit, defence, attack, moveX, moveY, direction;
+	
+	public WalkType walkType;
+	
 	public int spawnX, spawnY;
 	public int viewX, viewY;
 	public int hp, maxHP;

@@ -6,7 +6,6 @@ import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.Hit;
-import core.game.model.entity.mob.MobSpawns.NpcSpawnBuilder;
 import core.game.model.entity.mob.drop.Drop;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
@@ -29,18 +28,6 @@ public class MobHandler {
 		for (int i = 0; i < maxListedNPCs; i++) {
 			npcDefinitions[i] = null;
 		}
-	}
-
-	public void build() {
-		MobSpawns[] loaded = NpcSpawnBuilder.deserialize();
-		if (loaded == null) {
-			System.out.println("Failed to load");
-		}
-		for (MobSpawns spawn : loaded) {
-			newNPC(spawn);
-		}
-
-		Misc.println("Loaded: " + MobSpawns.NpcSpawnBuilder.deserialize().length + " Npc Spawns");
 	}
 
 	public void sendDrop(Player player, Drop drop, int i) {
@@ -261,7 +248,7 @@ public class MobHandler {
 	/**
 	 * Summon npc, etc
 	 **/
-	public void spawnNpc(Player c, int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit,
+	public void spawnNpc(Player c, int npcType, int x, int y, int heightLevel, WalkType walkType, int HP, int maxHit,
 			int attack, int defence, boolean attackPlayer, boolean headIcon) {
 		// first, search for a free slot
 		int slot = -1;
@@ -281,7 +268,7 @@ public class MobHandler {
 		newNPC.makeX = x;
 		newNPC.makeY = y;
 		newNPC.heightLevel = heightLevel;
-		newNPC.walkingType = WalkingType;
+		newNPC.walkType = walkType;
 		newNPC.HP = HP;
 		newNPC.maxHP = HP;
 		newNPC.maxHit = maxHit;
@@ -299,7 +286,7 @@ public class MobHandler {
 		npcs[slot] = newNPC;
 	}
 
-	public void spawnNpc2(int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit, int attack,
+	public void spawnNpc2(int npcType, int x, int y, int heightLevel, WalkType walkType, int HP, int maxHit, int attack,
 			int defence) {
 		// first, search for a free slot
 		int slot = -1;
@@ -319,7 +306,7 @@ public class MobHandler {
 		newNPC.makeX = x;
 		newNPC.makeY = y;
 		newNPC.heightLevel = heightLevel;
-		newNPC.walkingType = WalkingType;
+		newNPC.walkType = walkType;
 		newNPC.HP = HP;
 		newNPC.maxHP = HP;
 		newNPC.maxHit = maxHit;
@@ -878,7 +865,7 @@ public class MobHandler {
 		}
 	}
 
-	public void newNPC(MobSpawns s) {
+	public static void newNPC(MobSpawns s) {
 		// first, search for a free slot
 		int slot = -1;
 		for (int i = 1; i < maxNPCs; i++) {
@@ -897,14 +884,14 @@ public class MobHandler {
 		newNPC.makeX = s.getXPos();
 		newNPC.makeY = s.getYPos();
 		newNPC.heightLevel = s.getHeight();
-		newNPC.walkingType = s.getWalkType();
-		int hp = getNpcListHP(s.getNpcId());
+		newNPC.walkType = s.getWalkType();
+		int hp = MobDefinitions.getDefinitions()[s.getNpcId()].getHitpoints();
 		newNPC.HP = hp;
 		newNPC.maxHP = hp;
 		npcs[slot] = newNPC;
 	}
 
-	public void newNPC(int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit, int attack,
+	public void newNPC(int npcType, int x, int y, int heightLevel, WalkType walkType, int HP, int maxHit, int attack,
 			int defence, int hp) {
 		// first, search for a free slot
 		int slot = -1;
@@ -924,7 +911,7 @@ public class MobHandler {
 		newNPC.makeX = x;
 		newNPC.makeY = y;
 		newNPC.heightLevel = heightLevel;
-		newNPC.walkingType = WalkingType;
+		newNPC.walkType = walkType;
 		newNPC.HP = HP;
 		newNPC.maxHP = HP;
 		newNPC.maxHit = maxHit;
@@ -1048,7 +1035,7 @@ public class MobHandler {
 						npcs[i].getNextNPCMovement(i);
 						npcs[i].updateRequired = true;
 					}
-					if (npcs[i].walkingType == 1) {
+					if (npcs[i].walkType == WalkType.RANDOM) {
 						if (Misc.random(3) == 1 && !npcs[i].walkingHome) {
 							int MoveX = 0;
 							int MoveY = 0;
@@ -1140,27 +1127,27 @@ public class MobHandler {
 							npcs[i].getNextNPCMovement(i);
 							npcs[i].updateRequired = true;
 						}					
-				} else if (npcs[i].walkingType != 1 && !npcs[i].walkingHome) {
+				} else if (npcs[i].walkType != WalkType.RANDOM && !npcs[i].walkingHome) {
 					
-					switch (npcs[i].walkingType) {
+					switch (npcs[i].walkType) {
 
-					case 5:
+					case WEST:
 						npcs[i].turnNpc(npcs[i].absX - 1, npcs[i].absY);
 						break;
 
-					case 4:
+					case EAST:
 						npcs[i].turnNpc(npcs[i].absX + 1, npcs[i].absY);
 						break;
 
-					case 3:
+					case SOUTH:
 						npcs[i].turnNpc(npcs[i].absX, npcs[i].absY - 1);
 						break;
-					case 2:
+					case NORTH:
 						npcs[i].turnNpc(npcs[i].absX, npcs[i].absY + 1);
 						break;
 
 					default:
-						if (npcs[i].walkingType != 1) {
+						if (npcs[i].walkType != WalkType.RANDOM) {
 							npcs[i].turnNpc(npcs[i].absX, npcs[i].absY);
 						}
 						break;
@@ -1205,7 +1192,7 @@ public class MobHandler {
 							int old2 = npcs[i].makeX;
 							int old3 = npcs[i].makeY;
 							int old4 = npcs[i].heightLevel;
-							int old5 = npcs[i].walkingType;
+							WalkType old5 = npcs[i].walkType;
 							int old6 = npcs[i].maxHP;
 							int old7 = npcs[i].maxHit;
 							int old8 = npcs[i].attack;
