@@ -126,7 +126,7 @@ public class MobHandler {
 				if (c.isDead || c.heightLevel != npcs[i].heightLevel)
 					continue;
 				if (Server.playerHandler.players[j].goodDistance(c.absX, c.absY, npcs[i].absX, npcs[i].absY, 15)) {
-					if (npcs[i].attackType == 2) {
+					if (npcs[i].attackType == AttackType.MAGIC) {
 						if (!c.prayerActive[16]) {
 							if (Misc.random(500) + 200 > Misc.random(c.getCombat().mageDef())) {
 								int dam = Misc.random(max);
@@ -137,7 +137,7 @@ public class MobHandler {
 						} else {
 							c.dealHit(new Hit(0));
 						}
-					} else if (npcs[i].attackType == 1) {
+					} else if (npcs[i].attackType == AttackType.RANGED) {
 						if (!c.prayerActive[17]) {
 							int dam = Misc.random(max);
 							if (Misc.random(500) + 200 > Misc.random(c.getCombat().calculateRangeDefence())) {
@@ -322,7 +322,7 @@ public class MobHandler {
 	public static int getAttackEmote(int i) {
 		switch (MobHandler.npcs[i].npcType) {
 		case 2550:
-			if (npcs[i].attackType == 0)
+			if (npcs[i].attackType == AttackType.MELEE)
 				return 7060;
 			else
 				return 7063;
@@ -541,11 +541,11 @@ public class MobHandler {
 			return 3146;
 
 		case 2745:
-			if (npcs[i].attackType == 2)
+			if (npcs[i].attackType == AttackType.MAGIC)
 				return 2656;
-			else if (npcs[i].attackType == 1)
+			else if (npcs[i].attackType == AttackType.RANGED)
 				return 2652;
-			else if (npcs[i].attackType == 0)
+			else if (npcs[i].attackType == AttackType.MELEE)
 				return 2655;
 
 		default:
@@ -820,7 +820,7 @@ public class MobHandler {
 			return 3;
 
 		case 2745:
-			if (npcs[i].attackType == 1 || npcs[i].attackType == 2)
+			if (npcs[i].attackType == AttackType.RANGED || npcs[i].attackType == AttackType.MAGIC)
 				return 5;
 			else
 				return 2;
@@ -1223,10 +1223,10 @@ public class MobHandler {
 		case 2558:
 			return true;
 		case 2562:
-			if (npcs[i].attackType == 2)
+			if (npcs[i].attackType == AttackType.MAGIC)
 				return true;
 		case 2550:
-			if (npcs[i].attackType == 1)
+			if (npcs[i].attackType == AttackType.RANGED)
 				return true;
 		default:
 			return false;
@@ -1548,7 +1548,7 @@ public class MobHandler {
 	 * load spell
 	 **/
 	public void loadSpell2(int i) {
-		npcs[i].attackType = 3;
+		npcs[i].attackType = AttackType.MAGIC;
 		int random = Misc.random(3);
 		if (random == 0) {
 			npcs[i].projectileId = 393; // red
@@ -1569,104 +1569,114 @@ public class MobHandler {
 		switch (npcs[i].npcType) {
 		case 2892:
 			npcs[i].projectileId = 94;
-			npcs[i].attackType = 2;
+			npcs[i].attackType = AttackType.MAGIC;
 			npcs[i].endGfx = 95;
 			break;
 		case 2894:
 			npcs[i].projectileId = 298;
-			npcs[i].attackType = 1;
+			npcs[i].attackType = AttackType.RANGED;
 			break;
 		case 50:
 			int random = Misc.random(4);
 			if (random == 0) {
 				npcs[i].projectileId = 393; // red
 				npcs[i].endGfx = 430;
-				npcs[i].attackType = 3;
+				npcs[i].attackType = AttackType.FIRE_BREATH;
 			} else if (random == 1) {
 				npcs[i].projectileId = 394; // green
 				npcs[i].endGfx = 429;
-				npcs[i].attackType = 3;
+				npcs[i].attackType = AttackType.FIRE_BREATH;
 			} else if (random == 2) {
 				npcs[i].projectileId = 395; // white
 				npcs[i].endGfx = 431;
-				npcs[i].attackType = 3;
+				npcs[i].attackType = AttackType.FIRE_BREATH;
 			} else if (random == 3) {
 				npcs[i].projectileId = 396; // blue
 				npcs[i].endGfx = 428;
-				npcs[i].attackType = 3;
+				npcs[i].attackType = AttackType.FIRE_BREATH;
 			} else if (random == 4) {
 				npcs[i].projectileId = -1; // melee
 				npcs[i].endGfx = -1;
-				npcs[i].attackType = 0;
+				npcs[i].attackType = AttackType.MELEE;
 			}
 			break;
 		// arma npcs
 		case 2561:
-			npcs[i].attackType = 0;
+			npcs[i].attackType = AttackType.MELEE;
 			break;
 		case 2560:
-			npcs[i].attackType = 1;
+			npcs[i].attackType = AttackType.RANGED;
 			npcs[i].projectileId = 1190;
 			break;
 		case 2559:
-			npcs[i].attackType = 2;
+			npcs[i].attackType = AttackType.MAGIC;
 			npcs[i].projectileId = 1203;
 			break;
 		case 2558:
 			random = Misc.random(1);
-			npcs[i].attackType = 1 + random;
-			if (npcs[i].attackType == 1) {
+			
+			switch (random) {
+		case 0:
+			npcs[i].attackType = AttackType.RANGED;
+			if (npcs[i].attackType == AttackType.RANGED) {
 				npcs[i].projectileId = 1197;
-			} else {
-				npcs[i].attackType = 2;
+			}
+			break;
+			
+		case 1:
+			npcs[i].attackType = AttackType.MAGIC;
+			 if (npcs[i].attackType == AttackType.MAGIC) {
+				npcs[i].attackType = AttackType.MAGIC;
 				npcs[i].projectileId = 1198;
+			 }
+			break;
 			}
 			break;
 		// sara npcs
 		case 2562: // sara
 			random = Misc.random(1);
 			if (random == 0) {
-				npcs[i].attackType = 2;
+				npcs[i].attackType = AttackType.MAGIC;
 				npcs[i].endGfx = 1224;
 				npcs[i].projectileId = -1;
 			} else if (random == 1)
-				npcs[i].attackType = 0;
+				npcs[i].attackType = AttackType.MELEE;
 			break;
 		case 2563: // star
-			npcs[i].attackType = 0;
+			npcs[i].attackType = AttackType.MELEE;
 			break;
 		case 2564: // growler
-			npcs[i].attackType = 2;
+			npcs[i].attackType = AttackType.MAGIC;
 			npcs[i].projectileId = 1203;
 			break;
 		case 2565: // bree
-			npcs[i].attackType = 1;
+			npcs[i].attackType = AttackType.RANGED;
 			npcs[i].projectileId = 9;
 			break;
 		// bandos npcs
 		case 2550:
 			random = Misc.random(2);
 			if (random == 0 || random == 1)
-				npcs[i].attackType = 0;
+				npcs[i].attackType = AttackType.MELEE;
 			else {
-				npcs[i].attackType = 1;
+				npcs[i].attackType = AttackType.RANGED;
 				npcs[i].endGfx = 1211;
 				npcs[i].projectileId = 288;
 			}
 			break;
 		case 2551:
-			npcs[i].attackType = 0;
+			npcs[i].attackType = AttackType.MELEE;
 			break;
 		case 2552:
-			npcs[i].attackType = 2;
+			npcs[i].attackType = AttackType.MAGIC;
 			npcs[i].projectileId = 1203;
 			break;
 		case 2553:
-			npcs[i].attackType = 1;
+			npcs[i].attackType = AttackType.RANGED;
 			npcs[i].projectileId = 1206;
 			break;
 		case 2025:
-			npcs[i].attackType = 2;
+			npcs[i].attackType = AttackType.MAGIC;
 			int r = Misc.random(3);
 			if (r == 0) {
 				npcs[i].gfx100(158);
@@ -1689,30 +1699,30 @@ public class MobHandler {
 			}
 			break;
 		case 2881:// supreme
-			npcs[i].attackType = 1;
+			npcs[i].attackType = AttackType.RANGED;
 			npcs[i].projectileId = 298;
 			break;
 
 		case 2882:// prime
-			npcs[i].attackType = 2;
+			npcs[i].attackType = AttackType.MAGIC;
 			npcs[i].projectileId = 162;
 			npcs[i].endGfx = 477;
 			break;
 
 		case 2028:
-			npcs[i].attackType = 1;
+			npcs[i].attackType = AttackType.RANGED;
 			npcs[i].projectileId = 27;
 			break;
 
 		case 3200:
 			int r2 = Misc.random(1);
 			if (r2 == 0) {
-				npcs[i].attackType = 1;
+				npcs[i].attackType = AttackType.RANGED;
 				npcs[i].gfx100(550);
 				npcs[i].projectileId = 551;
 				npcs[i].endGfx = 552;
 			} else {
-				npcs[i].attackType = 2;
+				npcs[i].attackType = AttackType.MAGIC;
 				npcs[i].gfx100(553);
 				npcs[i].projectileId = 554;
 				npcs[i].endGfx = 555;
@@ -1726,26 +1736,26 @@ public class MobHandler {
 			else
 				r3 = Misc.random(1);
 			if (r3 == 0) {
-				npcs[i].attackType = 2;
+				npcs[i].attackType = AttackType.MAGIC;
 				npcs[i].endGfx = 157;
 				npcs[i].projectileId = 448;
 			} else if (r3 == 1) {
-				npcs[i].attackType = 1;
+				npcs[i].attackType = AttackType.RANGED;
 				npcs[i].endGfx = 451;
 				npcs[i].projectileId = -1;
 			} else if (r3 == 2) {
-				npcs[i].attackType = 0;
+				npcs[i].attackType = AttackType.MELEE;
 				npcs[i].projectileId = -1;
 			}
 			break;
 		case 2743:
-			npcs[i].attackType = 2;
+			npcs[i].attackType = AttackType.MELEE;
 			npcs[i].projectileId = 445;
 			npcs[i].endGfx = 446;
 			break;
 
 		case 2631:
-			npcs[i].attackType = 1;
+			npcs[i].attackType = AttackType.RANGED;
 			npcs[i].projectileId = 443;
 			break;
 		}
@@ -1859,12 +1869,12 @@ public class MobHandler {
 					npcs[i].facePlayer(c.playerId);
 					npcs[i].attackTimer = getNpcDelay(i);
 					npcs[i].hitDelayTimer = getHitDelay(i);
-					npcs[i].attackType = 0;
+					npcs[i].attackType = AttackType.MELEE;
 					if (special)
 						loadSpell2(i);
 					else
 						loadSpell(i);
-					if (npcs[i].attackType == 3)
+					if (npcs[i].attackType == AttackType.FIRE_BREATH)
 						npcs[i].hitDelayTimer += 2;
 					if (multiAttacks(i)) {
 						multiAttackGfx(i, npcs[i].projectileId);
@@ -1941,7 +1951,7 @@ public class MobHandler {
 			}
 			if (c.respawnTimer <= 0) {
 				int damage = 0;
-				if (npcs[i].attackType == 0) {
+				if (npcs[i].attackType == AttackType.MELEE) {
 					damage = Misc.random(npcs[i].maxHit);
 					if (10 + Misc.random(c.getCombat().calculateMeleeDefence()) > Misc
 							.random(Server.npcHandler.npcs[i].attack)) {
@@ -1955,7 +1965,7 @@ public class MobHandler {
 					}
 				}
 
-				if (npcs[i].attackType == 1) { // range
+				if (npcs[i].attackType == AttackType.RANGED) {
 					damage = Misc.random(npcs[i].maxHit);
 					if (10 + Misc.random(c.getCombat().calculateRangeDefence()) > Misc
 							.random(Server.npcHandler.npcs[i].attack)) {
@@ -1969,7 +1979,7 @@ public class MobHandler {
 					}
 				}
 
-				if (npcs[i].attackType == 2) { // magic
+				if (npcs[i].attackType == AttackType.MAGIC) {
 					damage = Misc.random(npcs[i].maxHit);
 					boolean magicFailed = false;
 					if (10 + Misc.random(c.getCombat().mageDef()) > Misc.random(Server.npcHandler.npcs[i].attack)) {
@@ -1990,7 +2000,7 @@ public class MobHandler {
 					}
 				}
 
-				if (npcs[i].attackType == 3) { // fire breath
+				if (npcs[i].attackType == AttackType.FIRE_BREATH) { // fire breath
 					int anti = c.getPA().antiFire();
 					if (anti == 0) {
 						damage = Misc.random(30) + 10;
@@ -2053,7 +2063,7 @@ public class MobHandler {
 	public int getMaxHit(int i) {
 		switch (npcs[i].npcType) {
 		case 2558:
-			if (npcs[i].attackType == 2)
+			if (npcs[i].attackType == AttackType.MAGIC)
 				return 28;
 			else
 				return 68;
