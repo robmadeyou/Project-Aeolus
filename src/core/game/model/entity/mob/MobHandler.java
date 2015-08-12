@@ -40,9 +40,9 @@ public class MobHandler {
 			newNPC(spawn);
 		}
 
-		Misc.println("Loaded: "+MobSpawns.NpcSpawnBuilder.deserialize().length+" Npc Spawns");
+		Misc.println("Loaded: " + MobSpawns.NpcSpawnBuilder.deserialize().length + " Npc Spawns");
 	}
-	
+
 	public void sendDrop(Player player, Drop drop, int i) {
 		/*
 		 * This is to stop those items from dropping, If you load higher
@@ -54,14 +54,13 @@ public class MobHandler {
 		if (player.getEquipment().getItemName(drop.getItemId()) == null) {
 			return;
 		}
-		GameItem item = new GameItem(player, drop.getItemId(), 1).stackable ? new GameItem(player, 
-				drop.getItemId(), (drop.getMinAmount() * GameConstants.DROP_RATE)
-						+ Misc.random(drop.getExtraAmount() * GameConstants.DROP_RATE))
-				: new GameItem(player, drop.getItemId(), drop.getMinAmount()
-						+ Misc.random(drop.getExtraAmount()));
+		GameItem item = new GameItem(player, drop.getItemId(), 1).stackable
+				? new GameItem(player, drop.getItemId(),
+						(drop.getMinAmount() * GameConstants.DROP_RATE)
+								+ Misc.random(drop.getExtraAmount() * GameConstants.DROP_RATE))
+				: new GameItem(player, drop.getItemId(), drop.getMinAmount() + Misc.random(drop.getExtraAmount()));
 
-		Server.itemHandler.createGroundItem(player, item.id, npcs[i].absX,
-				npcs[i].absY, item.amount, player.playerId);
+		Server.itemHandler.createGroundItem(player, item.id, npcs[i].absX, npcs[i].absY, item.amount, player.playerId);
 
 	}
 
@@ -72,8 +71,7 @@ public class MobHandler {
 			return;
 		Player c = (PlayerHandler.players[npcs[i].killedBy]);
 		if (c != null) {
-			if (npcs[i].npcType == 912 || npcs[i].npcType == 913
-					|| npcs[i].npcType == 914)
+			if (npcs[i].npcType == 912 || npcs[i].npcType == 913 || npcs[i].npcType == 914)
 				c.magePoints += 1;
 			Drop[] possibleDrops = new Drop[drops.length];
 			int possibleDropsCount = 0;
@@ -86,12 +84,11 @@ public class MobHandler {
 				}
 			}
 			if (possibleDropsCount > 0)
-				sendDrop(killer,
-						possibleDrops[Misc.random(possibleDropsCount - 1)], i);
+				sendDrop(killer, possibleDrops[Misc.random(possibleDropsCount - 1)], i);
 
 		}
 	}
-	
+
 	public void multiAttackGfx(int i, int gfx) {
 		if (npcs[i].projectileId < 0)
 			return;
@@ -994,32 +991,29 @@ public class MobHandler {
 				/**
 				 * Attacking player
 				 **/
-				if (isAggressive(i) && !npcs[i].underAttack && !npcs[i].isDead && !switchesAttackers(i)) {
+				if (isAggressive(i) && !npcs[i].underAttack && !npcs[i].isDead
+						&& !switchesAttackers(i)) {
 					npcs[i].killerId = getCloseRandomPlayer(i);
-				} else if (isAggressive(i) && !npcs[i].underAttack && !npcs[i].isDead && switchesAttackers(i)) {
+				} else if (isAggressive(i) && !npcs[i].underAttack
+						&& !npcs[i].isDead && switchesAttackers(i)) {
 					npcs[i].killerId = getCloseRandomPlayer(i);
 				}
 
 				if (System.currentTimeMillis() - npcs[i].lastDamageTaken > 5000)
 					npcs[i].underAttackBy = 0;
 
-				if ((npcs[i].killerId > 0 || npcs[i].underAttack) && !npcs[i].walkingHome
+				if ((npcs[i].killerId > 0 || npcs[i].underAttack)
+						&& npcs[i].npcType != 7891 && !npcs[i].walkingHome
 						&& retaliates(npcs[i].npcType)) {
 					if (!npcs[i].isDead) {
 						int p = npcs[i].killerId;
 						if (PlayerHandler.players[p] != null) {
-							Player c = (Player) PlayerHandler.players[p];
+							Player c = PlayerHandler.players[p];
 							followPlayer(i, c.playerId);
 							if (npcs[i] == null)
 								continue;
 							if (npcs[i].attackTimer == 0) {
-								if (c != null) {
-									attackPlayer(c, i);
-								} else {
-									npcs[i].killerId = 0;
-									npcs[i].underAttack = false;
-									npcs[i].facePlayer(0);
-								}
+								attackPlayer(c, i);
 							}
 						} else {
 							npcs[i].killerId = 0;
@@ -1059,74 +1053,120 @@ public class MobHandler {
 							int MoveX = 0;
 							int MoveY = 0;
 							int Rnd = Misc.random(9);
-							if (Rnd == 1) {
+							
+							switch(Rnd) {
+							
+							case 1:
 								MoveX = 1;
 								MoveY = 1;
-							} else if (Rnd == 2) {
+								break;
+								
+							case 2:
 								MoveX = -1;
-							} else if (Rnd == 3) {
+								break;
+								
+							case 3:
 								MoveY = -1;
-							} else if (Rnd == 4) {
+								break;
+								
+							case 4:
 								MoveX = 1;
-							} else if (Rnd == 5) {
+								break;
+								
+							case 5:
 								MoveY = 1;
-							} else if (Rnd == 6) {
+								break;
+								
+							case 6:
 								MoveX = -1;
 								MoveY = -1;
-							} else if (Rnd == 7) {
+								break;
+								
+							case 7:
 								MoveX = -1;
 								MoveY = 1;
-							} else if (Rnd == 8) {
+								break;
+								
+							case 8:
 								MoveX = 1;
 								MoveY = -1;
+								break;
+								
+							default:
+								MoveX = 0;
+								MoveY = 0;
+								break;							
 							}
-
-							if (MoveX == 1) {
-								if (npcs[i].absX + MoveX < npcs[i].makeX + 1) {
-									npcs[i].moveX = MoveX;
-								} else {
-									npcs[i].moveX = 0;
-								}
-							}
-
-							if (MoveX == -1) {
+							
+							switch (MoveX) {
+							
+							case -1:
 								if (npcs[i].absX - MoveX > npcs[i].makeX - 1) {
 									npcs[i].moveX = MoveX;
 								} else {
 									npcs[i].moveX = 0;
 								}
-							}
-
-							if (MoveY == 1) {
-								if (npcs[i].absY + MoveY < npcs[i].makeY + 1) {
-									npcs[i].moveY = MoveY;
+								break;
+							
+							case 1:
+								if (npcs[i].absX + MoveX < npcs[i].makeX + 1) {
+									npcs[i].moveX = MoveX;
 								} else {
-									npcs[i].moveY = 0;
+									npcs[i].moveX = 0;
 								}
+								break;
+							
 							}
-
-							if (MoveY == -1) {
+							
+							switch (MoveY) {
+							
+							case -1:
 								if (npcs[i].absY - MoveY > npcs[i].makeY - 1) {
 									npcs[i].moveY = MoveY;
 								} else {
 									npcs[i].moveY = 0;
 								}
-							}
-
-							int x = (npcs[i].absX + npcs[i].moveX);
-							int y = (npcs[i].absY + npcs[i].moveY);
-							// if (VirtualWorld.I(npcs[i].heightLevel,
-							// npcs[i].absX, npcs[i].absY, x, y, 0))
+								break;
+							
+							case 1:
+								if (npcs[i].absY + MoveY < npcs[i].makeY + 1) {
+									npcs[i].moveY = MoveY;
+								} else {
+									npcs[i].moveY = 0;
+								}
+								break;
+							
+							}							
 							npcs[i].getNextNPCMovement(i);
-							// else
-							// {
-							// npcs[i].moveX = 0;
-							// npcs[i].moveY = 0;
-							// }
 							npcs[i].updateRequired = true;
+						}					
+				} else if (npcs[i].walkingType != 1 && !npcs[i].walkingHome) {
+					
+					switch (npcs[i].walkingType) {
+
+					case 5:
+						npcs[i].turnNpc(npcs[i].absX - 1, npcs[i].absY);
+						break;
+
+					case 4:
+						npcs[i].turnNpc(npcs[i].absX + 1, npcs[i].absY);
+						break;
+
+					case 3:
+						npcs[i].turnNpc(npcs[i].absX, npcs[i].absY - 1);
+						break;
+					case 2:
+						npcs[i].turnNpc(npcs[i].absX, npcs[i].absY + 1);
+						break;
+
+					default:
+						if (npcs[i].walkingType != 1) {
+							npcs[i].turnNpc(npcs[i].absX, npcs[i].absY);
 						}
+						break;
 					}
 				}
+			}
 
 				if (npcs[i].isDead == true) {
 					if (npcs[i].actionTimer == 0 && npcs[i].applyDead == false && npcs[i].needRespawn == false) {
@@ -1142,7 +1182,7 @@ public class MobHandler {
 					} else if (npcs[i].actionTimer == 0 && npcs[i].applyDead == true && npcs[i].needRespawn == false) {
 						npcs[i].needRespawn = true;
 						npcs[i].actionTimer = getRespawnTime(i); // respawn time
-						dropItems(i); //Mob drops
+						dropItems(i); // Mob drops
 						appendKillCount(i);
 						npcs[i].absX = npcs[i].makeX;
 						npcs[i].absY = npcs[i].makeY;
@@ -1843,8 +1883,7 @@ public class MobHandler {
 						multiAttackGfx(i, npcs[i].projectileId);
 						startAnimation(getAttackEmote(i), i);
 						if (Configuration.enableSound) {
-							c.getActionSender().sendSound(SoundEffects
-									.getNpcAttackSounds(npcs[i].npcType));
+							c.getActionSender().sendSound(SoundEffects.getNpcAttackSounds(npcs[i].npcType));
 						}
 						npcs[i].oldIndex = c.playerId;
 						return;
@@ -2049,7 +2088,7 @@ public class MobHandler {
 		}
 		return "nameless";
 	}
-	
+
 	public Mob[] getNPCs() {
 		return npcs;
 	}

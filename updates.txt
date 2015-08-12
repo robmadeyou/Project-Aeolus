@@ -81,3 +81,6 @@
 - Almost all outgoing packets are now fully refactored
 - All weapon delays are now loaded through weapon_delays.json
 - Fixed brightness on login. Default is set to 3.
+
+~ August 11, 2015
+- Fixed npc facing, npcs are now able to face different directions.
