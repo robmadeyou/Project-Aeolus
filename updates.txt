@@ -83,4 +83,10 @@
 - Fixed brightness on login. Default is set to 3.
 
 ~ August 11, 2015
-- Fixed npc facing, npcs are now able to face different directions.
+- NPCs are now able to face different directions.
+- I changed PI's way of representing integers for npc facing, npc facing is now enumerated. (This is a lot nicer, because you're able to easily see which direction an npc will face)
+- Changed how PI used Integers to represent an npc attackstyle, I switched these to enums.
+- Fixed NPC Clipping tested and works perfectly for 474 maps
+
+~ August 12, 2015
+- Did a lot of client refactoring work today
