@@ -1156,7 +1156,7 @@ public class ActionSender {
 	 * Following another player
 	 **/
 	public void followPlayer() {
-		if (PlayerHandler.players[c.followId] == null || PlayerHandler.players[c.followId].isDead) {
+		if (PlayerHandler.players[c.followPlayerId] == null || PlayerHandler.players[c.followPlayerId].isDead) {
 			resetFollow();
 			return;
 		}
@@ -1166,8 +1166,8 @@ public class ActionSender {
 		if (c.isDead || c.playerLevel[3] <= 0)
 			return;
 
-		int otherX = PlayerHandler.players[c.followId].getX();
-		int otherY = PlayerHandler.players[c.followId].getY();
+		int otherX = PlayerHandler.players[c.followPlayerId].getX();
+		int otherY = PlayerHandler.players[c.followPlayerId].getY();
 
 		boolean sameSpot = (c.absX == otherX && c.absY == otherY);
 
@@ -1182,11 +1182,11 @@ public class ActionSender {
 		boolean playerBowOrCross = (c.usingBow) && bowDistance;
 
 		if (!c.goodDistance(otherX, otherY, c.getX(), c.getY(), 25)) {
-			c.followId = 0;
+			c.followPlayerId = 0;
 			resetFollow();
 			return;
 		}
-		c.faceUpdate(c.followId + 32768);
+		c.faceUpdate(c.followPlayerId + 32768);
 		if (!sameSpot) {
 			if (c.playerIndex > 0 && !c.usingSpecial && c.inWild()) {
 				if (c.usingSpecial && (playerRanging || playerBowOrCross)) {
@@ -1256,12 +1256,12 @@ public class ActionSender {
 				c.playerWalk(otherX - 1, otherY + 1);
 			}
 		}
-		c.faceUpdate(c.followId + 32768);
+		c.faceUpdate(c.followPlayerId + 32768);
 	}
 
 	public void followNpc() {
-		if (MobHandler.npcs[c.followId] == null || MobHandler.npcs[c.followId].isDead) {
-			c.followId = 0;
+		if (MobHandler.npcs[c.followPlayerId] == null || MobHandler.npcs[c.followPlayerId].isDead) {
+			c.followPlayerId = 0;
 			return;
 		}
 		if (c.freezeTimer > 0) {
@@ -1270,15 +1270,15 @@ public class ActionSender {
 		if (c.isDead || c.playerLevel[3] <= 0)
 			return;
 
-		int otherX = MobHandler.npcs[c.followId2].getX();
-		int otherY = MobHandler.npcs[c.followId2].getY();
+		int otherX = MobHandler.npcs[c.followMobId].getX();
+		int otherY = MobHandler.npcs[c.followMobId].getY();
 		boolean withinDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
 		boolean hallyDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 2);
 		boolean bowDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 8);
 		boolean rangeWeaponDistance = c.goodDistance(otherX, otherY, c.getX(), c.getY(), 4);
 		boolean sameSpot = c.absX == otherX && c.absY == otherY;
 		if (!c.goodDistance(otherX, otherY, c.getX(), c.getY(), 25)) {
-			c.followId2 = 0;
+			c.followMobId = 0;
 			return;
 		}
 		if (c.goodDistance(otherX, otherY, c.getX(), c.getY(), 1)) {
@@ -1300,7 +1300,7 @@ public class ActionSender {
 			return;
 		}
 
-		c.faceUpdate(c.followId);
+		c.faceUpdate(c.followPlayerId);
 		if (otherX == c.absX && otherY == c.absY) {
 			int r = Misc.random(3);
 			switch (r) {
@@ -1354,7 +1354,7 @@ public class ActionSender {
 				c.playerWalk(otherX - 1, otherY + 1);
 			}
 		}
-		c.faceUpdate(c.followId);
+		c.faceUpdate(c.followPlayerId);
 	}
 
 	public int getRunningMove(int i, int j) {
@@ -1367,8 +1367,8 @@ public class ActionSender {
 	}
 
 	public void resetFollow() {
-		c.followId = 0;
-		c.followId2 = 0;
+		c.followPlayerId = 0;
+		c.followMobId = 0;
 		c.mageFollow = false;
 	}
 

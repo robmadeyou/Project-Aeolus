@@ -26,6 +26,10 @@ public class AdministratorCommands implements Command {
 			player.sendMessage("I have access to Admin commands.");
 			break;
 			
+		case "home":
+			player.getMovement().movePlayer(GameConstants.RESPAWN_X, GameConstants.RESPAWN_Y, 0);
+			break;
+			
 		case "spellbook":
 			try {
 			int id = Integer.parseInt(command[1]);			
@@ -51,10 +55,10 @@ public class AdministratorCommands implements Command {
 
 		case "teletome":
 			try {
-				String playerToBan = command[0].substring(9);
+				String playerToTele = command[1];
 				for (int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
 					if (PlayerHandler.players[i] != null) {
-						if (PlayerHandler.players[i].playerName.equalsIgnoreCase(playerToBan)) {
+						if (PlayerHandler.players[i].playerName.equalsIgnoreCase(playerToTele)) {
 							Player player2 = PlayerHandler.players[i];
 							if (player2.inWild()) {
 								player.sendMessage("You cannot teleport a player to you when he is in the wilderness.");

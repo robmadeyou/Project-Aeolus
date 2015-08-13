@@ -59,7 +59,7 @@ public class Walking implements PacketType {
 			c.faceUpdate(0);
 			c.npcIndex = 0;
 			c.playerIndex = 0;
-			if (c.followId > 0 || c.followId2 > 0)
+			if (c.followPlayerId > 0 || c.followMobId > 0)
 				c.getActionSender().resetFollow();
 		}
 		if (c.canWalk == false) {

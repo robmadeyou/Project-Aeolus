@@ -15,14 +15,25 @@ public class Trade implements PacketType {
 		int tradeId = c.getInStream().readSignedWordBigEndian();
 		c.getActionSender().resetFollow();
 		
+		System.out.println(tradeId);		
+		
+		if ((Boolean) c.getAttributes().get("isTrading")) {
+			return;
+		}
+		
 		if(c.arenas()) {
 			c.sendMessage("You can't trade inside the arena!");
 			return;
 		}
+		
 		if(c.getRights().equal(Rights.ADMINISTRATOR) && !Configuration.ADMIN_CAN_TRADE) {
 			c.sendMessage("Trading as an admin has been disabled.");
 			return;
 		}
+		
+        if(tradeId < 1)
+            return;
+        
 		if (tradeId != c.playerId)
 			c.getContentManager().getTrading().requestTrade(tradeId);
 	}

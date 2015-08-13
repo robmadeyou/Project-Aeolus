@@ -636,8 +636,8 @@ public class PlayerVsPlayer {
 				c.getCombat().resetPlayerAttack();
 				return;
 			}
-			c.followId = i;
-			c.followId2 = 0;
+			c.followPlayerId = i;
+			c.followMobId = 0;
 			if (c.attackTimer <= 0) {
 				c.usingBow = false;
 				c.specEffect = 0;
@@ -656,7 +656,7 @@ public class PlayerVsPlayer {
 						c.getCombat().resetPlayerAttack();
 						return;
 					}
-					c.followId = i;
+					c.followPlayerId = i;
 					c.attackTimer = 0;
 					return;
 				}
@@ -824,7 +824,7 @@ public class PlayerVsPlayer {
 						c.lastArrowUsed = c.playerEquipment[c.playerArrows];
 						c.getCombat().activateSpecial(
 								c.playerEquipment[c.playerWeapon], i);
-						c.followId = c.playerIndex;
+						c.followPlayerId = c.playerIndex;
 						return;
 					} else {
 						c.sendMessage("You don't have the required special energy to use this attack.");
@@ -848,7 +848,7 @@ public class PlayerVsPlayer {
 					} else {
 						c.startAnimation(c.MAGIC_SPELLS[c.spellId][2]);
 						c.mageFollow = true;
-						c.followId = c.playerIndex;
+						c.followPlayerId = c.playerIndex;
 					}
 				}
 				PlayerHandler.players[i].underAttackBy = c.playerId;
@@ -862,7 +862,7 @@ public class PlayerVsPlayer {
 				if (!c.usingBow && !c.usingMagic && !c.usingOtherRangeWeapons) { // melee
 																					// hit
 																					// delay
-					c.followId = PlayerHandler.players[c.playerIndex].playerId;
+					c.followPlayerId = PlayerHandler.players[c.playerIndex].playerId;
 					c.getActionSender().followPlayer();
 					SoundManager.sendSound(c,
 							c.playerEquipment[c.playerWeapon],
@@ -894,7 +894,7 @@ public class PlayerVsPlayer {
 					if (c.usingCross)
 						c.usingBow = true;
 					c.usingBow = true;
-					c.followId = PlayerHandler.players[c.playerIndex].playerId;
+					c.followPlayerId = PlayerHandler.players[c.playerIndex].playerId;
 					c.getActionSender().followPlayer();
 					c.lastWeaponUsed = c.playerEquipment[c.playerWeapon];
 					c.lastArrowUsed = c.playerEquipment[c.playerArrows];
@@ -914,7 +914,7 @@ public class PlayerVsPlayer {
 					c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
 					c.getEquipment().deleteEquipment();
 					c.usingRangeWeapon = true;
-					c.followId = PlayerHandler.players[c.playerIndex].playerId;
+					c.followPlayerId = PlayerHandler.players[c.playerIndex].playerId;
 					c.getActionSender().followPlayer();
 					c.gfx100(c.getCombat().getRangeStartGFX());
 					if (c.fightMode == 2)
@@ -954,7 +954,7 @@ public class PlayerVsPlayer {
 								c.getCombat().getStartDelay());
 					}
 					if (c.autocastId > 0) {
-						c.followId = c.playerIndex;
+						c.followPlayerId = c.playerIndex;
 						c.followDistance = 5;
 					}
 					SoundManager.sendSound(c, c.spellId, SoundType.CAST_SOUND);

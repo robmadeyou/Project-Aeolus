@@ -23,6 +23,11 @@ public class DeveloperCommands implements Command {
 	public void execute(Player player, String[] command) {
 		switch (command[0]) {
 		
+		case "duel":
+			player.getMovement().movePlayer(GameConstants.DUELING_RESPAWN_X, GameConstants.DUELING_RESPAWN_Y, 0);
+		
+		break;
+		
 		case "sendframe36":
 			player.getActionSender().sendFrame36(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
 			break;

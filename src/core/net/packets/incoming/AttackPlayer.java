@@ -118,7 +118,7 @@ public class AttackPlayer implements PacketType {
 					return;				
 			}
 			if (c.getCombat().checkReqs()) {
-				c.followId = c.playerIndex;
+				c.followPlayerId = c.playerIndex;
 				if (!c.usingMagic && !usingBow && !usingOtherRangeWeapons) {
 					c.followDistance = 1;
 					c.getActionSender().followPlayer();
@@ -211,7 +211,7 @@ public class AttackPlayer implements PacketType {
 					c.stopMovement();
 				}
 				if (c.getCombat().checkReqs()) {
-					c.followId = c.playerIndex;
+					c.followPlayerId = c.playerIndex;
 					c.mageFollow = true;
 				if (c.attackTimer <= 0) {
 					//c.getCombat().attackPlayer(c.playerIndex);

@@ -563,8 +563,8 @@ public class PlayerVsMob {
 					&& c.getY() == MobHandler.npcs[i].getY()) {
 				c.getActionSender().walkTo(0, 1);
 			}
-			c.followId2 = i;
-			c.followId = 0;
+			c.followMobId = i;
+			c.followPlayerId = 0;
 			if (c.attackTimer <= 0) {
 				c.usingBow = false;
 				c.usingArrows = false;
@@ -718,7 +718,7 @@ public class PlayerVsMob {
 				if (!c.usingBow && !c.usingMagic && !c.usingOtherRangeWeapons) { // melee
 																					// hit
 																					// delay
-					c.followId2 = MobHandler.npcs[i].npcId;
+					c.followMobId = MobHandler.npcs[i].npcId;
 					c.getActionSender().followNpc();
 					c.hitDelay = c.getCombat().getHitDelay(
 							i,
@@ -735,7 +735,7 @@ public class PlayerVsMob {
 						c.usingBow = true;
 					if (c.fightMode == 2)
 						c.attackTimer--;
-					c.followId2 = MobHandler.npcs[i].npcId;
+					c.followMobId = MobHandler.npcs[i].npcId;
 					c.getActionSender().followNpc();
 					c.lastArrowUsed = c.playerEquipment[c.playerArrows];
 					c.lastWeaponUsed = c.playerEquipment[c.playerWeapon];
@@ -764,7 +764,7 @@ public class PlayerVsMob {
 				}
 
 				if (c.usingOtherRangeWeapons && !c.usingMagic && !c.usingBow) {
-					c.followId2 = MobHandler.npcs[i].npcId;
+					c.followMobId = MobHandler.npcs[i].npcId;
 					c.getActionSender().followNpc();
 					c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
 					c.getEquipment().deleteEquipment();

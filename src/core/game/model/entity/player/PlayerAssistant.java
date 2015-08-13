@@ -482,7 +482,7 @@ public class PlayerAssistant {
 	public void resetFollowers() {
 		for (int j = 0; j < PlayerHandler.players.length; j++) {
 			if (PlayerHandler.players[j] != null) {
-				if (PlayerHandler.players[j].followId == p.playerId) {
+				if (PlayerHandler.players[j].followPlayerId == p.playerId) {
 					p.getActionSender().resetFollow();
 				}
 			}

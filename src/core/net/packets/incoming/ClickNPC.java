@@ -21,12 +21,11 @@ public class ClickNPC implements PacketType {
 		c.playerIndex = 0;
 		c.clickNpcType = 0;
 		c.getActionSender().resetFollow();
-		c.followId2 = c.npcClickIndex;
-		//c.follow2 = c.npcClickIndex;
+		c.followMobId = c.npcClickIndex;
 		c.followDistance = 1;
 		c.faceUpdate(c.npcClickIndex);
 		c.getActionSender().followNpc();
-		c.faceUpdate(c.followId);
+		c.faceUpdate(c.followPlayerId);
 
 		switch (packetType) {
 
@@ -61,7 +60,7 @@ public class ClickNPC implements PacketType {
 			boolean usingBow = false;
 			boolean usingOtherRangeWeapons = false;
 			boolean usingArrows = false;
-			c.faceUpdate(c.followId);
+			c.faceUpdate(c.followPlayerId);
 			boolean usingCross = c.playerEquipment[c.playerWeapon] == 9185;
 			if (c.playerEquipment[c.playerWeapon] >= 4214
 					&& c.playerEquipment[c.playerWeapon] <= 4223)
@@ -125,7 +124,7 @@ public class ClickNPC implements PacketType {
 				return;
 			}
 
-			if (c.followId > 0) {
+			if (c.followPlayerId > 0) {
 				c.getActionSender().resetFollow();
 			}
 			if (c.attackTimer <= 0) {
@@ -197,12 +196,11 @@ public class ClickNPC implements PacketType {
 				return;
 			c.npcClickIndex = c.inStream.readSignedWordBigEndian();
 			c.getActionSender().followNpc();
-			c.followId2 = c.npcClickIndex;
+			c.followMobId = c.npcClickIndex;
 			c.faceNPC(c.npcClickIndex);
 			c.faceUpdate(c.npcIndex);
 			c.faceUpdate(c.npcClickIndex);
-			c.faceUpdate(c.followId2);
-			c.faceUpdate(c.followId2);
+			c.faceUpdate(c.followMobId);
 			if (c != null && MobHandler.npcs[c.npcClickIndex] != null
 					|| c.clickNpcType > 0)
 				c.npcType = MobHandler.npcs[c.npcClickIndex].npcType;
@@ -215,7 +213,7 @@ public class ClickNPC implements PacketType {
 				MobHandler.npcs[c.npcClickIndex].facePlayer(c.playerId);
 				c.getActions().firstClickNpc(c.npcType);
 			} else {
-				c.faceUpdate(c.followId2);
+				c.faceUpdate(c.followMobId);
 				c.clickNpcType = 1;
 				c.faceUpdate(c.npcIndex);
 				
@@ -224,7 +222,7 @@ public class ClickNPC implements PacketType {
 					@Override
 					public void execute() {
 						c.faceUpdate(c.npcIndex);
-						c.faceUpdate(c.followId2);
+						c.faceUpdate(c.followMobId);
 						if ((c.clickNpcType == 1)
 								&& MobHandler.npcs[c.npcClickIndex] != null) {
 							if (c.goodDistance(c.getX(), c.getY(),

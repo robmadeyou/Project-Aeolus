@@ -122,9 +122,9 @@ public class MeleeRequirements {
 	}
 
 	public static int getRequiredDistance(Player c) {
-		if (c.followId > 0 && c.freezeTimer <= 0 && !c.isMoving)
+		if (c.followPlayerId > 0 && c.freezeTimer <= 0 && !c.isMoving)
 			return 2;
-		else if (c.followId > 0 && c.freezeTimer <= 0 && c.isMoving) {
+		else if (c.followPlayerId > 0 && c.freezeTimer <= 0 && c.isMoving) {
 			return 3;
 		} else {
 			return 1;

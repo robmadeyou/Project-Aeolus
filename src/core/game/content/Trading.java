@@ -20,33 +20,45 @@ public class Trading {
 	
 	/**
 	* Trading
-	**/
-	
+	**/	
 	public CopyOnWriteArrayList<GameItem> offeredItems = new CopyOnWriteArrayList<GameItem>();
 	
-	public void requestTrade(int id){
+	public void requestTrade(int id) {
 		try {
-			Player o = (Player) PlayerHandler.players[id];
-			if (id == c.playerId)
+			Player o = PlayerHandler.players[id];
+			if (o == null)
 				return;
+
+			else if ((Boolean) c.getAttributes().get("isBusy"))
+				return;
+			else if ((Boolean) o.getAttributes().get("isBusy")) {
+				c.sendMessage("Other player is busy at the moment.");
+				return;
+			} else if (System.currentTimeMillis() - c.logoutDelay < 10000) {
+				c.sendMessage("You cannot trade anyone while incombat!");
+				return;
+			} else if (System.currentTimeMillis() - o.logoutDelay < 10000) {
+				c.sendMessage("Other player is busy at the moment.");
+				return;
+			} else if (id == c.playerId)
+				return;
+			c.turnPlayerTo(o.absX, o.absY);
 			c.tradeWith = id;
-			if(!(Boolean) c.getAttributes().get("isTrading")  && o.tradeRequested && o.tradeWith == c.playerId) {
+			if (!(Boolean) c.getAttributes().get("isTrading") && o.tradeRequested && o.tradeWith == c.playerId) {
 				c.getContentManager().getTrading().openTrade();
-				o.getContentManager().getTrading().openTrade();			
-			} else if(!(Boolean) c.getAttributes().get("isTrading")) {
-				
+				o.getContentManager().getTrading().openTrade();
+			} else if (!(Boolean) c.getAttributes().get("isTrading")) {
 				c.tradeRequested = true;
 				c.sendMessage("Sending trade request...");
-				o.sendMessage(c.playerName + ":tradereq:");
+				o.sendMessage(Misc.optimizeText(c.playerName) + ":tradereq:");
 			}
-		} 
-		catch (Exception e) {
+		} catch (Exception e) {
 			Misc.println("Error requesting trade.");
 		}
 	}
 	
 	public void openTrade() {
-		Player o = (Player) PlayerHandler.players[c.tradeWith];
+		Player o = PlayerHandler.players[c.tradeWith];
 		
 		if(o == null) {
 			return;

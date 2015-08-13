@@ -107,8 +107,8 @@ public class Player extends Entity {
 
 	public int saveDelay, playerKilled, stotalPlayerDamageDealt, killedBy, lastChatId = 1, privateChat, friendSlot = 0,
 			dialogueId, randomCoffin, newLocation, specEffect, specBarId, attackLevelReq, defenceLevelReq,
-			strengthLevelReq, rangeLevelReq, magicLevelReq, followId, skullTimer, nextChat = 0, talkingNpc = -1,
-			dialogueAction = 0, autocastId, followDistance, followId2, barrageCount = 0, delayedDamage = 0,
+			strengthLevelReq, rangeLevelReq, magicLevelReq, followPlayerId, skullTimer, nextChat = 0, talkingNpc = -1,
+			dialogueAction = 0, autocastId, followDistance, followMobId, barrageCount = 0, delayedDamage = 0,
 			delayedDamage2 = 0, lastArrowUsed = -1, clanId = -1, xInterfaceId = 0, xRemoveId = 0, xRemoveSlot = 0,
 			frozenBy = 0, poisonDamage = 0, teleAction = 0, bonusAttack = 0, lastNpcAttacked = 0, killCount = 0,
 			actionTimer, height = 0, magePoints = 0;
@@ -119,6 +119,8 @@ public class Player extends Entity {
 	public int rangeEndGFX, boltDamage, previousDamage, slayerTask, taskAmount, teleotherType, dfsCount;
 
 	public double crossbowDamage;
+	
+	public boolean wildernessWarning = false;
 
 	public int[] voidStatus = new int[5];
 	public int[] itemKeptId = new int[4];
@@ -514,6 +516,10 @@ public class Player extends Entity {
 	public int wearItemTimer, wearId, wearSlot, interfaceId;
 	public int XremoveSlot, XinterfaceID, XremoveID, Xamount;
 	public boolean antiFirePot = false;
+	
+	public void wildyWarning() {
+		getActionSender().showInterface(1908);
+	}
 
 	public void updateSigns() {
 		if (inWild()) {
@@ -553,7 +559,6 @@ public class Player extends Entity {
 	/**
 	 * SouthWest, NorthEast, SouthWest, NorthEast
 	 */
-
 	public boolean inArea(int x, int y, int x1, int y1) {
 		if (absX > x && absX < x1 && absY < y && absY > y1) {
 			return true;
@@ -2044,8 +2049,8 @@ public class Player extends Entity {
 													// options
 		getActionSender().setSideBarInterfaces(this, true);
 		sendMessage("Welcome to " + Configuration.SERVER_NAME);
-		getActionSender().showOption(5, 0, "Follow", 4);
-		getActionSender().showOption(4, 0, "Trade With", 3);
+		getActionSender().showOption(4, 0, "Follow", 4);
+		getActionSender().showOption(5, 0, "Trade With", 3);
 		getInventory().resetItems(3214);
 		getEquipment().sendWeapon(playerEquipment[playerWeapon],
 				getEquipment().getItemName(playerEquipment[playerWeapon]));
@@ -2113,6 +2118,16 @@ public class Player extends Entity {
 	 */
 	@Override
 	public void process() {
+		
+		if (inWild() && !wildernessWarning) {
+			resetWalkingQueue();
+			getActionSender().resetFollow();
+			wildyWarning();
+			wildernessWarning = true;
+		}
+		
+		updateSigns();
+		
 		this.getActionSender().textOnInterface((int) (specAmount * 10) + "", 155);
 
 		if (System.currentTimeMillis() - specDelay > GameConstants.INCREASE_SPECIAL_AMOUNT) {
@@ -2125,9 +2140,9 @@ public class Player extends Entity {
 			}
 		}
 
-		if (followId > 0) {
+		if (followPlayerId > 0) {
 			getActionSender().followPlayer();
-		} else if (followId2 > 0) {
+		} else if (followMobId > 0) {
 			getActionSender().followNpc();
 		}
 		getCombat().handlePrayerDrain();

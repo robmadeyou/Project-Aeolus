@@ -100,8 +100,8 @@ public class PacketHandler{
 		packetId[73] = ap;
 		packetId[249] = ap;
 		packetId[128] = new ChallengePlayer();
-		packetId[139] = new Trade();
-		packetId[39] = new FollowPlayer();
+		packetId[39] = new Trade();
+		packetId[139] = new FollowPlayer();
 		packetId[41] = new WearItem();
 		packetId[145] = new RemoveItem();
 		packetId[117] = new Bank5();
