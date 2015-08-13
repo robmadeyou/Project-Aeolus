@@ -1895,8 +1895,6 @@ public class ActionSender {
 	}
 
 	public void addStarter() {
-		c.getActionSender().showInterface(3559);
-		c.canChangeAppearance = true;
 		c.getInventory().addItem(995, 50000);
 	}
 

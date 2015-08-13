@@ -14,16 +14,20 @@ public class FirstClickNpc {
 	 * @param c
 	 * @param npcType
 	 */
-	public static void handleClick(Player c, int npcType) {
+	public static void handleClick(Player c, int npcId) {
 		c.clickNpcType = 0;
 		c.npcClickIndex = 0;
-		switch (npcType) {
+		switch (npcId) {
+		
+		case 599:
+			c.getActionSender().showInterface(3559);
+			c.canChangeAppearance = true;
+			break;
 		
 		default:
-			PluginManager.callFunc("npcClick1_" + npcType);
-			c.getDH().sendDialogues(1, npcType, npcType);
+			PluginManager.callFunc("npcClick1_" + npcId, c, npcId);
 			if (c.getRights().equal(Rights.DEVELOPER))
-				c.sendMessage("First Click Npc: " + npcType);
+				c.sendMessage("First Click Npc: " + npcId);
 			break;	
 		}
 	}

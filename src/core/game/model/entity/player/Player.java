@@ -2010,8 +2010,9 @@ public class Player extends Entity {
 	 */
 	public void initialize() {
 		// synchronized (this) {
-
+		if(!addStarter) {
 		showWelcomeScreen();
+		}
 
 		getActionSender().initializePlayer(1, this.playerId);
 

@@ -1,2 +1,2 @@
-__author__ = 'Project_X'
+__author__ = '7Winds'
 from core.game.plugin import PluginManager
