@@ -251,6 +251,9 @@ public class PlayerSave {
 			characterfile.write(Integer.toString(p.getRights().getValues()), 0, Integer
 					.toString(p.getRights().getValues()).length());
 			characterfile.newLine();
+			characterfile.write("UUID = ", 0, 7);
+			characterfile.write(p.UUID, 0, p.UUID.length());
+			characterfile.newLine();
 			characterfile.write("crystal-bow-shots = ", 0, 20);
 			characterfile.write(Integer.toString(p.crystalBowArrowCount), 0,
 					Integer.toString(p.crystalBowArrowCount).length());

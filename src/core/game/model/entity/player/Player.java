@@ -67,6 +67,8 @@ public class Player extends Entity {
 	private PlayerAssistant playerAssistant = new PlayerAssistant(this);
 	private Food food = new Food(this);
 
+	public String UUID = "";
+	
 	public int lowMemoryVersion = 0;
 	public int timeOutCounter = 0;
 	public int returnCode = 2;
@@ -874,7 +876,8 @@ public class Player extends Entity {
 
 	public void updateshop(int i) {
 		Player p = PlayerHandler.players[playerId];
-		p.getShops().resetShop(i);
+		p.getShops();
+		ShopAssistant.resetShop(i);
 	}
 
 	public void println_debug(String str) {
