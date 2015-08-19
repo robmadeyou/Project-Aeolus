@@ -44,20 +44,20 @@ public class RemoveItem implements PacketType {
 			
 			case 3322:
 			if(c.duelStatus <= 0) { 
-                c.getContentManager().getTrading().tradeItem(removeId, removeSlot, 1);
+                c.getTrade().tradeItem(removeId, removeSlot, 1);
            	} else {
-				c.getContentManager().getDueling().stakeItem(removeId, removeSlot, 1);
+				c.getDuel().stakeItem(removeId, removeSlot, 1);
 			}
 			break;
 			
 			case 3415:
 			if(c.duelStatus <= 0) { 
-				c.getContentManager().getTrading().fromTrade(removeId, removeSlot, 1);
+				c.getTrade().fromTrade(removeId, removeSlot, 1);
            	} 
 			break;
 			
 			case 6669:
-			c.getContentManager().getDueling().fromDuel(removeId, removeSlot, 1);
+			c.getDuel().fromDuel(removeId, removeSlot, 1);
 			break;
 
 			default:

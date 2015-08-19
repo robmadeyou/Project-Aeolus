@@ -249,128 +249,128 @@ public class FirstClickButton {
 		case 26065: // no forfeit
 		case 26040:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(0);
+			c.getDuel().selectRule(0);
 			break;
 
 		case 26066: // no movement
 		case 26048:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(1);
+			c.getDuel().selectRule(1);
 			break;
 
 		case 26069: // no range
 		case 26042:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(2);
+			c.getDuel().selectRule(2);
 			break;
 
 		case 26070: // no melee
 		case 26043:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(3);
+			c.getDuel().selectRule(3);
 			break;
 
 		case 26071: // no mage
 		case 26041:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(4);
+			c.getDuel().selectRule(4);
 			break;
 
 		case 26072: // no drinks
 		case 26045:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(5);
+			c.getDuel().selectRule(5);
 			break;
 
 		case 26073: // no food
 		case 26046:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(6);
+			c.getDuel().selectRule(6);
 			break;
 
 		case 26074: // no prayer
 		case 26047:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(7);
+			c.getDuel().selectRule(7);
 			break;
 
 		case 26076: // obsticals
 		case 26075:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(8);
+			c.getDuel().selectRule(8);
 			break;
 
 		case 2158: // fun weapons
 		case 2157:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(9);
+			c.getDuel().selectRule(9);
 			break;
 
 		case 30136: // sp attack
 		case 30137:
 			c.duelSlot = -1;
-			c.getContentManager().getDueling().selectRule(10);
+			c.getDuel().selectRule(10);
 			break;
 
 		case 53245: // no helm
 			c.duelSlot = 0;
-			c.getContentManager().getDueling().selectRule(11);
+			c.getDuel().selectRule(11);
 			break;
 
 		case 53246: // no cape
 			c.duelSlot = 1;
-			c.getContentManager().getDueling().selectRule(12);
+			c.getDuel().selectRule(12);
 			break;
 
 		case 53247: // no ammy
 			c.duelSlot = 2;
-			c.getContentManager().getDueling().selectRule(13);
+			c.getDuel().selectRule(13);
 			break;
 
 		case 53249: // no weapon.
 			c.duelSlot = 3;
-			c.getContentManager().getDueling().selectRule(14);
+			c.getDuel().selectRule(14);
 			break;
 
 		case 53250: // no body
 			c.duelSlot = 4;
-			c.getContentManager().getDueling().selectRule(15);
+			c.getDuel().selectRule(15);
 			break;
 
 		case 53251: // no shield
 			c.duelSlot = 5;
-			c.getContentManager().getDueling().selectRule(16);
+			c.getDuel().selectRule(16);
 			break;
 
 		case 53252: // no legs
 			c.duelSlot = 7;
-			c.getContentManager().getDueling().selectRule(17);
+			c.getDuel().selectRule(17);
 			break;
 
 		case 53255: // no gloves
 			c.duelSlot = 9;
-			c.getContentManager().getDueling().selectRule(18);
+			c.getDuel().selectRule(18);
 			break;
 
 		case 53254: // no boots
 			c.duelSlot = 10;
-			c.getContentManager().getDueling().selectRule(19);
+			c.getDuel().selectRule(19);
 			break;
 
 		case 53253: // no rings
 			c.duelSlot = 12;
-			c.getContentManager().getDueling().selectRule(20);
+			c.getDuel().selectRule(20);
 			break;
 
 		case 53248: // no arrows
 			c.duelSlot = 13;
-			c.getContentManager().getDueling().selectRule(21);
+			c.getDuel().selectRule(21);
 			break;
 
 		case 26018:
 			Player o = (Player) PlayerHandler.players[c.duelingWith];
 			if (o == null) {
-				c.getContentManager().getDueling().declineDuel();
+				c.getDuel().declineDuel();
 				return;
 			}
 
@@ -393,8 +393,8 @@ public class FirstClickButton {
 				o.canOffer = false;
 				c.duelStatus = 3;
 				o.duelStatus = 3;
-				c.getContentManager().getDueling().confirmDuel();
-				o.getContentManager().getDueling().confirmDuel();
+				c.getDuel().confirmDuel();
+				o.getDuel().confirmDuel();
 			}
 			break;
 
@@ -404,14 +404,14 @@ public class FirstClickButton {
 			}
 			Player o1 = (Player) PlayerHandler.players[c.duelingWith];
 			if (o1 == null) {
-				c.getContentManager().getDueling().declineDuel();
+				c.getDuel().declineDuel();
 				return;
 			}
 
 			c.duelStatus = 4;
 			if (o1.duelStatus == 4 && c.duelStatus == 4) {
-				c.getContentManager().getDueling().startDuel();
-				o1.getContentManager().getDueling().startDuel();
+				c.getDuel().startDuel();
+				o1.getDuel().startDuel();
 				o1.duelCount = 4;
 				c.duelCount = 4;
 				Player.schedule(c, new Tick(4) {
@@ -454,7 +454,7 @@ public class FirstClickButton {
 		case 13092:
 			Player ot = (Player) PlayerHandler.players[c.tradeWith];
 			if (ot == null) {
-				c.getContentManager().getTrading().declineTrade();
+				c.getTrade().declineTrade();
 				c.sendMessage("Trade declined as the other player has disconnected.");
 				break;
 			}
@@ -463,22 +463,22 @@ public class FirstClickButton {
 			c.goodTrade = true;
 			ot.goodTrade = true;
 
-			for (GameItem item : c.getContentManager().getTrading().offeredItems) {
+			for (GameItem item : c.getTrade().offeredItems) {
 				if (item.id > 0) {
-					if (ot.getInventory().freeSlots() < c.getContentManager().getTrading().offeredItems
+					if (ot.getInventory().freeSlots() < c.getTrade().offeredItems
 							.size()) {
 						c.sendMessage(ot.playerName
 								+ " only has "
 								+ ot.getInventory().freeSlots()
 								+ " free slots, please remove "
-								+ (c.getContentManager().getTrading().offeredItems.size() - ot
+								+ (c.getTrade().offeredItems.size() - ot
 										.getInventory().freeSlots()) + " items.");
 						ot.sendMessage(c.playerName
 								+ " has to remove "
-								+ (c.getContentManager().getTrading().offeredItems.size() - ot
+								+ (c.getTrade().offeredItems.size() - ot
 										.getInventory().freeSlots())
 								+ " items or you could offer them "
-								+ (c.getContentManager().getTrading().offeredItems.size() - ot
+								+ (c.getTrade().offeredItems.size() - ot
 										.getInventory().freeSlots()) + " items.");
 						c.goodTrade = false;
 						ot.goodTrade = false;
@@ -500,8 +500,8 @@ public class FirstClickButton {
 			if ((Boolean) c.getAttributes().get("isTrading") && !c.tradeConfirmed && ot.goodTrade && c.goodTrade) {
 				c.tradeConfirmed = true;
 				if (ot.tradeConfirmed) {
-					c.getContentManager().getTrading().confirmScreen();
-					ot.getContentManager().getTrading().confirmScreen();
+					c.getTrade().confirmScreen();
+					ot.getTrade().confirmScreen();
 					break;
 				}
 
@@ -513,7 +513,7 @@ public class FirstClickButton {
 			c.tradeAccepted = true;
 			Player ot1 = (Player) PlayerHandler.players[c.tradeWith];
 			if (ot1 == null) {
-				c.getContentManager().getTrading().declineTrade();
+				c.getTrade().declineTrade();
 				c.sendMessage("Trade declined as the other player has disconnected.");
 				break;
 			}
@@ -524,8 +524,8 @@ public class FirstClickButton {
 				if (ot1.tradeConfirmed2) {
 					c.acceptedTrade = true;
 					ot1.acceptedTrade = true;
-					c.getContentManager().getTrading().giveItems();
-					ot1.getContentManager().getTrading().giveItems();
+					c.getTrade().giveItems();
+					ot1.getTrade().giveItems();
 					break;
 				}
 				ot1.getActionSender().textOnInterface("Other player has accepted.", 3535);

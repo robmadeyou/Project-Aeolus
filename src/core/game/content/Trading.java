@@ -45,8 +45,8 @@ public class Trading {
 			c.turnPlayerTo(o.absX, o.absY);
 			c.tradeWith = id;
 			if (!(Boolean) c.getAttributes().get("isTrading") && o.tradeRequested && o.tradeWith == c.playerId) {
-				c.getContentManager().getTrading().openTrade();
-				o.getContentManager().getTrading().openTrade();
+				c.getTrade().openTrade();
+				o.getTrade().openTrade();
 			} else if (!(Boolean) c.getAttributes().get("isTrading")) {
 				c.tradeRequested = true;
 				c.sendMessage("Sending trade request...");
@@ -153,7 +153,7 @@ public class Trading {
 					o.tradeConfirmed = false;
 					c.getInventory().resetItems(3322);
 					resetTItems(3415);
-					o.getContentManager().getTrading().resetOTItems(3416);
+					o.getTrade().resetOTItems(3416);
 					c.getActionSender().textOnInterface("", 3431);
 					o.getActionSender().textOnInterface("", 3431);
 					}
@@ -183,7 +183,7 @@ public class Trading {
 		o.tradeConfirmed = false;
 		c.getInventory().resetItems(3322);
 		resetTItems(3415);
-		o.getContentManager().getTrading().resetOTItems(3416);
+		o.getTrade().resetOTItems(3416);
 		c.getActionSender().textOnInterface("", 3431);
 		o.getActionSender().textOnInterface("", 3431);
 		} catch(Exception e){}
@@ -215,7 +215,7 @@ public class Trading {
 			o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 			c.getInventory().resetItems(3322);
 			resetTItems(3415);
-			o.getContentManager().getTrading().resetOTItems(3416);
+			o.getTrade().resetOTItems(3416);
 			c.getActionSender().textOnInterface("", 3431);
 			o.getActionSender().textOnInterface("", 3431);
 		}
@@ -246,7 +246,7 @@ public class Trading {
 		o.getActionSender().textOnInterface("Trading with: " + c.playerName+" who has @gre@"+c.getInventory().freeSlots()+" free slots" ,3417);	
 		c.getInventory().resetItems(3322);
 		resetTItems(3415);
-		o.getContentManager().getTrading().resetOTItems(3416);
+		o.getTrade().resetOTItems(3416);
 		c.getActionSender().textOnInterface("", 3431);
 		o.getActionSender().textOnInterface("", 3431);
 		return true;
@@ -279,8 +279,8 @@ public class Trading {
 		}
 		
 		if(tellOther){
-			o.getContentManager().getTrading().declineTrade(false);
-			o.getContentManager().getTrading().c.getActionSender().removeAllWindows();
+			o.getTrade().declineTrade(false);
+			o.getTrade().c.getActionSender().removeAllWindows();
 		}
 			
 		for(GameItem item : offeredItems) {
@@ -312,10 +312,10 @@ public class Trading {
 			}	
 			c.getOutStream().createFrameVarSizeWord(53);
 			c.getOutStream().writeWord(WriteFrame);
-			int len = o.getContentManager().getTrading().offeredItems.toArray().length;
+			int len = o.getTrade().offeredItems.toArray().length;
 			int current = 0;
 			c.getOutStream().writeWord(len);
-				for (GameItem item : o.getContentManager().getTrading().offeredItems) {
+				for (GameItem item : o.getTrade().offeredItems) {
 					if (item.amount > 254) {
 						c.getOutStream().writeByte(255); // item's stack count. if over 254, write byte 255
 						c.getOutStream().writeDWord_v2(item.amount); 
@@ -375,7 +375,7 @@ public class Trading {
 		SendAmount = "";
 		Count = 0;
 		
-		for (GameItem item : o.getContentManager().getTrading().offeredItems) {
+		for (GameItem item : o.getTrade().offeredItems) {
 		    if (item.id > 0) {
 				if (item.amount >= 1000 && item.amount < 1000000) {
 					SendAmount = "@cya@" + (item.amount / 1000) + "K @whi@(" + Misc.format(item.amount) + ")";
@@ -409,7 +409,7 @@ public class Trading {
 			return;
 		}	
 		try{	
-			for(GameItem item : o.getContentManager().getTrading().offeredItems){
+			for(GameItem item : o.getTrade().offeredItems){
 				if (item.id > 0) {
 					c.getInventory().addItem(item.id, item.amount);
 			   }

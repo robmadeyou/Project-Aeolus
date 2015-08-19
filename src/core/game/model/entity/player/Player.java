@@ -12,9 +12,10 @@ import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
 import core.game.content.CombatAssistant;
-import core.game.content.ContentManager;
 import core.game.content.DialogueHandler;
+import core.game.content.Dueling;
 import core.game.content.PlayerKilling;
+import core.game.content.Trading;
 import core.game.content.consumables.Food;
 import core.game.event.tick.Scheduler;
 import core.game.event.tick.Tick;
@@ -37,6 +38,7 @@ import core.game.world.clipping.PathFinder;
 import core.net.Packet;
 import core.net.Packet.Type;
 import core.net.packets.PacketHandler;
+import core.net.packets.incoming.Trade;
 import core.net.packets.outgoing.ActionSender;
 import core.net.security.ISAACCipher;
 
@@ -56,7 +58,6 @@ public class Player extends Entity {
 	private PlayerKilling playerKilling = new PlayerKilling(this);
 	private DialogueHandler dialogueHandler = new DialogueHandler(this);
 	private Queue<Packet> queuedPackets = new LinkedList<Packet>();
-	private ContentManager contentManager = new ContentManager(this);
 	private Equipment equipment = new Equipment(this);
 	private TradeLogger tradeLog = new TradeLogger(this);
 	private ChatLogger chatLog = new ChatLogger(this);
@@ -66,6 +67,8 @@ public class Player extends Entity {
 	private Movement movement = new Movement(this);
 	private PlayerAssistant playerAssistant = new PlayerAssistant(this);
 	private Food food = new Food(this);
+	private Trading playerTrade = new Trading(this);
+	private Dueling playerDuel = new Dueling(this);
 
 	public String UUID = "";
 	
@@ -718,14 +721,6 @@ public class Player extends Entity {
 
 	public int getId() {
 		return playerId;
-	}
-
-	public ContentManager getContentManager() {
-		return contentManager;
-	}
-
-	public void setContentManager(ContentManager contentManager) {
-		this.contentManager = contentManager;
 	}
 
 	public Equipment getEquipment() {
@@ -2268,8 +2263,8 @@ public class Player extends Entity {
 			Player o = PlayerHandler.players[tradeWith];
 			if (o != null) {
 				if (o.tradeResetNeeded) {
-					getContentManager().getTrading().resetTrade();
-					o.getContentManager().getTrading().resetTrade();
+					getTrade().resetTrade();
+					o.getTrade().resetTrade();
 				}
 			}
 		}
@@ -2501,7 +2496,14 @@ public class Player extends Entity {
 	public PlayerAssistant getPA() {
 		return playerAssistant;
 	}
+	
+	public Trading getTrade() {
+		return playerTrade;
+	}
 
+	public Dueling getDuel() {
+		return playerDuel;
+	}
 	public TradeLogger getTradeLog() {
 		return tradeLog;
 	}

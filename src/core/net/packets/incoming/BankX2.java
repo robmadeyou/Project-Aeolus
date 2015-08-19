@@ -22,20 +22,20 @@ public class BankX2 implements PacketType {
 				
 			case 3322:
 			if(c.duelStatus <= 0) {
-            	c.getContentManager().getTrading().tradeItem(c.xRemoveId, c.xRemoveSlot, Xamount);
+            	c.getTrade().tradeItem(c.xRemoveId, c.xRemoveSlot, Xamount);
             } else {				
-				c.getContentManager().getDueling().stakeItem(c.xRemoveId, c.xRemoveSlot, Xamount);
+				c.getDuel().stakeItem(c.xRemoveId, c.xRemoveSlot, Xamount);
 			}  
 			break;
 				
 			case 3415: 
 			if(c.duelStatus <= 0) { 
-            	c.getContentManager().getTrading().fromTrade(c.xRemoveId, c.xRemoveSlot, Xamount);
+            	c.getTrade().fromTrade(c.xRemoveId, c.xRemoveSlot, Xamount);
 			} 
 			break;
 				
 			case 6669:
-			c.getContentManager().getDueling().fromDuel(c.xRemoveId, c.xRemoveSlot, Xamount);
+			c.getDuel().fromDuel(c.xRemoveId, c.xRemoveSlot, Xamount);
 			break;			
 		}
 	}

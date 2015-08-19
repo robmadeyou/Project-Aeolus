@@ -23,7 +23,7 @@ public class ChallengePlayer implements PacketType {
 				return;
 			}
 
-			c.getContentManager().getDueling().requestDuel(answerPlayer);
+			c.getDuel().requestDuel(answerPlayer);
 			break;
 		}		
 	}	

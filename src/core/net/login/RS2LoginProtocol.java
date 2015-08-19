@@ -115,7 +115,6 @@ public class RS2LoginProtocol extends FrameDecoder {
 				final long serverHalf = rsaBuffer.readLong();
 
 				UUID = Misc.getRS2String(rsaBuffer);
-				System.out.println(UUID);
 				final String name = Misc.formatPlayerName(Misc.getRS2String(rsaBuffer));
 				final String pass = Misc.getRS2String(rsaBuffer);
 
@@ -148,8 +147,6 @@ public class RS2LoginProtocol extends FrameDecoder {
 		cl.saveCharacter = false;
 		cl.isActive = true;
 		cl.UUID = UUID;
-
-		System.out.println("Version: " + version);
 
 		if (Punishments.isNamedBanned(cl.playerName)) {
 			returnCode = 4;

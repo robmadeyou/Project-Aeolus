@@ -51,7 +51,7 @@ public class MeleeRequirements {
 				c.sendMessage("You can't challenge inside the arena!");
 				return false;
 			}
-			c.getContentManager().getDueling().requestDuel(c.playerIndex);
+			c.getDuel().requestDuel(c.playerIndex);
 			return false;
 		}
 		if (c.duelStatus == 5

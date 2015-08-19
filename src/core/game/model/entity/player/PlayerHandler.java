@@ -105,18 +105,18 @@ public class PlayerHandler {
 						if ((Boolean) players[i].getAttributes().get("isTrading")) {
 							Player o = PlayerHandler.players[players[i].tradeWith];
 							if (o != null) {
-								o.getContentManager().getTrading().declineTrade();
+								o.getTrade().declineTrade();
 							}
 						}
 						if (players[i].duelStatus == 5) {
 							Player o = PlayerHandler.players[players[i].duelingWith];
 							if (o != null) {
-								o.getContentManager().getDueling().duelVictory();
+								o.getDuel().duelVictory();
 							}
 						} else if (players[i].duelStatus <= 4 && players[i].duelStatus >= 1) {
 							Player o = PlayerHandler.players[players[i].duelingWith];
 							if (o != null) {
-								o.getContentManager().getDueling().declineDuel();
+								o.getDuel().declineDuel();
 							}
 						}
 						Player o = PlayerHandler.players[i];

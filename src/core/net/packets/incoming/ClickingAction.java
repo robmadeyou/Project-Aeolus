@@ -23,15 +23,15 @@ public class ClickingAction implements PacketType {
 			if ((Boolean) c.getAttributes().get("isTrading")) {
 				if(!c.acceptedTrade) {
 					Misc.println("trade reset");
-					c.getContentManager().getTrading().declineTrade();
+					c.getTrade().declineTrade();
 				}
 			}
 
 			Player o = PlayerHandler.players[c.duelingWith];
 			if(o != null) {
 				if(c.duelStatus >= 1 && c.duelStatus <= 4) {
-					c.getContentManager().getDueling().declineDuel();
-					o.getContentManager().getDueling().declineDuel();
+					c.getDuel().declineDuel();
+					o.getDuel().declineDuel();
 				}
 			}
 			
@@ -40,7 +40,7 @@ public class ClickingAction implements PacketType {
 			}
 			
 			if(c.duelStatus == 6) {
-				c.getContentManager().getDueling().claimStakedItems();		
+				c.getDuel().claimStakedItems();		
 			}
 			if (Configuration.SERVER_DEBUG)
 				System.out.println("ClickingAction - Close Window: " + "packetType " +  packetType + " " + "packetSize: " + packetSize);

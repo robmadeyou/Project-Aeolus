@@ -40,8 +40,8 @@ public class Dueling {
 			c.duelRequested = true;
 			if(c.duelStatus == 0 && o.duelStatus == 0 && c.duelRequested && o.duelRequested && c.duelingWith == o.getId() && o.duelingWith == c.getId()) {
 				if(c.goodDistance(c.getX(), c.getY(), o.getX(), o.getY(), 1)) {			
-					c.getContentManager().getDueling().openDuel();
-					o.getContentManager().getDueling().openDuel();
+					c.getDuel().openDuel();
+					o.getDuel().openDuel();
 				} else {
 					c.sendMessage("You need to get closer to your opponent to start the duel.");
 				}
@@ -137,9 +137,9 @@ public class Dueling {
 			
 			c.getOutStream().createFrameVarSizeWord(53);
 			c.getOutStream().writeWord(6670);
-			c.getOutStream().writeWord(o.getContentManager().getDueling().stakedItems.toArray().length);
+			c.getOutStream().writeWord(o.getDuel().stakedItems.toArray().length);
 			current = 0;	
-			for (GameItem item : o.getContentManager().getDueling().stakedItems) {
+			for (GameItem item : o.getDuel().stakedItems) {
 				if (item.amount > 254) {
 					c.getOutStream().writeByte(255);
 					c.getOutStream().writeDWord_v2(item.amount);
@@ -182,7 +182,7 @@ public class Dueling {
 		}
 		if (o.duelStatus <= 0 || c.duelStatus <= 0) {
 			declineDuel();
-			o.getContentManager().getDueling().declineDuel();
+			o.getDuel().declineDuel();
 			return false;
 		}
 		if (!c.canOffer) {
@@ -201,7 +201,7 @@ public class Dueling {
 			o.getInventory().resetItems(3214);
 			o.getInventory().resetItems(3322);
 			refreshDuelScreen();
-			o.getContentManager().getDueling().refreshDuelScreen();
+			o.getDuel().refreshDuelScreen();
 			c.getActionSender().textOnInterface("", 6684);
 			o.getActionSender().textOnInterface("", 6684);
 		}
@@ -230,7 +230,7 @@ public class Dueling {
 		o.getInventory().resetItems(3214);
 		o.getInventory().resetItems(3322);
 		refreshDuelScreen();
-		o.getContentManager().getDueling().refreshDuelScreen();
+		o.getDuel().refreshDuelScreen();
 		c.getActionSender().textOnInterface("", 6684);
 		o.getActionSender().textOnInterface("", 6684);
 		return true;
@@ -245,7 +245,7 @@ public class Dueling {
 		}
 		if (o.duelStatus <= 0 || c.duelStatus <= 0) {
 			declineDuel();
-			o.getContentManager().getDueling().declineDuel();
+			o.getDuel().declineDuel();
 			return false;
 		}
 		if(c.getInventory().getStackable(itemID)) {
@@ -298,8 +298,8 @@ public class Dueling {
 					c.getInventory().resetItems(3322);
 					o.getInventory().resetItems(3214);
 					o.getInventory().resetItems(3322);
-					c.getContentManager().getDueling().refreshDuelScreen();
-					o.getContentManager().getDueling().refreshDuelScreen();
+					c.getDuel().refreshDuelScreen();
+					o.getDuel().refreshDuelScreen();
 					o.getActionSender().textOnInterface("", 6684);
 				}
 			}		
@@ -327,8 +327,8 @@ public class Dueling {
 		c.getInventory().resetItems(3322);
 		o.getInventory().resetItems(3214);
 		o.getInventory().resetItems(3322);
-		c.getContentManager().getDueling().refreshDuelScreen();
-		o.getContentManager().getDueling().refreshDuelScreen();
+		c.getDuel().refreshDuelScreen();
+		o.getDuel().refreshDuelScreen();
 		o.getActionSender().textOnInterface("", 6684);
 		if(!goodSpace) {
 			c.sendMessage("You have too many rules set to remove that item.");
@@ -353,7 +353,7 @@ public class Dueling {
 		}
 		c.getActionSender().textOnInterface(itemId, 6516);
 		itemId = "";
-		for(GameItem item : o.getContentManager().getDueling().stakedItems) {
+		for(GameItem item : o.getDuel().stakedItems) {
 			if(c.getInventory().getStackable(item.id) || Item.itemIsNote[item.id]) {
 				itemId += c.getEquipment().getItemName(item.id) + " x " + Misc.format(item.amount) +"\\n";
 			} else {
@@ -461,7 +461,7 @@ public class Dueling {
 			c.playerLevel[i] = c.getActionSender().getLevelForXP(c.playerXP[i]);
 			c.getActionSender().refreshSkill(i);
 		}
-		for(GameItem item : o.getContentManager().getDueling().stakedItems) {
+		for(GameItem item : o.getDuel().stakedItems) {
 			otherStakedItems.add(new GameItem(c, item.id, item.amount));
 		}
 		c.getActionSender().requestUpdates();			

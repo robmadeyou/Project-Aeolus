@@ -221,7 +221,7 @@ public class PlayerAssistant {
 			if (o != null) {
 				o.getActionSender().createPlayerHints(10, -1);
 				if (o.duelStatus == 6) {
-					o.getContentManager().getDueling().duelVictory();
+					o.getDuel().duelVictory();
 				}
 			}
 			p.getMovement().movePlayer(
@@ -232,7 +232,7 @@ public class PlayerAssistant {
 					GameConstants.DUELING_RESPAWN_Y + (Misc.random(Configuration.RANDOM_DUELING_RESPAWN)), 0);
 			if (p.duelStatus != 6) { // if we have won but have died, don't
 										// reset the duel status.
-				p.getContentManager().getDueling().resetDuel();
+				p.getDuel().resetDuel();
 			}
 		}
 		// PlayerSaving.getSingleton().requestSave(p.playerId);

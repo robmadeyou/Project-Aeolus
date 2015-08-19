@@ -4,16 +4,21 @@ character-password = test
 
 [CHARACTER]
 character-height = 0
-character-posx = 3159
-character-posy = 3490
+character-xPos = 3087
+character-yPos = 3502
 character-rights = 0
+UUID = 7314To be filled by O.E.M.20150223132208.000000-360
 crystal-bow-shots = 0
 skull-timer = 0
 magic-book = 0
 special-amount = 10.0
 teleblock-length = 0
-autoRet = 0
+autoRet = false
 flagged = false
+enableMusic = true
+enableSound = true
+music-unlocked = 
+
 [EQUIPMENT]
 character-equip = 0	-1	1	
 character-equip = 1	-1	1	

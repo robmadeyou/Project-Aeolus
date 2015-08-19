@@ -240,7 +240,7 @@ public class PlayerVsPlayer {
 				SoundManager.sendSound(o, 0, SoundType.PLAYER_BLOCK);
 			}
 			if ((Boolean) o.getAttributes().get("isTrading")) {
-				o.getContentManager().getTrading().declineTrade();
+				o.getTrade().declineTrade();
 			}
 			if (c.projectileStage == 0 && !c.usingMagic) { // melee hit damage
 				c.getCombat().applyPlayerHit(c, i);

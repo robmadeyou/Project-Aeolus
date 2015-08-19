@@ -33,20 +33,20 @@ public class Bank5 implements PacketType {
 			
 			case 3322:
 			if(c.duelStatus <= 0) { 
-                c.getContentManager().getTrading().tradeItem(removeId, removeSlot, 5);
+                c.getTrade().tradeItem(removeId, removeSlot, 5);
            	} else {
-				c.getContentManager().getDueling().stakeItem(removeId, removeSlot, 5);
+				c.getDuel().stakeItem(removeId, removeSlot, 5);
 			}	
 			break;
 			
 			case 3415:
 			if(c.duelStatus <= 0) { 
-				c.getContentManager().getTrading().fromTrade(removeId, removeSlot, 5);
+				c.getTrade().fromTrade(removeId, removeSlot, 5);
 			}
 			break;
 			
 			case 6669:
-			c.getContentManager().getDueling().fromDuel(removeId, removeSlot, 5);
+			c.getDuel().fromDuel(removeId, removeSlot, 5);
 			break;
 
 			

@@ -19,12 +19,12 @@ public class Walking implements PacketType {
 		if (c.openDuel && c.duelStatus != 5) {
 			Player o = PlayerHandler.players[c.duelingWith];
 			if (o != null)
-				o.getContentManager().getDueling().declineDuel();
-			c.getContentManager().getDueling().declineDuel();
+				o.getDuel().declineDuel();
+			c.getDuel().declineDuel();
 		}
 		if ((c.duelStatus >= 1 && c.duelStatus <= 4) || c.duelStatus == 6) {
 			if (c.duelStatus == 6) {
-				c.getContentManager().getDueling().claimStakedItems();
+				c.getDuel().claimStakedItems();
 			}
 			return;
 		}
@@ -107,7 +107,7 @@ public class Walking implements PacketType {
 		}
 
 		if (c.duelStatus == 6) {
-			c.getContentManager().getDueling().claimStakedItems();
+			c.getDuel().claimStakedItems();
 			return;
 		}
 
@@ -118,8 +118,8 @@ public class Walking implements PacketType {
 			// c.sendMessage("@red@The challange has been declined.");
 			// o.sendMessage("@red@Other player has declined the challange.");
 			// Misc.println("trade reset");
-			o.getContentManager().getDueling().declineDuel();
-			c.getContentManager().getDueling().declineDuel();
+			o.getDuel().declineDuel();
+			c.getDuel().declineDuel();
 			// return;
 		}
 

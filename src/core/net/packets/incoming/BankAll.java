@@ -40,15 +40,15 @@ public class BankAll implements PacketType {
 			case 3322:
 			if(c.duelStatus <= 0) { 
 				if(c.getInventory().getStackable(removeId)){
-					c.getContentManager().getTrading().tradeItem(removeId, removeSlot, c.playerItemsN[removeSlot]);
+					c.getTrade().tradeItem(removeId, removeSlot, c.playerItemsN[removeSlot]);
 		    	} else {
-					c.getContentManager().getTrading().tradeItem(removeId, removeSlot, 28);  
+					c.getTrade().tradeItem(removeId, removeSlot, 28);  
 				}
 			} else {
 				if(c.getInventory().getStackable(removeId) || Item.itemIsNote[removeId]) {
-					c.getContentManager().getDueling().stakeItem(removeId, removeSlot, c.playerItemsN[removeSlot]);
+					c.getDuel().stakeItem(removeId, removeSlot, c.playerItemsN[removeSlot]);
 				} else {
-					c.getContentManager().getDueling().stakeItem(removeId, removeSlot, 28);
+					c.getDuel().stakeItem(removeId, removeSlot, 28);
 				}
 			}
 			break;
@@ -56,15 +56,15 @@ public class BankAll implements PacketType {
 			case 3415: 
 			if(c.duelStatus <= 0) { 
 				if(c.getInventory().getStackable(removeId)) {
-					for (GameItem item : c.getContentManager().getTrading().offeredItems) {
+					for (GameItem item : c.getTrade().offeredItems) {
 						if(item.id == removeId) {
-							c.getContentManager().getTrading().fromTrade(removeId, removeSlot, c.getContentManager().getTrading().offeredItems.get(removeSlot).amount);
+							c.getTrade().fromTrade(removeId, removeSlot, c.getTrade().offeredItems.get(removeSlot).amount);
 						}
 					}
 				} else {
-					for (GameItem item : c.getContentManager().getTrading().offeredItems) {
+					for (GameItem item : c.getTrade().offeredItems) {
 						if(item.id == removeId) {
-							c.getContentManager().getTrading().fromTrade(removeId, removeSlot, 28);
+							c.getTrade().fromTrade(removeId, removeSlot, 28);
 						}
 					}
 				}
@@ -83,14 +83,14 @@ public class BankAll implements PacketType {
 			
 			case 6669:
 			if(c.getInventory().getStackable(removeId) || Item.itemIsNote[removeId]) {
-				for (GameItem item : c.getContentManager().getDueling().stakedItems) {
+				for (GameItem item : c.getDuel().stakedItems) {
 					if(item.id == removeId) {
-						c.getContentManager().getDueling().fromDuel(removeId, removeSlot, c.getContentManager().getDueling().stakedItems.get(removeSlot).amount);
+						c.getDuel().fromDuel(removeId, removeSlot, c.getDuel().stakedItems.get(removeSlot).amount);
 					}
 				}
 						
 			} else {
-				c.getContentManager().getDueling().fromDuel(removeId, removeSlot, 28);
+				c.getDuel().fromDuel(removeId, removeSlot, 28);
 			}
 			break;
 
