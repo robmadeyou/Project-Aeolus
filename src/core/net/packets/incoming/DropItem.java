@@ -3,6 +3,7 @@ package core.net.packets.incoming;
 import core.Configuration;
 import core.Server;
 import core.game.model.entity.player.Player;
+import core.game.model.entity.player.Rights;
 import core.net.packets.PacketType;
 
 /**
@@ -11,13 +12,13 @@ import core.net.packets.PacketType;
 public class DropItem implements PacketType {
 
 	@Override
-	public void processPacket(Player c, int packetType, int packetSize) {
-		int itemId = c.getInStream().readUnsignedWordA();
-		c.getInStream().readUnsignedByte();
-		c.getInStream().readUnsignedByte();
-		int slot = c.getInStream().readUnsignedWordA();
-		if(c.arenas()) {
-			c.sendMessage("You can't drop items inside the arena!");
+	public void processPacket(Player p, int packetType, int packetSize) {
+		int itemId = p.getInStream().readUnsignedWordA();
+		p.getInStream().readUnsignedByte();
+		p.getInStream().readUnsignedByte();
+		int slot = p.getInStream().readUnsignedWordA();
+		if (p.arenas()) {
+			p.sendMessage("You can't drop items inside the arena!");
 			return;
 		}
 
@@ -28,24 +29,30 @@ public class DropItem implements PacketType {
 				break;
 			}
 		}
-		if(c.playerItemsN[slot] != 0 && itemId != -1 && c.playerItems[slot] == itemId + 1) {
-			if(droppable) {
-				if (c.underAttackBy > 0) {
-					if (c.getShops().getItemShopValue(itemId) > 1000) {
-						c.sendMessage("You may not drop items worth more than 1000 while in combat.");
+		if (p.playerItemsN[slot] != 0 && itemId != -1
+				&& p.playerItems[slot] == itemId + 1) {
+			if (droppable) {
+				if (p.underAttackBy > 0) {
+					if (p.getShops().getItemShopValue(itemId) > 1000) {
+						p.sendMessage("You may not drop items worth more than 1000 while in combat.");
 						return;
 					}
 				}
-				Server.itemHandler.createGroundItem(c, itemId, c.getX(), c.getY(), c.playerItemsN[slot], c.getId());
-				c.getInventory().deleteItem(itemId, slot, c.playerItemsN[slot]);
+				Server.itemHandler.createGroundItem(p, itemId, p.getX(),
+						p.getY(), p.playerItemsN[slot], p.getId());
+				p.getInventory().deleteItem(itemId, slot, p.playerItemsN[slot]);
 				if (Configuration.enableSound) {
-					c.sendMessage("test");
-					c.getActionSender().sendSound(c.getSound().DROPITEM);
+					p.sendMessage("test");
+					p.getActionSender().sendSound(p.getSound().DROPITEM);
 				}
 			} else {
-				c.sendMessage("This items cannot be dropped.");
+				p.sendMessage("This items cannot be dropped.");
 			}
 		}
 
+		if (p.getRights().equals(Rights.DEVELOPER)
+				&& Configuration.SERVER_DEBUG) {
+			p.sendMessage("ItemDropped: " + itemId);
+		}
 	}
 }

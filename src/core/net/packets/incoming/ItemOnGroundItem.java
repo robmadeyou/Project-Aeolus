@@ -1,5 +1,6 @@
 package core.net.packets.incoming;
 
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Rights;
 import core.game.util.Misc;
@@ -16,14 +17,10 @@ public class ItemOnGroundItem implements PacketType {
 		int gItemY = c.getInStream().readSignedWordA();
 		int itemUsedSlot = c.getInStream().readSignedWordBigEndianA();
 		int gItemX = c.getInStream().readUnsignedWord();
-		
-		switch(itemUsed) {
-		
-		default:
-			if(c.getRights().greaterOrEqual(Rights.ADMINISTRATOR))
-				Misc.println("ItemUsed "+itemUsed+" on Ground Item "+groundItem);
-			break;
-		}
-	}
 
+		if(c.getRights().equal(Rights.DEVELOPER) && Configuration.SERVER_DEBUG) {
+			Misc.println("ItemUsed: "+itemUsed+" groundItem: "+groundItem +
+					" itemUsedSlot: " + itemUsedSlot + " gItemX: " + gItemX + " gItemY: " + gItemY);
+		}		
+	}
 }

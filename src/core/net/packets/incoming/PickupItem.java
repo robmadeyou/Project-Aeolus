@@ -1,8 +1,10 @@
 package core.net.packets.incoming;
 
+import core.Configuration;
 import core.Server;
 import core.game.event.tick.Tick;
 import core.game.model.entity.player.Player;
+import core.game.model.entity.player.Rights;
 import core.net.packets.PacketType;
 
 /**
@@ -11,37 +13,44 @@ import core.net.packets.PacketType;
 public class PickupItem implements PacketType {
 
 	@Override
-	public void processPacket(final Player c, int packetType, int packetSize) {
-	c.walkingToItem = false;
-	c.pItemY = c.getInStream().readSignedWordBigEndian();
-	c.pItemId = c.getInStream().readUnsignedWord();
-	c.pItemX = c.getInStream().readSignedWordBigEndian();
-	if (Math.abs(c.getX() - c.pItemX) > 25 || Math.abs(c.getY() - c.pItemY) > 25) {
-		c.resetWalkingQueue();
-		return;
-	}
-	c.getCombat().resetPlayerAttack();
-	if(c.getX() == c.pItemX && c.getY() == c.pItemY) {
-		Server.itemHandler.removeGroundItem(c, c.pItemId, c.pItemX, c.pItemY, true);
-	} else {
-		c.walkingToItem = true;
-		Player.schedule(c, new Tick(1) {
-			@Override
-			public void execute() {
-					if(!c.walkingToItem)
+	public void processPacket(final Player p, int packetType, int packetSize) {
+		p.walkingToItem = false;
+		p.pItemY = p.getInStream().readSignedWordBigEndian();
+		p.pItemId = p.getInStream().readUnsignedWord();
+		p.pItemX = p.getInStream().readSignedWordBigEndian();
+		if (Math.abs(p.getX() - p.pItemX) > 25
+				|| Math.abs(p.getY() - p.pItemY) > 25) {
+			p.resetWalkingQueue();
+			return;
+		}
+		p.getCombat().resetPlayerAttack();
+		if (p.getX() == p.pItemX && p.getY() == p.pItemY) {
+			Server.itemHandler.removeGroundItem(p, p.pItemId, p.pItemX,
+					p.pItemY, true);
+		} else {
+			p.walkingToItem = true;
+			Player.schedule(p, new Tick(1) {
+				@Override
+				public void execute() {
+					if (!p.walkingToItem)
 						this.stop();
-					if(c.getX() == c.pItemX && c.getY() == c.pItemY) {
-						Server.itemHandler.removeGroundItem(c, c.pItemId, c.pItemX, c.pItemY, true);
+					if (p.getX() == p.pItemX && p.getY() == p.pItemY) {
+						Server.itemHandler.removeGroundItem(p, p.pItemId,
+								p.pItemX, p.pItemY, true);
 						this.stop();
 					}
 				}
-			@Override
-			public void onStop() {
-					c.walkingToItem = false;
+
+				@Override
+				public void onStop() {
+					p.walkingToItem = false;
 				}
 			});
+		}
+		
+		if (p.getRights().equals(Rights.DEVELOPER) && Configuration.SERVER_DEBUG) {
+			p.sendMessage("Pickup ItemId: " + p.pItemId + " ItemX: " + p.pItemX + " ItemY: " + p.pItemY);
+		}
 	}
-	
-	}
-
 }
+
