@@ -1809,15 +1809,24 @@ public class ActionSender {
 	}
 
 	public boolean addSkillXP(int amount, int skill) {
-		if (amount + c.playerXP[skill] < 0 || c.playerXP[skill] > 200000000) {
-			if (c.playerXP[skill] > 200000000) {
-				c.playerXP[skill] = 200000000;
+		if (amount + c.playerXP[skill] < 0 || c.playerXP[skill] > 500000000) {
+			if (c.playerXP[skill] > 500000000) {
+				c.playerXP[skill] = 500000000;
 			}
 			return false;
 		}
-		amount *= GameConstants.SERVER_EXP_BONUS;
+		if (skill == 11) {
+			amount *= 20;
+		}
+		if (skill == 12) {
+			amount *= 20;
+		}
 		int oldLevel = getLevelForXP(c.playerXP[skill]);
 		c.playerXP[skill] += amount;
+		if(c.playerEquipment[3] == 6570) {
+			c.playerXP[skill] += amount;
+		}
+		amount *= GameConstants.SERVER_EXP_BONUS;	
 		if (oldLevel < getLevelForXP(c.playerXP[skill])) {
 			if (c.playerLevel[skill] < c.getLevelForXP(c.playerXP[skill]) && skill != 3 && skill != 5)
 				c.playerLevel[skill] = c.getLevelForXP(c.playerXP[skill]);
