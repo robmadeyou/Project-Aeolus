@@ -9,6 +9,7 @@ import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.item.GameItem;
 import core.game.model.item.Item;
+import core.game.model.item.ItemDefinition;
 import core.game.util.Misc;
 
 public class Dueling {
@@ -167,8 +168,8 @@ public class Dueling {
 	
 	public boolean stakeItem(int itemID, int fromSlot, int amount) {
 		
-		for (int i : Configuration.ITEM_TRADEABLE) {
-			if(i == itemID) {
+		for (String item : Configuration.UNTRADEABLE_ITEMS) {
+			if(item == ItemDefinition.getDefinitions()[itemID].getName()) {
 				c.sendMessage("You can't stake this item.");
 				return false;
 			}		

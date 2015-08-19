@@ -142,8 +142,8 @@ public class Configuration {
 	/**
 	 * An array of items that cannot be traded
 	 */
-	public static final int[] ITEM_TRADEABLE = {
-
+	public static final String[] UNTRADEABLE_ITEMS = { "fire cape"
+		
 	};
 
 	/**

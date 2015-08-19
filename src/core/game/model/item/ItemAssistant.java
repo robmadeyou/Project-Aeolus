@@ -257,8 +257,8 @@ public class ItemAssistant {
 	 * Handles tradable items.
 	 */
 	public boolean tradeable(int itemId) {
-		for (int j = 0; j < Configuration.ITEM_TRADEABLE.length; j++) {
-			if (itemId == Configuration.ITEM_TRADEABLE[j])
+		for (int j = 0; j < Configuration.UNTRADEABLE_ITEMS.length; j++) {
+			if (ItemDefinition.getDefinitions()[itemId].getName() == Configuration.UNTRADEABLE_ITEMS[j])
 				return false;
 		}
 		return true;

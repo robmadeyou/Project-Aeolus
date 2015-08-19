@@ -8,6 +8,7 @@ import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
 import core.game.model.item.GameItem;
 import core.game.model.item.Item;
+import core.game.model.item.ItemDefinition;
 import core.game.util.Misc;
 
 public class Trading {
@@ -196,11 +197,11 @@ public class Trading {
 			return false;
 		}
 		
-		for (int i : Configuration.ITEM_TRADEABLE) {
-			if(i == itemID) {
-				c.sendMessage("You can't trade this item.");
+		for (String item : Configuration.UNTRADEABLE_ITEMS) {
+			if (item.contains(ItemDefinition.getDefinitions()[itemID].getName().toLowerCase())) {
+				c.sendMessage("You cannot trade @red@" + Misc.capitalize(item) + "@bla@.");
 				return false;
-			}		
+			}
 		}
 		c.tradeConfirmed = false;
 		o.tradeConfirmed = false;
