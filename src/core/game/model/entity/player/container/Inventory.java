@@ -331,24 +331,13 @@ public class Inventory {
 	}
 	
 	/**
-	 * Deletes an item from a players inventory
+	 * Delete items.
 	 * 
 	 * @param id
 	 * @param amount
 	 */
 	public void deleteItem(int id, int amount) {
-		if (id <= 0)
-			return;
-		for (int j = 0; j < player.playerItems.length; j++) {
-			if (amount <= 0)
-				break;
-			if (player.playerItems[j] == id + 1) {
-				player.playerItems[j] = 0;
-				player.playerItemsN[j] = 0;
-				amount--;
-			}
-		}
-		resetItems(3214);
+		deleteItem(id, getItemInventorySlot(id), amount);
 	}
 	
 	/**
@@ -371,5 +360,21 @@ public class Inventory {
 			}
 			resetItems(3214);
 		}
+	}
+	
+	/**
+	 * Checks inventory and returns the item ids inventory slot
+	 * @param itemId
+	 */
+	public int getItemInventorySlot(int itemId) {
+		if (itemId < 0) {
+			return -1;
+		}
+		for(int item = 0; item < player.playerItems.length; item++) {
+			if (player.playerItems[item] == itemId + 1) {
+				return item;
+			}
+		}
+		return -1;
 	}
 }
