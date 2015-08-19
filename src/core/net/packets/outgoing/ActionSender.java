@@ -1,5 +1,7 @@
 package core.net.packets.outgoing;
 
+import java.util.stream.IntStream;
+
 import core.Configuration;
 import core.game.GameConstants;
 import core.game.model.entity.mob.MobHandler;
@@ -766,9 +768,9 @@ public class ActionSender {
 	 **/
 	public void frame1() {
 		// synchronized(c) {
-		for (int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
-			if (PlayerHandler.players[i] != null) {
-				Player person = (Player) PlayerHandler.players[i];
+		IntStream.range(0, GameConstants.MAX_PLAYERS).forEach(player -> {
+			if (PlayerHandler.players[player] != null) {
+				Player person = (Player) PlayerHandler.players[player];
 				if (person != null) {
 					if (person.getOutStream() != null && !person.disconnected) {
 						if (c.distanceToPoint(person.getX(), person.getY()) <= 25) {
@@ -780,7 +782,7 @@ public class ActionSender {
 				}
 
 			}
-		}
+		});
 	}
 
 	/**
@@ -834,13 +836,13 @@ public class ActionSender {
 	}
 
 	public void createProjectile3(int casterY, int casterX, int offsetY, int offsetX, int gfxMoving, int StartHeight,
-			int endHeight, int speed, int AtkIndex) {
-		for (int i = 1; i < GameConstants.MAX_PLAYERS; i++) {
-			if (PlayerHandler.players[i] != null) {
-				Player p = PlayerHandler.players[i];
+			int endHeight, int speed, int AtkIndex) {		
+		IntStream.range(0, GameConstants.MAX_PLAYERS).forEach(player -> {
+			if (PlayerHandler.players[player] != null) {
+				Player p = PlayerHandler.players[player];
 				if (p.goodDistance(c.absX, c.absY, p.absX, p.absY, 60)) {
 					if (p.heightLevel == c.heightLevel) {
-						if (PlayerHandler.players[i] != null && !PlayerHandler.players[i].disconnected) {
+						if (PlayerHandler.players[player] != null && !PlayerHandler.players[player].disconnected) {
 							p.outStream.createFrame(85);
 							p.outStream.writeByteC((casterY - (p.mapRegionY * 8)) - 2);
 							p.outStream.writeByteC((casterX - (p.mapRegionX * 8)) - 3);
@@ -860,7 +862,7 @@ public class ActionSender {
 					}
 				}
 			}
-		}
+		});
 	}
 
 	/**
@@ -869,8 +871,8 @@ public class ActionSender {
 	public void createPlayersProjectile(int x, int y, int offX, int offY, int angle, int speed, int gfxMoving,
 			int startHeight, int endHeight, int lockon, int time) {
 		// synchronized(c) {
-		for (int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
-			Player p = PlayerHandler.players[i];
+		IntStream.range(0, GameConstants.MAX_PLAYERS).forEach(player -> {
+			Player p = PlayerHandler.players[player];
 			if (p != null) {
 				Player person = (Player) p;
 				if (person != null) {
@@ -884,14 +886,14 @@ public class ActionSender {
 				}
 
 			}
-		}
+		});
 	}
 
 	public void createPlayersProjectile2(int x, int y, int offX, int offY, int angle, int speed, int gfxMoving,
 			int startHeight, int endHeight, int lockon, int time, int slope) {
 		// synchronized(c) {
-		for (int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
-			Player p = PlayerHandler.players[i];
+		IntStream.range(0, GameConstants.MAX_PLAYERS).forEach(player -> {
+			Player p = PlayerHandler.players[player];
 			if (p != null) {
 				Player person = (Player) p;
 				if (person != null) {
@@ -903,8 +905,7 @@ public class ActionSender {
 					}
 				}
 			}
-
-		}
+		});
 	}
 
 	/**
@@ -931,8 +932,8 @@ public class ActionSender {
 	 */
 	public void createPlayersStillGfx(int id, int x, int y, int height, int time) {
 		// synchronized(c) {
-		for (int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
-			Player p = PlayerHandler.players[i];
+		IntStream.range(0, GameConstants.MAX_PLAYERS).forEach(player -> {
+			Player p = PlayerHandler.players[player];
 			if (p != null) {
 				Player person = (Player) p;
 				if (person != null) {
@@ -943,8 +944,7 @@ public class ActionSender {
 					}
 				}
 			}
-
-		}
+		});
 	}
 
 	/**
@@ -1039,17 +1039,16 @@ public class ActionSender {
 	 **/
 	public void logIntoPM() {
 		setPrivateMessaging(2);
-		for (int i1 = 0; i1 < GameConstants.MAX_PLAYERS; i1++) {
-			Player p = PlayerHandler.players[i1];
+		IntStream.range(0, GameConstants.MAX_PLAYERS).forEach(player -> {
+			Player p = PlayerHandler.players[player];
 			if (p != null && p.isActive) {
 				Player o = (Player) p;
 				if (o != null) {
 					o.getActionSender().updatePM(c.playerId, 1);
 				}
 			}
-		}
+		});
 		boolean pmLoaded = false;
-
 		for (int i = 0; i < c.friends.length; i++) {
 			if (c.friends[i] != 0) {
 				for (int i2 = 1; i2 < GameConstants.MAX_PLAYERS; i2++) {
@@ -1071,15 +1070,15 @@ public class ActionSender {
 				}
 				pmLoaded = false;
 			}
-			for (int i1 = 1; i1 < GameConstants.MAX_PLAYERS; i1++) {
-				Player p = PlayerHandler.players[i1];
+			IntStream.range(1, GameConstants.MAX_PLAYERS).forEach(player -> {
+				Player p = PlayerHandler.players[player];
 				if (p != null && p.isActive) {
 					Player o = (Player) p;
 					if (o != null) {
 						o.getActionSender().updatePM(c.playerId, 1);
 					}
 				}
-			}
+			});
 		}
 	}
 
@@ -1417,7 +1416,6 @@ public class ActionSender {
 			c.getNewWalkCmdX()[n] += k;
 			c.getNewWalkCmdY()[n] += l;
 		}
-
 	}
 
 	public void walkToCheck(int i, int j) {

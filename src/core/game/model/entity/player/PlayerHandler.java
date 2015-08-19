@@ -1,5 +1,7 @@
 package core.game.model.entity.player;
 
+import java.util.stream.IntStream;
+
 import core.Configuration;
 import core.Server;
 import core.game.GameConstants;
@@ -20,9 +22,10 @@ public class PlayerHandler {
 	public static long updateStartTime;
 	private boolean kickAllPlayers = false;
 
-	static {
-		for (int i = 0; i < GameConstants.MAX_PLAYERS; i++)
-			players[i] = null;
+	static {	
+		IntStream.range(0, GameConstants.MAX_PLAYERS).forEach(player -> {
+			players[player] = null;
+		});
 	}
 
 	public boolean newPlayerClient(Player player1) {
@@ -79,23 +82,13 @@ public class PlayerHandler {
 
 	public void process() {
 		synchronized (lock) {
-			if (kickAllPlayers) {
-				for (int i = 1; i < GameConstants.MAX_PLAYERS; i++) {
-					if (players[i] != null) {
-						players[i].disconnected = true;
+			if (kickAllPlayers) {				
+				IntStream.range(0, GameConstants.MAX_PLAYERS).forEach(player -> {
+					if (players[player] != null) {
+						players[player].disconnected = true;
 					}
-				}
+				});				
 			}
-			/*
-			 * for (int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
-			 * if (players[i] == null || !players[i].isActive)
-			 * continue;
-			 * if (!players[i].initialized) {
-			 * players[i].initialize();
-			 * players[i].initialized = true;
-			 * }
-			 * }
-			 */
 			for (int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
 				if (players[i] == null || !players[i].isActive || !players[i].initialized)
 					continue;
@@ -175,33 +168,31 @@ public class PlayerHandler {
 
 		str.writeBits(8, plr.npcListSize);
 		int size = plr.npcListSize;
-		plr.npcListSize = 0;
-		for (int i = 0; i < size; i++) {
-			if (plr.RebuildNPCList == false && plr.withinDistance(plr.npcList[i]) == true) {
-				plr.npcList[i].updateNPCMovement(str);
-				plr.npcList[i].appendNPCUpdateBlock(updateBlock);
-				plr.npcList[plr.npcListSize++] = plr.npcList[i];
+		plr.npcListSize = 0;		
+		IntStream.range(0, size).forEach(npc -> {
+			if (plr.RebuildNPCList == false && plr.withinDistance(plr.npcList[npc]) == true) {
+				plr.npcList[npc].updateNPCMovement(str);
+				plr.npcList[npc].appendNPCUpdateBlock(updateBlock);
+				plr.npcList[plr.npcListSize++] = plr.npcList[npc];
 			} else {
-				int id = plr.npcList[i].npcId;
+				int id = plr.npcList[npc].npcId;
 				plr.npcInListBitmap[id >> 3] &= ~(1 << (id & 7));
 				str.writeBits(1, 1);
 				str.writeBits(2, 3);
 			}
-		}
-
-		for (int i = 0; i < MobHandler.maxNPCs; i++) {
-			if (MobHandler.npcs[i] != null) {
-				int id = MobHandler.npcs[i].npcId;
+		});		
+		IntStream.range(0, MobHandler.maxNPCs).forEach(npc -> {
+			if (MobHandler.npcs[npc] != null) {
+				int id = MobHandler.npcs[npc].npcId;
 				if (plr.RebuildNPCList == false && (plr.npcInListBitmap[id >> 3] & (1 << (id & 7))) != 0) {
 
-				} else if (plr.withinDistance(MobHandler.npcs[i]) == false) {
+				} else if (plr.withinDistance(MobHandler.npcs[npc]) == false) {
 
 				} else {
-					plr.addNewNPC(MobHandler.npcs[i], str, updateBlock);
+					plr.addNewNPC(MobHandler.npcs[npc], str, updateBlock);
 				}
 			}
-		}
-
+		});
 		plr.RebuildNPCList = false;
 
 		if (updateBlock.currentOffset > 0) {
@@ -233,20 +224,19 @@ public class PlayerHandler {
 		int size = plr.playerListSize;
 		if (size >= 79)
 			size = 79;
-		plr.playerListSize = 0;
-		for (int i = 0; i < size; i++) {
-			if (!plr.didTeleport && !plr.playerList[i].didTeleport && plr.withinDistance(plr.playerList[i])) {
-				plr.playerList[i].updatePlayerMovement(str);
-				plr.playerList[i].appendPlayerUpdateBlock(updateBlock);
-				plr.playerList[plr.playerListSize++] = plr.playerList[i];
+		plr.playerListSize = 0;	
+		IntStream.range(0, size).forEach(player -> {
+			if (!plr.didTeleport && !plr.playerList[player].didTeleport && plr.withinDistance(plr.playerList[player])) {
+				plr.playerList[player].updatePlayerMovement(str);
+				plr.playerList[player].appendPlayerUpdateBlock(updateBlock);
+				plr.playerList[plr.playerListSize++] = plr.playerList[player];
 			} else {
-				int id = plr.playerList[i].playerId;
+				int id = plr.playerList[player].playerId;
 				plr.playerInListBitmap[id >> 3] &= ~(1 << (id & 7));
 				str.writeBits(1, 1);
 				str.writeBits(2, 3);
 			}
-		}
-
+		});
 		for (int i = 0; i < GameConstants.MAX_PLAYERS; i++) {
 			if (players[i] == null || !players[i].isActive || players[i] == plr)
 				continue;

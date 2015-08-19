@@ -1,5 +1,7 @@
 package core.game.model.entity.player.container;
 
+import java.util.stream.IntStream;
+
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
 import core.game.model.item.Item;
@@ -22,15 +24,15 @@ public class Inventory {
 				player.getOutStream().createFrameVarSizeWord(53);
 				player.getOutStream().writeWord(WriteFrame);
 				player.getOutStream().writeWord(player.playerItems.length);
-				for (int i = 0; i < player.playerItems.length; i++) {
-					if (player.playerItemsN[i] > 254) {
+				IntStream.range(0, player.playerItems.length).forEach(item -> {
+					if (player.playerItemsN[item] > 254) {
 						player.getOutStream().writeByte(255);
-						player.getOutStream().writeDWord_v2(player.playerItemsN[i]);
+						player.getOutStream().writeDWord_v2(player.playerItemsN[item]);
 					} else {
-						player.getOutStream().writeByte(player.playerItemsN[i]);
+						player.getOutStream().writeByte(player.playerItemsN[item]);
 					}
-					player.getOutStream().writeWordBigEndianA(player.playerItems[i]);
-				}
+					player.getOutStream().writeWordBigEndianA(player.playerItems[item]);
+				});
 				player.getOutStream().endFrameVarSizeWord();
 				player.flushOutStream();
 			}
@@ -41,12 +43,12 @@ public class Inventory {
 	 * Replaces an item in a players inventory
 	 */
 	public void replaceItem(Player c, int i, int l) {
-		for (int k = 0; k < c.playerItems.length; k++) {
+		IntStream.range(0, c.playerItems.length).forEach(item -> {
 			if (playerHasItem(i, 1)) {
 				deleteItem(i, c.getEquipment().getItemSlot(i), 1);
 				addItem(l, 1);
 			}
-		}
+		});
 	}
 	
 	/**

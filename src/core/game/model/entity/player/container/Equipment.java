@@ -1,5 +1,7 @@
 package core.game.model.entity.player.container;
 
+import java.util.stream.IntStream;
+
 import core.Configuration;
 import core.game.GameConstants;
 import core.game.model.entity.player.Player;
@@ -26,114 +28,165 @@ public class Equipment {
 	 */
 	public static final String[] WEAPONS = { "rapier", "maul", "staff",
 			"longsword" };
-	
+
 	public boolean tentacleWhip() {
 		return c.playerEquipment[c.playerWeapon] == 14004;
 	}
-	
+
 	/**
 	 * Checks if player is wearing an Anti-Fire Shield
 	 */
-	
+
 	public boolean isWearingAntiFire(Player c) {
-		if (c.playerEquipment != null && (c.playerEquipment[c.playerShield] == 1540 || c.playerEquipment[c.playerShield] == 11283)) {
+		if (c.playerEquipment != null
+				&& (c.playerEquipment[c.playerShield] == 1540 || c.playerEquipment[c.playerShield] == 11283)) {
 			return true;
-		}		
-		return false;		
+		}
+		return false;
 	}
-	
+
 	/**
 	 * Checks to see if player is wearing full Dharoks
 	 */
 	public boolean isWearingDharoks(Player c) {
-		if ((c.playerEquipment != null) 
-				&& (c.playerEquipment[c.playerWeapon] == 4718 || c.playerEquipment[c.playerWeapon] == 4886 || c.playerEquipment[c.playerWeapon] == 4887 || c.playerEquipment[c.playerWeapon] == 4888 || c.playerEquipment[c.playerWeapon] == 4889)
-				&& (c.playerEquipment[c.playerHat] == 4716 || c.playerEquipment[c.playerHat] == 4880 || c.playerEquipment[c.playerHat] == 4881 || c.playerEquipment[c.playerHat] == 4882 || c.playerEquipment[c.playerHat] == 4883)
-				&& (c.playerEquipment[c.playerChest] == 4720 || c.playerEquipment[c.playerChest] == 4892 || c.playerEquipment[c.playerChest] == 4893 || c.playerEquipment[c.playerChest] == 4894 || c.playerEquipment[c.playerChest] == 4895)
-				&& (c.playerEquipment[c.playerLegs] == 4722 || c.playerEquipment[c.playerLegs] == 4898 || c.playerEquipment[c.playerLegs] == 4899 || c.playerEquipment[c.playerLegs] == 4900 || c.playerEquipment[c.playerLegs] == 4901)) {
+		if ((c.playerEquipment != null)
+				&& (c.playerEquipment[c.playerWeapon] == 4718
+						|| c.playerEquipment[c.playerWeapon] == 4886
+						|| c.playerEquipment[c.playerWeapon] == 4887
+						|| c.playerEquipment[c.playerWeapon] == 4888 || c.playerEquipment[c.playerWeapon] == 4889)
+				&& (c.playerEquipment[c.playerHat] == 4716
+						|| c.playerEquipment[c.playerHat] == 4880
+						|| c.playerEquipment[c.playerHat] == 4881
+						|| c.playerEquipment[c.playerHat] == 4882 || c.playerEquipment[c.playerHat] == 4883)
+				&& (c.playerEquipment[c.playerChest] == 4720
+						|| c.playerEquipment[c.playerChest] == 4892
+						|| c.playerEquipment[c.playerChest] == 4893
+						|| c.playerEquipment[c.playerChest] == 4894 || c.playerEquipment[c.playerChest] == 4895)
+				&& (c.playerEquipment[c.playerLegs] == 4722
+						|| c.playerEquipment[c.playerLegs] == 4898
+						|| c.playerEquipment[c.playerLegs] == 4899
+						|| c.playerEquipment[c.playerLegs] == 4900 || c.playerEquipment[c.playerLegs] == 4901)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Checks to see if player is wearing full Veracs
 	 */
 	public boolean isWearingVeracs(Player c) {
-		if ((c.playerEquipment != null) 
-				&& (c.playerEquipment[c.playerWeapon] == 4755 || c.playerEquipment[c.playerWeapon] == 4982 || c.playerEquipment[c.playerWeapon] == 4983 || c.playerEquipment[c.playerWeapon] == 4984 || c.playerEquipment[c.playerWeapon] == 4985)
-				&& (c.playerEquipment[c.playerHat] == 4753 || c.playerEquipment[c.playerHat] == 4976 || c.playerEquipment[c.playerHat] == 4977 || c.playerEquipment[c.playerHat] == 4978 || c.playerEquipment[c.playerHat] == 4979)
-				&& (c.playerEquipment[c.playerChest] == 4757 || c.playerEquipment[c.playerChest] == 4988 || c.playerEquipment[c.playerChest] == 4989 || c.playerEquipment[c.playerChest] == 4990 || c.playerEquipment[c.playerChest] == 4991)
-				&& (c.playerEquipment[c.playerLegs] == 4759 || c.playerEquipment[c.playerLegs] == 4994 || c.playerEquipment[c.playerLegs] == 4995 || c.playerEquipment[c.playerLegs] == 4996 || c.playerEquipment[c.playerLegs] == 4997)) {
+		if ((c.playerEquipment != null)
+				&& (c.playerEquipment[c.playerWeapon] == 4755
+						|| c.playerEquipment[c.playerWeapon] == 4982
+						|| c.playerEquipment[c.playerWeapon] == 4983
+						|| c.playerEquipment[c.playerWeapon] == 4984 || c.playerEquipment[c.playerWeapon] == 4985)
+				&& (c.playerEquipment[c.playerHat] == 4753
+						|| c.playerEquipment[c.playerHat] == 4976
+						|| c.playerEquipment[c.playerHat] == 4977
+						|| c.playerEquipment[c.playerHat] == 4978 || c.playerEquipment[c.playerHat] == 4979)
+				&& (c.playerEquipment[c.playerChest] == 4757
+						|| c.playerEquipment[c.playerChest] == 4988
+						|| c.playerEquipment[c.playerChest] == 4989
+						|| c.playerEquipment[c.playerChest] == 4990 || c.playerEquipment[c.playerChest] == 4991)
+				&& (c.playerEquipment[c.playerLegs] == 4759
+						|| c.playerEquipment[c.playerLegs] == 4994
+						|| c.playerEquipment[c.playerLegs] == 4995
+						|| c.playerEquipment[c.playerLegs] == 4996 || c.playerEquipment[c.playerLegs] == 4997)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Checks to see if player is wearing full Guthans
 	 */
 	public boolean isWearingGuthans(Player c) {
-		if ((c.playerEquipment != null) 
-				&& (c.playerEquipment[c.playerWeapon] == 4726 || c.playerEquipment[c.playerWeapon] == 4910 || c.playerEquipment[c.playerWeapon] == 4911 || c.playerEquipment[c.playerWeapon] == 4912 || c.playerEquipment[c.playerWeapon] == 4913)
-				&& (c.playerEquipment[c.playerHat] == 4724 || c.playerEquipment[c.playerHat] == 4904 || c.playerEquipment[c.playerHat] == 4905 || c.playerEquipment[c.playerHat] == 4906 || c.playerEquipment[c.playerHat] == 4907)
-				&& (c.playerEquipment[c.playerChest] == 4728 || c.playerEquipment[c.playerChest] == 4916 || c.playerEquipment[c.playerChest] == 4917 || c.playerEquipment[c.playerChest] == 4918 || c.playerEquipment[c.playerChest] == 4919)
-				&& (c.playerEquipment[c.playerLegs] == 4730 || c.playerEquipment[c.playerLegs] == 4922 || c.playerEquipment[c.playerLegs] == 4923 || c.playerEquipment[c.playerLegs] == 4924 || c.playerEquipment[c.playerLegs] == 4925)) {
+		if ((c.playerEquipment != null)
+				&& (c.playerEquipment[c.playerWeapon] == 4726
+						|| c.playerEquipment[c.playerWeapon] == 4910
+						|| c.playerEquipment[c.playerWeapon] == 4911
+						|| c.playerEquipment[c.playerWeapon] == 4912 || c.playerEquipment[c.playerWeapon] == 4913)
+				&& (c.playerEquipment[c.playerHat] == 4724
+						|| c.playerEquipment[c.playerHat] == 4904
+						|| c.playerEquipment[c.playerHat] == 4905
+						|| c.playerEquipment[c.playerHat] == 4906 || c.playerEquipment[c.playerHat] == 4907)
+				&& (c.playerEquipment[c.playerChest] == 4728
+						|| c.playerEquipment[c.playerChest] == 4916
+						|| c.playerEquipment[c.playerChest] == 4917
+						|| c.playerEquipment[c.playerChest] == 4918 || c.playerEquipment[c.playerChest] == 4919)
+				&& (c.playerEquipment[c.playerLegs] == 4730
+						|| c.playerEquipment[c.playerLegs] == 4922
+						|| c.playerEquipment[c.playerLegs] == 4923
+						|| c.playerEquipment[c.playerLegs] == 4924 || c.playerEquipment[c.playerLegs] == 4925)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Checks to see if player is wearing full Melee void
 	 */
 	public boolean isWearingFullVoidMelee(Player c) {
-		return c.playerEquipment != null && c.playerEquipment[c.playerHat] == 11665 && c.playerEquipment[c.playerChest] == 8839 && c.playerEquipment[c.playerLegs] == 8840 && c.playerEquipment[c.playerHands] == 8842;
+		return c.playerEquipment != null
+				&& c.playerEquipment[c.playerHat] == 11665
+				&& c.playerEquipment[c.playerChest] == 8839
+				&& c.playerEquipment[c.playerLegs] == 8840
+				&& c.playerEquipment[c.playerHands] == 8842;
 	}
-	
+
 	/**
 	 * Checks to see if player is wearing full Range void
 	 */
 	public boolean isWearingFullVoidRange(Player c) {
-		return c.playerEquipment != null && c.playerEquipment[c.playerHat] == 11664 && c.playerEquipment[c.playerChest] == 8839 && c.playerEquipment[c.playerLegs] == 8840 && c.playerEquipment[c.playerHands] == 8842;
+		return c.playerEquipment != null
+				&& c.playerEquipment[c.playerHat] == 11664
+				&& c.playerEquipment[c.playerChest] == 8839
+				&& c.playerEquipment[c.playerLegs] == 8840
+				&& c.playerEquipment[c.playerHands] == 8842;
 	}
-	
+
 	/**
 	 * Checks to see if player is wearing full Mage void
 	 */
 	public boolean isWearingFullVoidMage(Player c) {
-		return c.playerEquipment != null && c.playerEquipment[c.playerHat] == 11663 && c.playerEquipment[c.playerChest] == 8839 && c.playerEquipment[c.playerLegs] == 8840 && c.playerEquipment[c.playerHands] == 8842;
+		return c.playerEquipment != null
+				&& c.playerEquipment[c.playerHat] == 11663
+				&& c.playerEquipment[c.playerChest] == 8839
+				&& c.playerEquipment[c.playerLegs] == 8840
+				&& c.playerEquipment[c.playerHands] == 8842;
 	}
-	
+
 	/**
 	 * Gets the bonus' of an item.
 	 */
 	public void writeBonus() {
-		int offset = 0;
-		String send = "";
-		for (int i = 0; i < c.playerBonus.length; i++) {
-			if (c.playerBonus[i] >= 0) {
-				send = BONUS_NAMES[i] + ": +" + c.playerBonus[i];
-			} else {
-				send = BONUS_NAMES[i] + ": -"
-						+ java.lang.Math.abs(c.playerBonus[i]);
-			}
+		IntStream.range(0, c.playerBonus.length).forEach(
+				bonus -> {
+					int offset = 0;
+					String send = "";
+					if (c.playerBonus[bonus] >= 0) {
+						send = BONUS_NAMES[bonus] + ": +"
+								+ c.playerBonus[bonus];
+					} else {
+						send = BONUS_NAMES[bonus] + ": -"
+								+ java.lang.Math.abs(c.playerBonus[bonus]);
+					}
 
-			if (i == 10) {
-				offset = 1;
-			}
-			c.getActionSender().textOnInterface(send, (1675 + i + offset));
-		}
-
+					if (bonus == 10) {
+						offset = 1;
+					}
+					c.getActionSender().textOnInterface(send,
+							(1675 + bonus + offset));
+				});
 	}
 
 	/**
 	 * Gets the item name from the item json
 	 */
 	public String getItemName(int itemId) {
-        if(itemId <= 0)
-            return "Unarmed";
-        return ItemDefinition.getDefinitions()[itemId].getName();
+		if (itemId <= 0)
+			return "Unarmed";
+		return ItemDefinition.getDefinitions()[itemId].getName();
 	}
 
 	/**
@@ -184,9 +237,9 @@ public class Equipment {
 	 * Resets item bonuses.
 	 */
 	public void resetBonus() {
-		for (int i = 0; i < c.playerBonus.length; i++) {
-			c.playerBonus[i] = 0;
-		}
+		IntStream.range(0, c.playerBonus.length).forEach(bonus -> {
+			c.playerBonus[bonus] = 0;
+		});
 	}
 
 	/**
@@ -282,7 +335,8 @@ public class Equipment {
 			boolean canWearItem = true;
 			if (c.playerItems[slot] == (wearID + 1)) {
 				getRequirements(getItemName(wearID).toLowerCase(), wearID);
-				targetSlot = ItemDefinition.getDefinitions()[wearID].getEquipmentType().getSlot();
+				targetSlot = ItemDefinition.getDefinitions()[wearID]
+						.getEquipmentType().getSlot();
 
 				if (c.duelRule[11] && targetSlot == 0) {
 					c.sendMessage("Wearing hats has been disabled in this duel!");
@@ -336,7 +390,8 @@ public class Equipment {
 							|| targetSlot == 4 || targetSlot == 0
 							|| targetSlot == 9 || targetSlot == 10) {
 						if (c.defenceLevelReq > 0) {
-							if (c.getActionSender().getLevelForXP(c.playerXP[1]) < c.defenceLevelReq) {
+							if (c.getActionSender()
+									.getLevelForXP(c.playerXP[1]) < c.defenceLevelReq) {
 								c.sendMessage("You need a defence level of "
 										+ c.defenceLevelReq
 										+ " to wear this item.");
@@ -344,7 +399,8 @@ public class Equipment {
 							}
 						}
 						if (c.rangeLevelReq > 0) {
-							if (c.getActionSender().getLevelForXP(c.playerXP[4]) < c.rangeLevelReq) {
+							if (c.getActionSender()
+									.getLevelForXP(c.playerXP[4]) < c.rangeLevelReq) {
 								c.sendMessage("You need a range level of "
 										+ c.rangeLevelReq
 										+ " to wear this item.");
@@ -352,7 +408,8 @@ public class Equipment {
 							}
 						}
 						if (c.magicLevelReq > 0) {
-							if (c.getActionSender().getLevelForXP(c.playerXP[6]) < c.magicLevelReq) {
+							if (c.getActionSender()
+									.getLevelForXP(c.playerXP[6]) < c.magicLevelReq) {
 								c.sendMessage("You need a magic level of "
 										+ c.magicLevelReq
 										+ " to wear this item.");
@@ -362,7 +419,8 @@ public class Equipment {
 					}
 					if (targetSlot == 3) {
 						if (c.attackLevelReq > 0) {
-							if (c.getActionSender().getLevelForXP(c.playerXP[0]) < c.attackLevelReq) {
+							if (c.getActionSender()
+									.getLevelForXP(c.playerXP[0]) < c.attackLevelReq) {
 								c.sendMessage("You need an attack level of "
 										+ c.attackLevelReq
 										+ " to wield this weapon.");
@@ -370,7 +428,8 @@ public class Equipment {
 							}
 						}
 						if (c.rangeLevelReq > 0) {
-							if (c.getActionSender().getLevelForXP(c.playerXP[4]) < c.rangeLevelReq) {
+							if (c.getActionSender()
+									.getLevelForXP(c.playerXP[4]) < c.rangeLevelReq) {
 								c.sendMessage("You need a range level of "
 										+ c.rangeLevelReq
 										+ " to wield this weapon.");
@@ -378,7 +437,8 @@ public class Equipment {
 							}
 						}
 						if (c.magicLevelReq > 0) {
-							if (c.getActionSender().getLevelForXP(c.playerXP[6]) < c.magicLevelReq) {
+							if (c.getActionSender()
+									.getLevelForXP(c.playerXP[6]) < c.magicLevelReq) {
 								c.sendMessage("You need a magic level of "
 										+ c.magicLevelReq
 										+ " to wield this weapon.");
@@ -510,8 +570,7 @@ public class Equipment {
 				getBonus();
 				writeBonus();
 				c.getCombat().getPlayerAnimIndex(
-						Item.getItemName(
-								c.playerEquipment[c.playerWeapon])
+						Item.getItemName(c.playerEquipment[c.playerWeapon])
 								.toLowerCase());
 				c.getActionSender().requestUpdates();
 				return true;
@@ -521,7 +580,6 @@ public class Equipment {
 		}
 	}
 
-	
 	/**
 	 * Indicates the action to wear an item.
 	 * 
@@ -554,7 +612,8 @@ public class Equipment {
 				this.resetBonus();
 				this.getBonus();
 				this.writeBonus();
-				c.getCombat().getPlayerAnimIndex(c.getEquipment()
+				c.getCombat().getPlayerAnimIndex(
+						c.getEquipment()
 								.getItemName(c.playerEquipment[c.playerWeapon])
 								.toLowerCase());
 				c.updateRequired = true;
@@ -616,15 +675,20 @@ public class Equipment {
 	/**
 	 * Gets the item bonuses from item_definitions.json
 	 */
-    public void getBonus() {
-        for (int i = 0; i < c.playerEquipment.length; i++) {
-                if (c.playerEquipment[i] > -1) {
-                        for (int k = 0; k < c.playerBonus.length; k++) {
-                                c.playerBonus[k] += ItemDefinition.getDefinitions()[c.playerEquipment[i]].getBonus()[k];
-                        }
-                }
-        }
-}
+	public void getBonus() {
+		IntStream
+				.range(0, c.playerEquipment.length)
+				.forEach(
+						item -> {
+							if (c.playerEquipment[item] > -1) {
+								for (int k = 0; k < c.playerBonus.length; k++) {
+									c.playerBonus[k] += ItemDefinition
+											.getDefinitions()[c.playerEquipment[item]]
+											.getBonus()[k];
+				}
+			}
+		});
+	}
 
 	/**
 	 * Weapon type.
@@ -646,57 +710,70 @@ public class Equipment {
 		 * Attack styles.
 		 */
 		if (WeaponName.equals("Unarmed")) {
-			c.getActionSender().setSidebarInterface(0, 5855); // punch, kick, block
+			c.getActionSender().setSidebarInterface(0, 5855); // punch, kick,
+																// block
 			c.getActionSender().textOnInterface(WeaponName, 5857);
 		} else if (WeaponName.endsWith("whip")
 				|| WeaponName.contains("tentacle")) {
-			c.getActionSender().setSidebarInterface(0, 12290); // flick, lash, deflect
+			c.getActionSender().setSidebarInterface(0, 12290); // flick, lash,
+																// deflect
 			c.getActionSender().itemOnInterface(12291, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 12293);
 		} else if (WeaponName.endsWith("bow") || WeaponName.endsWith("10")
 				|| WeaponName.endsWith("full")
 				|| WeaponName.startsWith("seercull")) {
-			c.getActionSender().setSidebarInterface(0, 1764); // accurate, rapid, longrange
+			c.getActionSender().setSidebarInterface(0, 1764); // accurate,
+																// rapid,
+																// longrange
 			c.getActionSender().itemOnInterface(1765, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 1767);
 		} else if (WeaponName.startsWith("Staff")
 				|| WeaponName.endsWith("seas") || WeaponName.endsWith("staff")
 				|| WeaponName.endsWith("wand")) {
-			c.getActionSender().setSidebarInterface(0, 328); // spike, impale, smash, block
+			c.getActionSender().setSidebarInterface(0, 328); // spike, impale,
+																// smash, block
 			c.getActionSender().itemOnInterface(329, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 331);
 		} else if (WeaponName2.startsWith("dart")
 				|| WeaponName2.startsWith("knife")
 				|| WeaponName2.startsWith("javelin")
 				|| WeaponName.equalsIgnoreCase("toktz-xil-ul")) {
-			c.getActionSender().setSidebarInterface(0, 4446); // accurate, rapid, longrange
+			c.getActionSender().setSidebarInterface(0, 4446); // accurate,
+																// rapid,
+																// longrange
 			c.getActionSender().itemOnInterface(4447, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 4449);
 		} else if (WeaponName2.startsWith("dagger")
 				|| WeaponName2.contains("anchor")
 				|| WeaponName2.contains("sword")) {
-			c.getActionSender().setSidebarInterface(0, 2276); // stab, lunge, slash, block
+			c.getActionSender().setSidebarInterface(0, 2276); // stab, lunge,
+																// slash, block
 			c.getActionSender().itemOnInterface(2277, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 2279);
 		} else if (WeaponName2.startsWith("pickaxe")) {
-			c.getActionSender().setSidebarInterface(0, 5570); // spike, impale, smash, block
+			c.getActionSender().setSidebarInterface(0, 5570); // spike, impale,
+																// smash, block
 			c.getActionSender().itemOnInterface(5571, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 5573);
 		} else if (WeaponName2.startsWith("axe")
 				|| WeaponName2.startsWith("battleaxe")) {
-			c.getActionSender().setSidebarInterface(0, 1698); // chop, hack, smash, block
+			c.getActionSender().setSidebarInterface(0, 1698); // chop, hack,
+																// smash, block
 			c.getActionSender().itemOnInterface(1699, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 1701);
 		} else if (WeaponName2.startsWith("halberd")) {
-			c.getActionSender().setSidebarInterface(0, 8460); // jab, swipe, fend
+			c.getActionSender().setSidebarInterface(0, 8460); // jab, swipe,
+																// fend
 			c.getActionSender().itemOnInterface(8461, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 8463);
 		} else if (WeaponName2.startsWith("Scythe")) {
-			c.getActionSender().setSidebarInterface(0, 8460); // jab, swipe, fend
+			c.getActionSender().setSidebarInterface(0, 8460); // jab, swipe,
+																// fend
 			c.getActionSender().itemOnInterface(8461, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 8463);
 		} else if (WeaponName2.startsWith("spear")) {
-			c.getActionSender().setSidebarInterface(0, 4679); // lunge, swipe, pound, block
+			c.getActionSender().setSidebarInterface(0, 4679); // lunge, swipe,
+																// pound, block
 			c.getActionSender().itemOnInterface(4680, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 4682);
 		} else if (WeaponName2.toLowerCase().contains("mace")) {
@@ -705,11 +782,13 @@ public class Equipment {
 			c.getActionSender().textOnInterface(WeaponName, 3799);
 
 		} else if (c.playerEquipment[c.playerWeapon] == 4153) {
-			c.getActionSender().setSidebarInterface(0, 425); // war hammer equip.
+			c.getActionSender().setSidebarInterface(0, 425); // war hammer
+																// equip.
 			c.getActionSender().itemOnInterface(426, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 428);
 		} else {
-			c.getActionSender().setSidebarInterface(0, 2423); // chop, slash, lunge, block
+			c.getActionSender().setSidebarInterface(0, 2423); // chop, slash,
+																// lunge, block
 			c.getActionSender().itemOnInterface(2424, 200, Weapon);
 			c.getActionSender().textOnInterface(WeaponName, 2426);
 		}
@@ -731,8 +810,10 @@ public class Equipment {
 					resetBonus();
 					getBonus();
 					writeBonus();
-					c.getCombat().getPlayerAnimIndex(c.getEquipment().getItemName(
-									c.playerEquipment[c.playerWeapon])
+					c.getCombat().getPlayerAnimIndex(
+							c.getEquipment()
+									.getItemName(
+											c.playerEquipment[c.playerWeapon])
 									.toLowerCase());
 					c.getOutStream().createFrame(34);
 					c.getOutStream().writeWord(6);
@@ -811,11 +892,13 @@ public class Equipment {
 		if (item <= 0) {
 			return false;
 		}
-		if ((((freeSlots() >= 1) || playerHasItem(item, 1)) && c.getInventory().getStackable(item))
+		if ((((freeSlots() >= 1) || playerHasItem(item, 1)) && c.getInventory()
+				.getStackable(item))
 				|| ((freeSlots() > 0) && !c.getInventory().getStackable(item))) {
 			for (int i = 0; i < c.playerItems.length; i++) {
 				if ((c.playerItems[i] == (item + 1))
-						&& c.getInventory().getStackable(item) && (c.playerItems[i] > 0)) {
+						&& c.getInventory().getStackable(item)
+						&& (c.playerItems[i] > 0)) {
 					c.playerItems[i] = (item + 1);
 					if (((c.playerItemsN[i] + amount) < GameConstants.MAXITEM_AMOUNT)
 							&& ((c.playerItemsN[i] + amount) > -1)) {
@@ -844,7 +927,8 @@ public class Equipment {
 			for (int i = 0; i < c.playerItems.length; i++) {
 				if (c.playerItems[i] <= 0) {
 					c.playerItems[i] = item + 1;
-					if ((amount < GameConstants.MAXITEM_AMOUNT) && (amount > -1)) {
+					if ((amount < GameConstants.MAXITEM_AMOUNT)
+							&& (amount > -1)) {
 						c.playerItemsN[i] = 1;
 						if (amount > 1) {
 							c.getInventory().addItem(item, amount - 1);
@@ -876,15 +960,15 @@ public class Equipment {
 				c.getOutStream().createFrameVarSizeWord(53);
 				c.getOutStream().writeWord(WriteFrame);
 				c.getOutStream().writeWord(c.playerItems.length);
-				for (int i = 0; i < c.playerItems.length; i++) {
-					if (c.playerItemsN[i] > 254) {
+				IntStream.range(0, c.playerItems.length).forEach(item -> {
+					if (c.playerItemsN[item] > 254) {
 						c.getOutStream().writeByte(255);
-						c.getOutStream().writeDWord_v2(c.playerItemsN[i]);
+						c.getOutStream().writeDWord_v2(c.playerItemsN[item]);
 					} else {
-						c.getOutStream().writeByte(c.playerItemsN[i]);
+						c.getOutStream().writeByte(c.playerItemsN[item]);
 					}
-					c.getOutStream().writeWordBigEndianA(c.playerItems[i]);
-				}
+					c.getOutStream().writeWordBigEndianA(c.playerItems[item]);
+				});
 				c.getOutStream().endFrameVarSizeWord();
 				c.flushOutStream();
 			}
@@ -961,8 +1045,9 @@ public class Equipment {
 			c.getActionSender().sendFrame171(1, 7499); // axe
 			c.getActionSender().sendFrame171(1, 7549); // bow interface
 			c.getActionSender().sendFrame171(1, 7574); // sword interface
-			c.getActionSender().sendFrame171(1, 7599); // scimmy sword interface, for most
-												// swords
+			c.getActionSender().sendFrame171(1, 7599); // scimmy sword
+														// interface, for most
+			// swords
 			c.getActionSender().sendFrame171(1, 8493);
 			c.getActionSender().sendFrame171(1, 12323); // whip interface
 			break;
@@ -974,16 +1059,26 @@ public class Equipment {
 	 **/
 	public void specialAmount(int weapon, double specAmount, int barId) {
 		c.specBarId = barId;
-		c.getActionSender().moveComponent(specAmount >= 10 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 9 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 8 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 7 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 6 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 5 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 4 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 3 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 2 ? 500 : 0, 0, (--barId));
-		c.getActionSender().moveComponent(specAmount >= 1 ? 500 : 0, 0, (--barId));
+		c.getActionSender().moveComponent(specAmount >= 10 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 9 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 8 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 7 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 6 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 5 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 4 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 3 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 2 ? 500 : 0, 0,
+				(--barId));
+		c.getActionSender().moveComponent(specAmount >= 1 ? 500 : 0, 0,
+				(--barId));
 		updateSpecialBar();
 		sendWeapon(weapon, getItemName(weapon));
 	}
@@ -1008,7 +1103,7 @@ public class Equipment {
 								+ "%)" : "@bla@Special Attack (" + percent
 								+ "%)", c.specBarId);
 	}
-	
+
 	/**
 	 * Updates the equipment tab.
 	 **/
@@ -1032,7 +1127,7 @@ public class Equipment {
 			c.setAppearanceUpdateRequired(true);
 		}
 	}
-	
+
 	/**
 	 * Delete item equipment.
 	 **/
@@ -1064,12 +1159,12 @@ public class Equipment {
 			c.setAppearanceUpdateRequired(true);
 		}
 	}
-	
+
 	public void deleteEquipment() {
 		synchronized (c) {
 			if (c.playerEquipmentN[c.playerWeapon] == 1) {
-				c.getEquipment().deleteEquipment(c.playerEquipment[c.playerWeapon],
-						c.playerWeapon);
+				c.getEquipment().deleteEquipment(
+						c.playerEquipment[c.playerWeapon], c.playerWeapon);
 			}
 			if (c.playerEquipmentN[c.playerWeapon] != 0) {
 				c.getOutStream().createFrameVarSizeWord(34);
@@ -1093,17 +1188,17 @@ public class Equipment {
 			c.setAppearanceUpdateRequired(true);
 		}
 	}
-	
+
 	/**
 	 * Removes all items from player's equipment.
 	 */
 	public void removeAllItems() {
-		for (int i = 0; i < c.playerItems.length; i++) {
-			c.playerItems[i] = 0;
-		}
-		for (int i = 0; i < c.playerItemsN.length; i++) {
-			c.playerItemsN[i] = 0;
-		}
+		IntStream.range(0, c.playerItems.length).forEach(item -> {
+			c.playerItems[item] = 0;
+		});
+		IntStream.range(0, c.playerItemsN.length).forEach(item -> {
+			c.playerItemsN[item] = 0;
+		});
 		resetItems(3214);
 	}
 }

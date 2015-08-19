@@ -1,5 +1,7 @@
 package core.game.model.entity.player;
 
+import java.util.stream.IntStream;
+
 import core.Configuration;
 import core.game.GameConstants;
 import core.game.content.Spellbook;
@@ -187,21 +189,12 @@ public class PlayerAssistant {
 				p.getItems().dropAllItems(); // drop all items
 				p.getItems().deleteAllItems(); // delete all items
 
-				if (!p.isSkulled) { // add the
-																		// kept
-																		// items
-																		// once
-																		// we
-																		// finish
-																		// deleting
-																		// and
-																		// dropping
-																		// them
-					for (int i1 = 0; i1 < 3; i1++) {
-						if (p.itemKeptId[i1] > 0) {
-							p.getInventory().addItem(p.itemKeptId[i1], 1);
+				if (!p.isSkulled) {					
+					IntStream.range(0, 3).forEach(item -> {
+						if (p.itemKeptId[item] > 0) {
+							p.getInventory().addItem(p.itemKeptId[item], 1);
 						}
-					}
+					});					
 				}
 				if (p.prayerActive[10]) { // if we have protect items
 					if (p.itemKeptId[3] > 0) {
@@ -210,11 +203,11 @@ public class PlayerAssistant {
 				}
 			p.getItems().resetKeepItems();
 		}
-		p.getCombat().resetPrayers();
-		for (int i = 0; i < 20; i++) {
-			p.playerLevel[i] = p.getActionSender().getLevelForXP(p.playerXP[i]);
-			p.getActionSender().refreshSkill(i);
-		}
+		p.getCombat().resetPrayers();	
+		IntStream.range(0, 20).forEach(level -> {
+			p.playerLevel[level] = p.getActionSender().getLevelForXP(p.playerXP[level]);
+			p.getActionSender().refreshSkill(level);
+		});		
 		if (p.duelStatus <= 4) { // if we are not in a duel repawn to wildy
 			p.getMovement().movePlayer(GameConstants.RESPAWN_X, GameConstants.RESPAWN_Y, 0);
 			p.isSkulled = true;
@@ -472,25 +465,25 @@ public class PlayerAssistant {
 		}
 	}
 
-	public void resetDamageDone() {
-		for (int i = 0; i < PlayerHandler.players.length; i++) {
-			if (PlayerHandler.players[i] != null) {
-				PlayerHandler.players[i].damageTaken[p.playerId] = 0;
+	public void resetDamageDone() {		
+		IntStream.range(0, PlayerHandler.players.length).forEach(player -> {
+			if (PlayerHandler.players[player] != null) {
+				PlayerHandler.players[player].damageTaken[p.playerId] = 0;
 			}
-		}
+		});
 	}
 
 	/**
 	 * Resets the player following
 	 */
-	public void resetFollowers() {
-		for (int j = 0; j < PlayerHandler.players.length; j++) {
-			if (PlayerHandler.players[j] != null) {
-				if (PlayerHandler.players[j].followPlayerId == p.playerId) {
+	public void resetFollowers() {		
+		IntStream.range(0, PlayerHandler.players.length).forEach(player -> {
+			if (PlayerHandler.players[player] != null) {
+				if (PlayerHandler.players[player].followPlayerId == p.playerId) {
 					p.getActionSender().resetFollow();
 				}
 			}
-		}
+		});
 	}
 
 	/**
