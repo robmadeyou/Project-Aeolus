@@ -401,6 +401,10 @@ public class ItemAssistant {
 	 * @return
 	 */
 	public boolean bankItem(int itemID, int fromSlot, int amount) {
+		if (c.isTrading) {
+			c.sendMessage("You can't store items while trading!");
+			return false;
+		}
 		if (c.playerItemsN[fromSlot] <= 0) {
 			return false;
 		}
@@ -408,7 +412,7 @@ public class ItemAssistant {
 			if (c.playerItems[fromSlot] <= 0) {
 				return false;
 			}
-			if (c.getInventory().getStackable(c.playerItems[fromSlot])
+			if (c.getInventory().getStackable(c.playerItems[fromSlot] - 1)
 					|| c.playerItemsN[fromSlot] > 1) {
 				int toBankSlot = 0;
 				boolean alreadyInBank = false;
@@ -422,9 +426,6 @@ public class ItemAssistant {
 					}
 				}
 
-				/*
-				 * Checks if you already have the same item in your bank.
-				 */
 				if (!alreadyInBank && freeBankSlots() > 0) {
 					for (int i = 0; i < GameConstants.BANK_SIZE; i++) {
 						if (c.bankItems[i] <= 0) {
@@ -447,9 +448,7 @@ public class ItemAssistant {
 					resetTempItems();
 					resetBank();
 					return true;
-				}
-
-				else if (alreadyInBank) {
+				} else if (alreadyInBank) {
 					if ((c.bankItemsN[toBankSlot] + amount) <= GameConstants.MAXITEM_AMOUNT
 							&& (c.bankItemsN[toBankSlot] + amount) > -1) {
 						c.bankItemsN[toBankSlot] += amount;
@@ -541,7 +540,7 @@ public class ItemAssistant {
 			if (c.playerItems[fromSlot] <= 0) {
 				return false;
 			}
-			if (c.getInventory().getStackable(c.playerItems[fromSlot] - 1)
+			if (c.getInventory().getStackable(c.playerItems[fromSlot - 1])
 					|| c.playerItemsN[fromSlot] > 1) {
 				int toBankSlot = 0;
 				boolean alreadyInBank = false;

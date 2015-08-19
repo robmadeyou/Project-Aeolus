@@ -1,7 +1,11 @@
 package core.net.packets.incoming;
 
+import core.Configuration;
 import core.game.model.entity.player.Player;
+import core.game.model.entity.player.Rights;
+import core.game.util.InterfaceConstants;
 import core.net.packets.PacketType;
+
 /**
  * Bank X Items
  **/
@@ -11,32 +15,47 @@ public class BankX2 implements PacketType {
 		int Xamount = c.getInStream().readDWord();
 		if (Xamount == 0)
 			Xamount = 1;
-		switch(c.xInterfaceId) {
-			case 5064:
-			c.getItems().bankItem(c.playerItems[c.xRemoveSlot] , c.xRemoveSlot, Xamount);
+
+		if (c.getRights().equal(Rights.DEVELOPER) && Configuration.SERVER_DEBUG) {
+			c.sendMessage("BankX2: - InterfaceId: " + c.xInterfaceId
+					+ " removeId: " + c.xRemoveId + " slot: " + c.xRemoveSlot);
+		}
+
+		switch (c.xInterfaceId) {
+
+		case InterfaceConstants.STORE_BANK:
+			c.getItems().bankItem(c.playerItems[c.xRemoveSlot], c.xRemoveSlot,
+					Xamount);
 			break;
-				
-			case 5382:
-			c.getItems().fromBank(c.bankItems[c.xRemoveSlot] , c.xRemoveSlot, Xamount);
+
+		case InterfaceConstants.WITHDRAW_BANK:
+			c.getItems().fromBank(c.bankItems[c.xRemoveSlot], c.xRemoveSlot,
+					Xamount);
 			break;
-				
-			case 3322:
-			if(c.duelStatus <= 0) {
-            	c.getTrade().tradeItem(c.xRemoveId, c.xRemoveSlot, Xamount);
-            } else {				
+
+		case 3322:
+			if (c.duelStatus <= 0) {
+				c.getTrade().tradeItem(c.xRemoveId, c.xRemoveSlot, Xamount);
+			} else {
 				c.getDuel().stakeItem(c.xRemoveId, c.xRemoveSlot, Xamount);
-			}  
+			}
 			break;
-				
-			case 3415: 
-			if(c.duelStatus <= 0) { 
-            	c.getTrade().fromTrade(c.xRemoveId, c.xRemoveSlot, Xamount);
-			} 
+
+		case 3415:
+			if (c.duelStatus <= 0) {
+				c.getTrade().fromTrade(c.xRemoveId, c.xRemoveSlot, Xamount);
+			}
 			break;
-				
-			case 6669:
+
+		case 6669:
 			c.getDuel().fromDuel(c.xRemoveId, c.xRemoveSlot, Xamount);
-			break;			
+			break;
+
+		case InterfaceConstants.DEPOSIT_BOX:
+			c.getItems().bankItem(c.playerItems[c.xRemoveSlot], c.xRemoveSlot,
+					Xamount);
+			c.getInventory().resetItems(7423);
+			break;
 		}
 	}
 }
