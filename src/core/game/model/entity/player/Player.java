@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.Future;
+import java.util.stream.IntStream;
 
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
@@ -893,58 +894,31 @@ public class Player extends Entity {
 	public void println(String str) {
 		System.out.println("[player-" + playerId + "]: " + str);
 	}
-
-	public Player(int _playerId) {
-		playerId = _playerId;
-		this.setRights(Rights.PLAYER);
-
-		for (int i = 0; i < playerItems.length; i++) {
-			playerItems[i] = 0;
-		}
-		for (int i = 0; i < playerItemsN.length; i++) {
-			playerItemsN[i] = 0;
-		}
-
-		for (int i = 0; i < playerLevel.length; i++) {
-			if (i == 3) {
-				playerLevel[i] = 10;
-			} else {
-				playerLevel[i] = 1;
-			}
-		}
-
-		for (int i = 0; i < playerXP.length; i++) {
-			if (i == 3) {
-				playerXP[i] = 1300;
-			} else {
-				playerXP[i] = 0;
-			}
-		}
-		for (int i = 0; i < GameConstants.BANK_SIZE; i++) {
-			bankItems[i] = 0;
-		}
-
-		for (int i = 0; i < GameConstants.BANK_SIZE; i++) {
-			bankItemsN[i] = 0;
-		}
-
+	
+	/**
+	 * The appearance when a player logs in for the first time.
+	 * Set to actual RuneScape's default appearance
+	 */
+	public void initializeDefaultAppearence() {
 		playerAppearance[0] = 0; // gender
-		playerAppearance[1] = 7; // head
-		playerAppearance[2] = 25;// Torso
-		playerAppearance[3] = 29; // arms
-		playerAppearance[4] = 35; // hands
-		playerAppearance[5] = 39; // legs
-		playerAppearance[6] = 44; // feet
-		playerAppearance[7] = 14; // beard
-		playerAppearance[8] = 7; // hair colour
-		playerAppearance[9] = 8; // torso colour
-		playerAppearance[10] = 9; // legs colour
-		playerAppearance[11] = 5; // feet colour
+		playerAppearance[1] = 0; // head
+		playerAppearance[2] = 10;// Torso
+		playerAppearance[3] = 18; // arms
+		playerAppearance[4] = 26; // hands
+		playerAppearance[5] = 33; // legs
+		playerAppearance[6] = 36; // feet
+		playerAppearance[7] = 42; // beard
+		playerAppearance[8] = 0; // hair colour
+		playerAppearance[9] = 0; // torso colour
+		playerAppearance[10] = 0; // legs colour
+		playerAppearance[11] = 0; // feet colour
 		playerAppearance[12] = 0; // skin colour
+	}
 
-		apset = 0;
-		actionID = 0;
-
+	/**
+	 * The worn equipment when a player logs in for the first time.
+	 */
+	public void initializeDefaultEquipment() {
 		playerEquipment[playerHat] = -1;
 		playerEquipment[playerCape] = -1;
 		playerEquipment[playerAmulet] = -1;
@@ -956,12 +930,63 @@ public class Player extends Entity {
 		playerEquipment[playerRing] = -1;
 		playerEquipment[playerArrows] = -1;
 		playerEquipment[playerWeapon] = -1;
-
+	}
+	
+	/**
+	 * The spawn location when a player logs in for the first time.
+	 */
+	public void initializeDefaultLocation() {
 		heightLevel = 0;
-
 		teleportToX = GameConstants.START_LOCATION_X;
 		teleportToY = GameConstants.START_LOCATION_Y;
+	}
+	
+	public Player(int _playerId) {
+		playerId = _playerId;
+		this.setRights(Rights.PLAYER);
+		
+		IntStream.range(0, playerItems.length).forEach(item -> {
+			playerItems[item] = 0;
+		});
+				
+		IntStream.range(0, playerItemsN.length).forEach(item -> {
+			playerItemsN[item] = 0;
+		});
+		
+		IntStream.range(0, playerLevel.length).forEach(level -> {
+			if (level == 3) {
+				playerLevel[level] = 10;
+			} else {
+				playerLevel[level] = 1;
+			}
+		});
+		
+		IntStream.range(0, playerXP.length).forEach(level -> {
+			if (level == 3) {
+				playerXP[level] = 1300;
+			} else {
+				playerXP[level] = 0;
+			}
+		});
+		
+		IntStream.range(0, GameConstants.BANK_SIZE).forEach(bankItem -> {
+			bankItems[bankItem] = 0;
+		});
+	
+		IntStream.range(0, GameConstants.BANK_SIZE).forEach(bankItem -> {
+			bankItemsN[bankItem] = 0;
+		});
+		
+		initializeDefaultAppearence();
 
+		apset = 0;
+		actionID = 0;
+
+		initializeDefaultEquipment();
+		
+		initializeDefaultLocation();
+
+		// Sets the coordinates according to a map
 		absX = absY = -1;
 		mapRegionX = mapRegionY = -1;
 		currentX = currentY = 0;

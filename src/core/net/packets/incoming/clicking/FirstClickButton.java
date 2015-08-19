@@ -1,5 +1,6 @@
 package core.net.packets.incoming.clicking;
 
+import core.Configuration;
 import core.game.GameConstants;
 import core.game.content.dialogue.DialogueType;
 import core.game.event.tick.Tick;
@@ -28,6 +29,10 @@ public class FirstClickButton {
 	public static void handleClick(final Player c, int actionButtonId) {
 		
 		DialogueOption twoOptions = new TwoOptionDialogue(), threeOptions = new ThreeOptionsDialogue(), fourOptions = new FourOptionsDialogue(), fiveOptions = new FiveOptionsDialogue();
+		
+		if (c.getRights().equal(Rights.DEVELOPER) && Configuration.SERVER_DEBUG) {
+			c.sendMessage("actionButtonId: " + actionButtonId);
+		}
 		
 		switch (actionButtonId) {
 		
@@ -639,8 +644,6 @@ public class FirstClickButton {
 			
 			default:
 				PluginManager.callFunc("clickButton_" + actionButtonId, c);
-				if (c.getRights().greaterOrEqual(Rights.DEVELOPER))
-					c.sendMessage("actionButtonId: " + actionButtonId);
 				break;
 		}
 		

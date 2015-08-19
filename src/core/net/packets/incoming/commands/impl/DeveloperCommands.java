@@ -2,6 +2,7 @@ package core.net.packets.incoming.commands.impl;
 
 import java.io.IOException;
 
+import core.Configuration;
 import core.game.GameConstants;
 import core.game.model.entity.Hit;
 import core.game.model.entity.Hit.HitType;
@@ -22,6 +23,11 @@ public class DeveloperCommands implements Command {
 	@Override
 	public void execute(Player player, String[] command) {
 		switch (command[0]) {
+		
+		case "debug":
+			Configuration.SERVER_DEBUG = !Configuration.SERVER_DEBUG;
+			player.sendMessage("Debug Mode: " + Configuration.SERVER_NAME);
+			break;
 		
 		case "duel":
 			player.getMovement().movePlayer(GameConstants.DUELING_RESPAWN_X, GameConstants.DUELING_RESPAWN_Y, 0);
