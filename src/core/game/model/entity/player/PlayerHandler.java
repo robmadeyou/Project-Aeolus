@@ -102,7 +102,7 @@ public class PlayerHandler {
 				try {
 					if (players[i].disconnected
 							&& (System.currentTimeMillis() - players[i].logoutDelay > 10000 || players[i].properLogout || kickAllPlayers)) {
-						if ((Boolean) players[i].getAttributes().get("isTrading")) {
+						if (players[i].isTrading) {
 							Player o = PlayerHandler.players[players[i].tradeWith];
 							if (o != null) {
 								o.getTrade().declineTrade();

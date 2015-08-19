@@ -239,7 +239,7 @@ public class PlayerVsPlayer {
 				o.startAnimation(o.getCombat().getBlockEmote());
 				SoundManager.sendSound(o, 0, SoundType.PLAYER_BLOCK);
 			}
-			if ((Boolean) o.getAttributes().get("isTrading")) {
+			if (o.isTrading) {
 				o.getTrade().declineTrade();
 			}
 			if (c.projectileStage == 0 && !c.usingMagic) { // melee hit damage
@@ -801,7 +801,7 @@ public class PlayerVsPlayer {
 							&& !PlayerHandler.players[c.playerIndex].attackedPlayers
 									.contains(c.playerId)) {
 						c.attackedPlayers.add(c.playerIndex);
-						c.getAttributes().put("isSkulled", Boolean.TRUE);
+						c.isSkulled = true;
 						c.skullTimer = GameConstants.SKULL_TIMER;
 						c.headIconPk = 0;
 						c.getActionSender().requestUpdates();

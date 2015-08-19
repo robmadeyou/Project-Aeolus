@@ -29,9 +29,9 @@ public class Trading {
 			if (o == null)
 				return;
 
-			else if ((Boolean) c.getAttributes().get("isBusy"))
+			else if (c.isBusy())
 				return;
-			else if ((Boolean) o.getAttributes().get("isBusy")) {
+			else if (o.isBusy()) {
 				c.sendMessage("Other player is busy at the moment.");
 				return;
 			} else if (System.currentTimeMillis() - c.logoutDelay < 10000) {
@@ -44,10 +44,10 @@ public class Trading {
 				return;
 			c.turnPlayerTo(o.absX, o.absY);
 			c.tradeWith = id;
-			if (!(Boolean) c.getAttributes().get("isTrading") && o.tradeRequested && o.tradeWith == c.playerId) {
+			if (!c.isTrading && o.tradeRequested && o.tradeWith == c.playerId) {
 				c.getTrade().openTrade();
 				o.getTrade().openTrade();
-			} else if (!(Boolean) c.getAttributes().get("isTrading")) {
+			} else if (!c.isTrading) {
 				c.tradeRequested = true;
 				c.sendMessage("Sending trade request...");
 				o.sendMessage(Misc.optimizeText(c.playerName) + ":tradereq:");
@@ -63,7 +63,7 @@ public class Trading {
 		if(o == null) {
 			return;
 		}
-		c.getAttributes().put("isTrading", Boolean.TRUE);
+		c.isTrading = true;
 		c.canOffer = true;
 		c.tradeStatus = 1;
 		c.tradeRequested = false;
@@ -120,7 +120,7 @@ public class Trading {
 			return false;
 		}
 		try {
-			if (!(Boolean) c.getAttributes().get("isTrading") || !c.canOffer) {
+			if (!c.isTrading || !c.canOffer) {
 				declineTrade();
 				return false;
 			}
@@ -220,7 +220,7 @@ public class Trading {
 			o.getActionSender().textOnInterface("", 3431);
 		}
 	
-        if (!(Boolean) c.getAttributes().get("isTrading") || !c.canOffer) {
+        if (!c.isTrading || !c.canOffer) {
 			declineTrade();
 			return false;
 		}
@@ -255,7 +255,7 @@ public class Trading {
 	
 	public void resetTrade() {
 		offeredItems.clear();
-		c.getAttributes().put("isTrading", Boolean.FALSE);
+		c.isTrading = false;
 		c.tradeWith = 0;
 		c.canOffer = true;
 		c.tradeConfirmed = false;
@@ -299,7 +299,7 @@ public class Trading {
 		c.tradeConfirmed = false;
 		c.tradeConfirmed2 = false;
 		offeredItems.clear();
-		c.getAttributes().put("isTrading", Boolean.TRUE);
+		c.isTrading = true;
 		c.tradeWith = 0;
 	}
 	

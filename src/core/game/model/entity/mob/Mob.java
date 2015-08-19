@@ -319,12 +319,6 @@ public class Mob extends Entity {
 		
 	}
 
-	@Override
-	public void initAttributes() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	/**
 	 * Npc names
 	 **/

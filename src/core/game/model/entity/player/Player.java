@@ -77,6 +77,16 @@ public class Player extends Entity {
 	public int returnCode = 2;
 	private Future<?> currentTask;
 	public int currentRegion = 0;
+	
+	
+	public boolean isBanking = false, isTrading = false, isDueling = false, isSkulled = false;
+	
+	public boolean isBusy() {
+		if(isBanking || isTrading || isDueling || isShopping) {
+			return true;
+		}
+		return false;
+	}
 
 	/**
 	 * Time in milliseconds used for censoring
@@ -646,13 +656,6 @@ public class Player extends Entity {
 		return isBusyFollow;
 	}
 
-	public boolean isBusy() {
-		if (this.isShopping || (Boolean) this.getAttributes().get("isBanking")) {
-			return true;
-		}
-		return false;
-	}
-
 	public void setBusyFollow(boolean isBusyFollow) {
 		this.isBusyFollow = isBusyFollow;
 	}
@@ -960,8 +963,6 @@ public class Player extends Entity {
 		mapRegionX = mapRegionY = -1;
 		currentX = currentY = 0;
 
-		initAttributes();
-
 		resetWalkingQueue();
 	}
 
@@ -995,7 +996,7 @@ public class Player extends Entity {
 	public static int seconds, minutes, hours, days;
 
 	public void StartBestItemScan(Player c) {
-		if ((Boolean) this.getAttributes().get("isSkulled") && !c.prayerActive[10]) {
+		if (isSkulled && !c.prayerActive[10]) {
 			ItemKeptInfo(c, 0);
 			return;
 		}
@@ -1005,11 +1006,11 @@ public class Player extends Entity {
 	}
 
 	public void FindItemKeptInfo(Player c) {
-		if ((Boolean) this.getAttributes().get("isSkulled") && c.prayerActive[10])
+		if (isSkulled && c.prayerActive[10])
 			ItemKeptInfo(this, 1);
-		else if (!(Boolean) this.getAttributes().get("isSkulled") && !c.prayerActive[10])
+		else if (!isSkulled && !c.prayerActive[10])
 			ItemKeptInfo(this, 3);
-		else if (!(Boolean) this.getAttributes().get("isSkulled") && c.prayerActive[10])
+		else if (!isSkulled && c.prayerActive[10])
 			ItemKeptInfo(this, 4);
 	}
 
@@ -1106,7 +1107,7 @@ public class Player extends Entity {
 				}
 			}
 		}
-		if (!(Boolean) this.getAttributes().get("isSkulled") && ItemsContained > 1
+		if (!isSkulled && ItemsContained > 1
 				&& (WillKeepAmt1 < 3 || (c.prayerActive[10] && WillKeepAmt1 < 4))) {
 			BestItem2(c, ItemsContained);
 		}
@@ -1152,7 +1153,7 @@ public class Player extends Entity {
 				}
 			}
 		}
-		if (!(Boolean) this.getAttributes().get("isSkulled") && ItemsContained > 2
+		if (!isSkulled && ItemsContained > 2
 				&& (WillKeepAmt1 + WillKeepAmt2 < 3 || (c.prayerActive[10] && WillKeepAmt1 + WillKeepAmt2 < 4))) {
 			BestItem3(c, ItemsContained);
 		}
@@ -1200,7 +1201,7 @@ public class Player extends Entity {
 				}
 			}
 		}
-		if (!(Boolean) this.getAttributes().get("isSkulled") && ItemsContained > 3 && c.prayerActive[10]
+		if (!isSkulled && ItemsContained > 3 && c.prayerActive[10]
 				&& ((WillKeepAmt1 + WillKeepAmt2 + WillKeepAmt3) < 4)) {
 			BestItem4(c);
 		}
@@ -1966,20 +1967,7 @@ public class Player extends Entity {
 			outStream.endFrameVarSize();
 		}
 	}
-
-	/**
-	 * A single players attributes
-	 */
-	@Override
-	public void initAttributes() {
-		this.getAttributes().put("isBusy", Boolean.FALSE);
-		this.getAttributes().put("isBanking", Boolean.FALSE);
-		this.getAttributes().put("isTrading", Boolean.FALSE);
-		this.getAttributes().put("isDueling", Boolean.FALSE);
-		this.getAttributes().put("isSkulled", Boolean.FALSE);
-		this.getAttributes().put("canWalk", Boolean.TRUE);
-	}
-
+	
 	public void showWelcomeScreen() {
 		getActionSender().showWelcomeScreen(0, 0, 1, 0, 0);
 		getActionSender().showInterface(15244);
@@ -2167,7 +2155,7 @@ public class Player extends Entity {
 		if (skullTimer > 0) {
 			skullTimer--;
 			if (skullTimer == 1) {
-				this.getAttributes().put("isSkulled", Boolean.FALSE);
+				isSkulled = false;
 				attackedPlayers.clear();
 				headIconPk = -1;
 				skullTimer = -1;
@@ -2259,7 +2247,7 @@ public class Player extends Entity {
 			}
 		}
 
-		if ((Boolean) this.getAttributes().get("isTrading") && tradeResetNeeded) {
+		if (isTrading && tradeResetNeeded) {
 			Player o = PlayerHandler.players[tradeWith];
 			if (o != null) {
 				if (o.tradeResetNeeded) {

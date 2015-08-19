@@ -9,8 +9,18 @@ public class Walking implements PacketType {
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
 
-		if (c.isBusy())
-				return;
+		if (c.isBusy()) {
+			if (c.isTrading) {
+				c.sendMessage("You must decline the trade before trying to walk.");
+			} else if (c.isBanking) {
+				c.sendMessage("You must close the bank before trying to walk.");
+			} else if (c.isShopping) {
+				c.sendMessage("You must close the shop before trying to walk.");
+			} else {
+			c.sendMessage("You are busy and cannot walk.");
+			}
+			return;
+		}
 		
 		if (c.canChangeAppearance) {
 			c.canChangeAppearance = false;
@@ -39,19 +49,8 @@ public class Walking implements PacketType {
 		c.walkingToItem = false;
 		c.clickNpcType = -1;
 		c.clickObjectType = -1;
-		if ((Boolean) c.getAttributes().get("isBanking")) {
-			c.getAttributes().put("isBanking", Boolean.FALSE);
-			c.sendMessage("You cannot walk while in banking. " + (Boolean) c.getAttributes().get("isBanking"));
-		}
 		if (c.tradeStatus >= 0) {
 			c.tradeStatus = 0;
-		}
-		
-		//c.getActionSender().sendMusic(c, MusicLoader.getSongID(MusicLoader.getAreaID(c)));
-
-		if ((Boolean) c.getAttributes().get("isTrading")) {
-			c.sendMessage("You must decline the trade to start walking.");
-			return;
 		}
 		if (packetType == 248 || packetType == 164) {
 			c.clickObjectType = 0;
@@ -115,12 +114,8 @@ public class Walking implements PacketType {
 			Player o = PlayerHandler.players[c.duelingWith];
 			c.duelStatus = 0;
 			o.duelStatus = 0;
-			// c.sendMessage("@red@The challange has been declined.");
-			// o.sendMessage("@red@Other player has declined the challange.");
-			// Misc.println("trade reset");
 			o.getDuel().declineDuel();
 			c.getDuel().declineDuel();
-			// return;
 		}
 
 		if (c.respawnTimer > 3) {

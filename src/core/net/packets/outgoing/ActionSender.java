@@ -239,7 +239,7 @@ public class ActionSender {
 	 * Displays items on death screen
 	 */
 	public void ItemsOnDeath(Player c) {
-		if ((Boolean) c.getAttributes().get("isTrading")) {
+		if (c.isTrading) {
 			return;
 		}
 		c.getActionSender().textOnInterface("Item's Kept on Death", 17103);
@@ -1019,7 +1019,7 @@ public class ActionSender {
 	 * Open bank
 	 **/
 	public void openUpBank() {
-		c.getAttributes().put("isBanking", Boolean.TRUE);
+		c.isBanking = true;
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getInventory().resetItems(5064);

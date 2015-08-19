@@ -497,7 +497,7 @@ public class FirstClickButton {
 					}
 				}
 			}
-			if ((Boolean) c.getAttributes().get("isTrading") && !c.tradeConfirmed && ot.goodTrade && c.goodTrade) {
+			if (c.isTrading && !c.tradeConfirmed && ot.goodTrade && c.goodTrade) {
 				c.tradeConfirmed = true;
 				if (ot.tradeConfirmed) {
 					c.getTrade().confirmScreen();
@@ -518,7 +518,7 @@ public class FirstClickButton {
 				break;
 			}
 
-			if ((Boolean) c.getAttributes().get("isTrading") && c.tradeConfirmed && ot1.tradeConfirmed
+			if (c.isTrading && c.tradeConfirmed && ot1.tradeConfirmed
 					&& !c.tradeConfirmed2) {
 				c.tradeConfirmed2 = true;
 				if (ot1.tradeConfirmed2) {

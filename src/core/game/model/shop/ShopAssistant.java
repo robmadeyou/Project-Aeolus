@@ -132,7 +132,7 @@ public class ShopAssistant {
 	}
 
 	public boolean sellItem(int itemID, int fromSlot, int amount) {
-		if ((Boolean) c.getAttributes().get("isTrading")) {
+		if (c.isTrading) {
 			c.sendMessage("You cant sell items to the shop while your in trade!");
 			return false;
 		}

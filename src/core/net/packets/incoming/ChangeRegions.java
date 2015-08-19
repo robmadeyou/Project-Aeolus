@@ -17,7 +17,7 @@ public class ChangeRegions implements PacketType {
 		player.updateSigns();
 		player.saveFile = true;
 		if(player.skullTimer > 0) {
-			player.getAttributes().put("isSkulled", Boolean.TRUE);	
+			player.isSkulled = true;	
 			player.headIconPk = 0;
 			player.getActionSender().requestUpdates();
 		}

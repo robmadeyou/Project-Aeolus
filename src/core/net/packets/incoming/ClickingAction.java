@@ -20,7 +20,7 @@ public class ClickingAction implements PacketType {
 		switch (packetType) {
 		
 		case CLOSE_WINDOW:
-			if ((Boolean) c.getAttributes().get("isTrading")) {
+			if (c.isTrading) {
 				if(!c.acceptedTrade) {
 					Misc.println("trade reset");
 					c.getTrade().declineTrade();
@@ -35,8 +35,8 @@ public class ClickingAction implements PacketType {
 				}
 			}
 			
-			if ((Boolean) c.getAttributes().get("isBanking")) {
-				c.getAttributes().put("isBanking", Boolean.FALSE);
+			if (c.isBanking) {
+				c.isBanking = false;
 			}
 			
 			if(c.duelStatus == 6) {

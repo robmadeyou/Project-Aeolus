@@ -141,15 +141,6 @@ public class DeveloperCommands implements Command {
 				player.sendMessage("Wrong Syntax use ::interface ####");
 			}
 			break;
-		
-		case "attr":
-			String key = command[1];
-			
-			Object testkey = (Boolean) player.getAttributes().get(key);
-			
-			player.sendMessage("Attribute : " + key + " is set to: " + testkey);
-			
-			break;
 
 		case "emote":
 			player.startAnimation(Integer.parseInt(command[1]));

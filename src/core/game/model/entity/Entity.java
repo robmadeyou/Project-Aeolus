@@ -113,10 +113,6 @@ public abstract class Entity {
             entity = -1, faceX = -1, faceY = -1;
     public Hit hit;
     public Hit secondaryHit;
-    
-    private Map<String, Object> attributes = new HashMap<String, Object>();
-    
-    public abstract void initAttributes();
 	
     /**
      * Resets update flags and the corresponding values for those update flags.
@@ -254,21 +250,6 @@ public abstract class Entity {
 	 */
 	public Position getPosition() {
 		return position;
-	}
-	
-	/**
-	 * Sets an entities attributes
-	 * @param Map<String, Object>
-	 */
-	public void setAttributes(Map<String, Object> attributes) {
-		this.attributes = attributes;
-	}
-
-	/**
-	 * Gets an entities attributes
-	 */
-	public Map<String, Object> getAttributes() {
-		return attributes;
 	}
 	
 	/**

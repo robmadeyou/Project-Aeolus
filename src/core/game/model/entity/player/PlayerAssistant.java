@@ -169,7 +169,7 @@ public class PlayerAssistant {
 			if ((p.getRights().greaterOrEqual(Rights.ADMINISTRATOR) && Configuration.ADMIN_DROP_ITEMS)) {
 				return;
 			}
-				if (!(Boolean) p.getAttributes().get("isSkulled")) { // what
+				if (!(Boolean) p.isSkulled) { // what
 																		// items
 																		// to
 																		// keep
@@ -183,7 +183,7 @@ public class PlayerAssistant {
 				p.getItems().dropAllItems(); // drop all items
 				p.getItems().deleteAllItems(); // delete all items
 
-				if (!(Boolean) p.getAttributes().get("isSkulled")) { // add the
+				if (!p.isSkulled) { // add the
 																		// kept
 																		// items
 																		// once
@@ -213,7 +213,7 @@ public class PlayerAssistant {
 		}
 		if (p.duelStatus <= 4) { // if we are not in a duel repawn to wildy
 			p.getMovement().movePlayer(GameConstants.RESPAWN_X, GameConstants.RESPAWN_Y, 0);
-			p.getAttributes().put("isSkulled", Boolean.TRUE);
+			p.isSkulled = true;
 			p.skullTimer = 0;
 			p.attackedPlayers.clear();
 		} else { // we are in a duel, respawn outside of arena
@@ -242,7 +242,7 @@ public class PlayerAssistant {
 		p.startAnimation(65535);
 		p.getActionSender().frame1();
 		resetTb();
-		p.getAttributes().put("isSkulled", Boolean.FALSE);
+		p.isSkulled = false;
 		p.attackedPlayers.clear();
 		p.headIconPk = -1;
 		p.skullTimer = -1;

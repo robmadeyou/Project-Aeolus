@@ -15,9 +15,7 @@ public class Trade implements PacketType {
 		int tradeId = c.getInStream().readSignedWordBigEndian();
 		c.getActionSender().resetFollow();
 		
-		System.out.println(tradeId);		
-		
-		if ((Boolean) c.getAttributes().get("isTrading")) {
+		if (c.isTrading) {
 			return;
 		}
 		
