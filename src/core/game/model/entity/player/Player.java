@@ -370,7 +370,6 @@ public class Player extends Entity {
 			7040, 2, 7041, 3, 7042, 4, 7043, 5, 7044, 6, 7045, 7, 7046, 8, 7047, 9, 7048, 10, 7049, 11, 7050, 12, 7051,
 			13, 7052, 14, 7053, 15, 47019, 27, 47020, 25, 47021, 12, 47022, 13, 47023, 14, 47024, 15 };
 
-	// public String spellName = "Select Spell";
 	public void assignAutocast(int button) {
 		for (int j = 0; j < autocastIds.length; j++) {
 			if (autocastIds[j] == button) {
@@ -996,9 +995,10 @@ public class Player extends Entity {
 
 	void destruct1() {
 		PlayerSave.saveGame(this);
-		playerListSize = 0;
-		for (int i = 0; i < maxPlayerListSize; i++)
-			playerList[i] = null;
+		playerListSize = 0;		
+		IntStream.range(0, maxPlayerListSize).forEach(player -> {
+			playerList[player] = null;
+		});		
 		absX = absY = -1;
 		mapRegionX = mapRegionY = -1;
 		currentX = currentY = 0;
@@ -1043,9 +1043,9 @@ public class Player extends Entity {
 	}
 
 	public void ItemKeptInfo(Player c, int Lose) {
-		for (int i = 17109; i < 17131; i++) {
-			c.getActionSender().textOnInterface("", i);
-		}
+		IntStream.range(17109, 17131).forEach(childId -> {
+			c.getActionSender().textOnInterface("", childId);
+		});
 		c.getActionSender().textOnInterface("Items you will keep on death:", 17104);
 		c.getActionSender().textOnInterface("Items you will lose on death:", 17105);
 		c.getActionSender().textOnInterface("Player Information", 17106);
@@ -1116,7 +1116,7 @@ public class Player extends Entity {
 					}
 				}
 			}
-		}
+		}		
 		for (int EQUIP = 0; EQUIP < 14; EQUIP++) {
 			if (playerEquipment[EQUIP] > 0) {
 				ItemsContained += 1;
@@ -1328,23 +1328,20 @@ public class Player extends Entity {
 	public int teleportToX = -1, teleportToY = -1;
 
 	public void resetWalkingQueue() {
-		wQueueReadPtr = wQueueWritePtr = 0;
-
-		for (int i = 0; i < walkingQueueSize; i++) {
-			walkingQueueX[i] = currentX;
-			walkingQueueY[i] = currentY;
-		}
+		wQueueReadPtr = wQueueWritePtr = 0;	
+		IntStream.range(0, walkingQueueSize).forEach(walk -> {
+			walkingQueueX[walk] = currentX;
+			walkingQueueY[walk] = currentY;
+		});		
 	}
 
 	public void addToWalkingQueue(int x, int y) {
-		// if (VirtualWorld.I(heightLevel, absX, absY, x, y, 0)) {
 		int next = (wQueueWritePtr + 1) % walkingQueueSize;
 		if (next == wQueueWritePtr)
 			return;
 		walkingQueueX[wQueueWritePtr] = x;
 		walkingQueueY[wQueueWritePtr] = y;
 		wQueueWritePtr = next;
-		// }
 	}
 
 	public boolean goodDistance(int objectX, int objectY, int playerX, int playerY, int distance) {
@@ -2048,15 +2045,18 @@ public class Player extends Entity {
 				if (PlayerHandler.players[j].playerName.equalsIgnoreCase(playerName))
 					disconnected = true;
 			}
-		}
-		for (int i = 0; i < 25; i++) {
-			getActionSender().setSkillLevel(i, playerLevel[i], playerXP[i]);
-			getActionSender().refreshSkill(i);
-		}
-		for (int p = 0; p < PRAYER.length; p++) { // reset prayer glows
-			prayerActive[p] = false;
-			getActionSender().setConfig(PRAYER_GLOW[p], 0);
-		}
+		}	
+		
+		IntStream.range(0, 25).forEach(level -> {
+			getActionSender().setSkillLevel(level, playerLevel[level], playerXP[level]);
+			getActionSender().refreshSkill(level);
+		});		
+		
+		IntStream.range(0, PRAYER.length).forEach(prayerId -> {
+			prayerActive[prayerId] = false;
+			getActionSender().setConfig(PRAYER_GLOW[prayerId], 0);
+		});
+		
 		loadRegion();
 		getActionSender().handleWeaponStyle();
 		accountFlagged = getActionSender().checkForFlags();
@@ -2195,8 +2195,8 @@ public class Player extends Entity {
 		}
 
 		if (System.currentTimeMillis() - restoreStatsDelay > 60000) {
-			restoreStatsDelay = System.currentTimeMillis();
-			for (int level = 0; level < playerLevel.length; level++) {
+			restoreStatsDelay = System.currentTimeMillis();			
+			IntStream.range(0, playerLevel.length).forEach(level -> {
 				if (playerLevel[level] < getLevelForXP(playerXP[level])) {
 					if (level != 5) { // prayer doesn't restore
 						playerLevel[level] += 1;
@@ -2208,7 +2208,7 @@ public class Player extends Entity {
 					getActionSender().setSkillLevel(level, playerLevel[level], playerXP[level]);
 					getActionSender().refreshSkill(level);
 				}
-			}
+			});
 		}
 		if (skullTimer > 0) {
 			skullTimer--;
@@ -2351,10 +2351,11 @@ public class Player extends Entity {
 				addToWalkingQueue(currentX, currentY);
 
 				if (dir != -1 && (dir & 1) != 0) {
-
-					for (int i = 0; i < numTravelBackSteps - 1; i++) {
-						addToWalkingQueue(travelBackX[i], travelBackY[i]);
-					}
+					
+					IntStream.range(0, numTravelBackSteps).forEach(step -> {
+						addToWalkingQueue(travelBackX[step], travelBackY[step]);
+					});
+					
 					int wayPointX2 = travelBackX[numTravelBackSteps - 1],
 							wayPointY2 = travelBackY[numTravelBackSteps - 1];
 					int wayPointX1, wayPointY1;
@@ -2389,16 +2390,14 @@ public class Player extends Entity {
 						} else
 							addToWalkingQueue(wayPointX1, wayPointY1);
 					}
-				} else {
-					for (int i = 0; i < numTravelBackSteps; i++) {
-						addToWalkingQueue(travelBackX[i], travelBackY[i]);
-					}
-				}
-
-				for (int i = 0; i < newWalkCmdSteps; i++) {
-					addToWalkingQueue(getNewWalkCmdX()[i], getNewWalkCmdY()[i]);
-				}
-
+				} else {					
+					IntStream.range(0, numTravelBackSteps).forEach(step -> {
+						addToWalkingQueue(travelBackX[step], travelBackY[step]);
+					});
+				}				
+				IntStream.range(0, newWalkCmdSteps).forEach(step -> {
+					addToWalkingQueue(getNewWalkCmdX()[step], getNewWalkCmdY()[step]);
+				});
 			}
 
 			isRunning = isNewWalkCmdIsRunning() || isRunning2;
