@@ -22,6 +22,11 @@ public class Walking implements PacketType {
 			return;
 		}
 		
+		if (c.duelCount != 0) {
+			c.sendMessage("You must wait " + c.duelCount + " seconds before walking.");
+			return;
+		}
+		
 		if (c.canChangeAppearance) {
 			c.canChangeAppearance = false;
 		}

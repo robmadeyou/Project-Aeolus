@@ -4,12 +4,12 @@ character-password = test
 
 [CHARACTER]
 character-height = 0
-character-xPos = 3087
-character-yPos = 3502
+character-xPos = 3365
+character-yPos = 3266
 character-rights = 0
 UUID = 7314To be filled by O.E.M.20150223132208.000000-360
 crystal-bow-shots = 0
-skull-timer = 0
+skull-timer = -1
 magic-book = 0
 special-amount = 10.0
 teleblock-length = 0
@@ -78,7 +78,6 @@ character-skill = 23	1	0
 character-skill = 24	1	0
 
 [ITEMS]
-character-item = 0	996	50000
 
 [BANK]
 
