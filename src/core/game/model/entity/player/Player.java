@@ -2135,6 +2135,17 @@ public class Player extends Entity {
 		if (System.currentTimeMillis() - singleCombatDelay2 > 3300) {
 			underAttackBy2 = 0;
 		}
+		
+		if (System.currentTimeMillis() - duelDelay > 1000 && duelCount > 0) {
+			if (duelCount != 1) {
+				forcedChat("" + (--duelCount));
+				duelDelay = System.currentTimeMillis();
+			} else {
+				damageTaken = new int[GameConstants.MAX_PLAYERS];
+				forcedChat("FIGHT!");
+				duelCount = 0;
+			}
+		}
 
 		if (System.currentTimeMillis() - restoreStatsDelay > 60000) {
 			restoreStatsDelay = System.currentTimeMillis();
