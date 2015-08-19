@@ -400,7 +400,7 @@ public class Equipment {
 				if (targetSlot == c.playerWeapon) {
 					c.autocasting = false;
 					c.autocastId = 0;
-					c.getActionSender().sendFrame36(108, 0);
+					c.getActionSender().setConfig(108, 0);
 				}
 
 				if (slot >= 0 && wearID >= 0) {

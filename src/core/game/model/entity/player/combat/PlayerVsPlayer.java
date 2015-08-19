@@ -118,9 +118,9 @@ public class PlayerVsPlayer {
 				if (o.prayerActive[16] || o.prayerActive[17]
 						|| o.prayerActive[18]) {
 					o.headIcon = -1;
-					o.getActionSender().sendFrame36(c.PRAYER_GLOW[16], 0);
-					o.getActionSender().sendFrame36(c.PRAYER_GLOW[17], 0);
-					o.getActionSender().sendFrame36(c.PRAYER_GLOW[18], 0);
+					o.getActionSender().setConfig(c.PRAYER_GLOW[16], 0);
+					o.getActionSender().setConfig(c.PRAYER_GLOW[17], 0);
+					o.getActionSender().setConfig(c.PRAYER_GLOW[18], 0);
 				}
 				o.sendMessage("You have been injured!");
 				o.stopPrayerDelay = System.currentTimeMillis();

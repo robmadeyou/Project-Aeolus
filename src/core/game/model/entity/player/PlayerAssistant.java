@@ -65,6 +65,10 @@ public class PlayerAssistant {
 			}
 		}
 	}
+	
+	public double getAgilityRunRestore(Player c) {
+		return 2260 - (c.playerLevel[16] * 10);
+	}
 
 	/**
 	 * Changes a players spellbook

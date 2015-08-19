@@ -88,7 +88,7 @@ public class CombatPrayer {
 	public static void resetPrayers(Player c) {
 		for (int i = 0; i < c.prayerActive.length; i++) {
 			c.prayerActive[i] = false;
-			c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 0);
+			c.getActionSender().setConfig(c.PRAYER_GLOW[i], 0);
 		}
 		c.headIcon = -1;
 		c.getActionSender().requestUpdates();
@@ -134,7 +134,7 @@ public class CombatPrayer {
 		if (c.duelRule[7]) {
 			for (int p = 0; p < c.PRAYER.length; p++) { // reset prayer glows
 				c.prayerActive[p] = false;
-				c.getActionSender().sendFrame36(c.PRAYER_GLOW[p], 0);
+				c.getActionSender().setConfig(c.PRAYER_GLOW[p], 0);
 			}
 			c.sendMessage("Prayer has been disabled in this duel!");
 			return;
@@ -167,7 +167,7 @@ public class CombatPrayer {
 						for (int j = 0; j < defPray.length; j++) {
 							if (defPray[j] != i) {
 								c.prayerActive[defPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[defPray[j]], 0);
 							}
 						}
@@ -187,21 +187,21 @@ public class CombatPrayer {
 						for (int j = 0; j < strPray.length; j++) {
 							if (strPray[j] != i) {
 								c.prayerActive[strPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[strPray[j]], 0);
 							}
 						}
 						for (int j = 0; j < rangePray.length; j++) {
 							if (rangePray[j] != i) {
 								c.prayerActive[rangePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[rangePray[j]], 0);
 							}
 						}
 						for (int j = 0; j < magePray.length; j++) {
 							if (magePray[j] != i) {
 								c.prayerActive[magePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[magePray[j]], 0);
 							}
 						}
@@ -224,21 +224,21 @@ public class CombatPrayer {
 						for (int j = 0; j < atkPray.length; j++) {
 							if (atkPray[j] != i) {
 								c.prayerActive[atkPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[atkPray[j]], 0);
 							}
 						}
 						for (int j = 0; j < rangePray.length; j++) {
 							if (rangePray[j] != i) {
 								c.prayerActive[rangePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[rangePray[j]], 0);
 							}
 						}
 						for (int j = 0; j < magePray.length; j++) {
 							if (magePray[j] != i) {
 								c.prayerActive[magePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[magePray[j]], 0);
 							}
 						}
@@ -258,28 +258,28 @@ public class CombatPrayer {
 							c.getActionSender().sendSound(448);
 							if (atkPray[j] != i) {
 								c.prayerActive[atkPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[atkPray[j]], 0);
 							}
 						}
 						for (int j = 0; j < strPray.length; j++) {
 							if (strPray[j] != i) {
 								c.prayerActive[strPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[strPray[j]], 0);
 							}
 						}
 						for (int j = 0; j < rangePray.length; j++) {
 							if (rangePray[j] != i) {
 								c.prayerActive[rangePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[rangePray[j]], 0);
 							}
 						}
 						for (int j = 0; j < magePray.length; j++) {
 							if (magePray[j] != i) {
 								c.prayerActive[magePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[magePray[j]], 0);
 							}
 						}
@@ -292,28 +292,28 @@ public class CombatPrayer {
 						for (int j = 0; j < atkPray.length; j++) {
 							if (atkPray[j] != i) {
 								c.prayerActive[atkPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[atkPray[j]], 0);
 							}
 						}
 						for (int j = 0; j < strPray.length; j++) {
 							if (strPray[j] != i) {
 								c.prayerActive[strPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[strPray[j]], 0);
 							}
 						}
 						for (int j = 0; j < rangePray.length; j++) {
 							if (rangePray[j] != i) {
 								c.prayerActive[rangePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[rangePray[j]], 0);
 							}
 						}
 						for (int j = 0; j < magePray.length; j++) {
 							if (magePray[j] != i) {
 								c.prayerActive[magePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[magePray[j]], 0);
 							}
 						}
@@ -336,9 +336,9 @@ public class CombatPrayer {
 				case PROTECT_FROM_MELEE:
 					if (System.currentTimeMillis() - c.stopPrayerDelay < 5000) {
 						c.sendMessage("You have been injured and can't use this prayer!");
-						c.getActionSender().sendFrame36(c.PRAYER_GLOW[16], 0);
-						c.getActionSender().sendFrame36(c.PRAYER_GLOW[17], 0);
-						c.getActionSender().sendFrame36(c.PRAYER_GLOW[18], 0);
+						c.getActionSender().setConfig(c.PRAYER_GLOW[16], 0);
+						c.getActionSender().setConfig(c.PRAYER_GLOW[17], 0);
+						c.getActionSender().setConfig(c.PRAYER_GLOW[18], 0);
 						c.getActionSender().sendSound(433);
 						return;
 					}
@@ -355,7 +355,7 @@ public class CombatPrayer {
 					for (int p = 16; p < 24; p++) {
 						if (i != p && p != 19 && p != 20) {
 							c.prayerActive[p] = false;
-							c.getActionSender().sendFrame36(c.PRAYER_GLOW[p], 0);
+							c.getActionSender().setConfig(c.PRAYER_GLOW[p], 0);
 						}
 					}
 					break;
@@ -366,35 +366,35 @@ public class CombatPrayer {
 						for (int j = 0; j < atkPray.length; j++) {
 							if (atkPray[j] != i) {
 								c.prayerActive[atkPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[atkPray[j]], 0);
 							}
 						}
 						for (int j = 0; j < strPray.length; j++) {
 							if (strPray[j] != i) {
 								c.prayerActive[strPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[strPray[j]], 0);
 							}
 						}
 						for (int j = 0; j < rangePray.length; j++) {
 							if (rangePray[j] != i) {
 								c.prayerActive[rangePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[rangePray[j]], 0);
 							}
 						}
 						for (int j = 0; j < magePray.length; j++) {
 							if (magePray[j] != i) {
 								c.prayerActive[magePray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[magePray[j]], 0);
 							}
 						}
 						for (int j = 0; j < defPray.length; j++) {
 							if (defPray[j] != i) {
 								c.prayerActive[defPray[j]] = false;
-								c.getActionSender().sendFrame36(
+								c.getActionSender().setConfig(
 										c.PRAYER_GLOW[defPray[j]], 0);
 							}
 						}
@@ -405,26 +405,26 @@ public class CombatPrayer {
 				if (!headIcon) {
 					if (c.prayerActive[i] == false) {
 						c.prayerActive[i] = true;
-						c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 1);
+						c.getActionSender().setConfig(c.PRAYER_GLOW[i], 1);
 					} else {
 						c.prayerActive[i] = false;
-						c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 0);
+						c.getActionSender().setConfig(c.PRAYER_GLOW[i], 0);
 					}
 				} else {
 					if (c.prayerActive[i] == false) {
 						c.prayerActive[i] = true;
-						c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 1);
+						c.getActionSender().setConfig(c.PRAYER_GLOW[i], 1);
 						c.headIcon = c.PRAYER_HEAD_ICONS[i];
 						c.getActionSender().requestUpdates();
 					} else {
 						c.prayerActive[i] = false;
-						c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 0);
+						c.getActionSender().setConfig(c.PRAYER_GLOW[i], 0);
 						c.headIcon = -1;
 						c.getActionSender().requestUpdates();
 					}
 				}
 			} else {
-				c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 0);
+				c.getActionSender().setConfig(c.PRAYER_GLOW[i], 0);
 				c.getActionSender().sendSound(447);
 				c.getActionSender().textOnInterface(
 						"You need a @blu@Prayer level of "
@@ -434,7 +434,7 @@ public class CombatPrayer {
 				c.getActionSender().openBackDialogue(356);
 			}
 		} else {
-			c.getActionSender().sendFrame36(c.PRAYER_GLOW[i], 0);
+			c.getActionSender().setConfig(c.PRAYER_GLOW[i], 0);
 			c.sendMessage("You have run out of prayer points!");
 		}
 

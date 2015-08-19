@@ -173,7 +173,7 @@ public class ActionSender {
 	public void resetAutocast() {
 		c.autocastId = 0;
 		c.autocasting = false;
-		c.getActionSender().sendFrame36(108, 0);
+		c.getActionSender().setConfig(108, 0);
 	}
 
 	public void setSideBarInterfaces(Player p, boolean enable) {
@@ -476,7 +476,7 @@ public class ActionSender {
 	/**
 	 * Handle Byte Configuration
 	 */
-	public void sendFrame36(int id, int state) {
+	public void setConfig(int id, int state) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(36);
@@ -1945,13 +1945,13 @@ public class ActionSender {
 	 */
 	public void handleWeaponStyle() {
 		if (c.fightMode == 0) {
-			c.getActionSender().sendFrame36(43, c.fightMode);
+			c.getActionSender().setConfig(43, c.fightMode);
 		} else if (c.fightMode == 1) {
-			c.getActionSender().sendFrame36(43, 3);
+			c.getActionSender().setConfig(43, 3);
 		} else if (c.fightMode == 2) {
-			c.getActionSender().sendFrame36(43, 1);
+			c.getActionSender().setConfig(43, 1);
 		} else if (c.fightMode == 3) {
-			c.getActionSender().sendFrame36(43, 2);
+			c.getActionSender().setConfig(43, 2);
 		}
 	}
 }

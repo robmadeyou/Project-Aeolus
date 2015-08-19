@@ -38,7 +38,6 @@ import core.game.world.clipping.PathFinder;
 import core.net.Packet;
 import core.net.Packet.Type;
 import core.net.packets.PacketHandler;
-import core.net.packets.incoming.Trade;
 import core.net.packets.outgoing.ActionSender;
 import core.net.security.ISAACCipher;
 
@@ -88,16 +87,20 @@ public class Player extends Entity {
 		return false;
 	}
 
+	public long muteEnd, lastRunRecovery;
+	
 	/**
-	 * Time in milliseconds used for censoring
+	 * Checks to see if a player is running or not
 	 */
-	public long muteEnd;
+	public boolean isRunning() {
+		return isNewWalkCmdIsRunning() || (isRunning2 && isMoving);
+	}
 
 	/**
 	 * Reporting a player
 	 */
 	public String lastReported = "";
-	public long lastReport = 0;
+	public long lastReport = 0, runEnergy = 100;
 
 	private Rights rights;
 
@@ -373,7 +376,7 @@ public class Player extends Entity {
 				Player c = PlayerHandler.players[this.playerId];
 				autocasting = true;
 				autocastId = autocastIds[j + 1];
-				c.getActionSender().sendFrame36(108, 1);
+				c.getActionSender().setConfig(108, 1);
 				c.getActionSender().setSidebarInterface(0, 328);
 				// spellName = getSpellName(autocastId);
 				// spellName = spellName;
@@ -1345,6 +1348,15 @@ public class Player extends Entity {
 		currentY += Misc.directionDeltaY[dir];
 		absX += Misc.directionDeltaX[dir];
 		absY += Misc.directionDeltaY[dir];
+		if (isRunning()) {
+			if (runEnergy > 0) {
+				runEnergy--;
+				getActionSender().sendString(runEnergy + "%", 149);
+			} else {
+				isRunning2 = false;
+				getActionSender().setConfig(173, 0);
+			}
+		}
 		return dir;
 	}
 
@@ -2018,15 +2030,16 @@ public class Player extends Entity {
 		}
 		for (int p = 0; p < PRAYER.length; p++) { // reset prayer glows
 			prayerActive[p] = false;
-			getActionSender().sendFrame36(PRAYER_GLOW[p], 0);
+			getActionSender().setConfig(PRAYER_GLOW[p], 0);
 		}
 		loadRegion();
 		getActionSender().handleWeaponStyle();
 		accountFlagged = getActionSender().checkForFlags();
-		// getPA().sendFrame36(43, fightMode-1);
-		getActionSender().sendFrame36(108, 0);// resets autocast button
-		getActionSender().sendFrame36(172, 1);
-		getActionSender().sendFrame36(166, 3); // brightness level 3
+		// getPA().setConfig(43, fightMode-1);
+		getActionSender().sendString(runEnergy + "%", 149);
+		getActionSender().setConfig(108, 0);// resets autocast button
+		getActionSender().setConfig(172, 1);
+		getActionSender().setConfig(166, 3); // brightness level 3
 		getActionSender().resetCamera(); // reset screen
 		getActionSender().setChatOptions(0, 0, 0); // reset private messaging
 													// options
@@ -2065,9 +2078,9 @@ public class Player extends Entity {
 		if (addStarter)
 			getActionSender().addStarter();
 		if (autoRet)
-			getActionSender().sendFrame36(172, 1);
+			getActionSender().setConfig(172, 1);
 		else
-			getActionSender().sendFrame36(172, 0);
+			getActionSender().setConfig(172, 0);
 	}
 
 	private void loadRegion() {
@@ -2144,6 +2157,15 @@ public class Player extends Entity {
 				damageTaken = new int[GameConstants.MAX_PLAYERS];
 				forcedChat("FIGHT!");
 				duelCount = 0;
+			}
+		}
+		
+		if (runEnergy < 100) {
+			if (System.currentTimeMillis() > getPA().getAgilityRunRestore(this)
+					+ lastRunRecovery) {
+				runEnergy++;
+				lastRunRecovery = System.currentTimeMillis();
+				getActionSender().sendString(runEnergy + "%", 149);
 			}
 		}
 

@@ -28,8 +28,8 @@ public class DeveloperCommands implements Command {
 		
 		break;
 		
-		case "sendframe36":
-			player.getActionSender().sendFrame36(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
+		case "setConfig":
+			player.getActionSender().setConfig(Integer.parseInt(command[1]), Integer.parseInt(command[2]));
 			break;
 		
 		case "reloadplugins":

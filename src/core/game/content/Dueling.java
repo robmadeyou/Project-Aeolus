@@ -399,7 +399,7 @@ public class Dueling {
 		if(c.duelRule[7]){
 			for(int p = 0; p < c.PRAYER.length; p++) { // reset prayer glows 
 				c.prayerActive[p] = false;
-				c.getActionSender().sendFrame36(c.PRAYER_GLOW[p], 0);		
+				c.getActionSender().setConfig(c.PRAYER_GLOW[p], 0);		
 			}
 			c.headIcon = -1;
 			c.getActionSender().requestUpdates();

@@ -448,7 +448,7 @@ public class FirstClickButton {
 		case 152:
 			c.isRunning2 = !c.isRunning2;
 			int frame = c.isRunning2 == true ? 1 : 0;
-			c.getActionSender().sendFrame36(173, frame);
+			c.getActionSender().setConfig(173, frame);
 			break;
 
 		case 13092:
@@ -537,10 +537,10 @@ public class FirstClickButton {
 		case 125011: // Click agree
 			if (!c.ruleAgreeButton) {
 				c.ruleAgreeButton = true;
-				c.getActionSender().sendFrame36(701, 1);
+				c.getActionSender().setConfig(701, 1);
 			} else {
 				c.ruleAgreeButton = false;
-				c.getActionSender().sendFrame36(701, 0);
+				c.getActionSender().setConfig(701, 0);
 			}
 			break;
 		case 125003:// Accept
@@ -559,82 +559,82 @@ public class FirstClickButton {
 		case 74176:
 			if (!c.mouseButton) {
 				c.mouseButton = true;
-				c.getActionSender().sendFrame36(500, 1);
-				c.getActionSender().sendFrame36(170, 1);
+				c.getActionSender().setConfig(500, 1);
+				c.getActionSender().setConfig(170, 1);
 			} else if (c.mouseButton) {
 				c.mouseButton = false;
-				c.getActionSender().sendFrame36(500, 0);
-				c.getActionSender().sendFrame36(170, 0);
+				c.getActionSender().setConfig(500, 0);
+				c.getActionSender().setConfig(170, 0);
 			}
 			break;
 		case 74184:
 			if (!c.splitChat) {
 				c.splitChat = true;
-				c.getActionSender().sendFrame36(502, 1);
-				c.getActionSender().sendFrame36(287, 1);
+				c.getActionSender().setConfig(502, 1);
+				c.getActionSender().setConfig(287, 1);
 			} else {
 				c.splitChat = false;
-				c.getActionSender().sendFrame36(502, 0);
-				c.getActionSender().sendFrame36(287, 0);
+				c.getActionSender().setConfig(502, 0);
+				c.getActionSender().setConfig(287, 0);
 			}
 			break;
 		case 74180:
 			if (!c.chatEffects) {
 				c.chatEffects = true;
-				c.getActionSender().sendFrame36(501, 1);
-				c.getActionSender().sendFrame36(171, 0);
+				c.getActionSender().setConfig(501, 1);
+				c.getActionSender().setConfig(171, 0);
 			} else {
 				c.chatEffects = false;
-				c.getActionSender().sendFrame36(501, 0);
-				c.getActionSender().sendFrame36(171, 1);
+				c.getActionSender().setConfig(501, 0);
+				c.getActionSender().setConfig(171, 1);
 			}
 			break;
 		case 74188:
 			if (!c.acceptAid) {
 				c.acceptAid = true;
-				c.getActionSender().sendFrame36(503, 1);
-				c.getActionSender().sendFrame36(427, 1);
+				c.getActionSender().setConfig(503, 1);
+				c.getActionSender().setConfig(427, 1);
 			} else {
 				c.acceptAid = false;
-				c.getActionSender().sendFrame36(503, 0);
-				c.getActionSender().sendFrame36(427, 0);
+				c.getActionSender().setConfig(503, 0);
+				c.getActionSender().setConfig(427, 0);
 			}
 			break;
 		case 74192:
 			if (!c.isRunning2) {
 				c.isRunning2 = true;
-				c.getActionSender().sendFrame36(504, 1);
-				c.getActionSender().sendFrame36(173, 1);
+				c.getActionSender().setConfig(504, 1);
+				c.getActionSender().setConfig(173, 1);
 			} else {
 				c.isRunning2 = false;
-				c.getActionSender().sendFrame36(504, 0);
-				c.getActionSender().sendFrame36(173, 0);
+				c.getActionSender().setConfig(504, 0);
+				c.getActionSender().setConfig(173, 0);
 			}
 			break;
 
 		case 74206:// area1
-			c.getActionSender().sendFrame36(509, 1);
-			c.getActionSender().sendFrame36(510, 0);
-			c.getActionSender().sendFrame36(511, 0);
-			c.getActionSender().sendFrame36(512, 0);
+			c.getActionSender().setConfig(509, 1);
+			c.getActionSender().setConfig(510, 0);
+			c.getActionSender().setConfig(511, 0);
+			c.getActionSender().setConfig(512, 0);
 			break;
 		case 74207:// area2
-			c.getActionSender().sendFrame36(509, 0);
-			c.getActionSender().sendFrame36(510, 1);
-			c.getActionSender().sendFrame36(511, 0);
-			c.getActionSender().sendFrame36(512, 0);
+			c.getActionSender().setConfig(509, 0);
+			c.getActionSender().setConfig(510, 1);
+			c.getActionSender().setConfig(511, 0);
+			c.getActionSender().setConfig(512, 0);
 			break;
 		case 74208:// area3
-			c.getActionSender().sendFrame36(509, 0);
-			c.getActionSender().sendFrame36(510, 0);
-			c.getActionSender().sendFrame36(511, 1);
-			c.getActionSender().sendFrame36(512, 0);
+			c.getActionSender().setConfig(509, 0);
+			c.getActionSender().setConfig(510, 0);
+			c.getActionSender().setConfig(511, 1);
+			c.getActionSender().setConfig(512, 0);
 			break;
 		case 74209:// area4
-			c.getActionSender().sendFrame36(509, 0);
-			c.getActionSender().sendFrame36(510, 0);
-			c.getActionSender().sendFrame36(511, 0);
-			c.getActionSender().sendFrame36(512, 1);
+			c.getActionSender().setConfig(509, 0);
+			c.getActionSender().setConfig(510, 0);
+			c.getActionSender().setConfig(511, 0);
+			c.getActionSender().setConfig(512, 1);
 			break;
 			
 			default:
