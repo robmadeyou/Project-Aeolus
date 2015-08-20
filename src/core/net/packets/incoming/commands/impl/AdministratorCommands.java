@@ -158,6 +158,24 @@ public class AdministratorCommands implements Command {
 			else if (arg.length == 3)
 				player.getMovement().movePlayer(Integer.parseInt(arg[1]), Integer.parseInt(arg[2]), player.heightLevel);
 			break;
+			
+		case "item":
+			try {
+				if (command.length == 3) {
+					int newItemID = Integer.parseInt(command[1]);
+					int newItemAmount = Integer.parseInt(command[2]);
+					if ((newItemID <= GameConstants.ITEM_LIMIT) && (newItemID >= 0)) {
+						player.getInventory().addItem(newItemID, newItemAmount);
+					} else {
+						player.sendMessage("No such item.");
+					}
+				} else {
+					player.sendMessage("Use as ::item 995 200");
+				}
+			} catch (Exception e) {
+				e.getMessage();
+			}
+			break;
 
 		case "getid":
 			String args[] = command;
@@ -168,7 +186,7 @@ public class AdministratorCommands implements Command {
 			}
 			nameOfItem = nameOfItem.substring(0, nameOfItem.length() - 1);
 			player.sendMessage("Searching: " + nameOfItem);
-			for (int j = 0; j < ItemDefinition.getDefinitions().length; j++) {
+			for (int j = 0; j < GameConstants.ITEM_LIMIT; j++) {
 				if (ItemDefinition.getDefinitions() != null) {
 					player.getEquipment();
 					if (player.getEquipment().getItemName(j).replace("_", " ").toLowerCase().contains(nameOfItem.toLowerCase())) {

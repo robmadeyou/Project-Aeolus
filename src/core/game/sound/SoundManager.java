@@ -18,7 +18,7 @@ public class SoundManager {
 	 *
 	 */
 	public enum SoundType {
-		MELEE_COMBAT, NPC_SOUND, REGION_MUSIC, CAST_SOUND, MAGIC_COMBAT, RANGED_COMBAT, SKILL_SOUND, PLAYER_BLOCK, NPC_BLOCK, SPECIAL_ATTACK;
+		MELEE_COMBAT, NPC_SOUND, CAST_SOUND, MAGIC_COMBAT, RANGED_COMBAT, SKILL_SOUND, PLAYER_BLOCK, NPC_BLOCK, SPECIAL_ATTACK;
 	}
 
 	/**
@@ -151,8 +151,6 @@ public class SoundManager {
 			case 47:
 				p.getPlayerAssistant().sendSound(1111);
 				break;
-			// spells
-
 			}
 			break;
 
@@ -242,8 +240,8 @@ public class SoundManager {
 		 * Represent's players combat sounds. (when you hit with a weapon)
 		 */
 		case MELEE_COMBAT:
-			final String weaponName = ItemDefinition.getDefinitions()[id].getName()
-					.toLowerCase();
+			final String weaponName = ItemDefinition.getDefinitions()[id]
+					.getName().toLowerCase();
 			if (weaponName.contains("scimitar"))
 				p.getPlayerAssistant().sendSound(396);
 			else if (weaponName.contains("mace"))
@@ -272,79 +270,72 @@ public class SoundManager {
 				break;
 			}
 			break;
-
-		/**
-		 * Plays region music -TODO not added
-		 */
-		case REGION_MUSIC:// regionids
+		case NPC_BLOCK:
 			break;
-
+		case NPC_SOUND:
+			break;
+		case SKILL_SOUND:
+			break;
+		case SPECIAL_ATTACK:
+			break;
 		default:
 			break;
-
 		}
 		return id;
 	}
 
 	/**
-	 * Ripped this int from r-s 2 lazy to do
+	 * Special attack sounds
 	 * 
 	 * @param id
 	 * @return
 	 */
 	public static int specialSounds(int id) {
-		if (id == 4151) // whip
-		{
+
+		switch (id) {
+
+		case 4151: // whip
 			return 1081;
-		}
-		if (id == 5698 || id == 1215) // dds
-		{
+
+		case 5698: // dds
 			return 385;
-		}
-		if (id == 1434)// Mace
-		{
+
+		case 1434: // Mace
 			return 387;
-		}
-		if (id == 3204) // halberd
-		{
+
+		case 3204: // halberd
+
 			return 420;
-		}
-		if (id == 4153) // gmaul
-		{
+
+		case 4153: // gmaul
 			return 1082;
-		}
-		if (id == 7158) // d2h
-		{
+
+		case 7158: // d2h
+
 			return 426;
-		}
-		if (id == 4587) // dscim
-		{
+
+		case 4587: // dscim
+
 			return 1305;
-		}
-		if (id == 1215) // Dragon dag
-		{
+
+		case 1215: // dragon dag
 			return 793;
-		}
-		if (id == 1305) // D Long
-		{
+
+		case 1305: // dlong
 			return 390;
-		}
-		if (id == 861) // MSB
-		{
+
+		case 861: // msb
 			return 386;
-		}
-		if (id == 11235) // DBow
-		{
+
+		case 11235: // dbow
 			return 386;
-		}
-		if (id == 6739) // D Axe
-		{
-		}
-		if (id == 1377) // DBAxe
-		{
+
+		case 1377: // dbaxe
 			return 389;
+
+		default:
+			return -1;
 		}
-		return -1;
 	}
 
 	/**
@@ -358,5 +349,4 @@ public class SoundManager {
 			return;
 		player.getPlayerAssistant().sendSound(i);
 	}
-
 }

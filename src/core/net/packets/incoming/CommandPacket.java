@@ -1,5 +1,6 @@
 package core.net.packets.incoming;
 
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.net.packets.PacketType;
 import core.net.packets.incoming.commands.Command;
@@ -31,7 +32,9 @@ public class CommandPacket implements PacketType {
 			adminCommand.execute(c, cmd2);
 		if (c.getRights().greaterOrEqual(developerCommand.getRights()))
 			developerCommand.execute(c, cmd2);
-		else
-			c.sendMessage("I do not have access to do this.");
+		
+		if (Configuration.SERVER_DEBUG) {
+			System.out.println("Player: " + c.playerName + " - entered command : " + cmd);
+		}
 	}
 }
