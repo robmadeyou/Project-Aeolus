@@ -36,6 +36,68 @@ public class FirstClickButton {
 		
 		switch (actionButtonId) {
 		
+		case 9125: // Accurate
+		case 6221: // range accurate
+		case 48010: // flick (whip)
+		case 21200: // spike (pickaxe)
+		case 1080: // bash (staff)
+		case 6168: // chop (axe)
+		case 6236: // accurate (long bow)
+		case 17102: // accurate (darts)
+		case 8234: // stab (dagger)
+		case 22228: // punch
+			c.fightMode = 0;
+			if (c.autocasting)
+				c.getActionSender().resetAutocast();
+			break;
+
+		case 9126: // Defensive
+		case 48008: // deflect (whip)
+		case 21201: // block (pickaxe)
+		case 1078: // focus - block (staff)
+		case 6169: // block (axe)
+		case 33019: // fend (hally)
+		case 18078: // block (spear)
+		case 8235: // block (dagger)
+					// case 22231: //unarmed
+		case 22229: // unarmed
+			c.fightMode = 1;
+			if (c.autocasting)
+				c.getActionSender().resetAutocast();
+			break;
+
+		case 9127: // Controlled
+		case 48009: // lash (whip)
+		case 33018: // jab (hally)
+		case 6234: // longrange (long bow)
+		case 6219: // longrange
+		case 18077: // lunge (spear)
+		case 18080: // swipe (spear)
+		case 18079: // pound (spear)
+		case 17100: // longrange (darts)
+			c.fightMode = 3;
+			if (c.autocasting)
+				c.getActionSender().resetAutocast();
+			break;
+
+		case 9128: // Aggressive
+		case 6220: // range rapid
+		case 21203: // impale (pickaxe)
+		case 21202: // smash (pickaxe)
+		case 1079: // pound (staff)
+		case 6171: // hack (axe)
+		case 6170: // smash (axe)
+		case 33020: // swipe (hally)
+		case 6235: // rapid (long bow)
+		case 17101: // repid (darts)
+		case 8237: // lunge (dagger)
+		case 8236: // slash (dagger)
+		case 22230: // kick
+			c.fightMode = 2;
+			if (c.autocasting)
+				c.getActionSender().resetAutocast();
+			break;
+		
 		/* VENG */
 		case 118098:
 			c.getPA().castVeng();

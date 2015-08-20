@@ -101,7 +101,9 @@ public class PlayerSave {
 						for (int j = 0; j < token3.length; j++) {
 							//RegionalMusic.unlocked[j] = Boolean.parseBoolean(token3[j]);
 						}
-					} 
+					} else if (token.equals("fightMode")) {
+						p.fightMode = Integer.parseInt(token2);
+					}
 					break;
 				case 3:
 					if (token.equals("character-equip")) {
@@ -295,6 +297,10 @@ public class PlayerSave {
 //			for (int i = 0; i < RegionalMusic.unlocked.length; i++)
 //				music += RegionalMusic.unlocked[i] + "\t";
 			characterfile.write(music);
+			characterfile.newLine();
+			characterfile.write("fightMode = ", 0, 12);
+			characterfile.write(Integer.toString(p.fightMode), 0, Integer
+					.toString(p.fightMode).length());
 			characterfile.newLine();
 			characterfile.newLine();
 
