@@ -180,7 +180,7 @@ public class AdministratorCommands implements Command {
 			}
 			break;
 
-		case "getitemid":
+		case "getitem":
 			String args[] = command;
 			String nameOfItem = "";
 			int results = 0;
@@ -201,7 +201,7 @@ public class AdministratorCommands implements Command {
 			player.sendMessage(results + " results found...");
 			break;
 			
-		case "getnpcid":	
+		case "getnpc":	
 			String nameOfNpc = "";
 			int result = 0;
 			for (int i = 1; i < command.length; i++) {
