@@ -26,7 +26,7 @@ public class DeveloperCommands implements Command {
 		
 		case "debug":
 			Configuration.SERVER_DEBUG = !Configuration.SERVER_DEBUG;
-			player.sendMessage("Debug Mode: " + Configuration.SERVER_NAME);
+			player.sendMessage("Debug Mode: " + Configuration.SERVER_DEBUG);
 			break;
 		
 		case "duel":

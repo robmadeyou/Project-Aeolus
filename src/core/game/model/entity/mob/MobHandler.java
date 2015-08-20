@@ -195,44 +195,6 @@ public class MobHandler {
 			return 0;
 	}
 
-	public int npcSize(int i) {
-		switch (npcs[i].npcType) {
-		case 2883:
-		case 2882:
-		case 2881:
-			return 3;
-		}
-		return 0;
-	}
-
-	public boolean isAggressive(int i) {
-		switch (npcs[i].npcType) {
-		case 2550:
-		case 2551:
-		case 2552:
-		case 2553:
-		case 2558:
-		case 2559:
-		case 2560:
-		case 2561:
-		case 2562:
-		case 2563:
-		case 2564:
-		case 2565:
-		case 2892:
-		case 2894:
-		case 2881:
-		case 2882:
-		case 2883:
-			return true;
-		}
-		if (npcs[i].inWild() && npcs[i].maxHP > 0)
-			return true;
-		if (isFightCaveNpc(i))
-			return true;
-		return false;
-	}
-
 	public boolean isFightCaveNpc(int i) {
 		switch (npcs[i].npcType) {
 		case 2627:
@@ -892,6 +854,14 @@ public class MobHandler {
 		npcs[slot] = newNPC;
 	}
 
+	/**
+	 * Checks MobDefinitions to see if an npc is aggressive
+	 * @param npcId
+	 */
+	public boolean isAggressive(int npcId) {
+		return MobDefinition.DEFINITIONS[npcId].isAggressive();
+	}
+	
 	public void newNPC(int npcType, int x, int y, int heightLevel, WalkType walkType, int HP, int maxHit, int attack,
 			int defence, int hp) {
 		// first, search for a free slot
@@ -1275,143 +1245,6 @@ public class MobHandler {
 		}
 	}
 
-	// id of bones dropped by npcs
-	public int boneDrop(int type) {
-		switch (type) {
-		case 1:// normal bones
-		case 9:
-		case 100:
-		case 12:
-		case 17:
-		case 803:
-		case 18:
-		case 81:
-		case 101:
-		case 41:
-		case 19:
-		case 90:
-		case 75:
-		case 86:
-		case 78:
-		case 912:
-		case 913:
-		case 914:
-		case 1648:
-		case 1643:
-		case 1618:
-		case 1624:
-		case 181:
-		case 119:
-		case 49:
-		case 26:
-		case 1341:
-			return 526;
-		case 117:
-			return 532;// big bones
-		case 50:// drags
-		case 53:
-		case 54:
-		case 55:
-		case 941:
-		case 1590:
-		case 1591:
-		case 1592:
-			return 536;
-		case 84:
-		case 1615:
-		case 1613:
-		case 82:
-		case 3200:
-			return 592;
-		case 2881:
-		case 2882:
-		case 2883:
-			return 6729;
-		default:
-			return -1;
-		}
-	}
-
-	public int getStackedDropAmount(int itemId, int npcId) {
-		switch (itemId) {
-		case 995:
-			switch (npcId) {
-			case 1:
-				return 50 + Misc.random(50);
-			case 9:
-				return 133 + Misc.random(100);
-			case 1624:
-				return 1000 + Misc.random(300);
-			case 1618:
-				return 1000 + Misc.random(300);
-			case 1643:
-				return 1000 + Misc.random(300);
-			case 1610:
-				return 1000 + Misc.random(1000);
-			case 1613:
-				return 1500 + Misc.random(1250);
-			case 1615:
-				return 3000;
-			case 18:
-				return 500;
-			case 101:
-				return 60;
-			case 913:
-			case 912:
-			case 914:
-				return 750 + Misc.random(500);
-			case 1612:
-				return 250 + Misc.random(500);
-			case 1648:
-				return 250 + Misc.random(250);
-			case 90:
-				return 200;
-			case 82:
-				return 1000 + Misc.random(455);
-			case 52:
-				return 400 + Misc.random(200);
-			case 49:
-				return 1500 + Misc.random(2000);
-			case 1341:
-				return 1500 + Misc.random(500);
-			case 26:
-				return 500 + Misc.random(100);
-			case 20:
-				return 750 + Misc.random(100);
-			case 21:
-				return 890 + Misc.random(125);
-			case 117:
-				return 500 + Misc.random(250);
-			case 2607:
-				return 500 + Misc.random(350);
-			}
-			break;
-		case 11212:
-			return 10 + Misc.random(4);
-		case 565:
-		case 561:
-			return 10;
-		case 560:
-		case 563:
-		case 562:
-			return 15;
-		case 555:
-		case 554:
-		case 556:
-		case 557:
-			return 20;
-		case 892:
-			return 40;
-		case 886:
-			return 100;
-		case 6522:
-			return 6 + Misc.random(5);
-
-		}
-
-		return 1;
-	}
-
 	/**
 	 * Resets players in combat
 	 */
@@ -1427,7 +1260,6 @@ public class MobHandler {
 	/**
 	 * Npc Follow Player
 	 **/
-
 	public int GetMove(int Place1, int Place2) {
 		if ((Place1 - Place2) == 0) {
 			return 0;
@@ -2092,25 +1924,26 @@ public class MobHandler {
 		return false;
 	}
 
-	public int getMaxHit(int i) {
-		switch (npcs[i].npcType) {
-		case 2558:
-			if (npcs[i].attackType == AttackType.MAGIC)
-				return 28;
-			else
-				return 68;
-		case 2562:
-			return 31;
-		case 2550:
-			return 36;
-		}
-		return 1;
+	/**
+	 * Gets the maximum hit for an npc
+	 * @param npcId
+	 */
+	public int getMaxHit(int npcId) {
+		return MobDefinition.DEFINITIONS[npcId].getMaxHit();
 	}
 
+	/**
+	 * Gets an npc's hitpoints
+	 * @param npcId
+	 */
 	public int getNpcListHP(int npcId) {
 		return MobDefinition.DEFINITIONS[npcId].getHitpoints();
 	}
 
+	/**
+	 * Gets an npc's name
+	 * @param npcId
+	 */
 	public String getNpcListName(int npcId) {
 		if (MobDefinition.DEFINITIONS != null) {
 			return MobDefinition.DEFINITIONS[npcId].getName();

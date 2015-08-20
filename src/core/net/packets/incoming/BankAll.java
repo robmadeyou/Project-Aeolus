@@ -58,7 +58,7 @@ public class BankAll implements PacketType {
 				}
 			} else {
 				if (c.getInventory().getStackable(removeId)
-						|| Item.itemIsNote[removeId]) {
+						|| Item.itemIsNote(removeId)) {
 					c.getDuel().stakeItem(removeId, removeSlot,
 							c.playerItemsN[removeSlot]);
 				} else {
@@ -104,7 +104,7 @@ public class BankAll implements PacketType {
 
 		case 6669:
 			if (c.getInventory().getStackable(removeId)
-					|| Item.itemIsNote[removeId]) {
+					|| Item.itemIsNote(removeId)) {
 				for (GameItem item : c.getDuel().stakedItems) {
 					if (item.id == removeId) {
 						c.getDuel().fromDuel(removeId, removeSlot,

@@ -76,11 +76,11 @@ public class Inventory {
 	public int getTotalCount(int itemID) {
 		int count = 0;
 		for (int j = 0; j < player.playerItems.length; j++) {
-			if (Item.itemIsNote[itemID + 1]) {
+			if (Item.itemIsNote(itemID + 1)) {
 				if (itemID + 2 == player.playerItems[j])
 					count += player.playerItemsN[j];
 			}
-			if (!Item.itemIsNote[itemID + 1]) {
+			if (!Item.itemIsNote(itemID + 1)) {
 				if (itemID + 1 == player.playerItems[j]) {
 					count += player.playerItemsN[j];
 				}

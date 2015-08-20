@@ -55,6 +55,29 @@ public class ActionSender {
 	}	
 
 	/**
+	 * Items displayed on the armor interface.
+	 * 
+	 * @param id
+	 * @param amount
+	 */
+	public void itemOnInterface(int id, int amount) {
+		synchronized (c) {
+			c.getOutStream().createFrameVarSizeWord(53);
+			c.getOutStream().writeWord(2274);
+			c.getOutStream().writeWord(1);
+			if (amount > 254) {
+				c.getOutStream().writeByte(255);
+				c.getOutStream().writeDWord_v2(amount);
+			} else {
+				c.getOutStream().writeByte(amount);
+			}
+			c.getOutStream().writeWordBigEndianA(id);
+			c.getOutStream().endFrameVarSizeWord();
+			c.flushOutStream();
+		}
+	}
+	
+	/**
 	 * Displays the welcome screen.
 	 */
 	public void showWelcomeScreen(int days, int unreadMessages, int member, int ip, int daysSince) {

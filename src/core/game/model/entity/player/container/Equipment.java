@@ -18,17 +18,6 @@ public class Equipment {
 		this.c = c;
 	}
 
-	/**
-	 * slot shield
-	 */
-	public static final String[] SHIELDS = { "spirit shield", "defender",
-			"farseer" };
-	/**
-	 * slot weapon
-	 */
-	public static final String[] WEAPONS = { "rapier", "maul", "staff",
-			"longsword" };
-
 	public boolean tentacleWhip() {
 		return c.playerEquipment[c.playerWeapon] == 14004;
 	}
@@ -190,43 +179,6 @@ public class Equipment {
 	}
 
 	/**
-	 * Gets the item type.
-	 */
-	public String itemType(int item) {
-		if (Item.playerCapes(item)) {
-			return "cape";
-		}
-		if (Item.playerBoots(item)) {
-			return "boots";
-		}
-		if (Item.playerGloves(item)) {
-			return "gloves";
-		}
-		if (Item.playerShield(item)) {
-			return "shield";
-		}
-		if (Item.playerAmulet(item)) {
-			return "amulet";
-		}
-		if (Item.playerArrows(item)) {
-			return "arrows";
-		}
-		if (Item.playerRings(item)) {
-			return "ring";
-		}
-		if (Item.playerHats(item)) {
-			return "hat";
-		}
-		if (Item.playerLegs(item)) {
-			return "legs";
-		}
-		if (Item.playerBody(item)) {
-			return "body";
-		}
-		return "weapon";
-	}
-
-	/**
 	 * Item bonuses.
 	 **/
 	public final String[] BONUS_NAMES = { "Stab", "Slash", "Crush", "Magic",
@@ -253,19 +205,6 @@ public class Equipment {
 		c.strengthLevelReq = reqLvl[2];// strength
 		c.rangeLevelReq = reqLvl[3];// range
 		c.magicLevelReq = reqLvl[4];// magic
-	}
-
-	/**
-	 * Finds the item.
-	 * 
-	 */
-	public int findItem(int id, int[] items, int[] amounts) {
-		for (int i = 0; i < c.playerItems.length; i++) {
-			if (((items[i] - 1) == id) && (amounts[i] > 0)) {
-				return i;
-			}
-		}
-		return -1;
 	}
 
 	/**
@@ -501,7 +440,7 @@ public class Equipment {
 
 						if (is2h) {
 							if (wearingShield && wearingWeapon) {
-								if (freeSlots() > 0) {
+								if (c.getInventory().freeSlots() > 0) {
 									c.playerItems[slot] = toRemove + 1;
 									c.playerItemsN[slot] = toRemoveN;
 									c.playerEquipment[targetSlot] = toEquip - 1;
@@ -658,21 +597,6 @@ public class Equipment {
 	}
 
 	/**
-	 * Checks if you have a free slot.
-	 * 
-	 * @return
-	 */
-	public int freeSlots() {
-		int freeS = 0;
-		for (int i = 0; i < c.playerItems.length; i++) {
-			if (c.playerItems[i] <= 0) {
-				freeS++;
-			}
-		}
-		return freeS;
-	}
-
-	/**
 	 * Gets the item bonuses from item_definitions.json
 	 */
 	public void getBonus() {
@@ -685,9 +609,9 @@ public class Equipment {
 									c.playerBonus[k] += ItemDefinition
 											.getDefinitions()[c.playerEquipment[item]]
 											.getBonus()[k];
-				}
-			}
-		});
+								}
+							}
+						});
 	}
 
 	/**
@@ -892,9 +816,10 @@ public class Equipment {
 		if (item <= 0) {
 			return false;
 		}
-		if ((((freeSlots() >= 1) || playerHasItem(item, 1)) && c.getInventory()
-				.getStackable(item))
-				|| ((freeSlots() > 0) && !c.getInventory().getStackable(item))) {
+		if ((((c.getInventory().freeSlots() >= 1) || playerHasItem(item, 1)) && c
+				.getInventory().getStackable(item))
+				|| ((c.getInventory().freeSlots() > 0) && !c.getInventory()
+						.getStackable(item))) {
 			for (int i = 0; i < c.playerItems.length; i++) {
 				if ((c.playerItems[i] == (item + 1))
 						&& c.getInventory().getStackable(item)

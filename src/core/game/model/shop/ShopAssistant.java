@@ -149,7 +149,7 @@ public class ShopAssistant {
 		if (amount <= 0) {
 			return false;
 		}
-		if (Item.itemIsNote[itemID] == true) {
+		if (Item.itemIsNote(itemID) == true) {
 			itemID = c.getItems().getUnnotedItem(itemID);
 		}
 		for (int i = 0; i < ShopHandler.ShopItems.length; i++) {

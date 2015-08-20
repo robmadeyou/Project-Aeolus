@@ -310,29 +310,6 @@ public class ItemAssistant {
 	}
 
 	/**
-	 * Items displayed on the armor interface.
-	 * 
-	 * @param id
-	 * @param amount
-	 */
-	public void itemOnInterface(int id, int amount) {
-		synchronized (c) {
-			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(2274);
-			c.getOutStream().writeWord(1);
-			if (amount > 254) {
-				c.getOutStream().writeByte(255);
-				c.getOutStream().writeDWord_v2(amount);
-			} else {
-				c.getOutStream().writeByte(amount);
-			}
-			c.getOutStream().writeWordBigEndianA(id);
-			c.getOutStream().endFrameVarSizeWord();
-			c.flushOutStream();
-		}
-	}
-
-	/**
 	 * Reseting your bank.
 	 */
 	public void resetBank() {
@@ -408,7 +385,7 @@ public class ItemAssistant {
 		if (c.playerItemsN[fromSlot] <= 0) {
 			return false;
 		}
-		if (!Item.itemIsNote[c.playerItems[fromSlot] - 1]) {
+		if (!Item.itemIsNote(c.playerItems[fromSlot] - 1)) {
 			if (c.playerItems[fromSlot] <= 0) {
 				return false;
 			}
@@ -535,8 +512,8 @@ public class ItemAssistant {
 					return false;
 				}
 			}
-		} else if (Item.itemIsNote[c.playerItems[fromSlot] - 1]
-				&& !Item.itemIsNote[c.playerItems[fromSlot] - 2]) {
+		} else if (Item.itemIsNote(c.playerItems[fromSlot] - 1)
+				&& !Item.itemIsNote(c.playerItems[fromSlot] - 2)) {
 			if (c.playerItems[fromSlot] <= 0) {
 				return false;
 			}
@@ -724,7 +701,7 @@ public class ItemAssistant {
 						c.getInventory().resetItems(5064);
 					}
 				} else if (c.takeAsNote
-						&& Item.itemIsNote[c.bankItems[fromSlot]]) {
+						&& Item.itemIsNote(c.bankItems[fromSlot])) {
 					if (c.bankItemsN[fromSlot] > amount) {
 						if (c.getInventory().addItem(c.bankItems[fromSlot], amount)) {
 							c.bankItemsN[fromSlot] -= amount;
@@ -932,51 +909,4 @@ public class ItemAssistant {
 			return true;
 		return false;
 	}
-
-	/**
-	 * Checks if the player has all the shards.
-	 * 
-	 * @return
-	 */
-	public boolean hasAllShards() {
-		return c.getInventory().playerHasItem(11712, 1) && c.getInventory().playerHasItem(11712, 1)
-				&& c.getInventory().playerHasItem(11714, 1);
-	}
-
-	/**
-	 * Makes the godsword blade.
-	 */
-	public void makeBlade() {
-		c.getInventory().deleteItem(11710, 1);
-		c.getInventory().deleteItem(11712, 1);
-		c.getInventory().deleteItem(11714, 1);
-		c.getInventory().addItem(11690, 1);
-		c.sendMessage("You combine the shards to make a blade.");
-	}
-
-	/**
-	 * Makes the godsword.
-	 * 
-	 * @param i
-	 */
-	public void makeGodsword(int i) {
-		int godsword = i - 8;
-		if (c.getInventory().playerHasItem(11690) && c.getInventory().playerHasItem(i)) {
-			c.getInventory().deleteItem(11690, 1);
-			c.getInventory().deleteItem(i, 1);
-			c.getInventory().addItem(i - 8, 1);
-			c.sendMessage("You combine the hilt and the blade to make a godsword.");
-		}
-	}
-
-	/**
-	 * Checks if the item is a godsword hilt.
-	 * 
-	 * @param i
-	 * @return
-	 */
-	public boolean isHilt(int i) {
-		return i >= 11702 && i <= 11708 && i % 2 == 0;
-	}
-
 }

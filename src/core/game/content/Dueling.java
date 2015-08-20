@@ -210,7 +210,7 @@ public class Dueling {
 		if(!c.getInventory().playerHasItem(itemID, amount)) {
 			return false;
 		}
-		if (c.getInventory().getStackable(itemID) || Item.itemIsNote[itemID]) {
+		if (c.getInventory().getStackable(itemID) || Item.itemIsNote(itemID)) {
 			boolean found = false;
 			for (GameItem item : stakedItems) {
 				if (item.id == itemID) {
@@ -346,7 +346,7 @@ public class Dueling {
 		}
 		String itemId = "";
 		for(GameItem item : stakedItems) {
-			if(c.getInventory().getStackable(item.id) || Item.itemIsNote[item.id]) {
+			if(c.getInventory().getStackable(item.id) || Item.itemIsNote(item.id)) {
 				itemId += c.getEquipment().getItemName(item.id) + " x " + Misc.format(item.amount) +"\\n";
 			}  else  {
 				itemId += c.getEquipment().getItemName(item.id) + "\\n";
@@ -355,7 +355,7 @@ public class Dueling {
 		c.getActionSender().textOnInterface(itemId, 6516);
 		itemId = "";
 		for(GameItem item : o.getDuel().stakedItems) {
-			if(c.getInventory().getStackable(item.id) || Item.itemIsNote[item.id]) {
+			if(c.getInventory().getStackable(item.id) || Item.itemIsNote(item.id)) {
 				itemId += c.getEquipment().getItemName(item.id) + " x " + Misc.format(item.amount) +"\\n";
 			} else {
 				itemId += c.getEquipment().getItemName(item.id) +"\\n";
@@ -569,7 +569,7 @@ public class Dueling {
 		c.duelRequested = false;
 		for(GameItem item : stakedItems) {
 			if(item.amount < 1) continue;
-			if(c.getInventory().getStackable(item.id) || Item.itemIsNote[item.id]) {
+			if(c.getInventory().getStackable(item.id) || Item.itemIsNote(item.id)) {
 				c.getInventory().addItem(item.id, item.amount);
 			} else  {
 				c.getInventory().addItem(item.id, 1);
