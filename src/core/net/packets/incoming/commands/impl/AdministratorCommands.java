@@ -3,6 +3,9 @@ package core.net.packets.incoming.commands.impl;
 import core.Server;
 import core.game.GameConstants;
 import core.game.content.Spellbook;
+import core.game.model.entity.mob.Mob;
+import core.game.model.entity.mob.MobDefinition;
+import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.mob.WalkType;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
@@ -177,7 +180,7 @@ public class AdministratorCommands implements Command {
 			}
 			break;
 
-		case "getid":
+		case "getitemid":
 			String args[] = command;
 			String nameOfItem = "";
 			int results = 0;
@@ -188,9 +191,7 @@ public class AdministratorCommands implements Command {
 			player.sendMessage("Searching: " + nameOfItem);
 			for (int j = 0; j < GameConstants.ITEM_LIMIT; j++) {
 				if (ItemDefinition.getDefinitions() != null) {
-					player.getEquipment();
 					if (player.getEquipment().getItemName(j).replace("_", " ").toLowerCase().contains(nameOfItem.toLowerCase())) {
-						player.getEquipment();
 						player.sendMessage("<col=255>" + player.getEquipment().getItemName(j).replace("_", " ") + " - "
 								+ player.getItems().getItemId(j));
 						results++;
@@ -198,6 +199,26 @@ public class AdministratorCommands implements Command {
 				}
 			}
 			player.sendMessage(results + " results found...");
+			break;
+			
+		case "getnpcid":	
+			String nameOfNpc = "";
+			int result = 0;
+			for (int i = 1; i < command.length; i++) {
+				nameOfNpc = nameOfNpc + command[i] + " ";
+			}			
+			nameOfNpc = nameOfNpc.substring(0, nameOfNpc.length() - 1);
+			player.sendMessage("Searching: " + nameOfNpc);
+			for (int i = 0; i < GameConstants.MAX_LISTED_NPCS; i++) {
+				if (MobDefinition.getDefinitions() != null) {
+					String npcName = MobDefinition.getDefinitions()[i].getName();
+					if(npcName.replace("_", " ").toLowerCase().contains(nameOfNpc.toLowerCase())) {
+						player.sendMessage("<col=255>" + npcName.replace("_", " ") + " - " + i);
+						result++;
+					}
+				}
+			}
+			player.sendMessage(result + " results found...");
 			break;
 
 		case "bank":

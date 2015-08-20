@@ -17,16 +17,15 @@ import core.game.world.clipping.region.Region;
 public class MobHandler {
 
 	public static int maxNPCs = 10000;
-	public static int maxListedNPCs = 6102;
 	public static int maxNPCDrops = 10000;
 	public static Mob npcs[] = new Mob[maxNPCs];
-	public static MobDefinition npcDefinitions[] = new MobDefinition[maxListedNPCs];
+	public static MobDefinition npcDefinitions[] = new MobDefinition[GameConstants.MAX_LISTED_NPCS];
 
 	public MobHandler() {
 		for (int i = 0; i < maxNPCs; i++) {
 			npcs[i] = null;
 		}
-		for (int i = 0; i < maxListedNPCs; i++) {
+		for (int i = 0; i < GameConstants.MAX_LISTED_NPCS; i++) {
 			npcDefinitions[i] = null;
 		}
 	}

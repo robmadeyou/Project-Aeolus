@@ -163,6 +163,8 @@ public class GameConstants {
 	 */
 	public static final int ITEM_LIMIT = 11790;	// 474
 	
+	public static final int MAX_LISTED_NPCS = 6102;
+	
 	/**
 	 * The timer in which you are skulled goes away. Seconds x2 Ex. 60x2=120
 	 * Skull timer would be 1 minute.

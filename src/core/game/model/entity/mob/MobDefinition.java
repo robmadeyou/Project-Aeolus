@@ -1,5 +1,7 @@
 package core.game.model.entity.mob;
 
+import core.game.GameConstants;
+
 /**
  * The container that represents an NPC definition.
  *
@@ -10,7 +12,7 @@ public final class MobDefinition {
     /**
      * The array that contains all of the NPC definitions.
      */
-    public static final MobDefinition[] DEFINITIONS = new MobDefinition[MobHandler.maxListedNPCs];
+    public static final MobDefinition[] DEFINITIONS = new MobDefinition[GameConstants.MAX_LISTED_NPCS];
 
     /**
      * The identification for this NPC.
