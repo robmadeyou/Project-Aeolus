@@ -1,10 +1,7 @@
 package core;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.text.DecimalFormat;
 import java.util.concurrent.Executors;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
@@ -15,16 +12,13 @@ import core.game.event.task.Task2;
 import core.game.event.task.TaskScheduler;
 import core.game.model.entity.mob.MobDrop;
 import core.game.model.entity.mob.MobHandler;
-import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.model.item.ItemHandler;
 import core.game.model.object.ObjectHandler;
 import core.game.model.object.ObjectManager;
 import core.game.model.shop.ShopHandler;
 import core.game.plugin.PluginManager;
-import core.game.sound.MusicManager;
 import core.game.util.Misc;
-import core.game.util.json.GlobalObjectLoader;
 import core.game.util.json.MobSpawnLoader;
 import core.game.util.json.MusicLoader;
 import core.game.util.json.NpcDefinitionLoader;
@@ -35,13 +29,12 @@ import core.game.world.World;
 import core.game.world.clipping.region.ObjectDef;
 import core.game.world.clipping.region.Region;
 import core.net.PipelineFactory;
-import core.net.fileserver.jagcached.FileServer;
 import core.net.packets.incoming.PlayerManager;
 
 /**
  * The core of the game.
  */
-@SuppressWarnings("all")
+
 public class Server {
 
 	/**
@@ -79,12 +72,7 @@ public class Server {
 	/**
 	 * Calls the usage of CycledEvents.
 	 */
-	private static long cycleTime, cycles, totalCycleTime, sleepTime;
-
-	/**
-	 * Used for debugging the server.
-	 */
-	private static DecimalFormat debugPercentFormat;
+	private static long sleepTime;
 
 	/**
 	 * Forced shutdowns.
@@ -129,8 +117,6 @@ public class Server {
 	 */
 	private static final TaskScheduler scheduler = new TaskScheduler();
 
-	private static PluginManager pluginManager;
-
 	/**
 	 * Gets the task scheduler.
 	 */
@@ -150,18 +136,20 @@ public class Server {
 	
 	public static void initializeComponents() throws Exception {
 		
-		pluginManager = new PluginManager();
+		new PluginManager();
 		ObjectDef.loadConfig();
 		Region.load();
 		playerWorld = World.getSingleton();
 		playerWorld.setupPlayerRegions();
-		new MusicLoader().load();
+		new MusicLoader();
+		MusicLoader.load();
 		objectHandler = new ObjectHandler();
 		ItemHandler.loadItemDefinitions();
 		new WeaponDelayLoader().load();
 		new NpcDefinitionLoader().load();		
 		new MobSpawnLoader().load();
-		new MobDrop().load();
+		new MobDrop();
+		MobDrop.load();
 
 	}
 
@@ -208,10 +196,6 @@ public class Server {
 			}
 		});
 	}
-	/**
-	 * Player instance
-	 */
-	private Player p;
 	
 	/**
 	 * Logging execution.
