@@ -212,7 +212,6 @@ public class MobHandler {
 	 **/
 	public void spawnNpc(Player c, int npcType, int x, int y, int heightLevel, WalkType walkType, int HP, int maxHit,
 			int attack, int defence, boolean attackPlayer, boolean headIcon) {
-		// first, search for a free slot
 		int slot = -1;
 		for (int i = 1; i < maxNPCs; i++) {
 			if (npcs[i] == null) {
@@ -221,8 +220,7 @@ public class MobHandler {
 			}
 		}
 		if (slot == -1) {
-			// Misc.println("No Free Slot");
-			return; // no free slot found
+			return;
 		}
 		Mob newNPC = new Mob(slot, npcType);
 		newNPC.absX = x;
@@ -245,35 +243,6 @@ public class MobHandler {
 				newNPC.killerId = c.playerId;
 			}
 		}
-		npcs[slot] = newNPC;
-	}
-
-	public void spawnNpc2(int npcType, int x, int y, int heightLevel, WalkType walkType, int HP, int maxHit, int attack,
-			int defence) {
-		// first, search for a free slot
-		int slot = -1;
-		for (int i = 1; i < maxNPCs; i++) {
-			if (npcs[i] == null) {
-				slot = i;
-				break;
-			}
-		}
-		if (slot == -1) {
-			// Misc.println("No Free Slot");
-			return; // no free slot found
-		}
-		Mob newNPC = new Mob(slot, npcType);
-		newNPC.absX = x;
-		newNPC.absY = y;
-		newNPC.makeX = x;
-		newNPC.makeY = y;
-		newNPC.heightLevel = heightLevel;
-		newNPC.walkType = walkType;
-		newNPC.HP = HP;
-		newNPC.maxHP = HP;
-		newNPC.maxHit = maxHit;
-		newNPC.attack = attack;
-		newNPC.defence = defence;
 		npcs[slot] = newNPC;
 	}
 
