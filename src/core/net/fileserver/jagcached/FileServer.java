@@ -15,7 +15,6 @@ import org.jboss.netty.util.Timer;
 
 import core.Configuration;
 import core.game.util.Misc;
-import core.game.util.log.CustomLogger;
 import core.net.NetworkConstants;
 import core.net.fileserver.jagcached.dispatch.RequestWorkerPool;
 import core.net.fileserver.jagcached.net.FileServerHandler;
@@ -70,12 +69,11 @@ public final class FileServer {
 	 * @throws Exception if an error occurs.
 	 */
 	public void start() throws Exception {
-		System.setOut(new CustomLogger(System.out));
-		System.out.println("Initializing file server...");
-		System.out.println("Starting workers...");
+		logger.info("Initializing file server...");
+		logger.info("Starting workers...");
 		pool.start();
 		
-		System.out.println("Starting services...");
+		logger.info("Starting services...");
 		try {
 			start("HTTP", new HttpPipelineFactory(handler, timer), NetworkConstants.HTTP_PORT);
 		} catch (Throwable t) {
@@ -85,7 +83,7 @@ public final class FileServer {
 		start("JAGGRAB", new JagGrabPipelineFactory(handler, timer), NetworkConstants.JAGGRAB_PORT);
 		//start("ondemand", new OnDemandPipelineFactory(handler, timer), NetworkConstants.SERVICE_PORT);
 		
-		System.out.println("Ready for connections.");
+		logger.info("Ready for connections.");
 	}
 
 	/**
@@ -97,7 +95,7 @@ public final class FileServer {
 	private void start(String name, ChannelPipelineFactory pipelineFactory, int port) {
 		SocketAddress address = new InetSocketAddress(port);
 		
-		System.out.println("Binding " + name + " service to " + address + "...");
+		logger.info("Binding " + name + " service to " + address + "...");
 		
 		ServerBootstrap bootstrap = new ServerBootstrap();
 		bootstrap.setFactory(new NioServerSocketChannelFactory(service, service));

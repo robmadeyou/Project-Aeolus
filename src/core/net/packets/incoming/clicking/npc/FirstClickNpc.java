@@ -17,6 +17,10 @@ public class FirstClickNpc {
 	public static void handleClick(Player c, int npcId) {
 		c.clickNpcType = 0;
 		c.npcClickIndex = 0;
+		
+		if (c.getRights().equal(Rights.DEVELOPER))
+			c.sendMessage("First Click Npc: " + npcId);
+		
 		switch (npcId) {
 		
 		case 599:
@@ -26,8 +30,6 @@ public class FirstClickNpc {
 		
 		default:
 			PluginManager.callFunc("npcClick1_" + npcId, c, npcId);
-			if (c.getRights().equal(Rights.DEVELOPER))
-				c.sendMessage("First Click Npc: " + npcId);
 			break;	
 		}
 	}

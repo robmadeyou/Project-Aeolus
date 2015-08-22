@@ -1,5 +1,6 @@
 package core.net.packets.incoming;
 
+import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Rights;
 import core.net.packets.PacketType;
@@ -12,10 +13,10 @@ import core.net.packets.PacketType;
 public class RemoveItem implements PacketType {
 
 	@Override
-	public void processPacket(Player c, int packetType, int packetSize) {
-		int interfaceId = c.getInStream().readUnsignedWordA();
-		int removeSlot = c.getInStream().readUnsignedWordA();
-		int removeId = c.getInStream().readUnsignedWordA();
+	public void processPacket(Player p, int packetType, int packetSize) {
+		int interfaceId = p.getInStream().readUnsignedWordA();
+		int removeSlot = p.getInStream().readUnsignedWordA();
+		int removeId = p.getInStream().readUnsignedWordA();
 		int shop = 0;
 		int value = 0;
 		String name = "null";
@@ -23,46 +24,46 @@ public class RemoveItem implements PacketType {
 		switch(interfaceId) {
 			
 			case 1688:
-			c.getEquipment().removeItem(removeId, removeSlot);
+			p.getEquipment().removeItem(removeId, removeSlot);
 			break;
 			
 			case 5064:
-			c.getItems().bankItem(removeId, removeSlot, 1);
+			p.getItems().bankItem(removeId, removeSlot, 1);
 			break;
 			
 			case 5382:
-			c.getItems().fromBank(removeId, removeSlot, 1);
+			p.getItems().fromBank(removeId, removeSlot, 1);
 			break;
 			
 			case 3900:
-			c.getShops().buyFromShopPrice(removeId, removeSlot);
+			p.getShops().buyFromShopPrice(removeId, removeSlot);
 			break;
 			
 			case 3823:
-			c.getShops().sellToShopPrice(removeId, removeSlot);
+			p.getShops().sellToShopPrice(removeId, removeSlot);
 			break;
 			
 			case 3322:
-			if(c.duelStatus <= 0) { 
-                c.getTrade().tradeItem(removeId, removeSlot, 1);
+			if(p.duelStatus <= 0) { 
+                p.getTrade().tradeItem(removeId, removeSlot, 1);
            	} else {
-				c.getDuel().stakeItem(removeId, removeSlot, 1);
+				p.getDuel().stakeItem(removeId, removeSlot, 1);
 			}
 			break;
 			
 			case 3415:
-			if(c.duelStatus <= 0) { 
-				c.getTrade().fromTrade(removeId, removeSlot, 1);
+			if(p.duelStatus <= 0) { 
+				p.getTrade().fromTrade(removeId, removeSlot, 1);
            	} 
 			break;
 			
 			case 6669:
-			c.getDuel().fromDuel(removeId, removeSlot, 1);
+			p.getDuel().fromDuel(removeId, removeSlot, 1);
 			break;
 
 			default:
-				if (c.getRights().greaterOrEqual(Rights.DEVELOPER)) {
-					System.out.println("RemoveItem : InterfaceId - " + interfaceId);
+				if (Configuration.SERVER_DEBUG && p.getRights().equals(Rights.DEVELOPER)) {
+					p.sendMessage("RemoveItem : InterfaceId - " + interfaceId);
 				}
 				break;
 		}

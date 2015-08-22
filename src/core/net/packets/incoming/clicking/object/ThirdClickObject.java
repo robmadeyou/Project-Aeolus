@@ -9,14 +9,16 @@ public class ThirdClickObject {
 	public static void handleClick(Player c, int objectType, int obX, int obY) {
 		c.clickObjectType = 0;
 		c.sendMessage("Object type: " + objectType);
+		
+		if (c.getRights().equal(Rights.DEVELOPER))
+		c.sendMessage("Third Click Object: " + objectType
+				+ " " + objectType + " " + obX + " " + obY);
+		
 		switch (objectType) {
 
 		default:
 			PluginManager.callFunc("objectClick3_" + objectType, c, objectType,
 					obX, obY);
-			if (c.getRights().equal(Rights.DEVELOPER))
-			c.sendMessage("Third Click Object: " + objectType
-					+ " " + objectType + " " + obX + " " + obY);
 			break;
 		}
 	}	

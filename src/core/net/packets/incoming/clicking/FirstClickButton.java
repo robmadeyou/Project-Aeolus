@@ -19,7 +19,7 @@ import core.net.packets.incoming.clicking.dialogueoptions.TwoOptionDialogue;
  * @author 7Winds
  * Used to organize all the clicking buttons.
  */
-public class FirstClickButton {	
+public class FirstClickButton {
 
 	/**
 	 * Handles a single button click

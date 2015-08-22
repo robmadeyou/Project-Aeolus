@@ -1,6 +1,9 @@
 package core.game.content;
 
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.logging.Level;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.entity.player.Player;
@@ -12,6 +15,8 @@ import core.game.model.item.ItemDefinition;
 import core.game.util.Misc;
 
 public class Trading {
+	
+	public static final Logger logger = Logger.getLogger(Trading.class);
 	
 	private Player c;
 	
@@ -54,7 +59,7 @@ public class Trading {
 				o.sendMessage(Misc.optimizeText(c.playerName) + ":tradereq:");
 			}
 		} catch (Exception e) {
-			Misc.println("Error requesting trade.");
+			logger.log(Level.WARNING, "Error requesting trade.");
 		}
 	}
 	

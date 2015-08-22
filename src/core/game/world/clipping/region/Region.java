@@ -5,19 +5,25 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.object.Objects;
 
 public class Region {
+	
+	public static final Logger logger = Logger.getLogger(Region.class);
+	
 	public static final int SOLID_TILE = 131328;
 
 	public static void removeClipping(int x, int y, int height) {
 		int regionX = x >> 3;
 		int regionY = y >> 3;
 		int regionId = ((regionX / 8) << 8) + (regionY / 8);
-		// System.out.println("X: "+regionX+" - Y: "+regionY+" - id: "+regionId);
+		logger.info("X: "+regionX+" - Y: "+regionY+" - id: "+regionId);
 		for (Region r : regions) {
 			if (r.id() == regionId) {
 				r.removeClip(x, y, height);
@@ -346,7 +352,7 @@ public class Region {
 						&& (getClipping(checkX + 1, checkY, height) & 0x1280180) == 0 && (getClipping(
 						checkX, checkY + 1, height) & 0x1280120) == 0);
 			else {
-				System.out.println("[FATAL ERROR]: At getClipping: " + x + ", "
+				logger.log(Level.SEVERE, "[FATAL ERROR]: At getClipping: " + x + ", "
 						+ y + ", " + height + ", " + moveTypeX + ", "
 						+ moveTypeY);
 				return false;
@@ -358,7 +364,7 @@ public class Region {
 
 	public static void load() {
 		try {
-			System.out.println("Creating player regions");
+			logger.info("Creating player regions");
 			File f = new File(Configuration.DATA_DIR + "world/map_index");
 			byte[] buffer = new byte[(int) f.length()];
 			DataInputStream dis = new DataInputStream(new FileInputStream(f));
@@ -392,11 +398,11 @@ public class Region {
 					loadMaps(regionIds[i], new ByteStream(file1),
 							new ByteStream(file2));
 				} catch (Exception e) {
-					System.out.println("Error loading map region: "
+					logger.log(Level.SEVERE, "Error loading map region: "
 							+ regionIds[i]);
 				}
 			}
-			System.out.println("Loaded: Region configuration.");
+			logger.info("Loaded: Region configuration.");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -481,8 +487,7 @@ public class Region {
 				buffer));
 		do {
 			if (bufferlength == gzipInputBuffer.length) {
-				System.out
-						.println("Error inflating data.\nGZIP buffer overflow.");
+				logger.log(Level.SEVERE, "Error inflating data.\nGZIP buffer overflow.");
 				break;
 			}
 			int readByte = gzip.read(gzipInputBuffer, bufferlength,

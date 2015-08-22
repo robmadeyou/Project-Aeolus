@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.Future;
+import java.util.logging.Level;
 import java.util.stream.IntStream;
 
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.Channel;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.Server;
@@ -43,6 +46,8 @@ import core.net.packets.outgoing.ActionSender;
 import core.net.security.ISAACCipher;
 
 public class Player extends Entity {
+	
+	public static final Logger logger = Logger.getLogger(Player.class);
 
 	public ArrayList<String> killedPlayers = new ArrayList<String>();
 	public ArrayList<Integer> attackedPlayers = new ArrayList<Integer>();
@@ -885,14 +890,6 @@ public class Player extends Entity {
 		p.getShops();
 		ShopAssistant.resetShop(i);
 	}
-
-	public void println_debug(String str) {
-		System.out.println("[player-" + playerId + "]: " + str);
-	}
-
-	public void println(String str) {
-		System.out.println("[player-" + playerId + "]: " + str);
-	}
 	
 	/**
 	 * The appearance when a player logs in for the first time.
@@ -1358,7 +1355,7 @@ public class Player extends Entity {
 			if (dir == -1) {
 				wQueueReadPtr = (wQueueReadPtr + 1) % walkingQueueSize;
 			} else if ((dir & 1) != 0) {
-				println_debug("Invalid waypoint in walking queue!");
+				logger.log(Level.FINE, playerName + ": Invalid waypoint in walking queue!");
 				resetWalkingQueue();
 				return -1;
 			}
@@ -1982,7 +1979,7 @@ public class Player extends Entity {
 		if (session == null)
 			return;
 		// PlayerSaving.getSingleton().requestSave(playerId);
-		Misc.println("[DEREGISTERED]: " + playerName + "");
+		logger.info("[DEREGISTERED]: " + playerName + "");
 		disconnected = true;
 		session.close();
 		session = null;
@@ -2094,7 +2091,7 @@ public class Player extends Entity {
 		getEquipment().addSpecialBar(playerEquipment[playerWeapon]);
 		saveTimer = GameConstants.SAVE_TIMER;
 		saveCharacter = true;
-		Misc.println("[REGISTERED]: " + playerName + "");
+		logger.info("[REGISTERED]: " + playerName + "");
 		handler.updatePlayer(this, outStream);
 		handler.updateNPC(this, outStream);
 		flushOutStream();
@@ -2344,7 +2341,7 @@ public class Player extends Entity {
 				found = true;
 
 			if (!found)
-				println_debug("Fatal: couldn't find connection vertex! Dropping packet.");
+				logger.log(Level.FINE, playerName + ": Couldn't find connection vertex! Dropping packet.");
 			else {
 				wQueueWritePtr = wQueueReadPtr;
 
@@ -2369,7 +2366,7 @@ public class Player extends Entity {
 
 					dir = Misc.direction(wayPointX1, wayPointY1, wayPointX2, wayPointY2);
 					if (dir == -1 || (dir & 1) != 0) {
-						println_debug("Fatal: The walking queue is corrupt! wp1=(" + wayPointX1 + ", " + wayPointY1
+						logger.log(Level.FINE, playerName + ": The walking queue is corrupt! wp1=(" + wayPointX1 + ", " + wayPointY1
 								+ "), " + "wp2=(" + wayPointX2 + ", " + wayPointY2 + ")");
 					} else {
 						dir >>= 1;
@@ -2384,7 +2381,7 @@ public class Player extends Entity {
 							}
 						}
 						if (!found) {
-							println_debug("Fatal: Internal error: unable to determine connection vertex!" + "  wp1=("
+							logger.log(Level.FINE, "Fatal: Internal error: unable to determine connection vertex!" + "  wp1=("
 									+ wayPointX1 + ", " + wayPointY1 + "), wp2=(" + wayPointX2 + ", " + wayPointY2
 									+ "), " + "first=(" + firstX + ", " + firstY + ")");
 						} else
@@ -2516,6 +2513,7 @@ public class Player extends Entity {
 		return newWalkCmdIsRunning;
 	}
 
+	@SuppressWarnings("unused")
 	private ISAACCipher inStreamDecryption = null, outStreamDecryption = null;
 
 	public void setInStreamDecryption(ISAACCipher inStreamDecryption) {

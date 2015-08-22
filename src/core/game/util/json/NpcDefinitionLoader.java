@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.entity.mob.MobDefinition;
@@ -16,13 +17,15 @@ import core.game.util.Misc;
  * @author lare96 <http://github.com/lare96>
  */
 public final class NpcDefinitionLoader extends JsonLoader {
+	
+	public static final Logger logger = Logger.getLogger(NpcDefinitionLoader.class);
 
 	/**
 	 * Creates a new {@link NpcDefinitionLoader}.
 	 */
 	public NpcDefinitionLoader() {
 		super(Configuration.DATA_DIR + "./json/npc_definitions.json");
-		Misc.println("Loaded " + MobDefinition.DEFINITIONS.length + " NPC Definitions");
+		logger.info("Loaded " + MobDefinition.DEFINITIONS.length + " NPC Definitions");
 	}
 
 	@Override

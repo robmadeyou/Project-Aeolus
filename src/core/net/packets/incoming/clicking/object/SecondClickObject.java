@@ -8,13 +8,15 @@ public class SecondClickObject {
 
 	public static void handleClick(Player player, int objectType, int obX, int obY) {
 		player.clickObjectType = 0;
+		
+		if (player.getRights().equal(Rights.DEVELOPER))
+		player.sendMessage("Second Click Object: " + objectType + " " + obX + " " + obY);
+		
 		switch (objectType) {
 
 		default:
 			PluginManager.callFunc("objectClick2_" + objectType, player, objectType,
 					obX, obY);
-			if (player.getRights().equal(Rights.DEVELOPER))
-			player.sendMessage("Second Click Object: " + objectType + " " + obX + " " + obY);
 			break;
 		}
 	}

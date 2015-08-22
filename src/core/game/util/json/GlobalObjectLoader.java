@@ -2,6 +2,7 @@ package core.game.util.json;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.object.ObjectHandler;
@@ -9,6 +10,8 @@ import core.game.model.object.Objects;
 import core.game.util.JsonLoader;
 
 public class GlobalObjectLoader extends JsonLoader {
+	
+	public static final Logger logger = Logger.getLogger(GlobalObjectLoader.class);
 
 	public GlobalObjectLoader() {
 		super(Configuration.DATA_DIR + "json/global_objects.json");
@@ -25,7 +28,7 @@ public class GlobalObjectLoader extends JsonLoader {
 		int tick = reader.get("objectTicks").getAsInt();
 		
 		ObjectHandler.globalObjects.add(new Objects(index, x, y, height, face, type, tick));
-		System.out.println("Created: " + ObjectHandler.globalObjects.size() + " Global Objects.");
+		logger.info("Created: " + ObjectHandler.globalObjects.size() + " Global Objects.");
 	}
 
 }

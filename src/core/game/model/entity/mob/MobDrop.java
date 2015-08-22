@@ -14,6 +14,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.entity.mob.drop.Drop;
@@ -22,6 +23,8 @@ import core.game.model.entity.mob.drop.Drop;
  * A class that is used to deserialize the mob drops
  */
 public class MobDrop {
+	
+	public static final Logger logger = Logger.getLogger(MobDrop.class);
 
 	/**
 	 * The directory/location of drops.json
@@ -79,7 +82,7 @@ public class MobDrop {
 			Type t = new TypeToken<HashMap<Integer, Drop[]>>() {
 			}.getType();
 			npcDrops = GSON.fromJson(new FileReader(DROP_DIR), t);
-			System.out.println("Loaded: " + npcDrops.size()
+			logger.info("Loaded: " + npcDrops.size()
 					+ " NPC Drops in " + (System.currentTimeMillis() - start)
 					+ "ms.");
 		} catch (JsonSyntaxException | JsonIOException | FileNotFoundException e) {

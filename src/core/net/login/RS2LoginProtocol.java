@@ -2,6 +2,7 @@ package core.net.login;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.logging.Level;
 
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
@@ -10,6 +11,8 @@ import org.jboss.netty.channel.ChannelFuture;
 import org.jboss.netty.channel.ChannelFutureListener;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.handler.codec.frame.FrameDecoder;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.Server;
 import core.game.GameConstants;
@@ -23,6 +26,8 @@ import core.net.PacketBuilder;
 import core.net.security.ISAACCipher;
 
 public class RS2LoginProtocol extends FrameDecoder {
+	
+	public static final Logger logger = Logger.getLogger(RS2LoginProtocol.class);
 
 	public String UUID;
 
@@ -41,7 +46,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 				return null;
 			int request = buffer.readUnsignedByte();
 			if (request != 14) {
-				System.out.println("Invalid login request: " + request);
+				logger.log(Level.WARNING, "Invalid login request: " + request);
 				channel.close();
 				return null;
 			}
@@ -58,7 +63,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 				loginPacketSize = buffer.readByte() & 0xff;
 				loginEncryptPacketSize = loginPacketSize - (36 + 1 + 1 + 2);
 				if (loginPacketSize <= 0 || loginEncryptPacketSize <= 0) {
-					System.out.println("Zero or negative login size.");
+					logger.log(Level.WARNING, "Zero or negative login size.");
 					channel.close();
 					return false;
 				}
@@ -71,13 +76,13 @@ public class RS2LoginProtocol extends FrameDecoder {
 				int magic = buffer.readByte() & 0xff;
 				int version = buffer.readUnsignedShort();
 				if (magic != 255) {
-					System.out.println("Wrong magic id.");
+					logger.log(Level.WARNING, "Wrong magic id.");
 					channel.close();
 					return false;
 				}
 
 				if (version != 317) {
-					System.out.println("Wrong Client Version: " + version);
+					logger.log(Level.WARNING, "Wrong Client Version: " + version);
 					channel.close();
 					return false;
 				}
@@ -92,7 +97,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 				}
 				loginEncryptPacketSize--;
 				if (loginEncryptPacketSize != (buffer.readByte() & 0xff)) {
-					System.out.println("Encrypted size mismatch.");
+					logger.log(Level.WARNING, "Encrypted size mismatch.");
 					channel.close();
 					return false;
 				}
@@ -107,7 +112,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 				rsaBuffer = ChannelBuffers.wrappedBuffer(bigInteger.toByteArray());
 				String ip = channel.getRemoteAddress().toString().replaceAll("/", "").split(":")[0];
 				if ((rsaBuffer.readByte() & 0xff) != 10) {
-					System.out.println("Encrypted id != 10. From: [" + ip + "]");
+					logger.log(Level.WARNING, "Encrypted id != 10. From: [" + ip + "]");
 					channel.close();
 					return false;
 				}
@@ -160,7 +165,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 		if (PlayerHandler.getPlayerCount() >= GameConstants.MAX_PLAYERS) {
 			returnCode = 7;
 		}
-		if (Server.UpdateServer) {
+		if (Server.UPDATE_SERVER) {
 			returnCode = 14;
 		}
 		if (returnCode == 2) {
@@ -195,7 +200,7 @@ public class RS2LoginProtocol extends FrameDecoder {
 			bldr.put((byte) 0);
 			channel.write(bldr.toPacket());
 		} else {
-			System.out.println("returncode:" + returnCode);
+			logger.log(Level.WARNING, "returncode:" + returnCode);
 			sendReturnCode(channel, returnCode);
 			return null;
 		}

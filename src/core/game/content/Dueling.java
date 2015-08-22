@@ -1,6 +1,9 @@
 package core.game.content;
 
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.logging.Level;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.Server;
@@ -13,6 +16,8 @@ import core.game.model.item.ItemDefinition;
 import core.game.util.Misc;
 
 public class Dueling {
+	
+	public static final Logger logger = Logger.getLogger(Dueling.class);
 	
 	private Player c;
 	
@@ -52,7 +57,7 @@ public class Dueling {
 				o.sendMessage(c.playerName+":duelreq:");		
 			}
 		} catch (Exception e) {
-			Misc.println("Error requesting duel.");
+			logger.log(Level.WARNING, "Error requesting duel.");
 		}
 	}
 	

@@ -3,6 +3,7 @@ package core.game.plugin;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.logging.Level;
 
 import org.python.core.Py;
 import org.python.core.PyException;
@@ -10,15 +11,17 @@ import org.python.core.PyFunction;
 import org.python.core.PyObject;
 import org.python.util.PythonInterpreter;
 
+import com.sun.istack.internal.logging.Logger;
+
 import core.Configuration;
-import core.game.util.log.CustomLogger;
 
 public class PluginManager {
 
+	public static final Logger logger = Logger.getLogger(PluginManager.class);
+
 	public static PythonInterpreter python = new PythonInterpreter();
 	private static int scriptsLoaded = 0;
-	
-	
+
 	public PluginManager() {
 		try {
 			loadScripts();
@@ -76,17 +79,15 @@ public class PluginManager {
 	}
 
 	public static void loadScripts() throws IOException {
-		System.setOut(new CustomLogger(System.out));
-		System.out.println("Loading scripts...");
+		logger.info("Loading scripts...");
 		PluginManager.python.cleanup();
-		File scriptDir = new File(Configuration.DATA_DIR + "./plugin/scripts/");
+		File scriptDir = new File(Configuration.DATA_DIR + "plugin/scripts/");		
 		if (scriptDir.isDirectory() && !scriptDir.getName().startsWith(".")) {
 			File[] children = scriptDir.listFiles();
 			for (File child : children)
 				if (child.isFile()) {
 					if (child.getName().endsWith(".py")) {
-						System.out.println("\tLoading script: "
-								+ child.getPath());
+						logger.info("\tLoading script: " + child.getPath());
 						PluginManager.python
 								.execfile(new FileInputStream(child));
 						PluginManager.scriptsLoaded++;
@@ -94,8 +95,7 @@ public class PluginManager {
 				} else
 					PluginManager.recurse(child.getPath());
 		}
-		System.out.println("Loaded " + PluginManager.scriptsLoaded
-				+ " scripts!");
+		logger.info("Loaded " + PluginManager.scriptsLoaded + " scripts!");
 		PluginManager.scriptsLoaded = 0;
 	}
 
@@ -106,8 +106,7 @@ public class PluginManager {
 			for (File child : children)
 				if (child.isFile()) {
 					if (child.getName().endsWith(".py")) {
-						System.out.println("\tLoading script: \r"
-								+ child.getPath());
+						logger.info("\tLoading script: \r" + child.getPath());
 						PluginManager.python
 								.execfile(new FileInputStream(child));
 						PluginManager.scriptsLoaded++;
@@ -115,10 +114,5 @@ public class PluginManager {
 				} else
 					PluginManager.recurse(child.getPath());
 		}
-	}
-
-	static {
-		PluginManager.python.setOut(new CustomLogger(System.out));
-		PluginManager.python.setErr(new CustomLogger(System.err));
 	}
 }

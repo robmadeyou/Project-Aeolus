@@ -1,5 +1,9 @@
 package core.net.packets;
 
+import java.util.logging.Level;
+
+import com.sun.istack.internal.logging.Logger;
+
 import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Rights;
@@ -44,6 +48,8 @@ import core.net.packets.incoming.Walking;
 
 
 public class PacketHandler{
+	
+	public static final Logger logger = Logger.getLogger(PacketHandler.class);
 
 	private static PacketType packetId[] = new PacketType[256];
 	
@@ -134,9 +140,9 @@ public class PacketHandler{
 	public static void processPacket(Player c, int packetType, int packetSize) {
         PacketType p = packetId[packetType];
         if(p != null && packetType > 0 && packetType < 257 && packetType == c.packetType && packetSize == c.packetSize) {
-            if (Configuration.SERVER_DEBUG && c.getRights().equals(Rights.DEVELOPER)) {
-                c.sendMessage("PacketType: " + packetType + ". PacketSize: " + packetSize + ".");
-            }
+//            if (Configuration.SERVER_DEBUG && c.getRights().equals(Rights.DEVELOPER)) {
+//                c.sendMessage("PacketType: " + packetType + ". PacketSize: " + packetSize + ".");
+//            }
             try {
                 p.processPacket(c, packetType, packetSize);
             } catch(Exception e) {
@@ -144,7 +150,7 @@ public class PacketHandler{
             }
         } else {
             c.disconnected = true;
-            System.out.println(c.playerName + "is sending invalid PacketType: " + packetType + ". PacketSize: " + packetSize);
+            logger.log(Level.SEVERE, c.playerName + "is sending invalid PacketType: " + packetType + ". PacketSize: " + packetSize);
         }
     }
 	

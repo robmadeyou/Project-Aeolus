@@ -14,14 +14,7 @@ public class ChannelHandler extends SimpleChannelHandler {
 	
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception {
-		/*if (e.getCause() instanceof ReadTimeoutException) {
-			if (session.getPlayer() != null) {
-				System.out.println("Player " + session.getPlayer().playerName + " timed out!");
-			}
-		} else if(!(e.getCause() instanceof java.io.IOException)){
-			e.getCause().printStackTrace();
-		}
-		ctx.getChannel().close();*/
+
 	}
 	
 	@Override

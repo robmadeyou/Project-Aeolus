@@ -7,6 +7,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.entity.player.Player;
@@ -15,6 +18,9 @@ import core.game.model.entity.player.Rights;
 import core.game.util.Misc;
 
 public class PlayerSave {
+
+	public static final Logger logger = Logger.getLogger(PlayerSave.class);
+	
 	/**
 	 * Loading
 	 **/
@@ -37,14 +43,14 @@ public class PlayerSave {
 
 		if (File1) {
 		} else {
-			Misc.println(playerName + ": character file not found.");
+			logger.log(Level.WARNING, playerName + ": character file not found.");
 			p.newPlayer = false;
 			return 0;
 		}
 		try {
 			line = characterfile.readLine();
 		} catch (IOException ioexception) {
-			Misc.println(playerName + ": error loading file.");
+			logger.log(Level.SEVERE, playerName + ": error loading file.");
 			return 3;
 		}
 		while (EndOfFile == false && line != null) {
@@ -202,11 +208,9 @@ public class PlayerSave {
 	 **/
 	public static boolean saveGame(Player p) {
 		if (!p.saveFile || p.newPlayer || !p.saveCharacter) {
-			// System.out.println("first");
 			return false;
 		}
 		if (p.playerName == null || PlayerHandler.players[p.playerId] == null) {
-			// System.out.println("second");
 			return false;
 		}
 		p.playerName = p.playerName2;
@@ -427,7 +431,7 @@ public class PlayerSave {
 			characterfile.newLine();
 			characterfile.close();
 		} catch (IOException ioexception) {
-			Misc.println(p.playerName + ": error writing file.");
+			logger.log(Level.SEVERE, p.playerName + ": error writing file.");
 			return false;
 		}
 		return true;

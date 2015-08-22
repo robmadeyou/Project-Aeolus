@@ -8,16 +8,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
 import core.game.util.Misc;
+import core.game.util.json.MusicLoader;
 import core.game.util.json.WeaponDelayLoader;
 
 /**
@@ -25,6 +28,8 @@ import core.game.util.json.WeaponDelayLoader;
 **/
 @SuppressWarnings("all")
 public class ItemHandler {
+	
+	public static final Logger logger = Logger.getLogger(ItemHandler.class);
 
 	public List<GroundItem> items = new ArrayList<GroundItem>();
 	public static List<WeaponDelay> weaponDelay = new ArrayList<>();
@@ -44,14 +49,14 @@ public class ItemHandler {
     public static void loadItemDefinitions() throws JsonIOException, JsonSyntaxException, FileNotFoundException {
     	final Gson gson = new Gson();
 		final long start = System.currentTimeMillis();
-		System.out.println("Loading item definitions...");
+		logger.info("Loading item definitions...");
 		try (final FileReader reader = new FileReader(Configuration.DATA_DIR + "json/item_definitions.json")) {
 			ItemDefinition.setDefinitions(gson.fromJson(reader, ItemDefinition[].class));
 		} catch (IOException e) {
-			System.out.println("Failed to load item definitions!");
+			logger.log(Level.SEVERE, "Failed to load item definitions!");
 			System.exit(0);
 		} finally {
-			System.out.println("Loaded " + ItemDefinition.getDefinitions().length + " item definitions in " + (System.currentTimeMillis() - start) + "ms.");
+			logger.info("Loaded " + ItemDefinition.getDefinitions().length + " item definitions in " + (System.currentTimeMillis() - start) + "ms.");
 		}
     }
 	

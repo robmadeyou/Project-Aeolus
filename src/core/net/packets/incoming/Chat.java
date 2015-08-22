@@ -1,5 +1,7 @@
 package core.net.packets.incoming;
 
+import com.sun.istack.internal.logging.Logger;
+
 import core.Configuration;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Punishments;
@@ -13,6 +15,8 @@ import core.net.packets.PacketType;
  * Censoring if enabled and kicking players who spam.
  **/
 public class Chat implements PacketType {
+	
+	public static final Logger logger = Logger.getLogger(Chat.class);
 
 	// Anti-Spam Check By: A Duck Tale
 	
@@ -61,7 +65,7 @@ public class Chat implements PacketType {
 					endTime = System.currentTimeMillis();
 					timeWaited = endTime - startTime;
 					if (timeWaited < timeAllowed) {
-						System.out.println("Kicking " + c.playerName
+						logger.info("Kicking " + c.playerName
 								+ " For spamming.");
 						startTime = 0;
 						spamCount = 0;

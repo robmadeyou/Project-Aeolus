@@ -18,12 +18,10 @@ import core.game.model.object.ObjectHandler;
 import core.game.model.object.ObjectManager;
 import core.game.model.shop.ShopHandler;
 import core.game.plugin.PluginManager;
-import core.game.util.Misc;
 import core.game.util.json.MobSpawnLoader;
 import core.game.util.json.MusicLoader;
 import core.game.util.json.NpcDefinitionLoader;
 import core.game.util.json.WeaponDelayLoader;
-import core.game.util.log.CustomLogger;
 import core.game.world.StillGraphicsManager;
 import core.game.world.World;
 import core.game.world.clipping.region.ObjectDef;
@@ -34,7 +32,6 @@ import core.net.packets.incoming.PlayerManager;
 /**
  * The core of the game.
  */
-
 public class Server {
 
 	/**
@@ -62,7 +59,7 @@ public class Server {
 	/**
 	 * Server updating.
 	 */
-	public static boolean UpdateServer = false;
+	public static boolean UPDATE_SERVER = false;
 
 	/**
 	 * Calls in which the server was last saved.
@@ -159,28 +156,18 @@ public class Server {
 	 */
 	public static void main(java.lang.String args[])
 			throws Exception {
-		if(Configuration.SERVER_DEBUG)
-		System.setOut(new Misc.TimestampLogger(System.out, Configuration.DATA_DIR + "/logs/out.log"));
-		System.setErr(new Misc.TimestampLogger(System.err, Configuration.DATA_DIR + "/logs/error/error.log"));
-		System.setOut(new CustomLogger(System.out));
-		System.out.println("Creating Game server...");
+
+		logger.info("Creating Game server...");
 
 		initializeComponents();
 		
-		long startTime = System.currentTimeMillis();
 		bind();
 
 		playerManager = PlayerManager.getSingleton();
 		playerManager.setupRegionPlayers();
 		stillGraphicsManager = new StillGraphicsManager();
-
-		/**
-		 * Successfully loaded the server.
-		 */
-		long endTime = System.currentTimeMillis();
-		long elapsed = endTime - startTime;
 	
-		System.out.println("Server Initialized in " + elapsed + " milliseconds.");
+		logger.info("Server Initialized.");
 
 		/**
 		 * Main server tick.
@@ -241,5 +228,6 @@ public class Server {
 		serverBootstrap.setPipelineFactory(new PipelineFactory(
 				new HashedWheelTimer()));
 		serverBootstrap.bind(new InetSocketAddress(serverlistenerPort));
+		logger.info("Server bound to port: " + serverlistenerPort);
 	}
 }

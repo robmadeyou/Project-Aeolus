@@ -7,15 +7,16 @@ import core.game.plugin.PluginManager;
 public class FirstClickObject {
 	
 	public static void handleClick(Player c, int objectType, int obX, int obY) {
-		System.out.println("Handle click is being performed");
 		c.clickObjectType = 0;
+		
+		if (c.getRights().equal(Rights.DEVELOPER))
+		c.sendMessage("First Click Object: " + objectType + " " + objectType + " " + obX + " " + obY);
+		
 		switch (objectType) {
 		
 		default:
 			PluginManager.callFunc("objectClick1_" + objectType, c, objectType,
 					obX, obY);
-			if (c.getRights().equal(Rights.DEVELOPER))
-			c.sendMessage("First Click Object: " + objectType + " " + objectType + " " + obX + " " + obY);
 			break;
 		}
 	}

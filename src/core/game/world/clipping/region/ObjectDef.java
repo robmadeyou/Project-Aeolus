@@ -1,8 +1,14 @@
 package core.game.world.clipping.region;
 
+import java.util.logging.Level;
+
+import com.sun.istack.internal.logging.Logger;
+
 import core.Configuration;
 
 public final class ObjectDef {
+	
+	public static final Logger logger = Logger.getLogger(ObjectDef.class);
 
 	public static ObjectDef getObjectDef(int i) {
 		for (int j = 0; j < 20; j++)
@@ -52,7 +58,7 @@ public final class ObjectDef {
 		cache = new ObjectDef[20];
 		for (int k = 0; k < 20; k++)
 			cache[k] = new ObjectDef();
-		System.out.println("Loaded: ObjectDef configuration.");
+		logger.info("Loaded: ObjectDef configuration.");
 	}
 
 	public static byte[] getBuffer(String s) {
@@ -226,7 +232,7 @@ public final class ObjectDef {
 						stream.skip(4);
 				}
 			} else
-				System.out.println("Unknown config: " + type);
+				logger.log(Level.WARNING, "Unknown config: " + type);
 		} while (true);
 		if (flag == -1) {
 			hasActions = anIntArray773 != null

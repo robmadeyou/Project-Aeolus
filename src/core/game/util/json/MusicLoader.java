@@ -6,6 +6,7 @@ import java.io.FileReader;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.sound.MusicManager;
@@ -17,6 +18,8 @@ import core.game.sound.region.Music;
  */
 public class MusicLoader {
 	
+	public static final Logger logger = Logger.getLogger(MusicLoader.class);
+	
 	/**
 	 * Loads the music data from a .JSON file.
 	 * 
@@ -24,7 +27,7 @@ public class MusicLoader {
 	 *            If any exception happens.
 	 */
 	public static void load() throws Exception {
-		System.out.println("Loading music...");
+		logger.info("Loading music...");
 		
 		JsonParser parser = new JsonParser();
         JsonArray array = (JsonArray) parser.parse(new FileReader(new File(Configuration.DATA_DIR + "json/music.json")));
@@ -45,6 +48,6 @@ public class MusicLoader {
 			MusicManager.music[i] = new Music(region, name, song, frame, button);
 			count++;
 		}		
-		System.out.println("Loaded: "+ count +" songs.");	
+		logger.info("Loaded: "+ count +" songs.");	
 	}	
 }

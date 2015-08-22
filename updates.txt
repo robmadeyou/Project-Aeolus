@@ -90,3 +90,22 @@
 
 ~ August 12, 2015
 - Did a lot of client refactoring work today
+
+~ August 16, 2015
+- Fixed experience and OS Buddy XP Drops Shout out to [user]_Sean[/user] and [user]Play Boy[/user]
+
+~ August 18, 2015
+- Removed current player attribute system, redoing it.
+- Added deposit box
+- Fixed all right click interface options in bank, deposit box, trade, and duel.
+- Fixed trade, can now trade. Tested and works very well.
+- Fixed dueling, works good. I will have to do more testing.
+
+~ August 20, 2015
+- Removed a ton of unused methods
+- Converted many old for loops to InStreams
+- Getnpc command, which works like getitem. You can search an npc by typing in chat its name and the command will return its name and id. (Very useful for admins)
+
+~ August 21, 2015
+- Removed all unused libraries
+- Now using java.util.logging

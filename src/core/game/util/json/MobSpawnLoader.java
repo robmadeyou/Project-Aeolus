@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.entity.mob.MobHandler;
@@ -13,9 +14,11 @@ import core.game.util.JsonLoader;
 
 public class MobSpawnLoader extends JsonLoader {
 	
+	public static final Logger logger = Logger.getLogger(MobSpawnLoader.class);
+	
 	public MobSpawnLoader() {
 		super(Configuration.DATA_DIR + "json/mob_spawns.json");
-		System.out.println("Loaded: Mob Spawns.");
+		logger.info("Loaded: Mob Spawns.");
 	}
 	
 	@Override

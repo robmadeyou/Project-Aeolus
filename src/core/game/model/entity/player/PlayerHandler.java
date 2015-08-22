@@ -1,6 +1,9 @@
 package core.game.model.entity.player;
 
+import java.util.logging.Level;
 import java.util.stream.IntStream;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.Server;
@@ -11,6 +14,8 @@ import core.game.util.Misc;
 import core.game.util.Stream;
 
 public class PlayerHandler {
+	
+	public static final Logger logger = Logger.getLogger(PlayerHandler.class);
 
 	public static Object lock = new Object();
 	public static Player players[] = new Player[GameConstants.MAX_PLAYERS];
@@ -42,8 +47,6 @@ public class PlayerHandler {
 		player1.playerId = slot;
 		players[slot] = player1;
 		players[slot].isActive = true;
-		if (Configuration.SERVER_DEBUG)
-			Misc.println("Player Slot " + slot + " slot 0 " + players[0] + " Player Hit " + players[slot]);
 		return true;
 	}
 
@@ -114,9 +117,9 @@ public class PlayerHandler {
 						}
 						Player o = PlayerHandler.players[i];
 						if (PlayerSave.saveGame(o)) {
-							System.out.println("Game saved for player " + players[i].playerName);
+							logger.info("Game saved for player " + players[i].playerName);
 						} else {
-							System.out.println("Could not save for " + players[i].playerName);
+							logger.log(Level.SEVERE, "Could not save for " + players[i].playerName);
 						}
 						removePlayer(players[i]);
 						players[i] = null;
@@ -151,9 +154,9 @@ public class PlayerHandler {
 			}
 			if (updateRunning && !updateAnnounced) {
 				updateAnnounced = true;
-				Server.UpdateServer = true;
+				Server.UPDATE_SERVER = true;
 			}
-			if (updateRunning && (System.currentTimeMillis() - updateStartTime > (updateSeconds * 1000))) {
+			if (Server.UPDATE_SERVER && (System.currentTimeMillis() - updateStartTime > (updateSeconds * 1000))) {
 				kickAllPlayers = true;
 			}
 		}

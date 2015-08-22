@@ -5,12 +5,16 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
+import com.sun.istack.internal.logging.Logger;
+
 import core.game.model.entity.player.Player;
 
 /**
  * Class which represents the game world
  */
 public class World {
+	
+	public static final Logger logger = Logger.getLogger(World.class);
 	
 	private static World singleton = null;
 	private Map<Integer, Queue<Player>> playersByRegion = new HashMap<Integer, Queue<Player>>();;
@@ -36,7 +40,7 @@ public class World {
 				hash++;
 			}
 		}
-		System.out.println("Loaded: " + hash + " player regions.");
+		logger.info("Loaded: " + hash + " player regions.");
 	}
 	
 	public Queue<Player> getClientRegion(int id) {

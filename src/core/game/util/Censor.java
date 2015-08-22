@@ -5,6 +5,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.entity.player.Player;
@@ -15,6 +18,8 @@ import core.game.model.entity.player.Player;
  * @date 3/21/15
  */
 public class Censor {
+	
+	public static final Logger logger = Logger.getLogger(Censor.class);
 
 	Player player;
 
@@ -86,7 +91,7 @@ public class Censor {
 
 	public Censor() {
 		loadWords();
-		System.out.println("Loaded: " + censored.size()
+		logger.info("Loaded: " + censored.size()
 				+ " Censored Words");
 	}
 
@@ -101,7 +106,7 @@ public class Censor {
 			in.close();
 			in = null;
 		} catch (Exception e) {
-			Misc.println("Error loading censor.");
+			logger.log(Level.SEVERE, "Error loading censor.");
 		}
 	}
 

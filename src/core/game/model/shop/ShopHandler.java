@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
+
+import com.sun.istack.internal.logging.Logger;
 
 import core.game.GameConstants;
 import core.game.model.entity.player.PlayerHandler;
@@ -14,6 +17,8 @@ import core.game.util.Misc;
  **/
 @SuppressWarnings("all")
 public class ShopHandler {
+	
+	public static final Logger logger = Logger.getLogger(ShopHandler.class);
 
 	public static int MaxShops = 101;
 	public static int MaxShopItems = 101;
@@ -46,7 +51,7 @@ public class ShopHandler {
 	}
 
 	public static void shophandler() {
-		Misc.println("Shop Handler class successfully loaded");
+		logger.info("Shop Handler class successfully loaded");
 	}
 
 	public void process() {
@@ -117,13 +122,13 @@ public class ShopHandler {
 					+ FileName));
 			// System.out.println("Shops Loaded");
 		} catch (FileNotFoundException fileex) {
-			Misc.println(FileName + ": file not found.");
+			logger.log(Level.WARNING, FileName + ": file not found.");
 			return false;
 		}
 		try {
 			line = characterfile.readLine();
 		} catch (IOException ioexception) {
-			Misc.println(FileName + ": error loading file.");
+			logger.log(Level.SEVERE, FileName + ": error loading file.");
 			return false;
 		}
 		while (EndOfFile == false && line != null) {
