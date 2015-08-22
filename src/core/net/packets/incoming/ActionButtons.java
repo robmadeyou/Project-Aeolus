@@ -11,7 +11,7 @@ import core.net.packets.incoming.clicking.FirstClickButton;
  * @param packetType
  * @param packetSize
  **/
-public class ClickingButtons implements PacketType {
+public class ActionButtons implements PacketType {
 	
 	public static Player p;
 	@Override

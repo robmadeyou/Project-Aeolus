@@ -21,7 +21,7 @@ import core.net.packets.incoming.Chat;
 import core.net.packets.incoming.ClickItem;
 import core.net.packets.incoming.ClickNPC;
 import core.net.packets.incoming.ClickObject;
-import core.net.packets.incoming.ClickingButtons;
+import core.net.packets.incoming.ActionButtons;
 import core.net.packets.incoming.ClickingInGame;
 import core.net.packets.incoming.ClickingAction;
 import core.net.packets.incoming.CommandPacket;
@@ -95,7 +95,7 @@ public class PacketHandler{
 		packetId[4] = new Chat();
 		packetId[236] = new PickupItem();
 		packetId[87] = new DropItem();
-		packetId[185] = new ClickingButtons();
+		packetId[185] = new ActionButtons();
 		packetId[130] = new ClickingAction();
 		packetId[103] = new CommandPacket();
 		packetId[214] = new MoveItems();
