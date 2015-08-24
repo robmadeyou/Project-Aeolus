@@ -11,6 +11,7 @@ import core.game.model.entity.player.PlayerHandler;
 import core.game.model.entity.player.Rights;
 import core.game.model.entity.player.save.PlayerSave;
 import core.game.plugin.PluginManager;
+import core.game.world.clipping.region.Region;
 import core.net.packets.incoming.commands.Command;
 
 /**
@@ -27,6 +28,14 @@ public class DeveloperCommands implements Command {
 		case "debug":
 			Configuration.SERVER_DEBUG = !Configuration.SERVER_DEBUG;
 			player.sendMessage("Debug Mode: " + Configuration.SERVER_DEBUG);
+			break;
+			
+		case "getregion":
+			player.sendMessage("Region at coordinates: X: " + command[1] + " Y: " + command[2] + " RegionId: " + Region.getRegion(Integer.parseInt(command[1]), Integer.parseInt(command[2])));
+			break;
+			
+		case "myregion":
+			player.sendMessage("You are in Region: " + Region.getRegion(player.getX(), player.getY()).id());			
 			break;
 		
 		case "duel":

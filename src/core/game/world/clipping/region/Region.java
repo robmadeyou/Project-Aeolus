@@ -126,7 +126,7 @@ public class Region {
 		}
 	}
 
-	private static Region[] regions;
+	public static Region[] regions;
 	private int id;
 	private int[][][] clips = new int[4][][];
 	private boolean members = false;
