@@ -111,6 +111,7 @@ public class ShopAssistant {
 	 * buy item from shop (Shop Price)
 	 **/
 
+	@SuppressWarnings("incomplete-switch")
 	public void buyFromShopPrice(int removeId, int removeSlot) {
 		final Currency ShopType = getShopType(c.myShopId);
 		switch (ShopType) {
@@ -121,6 +122,7 @@ public class ShopAssistant {
 	/**
 	 * Sell item to shop (Shop Price)
 	 **/
+	@SuppressWarnings("incomplete-switch")
 	public void sellToShopPrice(int removeId, int removeSlot) {
 
 		final Currency shopType = getShopType(c.myShopId);
@@ -131,6 +133,7 @@ public class ShopAssistant {
 		}
 	}
 
+	@SuppressWarnings("incomplete-switch")
 	public boolean sellItem(int itemID, int fromSlot, int amount) {
 		if (c.isTrading) {
 			c.sendMessage("You cant sell items to the shop while your in trade!");
@@ -171,6 +174,7 @@ public class ShopAssistant {
 		return true;
 	}
 
+	@SuppressWarnings("incomplete-switch")
 	public boolean buyItem(int itemID, int fromSlot, int amount) {
 		if (!shopSellsItem(itemID)) {
 			return false;

@@ -13,8 +13,6 @@ import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.util.HashedWheelTimer;
 import org.jboss.netty.util.Timer;
 
-import core.Configuration;
-import core.game.util.Misc;
 import core.net.NetworkConstants;
 import core.net.fileserver.jagcached.dispatch.RequestWorkerPool;
 import core.net.fileserver.jagcached.net.FileServerHandler;

@@ -1,8 +1,5 @@
 package core.game.model.entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import core.game.model.entity.UpdateFlags.UpdateFlag;
 import core.game.model.entity.mob.Mob;
 import core.game.model.entity.player.Player;

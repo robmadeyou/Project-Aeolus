@@ -4,10 +4,7 @@ import java.util.logging.Level;
 
 import com.sun.istack.internal.logging.Logger;
 
-import core.Configuration;
 import core.game.model.entity.player.Player;
-import core.game.model.entity.player.Rights;
-import core.game.model.item.WearItem;
 import core.net.packets.incoming.AttackPlayer;
 import core.net.packets.incoming.Bank10;
 import core.net.packets.incoming.Bank5;
@@ -45,6 +42,7 @@ import core.net.packets.incoming.Report;
 import core.net.packets.incoming.SilentPacket;
 import core.net.packets.incoming.Trade;
 import core.net.packets.incoming.Walking;
+import core.net.packets.incoming.WearItem;
 
 
 public class PacketHandler{

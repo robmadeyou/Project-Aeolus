@@ -9,7 +9,6 @@ import com.sun.istack.internal.logging.Logger;
 import core.Configuration;
 import core.game.model.entity.mob.MobDefinition;
 import core.game.util.JsonLoader;
-import core.game.util.Misc;
 
 /**
  * The {@link JsonLoader} implementation that loads all npc definitions.

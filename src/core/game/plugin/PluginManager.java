@@ -3,8 +3,6 @@ package core.game.plugin;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.logging.Level;
-
 import org.python.core.Py;
 import org.python.core.PyException;
 import org.python.core.PyFunction;

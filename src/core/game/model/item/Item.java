@@ -1,7 +1,5 @@
 package core.game.model.item;
 
-import core.game.GameConstants;
-
 /**
  * @author Sanity Revised by Shawn Notes by Shawn
  */
