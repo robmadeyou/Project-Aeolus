@@ -11,9 +11,9 @@ public class ClickItem implements PacketType {
 
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
-		int junk = c.getInStream().readSignedWordBigEndianA();
-		int itemSlot = c.getInStream().readUnsignedWordA();
-		int itemId = c.getInStream().readUnsignedWordBigEndian();
+		int junk = c.getInStream().readLEShortA();
+		int itemSlot = c.getInStream().readUShortA();
+		int itemId = c.getInStream().readLEUShort();
 		if (itemId != c.playerItems[itemSlot] - 1) {
 			return;
 		}

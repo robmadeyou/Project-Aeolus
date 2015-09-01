@@ -21,7 +21,7 @@ public class AttackPlayer implements PacketType {
 			* Attack player
 			**/
 			case ATTACK_PLAYER:
-			c.playerIndex = c.getInStream().readSignedWordBigEndian();
+			c.playerIndex = c.getInStream().readLEShort();
 			if(PlayerHandler.players[c.playerIndex] == null ){
 				break;
 			}
@@ -143,8 +143,8 @@ public class AttackPlayer implements PacketType {
 			//c.usingSpecial = false;
 			//c.getItems().updateSpecialBar();
 
-			c.playerIndex = c.getInStream().readSignedWordA();
-			int castingSpellId = c.getInStream().readSignedWordBigEndian();
+			c.playerIndex = c.getInStream().readSignedShortA();
+			int castingSpellId = c.getInStream().readLEShort();
 			c.usingMagic = false;
 			if(PlayerHandler.players[c.playerIndex] == null ){
 				break;

@@ -11,7 +11,7 @@ public class ItemOnItem implements PacketType {
 	@Override
 	public void processPacket(Player p, int packetType, int packetSize) {
 		int usedWithSlot = p.getInStream().readUnsignedWord();
-		int itemUsedSlot = p.getInStream().readUnsignedWordA();
+		int itemUsedSlot = p.getInStream().readUShortA();
 		int useWith = p.playerItems[usedWithSlot] - 1;
 		int itemUsed = p.playerItems[itemUsedSlot] - 1;
 		UseItem.ItemonItem(p, itemUsed, useWith);

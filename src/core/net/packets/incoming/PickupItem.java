@@ -15,9 +15,9 @@ public class PickupItem implements PacketType {
 	@Override
 	public void processPacket(final Player p, int packetType, int packetSize) {
 		p.walkingToItem = false;
-		p.pItemY = p.getInStream().readSignedWordBigEndian();
+		p.pItemY = p.getInStream().readLEShort();
 		p.pItemId = p.getInStream().readUnsignedWord();
-		p.pItemX = p.getInStream().readSignedWordBigEndian();
+		p.pItemX = p.getInStream().readLEShort();
 		if (Math.abs(p.getX() - p.pItemX) > 25
 				|| Math.abs(p.getY() - p.pItemY) > 25) {
 			p.resetWalkingQueue();

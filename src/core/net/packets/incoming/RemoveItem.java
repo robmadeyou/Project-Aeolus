@@ -14,9 +14,9 @@ public class RemoveItem implements PacketType {
 
 	@Override
 	public void processPacket(Player p, int packetType, int packetSize) {
-		int interfaceId = p.getInStream().readUnsignedWordA();
-		int removeSlot = p.getInStream().readUnsignedWordA();
-		int removeId = p.getInStream().readUnsignedWordA();
+		int interfaceId = p.getInStream().readUShortA();
+		int removeSlot = p.getInStream().readUShortA();
+		int removeId = p.getInStream().readUShortA();
 		int shop = 0;
 		int value = 0;
 		String name = "null";

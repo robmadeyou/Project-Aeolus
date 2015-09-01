@@ -95,24 +95,24 @@ public class Trading {
 	public void resetTItems(int WriteFrame) {
         synchronized(c) {
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(WriteFrame);
+			c.getOutStream().writeShort(WriteFrame);
 			int len = offeredItems.toArray().length;
 			int current = 0;
-			c.getOutStream().writeWord(len);
+			c.getOutStream().writeShort(len);
 				for (GameItem item : offeredItems) {
 					if (item.amount > 254) {
 						c.getOutStream().writeByte(255);
-						c.getOutStream().writeDWord_v2(item.amount);
+						c.getOutStream().writeInt_v2(item.amount);
 					} else {
 						c.getOutStream().writeByte(item.amount);
 					}
-				c.getOutStream().writeWordBigEndianA(item.id + 1);
+				c.getOutStream().writeLEShortA(item.id + 1);
 				current++;
 				}
 				if(current < 27) {
 					for(int i = current; i < 28; i++) {
 						c.getOutStream().writeByte(1);
-						c.getOutStream().writeWordBigEndianA(-1);
+						c.getOutStream().writeLEShortA(-1);
 					}
 				}
 			c.getOutStream().endFrameVarSizeWord();
@@ -317,24 +317,24 @@ public class Trading {
 				return;
 			}	
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(WriteFrame);
+			c.getOutStream().writeShort(WriteFrame);
 			int len = o.getTrade().offeredItems.toArray().length;
 			int current = 0;
-			c.getOutStream().writeWord(len);
+			c.getOutStream().writeShort(len);
 				for (GameItem item : o.getTrade().offeredItems) {
 					if (item.amount > 254) {
 						c.getOutStream().writeByte(255); // item's stack count. if over 254, write byte 255
-						c.getOutStream().writeDWord_v2(item.amount); 
+						c.getOutStream().writeInt_v2(item.amount); 
 					} else {
 						c.getOutStream().writeByte(item.amount);
 					}
-					c.getOutStream().writeWordBigEndianA(item.id + 1); // item id
+					c.getOutStream().writeLEShortA(item.id + 1); // item id
 					current++;
 				}
 			if(current < 27) {
 				for(int i = current; i < 28; i++) {
 					c.getOutStream().writeByte(1);
-					c.getOutStream().writeWordBigEndianA(-1);
+					c.getOutStream().writeLEShortA(-1);
 				}
 			}
 			c.getOutStream().endFrameVarSizeWord();

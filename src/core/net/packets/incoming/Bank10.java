@@ -13,9 +13,9 @@ public class Bank10 implements PacketType {
 
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
-		int interfaceId = c.getInStream().readUnsignedWordBigEndian();
-		int removeId = c.getInStream().readUnsignedWordA();
-		int removeSlot = c.getInStream().readUnsignedWordA();
+		int interfaceId = c.getInStream().readLEUShort();
+		int removeId = c.getInStream().readUShortA();
+		int removeSlot = c.getInStream().readUShortA();
 
 		if (c.getRights().equal(Rights.DEVELOPER) && Configuration.SERVER_DEBUG) {
 			c.sendMessage("Bank10: - InterfaceId: " + interfaceId

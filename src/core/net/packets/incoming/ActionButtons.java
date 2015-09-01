@@ -16,7 +16,7 @@ public class ActionButtons implements PacketType {
 	public static Player p;
 	@Override
 	public void processPacket(final Player c, int packetType, int packetSize) {
-		int actionButtonId = Misc.hexToInt(c.getInStream().buffer, 0, packetSize);
+		int actionButtonId = Misc.hexToInt(c.getInStream().payload, 0, packetSize);
 		//int actionButtonId = c.getInStream().readShort();
 		if (c.isDead)
 			return;

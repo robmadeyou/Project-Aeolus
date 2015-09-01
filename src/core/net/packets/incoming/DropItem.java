@@ -13,10 +13,10 @@ public class DropItem implements PacketType {
 
 	@Override
 	public void processPacket(Player p, int packetType, int packetSize) {
-		int itemId = p.getInStream().readUnsignedWordA();
+		int itemId = p.getInStream().readUShortA();
 		p.getInStream().readUnsignedByte();
 		p.getInStream().readUnsignedByte();
-		int slot = p.getInStream().readUnsignedWordA();
+		int slot = p.getInStream().readUShortA();
 		if (p.arenas()) {
 			p.sendMessage("You can't drop items inside the arena!");
 			return;

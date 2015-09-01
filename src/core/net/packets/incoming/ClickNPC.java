@@ -38,7 +38,7 @@ public class ClickNPC implements PacketType {
 				c.sendMessage("I can't reach that.");
 				break;
 			}
-			c.npcIndex = c.getInStream().readUnsignedWordA();
+			c.npcIndex = c.getInStream().readUShortA();
 			if (MobHandler.npcs[c.npcIndex] == null) {
 				c.npcIndex = 0;
 				break;
@@ -142,8 +142,8 @@ public class ClickNPC implements PacketType {
 				c.sendMessage("I can't reach that.");
 				break;
 			}
-			c.npcIndex = c.getInStream().readSignedWordBigEndianA();
-			int castingSpellId = c.getInStream().readSignedWordA();
+			c.npcIndex = c.getInStream().readLEShortA();
+			int castingSpellId = c.getInStream().readSignedShortA();
 			c.usingMagic = false;
 
 			if (MobHandler.npcs[c.npcIndex] == null) {
@@ -194,7 +194,7 @@ public class ClickNPC implements PacketType {
 		case FIRST_CLICK:
 			if (c.isDead)
 				return;
-			c.npcClickIndex = c.inStream.readSignedWordBigEndian();
+			c.npcClickIndex = c.inStream.readLEShort();
 			c.getActionSender().followNpc();
 			c.followMobId = c.npcClickIndex;
 			c.faceNPC(c.npcClickIndex);
@@ -254,7 +254,7 @@ public class ClickNPC implements PacketType {
 			break;
 
 		case SECOND_CLICK:
-			c.npcClickIndex = c.inStream.readUnsignedWordBigEndianA();
+			c.npcClickIndex = c.inStream.readLEUShortA();
 			c.npcType = MobHandler.npcs[c.npcClickIndex].npcType;
 			if (c.goodDistance(MobHandler.npcs[c.npcClickIndex].getX(),
 					MobHandler.npcs[c.npcClickIndex].getY(), c.getX(),
@@ -299,7 +299,7 @@ public class ClickNPC implements PacketType {
 			break;
 
 		case THIRD_CLICK:
-			c.npcClickIndex = c.inStream.readSignedWord();
+			c.npcClickIndex = c.inStream.readSignedShort();
 			c.npcType = MobHandler.npcs[c.npcClickIndex].npcType;
 			if (c.goodDistance(MobHandler.npcs[c.npcClickIndex].getX(),
 					MobHandler.npcs[c.npcClickIndex].getY(), c.getX(),

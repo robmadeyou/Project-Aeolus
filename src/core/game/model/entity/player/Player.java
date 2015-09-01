@@ -35,11 +35,11 @@ import core.game.model.shop.ShopAssistant;
 import core.game.sound.effects.SoundEffects;
 import core.game.util.Censor;
 import core.game.util.Misc;
-import core.game.util.Stream;
 import core.game.util.log.impl.ChatLogger;
 import core.game.util.log.impl.TradeLogger;
 import core.game.world.clipping.PathFinder;
 import core.net.Packet;
+import core.net.Buffer;
 import core.net.Packet.Type;
 import core.net.packets.PacketHandler;
 import core.net.packets.outgoing.ActionSender;
@@ -53,7 +53,7 @@ public class Player extends Entity {
 	public ArrayList<Integer> attackedPlayers = new ArrayList<Integer>();
 
 	public byte buffer[] = null;
-	public Stream inStream = null, outStream = null;
+	public Buffer inStream = null, outStream = null;
 	private Channel session;
 	private ItemAssistant itemAssistant = new ItemAssistant(this);
 	private ShopAssistant shopAssistant = new ShopAssistant(this);
@@ -229,8 +229,8 @@ public class Player extends Entity {
 	protected boolean faceNPCupdate = false;
 	public int faceNPC = -1;
 
-	public void appendFaceNPCUpdate(Stream str) {
-		str.writeWordBigEndian(faceNPC);
+	public void appendFaceNPCUpdate(Buffer str) {
+		str.writeLEShort(faceNPC);
 	}
 
 	public final int[] BOWS = { 9185, 839, 845, 847, 851, 855, 859, 841, 843, 849, 853, 857, 861, 4212, 4214, 4215,
@@ -352,10 +352,10 @@ public class Player extends Entity {
 		this(_playerId);
 		this.session = s;
 		synchronized (this) {
-			outStream = new Stream(new byte[GameConstants.BUFFER_SIZE]);
+			outStream = new Buffer(new byte[GameConstants.BUFFER_SIZE]);
 			outStream.currentOffset = 0;
 
-			inStream = new Stream(new byte[GameConstants.BUFFER_SIZE]);
+			inStream = new Buffer(new byte[GameConstants.BUFFER_SIZE]);
 			inStream.currentOffset = 0;
 			buffer = new byte[GameConstants.BUFFER_SIZE];
 		}
@@ -749,7 +749,7 @@ public class Player extends Entity {
 				inStream.currentOffset = 0;
 				packetType = p.getOpcode();
 				packetSize = p.getLength();
-				inStream.buffer = p.getPayload().array();
+				inStream.payload = p.getPayload().array();
 				if (packetType > 0) {
 					PacketHandler.processPacket(this, packetType, packetSize);
 				}
@@ -758,7 +758,7 @@ public class Player extends Entity {
 		return true;
 	}
 
-	public synchronized Stream getOutStream() {
+	public synchronized Buffer getOutStream() {
 		return outStream;
 	}
 
@@ -780,7 +780,7 @@ public class Player extends Entity {
 		return currentTask;
 	}
 
-	public synchronized Stream getInStream() {
+	public synchronized Buffer getInStream() {
 		return inStream;
 	}
 
@@ -1446,12 +1446,12 @@ public class Player extends Entity {
 		}
 	}
 
-	public void updateThisPlayerMovement(Stream str) {
+	public void updateThisPlayerMovement(Buffer str) {
 		// synchronized(this) {
 		if (mapRegionDidChange) {
 			str.createFrame(73);
-			str.writeWordA(mapRegionX + 6);
-			str.writeWord(mapRegionY + 6);
+			str.writeShortA(mapRegionX + 6);
+			str.writeShort(mapRegionY + 6);
 		}
 
 		if (didTeleport) {
@@ -1511,7 +1511,7 @@ public class Player extends Entity {
 
 	}
 
-	public void updatePlayerMovement(Stream str) {
+	public void updatePlayerMovement(Buffer str) {
 		// synchronized(this) {
 		if (dir1 == -1) {
 			if (updateRequired || isChatTextUpdateRequired()) {
@@ -1539,7 +1539,7 @@ public class Player extends Entity {
 
 	public byte cachedPropertiesBitmap[] = new byte[(GameConstants.MAX_PLAYERS + 7) >> 3];
 
-	public void addNewNPC(Mob npc, Stream str, Stream updateBlock) {
+	public void addNewNPC(Mob npc, Buffer str, Buffer updateBlock) {
 		// synchronized(this) {
 		int id = npc.npcId;
 		npcInListBitmap[id >> 3] |= 1 << (id & 7);
@@ -1566,7 +1566,7 @@ public class Player extends Entity {
 		str.writeBits(1, 1);
 	}
 
-	public void addNewPlayer(Player plr, Stream str, Stream updateBlock) {
+	public void addNewPlayer(Player plr, Buffer str, Buffer updateBlock) {
 		// synchronized(this) {
 		if (playerListSize >= 255) {
 			return;
@@ -1594,13 +1594,13 @@ public class Player extends Entity {
 		str.writeBits(5, z);
 	}
 
-	protected static Stream playerProps;
+	protected static Buffer playerProps;
 
 	static {
-		playerProps = new Stream(new byte[100]);
+		playerProps = new Buffer(new byte[100]);
 	}
 
-	protected void appendPlayerAppearance(Stream str) {
+	protected void appendPlayerAppearance(Buffer str) {
 		playerProps.currentOffset = 0;
 
 		playerProps.writeByte(playerAppearance[0]);
@@ -1608,73 +1608,73 @@ public class Player extends Entity {
 		playerProps.writeByte(headIconPk);
 		playerProps.writeByte(headIconHints);
 		if (playerEquipment[playerHat] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerHat]);
+			playerProps.writeShort(0x200 + playerEquipment[playerHat]);
 		} else {
 			playerProps.writeByte(0);
 		}
 
 		if (playerEquipment[playerCape] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerCape]);
+			playerProps.writeShort(0x200 + playerEquipment[playerCape]);
 		} else {
 			playerProps.writeByte(0);
 		}
 
 		if (playerEquipment[playerAmulet] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerAmulet]);
+			playerProps.writeShort(0x200 + playerEquipment[playerAmulet]);
 		} else {
 			playerProps.writeByte(0);
 		}
 
 		if (playerEquipment[playerWeapon] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerWeapon]);
+			playerProps.writeShort(0x200 + playerEquipment[playerWeapon]);
 		} else {
 			playerProps.writeByte(0);
 		}
 
 		if (playerEquipment[playerChest] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerChest]);
+			playerProps.writeShort(0x200 + playerEquipment[playerChest]);
 		} else {
-			playerProps.writeWord(0x100 + playerAppearance[2]);
+			playerProps.writeShort(0x100 + playerAppearance[2]);
 		}
 
 		if (playerEquipment[playerShield] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerShield]);
+			playerProps.writeShort(0x200 + playerEquipment[playerShield]);
 		} else {
 			playerProps.writeByte(0);
 		}
 
 		if (!Item.isFullBody(playerEquipment[playerChest])) {
-			playerProps.writeWord(0x100 + playerAppearance[3]);
+			playerProps.writeShort(0x100 + playerAppearance[3]);
 		} else {
 			playerProps.writeByte(0);
 		}
 
 		if (playerEquipment[playerLegs] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerLegs]);
+			playerProps.writeShort(0x200 + playerEquipment[playerLegs]);
 		} else {
-			playerProps.writeWord(0x100 + playerAppearance[5]);
+			playerProps.writeShort(0x100 + playerAppearance[5]);
 		}
 
 		if (!Item.isFullHelm(playerEquipment[playerHat]) && !Item.isFullMask(playerEquipment[playerHat])) {
-			playerProps.writeWord(0x100 + playerAppearance[1]);
+			playerProps.writeShort(0x100 + playerAppearance[1]);
 		} else {
 			playerProps.writeByte(0);
 		}
 
 		if (playerEquipment[playerHands] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerHands]);
+			playerProps.writeShort(0x200 + playerEquipment[playerHands]);
 		} else {
-			playerProps.writeWord(0x100 + playerAppearance[4]);
+			playerProps.writeShort(0x100 + playerAppearance[4]);
 		}
 
 		if (playerEquipment[playerFeet] > 1) {
-			playerProps.writeWord(0x200 + playerEquipment[playerFeet]);
+			playerProps.writeShort(0x200 + playerEquipment[playerFeet]);
 		} else {
-			playerProps.writeWord(0x100 + playerAppearance[6]);
+			playerProps.writeShort(0x100 + playerAppearance[6]);
 		}
 
 		if (playerAppearance[0] != 1 && !Item.isFullMask(playerEquipment[playerHat])) {
-			playerProps.writeWord(0x100 + playerAppearance[7]);
+			playerProps.writeShort(0x100 + playerAppearance[7]);
 		} else {
 			playerProps.writeByte(0);
 		}
@@ -1683,20 +1683,20 @@ public class Player extends Entity {
 		playerProps.writeByte(playerAppearance[10]);
 		playerProps.writeByte(playerAppearance[11]);
 		playerProps.writeByte(playerAppearance[12]);
-		playerProps.writeWord(playerStandIndex);
-		playerProps.writeWord(playerTurnIndex);
-		playerProps.writeWord(playerWalkIndex);
-		playerProps.writeWord(playerTurn180Index);
-		playerProps.writeWord(playerTurn90CWIndex);
-		playerProps.writeWord(playerTurn90CCWIndex);
-		playerProps.writeWord(playerRunIndex);
+		playerProps.writeShort(playerStandIndex);
+		playerProps.writeShort(playerTurnIndex);
+		playerProps.writeShort(playerWalkIndex);
+		playerProps.writeShort(playerTurn180Index);
+		playerProps.writeShort(playerTurn90CWIndex);
+		playerProps.writeShort(playerTurn90CCWIndex);
+		playerProps.writeShort(playerRunIndex);
 
-		playerProps.writeQWord(Misc.playerNameToInt64(playerName));
+		playerProps.writeLong(Misc.playerNameToInt64(playerName));
 		combatLevel = calculateCombatLevel();
 		playerProps.writeByte(combatLevel);
-		playerProps.writeWord(0);
+		playerProps.writeShort(0);
 		str.writeByteC(playerProps.currentOffset);
-		str.writeBytes(playerProps.buffer, playerProps.currentOffset, 0);
+		str.writeBytes(playerProps.payload, playerProps.currentOffset, 0);
 	}
 
 	public int calculateCombatLevel() {
@@ -1739,23 +1739,23 @@ public class Player extends Entity {
 	private int chatTextColor = 0;
 	private int chatTextEffects = 0;
 
-	protected void appendPlayerChatText(Stream str) {
+	protected void appendPlayerChatText(Buffer str) {
 		// synchronized(this) {
-		str.writeWordBigEndian(((getChatTextColor() & 0xFF) << 8) + (getChatTextEffects() & 0xFF));
+		str.writeLEShort(((getChatTextColor() & 0xFF) << 8) + (getChatTextEffects() & 0xFF));
 		str.writeByte(getRights().getProtocolValue());
 		str.writeByteC(getChatTextSize());
-		str.writeBytes_reverse(getChatText(), getChatTextSize(), 0);
+		str.writeReverseData(getChatText(), getChatTextSize(), 0);
 
 	}
 
-	public void appendForcedChat(Stream str) {
+	public void appendForcedChat(Buffer str) {
 		str.writeString(forcedChat);
 	}
 
-	public void appendMask100Update(Stream str) {
+	public void appendMask100Update(Buffer str) {
 		// synchronized(this) {
-		str.writeWordBigEndian(gfx);
-		str.writeDWord(gfxVar2);
+		str.writeLEShort(gfx);
+		str.writeInt(gfxVar2);
 
 	}
 
@@ -1786,9 +1786,9 @@ public class Player extends Entity {
 		updateRequired = true;
 	}
 
-	public void appendAnimationRequest(Stream str) {
+	public void appendAnimationRequest(Buffer str) {
 		// synchronized(this) {
-		str.writeWordBigEndian((animationRequest == -1) ? 65535 : animationRequest);
+		str.writeLEShort((animationRequest == -1) ? 65535 : animationRequest);
 		str.writeByteC(animationWaitCycles);
 
 	}
@@ -1806,9 +1806,9 @@ public class Player extends Entity {
 		updateRequired = true;
 	}
 
-	public void appendFaceUpdate(Stream str) {
+	public void appendFaceUpdate(Buffer str) {
 		// synchronized(this) {
-		str.writeWordBigEndian(face);
+		str.writeLEShort(face);
 
 	}
 
@@ -1818,10 +1818,10 @@ public class Player extends Entity {
 		updateRequired = true;
 	}
 
-	private void appendSetFocusDestination(Stream str) {
+	private void appendSetFocusDestination(Buffer str) {
 		// synchronized(this) {
-		str.writeWordBigEndianA(FocusPointX);
-		str.writeWordBigEndian(FocusPointY);
+		str.writeLEShortA(FocusPointX);
+		str.writeLEShort(FocusPointY);
 
 	}
 
@@ -1829,7 +1829,7 @@ public class Player extends Entity {
 	 * Hit Update
 	 */
 
-	protected void appendHitUpdate(Stream str) {
+	protected void appendHitUpdate(Buffer str) {
 		str.writeByte(hit.getDamage());
 		str.writeByteA(hit.getType().getId());
 		if (playerLevel[3] <= 0) {
@@ -1840,7 +1840,7 @@ public class Player extends Entity {
 		str.writeByte(getLevelForXP(playerXP[3]));
 	}
 
-	protected void appendHitUpdate2(Stream str) {
+	protected void appendHitUpdate2(Buffer str) {
 		str.writeByte(secondaryHit.getDamage());
 		str.writeByteS(secondaryHit.getType().getId());
 		if (playerLevel[3] <= 0) {
@@ -1851,7 +1851,7 @@ public class Player extends Entity {
 		str.writeByteC(getLevelForXP(playerXP[3])); // Their max hp, for HP
 	}
 
-	public void appendPlayerUpdateBlock(Stream str) {
+	public void appendPlayerUpdateBlock(Buffer str) {
 		// synchronized(this) {
 		if (!updateRequired && !isChatTextUpdateRequired())
 			return;
@@ -1968,7 +1968,7 @@ public class Player extends Entity {
 			return;
 
 		byte[] temp = new byte[outStream.currentOffset];
-		System.arraycopy(outStream.buffer, 0, temp, 0, temp.length);
+		System.arraycopy(outStream.payload, 0, temp, 0, temp.length);
 		Packet packet = new Packet(-1, Type.FIXED, ChannelBuffers.wrappedBuffer(temp));
 		session.write(packet);
 		outStream.currentOffset = 0;

@@ -2,7 +2,7 @@ package core.game.model.entity.mob;
 
 import core.game.model.entity.Entity;
 import core.game.util.Misc;
-import core.game.util.Stream;
+import core.net.Buffer;
 
 public class Mob extends Entity {
 
@@ -55,7 +55,7 @@ public class Mob extends Entity {
 		this.updateRequired = true;
 	}
 
-	public void updateNPCMovement(Stream str) {
+	public void updateNPCMovement(Buffer str) {
 		if (direction == -1) {
 
 			if (updateRequired) {
@@ -103,9 +103,9 @@ public class Mob extends Entity {
 	public int mask80var2 = 0;
 	protected boolean mask80update = false;
 
-	public void appendMask80Update(Stream str) {
-		str.writeWord(mask80var1);
-		str.writeDWord(mask80var2);
+	public void appendMask80Update(Buffer str) {
+		str.writeShort(mask80var1);
+		str.writeInt(mask80var2);
 	}
 
 	public void gfx100(int gfx) {
@@ -122,8 +122,8 @@ public class Mob extends Entity {
 		updateRequired = true;
 	}
 
-	public void appendAnimUpdate(Stream str) {
-		str.writeWordBigEndian(animNumber);
+	public void appendAnimUpdate(Buffer str) {
+		str.writeLEShort(animNumber);
 		str.writeByte(1);
 	}
 
@@ -136,9 +136,9 @@ public class Mob extends Entity {
 	public int FocusPointX = -1, FocusPointY = -1;
 	public int face = 0;
 
-	private void appendSetFocusDestination(Stream str) {
-		str.writeWordBigEndian(FocusPointX);
-		str.writeWordBigEndian(FocusPointY);
+	private void appendSetFocusDestination(Buffer str) {
+		str.writeLEShort(FocusPointX);
+		str.writeLEShort(FocusPointY);
 	}
 
 	public void turnNpc(int i, int j) {
@@ -148,8 +148,8 @@ public class Mob extends Entity {
 
 	}
 
-	public void appendFaceEntity(Stream str) {
-		str.writeWord(face);
+	public void appendFaceEntity(Buffer str) {
+		str.writeShort(face);
 	}
 
 	public void facePlayer(int player) {
@@ -158,12 +158,12 @@ public class Mob extends Entity {
 		updateRequired = true;
 	}
 
-	public void appendFaceToUpdate(Stream str) {
-		str.writeWordBigEndian(viewX);
-		str.writeWordBigEndian(viewY);
+	public void appendFaceToUpdate(Buffer str) {
+		str.writeLEShort(viewX);
+		str.writeLEShort(viewY);
 	}
 
-	public void appendNPCUpdateBlock(Stream str) {
+	public void appendNPCUpdateBlock(Buffer str) {
 		if (!updateRequired)
 			return;
 		int updateMask = 0;
@@ -236,7 +236,7 @@ public class Mob extends Entity {
 		}
 	}
 
-	public void appendHitUpdate(Stream str) {
+	public void appendHitUpdate(Buffer str) {
 		if (HP <= 0) {
 			isDead = true;
 		}
@@ -253,7 +253,7 @@ public class Mob extends Entity {
 	public int hitDiff2 = 0;
 	public boolean hitUpdateRequired2 = false;
 
-	public void appendHitUpdate2(Stream str) {
+	public void appendHitUpdate2(Buffer str) {
 		if (HP <= 0) {
 			isDead = true;
 		}

@@ -83,13 +83,13 @@ public class Dueling {
 		synchronized(c) {
 			if(itemId != 0) {
 				c.getOutStream().createFrameVarSizeWord(34);
-				c.getOutStream().writeWord(13824);
+				c.getOutStream().writeShort(13824);
 				c.getOutStream().writeByte(slot);
-				c.getOutStream().writeWord(itemId+1);
+				c.getOutStream().writeShort(itemId+1);
 
 				if (amount > 254) {
 					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord(amount);
+					c.getOutStream().writeInt(amount);
 				} else {
 					c.getOutStream().writeByte(amount);
 				}
@@ -114,20 +114,20 @@ public class Dueling {
 				return;
 			}
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(6669);
-			c.getOutStream().writeWord(stakedItems.toArray().length);
+			c.getOutStream().writeShort(6669);
+			c.getOutStream().writeShort(stakedItems.toArray().length);
 			int current = 0;
 			for(GameItem item : stakedItems) {
 				if (item.amount > 254) {
 					c.getOutStream().writeByte(255); 
-					c.getOutStream().writeDWord_v2(item.amount);	
+					c.getOutStream().writeInt_v2(item.amount);	
 				} else  {
 					c.getOutStream().writeByte(item.amount);
 				}
 				if (item.id > GameConstants.ITEM_LIMIT || item.id < 0) {
 					item.id = GameConstants.ITEM_LIMIT;
 				}
-				c.getOutStream().writeWordBigEndianA(item.id + 1);
+				c.getOutStream().writeLEShortA(item.id + 1);
 				
 				current++;
 			}
@@ -135,34 +135,34 @@ public class Dueling {
 			if(current < 27) {
 				for(int i = current; i < 28; i++) {
 					c.getOutStream().writeByte(1);
-					c.getOutStream().writeWordBigEndianA(-1);
+					c.getOutStream().writeLEShortA(-1);
 				}
 			}
 			c.getOutStream().endFrameVarSizeWord();
 			c.flushOutStream();
 			
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(6670);
-			c.getOutStream().writeWord(o.getDuel().stakedItems.toArray().length);
+			c.getOutStream().writeShort(6670);
+			c.getOutStream().writeShort(o.getDuel().stakedItems.toArray().length);
 			current = 0;	
 			for (GameItem item : o.getDuel().stakedItems) {
 				if (item.amount > 254) {
 					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord_v2(item.amount);
+					c.getOutStream().writeInt_v2(item.amount);
 				}  else  {
 					c.getOutStream().writeByte(item.amount);
 				}
 				if (item.id > GameConstants.ITEM_LIMIT || item.id < 0) {
 					item.id = GameConstants.ITEM_LIMIT;
 				}
-				c.getOutStream().writeWordBigEndianA(item.id + 1);
+				c.getOutStream().writeLEShortA(item.id + 1);
 				current++;
 			}
 			
 			if(current < 27) {
 				for(int i = current; i < 28; i++) {
 					c.getOutStream().writeByte(1);
-					c.getOutStream().writeWordBigEndianA(-1);
+					c.getOutStream().writeLEShortA(-1);
 				}
 			}
 			c.getOutStream().endFrameVarSizeWord();
@@ -508,19 +508,19 @@ public class Dueling {
 	public void duelRewardInterface() {
 		synchronized(c) {
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(6822);
-			c.getOutStream().writeWord(otherStakedItems.toArray().length);
+			c.getOutStream().writeShort(6822);
+			c.getOutStream().writeShort(otherStakedItems.toArray().length);
 			for (GameItem item : otherStakedItems) {
 				if (item.amount > 254) {
 					c.getOutStream().writeByte(255);					
-					c.getOutStream().writeDWord_v2(item.amount);
+					c.getOutStream().writeInt_v2(item.amount);
 				} else {
 					c.getOutStream().writeByte(item.amount);
 				}
 				if (item.id > GameConstants.ITEM_LIMIT || item.id < 0) {
 					item.id = GameConstants.ITEM_LIMIT;
 				}
-				c.getOutStream().writeWordBigEndianA(item.id + 1);
+				c.getOutStream().writeLEShortA(item.id + 1);
 			}
 			c.getOutStream().endFrameVarSizeWord();
 			c.flushOutStream();

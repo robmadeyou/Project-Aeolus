@@ -62,21 +62,21 @@ public class ShopAssistant {
 				TotalItems = ShopHandler.MaxShopItems;
 			}
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(3900);
-			c.getOutStream().writeWord(TotalItems);
+			c.getOutStream().writeShort(3900);
+			c.getOutStream().writeShort(TotalItems);
 			int TotalCount = 0;
 			for (int i = 0; i < ShopHandler.ShopItems.length; i++) {
 				if (ShopHandler.ShopItems[ShopID][i] > 0 || i <= ShopHandler.ShopItemsStandard[ShopID]) {
 					if (ShopHandler.ShopItemsN[ShopID][i] > 254) {
 						c.getOutStream().writeByte(255);
-						c.getOutStream().writeDWord_v2(ShopHandler.ShopItemsN[ShopID][i]);
+						c.getOutStream().writeInt_v2(ShopHandler.ShopItemsN[ShopID][i]);
 					} else {
 						c.getOutStream().writeByte(ShopHandler.ShopItemsN[ShopID][i]);
 					}
 					if (ShopHandler.ShopItems[ShopID][i] > GameConstants.ITEM_LIMIT || ShopHandler.ShopItems[ShopID][i] < 0) {
 						ShopHandler.ShopItems[ShopID][i] = GameConstants.ITEM_LIMIT;
 					}
-					c.getOutStream().writeWordBigEndianA(ShopHandler.ShopItems[ShopID][i]);
+					c.getOutStream().writeLEShortA(ShopHandler.ShopItems[ShopID][i]);
 					TotalCount++;
 				}
 				if (TotalCount > TotalItems) {

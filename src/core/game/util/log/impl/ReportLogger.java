@@ -42,7 +42,7 @@ public class ReportLogger {
 	}
 
 	public static void handleReport(Player c) throws Exception {
-		String player = Misc.longToReportPlayerName(c.inStream.readQWord2());
+		String player = Misc.longToReportPlayerName(c.inStream.readLong());
 		player = player.replaceAll("_", " ");
 		byte rule = (byte) c.inStream.readUnsignedByte();
 		if (c.lastReported.equalsIgnoreCase(player)

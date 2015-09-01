@@ -13,10 +13,10 @@ public class MagicOnFloorItems implements PacketType {
 
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
-		int itemY = c.getInStream().readSignedWordBigEndian();
+		int itemY = c.getInStream().readLEShort();
 		int itemId = c.getInStream().readUnsignedWord();
-		int itemX = c.getInStream().readSignedWordBigEndian();
-		int spellId = c.getInStream().readUnsignedWordA();
+		int itemX = c.getInStream().readLEShort();
+		int spellId = c.getInStream().readUShortA();
 
 		if(!Server.itemHandler.itemExists(itemId, itemX, itemY)) {
 			c.stopMovement();

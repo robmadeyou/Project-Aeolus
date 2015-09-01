@@ -63,15 +63,15 @@ public class ActionSender {
 	public void itemOnInterface(int id, int amount) {
 		synchronized (c) {
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(2274);
-			c.getOutStream().writeWord(1);
+			c.getOutStream().writeShort(2274);
+			c.getOutStream().writeShort(1);
 			if (amount > 254) {
 				c.getOutStream().writeByte(255);
-				c.getOutStream().writeDWord_v2(amount);
+				c.getOutStream().writeInt_v2(amount);
 			} else {
 				c.getOutStream().writeByte(amount);
 			}
-			c.getOutStream().writeWordBigEndianA(id);
+			c.getOutStream().writeLEShortA(id);
 			c.getOutStream().endFrameVarSizeWord();
 			c.flushOutStream();
 		}
@@ -83,10 +83,10 @@ public class ActionSender {
 	public void showWelcomeScreen(int days, int unreadMessages, int member, int ip, int daysSince) {
 		c.outStream.createFrame(176);
 		c.outStream.writeByteC(days);
-		c.outStream.writeWordA(unreadMessages);
+		c.outStream.writeShortA(unreadMessages);
 		c.outStream.writeByte(member);
-		c.outStream.writeDWord_v1(ip);
-		c.outStream.writeWord(daysSince);
+		c.outStream.writeInt_v1(ip);
+		c.outStream.writeShort(daysSince);
 	}
 	
 	/**
@@ -98,7 +98,7 @@ public class ActionSender {
 		// synchronized (this) {
 		if (c.getOutStream() != null) {
 			c.outStream.createFrame(71);
-			c.outStream.writeWord(form);
+			c.outStream.writeShort(form);
 			c.outStream.writeByteA(menuId);
 		}
 	}
@@ -108,7 +108,7 @@ public class ActionSender {
 		c.outStream.writeString(name);
 		c.outStream.writeString(message);
 		c.outStream.writeString(clan);
-		c.outStream.writeWord(c.getRights().getValues());
+		c.outStream.writeShort(c.getRights().getValues());
 		c.outStream.endFrameVarSize();
 	}
 	
@@ -119,7 +119,7 @@ public class ActionSender {
 		c.outStream.createFrame(177);
 		c.outStream.writeByte(i1);
 		c.outStream.writeByte(i2);
-		c.outStream.writeWord(i3);
+		c.outStream.writeShort(i3);
 		c.outStream.writeByte(i4);
 		c.outStream.writeByte(i5); 
 	}
@@ -133,8 +133,8 @@ public class ActionSender {
 	public void sendColor(int id, int color) {
 		if (c.getOutStream() != null && c != null) {
 			c.outStream.createFrame(122);
-			c.outStream.writeWordBigEndianA(id);
-			c.outStream.writeWordBigEndianA(color);
+			c.outStream.writeLEShortA(id);
+			c.outStream.writeLEShortA(color);
 		}
 	}
 
@@ -144,9 +144,9 @@ public class ActionSender {
 	public void sendSound(int soundId) {
 		if (soundId > 0 & c != null && c.outStream != null) {
 			c.outStream.createFrame(174);
-			c.outStream.writeWord(soundId);
+			c.outStream.writeShort(soundId);
 			c.outStream.writeByte(100);
-			c.outStream.writeWord(5);
+			c.outStream.writeShort(5);
 		}
 	}
 
@@ -156,9 +156,9 @@ public class ActionSender {
 	public void sound(int soundId) {
 		if (soundId > 0 && c.outStream != null) {
 			c.outStream.createFrame(174);
-			c.outStream.writeWord(soundId);
+			c.outStream.writeShort(soundId);
 			c.outStream.writeByte(100);
-			c.outStream.writeWord(5);
+			c.outStream.writeShort(5);
 		}
 	}
 
@@ -167,10 +167,10 @@ public class ActionSender {
 	 */
 	public void sendSound2(int i1, int i2, int i3) {
 		c.outStream.createFrame(174);
-		c.outStream.writeWord(i1); // id
+		c.outStream.writeShort(i1); // id
 		c.outStream.writeByte(i2); // volume, just set it to 100 unless you play
 									// around with your client after this
-		c.outStream.writeWord(i3); // delay
+		c.outStream.writeShort(i3); // delay
 		c.updateRequired = true;
 		c.appearanceUpdateRequired = true;
 		c.flushOutStream();
@@ -184,7 +184,7 @@ public class ActionSender {
 	 */
 	public void sendMusic(Player client, int songId) {
 		client.outStream.createFrame(74);
-		client.outStream.writeWordBigEndian(songId);
+		client.outStream.writeLEShort(songId);
 	}
 
 	public void clearClanChat() {
@@ -253,7 +253,7 @@ public class ActionSender {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrameVarSizeWord(126);
 			c.getOutStream().writeString(s);
-			c.getOutStream().writeWordA(id);
+			c.getOutStream().writeShortA(id);
 			c.getOutStream().endFrameVarSizeWord();
 			c.flushOutStream();
 		}
@@ -365,14 +365,14 @@ public class ActionSender {
 
 	public static void showInterface(Player Player, int i) {
 		Player.getOutStream().createFrame(97);
-		Player.getOutStream().writeWord(i);
+		Player.getOutStream().writeShort(i);
 		Player.flushOutStream();
 	}
 
 	public static void sendQuest(Player Player, String s, int i) {
 		Player.getOutStream().createFrameVarSizeWord(126);
 		Player.getOutStream().writeString(s);
-		Player.getOutStream().writeWordA(i);
+		Player.getOutStream().writeShortA(i);
 		Player.getOutStream().endFrameVarSizeWord();
 		Player.flushOutStream();
 	}
@@ -385,10 +385,10 @@ public class ActionSender {
 		c.getOutStream().writeByte(0);// Tiles away (X >> 4 + Y & 7)
 										// //Tiles away from
 		// absX and absY.
-		c.getOutStream().writeWord(id); // Graphic ID.
+		c.getOutStream().writeShort(id); // Graphic ID.
 		c.getOutStream().writeByte(heightS); // Height of the graphic when
 												// cast.
-		c.getOutStream().writeWord(timeBCS); // Time before the graphic
+		c.getOutStream().writeShort(timeBCS); // Time before the graphic
 												// plays.
 		c.flushOutStream();
 	}
@@ -397,8 +397,8 @@ public class ActionSender {
 		if (c != null) {
 			c.getOutStream().createFrame(254); // The packet ID
 			c.getOutStream().writeByte(type); // 1=NPC, 10=Player
-			c.getOutStream().writeWord(id); // NPC/Player ID
-			c.getOutStream().write3Byte(0); // Junk
+			c.getOutStream().writeShort(id); // NPC/Player ID
+			c.getOutStream().writeTriByte(0); // Junk
 		}
 	}
 
@@ -408,8 +408,8 @@ public class ActionSender {
 			c.getOutStream().writeByte(pos); // Position on Square(2 = middle, 3
 												// = west, 4 = east, 5 = south,
 												// 6 = north)
-			c.getOutStream().writeWord(x); // X-Coord of Object
-			c.getOutStream().writeWord(y); // Y-Coord of Object
+			c.getOutStream().writeShort(x); // X-Coord of Object
+			c.getOutStream().writeShort(y); // Y-Coord of Object
 			c.getOutStream().writeByte(height); // Height off Ground
 		}
 	}
@@ -417,7 +417,7 @@ public class ActionSender {
 	public void sendQuest(String s, int i) {
 		c.getOutStream().createFrameVarSizeWord(126);
 		c.getOutStream().writeString(s);
-		c.getOutStream().writeWordA(i);
+		c.getOutStream().writeShortA(i);
 		c.getOutStream().endFrameVarSizeWord();
 		c.flushOutStream();
 	}
@@ -430,7 +430,7 @@ public class ActionSender {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrameVarSizeWord(126);
 			c.getOutStream().writeString(text);
-			c.getOutStream().writeWordA(id);
+			c.getOutStream().writeShortA(id);
 			c.getOutStream().endFrameVarSizeWord();
 			c.flushOutStream();
 		}
@@ -442,11 +442,11 @@ public class ActionSender {
 	 */
 	public void sendFrame34a(int frame, int item, int slot, int amount) {
 		c.outStream.createFrameVarSizeWord(34);
-		c.outStream.writeWord(frame);
+		c.outStream.writeShort(frame);
 		c.outStream.writeByte(slot);
-		c.outStream.writeWord(item + 1);
+		c.outStream.writeShort(item + 1);
 		c.outStream.writeByte(255);
-		c.outStream.writeDWord(amount);
+		c.outStream.writeInt(amount);
 		c.outStream.endFrameVarSizeWord();
 	}
 
@@ -467,7 +467,7 @@ public class ActionSender {
 			if (c.getOutStream() != null && c != null) {
 				c.getOutStream().createFrame(134);
 				c.getOutStream().writeByte(skillNum);
-				c.getOutStream().writeDWord_v1(XP);
+				c.getOutStream().writeInt_v1(XP);
 				c.getOutStream().writeByte(currentLevel);
 				c.flushOutStream();
 			}
@@ -505,7 +505,7 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(36);
-			c.getOutStream().writeWordBigEndian(id);
+			c.getOutStream().writeLEShort(id);
 			c.getOutStream().writeByte(state);
 			c.flushOutStream();
 		}
@@ -519,7 +519,7 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(185);
-			c.getOutStream().writeWordBigEndianA(Frame);
+			c.getOutStream().writeLEShortA(Frame);
 		}
 
 	}
@@ -531,7 +531,7 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(97);
-			c.getOutStream().writeWord(interfaceid);
+			c.getOutStream().writeShort(interfaceid);
 			c.flushOutStream();
 
 		}
@@ -544,8 +544,8 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(248);
-			c.getOutStream().writeWordA(MainFrame);
-			c.getOutStream().writeWord(SubFrame);
+			c.getOutStream().writeShortA(MainFrame);
+			c.getOutStream().writeShort(SubFrame);
 			c.flushOutStream();
 
 		}
@@ -558,9 +558,9 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(246);
-			c.getOutStream().writeWordBigEndian(MainFrame);
-			c.getOutStream().writeWord(SubFrame);
-			c.getOutStream().writeWord(SubFrame2);
+			c.getOutStream().writeLEShort(MainFrame);
+			c.getOutStream().writeShort(SubFrame);
+			c.getOutStream().writeShort(SubFrame2);
 			c.flushOutStream();
 
 		}
@@ -574,7 +574,7 @@ public class ActionSender {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(171);
 			c.getOutStream().writeByte(MainFrame);
-			c.getOutStream().writeWord(SubFrame);
+			c.getOutStream().writeShort(SubFrame);
 			c.flushOutStream();
 
 		}
@@ -584,8 +584,8 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(200);
-			c.getOutStream().writeWord(MainFrame);
-			c.getOutStream().writeWord(SubFrame);
+			c.getOutStream().writeShort(MainFrame);
+			c.getOutStream().writeShort(SubFrame);
 			c.flushOutStream();
 		}
 	}
@@ -594,9 +594,9 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(70);
-			c.getOutStream().writeWord(i);
-			c.getOutStream().writeWordBigEndian(o);
-			c.getOutStream().writeWordBigEndian(id);
+			c.getOutStream().writeShort(i);
+			c.getOutStream().writeLEShort(o);
+			c.getOutStream().writeLEShort(id);
 			c.flushOutStream();
 		}
 
@@ -606,8 +606,8 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(75);
-			c.getOutStream().writeWordBigEndianA(MainFrame);
-			c.getOutStream().writeWordBigEndianA(SubFrame);
+			c.getOutStream().writeLEShortA(MainFrame);
+			c.getOutStream().writeLEShortA(SubFrame);
 			c.flushOutStream();
 		}
 
@@ -617,7 +617,7 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(164);
-			c.getOutStream().writeWordBigEndian_dup(Frame);
+			c.getOutStream().writeLEShort(Frame);
 			c.flushOutStream();
 		}
 
@@ -653,8 +653,8 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(87);
-			c.getOutStream().writeWordBigEndian_dup(id);
-			c.getOutStream().writeDWord_v1(state);
+			c.getOutStream().writeLEShort(id);
+			c.getOutStream().writeInt_v1(state);
 			c.flushOutStream();
 		}
 
@@ -667,8 +667,8 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrameVarSize(196);
-			c.getOutStream().writeQWord(name);
-			c.getOutStream().writeDWord(c.lastChatId++);
+			c.getOutStream().writeLong(name);
+			c.getOutStream().writeInt(c.lastChatId++);
 			c.getOutStream().writeByte(rights);
 			c.getOutStream().writeBytes(chatmessage, messagesize, 0);
 			c.getOutStream().endFrameVarSize();
@@ -684,8 +684,8 @@ public class ActionSender {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(254);
 			c.getOutStream().writeByte(type);
-			c.getOutStream().writeWord(id);
-			c.getOutStream().write3Byte(0);
+			c.getOutStream().writeShort(id);
+			c.getOutStream().writeTriByte(0);
 			c.flushOutStream();
 		}
 	}
@@ -695,8 +695,8 @@ public class ActionSender {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(254);
 			c.getOutStream().writeByte(pos);
-			c.getOutStream().writeWord(x);
-			c.getOutStream().writeWord(y);
+			c.getOutStream().writeShort(x);
+			c.getOutStream().writeShort(y);
 			c.getOutStream().writeByte(height);
 			c.flushOutStream();
 		}
@@ -714,7 +714,7 @@ public class ActionSender {
 				world += 1;
 			}
 			c.getOutStream().createFrame(50);
-			c.getOutStream().writeQWord(playerName);
+			c.getOutStream().writeLong(playerName);
 			c.getOutStream().writeByte(world);
 			c.flushOutStream();
 		}
@@ -736,10 +736,10 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.outStream.createFrameVarSizeWord(34); // init item to smith screen
-			c.outStream.writeWord(column); // Column Across Smith Screen
+			c.outStream.writeShort(column); // Column Across Smith Screen
 			c.outStream.writeByte(4); // Total Rows?
-			c.outStream.writeDWord(slot); // Row Down The Smith Screen
-			c.outStream.writeWord(id + 1); // item
+			c.outStream.writeInt(slot); // Row Down The Smith Screen
+			c.outStream.writeShort(id + 1); // item
 			c.outStream.writeByte(amount); // how many there are?
 			c.outStream.endFrameVarSizeWord();
 		}
@@ -750,7 +750,7 @@ public class ActionSender {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrame(208);
-			c.getOutStream().writeWordBigEndian_dup(id);
+			c.getOutStream().writeLEShort(id);
 			c.flushOutStream();
 		}
 
@@ -822,12 +822,12 @@ public class ActionSender {
 			c.getOutStream().writeByte(angle);
 			c.getOutStream().writeByte(offY);
 			c.getOutStream().writeByte(offX);
-			c.getOutStream().writeWord(lockon);
-			c.getOutStream().writeWord(gfxMoving);
+			c.getOutStream().writeShort(lockon);
+			c.getOutStream().writeShort(gfxMoving);
 			c.getOutStream().writeByte(startHeight);
 			c.getOutStream().writeByte(endHeight);
-			c.getOutStream().writeWord(time);
-			c.getOutStream().writeWord(speed);
+			c.getOutStream().writeShort(time);
+			c.getOutStream().writeShort(speed);
 			c.getOutStream().writeByte(16);
 			c.getOutStream().writeByte(64);
 			c.flushOutStream();
@@ -846,12 +846,12 @@ public class ActionSender {
 			c.getOutStream().writeByte(angle);
 			c.getOutStream().writeByte(offY);
 			c.getOutStream().writeByte(offX);
-			c.getOutStream().writeWord(lockon);
-			c.getOutStream().writeWord(gfxMoving);
+			c.getOutStream().writeShort(lockon);
+			c.getOutStream().writeShort(gfxMoving);
 			c.getOutStream().writeByte(startHeight);
 			c.getOutStream().writeByte(endHeight);
-			c.getOutStream().writeWord(time);
-			c.getOutStream().writeWord(speed);
+			c.getOutStream().writeShort(time);
+			c.getOutStream().writeShort(speed);
 			c.getOutStream().writeByte(slope);
 			c.getOutStream().writeByte(64);
 			c.flushOutStream();
@@ -873,12 +873,12 @@ public class ActionSender {
 							p.outStream.writeByte(50);
 							p.outStream.writeByte(offsetY);
 							p.outStream.writeByte(offsetX);
-							p.outStream.writeWord(AtkIndex);
-							p.outStream.writeWord(gfxMoving);
+							p.outStream.writeShort(AtkIndex);
+							p.outStream.writeShort(gfxMoving);
 							p.outStream.writeByte(StartHeight);
 							p.outStream.writeByte(endHeight);
-							p.outStream.writeWord(51);
-							p.outStream.writeWord(speed);
+							p.outStream.writeShort(51);
+							p.outStream.writeShort(speed);
 							p.outStream.writeByte(16);
 							p.outStream.writeByte(64);
 						}
@@ -942,9 +942,9 @@ public class ActionSender {
 			c.getOutStream().writeByteC(x - (c.getMapRegionX() * 8));
 			c.getOutStream().createFrame(4);
 			c.getOutStream().writeByte(0);
-			c.getOutStream().writeWord(id);
+			c.getOutStream().writeShort(id);
 			c.getOutStream().writeByte(height);
-			c.getOutStream().writeWord(time);
+			c.getOutStream().writeShort(time);
 			c.flushOutStream();
 		}
 
@@ -986,7 +986,7 @@ public class ActionSender {
 			if (objectId != -1) { // removing
 				c.getOutStream().createFrame(151);
 				c.getOutStream().writeByteS(0);
-				c.getOutStream().writeWordBigEndian(objectId);
+				c.getOutStream().writeLEShort(objectId);
 				c.getOutStream().writeByteS((objectType << 2) + (face & 3));
 			}
 			c.flushOutStream();
@@ -1009,7 +1009,7 @@ public class ActionSender {
 			if (objectId != -1) { // removing
 				c.getOutStream().createFrame(151);
 				c.getOutStream().writeByteS(0);
-				c.getOutStream().writeWordBigEndian(objectId);
+				c.getOutStream().writeLEShort(objectId);
 				c.getOutStream().writeByteS((objectType << 2) + (face & 3));
 			}
 			c.flushOutStream();
@@ -1050,8 +1050,8 @@ public class ActionSender {
 			c.getItems().resetBank();
 			c.getItems().resetTempItems();
 			c.getOutStream().createFrame(248);
-			c.getOutStream().writeWordA(5292);
-			c.getOutStream().writeWord(5063);
+			c.getOutStream().writeShortA(5292);
+			c.getOutStream().writeShort(5063);
 			c.flushOutStream();
 		}
 
@@ -1868,7 +1868,7 @@ public class ActionSender {
 	public void initializePlayer(int playerIsMember, int index) {
 		c.outStream.createFrame(249);
 		c.outStream.writeByteA(playerIsMember); // 1 for members, zero for free
-		c.outStream.writeWordBigEndianA(index);
+		c.outStream.writeLEShortA(index);
 	}
 
 	/**
@@ -1885,12 +1885,12 @@ public class ActionSender {
 		c.outStream.writeByte(i);
 
 		if (i == 1 || i == 10) {
-			c.outStream.writeWord(j);
-			c.outStream.writeWord(k);
+			c.outStream.writeShort(j);
+			c.outStream.writeShort(k);
 			c.outStream.writeByte(l);
 		} else {
-			c.outStream.writeWord(k);
-			c.outStream.writeWord(l);
+			c.outStream.writeShort(k);
+			c.outStream.writeShort(l);
 			c.outStream.writeByte(j);
 		}
 

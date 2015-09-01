@@ -10,9 +10,9 @@ public class ItemOnNpc implements PacketType {
 
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
-		int itemId = c.getInStream().readSignedWordA();
-		int i = c.getInStream().readSignedWordA();
-		int slot = c.getInStream().readSignedWordBigEndian();
+		int itemId = c.getInStream().readSignedShortA();
+		int i = c.getInStream().readSignedShortA();
+		int slot = c.getInStream().readLEShort();
 		int npcId = MobHandler.npcs[i].npcType;
 		
 		UseItem.ItemonNpc(c, itemId, npcId, slot);

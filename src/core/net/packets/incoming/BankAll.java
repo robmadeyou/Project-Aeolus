@@ -15,9 +15,9 @@ public class BankAll implements PacketType {
 
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
-		int removeSlot = c.getInStream().readUnsignedWordA();
+		int removeSlot = c.getInStream().readUShortA();
 		int interfaceId = c.getInStream().readUnsignedWord();
-		int removeId = c.getInStream().readUnsignedWordA();
+		int removeId = c.getInStream().readUShortA();
 
 		if (c.getRights().equal(Rights.DEVELOPER) && Configuration.SERVER_DEBUG) {
 			c.sendMessage("BankAll: - InterfaceId: " + interfaceId

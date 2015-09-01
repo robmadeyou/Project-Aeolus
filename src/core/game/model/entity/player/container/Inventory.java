@@ -22,16 +22,16 @@ public class Inventory {
 		synchronized (player) {
 			if (player.getOutStream() != null && player != null) {
 				player.getOutStream().createFrameVarSizeWord(53);
-				player.getOutStream().writeWord(WriteFrame);
-				player.getOutStream().writeWord(player.playerItems.length);
+				player.getOutStream().writeShort(WriteFrame);
+				player.getOutStream().writeShort(player.playerItems.length);
 				IntStream.range(0, player.playerItems.length).forEach(item -> {
 					if (player.playerItemsN[item] > 254) {
 						player.getOutStream().writeByte(255);
-						player.getOutStream().writeDWord_v2(player.playerItemsN[item]);
+						player.getOutStream().writeInt_v2(player.playerItemsN[item]);
 					} else {
 						player.getOutStream().writeByte(player.playerItemsN[item]);
 					}
-					player.getOutStream().writeWordBigEndianA(player.playerItems[item]);
+					player.getOutStream().writeLEShortA(player.playerItems[item]);
 				});
 				player.getOutStream().endFrameVarSizeWord();
 				player.flushOutStream();
@@ -135,12 +135,12 @@ public class Inventory {
 						}
 						if (player.getOutStream() != null && player != null) {
 							player.getOutStream().createFrameVarSizeWord(34);
-							player.getOutStream().writeWord(3214);
+							player.getOutStream().writeShort(3214);
 							player.getOutStream().writeByte(i);
-							player.getOutStream().writeWord(player.playerItems[i]);
+							player.getOutStream().writeShort(player.playerItems[i]);
 							if (player.playerItemsN[i] > 254) {
 								player.getOutStream().writeByte(255);
-								player.getOutStream().writeDWord(player.playerItemsN[i]);
+								player.getOutStream().writeInt(player.playerItemsN[i]);
 							} else {
 								player.getOutStream().writeByte(player.playerItemsN[i]);
 							}

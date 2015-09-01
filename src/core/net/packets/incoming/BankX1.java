@@ -13,9 +13,9 @@ public class BankX1 implements PacketType {
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
 		if (packetType == 135) {
-			c.xRemoveSlot = c.getInStream().readSignedWordBigEndian();
-			c.xInterfaceId = c.getInStream().readUnsignedWordA();
-			c.xRemoveId = c.getInStream().readSignedWordBigEndian();
+			c.xRemoveSlot = c.getInStream().readLEShort();
+			c.xInterfaceId = c.getInStream().readUShortA();
+			c.xRemoveId = c.getInStream().readLEShort();
 		}
 		if (c.xInterfaceId == 3900) {
 			c.getShops().buyItem(c.xRemoveId, c.xRemoveSlot, 20);//buy 20

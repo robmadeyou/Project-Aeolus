@@ -216,12 +216,12 @@ public class Equipment {
 		synchronized (c) {
 			if (c.getOutStream() != null && c != null) {
 				c.getOutStream().createFrameVarSizeWord(34);
-				c.getOutStream().writeWord(1688);
+				c.getOutStream().writeShort(1688);
 				c.getOutStream().writeByte(slot);
-				c.getOutStream().writeWord(c.playerEquipment[slot] + 1);
+				c.getOutStream().writeShort(c.playerEquipment[slot] + 1);
 				if (c.playerEquipmentN[slot] > 254) {
 					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord(c.playerEquipmentN[slot]);
+					c.getOutStream().writeInt(c.playerEquipmentN[slot]);
 				} else {
 					c.getOutStream().writeByte(c.playerEquipmentN[slot]);
 				}
@@ -487,13 +487,13 @@ public class Equipment {
 				}
 				if (c.getOutStream() != null && c != null) {
 					c.getOutStream().createFrameVarSizeWord(34);
-					c.getOutStream().writeWord(1688);
+					c.getOutStream().writeShort(1688);
 					c.getOutStream().writeByte(targetSlot);
-					c.getOutStream().writeWord(wearID + 1);
+					c.getOutStream().writeShort(wearID + 1);
 
 					if (c.playerEquipmentN[targetSlot] > 254) {
 						c.getOutStream().writeByte(255);
-						c.getOutStream().writeDWord(
+						c.getOutStream().writeInt(
 								c.playerEquipmentN[targetSlot]);
 					} else {
 						c.getOutStream().writeByte(
@@ -530,13 +530,13 @@ public class Equipment {
 		synchronized (c) {
 			if (c.getOutStream() != null && c != null) {
 				c.getOutStream().createFrameVarSizeWord(34);
-				c.getOutStream().writeWord(1688);
+				c.getOutStream().writeShort(1688);
 				c.getOutStream().writeByte(targetSlot);
-				c.getOutStream().writeWord(wearID + 1);
+				c.getOutStream().writeShort(wearID + 1);
 
 				if (wearAmount > 254) {
 					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord(wearAmount);
+					c.getOutStream().writeInt(wearAmount);
 				} else {
 					c.getOutStream().writeByte(wearAmount);
 				}
@@ -740,10 +740,10 @@ public class Equipment {
 											c.playerEquipment[c.playerWeapon])
 									.toLowerCase());
 					c.getOutStream().createFrame(34);
-					c.getOutStream().writeWord(6);
-					c.getOutStream().writeWord(1688);
+					c.getOutStream().writeShort(6);
+					c.getOutStream().writeShort(1688);
 					c.getOutStream().writeByte(slot);
-					c.getOutStream().writeWord(0);
+					c.getOutStream().writeShort(0);
 					c.getOutStream().writeByte(0);
 					c.flushOutStream();
 					c.updateRequired = true;
@@ -833,12 +833,12 @@ public class Equipment {
 					}
 					if (c.getOutStream() != null && c != null) {
 						c.getOutStream().createFrameVarSizeWord(34);
-						c.getOutStream().writeWord(3214);
+						c.getOutStream().writeShort(3214);
 						c.getOutStream().writeByte(i);
-						c.getOutStream().writeWord(c.playerItems[i]);
+						c.getOutStream().writeShort(c.playerItems[i]);
 						if (c.playerItemsN[i] > 254) {
 							c.getOutStream().writeByte(255);
-							c.getOutStream().writeDWord(c.playerItemsN[i]);
+							c.getOutStream().writeInt(c.playerItemsN[i]);
 						} else {
 							c.getOutStream().writeByte(c.playerItemsN[i]);
 						}
@@ -883,16 +883,16 @@ public class Equipment {
 		synchronized (c) {
 			if (c.getOutStream() != null && c != null) {
 				c.getOutStream().createFrameVarSizeWord(53);
-				c.getOutStream().writeWord(WriteFrame);
-				c.getOutStream().writeWord(c.playerItems.length);
+				c.getOutStream().writeShort(WriteFrame);
+				c.getOutStream().writeShort(c.playerItems.length);
 				IntStream.range(0, c.playerItems.length).forEach(item -> {
 					if (c.playerItemsN[item] > 254) {
 						c.getOutStream().writeByte(255);
-						c.getOutStream().writeDWord_v2(c.playerItemsN[item]);
+						c.getOutStream().writeInt_v2(c.playerItemsN[item]);
 					} else {
 						c.getOutStream().writeByte(c.playerItemsN[item]);
 					}
-					c.getOutStream().writeWordBigEndianA(c.playerItems[item]);
+					c.getOutStream().writeLEShortA(c.playerItems[item]);
 				});
 				c.getOutStream().endFrameVarSizeWord();
 				c.flushOutStream();
@@ -1035,12 +1035,12 @@ public class Equipment {
 	public void setEquipment(int wearID, int amount, int targetSlot) {
 		synchronized (c) {
 			c.getOutStream().createFrameVarSizeWord(34);
-			c.getOutStream().writeWord(1688);
+			c.getOutStream().writeShort(1688);
 			c.getOutStream().writeByte(targetSlot);
-			c.getOutStream().writeWord(wearID + 1);
+			c.getOutStream().writeShort(wearID + 1);
 			if (amount > 254) {
 				c.getOutStream().writeByte(255);
-				c.getOutStream().writeDWord(amount);
+				c.getOutStream().writeInt(amount);
 			} else {
 				c.getOutStream().writeByte(amount);
 			}
@@ -1068,10 +1068,10 @@ public class Equipment {
 			c.playerEquipment[j] = -1;
 			c.playerEquipmentN[j] = c.playerEquipmentN[j] - 1;
 			c.getOutStream().createFrame(34);
-			c.getOutStream().writeWord(6);
-			c.getOutStream().writeWord(1688);
+			c.getOutStream().writeShort(6);
+			c.getOutStream().writeShort(1688);
 			c.getOutStream().writeByte(j);
-			c.getOutStream().writeWord(0);
+			c.getOutStream().writeShort(0);
 			c.getOutStream().writeByte(0);
 			c.getEquipment().getBonus();
 			if (j == c.playerWeapon) {
@@ -1093,13 +1093,13 @@ public class Equipment {
 			}
 			if (c.playerEquipmentN[c.playerWeapon] != 0) {
 				c.getOutStream().createFrameVarSizeWord(34);
-				c.getOutStream().writeWord(1688);
+				c.getOutStream().writeShort(1688);
 				c.getOutStream().writeByte(c.playerWeapon);
-				c.getOutStream().writeWord(
+				c.getOutStream().writeShort(
 						c.playerEquipment[c.playerWeapon] + 1);
 				if (c.playerEquipmentN[c.playerWeapon] - 1 > 254) {
 					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord(
+					c.getOutStream().writeInt(
 							c.playerEquipmentN[c.playerWeapon] - 1);
 				} else {
 					c.getOutStream().writeByte(

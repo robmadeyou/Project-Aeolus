@@ -21,9 +21,9 @@ public class ClickObject implements PacketType {
 		switch (packetType) {
 
 		case FIRST_CLICK:
-			c.objectX = c.getInStream().readSignedWordBigEndianA();
+			c.objectX = c.getInStream().readLEShortA();
 			c.objectId = c.getInStream().readUnsignedWord();
-			c.objectY = c.getInStream().readUnsignedWordA();
+			c.objectY = c.getInStream().readUShortA();
 			c.objectDistance = 1;
 			if (Math.abs(c.getX() - c.objectX) > 25
 					|| Math.abs(c.getY() - c.objectY) > 25) {
@@ -63,9 +63,9 @@ public class ClickObject implements PacketType {
 			break;
 
 		case SECOND_CLICK:
-			c.objectId = c.getInStream().readUnsignedWordBigEndianA();
-			c.objectY = c.getInStream().readSignedWordBigEndian();
-			c.objectX = c.getInStream().readUnsignedWordA();
+			c.objectId = c.getInStream().readLEUShortA();
+			c.objectY = c.getInStream().readLEShort();
+			c.objectX = c.getInStream().readUShortA();
 			c.objectDistance = 1;
 			
 			if (c.goodDistance(c.objectX + c.objectXOffset, c.objectY
@@ -100,9 +100,9 @@ public class ClickObject implements PacketType {
 			break;
 
 		case THIRD_CLICK:
-			c.objectX = c.getInStream().readSignedWordBigEndian();
+			c.objectX = c.getInStream().readLEShort();
 			c.objectY = c.getInStream().readUnsignedWord();
-			c.objectId = c.getInStream().readUnsignedWordBigEndianA();
+			c.objectId = c.getInStream().readLEUShortA();
 
 			
 			if (c.goodDistance(c.objectX + c.objectXOffset, c.objectY

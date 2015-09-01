@@ -144,14 +144,14 @@ public class Walking implements PacketType {
 
 		c.getNewWalkCmdX()[0] = c.getNewWalkCmdY()[0] = 0;
 
-		int firstStepX = c.getInStream().readSignedWordBigEndianA()
+		int firstStepX = c.getInStream().readLEShortA()
 				- c.getMapRegionX() * 8;
 		for (int i = 1; i < c.newWalkCmdSteps; i++) {
 			c.getNewWalkCmdX()[i] = c.getInStream().readSignedByte();
 			c.getNewWalkCmdY()[i] = c.getInStream().readSignedByte();
 		}
 
-		int firstStepY = c.getInStream().readSignedWordBigEndian()
+		int firstStepY = c.getInStream().readLEShort()
 				- c.getMapRegionY() * 8;
 		c.setNewWalkCmdIsRunning(c.getInStream().readSignedByteC() == 1);
 		for (int i1 = 0; i1 < c.newWalkCmdSteps; i1++) {

@@ -22,7 +22,7 @@ public class PrivateMessaging implements PacketType {
 		
 		case ADD_FRIEND:
 			c.friendUpdate = true;
-			long friendToAdd = c.getInStream().readQWord();
+			long friendToAdd = c.getInStream().readLong();
 			boolean canAdd = true;
 
 			for (int i1 = 0; i1 < c.friends.length; i1++) {
@@ -60,7 +60,7 @@ public class PrivateMessaging implements PacketType {
 			break;
 
 		case SEND_PM:
-			long sendMessageToFriendId = c.getInStream().readQWord();
+			long sendMessageToFriendId = c.getInStream().readLong();
 			byte pmchatText[] = new byte[100];
 			int pmchatTextSize = (byte) (packetSize - 8);
 			c.getInStream().readBytes(pmchatText, pmchatTextSize, 0);
@@ -100,7 +100,7 @@ public class PrivateMessaging implements PacketType {
 
 		case REMOVE_FRIEND:
 			c.friendUpdate = true;
-			long friendToRemove = c.getInStream().readQWord();
+			long friendToRemove = c.getInStream().readLong();
 
 			for (int i1 = 0; i1 < c.friends.length; i1++) {
 				if (c.friends[i1] == friendToRemove) {
@@ -121,9 +121,9 @@ public class PrivateMessaging implements PacketType {
 			break;
 
 		case REMOVE_IGNORE:
-			int i = c.getInStream().readDWord();
-			int i2 = c.getInStream().readDWord();
-			int i3 = c.getInStream().readDWord();
+			int i = c.getInStream().readInt();
+			int i2 = c.getInStream().readInt();
+			int i3 = c.getInStream().readInt();
 			// for other status changing
 			c.getActionSender().handleStatus(i, i2, i3);
 			break;

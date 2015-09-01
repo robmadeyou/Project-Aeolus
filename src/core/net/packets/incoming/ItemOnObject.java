@@ -19,10 +19,10 @@ public class ItemOnObject implements PacketType {
 		 */
 		
 		int a = c.getInStream().readUnsignedWord();
-		int objectId = c.getInStream().readSignedWordBigEndian();
-		int objectY = c.getInStream().readSignedWordBigEndianA();
+		int objectId = c.getInStream().readLEShort();
+		int objectY = c.getInStream().readLEShortA();
 		int b = c.getInStream().readUnsignedWord();
-		int objectX = c.getInStream().readSignedWordBigEndianA();
+		int objectX = c.getInStream().readLEShortA();
 		int itemId = c.getInStream().readUnsignedWord();
 		UseItem.ItemonObject(c, objectId, objectX, objectY, itemId);
 		

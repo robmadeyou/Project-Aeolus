@@ -14,7 +14,7 @@ public class FollowPlayer implements PacketType {
 	@SuppressWarnings("static-access")
 	@Override
 	public void processPacket(Player p, int packetType, int packetSize) {
-		int followPlayer = p.getInStream().readUnsignedWordBigEndian();
+		int followPlayer = p.getInStream().readLEUShort();
 		if (Server.playerHandler.players[followPlayer] == null) {
 			return;
 		}

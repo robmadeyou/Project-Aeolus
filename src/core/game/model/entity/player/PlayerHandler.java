@@ -9,7 +9,7 @@ import core.Server;
 import core.game.GameConstants;
 import core.game.model.entity.mob.MobHandler;
 import core.game.model.entity.player.save.PlayerSave;
-import core.game.util.Stream;
+import core.net.Buffer;
 
 public class PlayerHandler {
 	
@@ -160,7 +160,7 @@ public class PlayerHandler {
 		}
 	}
 
-	public void updateNPC(Player plr, Stream str) {
+	public void updateNPC(Player plr, Buffer str) {
 		// synchronized(plr) {
 		updateBlock.currentOffset = 0;
 
@@ -199,7 +199,7 @@ public class PlayerHandler {
 		if (updateBlock.currentOffset > 0) {
 			str.writeBits(14, 16383);
 			str.finishBitAccess();
-			str.writeBytes(updateBlock.buffer, updateBlock.currentOffset, 0);
+			str.writeBytes(updateBlock.payload, updateBlock.currentOffset, 0);
 		} else {
 			str.finishBitAccess();
 		}
@@ -207,14 +207,14 @@ public class PlayerHandler {
 		// }
 	}
 
-	private Stream updateBlock = new Stream(new byte[GameConstants.BUFFER_SIZE]);
+	private Buffer updateBlock = new Buffer(new byte[GameConstants.BUFFER_SIZE]);
 
-	public void updatePlayer(Player plr, Stream str) {
+	public void updatePlayer(Player plr, Buffer str) {
 		// synchronized(plr) {
 		updateBlock.currentOffset = 0;
 		if (updateRunning && !updateAnnounced) {
 			str.createFrame(114);
-			str.writeWordBigEndian(updateSeconds * 50 / 30);
+			str.writeLEShort(updateSeconds * 50 / 30);
 		}
 		plr.updateThisPlayerMovement(str);
 		boolean saveChatTextUpdate = plr.isChatTextUpdateRequired();
@@ -252,7 +252,7 @@ public class PlayerHandler {
 		if (updateBlock.currentOffset > 0) {
 			str.writeBits(11, 2047);
 			str.finishBitAccess();
-			str.writeBytes(updateBlock.buffer, updateBlock.currentOffset, 0);
+			str.writeBytes(updateBlock.payload, updateBlock.currentOffset, 0);
 		} else
 			str.finishBitAccess();
 

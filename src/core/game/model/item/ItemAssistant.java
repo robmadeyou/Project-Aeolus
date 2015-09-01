@@ -43,20 +43,20 @@ public class ItemAssistant {
 		synchronized (c) {
 			if (c.getOutStream() != null && c != null) {
 				c.getOutStream().createFrameVarSizeWord(53);
-				c.getOutStream().writeWord(6963);
-				c.getOutStream().writeWord(c.itemKeptId.length);
+				c.getOutStream().writeShort(6963);
+				c.getOutStream().writeShort(c.itemKeptId.length);
 				for (int i = 0; i < c.itemKeptId.length; i++) {
 					if (c.playerItemsN[i] > 254) {
 						c.getOutStream().writeByte(255);
-						c.getOutStream().writeDWord_v2(1);
+						c.getOutStream().writeInt_v2(1);
 					} else {
 						c.getOutStream().writeByte(1);
 					}
 					if (c.itemKeptId[i] > 0) {
-						c.getOutStream().writeWordBigEndianA(
+						c.getOutStream().writeLEShortA(
 								c.itemKeptId[i] + 1);
 					} else {
-						c.getOutStream().writeWordBigEndianA(0);
+						c.getOutStream().writeLEShortA(0);
 					}
 				}
 				c.getOutStream().endFrameVarSizeWord();
@@ -315,12 +315,12 @@ public class ItemAssistant {
 	public void resetBank() {
 		synchronized (c) {
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(5382); // Bank
-			c.getOutStream().writeWord(GameConstants.BANK_SIZE);
+			c.getOutStream().writeShort(5382); // Bank
+			c.getOutStream().writeShort(GameConstants.BANK_SIZE);
 			for (int i = 0; i < GameConstants.BANK_SIZE; i++) {
 				if (c.bankItemsN[i] > 254) {
 					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord_v2(c.bankItemsN[i]);
+					c.getOutStream().writeInt_v2(c.bankItemsN[i]);
 				} else {
 					c.getOutStream().writeByte(c.bankItemsN[i]);
 				}
@@ -330,7 +330,7 @@ public class ItemAssistant {
 				if (c.bankItems[i] > GameConstants.ITEM_LIMIT || c.bankItems[i] < 0) {
 					c.bankItems[i] = GameConstants.ITEM_LIMIT;
 				}
-				c.getOutStream().writeWordBigEndianA(c.bankItems[i]);
+				c.getOutStream().writeLEShortA(c.bankItems[i]);
 			}
 			c.getOutStream().endFrameVarSizeWord();
 			c.flushOutStream();
@@ -349,12 +349,12 @@ public class ItemAssistant {
 				}
 			}
 			c.getOutStream().createFrameVarSizeWord(53);
-			c.getOutStream().writeWord(5064);
-			c.getOutStream().writeWord(itemCount + 1);
+			c.getOutStream().writeShort(5064);
+			c.getOutStream().writeShort(itemCount + 1);
 			for (int i = 0; i < itemCount + 1; i++) {
 				if (c.playerItemsN[i] > 254) {
 					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord_v2(c.playerItemsN[i]);
+					c.getOutStream().writeInt_v2(c.playerItemsN[i]);
 				} else {
 					c.getOutStream().writeByte(c.playerItemsN[i]);
 				}
@@ -362,7 +362,7 @@ public class ItemAssistant {
 						|| c.playerItems[i] < 0) {
 					c.playerItems[i] = GameConstants.ITEM_LIMIT;
 				}
-				c.getOutStream().writeWordBigEndianA(c.playerItems[i]);
+				c.getOutStream().writeLEShortA(c.playerItems[i]);
 			}
 			c.getOutStream().endFrameVarSizeWord();
 			c.flushOutStream();
@@ -770,13 +770,13 @@ public class ItemAssistant {
 			}
 			if (c.playerEquipmentN[c.playerArrows] != 0) {
 				c.getOutStream().createFrameVarSizeWord(34);
-				c.getOutStream().writeWord(1688);
+				c.getOutStream().writeShort(1688);
 				c.getOutStream().writeByte(c.playerArrows);
-				c.getOutStream().writeWord(
+				c.getOutStream().writeShort(
 						c.playerEquipment[c.playerArrows] + 1);
 				if (c.playerEquipmentN[c.playerArrows] - 1 > 254) {
 					c.getOutStream().writeByte(255);
-					c.getOutStream().writeDWord(
+					c.getOutStream().writeInt(
 							c.playerEquipmentN[c.playerArrows] - 1);
 				} else {
 					c.getOutStream().writeByte(
@@ -866,8 +866,8 @@ public class ItemAssistant {
 			c.getOutStream().writeByteC((itemY - 8 * c.mapRegionY));
 			c.getOutStream().writeByteC((itemX - 8 * c.mapRegionX));
 			c.getOutStream().createFrame(44);
-			c.getOutStream().writeWordBigEndianA(itemID);
-			c.getOutStream().writeWord(itemAmount);
+			c.getOutStream().writeLEShortA(itemID);
+			c.getOutStream().writeShort(itemAmount);
 			c.getOutStream().writeByte(0);
 			c.flushOutStream();
 		}
@@ -883,7 +883,7 @@ public class ItemAssistant {
 			c.getOutStream().writeByteC((itemX - 8 * c.mapRegionX));
 			c.getOutStream().createFrame(156);
 			c.getOutStream().writeByteS(0);
-			c.getOutStream().writeWord(itemID);
+			c.getOutStream().writeShort(itemID);
 			c.flushOutStream();
 		}
 	}

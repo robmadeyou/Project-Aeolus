@@ -12,7 +12,7 @@ import core.net.packets.PacketType;
 public class BankX2 implements PacketType {
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
-		int Xamount = c.getInStream().readDWord();
+		int Xamount = c.getInStream().readInt();
 		if (Xamount == 0)
 			Xamount = 1;
 
