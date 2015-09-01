@@ -22,7 +22,6 @@ import core.game.util.json.MobSpawnLoader;
 import core.game.util.json.MusicLoader;
 import core.game.util.json.NpcDefinitionLoader;
 import core.game.util.json.WeaponDelayLoader;
-import core.game.world.StillGraphicsManager;
 import core.game.world.World;
 import core.game.world.clipping.region.ObjectDef;
 import core.game.world.clipping.region.Region;
@@ -44,7 +43,6 @@ public class Server {
 	 * Calls to manage the players on the server.
 	 */
 	public static PlayerManager playerManager = null;
-	private static StillGraphicsManager stillGraphicsManager = null;
 
 	/**
 	 * Sleep mode of the server.
@@ -165,7 +163,6 @@ public class Server {
 
 		playerManager = PlayerManager.getSingleton();
 		playerManager.setupRegionPlayers();
-		stillGraphicsManager = new StillGraphicsManager();
 	
 		logger.info("Server Initialized.");
 
@@ -194,13 +191,6 @@ public class Server {
 	 */
 	public static long getSleepTimer() {
 		return sleepTime;
-	}
-
-	/**
-	 * Gets the Graphics manager.
-	 */
-	public static StillGraphicsManager getStillGraphicsManager() {
-		return stillGraphicsManager;
 	}
 
 	/**
