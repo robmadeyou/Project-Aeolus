@@ -1669,23 +1669,23 @@ public class Player extends Entity {
 	}
 
 	public int calculateCombatLevel() {
-		int j = getLevelForXP(playerXP[playerAttack]);
-		int k = getLevelForXP(playerXP[playerDefence]);
-		int l = getLevelForXP(playerXP[playerStrength]);
-		int i1 = getLevelForXP(playerXP[playerHitpoints]);
-		int j1 = getLevelForXP(playerXP[playerPrayer]);
-		int k1 = getLevelForXP(playerXP[playerRanged]);
-		int l1 = getLevelForXP(playerXP[playerMagic]);
-		int combatLevel = (int) (((k + i1) + Math.floor(j1 / 2)) * 0.25D) + 1;
-		double d = (j + l) * 0.32500000000000001D;
-		double d1 = Math.floor(k1 * 1.5D) * 0.32500000000000001D;
-		double d2 = Math.floor(l1 * 1.5D) * 0.32500000000000001D;
-		if (d >= d1 && d >= d2) {
-			combatLevel += d;
-		} else if (d1 >= d && d1 >= d2) {
-			combatLevel += d1;
-		} else if (d2 >= d && d2 >= d1) {
-			combatLevel += d2;
+		int attack = getLevelForXP(playerXP[playerAttack]);
+		int defence = getLevelForXP(playerXP[playerDefence]);
+		int strength = getLevelForXP(playerXP[playerStrength]);
+		int hp = getLevelForXP(playerXP[playerHitpoints]);
+		int prayer = getLevelForXP(playerXP[playerPrayer]);
+		int ranged = getLevelForXP(playerXP[playerRanged]);
+		int magic = getLevelForXP(playerXP[playerMagic]);
+		int combatLevel = (int) (((defence + hp) + Math.floor(prayer / 2)) * 0.25D) + 1;
+		double meleeMultiplier = (attack + strength) * 0.32500000000000001D;
+		double rangedMultiplier = Math.floor(ranged * 1.5D) * 0.32500000000000001D;
+		double magicMultiplier = Math.floor(magic * 1.5D) * 0.32500000000000001D;
+		if (meleeMultiplier >= rangedMultiplier && meleeMultiplier >= magicMultiplier) {
+			combatLevel += meleeMultiplier;
+		} else if (rangedMultiplier >= meleeMultiplier && rangedMultiplier >= magicMultiplier) {
+			combatLevel += rangedMultiplier;
+		} else if (magicMultiplier >= meleeMultiplier && magicMultiplier >= rangedMultiplier) {
+			combatLevel += magicMultiplier;
 		}
 		return combatLevel;
 	}
@@ -1693,7 +1693,6 @@ public class Player extends Entity {
 	public int getLevelForXP(int exp) {
 		int points = 0;
 		int output = 0;
-
 		for (int lvl = 1; lvl <= 99; lvl++) {
 			points += Math.floor(lvl + 300.0 * Math.pow(2.0, lvl / 7.0));
 			output = (int) Math.floor(points / 4);
@@ -1759,7 +1758,6 @@ public class Player extends Entity {
 		// synchronized(this) {
 		str.writeLEShort((animationRequest == -1) ? 65535 : animationRequest);
 		str.writeByteC(animationWaitCycles);
-
 	}
 
 	/**
@@ -1778,7 +1776,6 @@ public class Player extends Entity {
 	public void appendFaceUpdate(Buffer str) {
 		// synchronized(this) {
 		str.writeLEShort(face);
-
 	}
 
 	public void turnPlayerTo(int pointX, int pointY) {
@@ -1891,7 +1888,6 @@ public class Player extends Entity {
 		if (hitUpdateRequired2) {
 			appendHitUpdate2(str);
 		}
-
 	}
 
 	public void clearUpdateFlags() {
@@ -1959,11 +1955,11 @@ public class Player extends Entity {
 		this.destruct();
 	}
 
-	public void sendMessage(String s) {
+	public void sendMessage(String message) {
 		// synchronized (this) {
 		if (getOutStream() != null) {
 			outStream.createFrameVarSize(253);
-			outStream.writeString(s);
+			outStream.writeString(message);
 			outStream.endFrameVarSize();
 		}
 	}
@@ -2107,15 +2103,13 @@ public class Player extends Entity {
 	 * The main tick for a player
 	 */
 	@Override
-	public void process() {
-		
+	public void process() {		
 		if (inWild() && !wildernessWarning) {
 			resetWalkingQueue();
 			getActionSender().resetFollow();
 			wildyWarning();
 			wildernessWarning = true;
-		}
-		
+		}		
 		updateSigns();
 		
 		this.getActionSender().textOnInterface((int) (specAmount * 10) + "", 155);
@@ -2152,8 +2146,7 @@ public class Player extends Entity {
 				forcedChat("FIGHT!");
 				duelCount = 0;
 			}
-		}
-		
+		}		
 		if (runEnergy < 100) {
 			if (System.currentTimeMillis() > getPA().getAgilityRunRestore(this)
 					+ lastRunRecovery) {
@@ -2162,7 +2155,6 @@ public class Player extends Entity {
 				getActionSender().sendString(runEnergy + "%", 149);
 			}
 		}
-
 		if (System.currentTimeMillis() - restoreStatsDelay > 60000) {
 			restoreStatsDelay = System.currentTimeMillis();			
 			IntStream.range(0, playerLevel.length).forEach(level -> {

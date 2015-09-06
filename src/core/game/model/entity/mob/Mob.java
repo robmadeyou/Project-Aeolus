@@ -81,7 +81,6 @@ public class Mob extends Entity {
 	/**
 	 * Text update
 	 **/
-
 	public void forceChat(String text) {
 		forcedText = text;
 		forcedChatRequired = true;
@@ -132,7 +131,6 @@ public class Mob extends Entity {
 	 Face
 	 * 
 	 **/
-
 	public int FocusPointX = -1, FocusPointY = -1;
 	public int face = 0;
 

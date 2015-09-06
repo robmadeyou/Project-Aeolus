@@ -29,7 +29,9 @@ public class ChangeRegions implements PacketType {
 		switch (packetType) {
 		
 		case PacketConstants.LOADED_REGION:
+			if (player.getRights().equals(Rights.DEVELOPER)) {
 			player.sendMessage("Region loaded");
+			}
 			break;
 		
 		case PacketConstants.ENTER_REGION:
