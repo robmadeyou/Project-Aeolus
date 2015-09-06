@@ -105,9 +105,29 @@ public class PlayerVsMob {
 				damage = 0;
 			}
 		}
-		if (!c.usingSpecial)
+		if (!c.usingSpecial) {
+			if (c.getEquipment().hasWeapon())
 			SoundManager.sendSound(c, c.playerEquipment[c.playerWeapon],
 					SoundType.MELEE_COMBAT);
+			else {
+				switch (c.fightMode) {
+				case 0:
+					SoundManager.sendSound(c, 417,
+							SoundType.MELEE_COMBAT);
+					//need to know sound ids for these
+					System.out.println("Punch");
+					break;
+					
+				case 1:
+					System.out.println("Block");
+					break;
+					
+				case 2:
+					System.out.println("Kick");
+					break;
+				}
+			}
+		}
 
 		if (!fullVeracsEffect) {
 			if (Misc.random(MobHandler.npcs[i].defence) > 10 + Misc.random(c
@@ -581,8 +601,11 @@ public class PlayerVsMob {
 				if (c.spellId > 0) {
 					c.usingMagic = true;
 				}
+				if (c.getEquipment().hasWeapon())
 				c.attackTimer = c.getCombat().getAttackDelay(
 						c.getItems().getItemId(c.playerEquipment[c.playerWeapon]));
+				else
+					c.attackTimer = 5;
 				c.specAccuracy = 1.0;
 				c.specDamage = 1.0;
 				if (!c.usingMagic) {

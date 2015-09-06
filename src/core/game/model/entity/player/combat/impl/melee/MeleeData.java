@@ -333,9 +333,9 @@ public class MeleeData {
 	/**
 	 * Grabs a weapons attack delay from weapon_delays.json
 	 */
-	public static int getAttackDelay(Player c, int id) {
+	public static int getAttackDelay(Player c, int weaponId) {
 			for(WeaponDelay delay : ItemHandler.weaponDelay) {
-				if (delay.getId() == id) {
+				if (delay.getId() == weaponId) {
 					//System.out.println("WeaponID - " + delay.getId() + " : delay - " + delay.getDelay());
 					return delay.getDelay();
 				}

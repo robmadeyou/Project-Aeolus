@@ -632,11 +632,11 @@ public class Player extends Entity {
 	}
 
 	public boolean samePlayer() {
-		for (int j = 0; j < PlayerHandler.players.length; j++) {
-			if (j == playerId)
+		for (int index = 0; index < PlayerHandler.players.length; index++) {
+			if (index == playerId)
 				continue;
-			if (PlayerHandler.players[j] != null) {
-				if (PlayerHandler.players[j].playerName.equalsIgnoreCase(playerName)) {
+			if (PlayerHandler.players[index] != null) {
+				if (PlayerHandler.players[index].playerName.equalsIgnoreCase(playerName)) {
 					disconnected = true;
 					return true;
 				}
@@ -2037,11 +2037,11 @@ public class Player extends Entity {
 
 		getActionSender().initializePlayer(1, this.playerId);
 
-		for (int j = 0; j < PlayerHandler.players.length; j++) {
-			if (j == playerId)
+		for (int index = 0; index < PlayerHandler.players.length; index++) {
+			if (index == playerId)
 				continue;
-			if (PlayerHandler.players[j] != null) {
-				if (PlayerHandler.players[j].playerName.equalsIgnoreCase(playerName))
+			if (PlayerHandler.players[index] != null) {
+				if (PlayerHandler.players[index].playerName.equalsIgnoreCase(playerName))
 					disconnected = true;
 			}
 		}	

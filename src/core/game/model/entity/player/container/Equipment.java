@@ -17,6 +17,10 @@ public class Equipment {
 	public Equipment(Player c) {
 		this.c = c;
 	}
+	
+	public boolean hasWeapon() {
+		return c.playerEquipment[c.playerWeapon] != -1;
+	}
 
 	public boolean tentacleWhip() {
 		return c.playerEquipment[c.playerWeapon] == 14004;
