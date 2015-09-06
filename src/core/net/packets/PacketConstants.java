@@ -13,14 +13,29 @@ public class PacketConstants {
 	
 	public static final int ATTACK_NPC = 72;
 	
+	/**
+	 * Sent when a player requests to bank an X amount of items.
+	 */
 	public static final int BANK_X_PART_1 = 135;
 	
+	/**
+	 * Sent when a player enters an X amount of items they want to bank.
+	 */
 	public static final int BANK_X_PART_2 = 208;
 	
+	/**
+	 * Sent when a player moves the camera.
+	 */
 	public static final int CAMERA_MOVEMENT = 86;
 	
+	/**
+	 * Sent when a player enters a new map region.
+	 */
 	public static final int ENTER_REGION = 210;
 	
+	/**
+	 * Sent when the game client window goes in and out of focus.
+	 */
 	public static final int FOCUS_CHANGE = 3;
 	
 	public static final int IDLE_LOGOUT = 202;
@@ -29,6 +44,9 @@ public class PacketConstants {
 	
 	public static final int ITEM_ON_ITEM = 53;
 	
+	/**
+	 * Sent when the client finishes loading a map region.
+	 */
 	public static final int LOADED_REGION = 121;
 	
 	public static final int MAGIC_ON_NPC = 131;

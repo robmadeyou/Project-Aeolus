@@ -53,7 +53,7 @@ public class PacketHandler{
 	
 	static {		
 		SilentPacket u = new SilentPacket();
-		packetId[PacketConstants.FOCUS_CHANGE] = u; //Sent when the game client window goes in and out of focus.
+		packetId[PacketConstants.FOCUS_CHANGE] = u;
 		packetId[PacketConstants.IDLE_LOGOUT] = u;
 		packetId[77] = u; // player saving? it's called every 1-2 minutes
 		packetId[PacketConstants.CAMERA_MOVEMENT] = u;
@@ -118,8 +118,8 @@ public class PacketHandler{
 		packetId[59] = pm; // ?
 		packetId[PacketConstants.PRIVACY_OPTIONS] = pm;
 		packetId[PacketConstants.ADD_IGNORE] = pm;
-		packetId[PacketConstants.BANK_X_PART_1] = new BankX1(); // Sent when a player requests to bank an X amount of items.
-		packetId[PacketConstants.BANK_X_PART_2] = new BankX2(); // Sent when a player enters an X amount of items they want to bank.
+		packetId[PacketConstants.BANK_X_PART_1] = new BankX1();
+		packetId[PacketConstants.BANK_X_PART_2] = new BankX2();
 		Walking w = new Walking();
 		packetId[PacketConstants.WALK_ON_COMMAND] = w;
 		packetId[PacketConstants.REGULAR_WALK] = w;
@@ -128,8 +128,8 @@ public class PacketHandler{
 		packetId[PacketConstants.ITEM_ON_OBJECT] = new ItemOnObject();
 		packetId[25] = new ItemOnGroundItem();
 		ChangeRegions cr = new ChangeRegions();
-		packetId[PacketConstants.LOADED_REGION] = cr; // Sent when the client finishes loading a map region.
-		packetId[PacketConstants.ENTER_REGION] = cr; // Sent when a player enters a new map region.
+		packetId[PacketConstants.LOADED_REGION] = cr;
+		packetId[PacketConstants.ENTER_REGION] = cr;
 		//packetId[60] = new ClanChat();
 	}
 
