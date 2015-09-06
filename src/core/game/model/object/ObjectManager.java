@@ -63,26 +63,26 @@ public class ObjectManager {
 		return null;
 	}
 	
-	public void loadObjects(Player c) {
-		if (c == null)
+	public void loadObjects(Player p) {
+		if (p == null)
 			return;
 		for (Object o : objects) {
-			if (loadForPlayer(o,c))
-				c.getActionSender().object(o.objectId, o.objectX, o.objectY, o.face, o.type);
+			if (loadForPlayer(o,p))
+				p.getActionSender().object(o.objectId, o.objectX, o.objectY, o.face, o.type);
 		}
-		loadCustomSpawns(c);
+		loadCustomSpawns(p);
 	}
 	
-	public void loadCustomSpawns(Player c) {
-			c.getActionSender().checkObjectSpawn(-1, 0, 0, 0, 10);
-		if (c.heightLevel == 1)
-			c.getActionSender().checkObjectSpawn(-1, 0, 0, 0, 10);
+	public void loadCustomSpawns(Player p) {
+			p.getActionSender().checkObjectSpawn(-1, 0, 0, 0, 10);
+		if (p.heightLevel == 1)
+			p.getActionSender().checkObjectSpawn(-1, 0, 0, 0, 10);
 	}
 	
-	public boolean loadForPlayer(Object o, Player c) {
-		if (o == null || c == null)
+	public boolean loadForPlayer(Object o, Player p) {
+		if (o == null || p == null)
 			return false;
-		return c.distanceToPoint(o.objectX, o.objectY) <= 60 && c.heightLevel == o.height;
+		return p.distanceToPoint(o.objectX, o.objectY) <= 60 && p.heightLevel == o.height;
 	}
 	
 	public void addObject(Object o) {

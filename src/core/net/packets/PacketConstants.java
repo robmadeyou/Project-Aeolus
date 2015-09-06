@@ -2,6 +2,10 @@ package core.net.packets;
 
 public class PacketConstants {
 	
+	public static final int ENTER_REGION = 210;
+	
+	public static final int LOADED_REGION = 121;
+	
 	public static final int PACKET_SIZES[] = { 0, 0, 0, 1, -1, 0, 0, 0, 0, 0, // 0
 			0, 0, 0, 0, 8, 0, 6, 2, 2, 0, // 10
 			0, 2, 0, 6, 0, 12, 0, 0, 0, 0, // 20

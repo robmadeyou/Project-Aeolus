@@ -95,17 +95,17 @@ public class ItemHandler {
 	* Reloads any items if you enter a new region
 	**/
 	public void reloadItems(Player p) {
-		for(GroundItem i : items) {
+		for(GroundItem groundItem : items) {
 			if(p != null){
-				if (p.getItems().tradeable(i.getItemId()) || i.getName().equalsIgnoreCase(p.playerName)) {
-					if (p.distanceToPoint(i.getItemX(), i.getItemY()) <= 60) {
-						if(i.hideTicks > 0 && i.getName().equalsIgnoreCase(p.playerName)) {
-							p.getItems().removeGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
-							p.getItems().createGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+				if (p.getItems().tradeable(groundItem.getItemId()) || groundItem.getName().equalsIgnoreCase(p.playerName)) {
+					if (p.distanceToPoint(groundItem.getItemX(), groundItem.getItemY()) <= 60) {
+						if(groundItem.hideTicks > 0 && groundItem.getName().equalsIgnoreCase(p.playerName)) {
+							p.getItems().removeGroundItem(groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
+							p.getItems().createGroundItem(groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
 						}
-						if(i.hideTicks == 0) {
-							p.getItems().removeGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
-							p.getItems().createGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+						if(groundItem.hideTicks == 0) {
+							p.getItems().removeGroundItem(groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
+							p.getItems().createGroundItem(groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
 						}
 					}
 				}	

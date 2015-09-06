@@ -51,8 +51,7 @@ public class PacketHandler{
 
 	private static PacketType packetId[] = new PacketType[256];
 	
-	static {
-		
+	static {		
 		SilentPacket u = new SilentPacket();
 		packetId[3] = u;
 		packetId[202] = u;
@@ -129,8 +128,8 @@ public class PacketHandler{
 		packetId[192] = new ItemOnObject();
 		packetId[25] = new ItemOnGroundItem();
 		ChangeRegions cr = new ChangeRegions();
-		packetId[121] = cr; // changing songs
-		packetId[210] = cr;
+		packetId[PacketConstants.LOADED_REGION] = cr; // Sent when the client finishes loading a map region.
+		packetId[PacketConstants.ENTER_REGION] = cr; // Sent when a player enters a new map region.
 		//packetId[60] = new ClanChat();
 	}
 
@@ -151,6 +150,4 @@ public class PacketHandler{
             logger.log(Level.SEVERE, c.playerName + "is sending invalid PacketType: " + packetType + ". PacketSize: " + packetSize);
         }
     }
-	
-
 }
