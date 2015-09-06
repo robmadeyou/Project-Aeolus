@@ -810,12 +810,18 @@ public class MobHandler {
 		newNPC.makeX = s.getXPos();
 		newNPC.makeY = s.getYPos();
 		newNPC.heightLevel = s.getHeight();
+		newNPC.walkType = s.getWalkType();		
 		boolean aggresive = MobDefinition.getDefinitions()[s.getNpcId()].isAggressive();
 		newNPC.isAggresive = aggresive;
-		newNPC.walkType = s.getWalkType();
+		int maxHit = MobDefinition.getDefinitions()[s.getNpcId()].getMaxHit();
+		newNPC.maxHit = maxHit;
 		int hp = MobDefinition.getDefinitions()[s.getNpcId()].getHitpoints();
 		newNPC.HP = hp;
 		newNPC.maxHP = hp;
+		int attackBonus = MobDefinition.getDefinitions()[s.getNpcId()].getAttackBonus();
+		newNPC.attack = attackBonus;
+		int defenceBonus = MobDefinition.getDefinitions()[s.getNpcId()].getMeleeDefence();
+		newNPC.defence = defenceBonus;
 		npcs[slot] = newNPC;
 	}
 	
