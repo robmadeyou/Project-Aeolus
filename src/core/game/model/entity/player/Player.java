@@ -565,6 +565,8 @@ public class Player extends Entity {
 			} else {
 				getActionSender().showOption(3, 0, "Challenge", 1);
 			}
+		} else {
+			getActionSender().walkableInterface(-1);
 		}
 		if (!hasMultiSign && inMulti()) {
 			hasMultiSign = true;
