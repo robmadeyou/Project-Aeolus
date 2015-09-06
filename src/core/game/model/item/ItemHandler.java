@@ -1,13 +1,10 @@
 package core.game.model.item;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.logging.Level;
 
 import com.google.gson.Gson;
@@ -17,16 +14,11 @@ import com.sun.istack.internal.logging.Logger;
 
 import core.Configuration;
 import core.game.model.entity.player.Player;
-import core.game.model.entity.player.Player;
 import core.game.model.entity.player.PlayerHandler;
-import core.game.util.Misc;
-import core.game.util.json.MusicLoader;
-import core.game.util.json.WeaponDelayLoader;
 
 /**
 * Handles ground items
 **/
-@SuppressWarnings("all")
 public class ItemHandler {
 	
 	public static final Logger logger = Logger.getLogger(ItemHandler.class);
@@ -78,9 +70,9 @@ public class ItemHandler {
 	* Item amount
 	**/	
 	public int itemAmount(int itemId, int itemX, int itemY) {
-		for(GroundItem i : items) {
-			if(i.getItemId() == itemId && i.getItemX() == itemX && i.getItemY() == itemY) {
-				return i.getItemAmount();
+		for(GroundItem groundItem : items) {
+			if(groundItem.getItemId() == itemId && groundItem.getItemX() == itemX && groundItem.getItemY() == itemY) {
+				return groundItem.getItemAmount();
 			}
 		}
 		return 0;
@@ -91,8 +83,8 @@ public class ItemHandler {
 	* Item exists
 	**/	
 	public boolean itemExists(int itemId, int itemX, int itemY) {
-		for(GroundItem i : items) {
-			if(i.getItemId() == itemId && i.getItemX() == itemX && i.getItemY() == itemY) {
+		for(GroundItem groundItem : items) {
+			if(groundItem.getItemId() == itemId && groundItem.getItemX() == itemX && groundItem.getItemY() == itemY) {
 				return true;
 			}
 		}
@@ -102,18 +94,18 @@ public class ItemHandler {
 	/**
 	* Reloads any items if you enter a new region
 	**/
-	public void reloadItems(Player c) {
+	public void reloadItems(Player p) {
 		for(GroundItem i : items) {
-			if(c != null){
-				if (c.getItems().tradeable(i.getItemId()) || i.getName().equalsIgnoreCase(c.playerName)) {
-					if (c.distanceToPoint(i.getItemX(), i.getItemY()) <= 60) {
-						if(i.hideTicks > 0 && i.getName().equalsIgnoreCase(c.playerName)) {
-							c.getItems().removeGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
-							c.getItems().createGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+			if(p != null){
+				if (p.getItems().tradeable(i.getItemId()) || i.getName().equalsIgnoreCase(p.playerName)) {
+					if (p.distanceToPoint(i.getItemX(), i.getItemY()) <= 60) {
+						if(i.hideTicks > 0 && i.getName().equalsIgnoreCase(p.playerName)) {
+							p.getItems().removeGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+							p.getItems().createGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
 						}
 						if(i.hideTicks == 0) {
-							c.getItems().removeGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
-							c.getItems().createGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+							p.getItems().removeGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+							p.getItems().createGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
 						}
 					}
 				}	
@@ -123,32 +115,30 @@ public class ItemHandler {
 	
 	public void process() {
 		ArrayList<GroundItem> toRemove = new ArrayList<GroundItem>();
-		for (int j = 0; j < items.size(); j++) {			
-			if (items.get(j) != null) {
-				GroundItem i = items.get(j);
-				if(i.hideTicks > 0) {
-					i.hideTicks--;
+		for (int index = 0; index < items.size(); index++) {			
+			if (items.get(index) != null) {
+				GroundItem groundItem = items.get(index);
+				if(groundItem.hideTicks > 0) {
+					groundItem.hideTicks--;
 				}
-				if(i.hideTicks == 1) { // item can now be seen by others
-					i.hideTicks = 0;
-					createGlobalItem(i);
-					i.removeTicks = HIDE_TICKS;
+				if(groundItem.hideTicks == 1) { // item can now be seen by others
+					groundItem.hideTicks = 0;
+					createGlobalItem(groundItem);
+					groundItem.removeTicks = HIDE_TICKS;
 				}
-				if(i.removeTicks > 0) {
-					i.removeTicks--;
+				if(groundItem.removeTicks > 0) {
+					groundItem.removeTicks--;
 				}
-				if(i.removeTicks == 1) {
-					i.removeTicks = 0;
-					toRemove.add(i);
+				if(groundItem.removeTicks == 1) {
+					groundItem.removeTicks = 0;
+					toRemove.add(groundItem);
 					//removeGlobalItem(i, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
-				}
-			
-			}
-		
+				}			
+			}		
 		}
 		
-		for (int j = 0; j < toRemove.size(); j++) {
-			GroundItem i = toRemove.get(j);
+		for (int index = 0; index < toRemove.size(); index++) {
+			GroundItem i = toRemove.get(index);
 			removeGlobalItem(i, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());	
 		}
 		/*for(GroundItem i : items) {
@@ -168,9 +158,7 @@ public class ItemHandler {
 				removeGlobalItem(i, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
 			}
 		}*/
-	}
-	
-	
+	}	
 	
 	/**
 	* Creates the ground item 
@@ -186,15 +174,15 @@ public class ItemHandler {
 				return;
 			}
 			if (itemId > 4705 && itemId < 4760) {
-				for (int j = 0; j < brokenBarrows.length; j++) {
-					if (brokenBarrows[j][0] == itemId) {
-						itemId = brokenBarrows[j][1];
+				for (int index = 0; index < brokenBarrows.length; index++) {
+					if (brokenBarrows[index][0] == itemId) {
+						itemId = brokenBarrows[index][1];
 						break;
 					}
 				}
 			}
 			if (!c.getInventory().getStackable(itemId) && itemAmount > 0) {
-				for (int j = 0; j < itemAmount; j++) {
+				for (int index = 0; index < itemAmount; index++) {
 					c.getItems().createGroundItem(itemId, itemX, itemY, 1);
 					GroundItem item = new GroundItem(itemId, itemX, itemY, 1, c.playerId, HIDE_TICKS, PlayerHandler.players[playerId].playerName);
 					addItem(item);
@@ -211,16 +199,16 @@ public class ItemHandler {
 	/**
 	* Shows items for everyone who is within 60 squares
 	**/
-	public void createGlobalItem(GroundItem i) {
+	public void createGlobalItem(GroundItem groundItem) {
 		for (Player p : PlayerHandler.players){
 			if(p != null) {
 			Player person = (Player)p;
 				if(person != null){
-					if(person.playerId != i.getItemController()) {
-						if (!person.getItems().tradeable(i.getItemId()) && person.playerId != i.getItemController())
+					if(person.playerId != groundItem.getItemController()) {
+						if (!person.getItems().tradeable(groundItem.getItemId()) && person.playerId != groundItem.getItemController())
 							continue;
-						if (person.distanceToPoint(i.getItemX(), i.getItemY()) <= 60) {
-							person.getItems().createGroundItem(i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+						if (person.distanceToPoint(groundItem.getItemX(), groundItem.getItemY()) <= 60) {
+							person.getItems().createGroundItem(groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
 						}
 					}
 				}
@@ -234,33 +222,33 @@ public class ItemHandler {
 	* Removing the ground item
 	**/
 	
-	public void removeGroundItem(Player c, int itemId, int itemX, int itemY, boolean add){
-		for(GroundItem i : items) {
-			if(i.getItemId() == itemId && i.getItemX() == itemX && i.getItemY() == itemY) {
-				if(i.hideTicks > 0 && i.getName().equalsIgnoreCase(c.playerName)) {
+	public void removeGroundItem(Player p, int itemId, int itemX, int itemY, boolean add){
+		for(GroundItem groundItem : items) {
+			if(groundItem.getItemId() == itemId && groundItem.getItemX() == itemX && groundItem.getItemY() == itemY) {
+				if(groundItem.hideTicks > 0 && groundItem.getName().equalsIgnoreCase(p.playerName)) {
 					if(add) {
-						if (!c.getItems().specialCase(itemId)) {
-							if(c.getInventory().addItem(i.getItemId(), i.getItemAmount())) {   
-								removeControllersItem(i, c, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+						if (!p.getItems().specialCase(itemId)) {
+							if(p.getInventory().addItem(groundItem.getItemId(), groundItem.getItemAmount())) {   
+								removeControllersItem(groundItem, p, groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
 								break;
 							}
 						} else {
 							//c.getItems().handleSpecialPickup(itemId);
-							removeControllersItem(i, c, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+							removeControllersItem(groundItem, p, groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
 							break;
 						}
 					} else {
-						removeControllersItem(i, c, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+						removeControllersItem(groundItem, p, groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
 						break;
 					}
-				} else if (i.hideTicks <= 0) {
+				} else if (groundItem.hideTicks <= 0) {
 					if(add) {
-						if(c.getInventory().addItem(i.getItemId(), i.getItemAmount())) {  
-							removeGlobalItem(i, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+						if(p.getInventory().addItem(groundItem.getItemId(), groundItem.getItemAmount())) {  
+							removeGlobalItem(groundItem, groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
 							break;
 						}
 					} else {
-						removeGlobalItem(i, i.getItemId(), i.getItemX(), i.getItemY(), i.getItemAmount());
+						removeGlobalItem(groundItem, groundItem.getItemId(), groundItem.getItemX(), groundItem.getItemY(), groundItem.getItemAmount());
 						break;
 					}
 				}
@@ -272,16 +260,16 @@ public class ItemHandler {
 	* Remove item for just the item controller (item not global yet)
 	**/
 	
-	public void removeControllersItem(GroundItem i, Player c, int itemId, int itemX, int itemY, int itemAmount) {
-		c.getItems().removeGroundItem(itemId, itemX, itemY, itemAmount);
-		removeItem(i);
+	public void removeControllersItem(GroundItem groundItem, Player p, int itemId, int itemX, int itemY, int itemAmount) {
+		p.getItems().removeGroundItem(itemId, itemX, itemY, itemAmount);
+		removeItem(groundItem);
 	}
 	
 	/**
 	* Remove item for everyone within 60 squares
 	**/
 	
-	public void removeGlobalItem(GroundItem i, int itemId, int itemX, int itemY, int itemAmount) {
+	public void removeGlobalItem(GroundItem groundItem, int itemId, int itemX, int itemY, int itemAmount) {
 		for (Player p : PlayerHandler.players){
 			if(p != null) {
 			Player person = (Player)p;
@@ -292,6 +280,6 @@ public class ItemHandler {
 				}
 			}
 		}
-		removeItem(i);
+		removeItem(groundItem);
 	}	
 }

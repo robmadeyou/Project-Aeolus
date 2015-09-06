@@ -175,7 +175,7 @@ public class PlayerAssistant {
 			if ((p.getRights().greaterOrEqual(Rights.ADMINISTRATOR) && Configuration.ADMIN_DROP_ITEMS)) {
 				return;
 			}
-				if (!(Boolean) p.isSkulled) { // what
+				if (!p.isSkulled) { // what
 																		// items
 																		// to
 																		// keep

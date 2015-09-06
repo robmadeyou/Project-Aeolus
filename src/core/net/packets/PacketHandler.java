@@ -129,7 +129,7 @@ public class PacketHandler{
 		packetId[192] = new ItemOnObject();
 		packetId[25] = new ItemOnGroundItem();
 		ChangeRegions cr = new ChangeRegions();
-		packetId[121] = cr;
+		packetId[121] = cr; // changing songs
 		packetId[210] = cr;
 		//packetId[60] = new ClanChat();
 	}

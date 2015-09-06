@@ -11,36 +11,36 @@ import core.game.sound.SoundManager.SoundType;
 
 public class MeleeData {
 
-	public static int getKillerId(Player c, int playerId) {
+	public static int getKillerId(Player p, int playerId) {
 		int oldDamage = 0;
 		int killerId = 0;
-		for (int i = 1; i < GameConstants.MAX_PLAYERS; i++) {
-			if (PlayerHandler.players[i] != null) {
-				if (PlayerHandler.players[i].killedBy == playerId) {
-					if (PlayerHandler.players[i].withinDistance(PlayerHandler.players[playerId])) {
-						if (PlayerHandler.players[i].totalPlayerDamageDealt > oldDamage) {
-							oldDamage = PlayerHandler.players[i].totalPlayerDamageDealt;
-							killerId = i;
+		for (int index = 1; index < GameConstants.MAX_PLAYERS; index++) {
+			if (PlayerHandler.players[index] != null) {
+				if (PlayerHandler.players[index].killedBy == playerId) {
+					if (PlayerHandler.players[index].withinDistance(PlayerHandler.players[playerId])) {
+						if (PlayerHandler.players[index].totalPlayerDamageDealt > oldDamage) {
+							oldDamage = PlayerHandler.players[index].totalPlayerDamageDealt;
+							killerId = index;
 						}
 					}
-					PlayerHandler.players[i].totalPlayerDamageDealt = 0;
-					PlayerHandler.players[i].killedBy = 0;
+					PlayerHandler.players[index].totalPlayerDamageDealt = 0;
+					PlayerHandler.players[index].killedBy = 0;
 				}
 			}
 		}
 		return killerId;
 	}
 
-	public static void resetPlayerAttack(Player c) {
-		c.usingMagic = false;
-		c.npcIndex = 0;
-		c.faceUpdate(0);
-		c.playerIndex = 0;
-		c.getActionSender().resetFollow();
+	public static void resetPlayerAttack(Player p) {
+		p.usingMagic = false;
+		p.npcIndex = 0;
+		p.faceUpdate(0);
+		p.playerIndex = 0;
+		p.getActionSender().resetFollow();
 	}
 
-	public static boolean usingHally(Player c) {
-		switch (c.playerEquipment[c.playerWeapon]) {
+	public static boolean usingHally(Player p) {
+		switch (p.playerEquipment[p.playerWeapon]) {
 		case 3190:
 		case 3192:
 		case 3194:

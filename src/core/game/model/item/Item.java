@@ -1,7 +1,8 @@
 package core.game.model.item;
 
 /**
- * @author Sanity Revised by Shawn Notes by Shawn
+ * Removed many useless methods
+ * @author 7Winds
  */
 public class Item {
 
@@ -92,5 +93,5 @@ public class Item {
 
 	public static boolean itemIsNote(int itemId) {
 			return ItemDefinition.getDefinitions()[itemId].isNoted();
-	}
+	}	
 }
