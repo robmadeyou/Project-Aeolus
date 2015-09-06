@@ -810,19 +810,13 @@ public class MobHandler {
 		newNPC.makeX = s.getXPos();
 		newNPC.makeY = s.getYPos();
 		newNPC.heightLevel = s.getHeight();
+		boolean aggresive = MobDefinition.getDefinitions()[s.getNpcId()].isAggressive();
+		newNPC.isAggresive = aggresive;
 		newNPC.walkType = s.getWalkType();
 		int hp = MobDefinition.getDefinitions()[s.getNpcId()].getHitpoints();
 		newNPC.HP = hp;
 		newNPC.maxHP = hp;
 		npcs[slot] = newNPC;
-	}
-
-	/**
-	 * Checks MobDefinitions to see if an npc is aggressive
-	 * @param npcId
-	 */
-	public boolean isAggressive(int npcId) {
-		return MobDefinition.DEFINITIONS[npcId].isAggressive();
 	}
 	
 	public void newNPC(int npcType, int x, int y, int heightLevel, WalkType walkType, int HP, int maxHit, int attack,
@@ -900,10 +894,10 @@ public class MobHandler {
 				/**
 				 * Attacking player
 				 **/
-				if (isAggressive(i) && !npcs[i].underAttack && !npcs[i].isDead
+				if (npcs[i].isAggresive && !npcs[i].underAttack && !npcs[i].isDead
 						&& !switchesAttackers(i)) {
 					npcs[i].killerId = getCloseRandomPlayer(i);
-				} else if (isAggressive(i) && !npcs[i].underAttack
+				} else if (npcs[i].isAggresive && !npcs[i].underAttack
 						&& !npcs[i].isDead && switchesAttackers(i)) {
 					npcs[i].killerId = getCloseRandomPlayer(i);
 				}
