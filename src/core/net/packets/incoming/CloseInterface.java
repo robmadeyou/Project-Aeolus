@@ -10,7 +10,7 @@ import core.net.packets.PacketType;
  * Clicking Actions, previously was known as ClickingStuff but was very misleading
  * @author 7Winds
  */
-public class ClickingAction implements PacketType {
+public class CloseInterface implements PacketType {
 	
 	public static final int CLOSE_WINDOW = 130;
 
