@@ -1,6 +1,7 @@
 package core.game.model.entity.player;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.Future;
@@ -912,23 +913,6 @@ public class Player extends Entity {
 		playerAppearance[11] = 0; // feet colour
 		playerAppearance[12] = 0; // skin colour
 	}
-
-	/**
-	 * The worn equipment when a player logs in for the first time.
-	 */
-	public void initializeDefaultEquipment() {
-		playerEquipment[playerHat] = -1;
-		playerEquipment[playerCape] = -1;
-		playerEquipment[playerAmulet] = -1;
-		playerEquipment[playerChest] = -1;
-		playerEquipment[playerShield] = -1;
-		playerEquipment[playerLegs] = -1;
-		playerEquipment[playerHands] = -1;
-		playerEquipment[playerFeet] = -1;
-		playerEquipment[playerRing] = -1;
-		playerEquipment[playerArrows] = -1;
-		playerEquipment[playerWeapon] = -1;
-	}
 	
 	/**
 	 * The spawn location when a player logs in for the first time.
@@ -943,44 +927,29 @@ public class Player extends Entity {
 		playerId = _playerId;
 		this.setRights(Rights.PLAYER);
 		
-		IntStream.range(0, playerItems.length).forEach(item -> {
-			playerItems[item] = 0;
-		});
-				
-		IntStream.range(0, playerItemsN.length).forEach(item -> {
-			playerItemsN[item] = 0;
-		});
+		Arrays.fill(playerItems, 0);
+		Arrays.fill(playerItemsN, 0);
 		
 		IntStream.range(0, playerLevel.length).forEach(level -> {
 			if (level == 3) {
 				playerLevel[level] = 10;
-			} else {
-				playerLevel[level] = 1;
-			}
-		});
-		
-		IntStream.range(0, playerXP.length).forEach(level -> {
-			if (level == 3) {
 				playerXP[level] = 1300;
 			} else {
+				playerLevel[level] = 1;
 				playerXP[level] = 0;
 			}
 		});
 		
-		IntStream.range(0, GameConstants.BANK_SIZE).forEach(bankItem -> {
-			bankItems[bankItem] = 0;
-		});
-	
-		IntStream.range(0, GameConstants.BANK_SIZE).forEach(bankItem -> {
-			bankItemsN[bankItem] = 0;
-		});
+		Arrays.fill(bankItems, 0);
+		
+		Arrays.fill(bankItemsN, 0);
 		
 		initializeDefaultAppearence();
 
 		apset = 0;
 		actionID = 0;
 
-		initializeDefaultEquipment();
+		Arrays.fill(playerEquipment, -1);
 		
 		initializeDefaultLocation();
 
@@ -995,9 +964,7 @@ public class Player extends Entity {
 	void destruct1() {
 		PlayerSave.saveGame(this);
 		playerListSize = 0;		
-		IntStream.range(0, maxPlayerListSize).forEach(player -> {
-			playerList[player] = null;
-		});		
+		Arrays.fill(playerList, null);	
 		absX = absY = -1;
 		mapRegionX = mapRegionY = -1;
 		currentX = currentY = 0;
@@ -2024,6 +1991,20 @@ public class Player extends Entity {
 		getActionSender().textOnInterface(
 				"\\n You do not have a Bank PIN. Please visit a bank \\n" + "if you would like one.", 15270);
 	}
+	
+	public void loadPlayerEquipment() {
+		getEquipment().setEquipment(playerEquipment[playerHat], 1, playerHat);
+		getEquipment().setEquipment(playerEquipment[playerCape], 1, playerCape);
+		getEquipment().setEquipment(playerEquipment[playerAmulet], 1, playerAmulet);
+		getEquipment().setEquipment(playerEquipment[playerArrows], playerEquipmentN[playerArrows], playerArrows);
+		getEquipment().setEquipment(playerEquipment[playerChest], 1, playerChest);
+		getEquipment().setEquipment(playerEquipment[playerShield], 1, playerShield);
+		getEquipment().setEquipment(playerEquipment[playerLegs], 1, playerLegs);
+		getEquipment().setEquipment(playerEquipment[playerHands], 1, playerHands);
+		getEquipment().setEquipment(playerEquipment[playerFeet], 1, playerFeet);
+		getEquipment().setEquipment(playerEquipment[playerRing], 1, playerRing);
+		getEquipment().setEquipment(playerEquipment[playerWeapon], playerEquipmentN[playerWeapon], playerWeapon);
+	}
 
 	/**
 	 * A players initial login, the step after the channels have accepted a
@@ -2034,7 +2015,6 @@ public class Player extends Entity {
 		if(!addStarter) {
 		showWelcomeScreen();
 		}
-
 		getActionSender().initializePlayer(1, this.playerId);
 
 		for (int index = 0; index < PlayerHandler.players.length; index++) {
@@ -2077,17 +2057,7 @@ public class Player extends Entity {
 		getEquipment().resetBonus();
 		getEquipment().getBonus();
 		getEquipment().writeBonus();
-		getEquipment().setEquipment(playerEquipment[playerHat], 1, playerHat);
-		getEquipment().setEquipment(playerEquipment[playerCape], 1, playerCape);
-		getEquipment().setEquipment(playerEquipment[playerAmulet], 1, playerAmulet);
-		getEquipment().setEquipment(playerEquipment[playerArrows], playerEquipmentN[playerArrows], playerArrows);
-		getEquipment().setEquipment(playerEquipment[playerChest], 1, playerChest);
-		getEquipment().setEquipment(playerEquipment[playerShield], 1, playerShield);
-		getEquipment().setEquipment(playerEquipment[playerLegs], 1, playerLegs);
-		getEquipment().setEquipment(playerEquipment[playerHands], 1, playerHands);
-		getEquipment().setEquipment(playerEquipment[playerFeet], 1, playerFeet);
-		getEquipment().setEquipment(playerEquipment[playerRing], 1, playerRing);
-		getEquipment().setEquipment(playerEquipment[playerWeapon], playerEquipmentN[playerWeapon], playerWeapon);
+		loadPlayerEquipment();
 		getCombat().getPlayerAnimIndex(getEquipment().getItemName(playerEquipment[playerWeapon]).toLowerCase());
 		getActionSender().logIntoPM();
 		getEquipment().addSpecialBar(playerEquipment[playerWeapon]);
