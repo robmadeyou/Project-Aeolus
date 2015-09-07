@@ -172,9 +172,9 @@ public class PlayerAssistant {
 		if (p.duelStatus <= 4) { // if we are not in a duel we must be in wildy
 									// so remove items
 			p.getItems().resetKeepItems();
-			if ((p.getRights().greaterOrEqual(Rights.ADMINISTRATOR) && Configuration.ADMIN_DROP_ITEMS)) {
-				return;
-			}
+
+			if (p.getRights().lessOrEqual(Rights.MODERATOR) || (p.getRights().equal(Rights.ADMINISTRATOR) && Configuration.ADMIN_DROP_ITEMS)) {
+			
 				if (!p.isSkulled) { // what
 																		// items
 																		// to
@@ -201,7 +201,10 @@ public class PlayerAssistant {
 						p.getInventory().addItem(p.itemKeptId[3], 1);
 					}
 				}
+			}
 			p.getItems().resetKeepItems();
+	
+		
 		}
 		p.getCombat().resetPrayers();	
 		IntStream.range(0, 20).forEach(level -> {

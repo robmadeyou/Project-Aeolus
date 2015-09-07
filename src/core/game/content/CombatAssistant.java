@@ -128,11 +128,6 @@ public class CombatAssistant {
 
 	public void attackNpc(int i) {
 		PlayerVsMob.attackNpc(c, i);
-		if (KQnpc(i) && !c.getEquipment().isWearingVeracs(c) || c.usingMagic) {
-			resetPlayerAttack();
-			c.sendMessage("Your attacks are ineffective against the Kalphite Queen!");
-			return;
-		}
 	}
 
 	public boolean KQnpc(int i) {

@@ -544,308 +544,309 @@ public class PlayerVsMob {
 
 	}
 
-	public static void attackNpc(Player c, int i) {
-		if (MobHandler.npcs[i] != null && c != null) {
-			if (MobHandler.npcs[i].isDead || MobHandler.npcs[i].maxHP <= 0) {
-				c.usingMagic = false;
-				c.faceUpdate(0);
-				c.npcIndex = 0;
+	public static void attackNpc(Player p, int mobIndex) {
+		if (MobHandler.npcs[mobIndex] != null && p != null) {
+			if (MobHandler.npcs[mobIndex].isDead || MobHandler.npcs[mobIndex].maxHP <= 0) {
+				p.usingMagic = false;
+				p.faceUpdate(0);
+				p.npcIndex = 0;
 				return;
 			}
-			if (c.respawnTimer > 0) {
-				c.npcIndex = 0;
+			if (p.respawnTimer > 0) {
+				p.npcIndex = 0;
 				return;
 			}
-			if (MobHandler.npcs[i].underAttackBy > 0
-					&& MobHandler.npcs[i].underAttackBy != c.playerId
-					&& !MobHandler.npcs[i].inMulti()) {
-				c.npcIndex = 0;
-				c.sendMessage("This monster is already in combat.");
+			if (MobHandler.npcs[mobIndex].underAttackBy > 0
+					&& MobHandler.npcs[mobIndex].underAttackBy != p.playerId
+					&& !MobHandler.npcs[mobIndex].inMulti()) {
+				p.npcIndex = 0;
+				p.sendMessage("This monster is already in combat.");
 				return;
 			}
-			if ((c.underAttackBy > 0 || c.underAttackBy2 > 0)
-					&& c.underAttackBy2 != i && !c.inMulti()) {
-				c.getCombat().resetPlayerAttack();
-				c.sendMessage("I am already under attack.");
+			if ((p.underAttackBy > 0 || p.underAttackBy2 > 0)
+					&& p.underAttackBy2 != mobIndex && !p.inMulti()) {
+				p.getCombat().resetPlayerAttack();
+				p.sendMessage("I am already under attack.");
 				return;
 			}
-			if (!c.getCombat().goodSlayer(i)) {
-				c.getCombat().resetPlayerAttack();
+			if (!p.getCombat().goodSlayer(mobIndex)) {
+				p.getCombat().resetPlayerAttack();
 				return;
 			}
-			if (MobHandler.npcs[i].spawnedBy != c.playerId
-					&& MobHandler.npcs[i].spawnedBy > 0) {
-				c.getCombat().resetPlayerAttack();
-				c.sendMessage("This monster was not spawned for you.");
+			if (MobHandler.npcs[mobIndex].spawnedBy != p.playerId
+					&& MobHandler.npcs[mobIndex].spawnedBy > 0) {
+				p.getCombat().resetPlayerAttack();
+				p.sendMessage("This monster was not spawned for you.");
 				return;
 			}
-			if (c.getX() == MobHandler.npcs[i].getX()
-					&& c.getY() == MobHandler.npcs[i].getY()) {
-				c.getActionSender().walkTo(0, 1);
+			if (p.getX() == MobHandler.npcs[mobIndex].getX()
+					&& p.getY() == MobHandler.npcs[mobIndex].getY()) {
+				p.getActionSender().walkTo(0, 1);
 			}
-			c.followMobId = i;
-			c.followPlayerId = 0;
-			if (c.attackTimer <= 0) {
-				c.usingBow = false;
-				c.usingArrows = false;
-				c.usingOtherRangeWeapons = false;
-				c.usingCross = c.playerEquipment[c.playerWeapon] == 9185;
-				c.bonusAttack = 0;
-				c.rangeItemUsed = 0;
-				c.projectileStage = 0;
-				if (c.autocasting) {
-					c.spellId = c.autocastId;
-					c.sendMessage("Spell ID: " + c.spellId + "");
-					c.usingMagic = true;
+			p.followMobId = mobIndex;
+			p.followPlayerId = 0;
+			if (p.attackTimer <= 0) {
+				p.usingBow = false;
+				p.usingArrows = false;
+				p.usingOtherRangeWeapons = false;
+				p.usingCross = p.playerEquipment[p.playerWeapon] == 9185;
+				p.bonusAttack = 0;
+				p.rangeItemUsed = 0;
+				p.projectileStage = 0;
+				if (p.autocasting) {
+					p.spellId = p.autocastId;
+					p.sendMessage("Spell ID: " + p.spellId + "");
+					p.usingMagic = true;
 				}
-				if (c.spellId > 0) {
-					c.usingMagic = true;
+				if (p.spellId > 0) {
+					p.usingMagic = true;
 				}
-				if (c.getEquipment().hasWeapon())
-				c.attackTimer = c.getCombat().getAttackDelay(
-						c.getItems().getItemId(c.playerEquipment[c.playerWeapon]));
+				if (p.getEquipment().hasWeapon())
+				p.attackTimer = p.getCombat().getAttackDelay(
+						p.getItems().getItemId(p.playerEquipment[p.playerWeapon]));
 				else
-					c.attackTimer = 5;
-				c.specAccuracy = 1.0;
-				c.specDamage = 1.0;
-				if (!c.usingMagic) {
-					for (int bowId : c.BOWS) {
-						if (c.playerEquipment[c.playerWeapon] == bowId) {
-							c.usingBow = true;
-							for (int arrowId : c.ARROWS) {
-								if (c.playerEquipment[c.playerArrows] == arrowId) {
-									c.usingArrows = true;
+					p.attackTimer = 5;
+				p.specAccuracy = 1.0;
+				p.specDamage = 1.0;
+				if (!p.usingMagic) {
+					for (int bowId : p.BOWS) {
+						if (p.playerEquipment[p.playerWeapon] == bowId) {
+							p.usingBow = true;
+							for (int arrowId : p.ARROWS) {
+								if (p.playerEquipment[p.playerArrows] == arrowId) {
+									p.usingArrows = true;
 								}
 							}
 						}
 					}
 
-					for (int otherRangeId : c.OTHER_RANGE_WEAPONS) {
-						if (c.playerEquipment[c.playerWeapon] == otherRangeId) {
-							c.usingOtherRangeWeapons = true;
+					for (int otherRangeId : p.OTHER_RANGE_WEAPONS) {
+						if (p.playerEquipment[p.playerWeapon] == otherRangeId) {
+							p.usingOtherRangeWeapons = true;
 						}
 					}
 				}
-				if ((!c.goodDistance(c.getX(), c.getY(),
-						MobHandler.npcs[i].getX(), MobHandler.npcs[i].getY(), 2) && (c
+				if ((!p.goodDistance(p.getX(), p.getY(),
+						MobHandler.npcs[mobIndex].getX(), MobHandler.npcs[mobIndex].getY(), 2) && (p
 						.getCombat().usingHally()
-						&& !c.usingOtherRangeWeapons
-						&& !c.usingBow && !c.usingMagic))
-						|| (!c.goodDistance(c.getX(), c.getY(),
-								MobHandler.npcs[i].getX(),
-								MobHandler.npcs[i].getY(), 4) && (c.usingOtherRangeWeapons
-								&& !c.usingBow && !c.usingMagic))
-						|| (!c.goodDistance(c.getX(), c.getY(),
-								MobHandler.npcs[i].getX(),
-								MobHandler.npcs[i].getY(), 1) && (!c.usingOtherRangeWeapons
-								&& !c.getCombat().usingHally() && !c.usingBow && !c.usingMagic))
-						|| ((!c.goodDistance(c.getX(), c.getY(),
-								MobHandler.npcs[i].getX(),
-								MobHandler.npcs[i].getY(), 8) && (c.usingBow || c.usingMagic)))) {
-					c.attackTimer = 2;
+						&& !p.usingOtherRangeWeapons
+						&& !p.usingBow && !p.usingMagic))
+						|| (!p.goodDistance(p.getX(), p.getY(),
+								MobHandler.npcs[mobIndex].getX(),
+								MobHandler.npcs[mobIndex].getY(), 4) && (p.usingOtherRangeWeapons
+								&& !p.usingBow && !p.usingMagic))
+						|| (!p.goodDistance(p.getX(), p.getY(),
+								MobHandler.npcs[mobIndex].getX(),
+								MobHandler.npcs[mobIndex].getY(), 1) && (!p.usingOtherRangeWeapons
+								&& !p.getCombat().usingHally() && !p.usingBow && !p.usingMagic))
+						|| ((!p.goodDistance(p.getX(), p.getY(),
+								MobHandler.npcs[mobIndex].getX(),
+								MobHandler.npcs[mobIndex].getY(), 8) && (p.usingBow || p.usingMagic)))) {
+					p.attackTimer = 2;
 					return;
 				}
-				SoundManager.sendSound(c, c.spellId, SoundType.CAST_SOUND);
-				if (!c.usingCross
-						&& !c.usingArrows
-						&& c.usingBow
-						&& (c.playerEquipment[c.playerWeapon] < 4212 || c.playerEquipment[c.playerWeapon] > 4223 && !c.usingMagic && c.playerEquipment[c.playerWeapon] != 14614)) {
-					c.sendMessage("You have run out of arrows!");
-					c.stopMovement();
-					c.npcIndex = 0;
+				SoundManager.sendSound(p, p.spellId, SoundType.CAST_SOUND);
+				if (!p.usingCross
+						&& !p.usingArrows
+						&& p.usingBow
+						&& (p.playerEquipment[p.playerWeapon] < 4212 || p.playerEquipment[p.playerWeapon] > 4223 && !p.usingMagic && p.playerEquipment[p.playerWeapon] != 14614)) {
+					p.sendMessage("You have run out of arrows!");
+					p.stopMovement();
+					p.npcIndex = 0;
 					return;
 				}
-				if (c.getCombat().correctBowAndArrows() < c.playerEquipment[c.playerArrows]
+				if (p.getCombat().correctBowAndArrows() < p.playerEquipment[p.playerArrows]
 						&& Configuration.CORRECT_ARROWS
-						&& c.usingBow
-						&& !c.getCombat().usingCrystalBow()
-						&& c.playerEquipment[c.playerWeapon] != 9185) {
-					c.sendMessage("You can't use "
-							+ c.getEquipment()
+						&& p.usingBow
+						&& !p.getCombat().usingCrystalBow()
+						&& p.playerEquipment[p.playerWeapon] != 9185) {
+					p.sendMessage("You can't use "
+							+ p.getEquipment()
 									.getItemName(
-											c.playerEquipment[c.playerArrows])
+											p.playerEquipment[p.playerArrows])
 									.toLowerCase()
 							+ "s with a "
-							+ c.getEquipment()
+							+ p.getEquipment()
 									.getItemName(
-											c.playerEquipment[c.playerWeapon])
+											p.playerEquipment[p.playerWeapon])
 									.toLowerCase() + ".");
-					c.stopMovement();
-					c.npcIndex = 0;
+					p.stopMovement();
+					p.npcIndex = 0;
 					return;
 				}
 
-				if (c.playerEquipment[c.playerWeapon] == 9185
-						&& !c.getCombat().properBolts()) {
-					c.sendMessage("You must use bolts with a crossbow.");
-					c.stopMovement();
-					c.getCombat().resetPlayerAttack();
+				if (p.playerEquipment[p.playerWeapon] == 9185
+						&& !p.getCombat().properBolts()) {
+					p.sendMessage("You must use bolts with a crossbow.");
+					p.stopMovement();
+					p.getCombat().resetPlayerAttack();
 					return;
 				}
-				if (c.usingBow
-						|| c.castingMagic
-						|| c.usingOtherRangeWeapons
-						|| (c.getCombat().usingHally() && c.goodDistance(
-								c.getX(), c.getY(), MobHandler.npcs[i].getX(),
-								MobHandler.npcs[i].getY(), 2))) {
-					c.stopMovement();
+				if (p.usingBow
+						|| p.castingMagic
+						|| p.usingOtherRangeWeapons
+						|| (p.getCombat().usingHally() && p.goodDistance(
+								p.getX(), p.getY(), MobHandler.npcs[mobIndex].getX(),
+								MobHandler.npcs[mobIndex].getY(), 2))) {
+					p.stopMovement();
 				}
-				if (!c.getCombat().checkMagicReqs(c.spellId)) {
-					c.stopMovement();
-					c.npcIndex = 0;
+				if (!p.getCombat().checkMagicReqs(p.spellId)) {
+					p.stopMovement();
+					p.npcIndex = 0;
 					return;
 				}
-				c.faceUpdate(i);
-				MobHandler.npcs[i].underAttackBy = c.playerId;
-				MobHandler.npcs[i].lastDamageTaken = System.currentTimeMillis();
-				if (c.usingSpecial && !c.usingMagic) {
-					if (c.getCombat().checkSpecAmount(
-							c.playerEquipment[c.playerWeapon])) {
-						c.lastWeaponUsed = c.playerEquipment[c.playerWeapon];
-						c.lastArrowUsed = c.playerEquipment[c.playerArrows];
-						c.getCombat().activateSpecial(
-								c.playerEquipment[c.playerWeapon], i);
+				p.faceUpdate(mobIndex);
+				MobHandler.npcs[mobIndex].underAttackBy = p.playerId;
+				MobHandler.npcs[mobIndex].lastDamageTaken = System.currentTimeMillis();
+				if (p.usingSpecial && !p.usingMagic) {
+					if (p.getCombat().checkSpecAmount(
+							p.playerEquipment[p.playerWeapon])) {
+						p.lastWeaponUsed = p.playerEquipment[p.playerWeapon];
+						p.lastArrowUsed = p.playerEquipment[p.playerArrows];
+						p.getCombat().activateSpecial(
+								p.playerEquipment[p.playerWeapon], mobIndex);
 
 						return;
 					} else {
-						c.sendMessage("You don't have the required special energy to use this attack.");
-						c.usingSpecial = false;
-						c.getEquipment().updateSpecialBar();
-						c.npcIndex = 0;
+						p.sendMessage("You don't have the required special energy to use this attack.");
+						p.usingSpecial = false;
+						p.getEquipment().updateSpecialBar();
+						p.npcIndex = 0;
 						return;
 					}
 				}
-				c.specMaxHitIncrease = 0;
-				if (c.playerLevel[3] > 0 && !c.isDead
-						&& MobHandler.npcs[i].maxHP > 0) {
-					if (!c.usingMagic) {
-						c.startAnimation(c
+				p.specMaxHitIncrease = 0;
+				if (p.playerLevel[3] > 0 && !p.isDead
+						&& MobHandler.npcs[mobIndex].maxHP > 0) {
+					if (!p.usingMagic) {
+						p.startAnimation(p
 								.getCombat()
 								.getWepAnim(
-										c.getEquipment()
+										p.getEquipment()
 												.getItemName(
-														c.playerEquipment[c.playerWeapon])
+														p.playerEquipment[p.playerWeapon])
 												.toLowerCase()));
 
-						if (Server.npcHandler.getNPCs()[i].attackTimer < 9) {
-							MobHandler.startAnimation(c.getCombat()
-									.npcDefenceAnim(i), i);
+						if (Server.npcHandler.getNPCs()[mobIndex].attackTimer < 9) {
+							MobHandler.startAnimation(p.getCombat()
+									.npcDefenceAnim(mobIndex), mobIndex);
 						}
 					} else {
-						c.startAnimation(c.MAGIC_SPELLS[c.spellId][2]);
+						p.startAnimation(p.MAGIC_SPELLS[p.spellId][2]);
 					}
 				}
-				c.lastWeaponUsed = c.playerEquipment[c.playerWeapon];
-				c.lastArrowUsed = c.playerEquipment[c.playerArrows];
+				p.lastWeaponUsed = p.playerEquipment[p.playerWeapon];
+				p.lastArrowUsed = p.playerEquipment[p.playerArrows];
 
-				if (!c.usingBow && !c.usingMagic && !c.usingOtherRangeWeapons) { // melee
+				if (!p.usingBow && !p.usingMagic && !p.usingOtherRangeWeapons) { // melee
 																					// hit
 																					// delay
-					c.followMobId = MobHandler.npcs[i].npcId;
-					c.getActionSender().followNpc();
-					c.hitDelay = c.getCombat().getHitDelay(
-							i,
-							c.getEquipment()
-							.getItemName(c.playerEquipment[c.playerWeapon])
+					p.followMobId = MobHandler.npcs[mobIndex].npcId;
+					p.getActionSender().followNpc();
+					p.hitDelay = p.getCombat().getHitDelay(
+							mobIndex,
+							p.getEquipment()
+							.getItemName(p.playerEquipment[p.playerWeapon])
 							.toLowerCase());
-					c.projectileStage = 0;
-					c.oldNpcIndex = i;
+					p.projectileStage = 0;
+					p.oldNpcIndex = mobIndex;
 				}
 
-				if (c.usingBow && !c.usingOtherRangeWeapons && !c.usingMagic
-						|| c.usingCross) { // range hit delay
-					if (c.usingCross)
-						c.usingBow = true;
-					if (c.fightMode == 2)
-						c.attackTimer--;
-					c.followMobId = MobHandler.npcs[i].npcId;
-					c.getActionSender().followNpc();
-					c.lastArrowUsed = c.playerEquipment[c.playerArrows];
-					c.lastWeaponUsed = c.playerEquipment[c.playerWeapon];
-					c.gfx100(c.getCombat().getRangeStartGFX());
-					c.hitDelay = c.getCombat().getHitDelay(
-							i,
-							c.getEquipment()
+				if (p.usingBow && !p.usingOtherRangeWeapons && !p.usingMagic
+						|| p.usingCross) { // range hit delay
+					if (p.usingCross)
+						p.usingBow = true;
+					if (p.fightMode == 2)
+						p.attackTimer--;
+					p.followMobId = MobHandler.npcs[mobIndex].npcId;
+					p.getActionSender().followNpc();
+					p.lastArrowUsed = p.playerEquipment[p.playerArrows];
+					p.lastWeaponUsed = p.playerEquipment[p.playerWeapon];
+					p.gfx100(p.getCombat().getRangeStartGFX());
+					p.hitDelay = p.getCombat().getHitDelay(
+							mobIndex,
+							p.getEquipment()
 									.getItemName(
-											c.playerEquipment[c.playerWeapon])
+											p.playerEquipment[p.playerWeapon])
 									.toLowerCase());
-					c.projectileStage = 1;
-					c.oldNpcIndex = i;
-					if (c.playerEquipment[c.playerWeapon] >= 4212
-							&& c.playerEquipment[c.playerWeapon] <= 4223) {
-						c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
-						c.crystalBowArrowCount++;
-						c.lastArrowUsed = 0;
+					p.projectileStage = 1;
+					p.oldNpcIndex = mobIndex;
+					if (p.playerEquipment[p.playerWeapon] >= 4212
+							&& p.playerEquipment[p.playerWeapon] <= 4223) {
+						p.rangeItemUsed = p.playerEquipment[p.playerWeapon];
+						p.crystalBowArrowCount++;
+						p.lastArrowUsed = 0;
 					} else {
-						c.rangeItemUsed = c.playerEquipment[c.playerArrows];
-						c.getItems().deleteArrow();
-						if (c.playerEquipment[3] == 11235) {
-							c.getItems().deleteArrow();
+						p.rangeItemUsed = p.playerEquipment[p.playerArrows];
+						p.getItems().deleteArrow();
+						if (p.playerEquipment[3] == 11235) {
+							p.getItems().deleteArrow();
 						}
 					}
-					c.getCombat().fireProjectileNpc();
+					p.getCombat().fireProjectileNpc();
 				}
 
-				if (c.usingOtherRangeWeapons && !c.usingMagic && !c.usingBow) {
-					c.followMobId = MobHandler.npcs[i].npcId;
-					c.getActionSender().followNpc();
-					c.rangeItemUsed = c.playerEquipment[c.playerWeapon];
-					c.getEquipment().deleteEquipment();
-					c.gfx100(c.getCombat().getRangeStartGFX());
-					c.lastArrowUsed = 0;
-					c.hitDelay = c.getCombat().getHitDelay(
-							i,
-							c.getEquipment()
+				if (p.usingOtherRangeWeapons && !p.usingMagic && !p.usingBow) {
+					p.followMobId = MobHandler.npcs[mobIndex].npcId;
+					p.getActionSender().followNpc();
+					p.rangeItemUsed = p.playerEquipment[p.playerWeapon];
+					p.getEquipment().deleteEquipment();
+					p.gfx100(p.getCombat().getRangeStartGFX());
+					p.lastArrowUsed = 0;
+					p.hitDelay = p.getCombat().getHitDelay(
+							mobIndex,
+							p.getEquipment()
 									.getItemName(
-											c.playerEquipment[c.playerWeapon])
+											p.playerEquipment[p.playerWeapon])
 									.toLowerCase());
-					c.projectileStage = 1;
-					c.oldNpcIndex = i;
-					if (c.fightMode == 2)
-						c.attackTimer--;
-					c.getCombat().fireProjectileNpc();
+					p.projectileStage = 1;
+					p.oldNpcIndex = mobIndex;
+					if (p.fightMode == 2)
+						p.attackTimer--;
+					p.getCombat().fireProjectileNpc();
 				}
 
-				if (c.usingMagic) { // magic hit delay
-					int pX = c.getX();
-					int pY = c.getY();
-					int nX = MobHandler.npcs[i].getX();
-					int nY = MobHandler.npcs[i].getY();
+				if (p.usingMagic) { // magic hit delay
+					int pX = p.getX();
+					int pY = p.getY();
+					int nX = MobHandler.npcs[mobIndex].getX();
+					int nY = MobHandler.npcs[mobIndex].getY();
 					int offX = (pY - nY) * -1;
 					int offY = (pX - nX) * -1;
-					c.castingMagic = true;
-					c.projectileStage = 2;
-					c.stopMovement();
-					if (c.MAGIC_SPELLS[c.spellId][3] > 0) {
-						if (c.getCombat().getStartGfxHeight() == 100) {
-							c.gfx100(c.MAGIC_SPELLS[c.spellId][3]);
+					p.castingMagic = true;
+					p.projectileStage = 2;
+					p.getMovement().turnTo(nX, nY);
+					p.stopMovement();
+					if (p.MAGIC_SPELLS[p.spellId][3] > 0) {
+						if (p.getCombat().getStartGfxHeight() == 100) {
+							p.gfx100(p.MAGIC_SPELLS[p.spellId][3]);
 						} else {
-							c.gfx0(c.MAGIC_SPELLS[c.spellId][3]);
+							p.gfx0(p.MAGIC_SPELLS[p.spellId][3]);
 						}
 					}
-					if (c.MAGIC_SPELLS[c.spellId][4] > 0) {
-						c.getActionSender().createPlayersProjectile(pX, pY, offX, offY,
-								50, 78, c.MAGIC_SPELLS[c.spellId][4],
-								c.getCombat().getStartHeight(),
-								c.getCombat().getEndHeight(), i + 1, 50);
+					if (p.MAGIC_SPELLS[p.spellId][4] > 0) {
+						p.getActionSender().createPlayersProjectile(pX, pY, offX, offY,
+								50, 78, p.MAGIC_SPELLS[p.spellId][4],
+								p.getCombat().getStartHeight(),
+								p.getCombat().getEndHeight(), mobIndex + 1, 50);
 					}
-					c.hitDelay = c.getCombat().getHitDelay(
-							i,
-							c.getEquipment()
+					p.hitDelay = p.getCombat().getHitDelay(
+							mobIndex,
+							p.getEquipment()
 									.getItemName(
-											c.playerEquipment[c.playerWeapon])
+											p.playerEquipment[p.playerWeapon])
 									.toLowerCase());
-					c.oldNpcIndex = i;
-					c.oldSpellId = c.spellId;
+					p.oldNpcIndex = mobIndex;
+					p.oldSpellId = p.spellId;
 
-					c.spellId = 0;
-					if (!c.autocasting)
-						c.npcIndex = 0;
+					p.spellId = 0;
+					if (!p.autocasting)
+						p.npcIndex = 0;
 				}
 
-				if (c.usingBow && Configuration.CRYSTAL_BOW_DEGRADES) { // crystal bow
+				if (p.usingBow && Configuration.CRYSTAL_BOW_DEGRADES) { // crystal bow
 																	// degrading
-					if (c.playerEquipment[c.playerWeapon] == 4212) { // new
+					if (p.playerEquipment[p.playerWeapon] == 4212) { // new
 																		// crystal
 																		// bow
 																		// becomes
@@ -855,27 +856,27 @@ public class PlayerVsMob {
 																		// the
 																		// first
 																		// shot
-						c.getEquipment().wearItem(4214, 1, 3);
+						p.getEquipment().wearItem(4214, 1, 3);
 					}
 
-					if (c.crystalBowArrowCount >= 250) {
-						switch (c.playerEquipment[c.playerWeapon]) {
+					if (p.crystalBowArrowCount >= 250) {
+						switch (p.playerEquipment[p.playerWeapon]) {
 
 						case 4223: // 1/10 bow
-							c.getEquipment().wearItem(-1, 1, 3);
-							c.sendMessage("Your crystal bow has fully degraded.");
-							if (!c.getInventory().addItem(4207, 1)) {
-								Server.itemHandler.createGroundItem(c, 4207,
-										c.getX(), c.getY(), 1, c.getId());
+							p.getEquipment().wearItem(-1, 1, 3);
+							p.sendMessage("Your crystal bow has fully degraded.");
+							if (!p.getInventory().addItem(4207, 1)) {
+								Server.itemHandler.createGroundItem(p, 4207,
+										p.getX(), p.getY(), 1, p.getId());
 							}
-							c.crystalBowArrowCount = 0;
+							p.crystalBowArrowCount = 0;
 							break;
 
 						default:
-							c.getEquipment().wearItem(
-									++c.playerEquipment[c.playerWeapon], 1, 3);
-							c.sendMessage("Your crystal bow degrades.");
-							c.crystalBowArrowCount = 0;
+							p.getEquipment().wearItem(
+									++p.playerEquipment[p.playerWeapon], 1, 3);
+							p.sendMessage("Your crystal bow degrades.");
+							p.crystalBowArrowCount = 0;
 							break;
 						}
 					}
