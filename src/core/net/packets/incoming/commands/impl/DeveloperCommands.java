@@ -56,11 +56,11 @@ public class DeveloperCommands implements Command {
 			break;
 		
 		case "sound":
-			int soundId= Integer.parseInt(command[1]);
+			int soundId = Integer.parseInt(command[1]);
 			player.getActionSender().sendSound(soundId);
 			break;
 			
-		case "music":
+		case "song":
 			int musicId = Integer.parseInt(command[1]);
 			player.getActionSender().sendMusic(player, musicId);
 			break;

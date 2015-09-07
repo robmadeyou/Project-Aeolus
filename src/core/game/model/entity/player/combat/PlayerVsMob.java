@@ -115,15 +115,12 @@ public class PlayerVsMob {
 					SoundManager.sendSound(c, 417,
 							SoundType.MELEE_COMBAT);
 					//need to know sound ids for these
-					System.out.println("Punch");
 					break;
 					
 				case 1:
-					System.out.println("Block");
 					break;
 					
 				case 2:
-					System.out.println("Kick");
 					break;
 				}
 			}

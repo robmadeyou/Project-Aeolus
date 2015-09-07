@@ -5,5 +5,12 @@
 		"song": 76,
 		"frame": 4344,
 		"button": 16248
-	}
+	},
+	{
+		"region": 12342,
+		"name": "Forever",
+		"song": 98,
+		"frame": 4344,
+		"button": 16248
+	}	
 ]

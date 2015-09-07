@@ -39,6 +39,7 @@ import core.game.util.Misc;
 import core.game.util.log.impl.ChatLogger;
 import core.game.util.log.impl.TradeLogger;
 import core.game.world.clipping.PathFinder;
+import core.game.world.clipping.region.Region;
 import core.net.Packet;
 import core.net.Buffer;
 import core.net.Packet.Type;
@@ -2363,6 +2364,10 @@ public class Player extends Entity {
 
 			isRunning = isNewWalkCmdIsRunning() || isRunning2;
 		}
+	}
+	
+	public int getRegion() {
+		return Region.getRegion(this.absX, this.absY).id();
 	}
 
 	public Rights getRights() {

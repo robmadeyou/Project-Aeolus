@@ -154,7 +154,7 @@ public class Server {
 	 */
 	public static void main(java.lang.String args[])
 			throws Exception {
-
+		
 		logger.info("Creating Game server...");
 
 		initializeComponents();
@@ -219,5 +219,5 @@ public class Server {
 				new HashedWheelTimer()));
 		serverBootstrap.bind(new InetSocketAddress(serverlistenerPort));
 		logger.info("Server bound to port: " + serverlistenerPort);
-	}
+	}	
 }

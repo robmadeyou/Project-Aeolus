@@ -40,6 +40,27 @@ public class MusicManager {
 		}
 		return null;
 	}
+	
+	public static String songNameForRegion(int region) {
+		for (Music m : music) {
+			if (m == null)
+				continue;
+			if (m.getRegion() == region)
+				return m.getName();
+		}
+		return "No song for this region";
+	}
+
+	public static int songIdForRegion(int region) {
+		for (Music m : music) {
+			if (m == null)
+				continue;
+			if (m.getRegion() == region) {
+				return m.getSong();
+			}
+		}
+		return -1;
+	}
 
 	/**
 	 * Gets the music for the frame.

@@ -1,8 +1,10 @@
 package core.net.packets.incoming;
 
+import core.Configuration;
 import core.Server;
 import core.game.model.entity.player.Player;
 import core.game.model.entity.player.Rights;
+import core.game.sound.MusicManager;
 import core.game.world.clipping.region.Region;
 import core.net.packets.PacketConstants;
 import core.net.packets.PacketType;
@@ -28,17 +30,21 @@ public class ChangeRegions implements PacketType {
 		}
 		switch (packetType) {
 		
-		case PacketConstants.LOADED_REGION:
-			if (player.getRights().equals(Rights.DEVELOPER)) {
-			player.sendMessage("Region loaded");
-			}
-			break;
-		
 		case PacketConstants.ENTER_REGION:
 			if (player.getRights().equals(Rights.DEVELOPER)) {
 				player.sendMessage("Entered region: " + Region.getRegion(player.getX(), player.getY()).id());
 			}
-			break;		
+			break;	
+			
+		case PacketConstants.LOADED_REGION:
+			if (Configuration.enableMusic) {
+			player.getActionSender().sendMusic(player, MusicManager.songIdForRegion(player.getRegion()));
+			player.sendMessage("Now playing: " + MusicManager.songNameForRegion(player.getRegion()));
+			}
+			if (player.getRights().equals(Rights.DEVELOPER)) {
+			player.sendMessage("Region loaded");
+			}
+			break;
 		}
 	}
 }

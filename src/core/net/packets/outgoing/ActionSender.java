@@ -183,6 +183,9 @@ public class ActionSender {
 	 * @param sound
 	 */
 	public void sendMusic(Player client, int songId) {
+		if (songId == -1) {
+			return;
+		}
 		client.outStream.createFrame(74);
 		client.outStream.writeLEShort(songId);
 	}
