@@ -14,12 +14,12 @@ public class Configuration {
 	 * True enables all the debug messages, which is very helpful in a 
 	 * debug case scenario.
 	 */
-	public static boolean SERVER_DEBUG = false;
+	public static boolean SERVER_DEBUG = true;
 
 	/**
 	 * The name of the server
 	 */
-	public static final String SERVER_NAME = "Project Aeolus";
+	public static final String SERVER_NAME = "Something";
 
 	/**
 	 * The welcome message/messages displayed upon login
@@ -39,7 +39,7 @@ public class Configuration {
 	/**
 	 * Toggles the ability for players to swear
 	 */
-	public static final boolean enableCensor = true;
+	public static final boolean enableCensor = false;
 	
 	/**
 	 * Toggles the use of sound effects
