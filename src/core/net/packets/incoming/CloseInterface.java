@@ -41,6 +41,12 @@ public class CloseInterface implements PacketType {
 			if(p.duelStatus == 6) {
 				p.getDuel().claimStakedItems();		
 			}
+
+			if( p.isShopping )
+			{
+				p.isShopping = false;
+			}
+
 			if (Configuration.SERVER_DEBUG && p.getRights().equals(Rights.DEVELOPER))
 				p.sendMessage("ClickingAction - Close Window: " + "packetType " +  packetType + " " + "packetSize: " + packetSize);
 			break;		

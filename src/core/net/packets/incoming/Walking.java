@@ -11,11 +11,11 @@ public class Walking implements PacketType {
 
 		if (c.isBusy()) {
 			if (c.isTrading) {
-				c.sendMessage("You must decline the trade before trying to walk.");
+				c.isTrading = false;
 			} else if (c.isBanking) {
-				c.sendMessage("You must close the bank before trying to walk.");
+				c.isBanking = false;
 			} else if (c.isShopping) {
-				c.sendMessage("You must close the shop before trying to walk.");
+				c.isShopping = false;
 			} else {
 			c.sendMessage("You are busy and cannot walk.");
 			}
